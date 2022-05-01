@@ -1,0 +1,95 @@
+﻿@model List<Portal.Core.ViewModel.LeadViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table {
+    width: 147%;
+    max-width: 147%;
+    margin-bottom: 20px;
+}
+     .table th {
+    background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    color:#fff;
+    }
+     table tr{
+background-color:  #dff0d8 !important;
+}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered" id="tblLeadList">
+            <thead>
+                <tr>
+                    <th align="center">Action</th>
+                    <th>Lead Code</th>
+                    <th>Lead Type Name</th>
+                    <th>Company Name</th>   
+                    <th>Person Name</th>  
+                    <th>Contact No</th>  
+                    <th>Email</th>  
+                    <th>Company Address</th> 
+                    <th>City</th>
+                    <th>State Name</th>
+                    <th>Lead Status</th>
+                    <th>Lead Source</th> 
+                    <th>Create By</th>  
+                    <th>Created Date</th> 
+                    <th>Modified/ Follow By</th>
+                    <th>Modified/ Follow Date</th> 
+                    <th>Active Status</th>
+                    <th>Company Branch</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td   class="btn btn-success table_btn" style="margin:5px 7px;">
+                            <a style="color:white;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/Lead/AddEditLead?LeadId=@item.LeadId&AccessMode=3"></a>
+                            @if (item.LeadStatusName.ToUpper() != "DISQUALIFIED" && item.LeadStatusName.ToUpper() != "QUOTATION")
+                            {
+                                <a style="color:white;text-decoration:none" title="Edit" class="fa fa-pencil-square-o" href="~/Lead/AddEditLead?LeadId=@item.LeadId&AccessMode=2"></a>
+                            }
+                        </td>
+                        <td>@item.LeadCode</td>
+                        <td>@item.LeadTypeName</td>
+                        <td>@item.CompanyName</td>  
+                        <td>@item.ContactPersonName</td>  
+                        <td>@item.ContactNo</td>  
+                        <td>@item.Email</td>   
+                        <td>@item.CompanyAddress</td> 
+                        <td>@item.CompanyCity</td> 
+                        <td>@item.StateName</td> 
+                        <td>@item.LeadStatusName</td> 
+                        <td>@item.LeadSourceName</td> 
+                        <td>@item.CreatedName</td>
+                        <td>@item.CreatedDate</td>  
+                        <td>@item.ModifiedName</td>
+                        <td>@item.ModifiedDate</td> 
+                        <td>@(item.Lead_Status == true ? "Active" : "Inactive")</td>
+                        <td>@item.CompanyBranchName</td> 
+                        
+                         
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblLeadList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

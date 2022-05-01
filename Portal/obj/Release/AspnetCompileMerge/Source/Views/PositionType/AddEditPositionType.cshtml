@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Add PositionType";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">HR</a> >> Add/Edit Position Type </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditPositionType" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="txtPositionTypeName" class="col-sm-4 control-label">Position Type Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtPositionTypeName" name="txtPositionTypeName" tabindex="1" placeholder="Enter Position Type Name" type="text" maxlength="100" />
+                        <input id="hdnPositionTypeID" type="hidden" value="@ViewData["positiontypeId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="txtPositionTypeCode" class="col-sm-4 control-label">Position Type Code&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="txtPositionTypeCode" name="txtPositionTypeCode" tabindex="2" type="text" placeholder="Enter Position Type Code" maxlength="10" class="form-control alpha-only" />
+                    </div>
+                </div> 
+
+              
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtstatus" class="col-sm-4 control-label">Active Status&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="3" />
+                    </div>
+                </div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="4" onclick="SaveData(1)" type="button" border="0"> 
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="4" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                        <a class="btn btn-success" id="btnReset" tabindex="5" href="@Url.Content("~/PositionType/AddEditPositionType")">Reset</a>
+                            @*<input class="btn btn-success" type="button" id="btnReset" tabindex="5" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
+                        @*<input class="btn btn-success" type="button" id="btnList" value="Search Company" />*@
+                        <a class="btn btn-success" id="btnList" tabindex="6" href="@Url.Content("~/PositionType/ListPositionType")">Search Position Type</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/PositionType/AddPositionType.js"></script>

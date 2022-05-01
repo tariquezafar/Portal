@@ -1,0 +1,336 @@
+﻿@{
+    ViewBag.Title = "Inventory Dashboard";
+    Layout = "~/Views/Shared/_InventoryLayout.cshtml";
+}
+
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div id="wrapper">
+    <div id="page-content-wrapper" style="padding-top:5px !important;">
+        <div class="page-content">
+            <div class="container-fluid">
+                <div class="row top-head">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-5" style="margin-top: 5px;margin-bottom:5px">
+                            <b><label for="ddlFinYear" class="col-sm-4" style="margin-top: 5px;color:#fff">Financial Year</label></b>
+                            <div class="col-sm-8">
+                                <select id="ddlFinYear" name="ddlFinYear" onchange="SetFinancialYearSession()" tabindex="1" class="form-control"></select>
+                                <input type="hidden" id="hdnCurrentFinyearId" value="@ViewData["currentFinyearId"]" />
+                            </div>
+                        </div>
+                        <div class="col-md-5" style="margin-top: 5px;margin-bottom:5px">
+                            <b><label for="ddlCompanyBranchForComman" class="col-sm-4" style="margin-top: 5px;color:#fff">Company Branch</label></b>
+                            <div class="col-sm-8">
+                                <select id="ddlCompanyBranchForComman" name="ddlCompanyBranchForComman" onchange="CommanMethod();" tabindex="9" class="form-control"></select>
+                                <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                                <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="container-fluid-md">
+                    <div class="row ftop">
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="panel panel-metric panel-metric-sm">
+                                <div class="panel-body panel-body-primary">
+                                    <div class="metric-content metric-icon">
+                                        <div class="value">
+                                            @*@ViewData["todayProductCount"]*@
+                                          @ViewData["Box1ItemValue"]
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-plus-circle"></i>
+                                        </div>
+                                        <header>
+                                            <a href="@Url.Content("~/Product/ListProduct?productListStatus=today")" target="_blank" style="color:white;text-decoration:none;">
+                                                <h3 class="thin">@ViewData["Box1ItemKey"]</h3>
+                                                </a>
+                                            </header>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="panel panel-metric panel-metric-sm">
+                                <div class="panel-body panel-body-success">
+                                    <div class="metric-content metric-icon">
+                                        <div class="value">
+                                            @ViewData["Box2ItemValue"]
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-thumbs-o-up"></i>
+                                        </div>
+                                        <header>
+                                            <a href="@Url.Content("~/Product/ListProduct?productListStatus=true")" target="_blank" style="color:white;text-decoration:none;">
+                                                <h3 class="thin">@ViewData["Box2ItemKey"]</h3>
+                                            </a>
+                                            
+                                        </header>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="panel panel-metric panel-metric-sm">
+                                <div class="panel-body panel-body-inverse">
+                                    <div class="metric-content metric-icon">
+                                        <div class="value">
+                                            <span class="fa fa-plus-square" style="color:white;font-weight:bold;font-size: 26px">&nbsp;@ViewData["Box3ItemValue"]</span>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-chain-broken"></i>
+                                        </div>
+                                        <header>
+                                            <a href="@Url.Content("~/Product/ListProductReorderQuantity?pendingStatus=Pending")" target="_blank" style="color:white;text-decoration:none;">
+                                                <h3 class="thin">@ViewData["Box3ItemKey"]</h3> 
+                                            </a>
+                                           
+                                        </header>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="panel panel-metric panel-metric-sm">
+                                <div class="panel-body panel-body-danger">
+                                    <div class="metric-content metric-icon">
+                                        <div class="value" id="stockReceiveCount">
+                                            @ViewData["Box4ItemValue"]
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-tags"></i>
+                                        </div>
+                                        <header>
+                                            <h3 class="thin">
+                                                <a href="@Url.Content("~/STR/ListSTR?listStatus=true")" target="_blank" style="color:white;text-decoration:none;">
+                                                    @ViewData["Box4ItemKey"]
+                                                </a>
+                                            </h3>
+                                        </header>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="panel" style="overflow: hidden">
+                                <div class="row no-margin" data-sync-height>
+                                       <div class="col-sm-3 col-md-3 no-padding" style="background-color: #357ebd !important;">
+                                        <div id="divContainer5" class="panel-body bg-gray-dark" style="height: 124px!important;background-color: #357ebd !important;">
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-1 col-md-1 no-padding">
+                                    </div>
+
+                                    <div class="col-sm-3 col-md-3 no-padding" style="background-color: #d95043 !important;">
+                                        <div id="divContainer6" class="panel-body bg-gray-dark" style="height: 124px!important;background-color: #357ebd !important;">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-1 col-md-1 no-padding">
+                                    </div>
+                                    <div class="col-sm-3 col-md-3 no-padding">
+                                        <div id="divContainer7" class="panel-body bg-gray-dark" style="height: 124px!important;background-color: #357ebd !important;">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel" style="overflow: hidden">
+                                <div class="row no-margin" data-sync-height>
+                                    <div class="col-sm-3 col-md-3 no-padding" style="background-color: #357ebd !important;">
+                                        <div id="divContainer9" class="panel-body bg-gray-dark" style="height: 154px!important;background-color: #357ebd !important;">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-1 col-md-1 no-padding">
+                                    </div>
+
+                                    <div class="col-sm-3 col-md-3 no-padding" style="background-color: #d95043 !important;">
+                                        <div id="divContainer10" class="panel-body bg-gray-dark" style="height: 154px!important;background-color: #357ebd !important;">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-1 col-md-1 no-padding">
+                                    </div>
+                                    <div class="col-sm-3 col-md-3 no-padding">
+                                        <div id="divContainer11" class="panel-body bg-gray-dark" style="height: 154px!important;background-color: #357ebd !important;">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        <div class="col-md-5">
+                            <div class="panel panel-metric panel-metric-sm">
+                                <div  class="panel-body panel-body-warning"  style="background-color:#4800ff !important;">
+                                    <div id="divContainer8" class="metric-content metric-icon">
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                         
+
+
+                            <div class="panel" style="overflow: hidden;background-color:#0094ff;">
+                                <div class="panel-body">
+                                    <h4 class="thin no-margin-top" style="color:#fff;"><strong>Quick Links</strong></h4>
+                                    <table class="table" >
+                                        <tbody >
+                                            <tr style="background-color:#0094ff!important;">
+                                                <td align="center"><a href="/MRN/AddEditMRN?accessMode=1" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New MRN</a></td>
+                                                <td align="center"><a href="/STN/AddEditSTN?accessMode=1" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New STN</a></td>
+                                                <td align="center"><a href="/SIN/AddEditSIN?accessMode=1" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New SIN</a></td>
+                                            </tr>
+                                            <tr style="background-color:#0094ff!important;">
+                                                <td align="center"><a href="/StoreRequisition/AddEditStoreRequisition?accessMode=1" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Store Requisition</a></td>
+                                                <td align="center"><a href="@Url.Content("~/Location/AddEditLocation?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Location</a></td>
+                                                <td align="center"><a href="@Url.Content("~/ProductOpeningStock/AddEditProductOpening?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">Add Product Opening</a></td>
+                                            </tr>
+                                            <tr style="background-color:#0094ff!important;">
+                                                <td align="center"><a href="@Url.Content("~/MRN/AddEditMRN?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Material Receive</a></td>
+                                                <td align="center"><a href="@Url.Content("~/SIN/AddEditSIN?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Stock Issue</a></td>
+                                                <td align="center"><a href="@Url.Content("~/Manufacturer/AddEditManufacturer?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Manufacturer</a></td>
+                                                
+                                            </tr>
+                                            <tr style="background-color:#0094ff!important;">
+
+                                                <td align="center"><a href="@Url.Content("~/GateIn/AddEditGateIn?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Gate In</a></td>
+                                                <td align="center"><a href="@Url.Content("~/JobWork/AddEditJobWork?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Job Work</a></td>
+                                                <td align="center"><a href="@Url.Content("~/JobWorkMRN/AddEditJobWorkMRN?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Job Work MRN</a></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="server-load" class="chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div id="tabs">
+                            <ul>
+                                <li><a href="#tabs-2">Product Stock Summary</a></li>
+                                <li style="display:none;"><a href="#tabs-1">Sale Summary</a></li>
+
+                            </ul>
+                            <div id="tabs-1">
+
+                                <div class="row">
+                                    <div class="col-md-4" id="DivQuatationCount">
+
+                                    </div>
+                                    <div class="col-md-4" id="DivSOCount">
+
+                                    </div>
+                                    <div class="col-md-4" id="DivSICount">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tabs-2">
+                                <div class="row">
+                                    <div class="col-md-4" style="padding:10px" id="DivSINQuantityCount">
+                                        <canvas id="barcanvasSINQuantity" height="200" width="200"></canvas>
+                                    </div>
+                                    <div class="col-md-8" style="padding:10px" id="DivInOutProductQuantityCount">
+                                        <canvas id="barcanvasSaleOrder" height="200" width="200"></canvas>
+                                    </div>
+                                
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        @*<div class="col-sm-6 col-lg-4">
+                                <div class="panel panel-metric">
+                                    <div class="panel-body">
+                                        <div class="metric-content">
+                                            <div class="value">
+                                                14%
+                                            </div>
+                                            <div class="trend">
+                                                <p class="text-danger">
+                                                    <i class="fa fa-chevron-up"></i> 15.6%
+                                                </p>
+                                                <strong>Previous 30 Days</strong>
+                                            </div>
+                                            <div id="metric-4" class="chart"></div>
+                                            <header>
+                                                <h3 class="thin">Bounce Rate</h3>
+                                            </header>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="panel panel-metric">
+                                    <div class="panel-body">
+                                        <div class="metric-content">
+                                            <div class="value">
+                                                43,213
+                                            </div>
+                                            <div class="trend">
+                                                <p class="text-success">
+                                                    <i class="fa fa-chevron-up"></i> 10.3%
+                                                </p>
+                                                <strong>Previous 30 Days</strong>
+                                            </div>
+                                            <div id="metric-5" class="chart"></div>
+                                            <header>
+                                                <h3 class="thin">Page Views</h3>
+                                            </header>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="panel panel-metric">
+                                    <div class="panel-body">
+                                        <div class="metric-content">
+                                            <div class="value">
+                                                30%
+                                            </div>
+                                            <div class="trend">
+                                                <p class="text-danger">
+                                                    <i class="fa fa-chevron-down"></i> 2.3%
+                                                </p>
+                                                <strong>Previous 30 Days</strong>
+                                            </div>
+                                            <div id="metric-6" class="chart"></div>
+                                            <header>
+                                                <h3 class="thin">Unique Visitors</h3>
+                                            </header>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>*@
+
+                    </div>
+                </div>
+
+
+                <!--end body content -->
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/Chart.bundle.min.js"></script>
+<script src="~/Scripts/Dashboard/InventoryDashboard.js"></script>
+
+

@@ -1,0 +1,210 @@
+﻿@{
+    ViewBag.Title = "Add Company Branch";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AdminDashboard">Admin</a> >> Add/Edit Company Branch </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditCompanyBranch" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+
+            <div id="tabs-2">
+                <div class="col-md-12 ftop">
+                    <div class="form-group col-md-4">
+                        <label for="txtCompanyBranchName" class="col-sm-4 control-label">Company Branch Name&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtCompanyBranchName" name="txtCompanyBranchName" tabindex="1" placeholder="Enter Branch Name" type="text" maxlength="100" />
+                            <input id="hdnCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                            <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="txtBContactPersonName" class="col-sm-4 control-label">Contact Person Name</label>
+                        <div class="col-sm-8">
+                            <input class="form-control alpha-space-only" id="txtBContactPersonName" name="txtBContactPersonName" tabindex="2" placeholder="Enter Contact Person Name" type="text" maxlength="100" />
+                        </div>
+                    </div>
+                    <div class="form-group  col-md-4">
+                        <label for="txtBDesignation" class="col-sm-4 control-label">Designation</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtBDesignation" name="txtBDesignation" tabindex="3" placeholder="Enter Contact Person Designation" type="text" maxlength="100" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+
+                    <div class="form-group col-md-4">
+                        <label for="txtBEmail" class="col-sm-4 control-label">Email</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtBEmail" name="txtBEmail" tabindex="4" placeholder="Enter Email" type="text" maxlength="100" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="txtBMobileNo" class="col-sm-4 control-label">Mobile No.&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control  input-number numeric-only" id="txtBMobileNo"  name="txtBMobileNo" tabindex="5" placeholder="Enter Mobile No." type="text" maxlength="10" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="txtBContactNo" class="col-sm-4 control-label">Contact No.</label>
+                        <div class="col-sm-8">
+                            <input class="form-control  input-number numeric-only"  id="txtBContactNo" name="txtBContactNo" tabindex="6" placeholder="Enter Contact No." type="text" maxlength="20" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group col-md-4">
+                        <label for="txtBFax" class="col-sm-4 control-label">Fax</label>
+                        <div class="col-sm-8">
+                            <input class="form-control input-number numeric-only" onkeyup="checkPhone(this)" id="txtBFax" name="txtBFax" tabindex="7" placeholder="Enter Fax" type="text" maxlength="20" />
+                        </div>
+                    </div>
+                    <div class="form-group  col-md-4">
+                        <label for="txtBAddress" class="col-sm-4 control-label">Address&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtBAddress" name="txtBAddress" tabindex="8" placeholder="Enter Address" type="text" maxlength="250" />
+                        </div>
+                    </div>
+                    <div class="form-group  col-md-4">
+                        <label for="txtBCity" class="col-sm-4 control-label">City&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control alpha-space-only" id="txtBCity" name="txtBCity" tabindex="9" placeholder="Enter City" type="text" maxlength="50" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group col-md-4">
+                        <label for="ddlBCountry" class="col-sm-4 control-label">Country&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlBCountry" name="ddlBCountry" onchange="BindBranchStateList(0)" tabindex="10" class="form-control"></select>
+                        </div>
+                    </div>
+                
+                    <div class="form-group  col-md-4">
+                        <label for="ddlBState" class="col-sm-4 control-label">State&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlBState" name="ddlBState" tabindex="11" class="form-control"></select>
+                        </div>
+                    </div>
+                    <div class="form-group  col-md-4">
+                        <label for="txtBPinCode" class="col-sm-4 control-label">Pin Code</label>
+                        <div class="col-sm-8">
+                            <input class="form-control  input-number numeric-only" id="txtBPinCode" name="txtBPinCode" tabindex="12" placeholder="Enter Pin Code" type="text" maxlength="6" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group  col-md-4">
+                        <label for="txtBCSTNo" class="col-sm-4 control-label">CST No.</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtBCSTNo" name="txtBCSTNo" tabindex="13" placeholder="Enter CST No." type="text" maxlength="20" />
+                        </div>
+                    </div>
+                    <div class="form-group  col-md-4">
+                        <label for="txtBTINNo" class="col-sm-4 control-label">TIN No.</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtBTINNo" name="txtBTINNo" tabindex="14" placeholder="Enter TIN No." type="text" maxlength="20" />
+                        </div>
+                    </div>
+                    <div class="form-group  col-md-4">
+                        <label for="txtBPANNo" class="col-sm-4 control-label">PAN No.</label>
+                        <div class="col-sm-8">
+                            <input class="form-control alpha-numeric-only" id="txtBPANNo" name="txtBPANNo" tabindex="15" placeholder="Enter PAN No." type="text" maxlength="10" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group  col-md-4">
+                        <label for="txtBGSTNo" class="col-sm-4 control-label">GST No.</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtBGSTNo" name="txtBGSTNo" tabindex="16" placeholder="Enter GST No." type="text" maxlength="20" />
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="txtAnnualTurnOver" class="col-sm-4 control-label">Annual TurnOver</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtAnnualTurnOver" name="txtAnnualTurnOver" tabindex="17" placeholder="Enter Annual TurnOver" type="text" maxlength="100" />
+                        </div>
+                    </div>
+               
+                    <div class="form-group  col-md-4">
+                        <label for="txtCompanyBranch" class="col-sm-4 control-label">Company Branch Code&nbsp;<span class="Mandatory">(*)</span></label> 
+                        <div class="col-sm-8">
+                            <input id="txtCompanyBranch" name="txtCompanyBranch" type="text" tabindex="18" class="form-control" maxlength="2"/>
+                        </div>
+
+                    </div>
+                  
+                </div>
+
+                <div class="col-md-12">
+
+                    <div class="form-group  col-md-4">
+                        <label for="txtManufactorLocationCode" class="col-sm-4 control-label">Manufactor Location Code&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input id="txtManufactorLocationCode" name="txtManufactorLocationCode" type="text" tabindex="18" class="form-control" maxlength="1" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group  col-md-4">
+                        <label for="chkstatus" class="col-sm-4 control-label">Active Status&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input id="chkstatus" name="chkstatus" type="checkbox" tabindex="19" />
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="20" onclick="SaveData(1)" type="button" border="0"> 
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="20" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                        <a class="btn btn-success" id="btnReset" tabindex="23" href="@Url.Content("~/CompanyBranch/AddEditCompanyBranch")">Reset</a>
+                         @*<input class="btn btn-success" type="button" id="btnReset" tabindex="19" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
+                        <a class="btn btn-success" id="btnList" tabindex="24" href="@Url.Content("~/CompanyBranch/ListCompanyBranch")">Search Company Branch</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="21" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="22" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="22" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+
+<script src="~/Scripts/Company/AddCompanyBranch.js"></script>
+
+

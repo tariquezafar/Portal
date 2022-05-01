@@ -1,0 +1,90 @@
+﻿@model List<Portal.Core.ViewModel.TermTemplateDetailViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <style>
+        .TermClass {
+            text-align: center;
+        }
+    </style>
+    <div style="padding:10px;background-color:white">
+        <table class="table table-bordered table-hover" id="tblTermTemplateDetailList">
+            <thead>
+                <tr>  
+                    <th class="TermClass">Term Template Desc</th>
+                    <th class="TermClass">Status</th>
+                    <th colspan="1" class="editonly"><center>Action</center></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    if ( item.Term_Status == true)
+                    { 
+                     <tr class="success">  
+                        <td>@item.TermsDesc
+                        <input type="hidden" id="hdnTrnId" value="@item.TrnId" /> 
+                        <input type="hidden" id="hdnTermTemplateDesc" value="@item.TermsDesc" />
+                        <input type="hidden" id="hdnTermTemplateId" value="@item.TermTemplateId" />
+                            <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                        </td> 
+                        <td>@(item.Term_Status == true ? "Active" : "Inactive")
+                            <input type="hidden" id="hdnTermStatus" value="@(item.Term_Status == true ? "Active" : "Inactive")" />
+                         </td>
+                        <td class="teal text editonly" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:darkgreen" class="fa fa-pencil" onclick="EditTermTemplateRow(this);" href="#"></a>
+                        </td>
+                       
+
+                    </tr>
+                    }
+                    else
+                    {
+                        <tr class="danger">
+                          
+
+                            <td>
+                                @item.TermsDesc
+                            <input type="hidden" id="hdnTrnId" value="@item.TrnId" />
+                            <input type="hidden" id="hdnTermTemplateDesc" value="@item.TermsDesc" />
+                                <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                        
+                        </td>
+                        <td>@(item.Term_Status == true ? "Active" : "Inactive")
+                            <input type="hidden" id="hdnTermStatus" value="@(item.Term_Status == true ? "Active" : "Inactive")" />
+                            </td>
+                        <td class="teal text editonly" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:darkgreen" class="fa fa-pencil" onclick="EditTermTemplateRow(this);" href="#"></a>
+                        </td>
+                       
+
+                    </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblTermTemplateDetailList">
+            <thead>
+                <tr>
+                    <th>Term Desc</th> 
+                    <th>Status</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+<script>
+    $(document).ready(function () {
+        if ($("#hdnAccessMode").val() == "3") {
+            $(".editonly").hide();
+        }
+
+    });
+</script>

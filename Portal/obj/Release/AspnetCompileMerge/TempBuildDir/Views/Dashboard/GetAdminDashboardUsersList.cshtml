@@ -1,0 +1,39 @@
+﻿@model List<Portal.Core.ViewModel.UserViewModel>
+@if (Model != null && Model.Count > 0)
+{
+                   <div style="padding:10px;">
+                       <table class="table" id="tblUsersList" style="margin-top:10px;">
+                           <thead style="border-top-left-radius:15px;">
+                               <tr style="border:none;">
+                                   <th style="background:#34a8db; color:#fff;width:100%;" colspan="3">User(s) Details</th>
+                               </tr>
+                               <tr style="background:#D6EAF8; border:1px solid #ccc;">
+                                   <th style="text-align:center;">Name</th>
+                                   <th style="text-align:center;">Email</th>
+                                   <th style="text-align:center;">Role</th>
+                               </tr>
+
+                           </thead>
+                           <tbody style="border:1px solid #ccc;">
+                               @foreach (var item in Model)
+                               {
+                               <tr class="success">
+                                   <td>@item.FullName</td>
+                                   <td>@item.Email</td>
+                                   <td>@item.RoleName</td>
+                               </tr>
+                               }
+                               <tr>
+                                   <td colspan="3" align="center">
+                                       <a href="@Url.Content("~/User/ListUser")"> View All Users </a>
+                                   </td>
+                               </tr>
+                           </tbody>
+                       </table>
+                   </div>
+
+                   }
+                   else
+                   {
+                   <h3 style="color:firebrick;text-align:center">No Records Found</h3>
+                   }

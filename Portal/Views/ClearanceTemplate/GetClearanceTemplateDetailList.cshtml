@@ -1,0 +1,63 @@
+﻿@model List<Portal.Core.ViewModel.ClearanceTemplateDetailViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblClearanceTemplateDetailList">
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Separation Clear List Name</th>
+                    <th>Clearance By User Name</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>
+                            @item.TaxSequenceNo
+                        <input type="hidden" id="hdnTaxSequenceNo" value="@item.TaxSequenceNo" />
+                    </td>
+                    <td>
+                        @item.SeparationClearListName
+                    <input type="hidden" id="hdnClearanceTemplateDetailId" value="@item.ClearanceTemplateDetailId" />
+                    <input type="hidden" id="hdnSeparationClearListId" value="@item.SeparationClearListId" />
+                    <input type="hidden" id="hdnSeparationClearListName" value="@item.SeparationClearListName" />
+                </td> 
+                        <td>
+                            @item.ClearanceByUserName
+                            <input type="hidden" id="hdnClearanceByUserId" value="@item.ClearanceByUserId" />
+                            <input type="hidden" id="hdnClearanceByUser" value="@item.ClearanceByUserName" />
+                        </td> 
+                         
+                <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                    <a style="color:white" class="fa fa-pencil-square-o" onclick="EditClearanceTemplateDetailRow(this);" href="#"></a>
+                </td>
+                <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                    <a style="color:white" class="fa fa-trash" onclick="RemoveClearanceTemplateDetailRow(this)" href="#"></a>
+                </td>
+            </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblClearanceTemplateDetailList">
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Separation Clear List Name</th>
+                    <th>Clearance By User Name</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

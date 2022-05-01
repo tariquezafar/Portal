@@ -1,0 +1,102 @@
+﻿@model List<Portal.Core.ViewModel.ChasisSerialPlanViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblCountryList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>Chasis Serial Plan No.</center></th>
+                    <th><center>Chasis Serial Plan Date</center></th>                    
+                    <th><center>Status</center></th>
+                    <th><center>Chasis Year</center></th>
+                    <th><center>Chasis Month</center></th>
+                    <th><center>Company Branch</center></th>
+                    <th><center>Created By</center></th>
+                    <th><center>Created Date</center></th>
+                    <th><center>Modified By</center></th>
+                    <th><center>Modified Date</center></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="margin:0px auto;">
+                            <a style="color:darkblue;text-decoration:none"  title="View" class="fa fa-eye" aria-hidden="true" href="~/ChasisSerialPlan/AddEditChasisSerialPlan?chasisSerialPlanID=@item.ChasisSerialPlanID&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="margin:0px auto;">
+                            @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                            {
+                                <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/ChasisSerialPlan/AddEditChasisSerialPlan?chasisSerialPlanID=@item.ChasisSerialPlanID&AccessMode=2"></a>
+                            }
+
+                        </td>
+                        <td>@item.ChasisSerialPlanNo</td>
+                        <td>@item.ChasisSerialPlanDate</td>                       
+                        @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine">
+                                @item.ApprovalStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green">
+                                @item.ApprovalStatus
+                            </td>
+
+                        }
+
+                        <td>@item.ChasisYear</td>
+                        <td>@item.Month</td>
+                        <td>@item.CompanyBranchName</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblCountryList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

@@ -1,0 +1,360 @@
+14:56:07 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditGL
+Error Line No : 5945
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditGL' expects parameter '@GLDetailStatus', which was not supplied.
+--------------------------------------------------------------------------------------------------------------------------------
+
+14:56:07 PM
+Source : Portal.Core.GLBL
+Method Name : AddEditGL
+Error Line No : 52
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditGL' expects parameter '@GLDetailStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:56:07 PM
+Source : Portal.Controllers.GLController
+Method Name : AddEditGL
+Error Line No : 57
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditGL' expects parameter '@GLDetailStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:02:56 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditGL
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditGL has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:02:56 PM
+Source : Portal.Core.GLBL
+Method Name : AddEditGL
+Error Line No : 52
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditGL has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:02:56 PM
+Source : Portal.Controllers.GLController
+Method Name : AddEditGL
+Error Line No : 57
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditGL has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:01:33 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetGLList
+Error Line No : 5990
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:01:33 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLList
+Error Line No : 72
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:01:33 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLList
+Error Line No : 100
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:03:07 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetGLList
+Error Line No : 5990
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:03:07 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLList
+Error Line No : 72
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:03:07 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLList
+Error Line No : 100
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:03:14 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetGLList
+Error Line No : 5990
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:03:14 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLList
+Error Line No : 72
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:03:14 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLList
+Error Line No : 100
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:04:13 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetGLList
+Error Line No : 5990
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:04:13 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLList
+Error Line No : 72
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:04:13 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLList
+Error Line No : 100
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:04:51 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetGLList
+Error Line No : 5990
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:04:51 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLList
+Error Line No : 72
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:04:51 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLList
+Error Line No : 100
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:06:47 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetGLList
+Error Line No : 5990
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:06:47 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLList
+Error Line No : 72
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:06:47 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLList
+Error Line No : 100
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:07:01 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetGLList
+Error Line No : 5990
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:07:01 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLList
+Error Line No : 72
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:07:01 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLList
+Error Line No : 100
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:07:07 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetGLList
+Error Line No : 5990
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:07:07 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLList
+Error Line No : 72
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:07:07 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLList
+Error Line No : 100
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:07:21 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetGLList
+Error Line No : 5990
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:07:21 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLList
+Error Line No : 72
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:07:37 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetGLList
+Error Line No : 5990
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@GLSubGroupId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:09:36 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetGLList
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The ConnectionString property has not been initialized.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:09:45 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLList
+Error Line No : 72
+Exception Type : System.InvalidOperationException
+Details: The ConnectionString property has not been initialized.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:09:45 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLList
+Error Line No : 100
+Exception Type : System.InvalidOperationException
+Details: The ConnectionString property has not been initialized.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:30:02 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetGLList
+Error Line No : 6005
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@FinYear', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:30:03 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLList
+Error Line No : 72
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@FinYear', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:30:03 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLList
+Error Line No : 101
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@FinYear', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:30:12 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetGLList
+Error Line No : 6005
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@FinYear', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:30:12 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLList
+Error Line No : 72
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@FinYear', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:30:12 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLList
+Error Line No : 101
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@FinYear', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:30:28 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetGLList
+Error Line No : 6005
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@FinYear', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:30:28 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLList
+Error Line No : 72
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@FinYear', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:31:26 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLList
+Error Line No : 101
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLs' expects parameter '@FinYear', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+

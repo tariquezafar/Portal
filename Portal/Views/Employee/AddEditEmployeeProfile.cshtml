@@ -1,0 +1,652 @@
+﻿@{
+    ViewBag.Title = "Add/Edit Employee";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+    /* allow space for check mark */
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/EssDashboard">ESS > </a>My Profile</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditEmployee" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div id="tabs">
+                <ul>
+                    <li><a href="#tabs-1">Employee Basic Info</a></li>
+                    <li><a href="#tabs-2">Statutory Info</a></li>
+                    <li><a href="#tabs-3">Reporting</a></li>
+                    <li><a href="#tabs-4">Salary Detail</a></li>
+                </ul>
+                <div id="tabs-1">
+                  
+                    <div class="col-md-12 ftop">
+                        <div class="form-group col-md-6">
+                            <label for="txtEmployeeFirstName" class="col-sm-4 control-label">First Name&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtEmployeeFirstName" name="txtEmployeeFirstName" tabindex="1" placeholder="Enter Employee First Name" type="text" maxlength="50" />
+                                <input id="hdnEmployeeID" type="hidden" value="@ViewData["employeeId"]" />
+                                <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtEmployeeLastName" class="col-sm-4 control-label">Last Name</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtEmployeeLastName" name="txtEmployeeLastName" tabindex="2" placeholder="Enter Employee Last Name" type="text" maxlength="50" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="txtEmployeeCode" class="col-sm-4 control-label">Employee Code&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtEmployeeCode" name="txtEmployeeCode" tabindex="3" placeholder="Enter Employee Code" type="text" maxlength="50" />
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6">
+                            <label for="rdoGender" class="col-sm-4 control-label">Gender</label>
+                            <div class="col-sm-8">
+                                <input class="" id="rdoGenderM" checked="checked" value="M" name="rdoGender" tabindex="4" type="radio" /> Male &nbsp;
+                                <input class="" id="rdoGenderF" value="F" name="rdoGender" tabindex="4" type="radio" /> Female &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="txtFatherSpouseName" class="col-sm-4 control-label">Father/Spouse Name&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtFatherSpouseName" name="txtFatherSpouseName" tabindex="5" placeholder="Enter Employee Father/ Spouse name" type="text" maxlength="100" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="imgUserPic" class="col-sm-4 control-label">Upload Image</label>
+                            <div class="col-sm-8">
+                                <img id="imgUserPic" width="120" height="120" style="margin-bottom:5px;" src="" />
+                                <input type="file" id="FileUpload1" name="FileUpload1" onchange="ShowImagePreview(this);" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="txtDateOfBirth" class="col-sm-4 control-label">DOB&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtDateOfBirth" name="txtDateOfBirth" tabindex="6" placeholder="Enter Employee Date of Birth" type="text" maxlength="50" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ddlMaritalStatus" class="col-sm-4 control-label">Marital Status&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlMaritalStatus" name="ddlMaritalStatus" tabindex="7" class="form-control">
+                                    <option selected="selected" value="0">-Select Marital Status-</option>
+                                    <option value="Single">Single</option>
+                                    <option value="Married">Married</option>
+                                    <option value="Divorced">Divorced</option>
+                                    <option value="Widowed">Widowed</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group  col-md-6">
+                            <label for="ddlBloodGroup" class="col-sm-4 control-label">Blood Group</label>
+                            <div class="col-sm-8">
+                                <select id="ddlBloodGroup" name="ddlBloodGroup" tabindex="8" class="form-control">
+                                    <option selected="selected" value="0">-Select Blood Group-</option>
+                                    <option value="A+">A+</option>
+                                    <option value="O+">O+</option>
+                                    <option value="B+">B+</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="O-">O-</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB-">AB-</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtMobileNo" class="col-sm-4 control-label">Mobile No.&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number numeric-only" id="txtMobileNo" name="txtMobileNo" tabindex="9" placeholder="Enter Employee Mobile No." type="text" maxlength="20" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="txtEmail" class="col-sm-4 control-label">Email&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtEmail" name="txtEmail" tabindex="10" placeholder="Enter Employee Primary Email" type="text" maxlength="100" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtAlternateEmail" class="col-sm-4 control-label">Alternate Email</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtAlternateEmail" name="txtAlternateEmail" tabindex="11" placeholder="Enter Employee Alternate Email" type="text" maxlength="100" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="txtContactNo" class="col-sm-4 control-label">Contact No.</label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number" onkeyup="checkPhone(this)" id="txtContactNo" name="txtContactNo" tabindex="12" placeholder="Enter Employee Primary Contact No." type="text" maxlength="20" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtAlternateContactNo" class="col-sm-4 control-label">Alternate Contact No.</label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number" onkeyup="checkPhone(this)" id="txtAlternateContactNo" name="txtAlternateContactNo" tabindex="13" placeholder="Enter Employee Alternate Contact No." type="text" maxlength="20" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <fieldset class="scheduler-border">
+                                <legend class="scheduler-border">Current Address</legend>
+                                <div class="form-group">
+                                    <div class="col-sm-10">
+                                        &nbsp;
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtCAddress" class="col-sm-4 control-label">Address&nbsp;<span class="Mandatory">(*)</span></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" id="txtCAddress" name="txtCAddress" tabindex="14" placeholder="Enter Current Address" type="text" maxlength="250" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtCCity" class="col-sm-4 control-label">City&nbsp;<span class="Mandatory">(*)</span></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" id="txtCCity" name="txtCCity" tabindex="15" placeholder="Enter City" type="text" maxlength="50" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ddlCCountry" class="col-sm-4 control-label">Country&nbsp;<span class="Mandatory">(*)</span></label>
+                                    <div class="col-sm-8">
+                                        <select id="ddlCCountry" name="ddlCCountry" onchange="BindCurrentStateList(0)" tabindex="16" class="form-control"></select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ddlCState" class="col-sm-4 control-label">State&nbsp;<span class="Mandatory">(*)</span></label>
+                                    <div class="col-sm-8">
+                                        <select id="ddlCState" name="ddlCState" tabindex="17" class="form-control"></select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtCPinCode" class="col-sm-4 control-label">Pin Code</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control  input-number numeric-only" id="txtCPinCode" name="txtCPinCode" tabindex="18" placeholder="Enter Pin Code" type="text" maxlength="20" />
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-md-6">
+                            <fieldset class="scheduler-border">
+                                <legend class="scheduler-border">Permanent Address</legend>
+                                <div class="form-group">
+                                    <label for="chkSamePermanentAddress" class="col-sm-1 control-label"></label>
+                                    <div class="col-sm-11">
+                                        <input id="chkSamePermanentAddress" name="chkSamePermanentAddress" onclick="CopyCurrentAddress()" tabindex="19" type="checkbox" />
+                                        <label style="font-size: 24px; " for="chkSamePermanentAddress"></label>&nbsp;Same as Current Address
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtPAddress" class="col-sm-4 control-label">Address&nbsp;<span class="Mandatory">(*)</span></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" id="txtPAddress" name="txtPAddress" tabindex="20" placeholder="Enter Permament Address" type="text" maxlength="250" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtPCity" class="col-sm-4 control-label">City&nbsp;<span class="Mandatory">(*)</span></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" id="txtPCity" name="txtPCity" tabindex="21" placeholder="Enter City" type="text" maxlength="50" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ddlPCountry" class="col-sm-4 control-label">Country&nbsp;<span class="Mandatory">(*)</span></label>
+                                    <div class="col-sm-8">
+                                        <select id="ddlPCountry" name="ddlPCountry" tabindex="22" onchange="BindPermanentStateList(0)" class="form-control"></select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ddlPState" class="col-sm-4 control-label">State&nbsp;<span class="Mandatory">(*)</span></label>
+                                    <div class="col-sm-8">
+                                        <select id="ddlPState" name="ddlPState" tabindex="23" class="form-control"></select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtPPinCode" class="col-sm-4 control-label">Pin Code</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control  input-number numeric-only" id="txtPPinCode" name="txtPPinCode" tabindex="24" placeholder="Enter Pin Code" type="text" maxlength="20" />
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6 ">
+                            <label for="chkStatus" class="col-sm-4 control-label">Active Status</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" name="chkStatus" id="chkStatus" checked="checked" class="" />
+                                <label style="font-size: 24px; " tabindex="25" for="chkStatus"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="tabs-2">
+                    <div class="col-md-12 ftop">
+                        <div class="form-group col-md-6">
+                            <label for="txtDOJ" class="col-sm-4 control-label">Date Of Joining&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtDOJ" name="txtDOJ" tabindex="1" placeholder="Enter Employee Date of Joining" type="text" maxlength="50" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ddlCurrentStatus" class="col-sm-4 control-label">Employee Status&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlCurrentStatus" name="ddlCurrentStatus" tabindex="2" class="form-control">
+                                    <option selected="selected" value="0">-Select Employee Status-</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Temporary">Temporary</option>
+                                    <option value="Trainee">Trainee</option>
+                                    <option value="Probation">Probation</option>
+                                    <option value="Suspend">Suspend</option>
+                                    <option value="Terminated">Terminated</option>
+                                    <option value="Retired">Retired</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="txtStatusStartDate" class="col-sm-4 control-label">Status Start Date</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtStatusStartDate" name="txtStatusStartDate" tabindex="3" placeholder="Enter Employee Status Start Date" type="text" maxlength="50" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ddlStatusPeriod" class="col-sm-4 control-label">Status Period</label>
+                            <div class="col-sm-8">
+                                <select id="ddlStatusPeriod" name="ddlStatusPeriod" tabindex="4" class="form-control">
+                                    <option selected="selected" value="0">-Select Status Period-</option>
+                                    <option value="15">15 Days</option>
+                                    <option value="30">1 Month</option>
+                                    <option value="60">2 Month</option>
+                                    <option value="90">3 Month</option>
+                                    <option value="180">6 Month</option>
+                                    <option value="365">1 Year</option>
+                                    <option value="730">2 Year</option>
+                                    <option value="1825">5 Year</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="txtPANNo" class="col-sm-4 control-label">PAN No.</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtPANNo" name="txtPANNo" tabindex="5" placeholder="Enter Employee PAN No." type="text" maxlength="50" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtAadharNo" class="col-sm-4 control-label">Aadhar No.</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtAadharNo" name="txtAadharNo" tabindex="6" placeholder="Enter Employee Aadhar No." type="text" maxlength="50" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="txtBankDetail" class="col-sm-4 control-label">Bank Detail</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="txtBankDetail" name="txtBankDetail" tabindex="7" placeholder="Enter Employee Bank Detail" maxlength="250" style="height:50px;"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtBankAccountNo" class="col-sm-4 control-label">Bank Account No.</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtBankAccountNo" name="txtBankAccountNo" tabindex="8" placeholder="Enter Employee Bank Account No." type="text" maxlength="50" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="chkPFApplicable" class="col-sm-4 control-label">PF Applicable</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" id="chkPFApplicable" onclick="changePFNoStatus()" name="chkPFApplicable" />
+                                <label style="font-size: 24px; " tabindex="9" for="chkPFApplicable"></label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtPFNo" class="col-sm-4 control-label">PF No.</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtPFNo" disabled="disabled" name="txtPFNo" tabindex="10" placeholder="Enter Employee PF No." type="text" maxlength="50" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="chkESIApplicable" class="col-sm-4 control-label">ESI Applicable</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" id="chkESIApplicable" onclick="changeESINoStatus()" name="chkESIApplicable" />
+                                <label style="font-size: 24px; " tabindex="11" for="chkESIApplicable"></label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtESINo" class="col-sm-4 control-label">ESI No.</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtESINo" disabled="disabled" name="txtESINo" tabindex="12" placeholder="Enter Employee ESI No." type="text" maxlength="50" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group  col-md-6">
+                            <label for="ddlDivision" class="col-sm-4 control-label">Division&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlDivision" name="ddlDivision" tabindex="13" class="form-control">
+                                    <option selected="selected" value="0">-Select Division-</option>
+                                    <option value="Sale">Sale</option>
+                                    <option value="Purchase">Purchase</option>
+                                    <option value="Store">Store</option>
+                                    <option value="HR">HR</option>
+                                    <option value="Marketing">Marketing</option>
+                                    <option value="Account">Account</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6">
+                            <label for="ddlEmploymentType" class="col-sm-4 control-label">Employee Type&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlEmploymentType" name="ddlEmploymentType" tabindex="14" class="form-control">
+                                    <option selected="selected" value="0">-Select Employee Type-</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Casual">Casual</option>
+                                    <option value="Consultant">Consultant</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group  col-md-6">
+                            <label for="ddlDepartment" class="col-sm-4 control-label">Department&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlDepartment" name="ddlDepartment" onchange="BindDesignationList(0)" tabindex="15" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6">
+                            <label for="ddlDesignation" class="col-sm-4 control-label">Designation&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlDesignation" name="ddlDesignation" tabindex="16" class="form-control"></select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="txtDOL" class="col-sm-4 control-label">Date Of Leaving</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtDOL" name="txtDOL" tabindex="17" placeholder="Enter Employee Date of Leaving" type="text" maxlength="50" />
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6">
+                            <div class="col-sm-8">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="tabs-3">
+                    <div class="col-md-12 ftop">
+                        <div class="form-group  col-md-6">
+                            <label for="ddlReporingDepartment" class="col-sm-4 control-label">Report To Department</label>
+                            <div class="col-sm-8">
+                                <select id="ddlReporingDepartment" name="ddlReporingDepartment" onchange="BindReportingDesignationList(0)" tabindex="1" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6">
+                            <label for="ddlReportingDesignation" class="col-sm-4 control-label">Report To Designation</label>
+                            <div class="col-sm-8">
+                                <select id="ddlReportingDesignation" name="ddlReportingDesignation" tabindex="2" class="form-control"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 ftop">
+                        <div class="form-group  col-md-6">
+                            <label for="txtReportingEmployeeName" class="col-sm-4 control-label">Report To Employee</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtReportingEmployeeName" name="txtReportingEmployeeName" tabindex="3" placeholder="Enter Report to Employee" type="text" maxlength="100" />
+                                <input type="hidden" id="hdnReportingEmployeeId" name="hdnReportingEmployeeId" value="0" />
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6">
+                            <div class="col-sm-8">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="tabs-4">
+                    <div class="col-md-12 ftop">
+                        <div class="form-group col-md-6">
+                            <label for="txtBasicPay" class="col-sm-4 control-label">Basic Pay&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number" id="txtBasicPay" name="txtBasicPay" onkeyup="checkDec(this); CalculateSalary();" tabindex="1" placeholder="Enter Employee Basic Pay" type="text" maxlength="12" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtOTRate" class="col-sm-4 control-label">OT Rate</label>
+                            <div class="col-sm-8 ">
+                                <input class="form-control  input-number" id="txtOTRate" name="txtOTRate" onkeyup="checkDec(this); " tabindex="2" placeholder="Enter Over Time Rate" type="text" maxlength="10" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <fieldset class="scheduler-border">
+                                <legend class="scheduler-border">Allowance(s)</legend>
+                                <div class="form-group">
+                                    <label for="txtHRA" class="col-sm-4 control-label">HRA</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control calcSalary input-number " id="txtHRA" name="txtHRA" onkeyup="checkDec(this); CalculateSalary();" tabindex="3" placeholder="Enter HRA" type="text" maxlength="12" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtConveyanceAllow" class="col-sm-4 control-label">Conveyance Allow.</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control calcSalary input-number" id="txtConveyanceAllow" onkeyup="checkDec(this); CalculateSalary();" name="txtConveyanceAllow" tabindex="4" placeholder="Enter Conveyance Allowance" type="text" maxlength="12" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtSpecialAllow" class="col-sm-4 control-label">Special Allow.</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control calcSalary input-number" id="txtSpecialAllow" onkeyup="checkDec(this); CalculateSalary();" name="txtSpecialAllow" tabindex="5" placeholder="Enter Special Allowance" type="text" maxlength="12" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtMedicalAllow" class="col-sm-4 control-label">Medical Allow.</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control calcSalary input-number" id="txtMedicalAllow" onkeyup="checkDec(this); CalculateSalary();" name="txtMedicalAllow" tabindex="5" placeholder="Enter Medical Allowance" type="text" maxlength="12" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtChildEduAllow" class="col-sm-4 control-label">Child Edu. Allow.</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control calcSalary input-number" id="txtChildEduAllow" onkeyup="checkDec(this); CalculateSalary();" name="txtChildEduAllow" tabindex="5" placeholder="Enter Children Education Allowance" type="text" maxlength="12" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtLTA" class="col-sm-4 control-label">LTA/LTC</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control calcSalary input-number" id="txtLTA" onkeyup="checkDec(this); CalculateSalary();" name="txtLTA" tabindex="5" placeholder="Enter LTA" type="text" maxlength="12" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtOtherAllow" class="col-sm-4 control-label">Other Allow.</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control calcSalary input-number " onkeyup="checkDec(this); CalculateSalary();" id="txtOtherAllow" name="txtOtherAllow" tabindex="6" placeholder="Enter Other Allowance" type="text" maxlength="12" />
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-md-6">
+                            <fieldset class="scheduler-border">
+                                <legend class="scheduler-border">Deduction(s)</legend>
+                                <div class="form-group">
+                                    <label for="txtEmployeePF" class="col-sm-4 control-label">Employee PF</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control calcSalary input-number" onkeyup="checkDec(this); CalculateSalary();" id="txtEmployeePF" name="txtEmployeePF" tabindex="7" placeholder="Enter Employee PF Contribution" type="text" maxlength="12" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtEmployeeESI" class="col-sm-4 control-label">Employee ESI</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control calcSalary input-number" onkeyup="checkDec(this); CalculateSalary();" id="txtEmployeeESI" name="txtEmployeeESI" tabindex="7" placeholder="Enter Employee ESI Contribution" type="text" maxlength="12" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtProfessionalTax" class="col-sm-4 control-label">Professional Tax</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control calcSalary input-number" onkeyup="checkDec(this); CalculateSalary();" id="txtProfessionalTax" name="txtProfessionalTax" tabindex="7" placeholder="Enter Professional Tax" type="text" maxlength="12" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtOtherDeduction" class="col-sm-4 control-label">Other Deduction</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control calcSalary input-number" onkeyup="checkDec(this); CalculateSalary();" id="txtOtherDeduction" name="txtOtherDeduction" tabindex="7" placeholder="Enter Other Deduction" type="text" maxlength="12" />
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="col-md-12 ftop">
+                        <div class="form-group col-md-6">
+                            <label for="txtEmployerPF" class="col-sm-4 control-label">Employer PF</label>
+                            <div class="col-sm-8">
+                                <input class="form-control calcSalary input-number" id="txtEmployerPF" name="txtEmployerPF" onkeyup="checkDec(this); CalculateSalary();" placeholder="Enter Employer PF Contribution" tabindex="8" type="text" maxlength="12" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtEmployerESI" class="col-sm-4 control-label">Employer ESI</label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number" id="txtEmployerESI" name="txtEmployerESI" onkeyup="checkDec(this); CalculateSalary();" placeholder="Enter Employer ESI Contribution" tabindex="8" type="text" maxlength="12" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="txtPayableSalary" class="col-sm-4 control-label">Payable Salary</label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number" id="txtPayableSalary" name="txtPayableSalary" placeholder="Total Salary" tabindex="8" type="text" maxlength="12" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtNetCTC" class="col-sm-4 control-label">Net CTC</label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number" id="txtNetCTC" name="txtNetCTC" placeholder="Net CTC" tabindex="8" type="text" maxlength="12" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row col-sm-12 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="26" onclick="SaveData(1)" type="button" border="0">&nbsp;&nbsp;
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="26" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">&nbsp;&nbsp;
+                        <input class="btn btn-success" type="button" id="btnReset" tabindex="27" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;
+                        <a class="btn btn-success" id="btnList" tabindex="28" href="@Url.Content("~/Dashboard/EssDashboard")">Back To ESS</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+      
+    </form>
+</section>
+
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/Employee/AddEmployeeProfile.js"></script>

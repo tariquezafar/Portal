@@ -1,0 +1,77 @@
+﻿@model List<Portal.Core.ViewModel.BankReconcilationDetailViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:5px;background-color:white;">
+        <table class="table table-bordered table-hover" id="tblBankReconcilationList1">
+            <thead>
+                <tr>
+                   
+                    <th><center>Narration</center></th>
+                    <th><center>Ref. No.</center></th>
+                    <th><center>Ref. Date</center></th>
+                    <th><center>Cheque No.</center></th>
+                    <th><center>Amount</center></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    
+                    <tr class="success">
+                        <td>@item.BankRecoNarration
+                            <input type="hidden" id="hdnBankRecoDetailId" value="@item.BankRecoDetailId" />
+                            <input type="hidden" id="hdnNarration" value="@item.BankRecoNarration" />
+                            <input type="hidden" id="hdnRefNo" value="@item.RefNo" />
+                            <input type="hidden" id="hdnRefDate" value="@item.RefDate" />
+                            <input type="hidden" id="hdnChequeRefNo" value="@item.ChequeRefNo" />
+                            <input type="hidden" id="hdnAmount" value="@item.Amount" />
+                            <input type="hidden" id="hdnTrnType" value="@item.TrnType" />    
+                        
+                        </td>
+                        <td>@item.RefNo</td>
+                        <td>@item.RefDate</td>
+                        <td>@item.ChequeRefNo</td>
+                        <td>@item.Amount</td>
+                    </tr>
+                    
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+
+        <script>
+            //$(document).ready(function () {
+            //    $('#tblCountryList').paging({
+            //        limit: 10,
+            //        rowDisplayStyle: 'block',
+            //        activePage: 0,
+            //        rows: []
+            //    });
+
+            //});
+        </script>
+        <style>
+            .btn-success a {
+                background-color: #446abc !important;
+                border-color: #233e79 !important;
+                display: -webkit-inline-box;
+                padding: 5px;
+            }
+        </style>

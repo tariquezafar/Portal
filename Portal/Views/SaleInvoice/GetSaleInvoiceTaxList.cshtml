@@ -1,0 +1,76 @@
+﻿@model List<Portal.Core.ViewModel.SaleInvoiceTaxViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblTaxList">
+            <thead>
+                <tr>
+                    <th style="display:none">S. No.</th>
+                    <th style="text-align:center">Tax Name</th>
+                    <th style="text-align:center">Tax Percentage</th>
+                    <th style="text-align:center">Tax Amount</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="display:none">
+                         @item.TaxSequenceNo
+                         <input type="hidden" id="hdnTaxSequenceNo" value="@item.TaxSequenceNo" />
+                        </td>
+                        <td>@item.TaxName
+                        <input type="hidden" id="hdnSITaxDetailId" value="@item.InvoiceTaxDetailId" />
+                        <input type="hidden" id="hdnTaxId" value="@item.TaxId" />
+                            <input type="hidden" id="hdnTaxName" value="@item.TaxName" />
+                        </td>
+                        <td>@item.TaxPercentage
+                        <input type="hidden" id="hdnTaxPercentage" value="@item.TaxPercentage" />
+                            <input type="hidden" id="hdnTaxAmount" value="@item.TaxAmount" />
+
+                            <input type="hidden" id="hdnSurchargeName_1" value="@item.SurchargeName_1" />
+                            <input type="hidden" id="hdnSurchargePercentage_1" value="@item.SurchargePercentage_1" />
+                            <input type="hidden" id="hdnSurchargeAmount_1" value="@item.SurchargeAmount_1" />
+
+                            <input type="hidden" id="hdnSurchargeName_2" value="@item.SurchargeName_2" />
+                            <input type="hidden" id="hdnSurchargePercentage_2" value="@item.SurchargePercentage_2" />
+                            <input type="hidden" id="hdnSurchargeAmount_2" value="@item.SurchargeAmount_2" />
+
+                            <input type="hidden" id="hdnSurchargeName_3" value="@item.SurchargeName_3" />
+                            <input type="hidden" id="hdnSurchargePercentage_3" value="@item.SurchargePercentage_3" />
+                            <input type="hidden" id="hdnSurchargeAmount_3" value="@item.SurchargeAmount_3" />
+                        </td>
+                        <td id="tdTaxAmount">@item.TaxAmount
+                            
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" onclick="EditTaxRow(this);" href="#"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-trash"  onclick="RemoveTaxRow(this)" href="#"></a>
+                        </td>
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblTaxList">
+            <thead>
+                <tr>
+                    <th style="display:none">S. No.</th>
+                    <th>Tax Name</th>
+                    <th>Tax Percentage</th>
+                    <th>Tax Amount</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

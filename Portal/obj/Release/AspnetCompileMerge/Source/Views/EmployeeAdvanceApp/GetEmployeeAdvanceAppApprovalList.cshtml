@@ -1,0 +1,122 @@
+﻿@model List<Portal.Core.ViewModel.HR_EmployeeAdvanceApplicationViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+
+    table tr:nth-child(2n+1) {
+        background-color: #dff0d8;
+    }
+
+    table tr:nth-child(2n) {
+        background-color: #dff0d8;
+    }
+</style>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblEmployeeAdvanceApplicationList">
+            <thead>
+                <tr>
+                    <th align="center">Action</th>
+                    <th>Application No.</th>
+                    <th>Application Date</th>
+                    <th>Employee </th>
+                    <th>Advance Type</th>
+                    <th>Advance Amount</th>
+                    <th>Advance Installment Amount</th>
+                    <th>Advance Reason</th>
+                    <th>Advance Start Date</th>
+                    <th>Advance End Date</th>
+                    <th>Advance Status</th> 
+                    <th>Approve/ Reject By</th>
+                    <th>Approve/ Reject Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/EmployeeAdvanceApp/ApproveEmployeeAdvanceApp?applicationId=@item.ApplicationId&AccessMode=3"></a>
+                            @if (item.AdvanceStatus.ToUpper() == "PENDING")
+                            {
+                                <a style="color:white" class="fa fa-pencil-square-o" href="~/EmployeeAdvanceApp/ApproveEmployeeAdvanceApp?applicationId=@item.ApplicationId&AccessMode=2"></a>
+                            }
+                        </td>
+
+                        <td>@item.ApplicationNo</td>
+                        <td>@item.ApplicationDate</td>
+                        <td>@item.EmployeeName</td>
+                        <td>@item.AdvanceTypeName</td>
+                        <td>@item.AdvanceAmount</td>
+                        <td>@item.AdvanceInstallmentAmount</td>
+                        <td>@item.AdvanceReason</td>
+                        <td>@item.AdvanceStartDate</td>
+                        <td>@item.AdvanceEndDate</td>
+                        @if (item.AdvanceStatus.ToUpper() == "PENDING")
+                        {
+                            <td style="background-color:aquamarine;">
+                                @item.AdvanceStatus
+                            </td>
+                        }
+                        else if (item.AdvanceStatus.ToUpper() == "REJECTED")
+                        {
+                            <td style="background-color:red;color:white">
+                                @item.AdvanceStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green;color:white">
+                                @item.AdvanceStatus
+                            </td>
+
+                        }
+
+ 
+                        <td>@item.ApprovedByUserName</td>
+                        <td>@item.ApproveDate @item.RejectDate</td>
+                     
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblAdvanceList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

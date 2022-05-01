@@ -1,0 +1,124 @@
+12:35:06 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetProductAvailableStock
+Error Line No : 7696
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+--------------------------------------------------------------------------------------------------------------------------------
+
+12:35:06 PM
+Source : Portal.Core.StockLedgerBL
+Method Name : GetProductAvailableStock
+Error Line No : 59
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:35:06 PM
+Source : Portal.Controllers.ProductController
+Method Name : GetProductAvailableStock
+Error Line No : 285
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:22:20 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 296
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:22:20 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetQuatationCountList
+Error Line No : 238
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:22:20 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 742
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:22:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetESSEmployeeDetail
+Error Line No : 662
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:22:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 267
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:00:31 PM
+Source : Portal.Controllers.DashboardController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:25:48 PM
+Source : Portal.Controllers.DashboardController
+Method Name : ModuleDashboard
+Error Line No : 24
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:43:01 PM
+Source : Portal.Controllers.DashboardController
+Method Name : PurchaseDashboard
+Error Line No : 143
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:43:09 PM
+Source : Portal.Controllers.DashboardController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentNullException
+Details: Value cannot be null.
+Parameter name: source
+---------------------------------------------------------------------------------------------------------------------------
+
+18:45:37 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:45:37 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:45:58 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LeadReportDataSet" targetNamespace="http://tempuri.org/LeadReportDataSet.xsd" xmlns:mstns="http://tempuri.org/LeadReportDataSet.xsd" xmlns="http://tempuri.org/LeadReportDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LeadReportDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LeadReportDataSet" msprop:Generator_UserDSName="LeadReportDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LeadReport" msprop:Generator_TableClassName="LeadReportDataTable" msprop:Generator_TableVarName="tableLeadReport" msprop:Generator_RowChangedName="LeadReportRowChanged" msprop:Generator_TablePropName="LeadReport" msprop:Generator_RowDeletingName="LeadReportRowDeleting" msprop:Generator_RowChangingName="LeadReportRowChanging" msprop:Generator_RowEvHandlerName="LeadReportRowChangeEventHandler" msprop:Generator_RowDeletedName="LeadReportRowDeleted" msprop:Generator_RowClassName="LeadReportRow" msprop:Generator_UserTableName="LeadReport" msprop:Generator_RowEvArgName="LeadReportRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LeadCode" msprop:Generator_ColumnVarNameInTable="columnLeadCode" msprop:Generator_ColumnPropNameInRow="LeadCode" msprop:Generator_ColumnPropNameInTable="LeadCodeColumn" msprop:Generator_UserColumnName="LeadCode" type="xs:string" minOccurs="0" />
+              <xs:element name="CompanyName" msprop:Generator_ColumnVarNameInTable="columnCompanyName" msprop:Generator_ColumnPropNameInRow="CompanyName" msprop:Generator_ColumnPropNameInTable="CompanyNameColumn" msprop:Generator_UserColumnName="CompanyName" type="xs:string" minOccurs="0" />
+              <xs:element name="ContactPersonName" msprop:Generator_ColumnVarNameInTable="columnContactPersonName" msprop:Generator_ColumnPropNameInRow="ContactPersonName" msprop:Generator_ColumnPropNameInTable="ContactPersonNameColumn" msprop:Generator_UserColumnName="ContactPersonName" type="xs:string" minOccurs="0" />
+              <xs:element name="Designation" msprop:Generator_ColumnVarNameInTable="columnDesignation" msprop:Generator_ColumnPropNameInRow="Designation" msprop:Generator_ColumnPropNameInTable="DesignationColumn" msprop:Generator_UserColumnName="Designation" type="xs:string" minOccurs="0" />
+              <xs:element name="AlternateContactNo" msprop:Generator_ColumnVarNameInTable="columnAlternateContactNo" msprop:Generator_ColumnPropNameInRow="AlternateContactNo" msprop:Generator_ColumnPropNameInTable="AlternateContactNoColumn" msprop:Generator_UserColumnName="AlternateContactNo" type="xs:string" minOccurs="0" />
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" type="xs:string" minOccurs="0" />
+              <xs:element name="ContactNo" msprop:Generator_ColumnVarNameInTable="columnContactNo" msprop:Generator_ColumnPropNameInRow="ContactNo" msprop:Generator_ColumnPropNameInTable="ContactNoColumn" msprop:Generator_UserColumnName="ContactNo" type="xs:string" minOccurs="0" />
+              <xs:element name="Fax" msprop:Generator_ColumnVarNameInTable="columnFax" msprop:Generator_ColumnPropNameInRow="Fax" msprop:Generator_ColumnPropNameInTable="FaxColumn" msprop:Generator_UserColumnName="Fax" type="xs:string" minOccurs="0" />
+              <xs:element name="CompanyAddress" msprop:Generator_ColumnVarNameInTable="columnCompanyAddress" msprop:Generator_ColumnPropNameInRow="CompanyAddress" msprop:Generator_ColumnPropNameInTable="CompanyAddressColumn" msprop:Generator_UserColumnName="CompanyAddress" type="xs:string" minOccurs="0" />
+              <xs:element name="CompanyCity" msprop:Generator_ColumnVarNameInTable="columnCompanyCity" msprop:Generator_ColumnPropNameInRow="CompanyCity" msprop:Generator_ColumnPropNameInTable="CompanyCityColumn" msprop:Generator_UserColumnName="CompanyCity" type="xs:string" minOccurs="0" />
+              <xs:element name="StateName" msprop:Generator_ColumnVarNameInTable="columnStateName" msprop:Generator_ColumnPropNameInRow="StateName" msprop:Generator_ColumnPropNameInTable="StateNameColumn" msprop:Generator_UserColumnName="StateName" type="xs:string" minOccurs="0" />
+              <xs:element name="CompanyPinCode" msprop:Generator_ColumnVarNameInTable="columnCompanyPinCode" msprop:Generator_ColumnPropNameInRow="CompanyPinCode" msprop:Generator_ColumnPropNameInTable="CompanyPinCodeColumn" msprop:Generator_UserColumnName="CompanyPinCode" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchAddress" msprop:Generator_ColumnVarNameInTable="columnBranchAddress" msprop:Generator_ColumnPropNameInRow="BranchAddress" msprop:Generator_ColumnPropNameInTable="BranchAddressColumn" msprop:Generator_UserColumnName="BranchAddress" type="xs:string" minOccurs="0" />
+              <xs:element name="City" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_UserColumnName="City" type="xs:string" minOccurs="0" />
+              <xs:element name="PinCode" msprop:Generator_ColumnVarNameInTable="columnPinCode" msprop:Generator_ColumnPropNameInRow="PinCode" msprop:Generator_ColumnPropNameInTable="PinCodeColumn" msprop:Generator_UserColumnName="PinCode" type="xs:string" minOccurs="0" />
+              <xs:element name="LeadStatusName" msprop:Generator_ColumnVarNameInTable="columnLeadStatusName" msprop:Generator_ColumnPropNameInRow="LeadStatusName" msprop:Generator_ColumnPropNameInTable="LeadStatusNameColumn" msprop:Generator_UserColumnName="LeadStatusName" type="xs:string" minOccurs="0" />
+              <xs:element name="LeadSourceName" msprop:Generator_ColumnVarNameInTable="columnLeadSourceName" msprop:Generator_ColumnPropNameInRow="LeadSourceName" msprop:Generator_ColumnPropNameInTable="LeadSourceNameColumn" msprop:Generator_UserColumnName="LeadSourceName" type="xs:string" minOccurs="0" />
+              <xs:element name="CreatedByName" msprop:Generator_ColumnVarNameInTable="columnCreatedByName" msprop:Generator_ColumnPropNameInRow="CreatedByName" msprop:Generator_ColumnPropNameInTable="CreatedByNameColumn" msprop:Generator_UserColumnName="CreatedByName" type="xs:string" minOccurs="0" />
+              <xs:element name="CreatedDate" msprop:Generator_ColumnVarNameInTable="columnCreatedDate" msprop:Generator_ColumnPropNameInRow="CreatedDate" msprop:Generator_ColumnPropNameInTable="CreatedDateColumn" msprop:Generator_UserColumnName="CreatedDate" type="xs:string" minOccurs="0" />
+              <xs:element name="ModifiedByName" msprop:Generator_ColumnVarNameInTable="columnModifiedByName" msprop:Generator_ColumnPropNameInRow="ModifiedByName" msprop:Generator_ColumnPropNameInTable="ModifiedByNameColumn" msprop:Generator_UserColumnName="ModifiedByName" type="xs:string" minOccurs="0" />
+              <xs:element name="ModifiedDate" msprop:Generator_ColumnVarNameInTable="columnModifiedDate" msprop:Generator_ColumnPropNameInRow="ModifiedDate" msprop:Generator_ColumnPropNameInTable="ModifiedDateColumn" msprop:Generator_UserColumnName="ModifiedDate" type="xs:string" minOccurs="0" />
+              <xs:element name="LeadTypeName" msprop:Generator_ColumnVarNameInTable="columnLeadTypeName" msprop:Generator_ColumnPropNameInRow="LeadTypeName" msprop:Generator_ColumnPropNameInTable="LeadTypeNameColumn" msprop:Generator_UserColumnName="LeadTypeName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

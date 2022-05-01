@@ -1,0 +1,2832 @@
+10:32:29 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:32:30 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:55:46 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:55:46 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:55:53 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 25815
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:55:53 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:55:53 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1567
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:56:12 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:56:12 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:56:12 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:56:12 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:56:12 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:56:13 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:56:13 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:56:13 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:58:36 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:58:36 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:58:44 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:58:44 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:58:44 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:58:45 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:58:45 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:58:46 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:01:57 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:01:57 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:01:59 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:01:59 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:01:59 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:02:01 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:02:01 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:02:01 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:04:26 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditInvoicePackingList
+Error Line No : 21206
+Exception Type : System.Data.SqlClient.SqlException
+Details: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:04:26 AM
+Source : Portal.Core.InvoicePackingListBL
+Method Name : AddEditInvoicePackingList
+Error Line No : 59
+Exception Type : System.Data.SqlClient.SqlException
+Details: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:04:26 AM
+Source : Portal.Controllers.InvoicePackingListController
+Method Name : AddEditInvoicePackingList
+Error Line No : 71
+Exception Type : System.Data.SqlClient.SqlException
+Details: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:00 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:00 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:01 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 25815
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:01 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:01 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1567
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:15:20 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:15:20 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:15:20 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:15:21 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:15:21 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:15:22 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:15:52 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:15:52 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:15:55 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:15:55 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:15:55 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:15:58 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:15:58 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:15:58 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:16:23 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:16:23 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:16:24 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:16:24 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:16:24 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:16:25 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:16:25 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:16:25 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:18:11 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:18:11 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:40:53 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:40:53 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:40:55 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:40:55 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:40:55 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:40:57 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:40:57 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:40:57 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:45:55 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:45:55 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:17 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:17 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:17 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:19 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:19 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:19 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:41 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:41 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:45 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 25746
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:45 AM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:45 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1515
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:48 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:48 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:52 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 25815
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:52 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:52 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1567
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:47 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:47 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:48 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:48 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:48 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:49 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:49 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:49 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:53:56 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:53:56 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:54:14 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:54:14 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:44 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:44 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:45 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 25815
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:45 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:46 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1567
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:17:38 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:17:38 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:24:12 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:24:12 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:24:52 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:24:52 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:24:56 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:24:56 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:24:56 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:25:01 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:25:01 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:25:01 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:25:04 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:25:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:30:43 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:30:43 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:33:27 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:33:27 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:00 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:00 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:28 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:28 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:30 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 25815
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:30 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:30 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1567
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:36 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:36 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:38 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 25746
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:38 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:38 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1515
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:46 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:46 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:47 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:47 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:47 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:49 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:49 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:49 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:39:36 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:39:36 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:39:36 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 25746
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:39:36 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:39:37 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1515
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:39:54 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:39:54 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:39:59 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:39:59 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:40:13 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:40:13 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:41:06 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:41:06 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:42:30 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:42:30 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:42:59 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:00 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:27 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:27 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:28 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboardUsersDetails
+Error Line No : 358
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetUserDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:28 PM
+Source : Portal.Core.UserBL
+Method Name : GetDashboardUsersDetails
+Error Line No : 407
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetUserDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:28 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetAdminDashboardUsersList
+Error Line No : 1393
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetUserDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:29 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboardRolesDetails
+Error Line No : 714
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetRoleDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:29 PM
+Source : Portal.Core.RoleBL
+Method Name : GetDashboardRolesDetails
+Error Line No : 140
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetRoleDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:29 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetAdminDashboardRolesList
+Error Line No : 1377
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetRoleDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:32 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:32 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:33 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:33 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:33 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:36 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:36 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:36 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:38 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:38 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:38 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:40 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:40 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:40 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:42 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:42 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:42 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:01 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:01 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:15 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:15 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:21 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:45 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:45 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:46:23 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:46:23 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:23 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:23 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:28 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:28 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:29 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:30 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:30 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:30 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:52:28 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+12:52:28 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+12:52:28 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+12:53:40 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+12:53:40 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+12:53:40 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+12:56:08 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:56:08 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:56:09 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:56:09 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:56:09 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:56:10 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13888
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:56:10 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:56:10 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:59:10 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:59:10 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:00:34 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:00:34 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:00:38 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:00:38 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:50 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:50 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:43:24 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:43:24 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:06:17 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetGLList
+Error Line No : 10098
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetGLs has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:06:17 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLList
+Error Line No : 109
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetGLs has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:06:17 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLList
+Error Line No : 167
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetGLs has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:09:25 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:09:25 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:12:31 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:12:31 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:18:10 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:18:11 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:20:40 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:20:40 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:22:03 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:22:03 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:37:17 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:37:17 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:50:45 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:50:45 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:50:53 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 25778
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:50:53 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:50:53 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1515
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:51:56 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:51:56 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:54:31 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:54:31 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:58:17 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:58:17 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:03:40 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:03:40 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:11:34 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+15:11:34 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+15:11:34 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+15:12:58 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+15:12:58 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+15:12:58 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:02 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:02 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:05 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboardUsersDetails
+Error Line No : 358
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetUserDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:05 PM
+Source : Portal.Core.UserBL
+Method Name : GetDashboardUsersDetails
+Error Line No : 407
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetUserDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:05 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetAdminDashboardUsersList
+Error Line No : 1393
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetUserDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:05 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboardRolesDetails
+Error Line No : 714
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetRoleDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:05 PM
+Source : Portal.Core.RoleBL
+Method Name : GetDashboardRolesDetails
+Error Line No : 140
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetRoleDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:05 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetAdminDashboardRolesList
+Error Line No : 1377
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetRoleDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:23 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:23 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:42 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13943
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:42 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:42 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:42 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:42 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:44 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13943
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:44 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:44 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:24:37 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:24:37 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:40:27 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:40:27 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:09 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:09 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:10 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 25870
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:10 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:10 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1567
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:54:03 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:54:03 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:50:57 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:50:57 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:00 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:00 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:03 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:03 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:21:38 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:21:38 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:21:49 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:21:49 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:21:58 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:21:58 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:24:05 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:24:05 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:24:08 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:24:08 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:24:08 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:24:08 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:27:29 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:27:29 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:30:22 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:30:22 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:49:56 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:49:56 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:01 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:01 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:54:00 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:54:00 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:58:33 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:58:33 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:59:11 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:59:11 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:00:45 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:00:45 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:03:14 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:03:14 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:19:57 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:19:57 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:40 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:40 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:36:36 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:36:36 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:37:35 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:37:35 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:39:09 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:39:09 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:39:09 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboardUsersDetails
+Error Line No : 358
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetUserDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:39:09 PM
+Source : Portal.Core.UserBL
+Method Name : GetDashboardUsersDetails
+Error Line No : 407
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetUserDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:39:09 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetAdminDashboardUsersList
+Error Line No : 1393
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetUserDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:39:10 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboardRolesDetails
+Error Line No : 714
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetRoleDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:39:10 PM
+Source : Portal.Core.RoleBL
+Method Name : GetDashboardRolesDetails
+Error Line No : 140
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetRoleDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:39:10 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetAdminDashboardRolesList
+Error Line No : 1377
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetRoleDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:40:23 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboardUsersDetails
+Error Line No : 358
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetUserDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:40:23 PM
+Source : Portal.Core.UserBL
+Method Name : GetDashboardUsersDetails
+Error Line No : 407
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetUserDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:40:23 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetAdminDashboardUsersList
+Error Line No : 1393
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetUserDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:40:23 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboardRolesDetails
+Error Line No : 714
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetRoleDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:40:23 PM
+Source : Portal.Core.RoleBL
+Method Name : GetDashboardRolesDetails
+Error Line No : 140
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetRoleDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:40:23 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetAdminDashboardRolesList
+Error Line No : 1377
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetRoleDetails' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:41:17 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:41:17 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

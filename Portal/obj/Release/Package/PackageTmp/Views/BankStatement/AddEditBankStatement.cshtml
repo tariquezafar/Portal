@@ -1,0 +1,242 @@
+﻿@using System.Data;
+
+@{
+    ViewBag.Title = "Add Book";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend {
+        display: block;
+        width: 37%;
+        padding: 0;
+        margin-bottom: 20px;
+        font-size: 21px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+</style>
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AccountDashboard">Account</a> >> Add/Edit Bank Statement</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditLeadSource" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+                <div class="col-md-12 ftop">
+                    <div class="form-group col-md-4">
+                        <label for="txtBankStatementNo" class="col-sm-4 control-label">Bank Statement No.</label>
+
+                        <div class="col-sm-8">
+                            <input id="txtBankStatementNo" name="txtBankStatementNo" tabindex="1" placeholder="Auto Generated Bank Statement No" type="text" class="form-control" maxlength="50" />
+                            <a style="display:none;color:#fff;" tabindex="4" class="btn btn-success" id="btnAddNew" href="@Url.Content("~/BankStatement/AddEditBankStatement")">New</a>
+                            <input id="hdnBankStatementId" type="hidden" value="@ViewData["bankStatementID"]" />
+                            <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                        </div>
+
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="txtBankStatementDate" class="col-sm-4 control-label">Bank Statement Date</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtBankStatementDate" name="txtBankStatementDate" tabindex="2" placeholder="Select Bank Statement Date" value="@ViewData["currentDate"]" type="text" maxlength="50" />
+                            <input id="hdnCurrentDate" name="hdnCurrentDate" value="@ViewData["currentDate"]" type="hidden" />
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="txtBankBookName" class="col-sm-4 control-label">Bank Name&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtBankBookName" name="txtBankBookName" tabindex="3" placeholder="Enter Bank Name" type="text" maxlength="150" />
+                            <input id="hdnBankBookId" type="hidden" value="0" />
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group col-md-4">
+                        <label for="txtBookBranch" class="col-sm-4 control-label">Bank Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtBankBranch" name="txtBankBranch" tabindex="5" placeholder="Enter Bank Branch" type="text" maxlength="150" />
+                        </div>
+                    </div>
+                
+                    <div class="form-group col-md-4">
+                        <label for="txtBankStatementFromDate" class="col-sm-4 control-label">Bank Statement FromDate&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtBankStatementFromDate" name="txtBankStatementFromDate" tabindex="6" placeholder="Bank Statement From Date" type="text" value="@ViewData["monthStartDate"]" maxlength="80" />
+                            
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="txtBankStatementToDate" class="col-sm-4 control-label">Bank Statement ToDate&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtBankStatementToDate" name="txtBankStatementToDate" tabindex="7" placeholder="Bank Statement To Date" type="text" value="@ViewData["monthEndDate"]" maxlength="80" />
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group col-md-4 ">
+                        <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="8" class="form-control"></select>
+                            <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                            <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="txtRemarks" class="col-sm-4 control-label">Remarks</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" id="txtRemarks" name="txtRemarks" tabindex="9" rows="2" cols="50" maxlength="500"> </textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12" id="divCreated" style="display:none;">
+                    <div class="form-group col-md-6">
+                        <label for="txtCreatedBy" class="col-sm-4 control-label">Created By</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtCreatedBy" name="txtCreatedBy" tabindex="10" placeholder="Created By User Name" type="text" maxlength="100" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="txtCreatedDate" class="col-sm-4 control-label">Created Date</label>
+                        <div class="col-sm-8 ">
+                            <input class="form-control" id="txtCreatedDate" name="txtCreatedDate" tabindex="11" placeholder="Created Date" type="text" maxlength="50" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12" id="divModified" style="display:none;">
+                    <div class="form-group col-md-6">
+                        <label for="txtModifiedBy" class="col-sm-4 control-label">Modified By</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtModifiedBy" name="txtModifiedBy" tabindex="12" placeholder="Modified By User Name" type="text" maxlength="100" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="txtModifiedDate" class="col-sm-4 control-label">Modified Date</label>
+                        <div class="col-sm-8 ">
+                            <input class="form-control" id="txtModifiedDate" name="txtModifiedDate" tabindex="13" placeholder="Modified Date" type="text" maxlength="50" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12  ftop">
+                    <div class="form-group col-md-4">
+
+                    </div>
+                    <div class="form-group col-md-4" style="background-color:yellow">
+                        <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Document(s) Detail</b></label></h4>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input class="btn btn-success editonly" value="Add Bank Statement" tabindex="14" alt="Add Bank Statement" id="btnAddNewBankStatement" onclick="ShowHideDocumentPanel(1)" type="button" border="0">
+                    </div>
+                </div>
+                <div class="col-md-12 documentsection" style="display:none;">
+                    <div class="form-group  col-md-12">
+                        <label for="lnkDownloadSample" class="col-sm-2 control-label">Sample Download</label>
+                        <div class="col-sm-10">
+                            <a class="fa-link" tabindex="15" href="~/Content/SampleUpload/BankStatementDemo.xlsx" target="_blank">Click here to Download Sample Bank Statement Import File</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-12 documentsection" style="display:none;">
+                   
+
+                    <div class="form-group col-md-6">
+                        <label for="FileUpload1" class="col-sm-4 control-label">Upload Bank Statement Files</label>
+                        <div class="col-sm-8">
+                            <input type="file" id="FileUpload1" tabindex="16" name="FileUpload1" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+
+                    </div>
+
+                </div>
+                <div class="col-sm-12 col-lg-12 col-md-12 documentsection" style="display:none;">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Upload Bank Statement " alt="Add Document" id="btnAddDocumentTypeTerm" tabindex="17" onclick="SaveBankStatement()" type="button" border="0">
+                            <input class="btn btn-success" value="Upload Bank Statement" style="display:none;" tabindex="17" alt="Update Document" id="btnUpdateDocument" onclick="SaveBankStatement()" type="button" border="0">
+
+                            <input class="btn btn-success" type="button" id="btnCancelDocument" tabindex="18" onclick="ShowHideDocumentPanel(2)" value="Cancel" />
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                <div class="col-sm-12 col-lg-12 col-md-12">
+                    <div id="divBankStatementList">
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="row col-sm-12 col-lg-12 col-md-12 ftop ">
+                <div class="col-md-3">
+                    <label for="ddlBankStatementStatus" class="col-sm-4 control-label">Save Mode</label>
+                    <div class="col-sm-8">
+                        <select id="ddlBankStatementStatus" name="ddlBankStatementStatus" tabindex="19" class="form-control">
+                            <option selected="selected" value="Draft">Draft</option>
+                            <option value="Final">Final</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="20" onclick="SaveData();" type="button" border="0">
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="20" alt="Update" id="btnUpdate" onclick="SaveData()" type="button" border="0">
+                        @*<input class="btn btn-success" type="button" id="btnReset" tabindex="22" onclick="ClearFields()" value="Reset" />*@
+                        <a class="btn btn-success" id="btnReset" tabindex="23" href="@Url.Content("~/BankStatement/AddEditBankStatement")">Reset</a>
+                        <a class="btn btn-success" id="btnList" tabindex="24" href="@Url.Content("~/BankStatement/ListBankStatement")">Search Bank Statement</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+
+
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" tabindex="21" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" tabindex="22" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" tabindex="22" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/BankStatement/AddBankStatement.js"></script>

@@ -1,0 +1,255 @@
+17:52:47 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'voucherId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetBankVoucherEntryList(System.Collections.Generic.List`1[Portal.Core.ViewModel.VoucherDetailViewModel], Int64)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+--------------------------------------------------------------------------------------------------------------------------------
+
+17:55:16 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'voucherId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetBankVoucherEntryList(System.Collections.Generic.List`1[Portal.Core.ViewModel.VoucherDetailViewModel], Int64)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+17:58:02 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'voucherId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetBankVoucherEntryList(System.Collections.Generic.List`1[Portal.Core.ViewModel.VoucherDetailViewModel], Int64)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:10:42 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'voucherId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetBankVoucherEntryList(System.Collections.Generic.List`1[Portal.Core.ViewModel.VoucherDetailViewModel], Int64)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:18:08 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'voucherId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetBankVoucherEntryList(System.Collections.Generic.List`1[Portal.Core.ViewModel.VoucherDetailViewModel], Int64)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:20:23 PM
+Source : Portal.DAL.DBInterface
+Method Name : GetBookList
+Error Line No : 0
+Exception Type : System.Reflection.TargetException
+Details: Non-static field requires a target.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:21:12 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'voucherId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetBankVoucherEntryList(System.Collections.Generic.List`1[Portal.Core.ViewModel.VoucherDetailViewModel], Int64)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:28:38 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'voucherId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetBankVoucherEntryList(System.Collections.Generic.List`1[Portal.Core.ViewModel.VoucherDetailViewModel], Int64)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+19:00:26 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankVoucher
+Error Line No : 6238
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankVoucher' expects parameter '@VoucherMode', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:00:26 PM
+Source : Portal.Core.VoucherBL
+Method Name : AddEditBankVoucher
+Error Line No : 124
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankVoucher' expects parameter '@VoucherMode', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:00:26 PM
+Source : Portal.Controllers.VoucherController
+Method Name : AddEditBankVoucher
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankVoucher' expects parameter '@VoucherMode', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:00:40 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankVoucher
+Error Line No : 6238
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankVoucher' expects parameter '@VoucherMode', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:00:40 PM
+Source : Portal.Core.VoucherBL
+Method Name : AddEditBankVoucher
+Error Line No : 124
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankVoucher' expects parameter '@VoucherMode', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:00:41 PM
+Source : Portal.Controllers.VoucherController
+Method Name : AddEditBankVoucher
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankVoucher' expects parameter '@VoucherMode', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:00:45 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankVoucher
+Error Line No : 6238
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankVoucher' expects parameter '@VoucherMode', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:00:45 PM
+Source : Portal.Core.VoucherBL
+Method Name : AddEditBankVoucher
+Error Line No : 124
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankVoucher' expects parameter '@VoucherMode', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:00:45 PM
+Source : Portal.Controllers.VoucherController
+Method Name : AddEditBankVoucher
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankVoucher' expects parameter '@VoucherMode', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:03:17 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthorizeUser
+Error Line No : 90
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:03:44 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:04:35 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankVoucher
+Error Line No : 6238
+Exception Type : System.Data.SqlClient.SqlException
+Details: Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:04:35 PM
+Source : Portal.Core.VoucherBL
+Method Name : AddEditBankVoucher
+Error Line No : 124
+Exception Type : System.Data.SqlClient.SqlException
+Details: Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:04:35 PM
+Source : Portal.Controllers.VoucherController
+Method Name : AddEditBankVoucher
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:04:42 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankVoucher
+Error Line No : 6238
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankVoucher' expects parameter '@VoucherMode', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:04:42 PM
+Source : Portal.Core.VoucherBL
+Method Name : AddEditBankVoucher
+Error Line No : 124
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankVoucher' expects parameter '@VoucherMode', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:04:42 PM
+Source : Portal.Controllers.VoucherController
+Method Name : AddEditBankVoucher
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankVoucher' expects parameter '@VoucherMode', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:07:03 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankVoucher
+Error Line No : 6238
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankVoucher' expects parameter '@VoucherMode', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:07:09 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankVoucher
+Error Line No : 6238
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankVoucher' expects parameter '@VoucherMode', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:07:50 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankVoucher
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditJournalVoucher' expects parameter '@VoucherMode', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:12:48 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankVoucher
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditJournalVoucher' expects parameter '@VoucherMode', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:12:48 PM
+Source : Portal.Core.JournalVoucherBL
+Method Name : AddEditJournalVoucher
+Error Line No : 124
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditJournalVoucher' expects parameter '@VoucherMode', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:12:48 PM
+Source : Portal.Controllers.JournalVoucherController
+Method Name : AddEditJournalVoucher
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditJournalVoucher' expects parameter '@VoucherMode', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+

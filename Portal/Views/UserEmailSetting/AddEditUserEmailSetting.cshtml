@@ -1,0 +1,190 @@
+﻿@{
+    ViewBag.Title = "AddEditUserEmailSetting";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display:block;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+    /* allow space for check mark */
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AdminDashboard">Admin</a> >>User Email Setting </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditUserEmailSetting" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="txtUserName" class="col-sm-4 control-label">User Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtUserName" name="txtUserName" tabindex="1" placeholder="Enter User Name" type="text" maxlength="100" />
+                        <input id="hdnUserId" type="hidden" value="0" />
+                        <input id="hdnSettingId" type="hidden" value="@ViewData["userEmailSettingId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtEmail" class="col-sm-4 control-label">SMTP User Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtEmail" name="txtEmail" tabindex="2" placeholder="Enter User Email" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtPassword" class="col-sm-4 control-label">Password&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtPassword" name="txtPassword" tabindex="3" placeholder="Enter Password" type="password" maxlength="50" />
+                        
+                    </div>
+                </div>
+
+                  </div>
+                <div class="col-md-12">
+               <div class="form-group col-md-4">
+                    <label for="txtConfirmPassword" class="col-sm-4 control-label">Confirm Password&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtConfirmPassword" name="txtConfirmPassword" tabindex="4" placeholder="Enter Confirm Password" type="password" maxlength="100" />
+                    </div>
+                </div>
+               <div class="form-group col-md-4">
+                    <label for="txtSmtpServer" class="col-sm-4 control-label">SMTP Server&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtSmtpServer" name="txtSmtpServer" tabindex="5" placeholder="Enter SMTP Server" type="text"  value="webmail.htssolutions.org" maxlength="100" />
+                       
+                    </div>
+                </div>
+
+
+                    <div class="form-group col-md-4">
+                        <label for="txtSmtpDisplayName" class="col-sm-4 control-label">Display Name&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtSmtpDisplayName" name="txtSmtpDisplayName" tabindex="6" placeholder="User Name" type="text" />
+                        </div>
+                    </div>
+
+              
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtSmtpPort" class="col-sm-4 control-label">SMTP Port&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtSmtpPort" name="txtSmtpPort" tabindex="7" placeholder="Enter SMTP Port" type="text" value="25" />
+
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="chkEnableSsl" class="col-sm-4 control-label">Enable Ssl</label>
+                    <div class="col-sm-8">
+                        <input id="chkEnableSsl" name="chkEnableSsl" type="checkbox" tabindex="8" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="chkStatus" class="col-sm-4 control-label">Active Status&nbsp;</label>
+                    <div class="col-sm-8">
+                        <input id="chkStatus" name="chkStatus" type="checkbox" checked="checked" tabindex="9" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="5" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="10" onclick="SaveData(1)" type="button" border="0">&nbsp;&nbsp;
+                            <input class="btn btn-success" value="Update" style="display:none;" tabindex="10" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">&nbsp;&nbsp;
+                            @*<input class="btn btn-success" type="button" id="btnReset" tabindex="11" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
+                            <a class="btn btn-success" id="btnReset" tabindex="13" onclick="ClearFields()" value="Reset">Reset</a>
+                            @*<input class="btn btn-success" type="button" id="btnList" value="Search Company" />*@
+                            <a class="btn btn-success" id="btnList" tabindex="14" href="@Url.Content("~/UserEmailSetting/ListUserEmailSetting")">Search User Email Setting</a>
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex=11"  role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="12"  data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="12"  data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/UserEmailSetting/AddUserEmailSetting.js"></script>

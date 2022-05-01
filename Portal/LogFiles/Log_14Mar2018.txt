@@ -1,0 +1,864 @@
+10:37:16 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:37:16 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:39:29 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:39:29 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:29 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:29 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:34 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:34 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:35 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 223
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:35 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1422
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:38 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:38 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:15 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPOList
+Error Line No : 4025
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "mr.POId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:15 AM
+Source : Portal.Core.POBL
+Method Name : GetPOList
+Error Line No : 390
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "mr.POId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:15 AM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : GetPurchaseOrderList
+Error Line No : 284
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "mr.POId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:18 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPOList
+Error Line No : 4025
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "mr.POId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:18 AM
+Source : Portal.Core.POBL
+Method Name : GetPOList
+Error Line No : 390
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "mr.POId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:18 AM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : GetPurchaseOrderList
+Error Line No : 284
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "mr.POId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:45 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:45 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:47 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 223
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:47 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1422
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:54 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:54 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:43:19 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:43:20 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:43:21 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:43:21 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:29:07 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:29:07 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:30:18 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:30:18 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:13 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:13 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:00:39 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:00:39 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:02:26 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:02:26 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:05:08 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:05:08 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:14:59 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:14:59 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:15:27 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:15:27 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:16:55 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:16:55 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:19 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:44 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:44 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:26 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:26 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:44:01 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:44:01 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:44:43 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:44:43 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:03:59 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:03:59 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:12:36 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:12:36 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:19:33 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:19:33 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:21:15 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:21:15 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:46:44 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:46:44 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:01:42 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:01:42 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:28:52 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCostCenterList
+Error Line No : 10612
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "b.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:28:52 PM
+Source : Portal.Core.CostCenterBL
+Method Name : GetCostCenterList
+Error Line No : 56
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "b.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:28:52 PM
+Source : Portal.Controllers.CostCenterController
+Method Name : GetCostCenterList
+Error Line No : 101
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "b.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:29:40 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:29:40 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:29:45 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCostCenterList
+Error Line No : 10612
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "b.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:29:45 PM
+Source : Portal.Core.CostCenterBL
+Method Name : GetCostCenterList
+Error Line No : 56
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "b.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:29:45 PM
+Source : Portal.Controllers.CostCenterController
+Method Name : GetCostCenterList
+Error Line No : 101
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "b.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:31 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSLList
+Error Line No : 10667
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:31 PM
+Source : Portal.Core.SLBL
+Method Name : GetSLList
+Error Line No : 61
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:31 PM
+Source : Portal.Controllers.SLController
+Method Name : GetSLList
+Error Line No : 101
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:38 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSLList
+Error Line No : 10667
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:38 PM
+Source : Portal.Core.SLBL
+Method Name : GetSLList
+Error Line No : 61
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:38 PM
+Source : Portal.Controllers.SLController
+Method Name : GetSLList
+Error Line No : 101
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:50 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:50 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:19 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSLList
+Error Line No : 10667
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:19 PM
+Source : Portal.Core.SLBL
+Method Name : GetSLList
+Error Line No : 61
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:19 PM
+Source : Portal.Controllers.SLController
+Method Name : GetSLList
+Error Line No : 101
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:21 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSLList
+Error Line No : 10667
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:21 PM
+Source : Portal.Core.SLBL
+Method Name : GetSLList
+Error Line No : 61
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:21 PM
+Source : Portal.Controllers.SLController
+Method Name : GetSLList
+Error Line No : 101
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:28 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSLList
+Error Line No : 10667
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:28 PM
+Source : Portal.Core.SLBL
+Method Name : GetSLList
+Error Line No : 61
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:28 PM
+Source : Portal.Controllers.SLController
+Method Name : GetSLList
+Error Line No : 101
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:33 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSLList
+Error Line No : 10667
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:33 PM
+Source : Portal.Core.SLBL
+Method Name : GetSLList
+Error Line No : 61
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:33 PM
+Source : Portal.Controllers.SLController
+Method Name : GetSLList
+Error Line No : 101
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:34 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSLList
+Error Line No : 10667
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:34 PM
+Source : Portal.Core.SLBL
+Method Name : GetSLList
+Error Line No : 61
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:34 PM
+Source : Portal.Controllers.SLController
+Method Name : GetSLList
+Error Line No : 101
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:40 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSLList
+Error Line No : 10667
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:40 PM
+Source : Portal.Core.SLBL
+Method Name : GetSLList
+Error Line No : 61
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:40 PM
+Source : Portal.Controllers.SLController
+Method Name : GetSLList
+Error Line No : 101
+Exception Type : System.Data.SqlClient.SqlException
+Details: The multi-part identifier "g.CompanyBranchId" could not be bound.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:24:57 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:24:58 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:04:45 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:04:45 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:08:02 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:08:02 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

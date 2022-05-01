@@ -1,0 +1,59 @@
+﻿@model List<Portal.Core.ViewModel.CustomerViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table {
+        width: 90% !important;
+        max-width: 90% !important;
+        margin-bottom: 20px;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblCountryList">
+            <thead>
+                <tr>
+                    <th>Quotation</th>
+                    <th>Sale Order</th>
+                    <th>Invoice</th>
+                    <th>Customer Code</th>
+                    <th>Customer Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="table_btn" style="margin:0px auto;">
+                            <a style="color:#191818; width: 40px;height: 30px;padding-top: 5px; float: left; margin-left: 33px;" class="fa fa-pencil-square-o" aria-hidden="true" href="~/Quotation/AddEditQuotation?customerId=@item.CustomerId&customerCode=@item.CustomerCode&customerName=@item.CustomerName"></a>
+                        </td>
+                        <td class="table_btn" style=" margin:0px auto;">
+                            <a style="color:#191818;width: 40px;height: 30px;padding-top: 5px; float: left;margin-left: 33px;" class="fa fa-pencil-square-o" aria-hidden="true" href="~/SO/AddEditSO?customerId=@item.CustomerId&customerCode=@item.CustomerCode&customerName=@item.CustomerName"></a>
+                        </td>
+                        <td class="table_btn" style=" margin:0px auto;">
+                            <a style="color:#191818; width: 40px;height: 30px;padding-top: 5px; float: left;margin-left: 33px;" class="fa fa-pencil-square-o" aria-hidden="true" href="~/SaleInvoice/AddEditSaleInvoice?customerId=@item.CustomerId&customerCode=@item.CustomerCode&customerName=@item.CustomerName"></a>
+                        </td>
+                        <td style="margin:0px auto;">@item.CustomerCode</td>
+                        <td style="margin:0px auto;">@item.CustomerName</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblCountryList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

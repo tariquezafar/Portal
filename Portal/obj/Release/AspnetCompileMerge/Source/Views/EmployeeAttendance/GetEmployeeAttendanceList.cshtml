@@ -1,0 +1,122 @@
+﻿@model List<Portal.Core.ViewModel.HR_EmployeeAttendanceViewModel>
+@*<script src="~/Scripts/jquery.tablesorter.js"></script>*@
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table table-bordered table-hover" id="tblEmployeeAttendanceList">
+            <thead>
+                <tr>
+                    <th>Employee</th>
+                    <th>Company Branch</th>
+                    <th>Attendance Date</th>
+                    <th>In Time</th>
+                    <th>Out Time</th>
+                    <th style="text-align:center;">
+                        @*Action*@
+                        <center>
+                            <select id="ddlAllApproveReject" style="width:158px;" @*onchange="SelectAllApproveReject(this);"*@ name="ddlAllApproveReject" tabindex="7" class="form-control">
+                                <option value="0">--Select Action--</option>
+                                <option value="Approved">Approved</option>
+                                <option value="Rejected">Rejected</option>
+                            </select>
+                        </center>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>
+                        @item.EmployeeName
+                            <input type="hidden" id="hdnEmployeeId" value="@item.EmployeeId" /> 
+                        </td>
+                        <td>@item.companyBranchName</td>
+                        <td>
+                        @item.AttendanceDate
+                            <input type="hidden" id="hdnAttendanceDate" value="@item.AttendanceDate" />
+                        </td>
+                        <td>@item.InTime</td>
+                        <td>@item.OutTime</td>
+                        @if (@item.AttendanceStatus == "Approved")
+                        {
+                        <td>
+                            <center>
+                                <select id="ddlApproveReject" style="width:158px;" name="ddlApproveReject" tabindex="7" class="form-control dropApproveReject">
+                                    <option value="0">--Select Action--</option>
+                                    <option value="Approved" selected="selected">Approved</option>
+                                    <option value="Rejected">Rejected</option>
+                                </select>
+                            </center>
+                        </td>
+                        }
+                        @if (@item.AttendanceStatus == "Rejected")
+                        {
+                            <td>
+                                <center>
+                                    <select id="ddlApproveReject" style="width:158px;" name="ddlApproveReject" tabindex="7" class="form-control dropApproveReject">
+                                        <option value="0">--Select Action--</option>
+                                        <option value="Approved">Approved</option>
+                                        <option value="Rejected" selected="selected">Rejected</option>
+                                    </select>
+                                </center>
+                            </td>
+                        }
+                        @if (@item.AttendanceStatus == "Pending")
+                        {
+                            <td>
+                                <center>
+                                    <select id="ddlApproveReject" style="width:158px;" name="ddlApproveReject" tabindex="7" class="form-control dropApproveReject">
+                                        <option value="0">--Select Action--</option>
+                                        <option value="Approved">Approved</option>
+                                        <option value="Rejected">Rejected</option>
+                                    </select>
+                                </center>
+                            </td>
+                        }
+                    </tr>
+                }
+                
+            </tbody>
+        </table>
+        <center><input class="btn btn-success" value="Save" alt="Save" tabindex="3" id="btnSearch" onclick="SaveData()" type="button" border="0"></center>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblEmployeeAttendanceList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

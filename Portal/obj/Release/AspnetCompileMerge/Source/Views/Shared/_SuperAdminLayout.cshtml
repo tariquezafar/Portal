@@ -1,0 +1,688 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>CP</title>
+    @*<link rel="stylesheet" type="text/css" href="htts://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />*@
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/SuperAdminStyles.css" rel="stylesheet" />
+    <link href="~/Content/style-1.css" rel="stylesheet" />
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    function resize() {
+     var $window = $("#body");
+     if ($window.width() <= 767) {
+      $("#body").removeClass('sidebar-condensed');
+      }
+    }
+    resize();
+    });
+    </script>
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.navgoco.js"></script>
+    <script src="~/Scripts/main.js"></script>
+    @{
+        if (Session["IsAuthenticated"] == null || Convert.ToBoolean(Session["IsAuthenticated"]) == false)
+        {
+            Session.Abandon();
+            Response.Redirect("~/Home/Login");
+        }
+        var parentMenuList = Session["RoleWiseUIMatrix"] as List<Portal.Core.ViewModel.ParentMenu>;
+
+    }
+    <link href="~/Content/timeout-dialog.css" rel="stylesheet" />
+    <script src="~/Scripts/timeout-dialog.js"></script>
+    <script>
+        $(function () {
+            var fnTimeOut = function () {
+                jQuery.timeoutDialog.setupDialogTimer({
+                    timeout: 1200,
+                    countdown: 180,
+                    logout_redirect_url: '@Url.Action("SignOut", "Home")',
+                    keep_alive_url: '@Url.Action("Keepalive", "Home")'
+               });
+            };
+            fnTimeOut();
+        });
+    </script>
+</head>
+<body class="sidebar-condensed" id="body">
+    <header>
+
+        <nav class="navbar navbar-default navbar-static-top no-margin" role="navigation">
+            <div class="navbar-brand-group">
+                <a class="navbar-sidebar-toggle navbar-link" data-sidebar-toggle>
+                    <i class="fa fa-lg fa-fw fa-bars"></i>
+                </a>
+                <div class="navbar-brand hidden-xxs">
+                    <a  href="http://erp.htssolutions.org/" target="_blank" title="HTS">
+                        <span class="sc-visible" style="color:blue; font-weight:bold;">
+                            <img src="~/Images/logo-new.png" style="float: left; width: 116px;margin-top:10px;">
+                        </span>
+                        <span class="sc-hidden" style="color:blue; font-weight:bold;">
+
+                            <img src="~/Images/logo-new.png" style="float: left; width: 116px;margin-top:10px;">
+                        </span>
+                    </a>
+                    </div>
+                </div>
+            <ul class="nav navbar-nav navbar-nav-expanded pull-right margin-md-right">
+                <li class="hidden-xs">
+                    <form class="navbar-form">
+                        <div style="margin-top:15px;color:blue;font-size:17px;">
+                            <img src="~/Images/phone.png" width="34" /><strong>&nbsp;89 2985 2839</strong>
+                        </div> 
+                          <!---<div class="navbar-search">
+                         
+                          <input type="text" placeholder="Search &hellip;" class="form-control">
+                            <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                        </div>---->
+                    </form>
+                </li>
+                @*<li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;">
+                        <i class="glyphicon glyphicon-envelope"></i>
+                        <span class="badge badge-up badge-dark badge-small">3</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages pull-right">
+                        <li class="dropdown-title bg-inverse">New Messages</li>
+                        <li class="unread">
+                            <a href="javascript:;" class="message">
+                                <img class="message-image img-circle" src="images/avatars/1.jpg">
+                                <div class="message-body">
+                                    <strong>Ernest Kerry</strong><br>
+                                    Hello, You there?<br>
+                                    <small class="text-muted">8 minutes ago</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="unread">
+                            <a href="javascript:;" class="message">
+                                <img class="message-image img-circle" src="images/avatars/3.jpg">
+                                <div class="message-body">
+                                    <strong>Don Mark</strong><br>
+                                    I really appreciate your &hellip;<br>
+                                    <small class="text-muted">21 hours</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="message">
+                                <img class="message-image img-circle" src="images/avatars/8.jpg">
+                                <div class="message-body">
+                                    <strong>Jess Ronny</strong><br>
+                                    Let me know when you free<br>
+                                    <small class="text-muted">5 days ago</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="message">
+                                <img class="message-image img-circle" src="images/avatars/7.jpg">
+                                <div class="message-body">
+                                    <strong>Wilton Zeph</strong><br>
+                                    If there is anything else &hellip;<br>
+                                    <small class="text-muted">06/10/2014 5:31 pm</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-footer">
+                            <a href="javascript:;"><i class="fa fa-share"></i> See all messages</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;">
+                        <i class="fa fa-globe"></i>
+                        <span class="badge badge-up badge-danger badge-small">3</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-notifications pull-right">
+                        <li class="dropdown-title bg-inverse">Notifications (3)</li>
+                        <li>
+                            <a href="javascript:;" class="notification">
+                                <div class="notification-thumb pull-left">
+                                    <i class="fa fa-clock-o fa-2x text-info"></i>
+                                </div>
+                                <div class="notification-body">
+                                    <strong>Call with John</strong><br>
+                                    <small class="text-muted">8 minutes ago</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="notification">
+                                <div class="notification-thumb pull-left">
+                                    <i class="fa fa-life-ring fa-2x text-warning"></i>
+                                </div>
+                                <div class="notification-body">
+                                    <strong>New support ticket</strong><br>
+                                    <small class="text-muted">21 hours ago</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="notification">
+                                <div class="notification-thumb pull-left">
+                                    <i class="fa fa-exclamation fa-2x text-danger"></i>
+                                </div>
+                                <div class="notification-body">
+                                    <strong>Running low on space</strong><br>
+                                    <small class="text-muted">3 days ago</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="notification">
+                                <div class="notification-thumb pull-left">
+                                    <i class="fa fa-user fa-2x text-muted"></i>
+                                </div>
+                                <div class="notification-body">
+                                    New customer registered<br>
+                                    <small class="text-muted">06/18/2014 12:31 am</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-footer">
+                            <a href="javascript:;"><i class="fa fa-share"></i> See all notifications</a>
+                        </li>
+                    </ul>
+                </li>*@
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle navbar-user" href="javascript:;">
+                        <img class="img-circle" src="~/Images/UserImages/@(Convert.ToString(Session["UserPicName"])==""?"ProfilePic.png":Session["UserPicName"])">
+                        <span class="hidden-xs">@(Session["UserFullName"] != null ? Session["UserFullName"] : "")</span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu pull-right-xs">
+                        <li class="arrow"></li>
+                        @*<li><a href="javascript:;">Profile</a></li>
+                        <li><a href="javascript:;"><span class="badge badge-danger pull-right">2</span> Inbox</a></li>
+                        <li><a href="javascript:;">Messages</a></li>
+                        <li><a href="javascript:;">Settings</a></li>*@
+                        <li><a href="~/Home/ChangePassword">Change Password</a></li>
+                        <li class="divider"></li>
+                        <li><a href="~/Home/SignOut">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+
+        </nav>
+    </header>
+    <!--nav sidebar -->
+    <div class="page-wrapper">
+        <aside class="sidebar sidebar-default collapse out">
+
+            <nav>
+              
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="nav-dropdowns active open">
+                        <a href="~/Company/SuperAdminDashboard" title="Dashboards">
+                            <i class="fa fa-lg fa-fw fa-home"></i>Dashboard
+                        </a>
+                        @*<ul class="nav-sub"> 
+                            <li>
+                                <a href="~/Company/SuperAdminDashboard" title="Icons">
+                                    <i class="fa fa-fw fa-caret-right"></i>Super Admin
+                                </a>
+                            </li>
+                        </ul>*@
+
+                    </li>
+                    <li class="nav-dropdowns">
+                        <a href="#" title="Master" data-target="#Master">
+                            <i class="fa fa-lg fa-fw fa-database"></i> Master
+                        </a>
+                        <ul class="nav-sub">
+                            @foreach (var mainItem in parentMenuList.Where(x => x.InterfaceType == "CP" && x.InterfaceSubType == "MASTER").ToList())
+                            {
+                                if (string.IsNullOrEmpty(mainItem.InterfaceURL))
+                                {
+                                    <li class="nav-dropdowns">
+                                        <a href="#" title="@mainItem.InterfaceName">
+                                            <i class="fa fa-fw fa-caret-right"></i>
+                                            @mainItem.InterfaceName
+                                        </a>
+                                        <ul class="nav-sub">
+                                            @if (mainItem.childMenuList != null)
+                                            {
+                                                foreach (var childItem in mainItem.childMenuList)
+                                                {
+                                                    <li>
+                                                        <a href="@Url.Content(childItem.InterfaceURL)" title="@childItem.InterfaceName">
+                                                            <i class="fa fa-fw fa-caret-right"></i>
+                                                            @childItem.InterfaceName
+                                                        </a>
+                                                    </li>
+
+                                                }
+                                            }
+                                        </ul>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li><a href="@Url.Content(mainItem.InterfaceURL)"><i class="fa fa-fw fa-caret-right"></i>@mainItem.InterfaceName</a></li>
+                                }
+                            }
+
+                        </ul>
+                    </li>
+
+                    @*<li class="nav-dropdown">
+                        <a href="#" title="Transaction" data-target="#Transaction">
+                            <i class="fa fa-lg fa-fw fa-exchange"></i> Transaction
+                        </a>
+                        <ul class="nav-sub">
+                            @foreach (var mainItem in parentMenuList.Where(x => x.InterfaceType == "CP" && x.InterfaceSubType == "TRANSACTION").ToList())
+                            {
+                                if (string.IsNullOrEmpty(mainItem.InterfaceURL))
+                                {
+                                    <li class="nav-dropdown">
+                                        <a href="#" title="@mainItem.InterfaceName">
+                                            <i class="fa fa-fw fa-caret-right"></i> @mainItem.InterfaceName
+                                        </a>
+                                        <ul class="nav-sub">
+                                            @if (mainItem.childMenuList != null)
+                                            {
+                                                foreach (var childItem in mainItem.childMenuList)
+                                                {
+                                                    <li>
+                                                        <a href="@Url.Content(childItem.InterfaceURL)" title="@Url.Content(childItem.InterfaceURL)">
+                                                            <i class="fa fa-fw fa-caret-right"></i>
+                                                            @childItem.InterfaceName
+                                                        </a>
+                                                    </li>
+
+                                                }
+                                            }
+                                        </ul>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li>
+                                        <a href="@Url.Content(mainItem.InterfaceURL)">
+                                            <i class="fa fa-fw fa-caret-right"></i>@mainItem.InterfaceName
+                                        </a>
+                                    </li>
+                                }
+                            }
+
+                        </ul>
+                    </li>
+
+                    <li class="nav-dropdown">
+                        <a href="#" title="REPORT" data-target="#REPORT">
+                            <i class="fa fa-lg fa-fw fa-bar-chart"></i> REPORT
+                        </a>
+                        <ul class="nav-sub">
+                            @foreach (var mainItem in parentMenuList.Where(x => x.InterfaceType == "CP" && x.InterfaceSubType == "REPORT").ToList())
+                            {
+                                if (string.IsNullOrEmpty(mainItem.InterfaceURL))
+                                {
+                                    <li class="nav-dropdown">
+                                        <a href="#" title="@mainItem.InterfaceName">
+                                            <i class="fa fa-fw fa-caret-right"></i>
+                                            @mainItem.InterfaceName
+                                        </a>
+                                        <ul class="nav-sub">
+                                            @if (mainItem.childMenuList != null)
+                                            {
+                                                foreach (var childItem in mainItem.childMenuList)
+                                                {
+                                                    <li>
+                                                        <a href="@Url.Content(childItem.InterfaceURL)" title="@Url.Content(childItem.InterfaceURL)">
+                                                            <i class="fa fa-fw fa-caret-right"></i>
+                                                            @childItem.InterfaceName
+                                                        </a>
+                                                    </li>
+
+                                                }
+                                            }
+                                        </ul>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li><a href="@Url.Content(mainItem.InterfaceURL)"><i class="fa fa-fw fa-caret-right"></i>@mainItem.InterfaceName</a></li>
+                                }
+                            }
+
+                        </ul>
+                    </li>*@
+
+
+                </ul>
+
+
+            </nav>
+        </aside>
+        <div class="page-content" style="min-height:530px;">
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+            
+        </div>
+        <div class="copy" style="width:100%; text-align:center; position:static; bottom:10px; padding-top:25px;">
+            @*<span style="font-size: 11px;color:#888; ">Copyright © HTS Solutions Inc 2017 All Rights Reserved. </span>*@
+        </div>
+    </div>
+
+    
+    <div class="clearfix"> </div>
+ 
+
+    <script>
+        function htmlbodyHeightUpdate() {
+            var height3 = $(window).height()
+            var height1 = $('.nav').height() + 50
+            height2 = $('.main').height()
+            if (height2 > height3) {
+                $('html').height(Math.max(height1, height3, height2) + 10);
+                $('body').height(Math.max(height1, height3, height2) + 10);
+            }
+            else {
+                $('html').height(Math.max(height1, height3, height2));
+                $('body').height(Math.max(height1, height3, height2));
+            }
+
+        }
+        $(document).ready(function () {
+            htmlbodyHeightUpdate()
+            $(window).resize(function () {
+                htmlbodyHeightUpdate()
+            });
+            $(window).scroll(function () {
+                height2 = $('.main').height()
+                htmlbodyHeightUpdate()
+            });
+        });
+    </script>
+    <script>
+        function ajaxindicatorstart(text) {
+            if ($('body').find('#resultLoading').attr('id') != 'resultLoading') {
+                // $('body').append('<div id="resultLoading" style="display:none"><div><img src="../Content/Home/images/ajax-loader2.gif"><div>' + text + '</div></div><div class="bg"></div></div>');
+                $('body').append('<div id="resultLoading" style="display:none"><div><div id="cssload-loader"><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div></div><div>' + text + '</div></div><div class="bg"></div></div>');
+            }
+
+            $('#resultLoading').css({
+                'width': '100%',
+                'height': '100%',
+                'position': 'fixed',
+                'z-index': '10000000',
+                'top': '0',
+                'left': '0',
+                'right': '0',
+                'bottom': '0',
+                'margin': 'auto'
+            });
+
+            $('#resultLoading .bg').css({
+                'background': '#000000',
+                'opacity': '0.7',
+                'width': '100%',
+                'height': '100%',
+                'position': 'absolute',
+                'top': '0'
+            });
+
+            $('#resultLoading>div:first').css({
+                'width': '250px',
+                'height': '75px',
+                'text-align': 'center',
+                'position': 'fixed',
+                'top': '0',
+                'left': '0',
+                'right': '0',
+                'bottom': '0',
+                'margin': 'auto',
+                'font-size': '16px',
+                'z-index': '10',
+                'color': '#ffffff'
+
+            });
+
+            $('#resultLoading .bg').height('100%');
+            $('#resultLoading').fadeIn(300);
+            $('body').css('cursor', 'wait');
+        }
+
+        function ajaxindicatorstop() {
+            $('#resultLoading .bg').height('100%');
+            $('#resultLoading').fadeOut(300);
+            $('body').css('cursor', 'default');
+        }
+
+        $(document).ajaxStart(function () {
+            //show ajax indicator
+           // ajaxindicatorstart('Processing.. please wait..');
+        }).ajaxStop(function () {
+            //hide ajax indicator
+            //ajaxindicatorstop();
+        });
+        $(document).ajaxComplete(function () {
+            jQuery.timeoutDialog.setupDialogTimer();
+        });
+    </script>
+    <style>
+        #cssload-loader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 171px;
+            height: 171px;
+            margin: auto;
+        }
+
+            #cssload-loader .cssload-dot {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 85.5px;
+                height: 100%;
+                margin: auto;
+            }
+
+                #cssload-loader .cssload-dot:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    width: 85.5px;
+                    height: 85.5px;
+                    border-radius: 100%;
+                    transform: scale(0);
+                    -o-transform: scale(0);
+                    -ms-transform: scale(0);
+                    -webkit-transform: scale(0);
+                    -moz-transform: scale(0);
+                }
+
+                #cssload-loader .cssload-dot:nth-child(7n+1) {
+                    transform: rotate(45deg);
+                    -o-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
+                    -moz-transform: rotate(45deg);
+                }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+1):before {
+                        background: rgb(0,255,128);
+                        animation: cssload-load 0.92s linear 0.12s infinite;
+                        -o-animation: cssload-load 0.92s linear 0.12s infinite;
+                        -ms-animation: cssload-load 0.92s linear 0.12s infinite;
+                        -webkit-animation: cssload-load 0.92s linear 0.12s infinite;
+                        -moz-animation: cssload-load 0.92s linear 0.12s infinite;
+                    }
+
+                #cssload-loader .cssload-dot:nth-child(7n+2) {
+                    transform: rotate(90deg);
+                    -o-transform: rotate(90deg);
+                    -ms-transform: rotate(90deg);
+                    -webkit-transform: rotate(90deg);
+                    -moz-transform: rotate(90deg);
+                }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+2):before {
+                        background: rgb(0,255,234);
+                        animation: cssload-load 0.92s linear 0.23s infinite;
+                        -o-animation: cssload-load 0.92s linear 0.23s infinite;
+                        -ms-animation: cssload-load 0.92s linear 0.23s infinite;
+                        -webkit-animation: cssload-load 0.92s linear 0.23s infinite;
+                        -moz-animation: cssload-load 0.92s linear 0.23s infinite;
+                    }
+
+                #cssload-loader .cssload-dot:nth-child(7n+3) {
+                    transform: rotate(135deg);
+                    -o-transform: rotate(135deg);
+                    -ms-transform: rotate(135deg);
+                    -webkit-transform: rotate(135deg);
+                    -moz-transform: rotate(135deg);
+                }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+3):before {
+                        background: rgb(0,170,255);
+                        animation: cssload-load 0.92s linear 0.35s infinite;
+                        -o-animation: cssload-load 0.92s linear 0.35s infinite;
+                        -ms-animation: cssload-load 0.92s linear 0.35s infinite;
+                        -webkit-animation: cssload-load 0.92s linear 0.35s infinite;
+                        -moz-animation: cssload-load 0.92s linear 0.35s infinite;
+                    }
+
+                #cssload-loader .cssload-dot:nth-child(7n+4) {
+                    transform: rotate(180deg);
+                    -o-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
+                    -webkit-transform: rotate(180deg);
+                    -moz-transform: rotate(180deg);
+                }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+4):before {
+                        background: rgb(0,64,255);
+                        animation: cssload-load 0.92s linear 0.46s infinite;
+                        -o-animation: cssload-load 0.92s linear 0.46s infinite;
+                        -ms-animation: cssload-load 0.92s linear 0.46s infinite;
+                        -webkit-animation: cssload-load 0.92s linear 0.46s infinite;
+                        -moz-animation: cssload-load 0.92s linear 0.46s infinite;
+                    }
+
+                #cssload-loader .cssload-dot:nth-child(7n+5) {
+                    transform: rotate(225deg);
+                    -o-transform: rotate(225deg);
+                    -ms-transform: rotate(225deg);
+                    -webkit-transform: rotate(225deg);
+                    -moz-transform: rotate(225deg);
+                }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+5):before {
+                        background: rgb(42,0,255);
+                        animation: cssload-load 0.92s linear 0.58s infinite;
+                        -o-animation: cssload-load 0.92s linear 0.58s infinite;
+                        -ms-animation: cssload-load 0.92s linear 0.58s infinite;
+                        -webkit-animation: cssload-load 0.92s linear 0.58s infinite;
+                        -moz-animation: cssload-load 0.92s linear 0.58s infinite;
+                    }
+
+                #cssload-loader .cssload-dot:nth-child(7n+6) {
+                    transform: rotate(270deg);
+                    -o-transform: rotate(270deg);
+                    -ms-transform: rotate(270deg);
+                    -webkit-transform: rotate(270deg);
+                    -moz-transform: rotate(270deg);
+                }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+6):before {
+                        background: rgb(149,0,255);
+                        animation: cssload-load 0.92s linear 0.69s infinite;
+                        -o-animation: cssload-load 0.92s linear 0.69s infinite;
+                        -ms-animation: cssload-load 0.92s linear 0.69s infinite;
+                        -webkit-animation: cssload-load 0.92s linear 0.69s infinite;
+                        -moz-animation: cssload-load 0.92s linear 0.69s infinite;
+                    }
+
+                #cssload-loader .cssload-dot:nth-child(7n+7) {
+                    transform: rotate(315deg);
+                }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+7):before {
+                        background: magenta;
+                        animation: cssload-load 0.92s linear 0.81s infinite;
+                        -o-animation: cssload-load 0.92s linear 0.81s infinite;
+                        -ms-animation: cssload-load 0.92s linear 0.81s infinite;
+                        -webkit-animation: cssload-load 0.92s linear 0.81s infinite;
+                        -moz-animation: cssload-load 0.92s linear 0.81s infinite;
+                    }
+
+                #cssload-loader .cssload-dot:nth-child(7n+8) {
+                    transform: rotate(360deg);
+                    -o-transform: rotate(360deg);
+                    -ms-transform: rotate(360deg);
+                    -webkit-transform: rotate(360deg);
+                    -moz-transform: rotate(360deg);
+                }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+8):before {
+                        background: rgb(255,0,149);
+                        animation: cssload-load 0.92s linear 0.92s infinite;
+                        -o-animation: cssload-load 0.92s linear 0.92s infinite;
+                        -ms-animation: cssload-load 0.92s linear 0.92s infinite;
+                        -webkit-animation: cssload-load 0.92s linear 0.92s infinite;
+                        -moz-animation: cssload-load 0.92s linear 0.92s infinite;
+                    }
+
+
+
+        @@keyframes cssload-load {
+            100% {
+                opacity: 0;
+                transform: scale(1);
+            }
+        }
+
+        @@-o-keyframes cssload-load {
+            100% {
+                opacity: 0;
+                -o-transform: scale(1);
+            }
+        }
+
+        @@-ms-keyframes cssload-load {
+            100% {
+                opacity: 0;
+                -ms-transform: scale(1);
+            }
+        }
+
+        @@-webkit-keyframes cssload-load {
+            100% {
+                opacity: 0;
+                -webkit-transform: scale(1);
+            }
+        }
+
+        @@-moz-keyframes cssload-load {
+            100% {
+                opacity: 0;
+                -moz-transform: scale(1);
+            }
+        }
+    </style>
+
+
+</body>
+</html>

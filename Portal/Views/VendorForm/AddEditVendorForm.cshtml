@@ -1,0 +1,260 @@
+﻿@{
+    ViewBag.Title = "AddEditVendorForm";
+    Layout = "~/Views/Shared/_PurchaseLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+     
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+
+    /* allow space for check mark */
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/PurchaseDashboard">Purchase </a> >> Add/Edit Vendor Form</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditVendorForm" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop"> 
+                <div class="form-group col-md-6">
+                    <label for="txtInvoiceNo" class="col-sm-4 control-label">Invoice No&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtInvoiceNo" name="txtInvoiceNo" tabindex="1" placeholder="Enter Invoice No" type="text" maxlength="100" />
+                        <input id="hdnInvoiceId" type="hidden" value="0" />
+                        <a style="display:none;" class="btn btn-success" id="btnAddNew" href="@Url.Content("~/VendorForm/AddEditVendorForm?accessMode=1")">New</a>
+                        <a style="display:none;" class="btn btn-success" id="btnPrint" href="@Url.Content("~/VendorForm/AddEditVendorForm")">Print</a>
+                        <input id="hdnVendorFormTrnId" type="hidden" value="@ViewData["VendorFormTrnId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <a class="fa fa-search col-sm-1" tabindex="2" onclick="OpenInvoiceSearchPopup()" id="btnSearchInvoice" style="padding-top:5px; float:left !important" href="#"></a>
+                    <label for="txtInvoiceDate" class="col-sm-3 control-label">Invoice Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtInvoiceDate" name="txtInvoiceDate" tabindex="3" placeholder="Invoice Date" type="text" maxlength="50" />
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtVendorName" class="col-sm-4 control-label">Vendor Name &nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtVendorName" name="txtVendorName" tabindex="4" placeholder="Enter Vendor Name" type="text" maxlength="100" />
+                        <input id="hdnVendorId" type="hidden" value="0" />
+                    </div>
+                </div>
+                <div class="form-group  col-md-6">
+                    <label for="ddlFormStatus" class="col-sm-4 control-label">Form Status &nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlFormStatus" name="ddlFormStatus" tabindex="5" class="form-control">
+                            <option selected="selected" value="0"> --Select Form Status-- </option>
+                            <option value="Pending"> Pending </option>
+                            <option value="Partial"> Partial </option>
+                            <option value="Received"> Received </option>
+                        </select>
+                    </div>
+                </div> 
+            </div> 
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtformtype" class="col-sm-4 control-label">Form Type &nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlFormType" name="ddlFormType" tabindex="6" class="form-control"></select> 
+                    </div>
+                </div> 
+
+                <div class="form-group  col-md-6">
+                    <label for="txtAmount" class="col-sm-4 control-label">Amount</label>
+                    <div class="col-sm-8">
+                        <input class="form-control input-number right-text" id="txtAmount" onkeyup="checkDec(this);" name="txtAmount" tabindex="7" placeholder="Enter Amount" type="text" maxlength="100" />
+                    </div>
+                </div> 
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtRefNo" class="col-sm-4 control-label">Ref. No.</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtRefNo" name="txtRefNo" tabindex="8" placeholder="Enter Reference No." type="text" maxlength="100" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="txtRefDate" class="col-sm-4 control-label">Ref. Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtRefDate" name="txtRefDate" tabindex="9" placeholder="Enter Reference Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12"> 
+                <div class="form-group col-md-6">
+                    <label for="txtRemarks" class="col-sm-4 control-label">Remarks</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtRemarks" name="txtRemarks" tabindex="10" placeholder="Enter Remarks" type="text" maxlength="100" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6" style="display:none;">
+                    <label for="chkstatus" style="display:none;" class="col-sm-4 control-label">Status</label>
+                    <div class="col-sm-8">
+                        <input id="chkstatus" style="display:none;" name="chkstatus" checked="checked" type="checkbox" tabindex="11" />
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col-md-12">
+            </div>
+            <div class="col-md-12">
+            </div>
+        <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" tabindex="12" id="btnSave" onclick="SaveData(1)" type="button" border="0">&nbsp;&nbsp;
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="12" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">&nbsp;&nbsp;
+                        @*<input class="btn btn-success" type="button" id="btnReset" onclick="ClearFields()" tabindex="13" value="Reset" /> &nbsp;&nbsp;*@
+                        <a class="btn btn-success" id="btnReset" tabindex="13" href="@Url.Content("~/VendorForm/AddEditVendorForm")">Reset</a>
+                        <a class="btn btn-success" id="btnList" tabindex="14" href="@Url.Content("~/VendorForm/ListVendorForm")">Search Vendor Form</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div> 
+            </div>
+        </div>
+         
+
+        <div class="modal fade" id="SearchInvoiceModel" role="dialog">
+            <div class="modal-dialog  modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Search Invoice</h4>
+                    </div>
+                    <div class="">
+                        <div class="col-md-12 ftop">
+                            <div class="form-group col-md-6">
+                                <label for="txtSearchInvoiceNo" class="col-sm-4 control-label">Invoice No.</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtSearchInvoiceNo" name="txtSearchInvoiceNo" tabindex="1" placeholder="Search with Invoice No." type="text" maxlength="50" />
+                                </div>
+                            </div>
+                            <div class="form-group  col-md-6">
+                                <label for="txtSearchVendorName" class="col-sm-4 control-label">Vendor Name</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtSearchVendorName" name="txtSearchVendorName" tabindex="2" placeholder="Search with Vendor Name" type="text" maxlength="100" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+                                <label for="txtSearchRefNo" class="col-sm-4 control-label">Ref No.</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtSearchRefNo" name="txtSearchRefNo" tabindex="3" placeholder="Search with Ref. No." type="text" maxlength="50" />
+                                </div>
+                            </div>
+                            <div class="form-group  col-md-6" style="display:none;">
+                                <label for="txtSearchRefNo" class="col-sm-4 control-label">Status</label>
+                                <div class="col-sm-8 ">
+                                    <select name="ddlStatus">
+                                        <option value="0">Select Status</option>
+                                        <option value="Final">Final</option>
+                                        <option value="Draft">Draft</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+                                <label for="txtSearchFromDate" class="col-sm-4 control-label">Invoice From Date</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtSearchFromDate" name="txtSearchFromDate" tabindex="4" value="@ViewData["fromDate"]" type="text" maxlength="50" />
+                                    <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["fromDate"]" type="hidden" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtSearchToDate" class="col-sm-4 control-label">To Date</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtSearchToDate" name="txtSearchToDate" tabindex="5" value="@ViewData["toDate"]" type="text" maxlength="50" />
+                                    <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["toDate"]" type="hidden" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row col-sm-12 col-lg-12 col-md-12">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <center>
+                                    <input class="btn btn-success" value="Search" alt="Search" id="btnSearch" onclick="SearchInvoice()" type="button" border="0">
+                                </center>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="row col-sm-6 col-lg-12 col-md-12">
+                            <div id="divInvoiceList">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div> 
+            </div>
+        </div> 
+    </form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/VendorForm/AddVendorForm.js"></script>
+<script>
+        $( document ).ready(function() {
+            document.getElementById("txtInvoiceNo").focus();
+    });
+</script>

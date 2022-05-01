@@ -1,0 +1,70 @@
+﻿@model List<Portal.Core.ViewModel.ProductBOMViewModel>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:2px;">
+        <table class="table" id="tblUserList">
+            <thead>
+                <tr  class="label-success">
+                    <th>Action</th>
+                    <th style="text-align:center">Product Name</th>
+                    <th style="text-align:center">Product Code</th>
+                    <th style="text-align:center">Short Desc</th>
+                    <th style="text-align:center">Assembly Type</th>
+                    <th style="text-align:center">Process Type</th>
+                    <th style="text-align:center">BOM Qty.</th>
+                    <th style="text-align:center">UOM (Sale)</th>
+                    <th style="text-align:center">Created By User</th>
+                    <th style="text-align:center">Created Date</th>
+                    <th style="text-align:center">Modified By User</th>
+                    <th style="text-align:center">Modified Date</th>
+                    <th>Active Status</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="text-success">
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/ProductBOM/AddEditProductBOM?BOMId=@item.BOMId&AccessMode=3"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" href="~/ProductBOM/AddEditProductBOM?BOMId=@item.BOMId&AccessMode=2"></a>
+                        </td>
+                        <td>@item.ProductName</td>
+                        <td>@item.ProductCode</td>
+                        <td>@item.ProductShortDesc</td>
+                        <td>@item.AssemblyType</td>
+                        <td>@item.ProcessType</td>
+                        <td>@item.BOMQty</td>
+                        <td>@item.SaleUOMName</td>
+                        <td>@item.CreatedByName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByName</td>
+                        <td>@item.ModifiedDate</td>
+                        <td>@(item.BOM_Status == true ? "Active" : "Inactive")</td>
+                        
+
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblUserList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

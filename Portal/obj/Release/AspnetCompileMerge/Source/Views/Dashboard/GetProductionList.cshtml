@@ -1,0 +1,29 @@
+﻿@model List<Portal.Core.ViewModel.Container9ViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="background-color:#357ebd !important;">
+        <table class="table table-condensed text-light" id="tblBookBalanceList" style="margin-top:-11px;font-size:11px;">
+            <thead style="border-top-left-radius:15px;">
+
+                <tr style="background-color:#357ebd!important;font-size:17px;color:#fff;">
+                    <th style="color:#fff!important;font-weight:normal!important;text-align:center;">Key</th>
+                    <th style="color:#fff!important;font-weight:normal!important;text-align:center;">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr style="background-color:#357ebd!important">
+                        <td>@item.ContainerKey</td>
+                        <td>@item.ContainerValue</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">NA</h3>
+}

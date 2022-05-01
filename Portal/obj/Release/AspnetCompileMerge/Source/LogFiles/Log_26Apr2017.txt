@@ -1,0 +1,33 @@
+12:05:36 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetJVGLAutoCompleteList
+Error Line No : 6120
+Exception Type : System.Data.SqlClient.SqlException
+Details: A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+--------------------------------------------------------------------------------------------------------------------------------
+
+12:05:36 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLAutoCompleteListForJournalVoucher
+Error Line No : 231
+Exception Type : System.Data.SqlClient.SqlException
+Details: A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+---------------------------------------------------------------------------------------------------------------------------
+
+12:05:36 PM
+Source : Portal.Controllers.JournalVoucherController
+Method Name : GetJVGLAutoCompleteList
+Error Line No : 280
+Exception Type : System.Data.SqlClient.SqlException
+Details: A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+---------------------------------------------------------------------------------------------------------------------------
+
+12:37:07 PM
+Source : Portal.Controllers.JournalVoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'voucherId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.ActionResult JournalVoucherPrint(Int64, System.String)' in 'Portal.Controllers.JournalVoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+

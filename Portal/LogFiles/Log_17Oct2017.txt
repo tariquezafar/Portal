@@ -1,0 +1,153 @@
+16:13:28 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+--------------------------------------------------------------------------------------------------------------------------------
+
+18:47:07 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:47:13 PM
+Source : Portal.Common.SendMail
+Method Name : SendEmail
+Error Line No : 213
+Exception Type : System.ArgumentException
+Details: The parameter 'addresses' cannot be an empty string.
+Parameter name: addresses
+---------------------------------------------------------------------------------------------------------------------------
+
+18:47:17 PM
+Source : Portal.Common.SendMail
+Method Name : SendEmail
+Error Line No : 213
+Exception Type : System.ArgumentException
+Details: The parameter 'addresses' cannot be an empty string.
+Parameter name: addresses
+---------------------------------------------------------------------------------------------------------------------------
+
+18:50:00 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetUserEmailSettingDetailByUserId
+Error Line No : 8644
+Exception Type : System.InvalidOperationException
+Details: The ConnectionString property has not been initialized.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:50:00 PM
+Source : Portal.Core.UserEmailSettingBL
+Method Name : GetUserEmailSettingDetailDataTable
+Error Line No : 169
+Exception Type : System.InvalidOperationException
+Details: The ConnectionString property has not been initialized.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:50:00 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : SaleInvoiceMail
+Error Line No : 564
+Exception Type : System.InvalidOperationException
+Details: The ConnectionString property has not been initialized.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:50:35 PM
+Source : Portal.Common.SendMail
+Method Name : SendEmail
+Error Line No : 213
+Exception Type : System.ArgumentException
+Details: The parameter 'addresses' cannot be an empty string.
+Parameter name: addresses
+---------------------------------------------------------------------------------------------------------------------------
+
+18:51:25 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:54:55 PM
+Source : Portal.Common.SendMail
+Method Name : SendEmail
+Error Line No : 213
+Exception Type : System.ArgumentException
+Details: The parameter 'addresses' cannot be an empty string.
+Parameter name: addresses
+---------------------------------------------------------------------------------------------------------------------------
+
+18:56:09 PM
+Source : Portal.Common.SendMail
+Method Name : SendEmail
+Error Line No : 213
+Exception Type : System.ArgumentException
+Details: The parameter 'addresses' cannot be an empty string.
+Parameter name: addresses
+---------------------------------------------------------------------------------------------------------------------------
+
+18:56:33 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:57:10 PM
+Source : Portal.Common.SendMail
+Method Name : SendEmail
+Error Line No : 230
+Exception Type : System.Net.Mail.SmtpException
+Details: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+---------------------------------------------------------------------------------------------------------------------------
+
+18:58:05 PM
+Source : Portal.Common.SendMail
+Method Name : SendEmail
+Error Line No : 230
+Exception Type : System.Net.Mail.SmtpException
+Details: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+---------------------------------------------------------------------------------------------------------------------------
+
+18:58:11 PM
+Source : Portal.Common.SendMail
+Method Name : SendEmail
+Error Line No : 230
+Exception Type : System.Net.Mail.SmtpException
+Details: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Must issue a STARTTLS command first. k11sm20471404pfh.134 - gsmtp
+---------------------------------------------------------------------------------------------------------------------------
+
+18:59:04 PM
+Source : Portal.Common.SendMail
+Method Name : SendEmail
+Error Line No : 230
+Exception Type : System.Net.Mail.SmtpException
+Details: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Must issue a STARTTLS command first. j12sm16032052pgs.35 - gsmtp
+---------------------------------------------------------------------------------------------------------------------------
+
+18:59:27 PM
+Source : Portal.Common.SendMail
+Method Name : SendEmail
+Error Line No : 230
+Exception Type : System.Net.Mail.SmtpException
+Details: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Must issue a STARTTLS command first. j68sm11276701pgc.6 - gsmtp
+---------------------------------------------------------------------------------------------------------------------------
+
+18:59:37 PM
+Source : Portal.Common.SendMail
+Method Name : SendEmail
+Error Line No : 230
+Exception Type : System.Net.Mail.SmtpException
+Details: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Must issue a STARTTLS command first. y5sm20671985pfd.89 - gsmtp
+---------------------------------------------------------------------------------------------------------------------------
+

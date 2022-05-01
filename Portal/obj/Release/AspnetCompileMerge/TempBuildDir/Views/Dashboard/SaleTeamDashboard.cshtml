@@ -1,0 +1,173 @@
+﻿@{
+    ViewBag.Title = "Sale Dashboard";
+    Layout = "~/Views/Shared/_SaleLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div id="wrapper">
+    <div id="page-content-wrapper" style="padding-top:5px !important;">
+        <div class="page-content">
+            <div class="container-fluid">
+                <div class="row top-head">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-6" style="margin-top: 5px;margin-bottom:5px">
+                        <b><label for="ddlFinYear" class="col-sm-4" style="margin-top: 5px;color:#fff">Financial Year</label></b>
+                        <div class="col-sm-8">
+                            <select id="ddlFinYear" name="ddlFinYear" onchange="SetFinancialYearSession()" tabindex="1" class="form-control"></select>
+                            <input type="hidden" id="hdnCurrentFinyearId" value="@ViewData["currentFinyearId"]" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="row" style="margin-top:-23px;">
+                    <div class="col-md-4">
+                        <label for="ddlTeamUser" class="col-sm-4 control-label">Team Member:</label>
+                        <div class="col-sm-8">
+                            <select id="ddlTeamUser" name="ddlTeamUser" onchange="RefreshTeamData();"  tabindex="1" class="form-control" style="width: 100%;height: 31px;">
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="market-updates sale-dash" style="clear:both;margin-top: 10px;margin-left: 12px;">
+                    <a href="#" onclick="OpenTodayNewCustomersPopup()">
+                        <div class="col-md-3 market-update-gd">
+                            <div class="market-update-block clr-block-1">
+                                <div class="col-md-8 market-update-left">
+                                    <P>Today New Customers</P>
+                                    <H4>&nbsp;</H4>
+
+                                   
+                                    <h3>@ViewData["New_Customer_Count"]</h3>
+                                </div>
+                                <div class="col-md-4 market-update-right">
+                                    <i class="fa fa-plus-circle" style="font-size: 73px;color: #fff;"> </i>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="@Url.Content("~/Customer/ListCustomer")" target="_blank">
+                        <div class="col-md-3 market-update-gd">
+                            <div class="market-update-block clr-block-1"style="background-color:#4f75c6">
+                                <div class="col-md-8 market-update-left">
+                                    <P>All Customers</P>
+                                    <H4>&nbsp;</H4>
+                                    <h3>@ViewData["Total_Customer_Count"]</h3>
+                                </div>
+                                <div class="col-md-4 market-update-right">
+                                    <i class="fa fa-file-text-o"> </i>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                        </a>
+                        <div class="col-md-3 market-update-gd">
+                            <div class="market-update-block clr-block-2">
+                                <div class="col-md-8 market-update-left">
+                                    <p>Today Sale Invoice Value</p>
+                                    <h4>&nbsp;</h4>
+
+                                    <h3><i style="font-size: 24px;color: aliceblue;" class="fa fa-inr">&nbsp;</i><label id="lblSiSumAmount" style="color: white; font-size: 25px;"></label></h3>
+                                </div>
+                                <div class="col-md-4 market-update-right">
+                                    <i class="fa fa-inr" style="font-size:53px;color: #fff;"> </i>
+                                </div>
+
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 climate-grids" style="background:#fff; width:324px; padding-right: 0;">
+                            <div class="climate-grid3">
+                                <div class="popular-brand" style="margin-top:18px;">
+                                    <div class="col-md-6 popular-bran-left">
+                                        <p><i aria-hidden="true"></i><a href="@Url.Content("~/SO/AddEditSO")" target="_blank">Add New Sale Order</a></p>
+                                        <p><i aria-hidden="true"></i><a href="@Url.Content("~/Quotation/AddEditQuotation")" target="_blank">Add New Quotation</a></p>
+                                        <p><i aria-hidden="true"></i><a href="@Url.Content("~/SaleInvoiceRegister/ListSaleInvoiceRegister" )" target="_blank">Add New Sale Invoice</a></p>
+
+                                    </div>
+                                    <div class="col-md-6 popular-bran-right"  style="margin-top:-19px; background-color:#4a9a79; min-height: 132px;">
+                                        <h3 style="margin-top:-33px; background-color:#4a9a79; margin-right: -2px;"><i class="fa fa-link" aria-hidden="true" style="color: white;font-size: 38px; margin-top: 16px;"></i></h3>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+
+                 </div>
+
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#tabs-1">Sale Summary</a></li>
+                        <li><a href="#tabs-2">Graphical Representation</a></li>                      
+                    </ul>
+                    <div id="tabs-1">
+
+                        <div class="row">
+                            <div class="col-md-4" id="DivQuatationCount">
+
+                            </div>
+                            <div class="col-md-4" id="DivSOCount">
+
+                            </div>
+                            <div class="col-md-4" id="DivSICount">
+
+                            </div>
+                        </div>
+                        </div>
+                    <div id="tabs-2">
+                        <div class="row">
+                            <div class="col-md-4" style="padding:10px" id="divQuatationCountChart">
+                                <canvas id="barcanvasQuatation" height="200" width="200"></canvas>
+                            </div>
+                            <div class="col-md-4" style="padding:10px" id="divSOCountChart">
+                                <canvas id="barcanvasSaleOrder" height="200" width="200"></canvas>
+                            </div>
+                            <div class="col-md-4" style="padding:10px" id="divSICountChart">
+                                <canvas id="barcanvasSI" height="200" width="200"></canvas>
+                            </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                </div>
+                <!--end body content -->
+            </div>
+</div>
+<div class="modal fade" id="TodayCustomersModel" role="dialog">
+    <div class="modal-dialog  modal-md">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <center><h4 class="modal-title">Today's New Customers</h4></center> 
+            </div>
+            <div class="">
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div id="divTodayNewCustomersList">
+
+                    </div>
+                </div>               
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/Chart.bundle.min.js"></script>
+<script src="~/Scripts/Dashboard/SaleTeamDashboard.js"></script>
+<script src="~/Scripts/paging.js"></script>
+

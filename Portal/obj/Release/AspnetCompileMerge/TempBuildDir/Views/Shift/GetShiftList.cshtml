@@ -1,0 +1,74 @@
+﻿@model List<Portal.Core.ViewModel.ShiftViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblShiftList">
+            <thead>
+                <tr>
+                    <th>Shift Name</th>  
+                    <th>Shift Type Name</th> 
+                    <th>Company Branch</th>
+                    <th>Shift Description</th>      
+                    <th>Normal Paid Hours</th>      
+                    <th>Allowance</th>      
+                    <th>Shift Start Time</th>      
+                    <th>Shift End Time</th>      
+                    <th>Late rrival imit</th>      
+                    <th>Early Go Limit</th>      
+                    <th>Overtime Start Time</th>      
+                    <th>Valid Till</th>         
+                    <th>Full Day Work Hour</th>    
+                    <th>Half Day Work Hour</th>      
+                    <th>Status</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.ShiftName</td> 
+                        <td>@item.ShiftTypeName</td>
+                        <td>@item.CompanyBranchName</td>
+                        <td>@item.ShiftDescription</td>
+                        <td>@item.NormalPaidHours</td>
+                        <td>@item.Allowance</td>
+                        <td>@item.ShiftStartTime</td>
+                        <td>@item.ShiftEndTime</td>
+                        <td>@item.LateArrivalLimit</td>
+                        <td>@item.EarlyGoLimit</td>
+                        <td>@item.OvertimeStartTime</td>
+                        <td>@item.ValidTill</td>
+                        <td>@item.FullDayWorkHour</td>
+                        <td>@item.HalfDayWorkHour</td>
+                        <td>@(item.Shift_Status == true?"Active":"Inactive")</td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px auto;">
+                            <a style="color:white;text-decoration:none" title="View"  class="fa fa-eye" aria-hidden="true" href="~/Shift/AddEditShift?ShiftId=@item.ShiftId&AccessMode=3"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white;text-decoration:none" title="Edit" class="fa fa-pencil-square-o" href="~/Shift/AddEditShift?ShiftId=@item.ShiftId&AccessMode=2"></a>
+                        </td>
+
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblShiftList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

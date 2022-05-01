@@ -1,0 +1,118 @@
+﻿@model List<Portal.Core.ViewModel.StoreRequisitionProductDetailViewModel>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblProductList">
+            <thead>
+                <tr>
+
+                    <th style="text-align:center;">Product Name</th>
+                    <th style="text-align:center;">Product Code</th>
+                    <th style="text-align:center;">Unit</th>
+                    <th style="text-align:center;">Quantity</th>
+                    <th style="text-align:center;">Issued Quantity</th>
+                    <th colspan="2" align="center" class="editonly">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+
+                        <td>
+                            @item.ProductName
+                            <input type="hidden" id="hdnRequisitionProductDetailId" value="@item.RequisitionProductDetailId" />
+                            <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                            <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                            <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                        </td>
+                        <td>
+                            @item.ProductCode
+                            <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                        </td>
+                        <td>
+                            @item.UOMName
+                            <input type="hidden" id="hdnUOMName" value="@item.UOMName" />
+                            <input type="hidden" id="hdnProductShortDesc" value="@item.ProductShortDesc" />
+
+                        </td>
+                        <td>    
+                            @item.Quantity
+                            <input type="hidden" id="hdnQuantity" value="@item.Quantity" />
+
+                        </td>
+                        <td>
+                            @item.IssuedQuantity
+                            <input type="hidden" id="hdnIssuedQuantity" value="@item.IssuedQuantity" />
+
+                        </td>
+                        @if (item.IssuedQuantity == item.Quantity)
+                        {
+                            <td colspan="2"></td>
+                        }
+                        else if (item.IssuedQuantity > 0)
+                        {
+                            <td class="btn btn-success table_btn editonly" style="width:30px; margin:0px 2px auto;text-align:center;" colspan="2">
+                                <a style="color:white" class="fa fa-pencil-square-o" onclick="EditProductRow(this);" href="#"></a>
+                            </td>
+                            
+                        }
+                        else
+                        {
+                            <td class="btn btn-success table_btn editonly" style="width:30px; margin:0px 2px auto;text-align:center;">
+                                <a style="color:white" class="fa fa-pencil-square-o" onclick="EditProductRow(this);" href="#"></a>
+                            </td>
+                            <td class="btn btn-success table_btn editonly" style="width:30px; margin:0px 2px auto;text-align:center;">
+                                <a style="color:white" class="fa fa-trash" onclick="RemoveProductRow(this)" href="#"></a>
+                            </td>
+                        }
+                        
+                        
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                    <th>Issued Quantity</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+<script>
+    $(document).ready(function () {
+        if ($("#hdnAccessMode").val() == "3") {
+            $(".editonly").hide();
+        }
+
+    });
+</script>

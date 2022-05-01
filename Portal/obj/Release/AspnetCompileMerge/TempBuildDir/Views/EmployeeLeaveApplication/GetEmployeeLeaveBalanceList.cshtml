@@ -1,0 +1,65 @@
+﻿@model List<Portal.Core.EmployeeLeaveDetailViewmodel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+   
+
+    #tblActivityList tr th {
+        text-align: center;
+        border: 1px solid #ccc !important;
+        font-family: Arial;
+        color: #fff;
+    }
+
+    table tr td {
+        border: 1px solid #ccc !important;
+        font-family: Arial;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="margin-left: 135px;">
+        <strong>Balance Leaves</strong><br/>
+        @*<table class="table" id="tblActivityList">
+            <thead>
+                <tr>
+                    <th>Leave Type</th>
+                    <th>Leave Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.LeaveTypeName</td>
+                        <td>@item.LeaveCount</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>*@
+
+        <table class="table" id="tblActivityList">
+            <thead>
+                <tr style="background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                @foreach (var item in Model)
+                {
+                    <th>@item.LeaveTypeName</th>
+                    @*<th>@item.LeaveCount</th>*@
+                    @*<th>Leave Count</th>*@
+                }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                        @*<td>@item.LeaveTypeName</td>*@
+                        <td style="text-align:center">@item.LeaveCount</td>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}

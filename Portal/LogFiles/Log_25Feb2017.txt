@@ -1,0 +1,208 @@
+11:37:21 AM
+Source : Portal.Core.CompanyBL
+Method Name : GetCompanyList
+Error Line No : 69
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+--------------------------------------------------------------------------------------------------------------------------------
+
+11:37:22 AM
+Source : Portal.Controllers.CompanyController
+Method Name : GetCompanyList
+Error Line No : 82
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:37:28 AM
+Source : Portal.Core.CompanyBL
+Method Name : GetCompanyList
+Error Line No : 69
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:37:28 AM
+Source : Portal.Controllers.CompanyController
+Method Name : GetCompanyList
+Error Line No : 82
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:38:19 AM
+Source : Portal.Core.CompanyBL
+Method Name : GetCompanyList
+Error Line No : 69
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:38:19 AM
+Source : Portal.Controllers.CompanyController
+Method Name : GetCompanyList
+Error Line No : 82
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:38:59 AM
+Source : Portal.Core.CompanyBL
+Method Name : GetCompanyList
+Error Line No : 69
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:38:59 AM
+Source : Portal.Controllers.CompanyController
+Method Name : GetCompanyList
+Error Line No : 82
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:39:09 AM
+Source : Portal.Core.CompanyBL
+Method Name : GetCompanyList
+Error Line No : 69
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:39:09 AM
+Source : Portal.Controllers.CompanyController
+Method Name : GetCompanyList
+Error Line No : 82
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:41 PM
+Source : Portal.Controllers.CompanyController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:57:14 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCompanyDetail
+Error Line No : 74
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCompanyDetail' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:57:14 PM
+Source : Portal.Core.CompanyBL
+Method Name : GetCompanyDetail
+Error Line No : 106
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCompanyDetail' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:57:14 PM
+Source : Portal.Controllers.CompanyController
+Method Name : GetCompanyDetail
+Error Line No : 152
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCompanyDetail' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:57:57 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCompanyDetail
+Error Line No : 74
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCompanyDetail' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:57:57 PM
+Source : Portal.Core.CompanyBL
+Method Name : GetCompanyDetail
+Error Line No : 106
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCompanyDetail' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:57:57 PM
+Source : Portal.Controllers.CompanyController
+Method Name : GetCompanyDetail
+Error Line No : 152
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCompanyDetail' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:58:37 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCompanyDetail
+Error Line No : 74
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCompanyDetail' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:58:38 PM
+Source : Portal.Core.CompanyBL
+Method Name : GetCompanyDetail
+Error Line No : 106
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCompanyDetail' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:58:38 PM
+Source : Portal.Controllers.CompanyController
+Method Name : GetCompanyDetail
+Error Line No : 152
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCompanyDetail' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:59:32 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCompanyDetail
+Error Line No : 74
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCompanyDetail' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:59:38 PM
+Source : Portal.Core.CompanyBL
+Method Name : GetCompanyDetail
+Error Line No : 106
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCompanyDetail' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:59:38 PM
+Source : Portal.Controllers.CompanyController
+Method Name : GetCompanyDetail
+Error Line No : 152
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCompanyDetail' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:20:48 PM
+Source : Portal.Controllers.CompanyController
+Method Name : AddEditCompany
+Error Line No : 55
+Exception Type : System.IO.DirectoryNotFoundException
+Details: Could not find a part of the path 'C:\fakepath\logo.gif'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:27:57 PM
+Source : Portal.Controllers.CompanyController
+Method Name : AddEditCompany
+Error Line No : 55
+Exception Type : System.IO.DirectoryNotFoundException
+Details: Could not find a part of the path 'C:\fakepath\logo.gif'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:32:58 PM
+Source : Portal.Controllers.CompanyController
+Method Name : AddEditCompany
+Error Line No : 53
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+

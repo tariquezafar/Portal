@@ -1,0 +1,112 @@
+10:43:40 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:43:40 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:44:06 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerList
+Error Line No : 2893
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCustomers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:44:06 AM
+Source : Portal.Core.CustomerBL
+Method Name : GetCustomerList
+Error Line No : 252
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCustomers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:44:06 AM
+Source : Portal.Controllers.CustomerController
+Method Name : GetCustomerList
+Error Line No : 123
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCustomers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:44:16 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerList
+Error Line No : 2893
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCustomers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:44:16 AM
+Source : Portal.Core.CustomerBL
+Method Name : GetCustomerList
+Error Line No : 252
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCustomers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:43:06 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:43:07 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:43:12 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTodayUsersCount
+Error Line No : 384
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTodayUsersCount' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:43:12 PM
+Source : Portal.Core.UserBL
+Method Name : GetTodayUsersCount
+Error Line No : 438
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTodayUsersCount' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:43:12 PM
+Source : Portal.Controllers.DashboardController
+Method Name : AdminDashboard
+Error Line No : 46
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTodayUsersCount' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:43:57 PM
+Source : Portal.Controllers.UploadUtilityController
+Method Name : ImportGLMainGroupData
+Error Line No : 457
+Exception Type : System.ArgumentException
+Details: Column 'GLMainGroupName' does not belong to table Table.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:44:04 PM
+Source : Portal.Controllers.UploadUtilityController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+

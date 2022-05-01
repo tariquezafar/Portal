@@ -1,0 +1,21 @@
+@media(max-width:640px){
+.mob-grid{display:block;}
+#page-content-wrapper{display:none;}
+#wrapper{padding-top:44px;}
+.btn-primary{margin-top:10px! important; padding:0px; margin:0px; width:65px; border-radius:2px; margin-left:13px;}
+.icon-size {
+  font-size: 35px;
+  float:left;
+}
+.text-left{margin-top:0px;}
+
+.navbar-nav .open .dropdown-menu > li > a {
+  line-height: 0px;
+  font-size: 13px;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: #000;
+}
+
+}
+

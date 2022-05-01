@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PLStatementDataSet" targetNamespace="http://tempuri.org/PLStatementDataSet.xsd" xmlns:mstns="http://tempuri.org/PLStatementDataSet.xsd" xmlns="http://tempuri.org/PLStatementDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="PLStatementDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="PLStatementDataSet" msprop:Generator_UserDSName="PLStatementDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TEMPPROFITLOSSSTATEMENTPRINT" msprop:Generator_TableClassName="TEMPPROFITLOSSSTATEMENTPRINTDataTable" msprop:Generator_TableVarName="tableTEMPPROFITLOSSSTATEMENTPRINT" msprop:Generator_RowChangedName="TEMPPROFITLOSSSTATEMENTPRINTRowChanged" msprop:Generator_TablePropName="TEMPPROFITLOSSSTATEMENTPRINT" msprop:Generator_RowDeletingName="TEMPPROFITLOSSSTATEMENTPRINTRowDeleting" msprop:Generator_RowChangingName="TEMPPROFITLOSSSTATEMENTPRINTRowChanging" msprop:Generator_RowEvHandlerName="TEMPPROFITLOSSSTATEMENTPRINTRowChangeEventHandler" msprop:Generator_RowDeletedName="TEMPPROFITLOSSSTATEMENTPRINTRowDeleted" msprop:Generator_RowClassName="TEMPPROFITLOSSSTATEMENTPRINTRow" msprop:Generator_UserTableName="TEMPPROFITLOSSSTATEMENTPRINT" msprop:Generator_RowEvArgName="TEMPPROFITLOSSSTATEMENTPRINTRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TRNID" msprop:Generator_ColumnVarNameInTable="columnTRNID" msprop:Generator_ColumnPropNameInRow="TRNID" msprop:Generator_ColumnPropNameInTable="TRNIDColumn" msprop:Generator_UserColumnName="TRNID" type="xs:long" minOccurs="0" />
+              <xs:element name="ASLIINEX" msprop:Generator_ColumnVarNameInTable="columnASLIINEX" msprop:Generator_ColumnPropNameInRow="ASLIINEX" msprop:Generator_ColumnPropNameInTable="ASLIINEXColumn" msprop:Generator_UserColumnName="ASLIINEX" type="xs:string" minOccurs="0" />
+              <xs:element name="GLMainGroupId" msprop:Generator_ColumnVarNameInTable="columnGLMainGroupId" msprop:Generator_ColumnPropNameInRow="GLMainGroupId" msprop:Generator_ColumnPropNameInTable="GLMainGroupIdColumn" msprop:Generator_UserColumnName="GLMainGroupId" type="xs:int" minOccurs="0" />
+              <xs:element name="GLMainGroupName" msprop:Generator_ColumnVarNameInTable="columnGLMainGroupName" msprop:Generator_ColumnPropNameInRow="GLMainGroupName" msprop:Generator_ColumnPropNameInTable="GLMainGroupNameColumn" msprop:Generator_UserColumnName="GLMainGroupName" type="xs:string" minOccurs="0" />
+              <xs:element name="GLSubGroupId" msprop:Generator_ColumnVarNameInTable="columnGLSubGroupId" msprop:Generator_ColumnPropNameInRow="GLSubGroupId" msprop:Generator_ColumnPropNameInTable="GLSubGroupIdColumn" msprop:Generator_UserColumnName="GLSubGroupId" type="xs:int" minOccurs="0" />
+              <xs:element name="GLSubGroupName" msprop:Generator_ColumnVarNameInTable="columnGLSubGroupName" msprop:Generator_ColumnPropNameInRow="GLSubGroupName" msprop:Generator_ColumnPropNameInTable="GLSubGroupNameColumn" msprop:Generator_UserColumnName="GLSubGroupName" type="xs:string" minOccurs="0" />
+              <xs:element name="GLId" msprop:Generator_ColumnVarNameInTable="columnGLId" msprop:Generator_ColumnPropNameInRow="GLId" msprop:Generator_ColumnPropNameInTable="GLIdColumn" msprop:Generator_UserColumnName="GLId" type="xs:int" minOccurs="0" />
+              <xs:element name="GLCode" msprop:Generator_ColumnVarNameInTable="columnGLCode" msprop:Generator_ColumnPropNameInRow="GLCode" msprop:Generator_ColumnPropNameInTable="GLCodeColumn" msprop:Generator_UserColumnName="GLCode" type="xs:string" minOccurs="0" />
+              <xs:element name="GLHead" msprop:Generator_ColumnVarNameInTable="columnGLHead" msprop:Generator_ColumnPropNameInRow="GLHead" msprop:Generator_ColumnPropNameInTable="GLHeadColumn" msprop:Generator_UserColumnName="GLHead" type="xs:string" minOccurs="0" />
+              <xs:element name="Closing" msprop:Generator_ColumnVarNameInTable="columnClosing" msprop:Generator_ColumnPropNameInRow="Closing" msprop:Generator_ColumnPropNameInTable="ClosingColumn" msprop:Generator_UserColumnName="Closing" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ScheduleName" msprop:Generator_ColumnVarNameInTable="columnScheduleName" msprop:Generator_ColumnPropNameInRow="ScheduleName" msprop:Generator_ColumnPropNameInTable="ScheduleNameColumn" msprop:Generator_UserColumnName="ScheduleName" type="xs:string" minOccurs="0" />
+              <xs:element name="ScheduleNo" msprop:Generator_ColumnVarNameInTable="columnScheduleNo" msprop:Generator_ColumnPropNameInRow="ScheduleNo" msprop:Generator_ColumnPropNameInTable="ScheduleNoColumn" msprop:Generator_UserColumnName="ScheduleNo" type="xs:short" minOccurs="0" />
+              <xs:element name="ReportUserId" msprop:Generator_ColumnVarNameInTable="columnReportUserId" msprop:Generator_ColumnPropNameInRow="ReportUserId" msprop:Generator_ColumnPropNameInTable="ReportUserIdColumn" msprop:Generator_UserColumnName="ReportUserId" type="xs:int" minOccurs="0" />
+              <xs:element name="SessionId" msprop:Generator_ColumnVarNameInTable="columnSessionId" msprop:Generator_ColumnPropNameInRow="SessionId" msprop:Generator_ColumnPropNameInTable="SessionIdColumn" msprop:Generator_UserColumnName="SessionId" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TEMPBALANCESHEETPRINT" msprop:Generator_TableClassName="TEMPBALANCESHEETPRINTDataTable" msprop:Generator_TableVarName="tableTEMPBALANCESHEETPRINT" msprop:Generator_TablePropName="TEMPBALANCESHEETPRINT" msprop:Generator_RowDeletingName="TEMPBALANCESHEETPRINTRowDeleting" msprop:Generator_RowChangingName="TEMPBALANCESHEETPRINTRowChanging" msprop:Generator_RowEvHandlerName="TEMPBALANCESHEETPRINTRowChangeEventHandler" msprop:Generator_RowDeletedName="TEMPBALANCESHEETPRINTRowDeleted" msprop:Generator_UserTableName="TEMPBALANCESHEETPRINT" msprop:Generator_RowChangedName="TEMPBALANCESHEETPRINTRowChanged" msprop:Generator_RowEvArgName="TEMPBALANCESHEETPRINTRowChangeEvent" msprop:Generator_RowClassName="TEMPBALANCESHEETPRINTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TRNID" msprop:Generator_ColumnVarNameInTable="columnTRNID" msprop:Generator_ColumnPropNameInRow="TRNID" msprop:Generator_ColumnPropNameInTable="TRNIDColumn" msprop:Generator_UserColumnName="TRNID" type="xs:long" minOccurs="0" />
+              <xs:element name="ASLIINEX" msprop:Generator_ColumnVarNameInTable="columnASLIINEX" msprop:Generator_ColumnPropNameInRow="ASLIINEX" msprop:Generator_ColumnPropNameInTable="ASLIINEXColumn" msprop:Generator_UserColumnName="ASLIINEX" type="xs:string" minOccurs="0" />
+              <xs:element name="GLMainGroupId" msprop:Generator_ColumnVarNameInTable="columnGLMainGroupId" msprop:Generator_ColumnPropNameInRow="GLMainGroupId" msprop:Generator_ColumnPropNameInTable="GLMainGroupIdColumn" msprop:Generator_UserColumnName="GLMainGroupId" type="xs:int" minOccurs="0" />
+              <xs:element name="GLMainGroupName" msprop:Generator_ColumnVarNameInTable="columnGLMainGroupName" msprop:Generator_ColumnPropNameInRow="GLMainGroupName" msprop:Generator_ColumnPropNameInTable="GLMainGroupNameColumn" msprop:Generator_UserColumnName="GLMainGroupName" type="xs:string" minOccurs="0" />
+              <xs:element name="GLSubGroupId" msprop:Generator_ColumnVarNameInTable="columnGLSubGroupId" msprop:Generator_ColumnPropNameInRow="GLSubGroupId" msprop:Generator_ColumnPropNameInTable="GLSubGroupIdColumn" msprop:Generator_UserColumnName="GLSubGroupId" type="xs:int" minOccurs="0" />
+              <xs:element name="GLSubGroupName" msprop:Generator_ColumnVarNameInTable="columnGLSubGroupName" msprop:Generator_ColumnPropNameInRow="GLSubGroupName" msprop:Generator_ColumnPropNameInTable="GLSubGroupNameColumn" msprop:Generator_UserColumnName="GLSubGroupName" type="xs:string" minOccurs="0" />
+              <xs:element name="GLId" msprop:Generator_ColumnVarNameInTable="columnGLId" msprop:Generator_ColumnPropNameInRow="GLId" msprop:Generator_ColumnPropNameInTable="GLIdColumn" msprop:Generator_UserColumnName="GLId" type="xs:int" minOccurs="0" />
+              <xs:element name="GLCode" msprop:Generator_ColumnVarNameInTable="columnGLCode" msprop:Generator_ColumnPropNameInRow="GLCode" msprop:Generator_ColumnPropNameInTable="GLCodeColumn" msprop:Generator_UserColumnName="GLCode" type="xs:string" minOccurs="0" />
+              <xs:element name="GLHead" msprop:Generator_ColumnVarNameInTable="columnGLHead" msprop:Generator_ColumnPropNameInRow="GLHead" msprop:Generator_ColumnPropNameInTable="GLHeadColumn" msprop:Generator_UserColumnName="GLHead" type="xs:string" minOccurs="0" />
+              <xs:element name="Closing" msprop:Generator_ColumnVarNameInTable="columnClosing" msprop:Generator_ColumnPropNameInRow="Closing" msprop:Generator_ColumnPropNameInTable="ClosingColumn" msprop:Generator_UserColumnName="Closing" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ScheduleName" msprop:Generator_ColumnVarNameInTable="columnScheduleName" msprop:Generator_ColumnPropNameInRow="ScheduleName" msprop:Generator_ColumnPropNameInTable="ScheduleNameColumn" msprop:Generator_UserColumnName="ScheduleName" type="xs:string" minOccurs="0" />
+              <xs:element name="ScheduleNo" msprop:Generator_ColumnVarNameInTable="columnScheduleNo" msprop:Generator_ColumnPropNameInRow="ScheduleNo" msprop:Generator_ColumnPropNameInTable="ScheduleNoColumn" msprop:Generator_UserColumnName="ScheduleNo" type="xs:short" minOccurs="0" />
+              <xs:element name="ReportUserId" msprop:Generator_ColumnVarNameInTable="columnReportUserId" msprop:Generator_ColumnPropNameInRow="ReportUserId" msprop:Generator_ColumnPropNameInTable="ReportUserIdColumn" msprop:Generator_UserColumnName="ReportUserId" type="xs:int" minOccurs="0" />
+              <xs:element name="SessionId" msprop:Generator_ColumnVarNameInTable="columnSessionId" msprop:Generator_ColumnPropNameInRow="SessionId" msprop:Generator_ColumnPropNameInTable="SessionIdColumn" msprop:Generator_UserColumnName="SessionId" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

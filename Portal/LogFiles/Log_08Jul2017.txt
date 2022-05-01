@@ -1,0 +1,64 @@
+17:10:19 PM
+Source : Portal.Core.SLBL
+Method Name : GetSLList
+Error Line No : 65
+Exception Type : System.ArgumentException
+Details: Column 'SLTypeName' does not belong to table .
+--------------------------------------------------------------------------------------------------------------------------------
+
+17:10:19 PM
+Source : Portal.Controllers.SLController
+Method Name : GetSLList
+Error Line No : 96
+Exception Type : System.ArgumentException
+Details: Column 'SLTypeName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:10:24 PM
+Source : Portal.Core.SLBL
+Method Name : GetSLList
+Error Line No : 65
+Exception Type : System.ArgumentException
+Details: Column 'SLTypeName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:10:25 PM
+Source : Portal.Controllers.SLController
+Method Name : GetSLList
+Error Line No : 96
+Exception Type : System.ArgumentException
+Details: Column 'SLTypeName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:11:40 PM
+Source : Portal.Core.SLBL
+Method Name : GetSLDetail
+Error Line No : 102
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:11:40 PM
+Source : Portal.Controllers.SLController
+Method Name : GetSLDetail
+Error Line No : 112
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:12:08 PM
+Source : Portal.Core.SLBL
+Method Name : GetSLDetail
+Error Line No : 102
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:12:08 PM
+Source : Portal.Controllers.SLController
+Method Name : GetSLDetail
+Error Line No : 112
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+

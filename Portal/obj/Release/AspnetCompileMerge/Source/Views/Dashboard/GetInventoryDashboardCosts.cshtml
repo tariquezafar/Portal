@@ -1,0 +1,20 @@
+﻿@model List<Portal.Core.ViewModel.Container9ViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table table-condensed text-light">
+        @foreach (var item in Model)
+                {
+            <tr style="background-color: #4800ff !important;">
+                <td>@item.ContainerKey</td>
+                <td>@Math.Round(Convert.ToDecimal(@item.ContainerValue), 2)</td>
+            </tr>
+        }
+       
+    </table>
+    
+
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">NA Items</h3>
+}

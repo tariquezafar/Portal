@@ -1,0 +1,48 @@
+11:03:30 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetReorderPointProductCountList
+Error Line No : 33
+Exception Type : System.OverflowException
+Details: Value was either too large or too small for an Int16.
+--------------------------------------------------------------------------------------------------------------------------------
+
+11:03:31 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetReorderPointProductCountList
+Error Line No : 366
+Exception Type : System.OverflowException
+Details: Value was either too large or too small for an Int16.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:06:40 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetReorderPointProductCountList
+Error Line No : 33
+Exception Type : System.OverflowException
+Details: Value was either too large or too small for an Int16.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:06:40 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetReorderPointProductCountList
+Error Line No : 366
+Exception Type : System.OverflowException
+Details: Value was either too large or too small for an Int16.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:12:17 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetReorderPointProductCountList
+Error Line No : 33
+Exception Type : System.OverflowException
+Details: Value was either too large or too small for an Int16.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:12:18 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetReorderPointProductCountList
+Error Line No : 366
+Exception Type : System.OverflowException
+Details: Value was either too large or too small for an Int16.
+---------------------------------------------------------------------------------------------------------------------------
+

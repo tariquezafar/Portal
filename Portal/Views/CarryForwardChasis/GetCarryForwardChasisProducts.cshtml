@@ -1,0 +1,68 @@
+﻿@model List<Portal.Core.ViewModel.CarryForwardChasisDetailViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+      .table th {
+      background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+      color:#fff;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div>
+        <table class="table table-bordered table-hover" id="tblCarryForward" style="width:70%;">
+            <thead>
+                <tr>                 
+                    <th><center>S.No.</center></th>
+                    <th><center>Chasis Serial No.</center></th>
+                    <th><center>Motor No.</center></th>     
+                    <th><center>Carry Forward Month</center></th>   
+                    <th><center>Carry Forward Year</center></th>                                     
+                  
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                   
+                    <tr class="success">                       
+                         <td align="center">@item.SequenceNo</td>
+                         <td align="center">@item.ChasisSerialNo
+                            <input type="hidden" id="hdnChasisSerialNo" value="@item.ChasisSerialNo.Trim()" />
+                            <input type="hidden" id="hdnChasisSerialDetailID" value="@item.ChasisSerialDetailID" />
+                             <input type="hidden" id="hdnChasisModelID" value="@item.ChasisModelID" /></td>
+                         <td align="center">
+                            @item.MotorNo
+                         <input type="hidden" id="hdnMotorNo" value="@item.MotorNo.Trim()" />
+                         </td>
+                         <td align="center">
+                            @item.CarryMonth
+                            <input type="hidden" id="hdnCarryForwardMonth" value="@item.CarryForwardMonth" />
+                        </td>
+                        <td align="center">
+                            @item.CarryForwardYear
+                            <input type="hidden" id="hdnCarryForwardYear" value="@item.CarryForwardYear" />
+                        </td>                                      
+                    </tr>
+                   
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h4 style="color:firebrick;text-align:center">Chasis No. not Available !!! </h4>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblCarryForward').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+

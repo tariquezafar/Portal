@@ -1,0 +1,65 @@
+﻿@model List<Portal.Core.ViewModel.PayHeadGLMappingViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblTaxList">
+            <thead>
+                <tr aling="center"  style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                    <th colspan="2">Action</th>
+                    <th>Pay Head Name</th> 
+                    <th>Pay Head Status</th>
+                    <th>Company Branch</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="width:30px; margin:0px auto;">
+                            <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/PayHeadGLMapping/AddEditPayHeadGLMapping?payHeadMappingId=@item.PayHeadMappingId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/PayHeadGLMapping/AddEditPayHeadGLMapping?payHeadMappingId=@item.PayHeadMappingId&AccessMode=2"></a>
+                        </td> 
+                        <td>@item.PayHeadName</td> 
+                        <td>@(item.PayHeadGLMapping_Status == true ? "Active" : "Inactive")</td>
+                        <td>@item.CompanyBranchName</td> 
+                        
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblTaxList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

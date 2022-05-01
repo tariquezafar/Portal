@@ -1,0 +1,92 @@
+﻿@model List<Portal.Core.ViewModel.SOProductViewModel>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Assembly Type</th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                    <th colspan="2" align="center">Action</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+
+                        <td>
+                            @item.ProductName
+                            <input type="hidden" id="hdnWorkOrderProductDetailId" value="0" />
+                            <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                            <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                            <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                        </td>
+                        <td>
+                            @item.ProductCode
+                            <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                        </td>
+                        <td>
+                            @item.AssemblyType
+                            <input type="hidden" id="hdnProductShortDesc" value="@item.ProductShortDesc" />
+                            <input type="hidden" id="hdnAssemblyType" value="@item.AssemblyType" />
+                        </td>
+                       
+                        <td>
+                            @item.UOMName
+                            <input type="hidden" id="hdnUOMName" value="@item.UOMName" />
+                        </td>
+                        <td>
+                            @item.Quantity
+                            <input type="hidden" id="hdnQuantity" value="@item.Quantity" />
+                        </td>
+
+                        <td style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-pencil-square-o erp-btn" onclick="EditProductRow(this);" href="#"></a>
+                        </td>
+                        <td style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-trash erp-btn" onclick="RemoveProductRow(this)" href="#"></a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Assembly Type</th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

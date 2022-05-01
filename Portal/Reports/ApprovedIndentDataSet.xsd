@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ApprovedIndentDataSet" targetNamespace="http://tempuri.org/ApprovedIndentDataSet.xsd" xmlns:mstns="http://tempuri.org/ApprovedIndentDataSet.xsd" xmlns="http://tempuri.org/ApprovedIndentDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ApprovedIndentDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ApprovedIndentDataSet" msprop:Generator_UserDSName="ApprovedIndentDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ApprovedIndentDataSet" msprop:Generator_TableClassName="ApprovedIndentDataSetDataTable" msprop:Generator_TableVarName="tableApprovedIndentDataSet" msprop:Generator_RowChangedName="ApprovedIndentDataSetRowChanged" msprop:Generator_TablePropName="_ApprovedIndentDataSet" msprop:Generator_RowDeletingName="ApprovedIndentDataSetRowDeleting" msprop:Generator_RowChangingName="ApprovedIndentDataSetRowChanging" msprop:Generator_RowEvHandlerName="ApprovedIndentDataSetRowChangeEventHandler" msprop:Generator_RowDeletedName="ApprovedIndentDataSetRowDeleted" msprop:Generator_RowClassName="ApprovedIndentDataSetRow" msprop:Generator_UserTableName="ApprovedIndentDataSet" msprop:Generator_RowEvArgName="ApprovedIndentDataSetRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IndentNo" msprop:Generator_ColumnVarNameInTable="columnIndentNo" msprop:Generator_ColumnPropNameInRow="IndentNo" msprop:Generator_ColumnPropNameInTable="IndentNoColumn" msprop:Generator_UserColumnName="IndentNo" type="xs:string" minOccurs="0" />
+              <xs:element name="IndentDate" msprop:Generator_ColumnVarNameInTable="columnIndentDate" msprop:Generator_ColumnPropNameInRow="IndentDate" msprop:Generator_ColumnPropNameInTable="IndentDateColumn" msprop:Generator_UserColumnName="IndentDate" type="xs:string" minOccurs="0" />
+              <xs:element name="PONo" msprop:Generator_ColumnVarNameInTable="columnPONo" msprop:Generator_ColumnPropNameInRow="PONo" msprop:Generator_ColumnPropNameInTable="PONoColumn" msprop:Generator_UserColumnName="PONo" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductName" msprop:Generator_ColumnVarNameInTable="columnProductName" msprop:Generator_ColumnPropNameInRow="ProductName" msprop:Generator_ColumnPropNameInTable="ProductNameColumn" msprop:Generator_UserColumnName="ProductName" type="xs:string" minOccurs="0" />
+              <xs:element name="ApprovedIndentQTY" msprop:Generator_ColumnVarNameInTable="columnApprovedIndentQTY" msprop:Generator_ColumnPropNameInRow="ApprovedIndentQTY" msprop:Generator_ColumnPropNameInTable="ApprovedIndentQTYColumn" msprop:Generator_UserColumnName="ApprovedIndentQTY" type="xs:string" minOccurs="0" />
+              <xs:element name="POQTY" msprop:Generator_ColumnVarNameInTable="columnPOQTY" msprop:Generator_ColumnPropNameInRow="POQTY" msprop:Generator_ColumnPropNameInTable="POQTYColumn" msprop:Generator_UserColumnName="POQTY" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

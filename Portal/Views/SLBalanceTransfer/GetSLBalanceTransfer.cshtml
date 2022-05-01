@@ -1,0 +1,95 @@
+﻿@model List<Portal.Core.ViewModel.TempSLHeadClosingBalanceTransferViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+        color: #fff;
+    }
+
+    .achr {
+        text-decoration: none;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblFinYearProductList">
+            <thead>
+                <tr aling="center"  style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">                   
+                    <th>GL Head</th>
+                    <th>GL Code</th>       
+                    <th>SL Head</th> 
+                    <th>SL Code</th>              
+                    <th>Closing Debit Balance.</th>                   
+                    <th>Closing Credit Balance.</th>
+                                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                       
+                        <td>
+                            @item.GLHead
+                            <input type="hidden" id="hdnGLId" value="@item.GLId" />
+                            <input type="hidden" id="hdnGLHead" value="@item.GLHead" />
+                            <input type="hidden" id="hdnGLHead" value="@item.GLCode" />
+
+                            <input type="hidden" id="hdnSLId" value="@item.SLId" />
+                            <input type="hidden" id="hdnSLCode" value="@item.SLCode" />
+                            <input type="hidden" id="hdnSLHead" value="@item.SLHead" />
+
+                           
+                            <input type="hidden" id="hdnClosingBalanceDebit" value="@item.ClosingBalanceDebit" />
+                            <input type="hidden" id="hdnClosingBalanceCredit" value="@item.ClosingBalanceCredit" />
+                        </td>
+                        <td>
+                            @item.GLCode
+                           
+                        </td>
+
+                        <td>
+                            @item.SLHead
+
+                        </td>
+                        <td>
+                            @item.SLCode
+
+                        </td>
+
+                        <td>
+                            @item.ClosingBalanceDebit
+                            
+                        </td>
+                        
+
+                        <td>
+                            @item.ClosingBalanceCredit
+                            
+                        </td>
+                       
+                      
+                                                                  
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblFinYearProductList').paging({
+            limit: 50,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

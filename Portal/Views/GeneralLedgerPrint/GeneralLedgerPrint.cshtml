@@ -1,0 +1,124 @@
+﻿@{
+    ViewBag.Title = "General Ledger Print";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AccountDashboard">Account </a> >> General Ledger Print </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmBankBookPrint" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch</label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="9" class="form-control"></select>
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtGLHead" class="col-sm-4 control-label">GL Head</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtGLHead" name="txtGLHead" tabindex="1" placeholder="Enter GL" value="All" type="text" maxlength="100" />
+                        <input id="hdnGLId" type="hidden" value="0" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtFromDate" class="col-sm-4 control-label">From Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtFromDate" name="txtFromDate" tabindex="2" value="@ViewData["fromDate"]" type="text" maxlength="50" />
+                        <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["fromDate"]" type="hidden" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtToDate" class="col-sm-4 control-label">To Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtToDate" name="txtToDate" tabindex="3" value="@ViewData["toDate"]" type="text" maxlength="50" />
+                        <input id="hdnToDate" name="hdnToDate" value="@ViewData["toDate"]" type="hidden" />
+                    </div>
+                </div>
+            </div>
+           
+
+           
+
+            <div class="row col-sm-12 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <a class="btn btn-success" onclick="SearchBankVoucher();" tabindex="4" href="#" id="lnkExport">Generate General Ledger</a> &nbsp;&nbsp;
+                        <input class="btn btn-success" type="button" tabindex="11" id="btnReset" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div id="divList">
+
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" tabindex="5" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" tabindex="6" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" tabindex="7" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="printModel" role="dialog">
+            <div class="modal-dialog  modal-md">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="7" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Print General Ledger</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="ddlPrintOption" class="col-sm-4 control-label">Print Option</label>
+                            <div class="col-sm-8">
+                                <a class="btn btn-success" target="_blank" tabindex="8" href="#" id="btnPrintExcel">Print Excel</a> &nbsp;
+                                <a class="btn btn-success" target="_blank" tabindex="9" href="#" id="btnPrintPDF">Print PDF</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-primary" tabindex="10" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/GeneralLedgerPrint/GeneralLedgerPrint.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>

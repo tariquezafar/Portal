@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BookPrintDataSet" targetNamespace="http://tempuri.org/BookPrintDataSet.xsd" xmlns:mstns="http://tempuri.org/BookPrintDataSet.xsd" xmlns="http://tempuri.org/BookPrintDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BookPrintDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="BookPrintDataSet" msprop:Generator_UserDSName="BookPrintDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TEMPCASHBANKBOOKPRINT" msprop:Generator_TableClassName="TEMPCASHBANKBOOKPRINTDataTable" msprop:Generator_TableVarName="tableTEMPCASHBANKBOOKPRINT" msprop:Generator_TablePropName="TEMPCASHBANKBOOKPRINT" msprop:Generator_RowDeletingName="TEMPCASHBANKBOOKPRINTRowDeleting" msprop:Generator_RowChangingName="TEMPCASHBANKBOOKPRINTRowChanging" msprop:Generator_RowEvHandlerName="TEMPCASHBANKBOOKPRINTRowChangeEventHandler" msprop:Generator_RowDeletedName="TEMPCASHBANKBOOKPRINTRowDeleted" msprop:Generator_UserTableName="TEMPCASHBANKBOOKPRINT" msprop:Generator_RowChangedName="TEMPCASHBANKBOOKPRINTRowChanged" msprop:Generator_RowEvArgName="TEMPCASHBANKBOOKPRINTRowChangeEvent" msprop:Generator_RowClassName="TEMPCASHBANKBOOKPRINTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TRNID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTRNID" msprop:Generator_ColumnPropNameInRow="TRNID" msprop:Generator_ColumnPropNameInTable="TRNIDColumn" msprop:Generator_UserColumnName="TRNID" type="xs:long" minOccurs="0" />
+              <xs:element name="VOUCHERNO" msprop:Generator_ColumnVarNameInTable="columnVOUCHERNO" msprop:Generator_ColumnPropNameInRow="VOUCHERNO" msprop:Generator_ColumnPropNameInTable="VOUCHERNOColumn" msprop:Generator_UserColumnName="VOUCHERNO" type="xs:string" minOccurs="0" />
+              <xs:element name="VOUCHERDATE" msprop:Generator_ColumnVarNameInTable="columnVOUCHERDATE" msprop:Generator_ColumnPropNameInRow="VOUCHERDATE" msprop:Generator_ColumnPropNameInTable="VOUCHERDATEColumn" msprop:Generator_UserColumnName="VOUCHERDATE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="GLHEAD" msprop:Generator_ColumnVarNameInTable="columnGLHEAD" msprop:Generator_ColumnPropNameInRow="GLHEAD" msprop:Generator_ColumnPropNameInTable="GLHEADColumn" msprop:Generator_UserColumnName="GLHEAD" type="xs:string" minOccurs="0" />
+              <xs:element name="SLHEAD" msprop:Generator_ColumnVarNameInTable="columnSLHEAD" msprop:Generator_ColumnPropNameInRow="SLHEAD" msprop:Generator_ColumnPropNameInTable="SLHEADColumn" msprop:Generator_UserColumnName="SLHEAD" type="xs:string" minOccurs="0" />
+              <xs:element name="PAYMENT" msprop:Generator_ColumnVarNameInTable="columnPAYMENT" msprop:Generator_ColumnPropNameInRow="PAYMENT" msprop:Generator_ColumnPropNameInTable="PAYMENTColumn" msprop:Generator_UserColumnName="PAYMENT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="RECEIPT" msprop:Generator_ColumnVarNameInTable="columnRECEIPT" msprop:Generator_ColumnPropNameInRow="RECEIPT" msprop:Generator_ColumnPropNameInTable="RECEIPTColumn" msprop:Generator_UserColumnName="RECEIPT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="YEAROPENING" msprop:Generator_ColumnVarNameInTable="columnYEAROPENING" msprop:Generator_ColumnPropNameInRow="YEAROPENING" msprop:Generator_ColumnPropNameInTable="YEAROPENINGColumn" msprop:Generator_UserColumnName="YEAROPENING" type="xs:decimal" minOccurs="0" />
+              <xs:element name="YEAROPENINGVOUCHERAMT" msprop:Generator_ColumnVarNameInTable="columnYEAROPENINGVOUCHERAMT" msprop:Generator_ColumnPropNameInRow="YEAROPENINGVOUCHERAMT" msprop:Generator_ColumnPropNameInTable="YEAROPENINGVOUCHERAMTColumn" msprop:Generator_UserColumnName="YEAROPENINGVOUCHERAMT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NARRATION" msprop:Generator_ColumnVarNameInTable="columnNARRATION" msprop:Generator_ColumnPropNameInRow="NARRATION" msprop:Generator_ColumnPropNameInTable="NARRATIONColumn" msprop:Generator_UserColumnName="NARRATION" type="xs:string" minOccurs="0" />
+              <xs:element name="VALUEDATE" msprop:Generator_ColumnVarNameInTable="columnVALUEDATE" msprop:Generator_ColumnPropNameInRow="VALUEDATE" msprop:Generator_ColumnPropNameInTable="VALUEDATEColumn" msprop:Generator_UserColumnName="VALUEDATE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CHEQUEREFNO" msprop:Generator_ColumnVarNameInTable="columnCHEQUEREFNO" msprop:Generator_ColumnPropNameInRow="CHEQUEREFNO" msprop:Generator_ColumnPropNameInTable="CHEQUEREFNOColumn" msprop:Generator_UserColumnName="CHEQUEREFNO" type="xs:string" minOccurs="0" />
+              <xs:element name="PAYMENTMODENAME" msprop:Generator_ColumnVarNameInTable="columnPAYMENTMODENAME" msprop:Generator_ColumnPropNameInRow="PAYMENTMODENAME" msprop:Generator_ColumnPropNameInTable="PAYMENTMODENAMEColumn" msprop:Generator_UserColumnName="PAYMENTMODENAME" type="xs:string" minOccurs="0" />
+              <xs:element name="COSTCENTERNAME" msprop:Generator_ColumnVarNameInTable="columnCOSTCENTERNAME" msprop:Generator_ColumnPropNameInRow="COSTCENTERNAME" msprop:Generator_ColumnPropNameInTable="COSTCENTERNAMEColumn" msprop:Generator_UserColumnName="COSTCENTERNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="REPORTUSERID" msprop:Generator_ColumnVarNameInTable="columnREPORTUSERID" msprop:Generator_ColumnPropNameInRow="REPORTUSERID" msprop:Generator_ColumnPropNameInTable="REPORTUSERIDColumn" msprop:Generator_UserColumnName="REPORTUSERID" type="xs:string" minOccurs="0" />
+              <xs:element name="SESSIONID" msprop:Generator_ColumnVarNameInTable="columnSESSIONID" msprop:Generator_ColumnPropNameInRow="SESSIONID" msprop:Generator_ColumnPropNameInTable="SESSIONIDColumn" msprop:Generator_UserColumnName="SESSIONID" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:TEMPCASHBANKBOOKPRINT" />
+      <xs:field xpath="mstns:TRNID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

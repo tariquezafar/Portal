@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ESIDataSet" targetNamespace="http://tempuri.org/ESIDataSet.xsd" xmlns:mstns="http://tempuri.org/ESIDataSet.xsd" xmlns="http://tempuri.org/ESIDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ESIDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ESIDataSet" msprop:Generator_UserDSName="ESIDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ESIDataSet" msprop:Generator_TableClassName="ESIDataSetDataTable" msprop:Generator_TableVarName="tableESIDataSet" msprop:Generator_TablePropName="_ESIDataSet" msprop:Generator_RowDeletingName="ESIDataSetRowDeleting" msprop:Generator_RowChangingName="ESIDataSetRowChanging" msprop:Generator_RowEvHandlerName="ESIDataSetRowChangeEventHandler" msprop:Generator_RowDeletedName="ESIDataSetRowDeleted" msprop:Generator_UserTableName="ESIDataSet" msprop:Generator_RowChangedName="ESIDataSetRowChanged" msprop:Generator_RowEvArgName="ESIDataSetRowChangeEvent" msprop:Generator_RowClassName="ESIDataSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IPNumber" msprop:Generator_ColumnVarNameInTable="columnIPNumber" msprop:Generator_ColumnPropNameInRow="IPNumber" msprop:Generator_ColumnPropNameInTable="IPNumberColumn" msprop:Generator_UserColumnName="IPNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="IP_Name" msprop:Generator_ColumnVarNameInTable="columnIP_Name" msprop:Generator_ColumnPropNameInRow="IP_Name" msprop:Generator_ColumnPropNameInTable="IP_NameColumn" msprop:Generator_UserColumnName="IP_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="WorkingDays" msprop:Generator_ColumnVarNameInTable="columnWorkingDays" msprop:Generator_ColumnPropNameInRow="WorkingDays" msprop:Generator_ColumnPropNameInTable="WorkingDaysColumn" msprop:Generator_UserColumnName="WorkingDays" type="xs:string" minOccurs="0" />
+              <xs:element name="EPFWages" msprop:Generator_ColumnVarNameInTable="columnEPFWages" msprop:Generator_ColumnPropNameInRow="EPFWages" msprop:Generator_ColumnPropNameInTable="EPFWagesColumn" msprop:Generator_UserColumnName="EPFWages" type="xs:string" minOccurs="0" />
+              <xs:element name="ReasonCode" msprop:Generator_ColumnVarNameInTable="columnReasonCode" msprop:Generator_ColumnPropNameInRow="ReasonCode" msprop:Generator_ColumnPropNameInTable="ReasonCodeColumn" msprop:Generator_UserColumnName="ReasonCode" type="xs:string" minOccurs="0" />
+              <xs:element name="LastWorkingDay" msprop:Generator_ColumnVarNameInTable="columnLastWorkingDay" msprop:Generator_ColumnPropNameInRow="LastWorkingDay" msprop:Generator_ColumnPropNameInTable="LastWorkingDayColumn" msprop:Generator_UserColumnName="LastWorkingDay" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Add Customer Type";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AdminDashboard">Admin</a> >> Add/Edit Customer Type </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditCustomerType" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4"> 
+                        <label for="txtCustomerTypeDesc" class="col-sm-4 control-label">Customer Type Desc&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtCustomerTypeDesc" name="txtCustomerTypeDesc" tabindex="1" placeholder="Enter Customer Type Desc" type="text" maxlength="100" />
+                            <input id="hdnCustomerTypeId" type="hidden" value="@ViewData["customertypeId"]" />
+                            <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                            <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                            <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                        </div> 
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="2" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group col-md-4"> 
+                        <label for="chkstatus" class="col-sm-4 control-label">Active Status&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="3" />
+                        </div> 
+                </div>
+                </div>
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnSave" onclick="SaveData(1)" tabindex="3" type="button" border="0"> 
+                            <input class="btn btn-success" value="Update" style="display:none;" alt="Update" id="btnUpdate" tabindex="3" onclick="SaveData(2)" type="button" border="0"> 
+                            @*<input class="btn btn-success" type="button" id="btnReset" onclick="ClearFields()" value="Reset" tabindex="4"/> &nbsp;&nbsp;*@
+                            <a class="btn btn-success" id="btnReset" tabindex="6" href="@Url.Content("~/CustomerType/AddEditCustomerType")">Reset</a>                        
+                            @*<input class="btn btn-success" type="button" id="btnList" value="Search Company" />*@
+                            <a class="btn btn-success" id="btnList" tabindex="7" href="@Url.Content("~/CustomerType/ListCustomerType")">Search Customer Type</a>
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="4" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="5" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="5" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/CustomerType/AddCustomerType.js"></script>

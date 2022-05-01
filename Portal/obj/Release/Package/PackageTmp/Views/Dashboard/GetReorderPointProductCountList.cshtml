@@ -1,0 +1,50 @@
+﻿@model List<Portal.Core.ViewModel.ReorderPointProductCountViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table" id="tblReorderProductCountList" style="margin-top:10px;">
+            <thead style="border-top-left-radius:15px;">
+                <tr style="border:none;">
+                    <th style="background:#fc8213; color:#fff;width:100%;" colspan="3">Reorder Pending Products</th> 
+                </tr>
+                <tr style="background:#D0DDEC; border:1px solid #ccc;">
+                    <th style="text-align:center">Product</th>
+                    <th style="text-align:center">Reorder Qty</th>
+                    <th style="text-align:center">Available Stock</th> 
+                </tr>
+               
+            </thead>
+            <tbody style="border:1px solid #ccc;">
+                @foreach (var item in Model)
+                {
+                <tr class="success">
+                    <td>@item.ProductName</td>
+                    <td>@item.ReorderQty</td>
+                    <td>@item.AvailableStock</td>
+                </tr>
+                }
+                <tr>
+                    <td colspan="3" align="center">
+                        <a href="@Url.Content("~/Product/ListProductReorderQuantity")"> View All Reorder Product Quantity </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Product Reorder not pending</h3>
+}
+@*<script>
+    $(document).ready(function () {
+        $('#tblReorderProductCountList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>*@

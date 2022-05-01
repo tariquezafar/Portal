@@ -1,0 +1,83 @@
+﻿@model List<Portal.Core.ViewModel.InterviewViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblJobOpeningList">
+            <thead>
+                <tr>
+                    <th>Interview No.</th>
+                    <th>Applicant No.</th>
+                    <th>Applicant Name</th>
+                    <th>Aptitude Test</th>
+                    <th>Technical Round-1</th>
+                    <th>Technical Round-2</th>
+                    <th>Technical Round-3</th>
+                    <th>Machine Round</th>
+                    <th>HR Round</th>
+                    <th>Interview Final</th>
+                    <th>Created By User</th>
+                    <th>Created Date</th>
+                    <th>Modified By User</th>
+                    <th>Modified Date</th>
+                    <th>Company Branch</th>
+                    <th align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.InterviewNo</td>
+                        <td>@item.ApplicantNo</td>
+                        <td>@item.ApplicantName</td>
+                        <td>@item.AptitudeTestStatus</td>
+                        <td>@item.TechnicalRound1_Status</td>
+                        <td>@item.TechnicalRound2_Status</td>
+                        <td>@item.TechnicalRound3_Status</td>
+                        <td>@item.MachineRound_Status</td>
+                        <td>@item.HRRound_Status</td>
+                        <td>@item.InterviewFinalStatus</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+                        <td>@item.CompanyBranchName</td>
+                        <td class="btn btn-success table_btn" style="margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/Interview/AddEditInterview?interviewId=@item.InterviewId&AccessMode=3"></a>
+                          
+                            
+                                <a style="color:white" class="fa fa-pencil-square-o" href="~/Interview/AddEditInterview?interviewId=@item.InterviewId&AccessMode=2"></a>
+                         </td>
+                    </tr>
+
+                    
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblJobOpeningList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

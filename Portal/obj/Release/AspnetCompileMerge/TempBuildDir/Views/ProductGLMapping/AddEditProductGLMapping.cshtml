@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "AddEditProductGLMapping";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }  
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+       
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+          
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+         
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+    /* allow space for check mark */
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AdminDashboard">Admin</a> >> Add Edit Product GL Mapping</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditProductTaxMapping" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="ddlProductMainGroup" class="col-sm-4 control-label">Product Type&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlProductType" name="ddlProductType" tabindex="4" class="form-control"></select>
+                        <input id="hdnMappingId" type="hidden" value="@ViewData["mappingId"]" />
+                        <input id="hdnCompanyId" type="hidden" value="@ViewData["CompanyId"]" />
+                        <input id="hdnCreatedBy" type="hidden" value="@ViewData["CreatedBy"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" /> 
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="ddlApprovalStatus" class="col-sm-4 control-label">GL Type</label>
+                    <div class="col-sm-4">
+                        <select id="ddlGLType" name="ddlGLType" tabindex="4" class="form-control" style="width:272px !important;">
+                        
+                            <option selected="selected" value="Sale Local">Sale Local</option>
+                            <option value="Sale Export">Sale Export</option>                            
+                            <option value="Purchase Local">Purchase Local</option>
+                            <option value="Purchase Import">Purchase Import</option>
+                            <option value="Other">Other</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtGLHead" class="col-sm-4 control-label">GL&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtGLHead" name="txtGLHead" tabindex="5" placeholder="Enter GL Head" type="text" maxlength="100" />
+                        <input id="hdnGLId" type="hidden" value="0" />
+                        <input id="hdnPITaxDetailId" type="hidden" value="0" />
+                    </div>
+                </div>
+
+                 </div>
+            <div class="col-md-12"> 
+                <div class="form-group col-md-4">
+                    <label for="chkstatus" class="col-sm-4 control-label">Active Status&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="6" />
+                    </div>
+                </div> 
+                <div class="form-group col-md-4">
+                      
+                    </div>
+                <div class="form-group col-md-4">
+                    </div>
+                    </div>
+
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="7" onclick="SaveData(1)" type="button" border="0"> 
+                            <input class="btn btn-success" value="Update" style="display:none;" tabindex="7" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                            <a class="btn btn-success" id="btnReset" tabindex="10" href="@Url.Content("~/ProductGLMapping/AddEditProductGLMapping")">Reset</a>                        
+                          @*<input class="btn btn-success" type="button" id="btnReset" tabindex="7" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
+                             <a class="btn btn-success" id="btnList" tabindex="11" href="@Url.Content("~/ProductGLMapping/ListProductGLMapping")">Search Product GL</a>
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="8"  role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="9"  data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="9"  data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/ProductGLMapping/AddProductGLMapping.js"></script>

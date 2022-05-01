@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "List City";
+    Layout = "~/Views/Shared/_SuperAdminLayout.cshtml";
+}
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Company/SuperAdminDashboard">Control Panel</a> >> List City  </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditCity" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6"> 
+                        <label for="ddlCountry" class="col-sm-4 control-label">Country</label>
+                        <div class="col-sm-8">
+                            <select id="ddlCountry" name="ddlCountry" tabindex="1" class="form-control" onchange="BindStateList(0)"></select>
+                        </div> 
+                </div>
+                
+                <div class="form-group col-md-6">
+                    <label for="ddlState" class="col-sm-4 control-label">State</label>
+                    <div class="col-sm-8">
+                        <select id="ddlState" name="ddlState" tabindex="2" class="form-control"></select>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtCityName" class="col-sm-4 control-label">City Name</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtCityName" name="txtCityName" tabindex="3" placeholder="Enter City Name" type="text" maxlength="100" />
+                        <input id="hdnCityId" type="hidden" value="@ViewData["cityId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    </div>
+                    </div>
+                </div>
+
+
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Search" tabindex="4" alt="Save" id="btnSearch" onclick="SearchCity()" type="button" border="0" >&nbsp;&nbsp;
+                        <input class="btn btn-success" type="button" tabindex="5" id="btnReset" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;
+                        <a class="btn btn-success" id="btnList" tabindex="6" href="@Url.Content("~/City/AddEditCity")">Add More City</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div id="divList">
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/City/ListCity.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>

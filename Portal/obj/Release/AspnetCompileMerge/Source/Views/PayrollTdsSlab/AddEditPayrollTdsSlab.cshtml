@@ -1,0 +1,222 @@
+﻿@{
+    ViewBag.Title = "Add/Edit Payroll Tds";
+    Layout = "~/Views/Shared/_PayrollLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+
+    /* allow space for check mark */
+</style>
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;"  href="~/Dashboard/PayrollDashboard">Payroll</a> >> Add/Edit Payroll TDS </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditPayrollTds" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="txtFromDate" class="col-sm-4 control-label">From Date&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtFromDate" name="txtFromDate" tabindex="1" placeholder="Enter From Date" type="text" maxlength="100" />
+                        <input id="hdnPayrollTdsid" type="hidden" value="@ViewData["tdsSlaBid"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                       
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtToDate" class="col-sm-4 control-label">To Date&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtToDate" name="txtToDate" tabindex="2" placeholder="Enter To Date" type="text" maxlength="100" />
+                    </div>
+                </div>
+        
+                <div class="form-group col-md-4">
+                    <label for="txtFromAmount" class="col-sm-4 control-label">From Amount&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control input-number" id="txtFromAmount" name="txtFromAmount" tabindex="3" placeholder="Enter From Amount" type="text" maxlength="100" onkeyup="checkDec(this)"/>
+
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtToAmount" class="col-sm-4 control-label">To Amount&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control input-number" id="txtToAmount" name="txtToAmount" tabindex="4" placeholder="Enter To Amount" type="text" maxlength="100" onkeyup="checkDec(this)" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="ddlCategory" class="col-sm-4 control-label">Select Category&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCategory" name="ddlCategory" tabindex="5" class="form-control">
+                            <option value="0">-Select Category-</option>
+                            <option value="1">Mrs</option>
+                            <option value="2">Miss</option>
+                            <option value="3">F Senior Citizen</option>
+                            <option value="4">M Senior Citizen</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtTDSPercentage" class="col-sm-4 control-label">Tds Percentage (%)&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control input-number" id="txtTDSPercentage" name="txtTDSPercentage" tabindex="6" placeholder="Enter TDS Per" type="text" maxlength="100" onkeyup="checkDec(this)"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtCessPerc" class="col-sm-4 control-label">Cess Per (%)&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control input-number" id="txtCessPerc" name="txtCessPerc" tabindex="7" placeholder="Enter Cess Perc" type="text" maxlength="100" onkeyup="checkDec(this)"/>
+
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtSurcharegePerc" class="col-sm-4 control-label">Surcharege Perc (%)</label>
+                    <div class="col-sm-8">
+                        <input class="form-control input-number" id="txtSurcharegePerc" name="txtSurcharegePerc" tabindex="8" placeholder="Enter Surcharege Perc" type="text" maxlength="100" onkeyup="checkDec(this)"/>
+                    </div>
+                </div>
+         
+                <div class="form-group col-md-4">
+                    <label for="txtSurchargePerc2" class="col-sm-4 control-label">Surcharge Perc 2 (%)</label>
+                    <div class="col-sm-8">
+                        <input class="form-control input-number" id="txtSurchargePerc2" name="txtSurchargePerc2" tabindex="9" placeholder="Enter Surcharge Perc 2" type="text" maxlength="100" onkeyup="checkDec(this)"/>
+
+                    </div>
+                </div>
+               
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtSurchargePerc3" class="col-sm-4 control-label">Surcharege Perc 3 (%)</label>
+                    <div class="col-sm-8">
+                        <input class="form-control input-number" id="txtSurchargePerc3" name="txtSurchargePerc3" tabindex="10" placeholder="Enter Surcharge Perc 2" type="text" maxlength="100" onkeyup="checkDec(this)" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtYearlyDiscount" class="col-sm-4 control-label">Yearly Discount&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control input-number" id="txtYearlyDiscount" name="txtYearlyDiscount" tabindex="11" placeholder="Enter Yearly Discount" type="text" maxlength="100" onkeyup="checkDec(this)"/>
+
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtMonthlyDiscount" class="col-sm-4 control-label">Monthly Discount&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control  input-number" id="txtMonthlyDiscount" name="txtMonthlyDiscount" tabindex="12" placeholder="Enter Monthly Discount" type="text" maxlength="100" onkeyup="checkDec(this)" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="46" onchange="GetBranchStateId()" class="form-control"></select>
+                        <input id="hdnBillingStateId" type="hidden" value="0" />
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="13" onclick="SaveData()" type="button" border="0">
+                            <input class="btn btn-success" value="Update" style="display:none;" tabindex="13" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">
+                            <a class="btn btn-success" id="btnReset" tabindex="16" href="@Url.Content("~/PayrollTdsSlab/AddEditPayrollTdsSlab")">Reset</a>
+                            <a class="btn btn-success" id="btnList" tabindex="17" href="@Url.Content("~/PayrollTdsSlab/ListPayrollTds")">Search Payroll TDS</a>
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="14" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="15" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer"> 
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="15" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<script src="~/Scripts/lightbox.js"></script>
+<script src="~/Scripts/PayrollTds/AddPayrollTds.js"></script>

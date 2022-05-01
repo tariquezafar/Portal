@@ -1,0 +1,83 @@
+﻿@model List<Portal.Core.ViewModel.ProductGLMappingViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table{
+       background-color:white;
+       margin-left:1px;
+       margin-right:20px
+    }
+     .table th {
+    background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    color:#fff;
+}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div>
+        <table class="table table-bordered" id="tblProductGLMappingList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>Product Type</center></th> 
+                    <th><center>GL</center></th>
+                    <th><center>GL Type</center></th>
+                    <th><center>Created By</center></th>
+                    <th><center>Status</center></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {    if (item.MappingStatus == 1)
+                    {
+                    <tr class="success">
+                        <td class="teal text" style="width:30px; margin:0px auto;">
+                            <a title="View" style="color:darkblue;text-decoration:none;" class="fa fa-eye" aria-hidden="true" href="~/ProductGLMapping/AddEditProductGLMapping?mappingId=@item.MappingId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            <a title="Edit" style="color:darkgreen;text-decoration:none;" class="fa fa-pencil" href="~/ProductGLMapping/AddEditProductGLMapping?mappingId=@item.MappingId&AccessMode=2"></a>
+                        </td>
+                        <td align="center">@item.ProductSubGroupName</td> 
+                        <td align="center">@item.GLHead</td>
+                        <td align="center">@item.GLType</td>
+                        <td align="center">@item.CreatedByName</td>
+                        <td align="center">@(item.MappingStatus == 1 ? "Active" : "Inactive")</td>                        
+                    </tr>
+                    }
+                    else
+                    {
+                        <tr class="danger">
+                            <td class="btn btn-success table_btn" style="width:30px; margin:0px auto;">
+                                <a title="View" style="color:white; text-decoration:none;" class="fa fa-eye" aria-hidden="true" href="~/ProductGLMapping/AddEditProductGLMapping?mappingId=@item.MappingId&AccessMode=3"></a>
+                            </td>
+                            <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                                <a title="Edit" style="color:white;text-decoration:none;" class="fa fa-pencil-square-o" href="~/ProductGLMapping/AddEditProductGLMapping?mappingId=@item.MappingId&AccessMode=2"></a>
+                            </td>
+                            <td align="center">@item.ProductSubGroupName</td>
+                            <td align="center">@item.GLHead</td>
+                            <td align="center">@item.CreatedByName</td>
+                            <td align="center">@(item.MappingStatus == 1 ? "Active" : "Inactive")</td>
+                        </tr>
+
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblProductGLMappingList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

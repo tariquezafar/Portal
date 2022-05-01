@@ -1,0 +1,345 @@
+﻿@model List<Portal.Core.ViewModel.PurchaseInvoiceImportProductDetailViewModel>
+
+<style>
+    .table {
+        width: 112% !important;
+        max-width: 112% !important;
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+
+        .table th {
+            background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+        }
+
+        .table th {
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .table tr {
+            text-align: center;
+        }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table table-bordered table-hover" id="tblProductList">
+            <thead>
+                <tr>
+                   
+                    <th style="display:none">S. No.</th>
+                    <th>Product Name</th>      
+                    <th>Purchase UOM</th>
+                    <th>Price</th>
+                    <th>Currency</th>
+                    <th>Quantity</th>
+                    <th>Dis Amt.</th>
+                    <th>Ass. Value</th>
+                    <th>BCD Per(%)</th>
+                    <th>BCD Amt (Rs)</th>
+                    <th>CVD Per(%)</th>
+                    <th>CVD Amt (Rs)</th>
+                    <th>Edu.Cess On CVD(%)</th>
+                    <th>Edu.Cess On CVD Amt.</th>
+                    <th>Sec & Hig. Edu.Cess On CVD(%)</th>
+                    <th>Sec & Hig. Edu.Cess On CVD Amt</th>
+                    <th>Custom Edu.Cess(%)</th>
+                    <th>Custom Edu.Cess Amt</th>
+                    <th>Custom Sec & Hig. Edu. Cess(%)</th>
+                    <th>Custom Sec & Hig. Edu. Cess Amt</th>
+                    <th>IGST(%)</th>
+                    <th>IGST Amt</th>
+                    <th>GST Cess(%)</th>
+                    <th>GST Cess Amt</th>
+                    <th>Total Price</th>
+                    <th>HSN Code</th>
+                    <th>RITC</th>
+                    <th>CTH</th>
+                    <th>CETH</th>
+                    <th>CNotn</th>
+                    <th>ENotn</th>
+                    <th>CNSNO</th>
+                    <th>ENSNO</th>
+                    <th>RSP</th>
+                    <th>LoadProv</th>
+                    
+                    <th colspan="2" align="center" class="editonly">Action</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="display:none">
+                            @item.SequenceNo
+                            <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                        </td>
+                        <td>
+                            @item.ProductName
+                            <input type="hidden" id="hdnPIProductDetailId" value="@item.InvoiceProductDetailId" />
+                            <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                            <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                            <input type="hidden" id="hdnCustomDutyPerc" value="@item.CustomDutyPerc" />
+                            <input type="hidden" id="hdnExciseDutyPerc" value="@item.ExciseDutyPerc" />
+                            <input type="hidden" id="hdnCurrency" value="@item.Currency" />
+                            <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                            <input type="hidden" id="hdnUOMName" value="@item.UOMName" />
+                            <input type="hidden" id="hdnProductShortDesc" value="@item.ProductShortDesc" />
+                            <input type="hidden" id="hdnPrice" value="@item.Price" />
+                            <input type="hidden" id="hdnQuantity" value="@item.Quantity" />
+                            <input type="hidden" id="hdnIGSTPerc" value="@item.IGST_Perc" />
+                            <input type="hidden" id="hdnIGSTAmount" value="@item.IGST_Amount" />
+                            <input type="hidden" id="hdnTotalPrice" value="@item.Total" />
+                            <input type="hidden" id="hdnDiscountPerc" value="@item.DiscountPercentage" />
+                            <input type="hidden" id="hdnDiscountAmount" value="@item.DiscountAmount" />
+                            <input type="hidden" id="hdnHSN_Code" value="@item.HSN_Code" />
+                            <input type="hidden" id="hdnRITC" value="@item.RITC" />
+                            <input type="hidden" id="hdnAssValue" value="@item.AssValue" />
+                            <input type="hidden" id="hdnCTH" value="@item.CTH" />
+                            <input type="hidden" id="hdnCETH" value="@item.CETH" />
+                            <input type="hidden" id="hdnCNotn" value="@item.CNotn" />
+                            <input type="hidden" id="hdnENotn" value="@item.ENotn" />
+                            <input type="hidden" id="hdnCNSNO" value="@item.Cnsno" />
+                            <input type="hidden" id="hdnENSNO" value="@item.Ensno" />
+                            <input type="hidden" id="hdnRSP" value="@item.RSP" />
+                            <input type="hidden" id="hdnLoadProv" value="@item.LoadProv" />
+                            <input type="hidden" id="hdnBCDAmtRs" value="@item.BCDAmtRs" />
+                            <input type="hidden" id="hdnCVDAmtRs" value="@item.CVDAmtRs" />
+                            <input type="hidden" id="hdnCustomDutyPerc" value="@item.CustomDutyPerc" />
+                            <input type="hidden" id="hdnCustomDutyRate" value="@item.CustomDutyRate" />
+                            <input type="hidden" id="hdnExciseDutyPerc" value="@item.ExciseDutyPerc" />
+                            <input type="hidden" id="hdnExciseDutyRate" value="@item.ExciseDutyRate" />
+                            <input type="hidden" id="hdnGSTCessPerc" value="@item.GSTCessPerc" />
+                            <input type="hidden" id="hdnGSTCessAmt" value="@item.GSTCessAmt" />
+
+
+                            <input type="hidden" id="hdnEducationalCessOnCVDPerc" value="@item.EducationalCessOnCVDPerc" />
+                            <input type="hidden" id="hdnEducationalCessOnCVDAmt" value="@item.EducationalCessOnCVDAmt" />
+                            <input type="hidden" id="hdnSecHigherEduCessOnCVDPerc" value="@item.SecHigherEduCessOnCVDPerc" />
+                            <input type="hidden" id="hdnSecHigherEduCessOnCVDAmt" value="@item.SecHigherEduCessOnCVDAmt" />
+                            <input type="hidden" id="hdnCustomSecHigherEduCessPerc" value="@item.CustomSecHigherEduCessPerc" />
+                            <input type="hidden" id="hdnCustomSecHigherEduCessAmt" value="@item.CustomSecHigherEduCessAmt" />
+                            <input type="hidden" id="hdnCustomEducationalCessPerc" value="@item.CustomEducationalCessPerc" />
+                            <input type="hidden" id="hdnCustomEducationalCessAmt" value="@item.CustomEducationalCessAmt" />
+
+                        </td>
+                      
+                        <td>
+                            @item.UOMName
+                        </td>
+                        <td>
+                            @item.Price
+
+                        </td>
+                        <td>
+                            @item.Currency
+                        </td>
+                        <td>
+                            @item.Quantity
+
+
+                        </td>
+                        <td>
+                            @item.DiscountAmount
+
+                        </td>
+
+                        <td>
+                            @item.AssValue
+
+                        </td>
+                        
+                        <td>
+                            @item.CustomDutyPerc
+
+                        </td>
+                        <td>
+                            @item.BCDAmtRs
+
+                        </td>
+                        <td>
+                            @item.ExciseDutyPerc
+
+                        </td>
+                        <td>
+                            @item.ExciseDutyRate
+
+                        </td>
+                        <td>
+                            @item.EducationalCessOnCVDPerc
+
+                        </td>
+
+                        <td>
+                            @item.EducationalCessOnCVDAmt
+
+                        </td>
+                        <td>
+                            @item.SecHigherEduCessOnCVDPerc
+
+                        </td>
+                        <td>
+                            @item.SecHigherEduCessOnCVDAmt
+
+                        </td>
+                       
+                        <td>
+                            @item.CustomSecHigherEduCessPerc
+
+                        </td>
+
+                        <td>
+                            @item.CustomSecHigherEduCessAmt
+
+                        </td>
+                        <td>
+                            @item.CustomEducationalCessPerc
+
+                        </td>
+                        <td>
+                            @item.CustomEducationalCessAmt
+
+                        </td>
+
+                        <td id="tdIGST_Perc">
+                            @item.IGST_Perc
+
+                        </td>
+                        <td id="tdIGSTAmount">
+                            @item.IGST_Amount
+
+
+                        </td>
+                        <td id="tdGSTCessPerc">
+                            @item.GSTCessPerc
+
+                        </td>
+                        <td>
+                            @item.GSTCessAmt
+
+                        </td>
+                        <td id="tdTotalPrice">
+                            @item.Total
+
+                        </td>
+                        <td>
+                            @item.HSN_Code
+
+                        </td>
+
+                        <td>
+                            @item.RITC
+
+                        </td>
+                        <td>
+                            @item.CTH
+
+                        </td>
+
+                        <td>
+                            @item.CETH
+
+                        </td>
+
+                        <td>
+                            @item.CNotn
+
+                        </td>
+
+                        <td>
+                            @item.ENotn
+
+                        </td>
+                        <td>
+                            @item.Cnsno
+
+                        </td>
+                        <td>
+                            @item.Ensno
+
+                        </td>
+
+                       
+
+
+                        <td>
+                            @item.RSP
+
+                        </td>
+
+                        <td>
+                            @item.LoadProv
+
+                        </td>
+                      
+                       
+                        <td class="editonly" style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-pencil-square-o erp-btn" onclick="EditProductRow(this);" href="#"></a>
+                        </td>
+                        <td class="editonly" style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-trash erp-btn" onclick="RemoveProductRow(this)" href="#"></a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                   
+                    <th style="display:none">S. No.</th>
+                    <th>Product Name</th>
+                    <th>Purchase UOM</th>
+                    <th>Price</th>
+                    <th>Currency</th>
+                    <th>Quantity</th>
+                    <th>Dis Amt.</th>
+                    <th>Ass. Value</th>
+                    <th> Amt(Rs)</th>
+                    <th>CVD Amt (Rs)</th>
+                    <th>Edu.Cess On CVD(%)</th>
+                    <th>Amount</th>
+                    <th>Sec & Hig. Edu.Cess On CVD(%)</th>
+                    <th>Amount</th>
+                    <th>Custom Edu.Cess(%)</th>
+                    <th>Amount</th>
+                    <th>Custom Sec & Hig. Edu. Cess(%)</th>
+                    <th>Amount</th>
+                    <th>IGST(%)</th>
+                    <th>IGST Amt</th>
+                    <th>GSTCess</th>
+                    <th>Total Price</th>
+                    <th>RITC</th>
+                    <th>CTH</th>
+                    <th>CETH</th>
+                    <th>CNotn</th>
+                    <th>ENotn</th>
+                    <th>CNSNO</th>
+                    <th>ENSNO</th>
+                    <th>RSP</th>
+                    <th>LoadProv</th>
+                    <th>HSN Code</th>
+
+                    <th colspan="2" align="center" class="editonly">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+<script>
+    $(document).ready(function () {
+        if ($("#hdnAccessMode").val() == "3") {
+            $(".editonly").hide();
+        }
+
+    });
+</script>

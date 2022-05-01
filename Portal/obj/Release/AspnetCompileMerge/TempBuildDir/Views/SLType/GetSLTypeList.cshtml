@@ -1,0 +1,50 @@
+﻿@model List<Portal.Core.ViewModel.SLTypeViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;background-color:White;margin-top: 20px;">
+        <table class="table table-bordered table-hover" id="tblUserList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>SL Type Name</center></th>
+                    <th><center>SL Type Status</center></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="info">
+                        <td class="teal text" style="width:30px; margin:0px auto;">
+                            <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/SLType/AddEditSLType?SLTypeId=@item.SLTypeId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:darkgreen" class="fa fa-pencil" href="~/SLType/AddEditSLType?SLTypeId=@item.SLTypeId&AccessMode=2"></a>
+                        </td>
+                        <td align="center">@item.SLTypeName</td>
+                        <td align="center">@(item.SLType_Status == true ? "Active" : "Inactive")</td>
+                        
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblUserList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

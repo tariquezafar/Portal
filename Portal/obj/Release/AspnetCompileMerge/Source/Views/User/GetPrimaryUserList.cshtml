@@ -1,0 +1,72 @@
+﻿@model List<Portal.Core.ViewModel.UserViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table {
+    width: 100% !important;
+    max-width: 100% !important; 
+}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px; background-color:white;">
+        <table class="table table-bordered table-hover" id="tblUserList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>Login ID</center></th>
+                    <th><center>Full Name</center></th>
+                    <th><center>Phone</center></th>
+                    <th><center>Email</center></th>
+                    <th><center>Role</center></th>
+                    <th><center>Company</center></th>
+                    <th><center>Created By</center></th>
+                    <th><center>Created Date</center></th>
+                    <th><center>Expiry Date</center></th>
+                    <th><center>User Status</center></th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="info">
+                        <td class="teal text" style="width:30px; margin:0px auto;">
+                            <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/User/AddEditPrimaryUser?UserId=@item.UserId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:darkgreen" class="fa fa-pencil" href="~/User/AddEditPrimaryUser?UserId=@item.UserId&AccessMode=2"></a>
+                        </td>
+                        <td>@item.UserName</td>
+                        <td>@item.FullName</td>
+                        <td>@item.MobileNo</td>
+                        <td>@item.Email</td>
+                        <td>@item.RoleName</td>
+                        <td>@item.CompanyName</td>
+                        <td>@item.CreatedByName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ExpiryDate</td>
+                        <td>@(item.UserStatus==true?"Active":"Inactive")</td>
+                     
+
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblUserList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

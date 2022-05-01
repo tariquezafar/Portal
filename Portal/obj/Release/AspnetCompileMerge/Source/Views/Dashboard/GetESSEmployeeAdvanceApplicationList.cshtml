@@ -1,0 +1,64 @@
+﻿@model List<Portal.Core.ViewModel.EmployeeAdvanceApplicationViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<script src="~/Scripts/paging.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table" id="tblAdvanceApplicationList">
+            <thead>
+                <tr>
+                    <th>Application No</th>
+                    <th>Application Date</th>
+                    <th>Advance Type</th>
+                    <th>Advance Amount</th>
+                    <th>Advance Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @if (item.AdvanceStatus == "Draft")
+                            {
+                               <a href='../EmployeeAdvanceApp/AddEditEmployeeAdvanceApp?applicationId=@item.ApplicationId&AccessMode=2&essEmployeeId=@item.EmployeeId&essEmployeeName=@item.EmployeeName' id="lnkApplicationNo" target="_blank">@item.ApplicationNo</a>
+                            }
+                            else
+                            {
+                                <a href='../EmployeeAdvanceApp/AddEditEmployeeAdvanceApp?applicationId=@item.ApplicationId&AccessMode=3&essEmployeeId=@item.EmployeeId&essEmployeeName=@item.EmployeeName' id="lnkApplicationNo" target="_blank">@item.ApplicationNo</a>
+                            }
+                        </td>
+                        <td>
+                            @item.ApplicationDate
+                        </td>
+                        <td>
+                            @item.AdvanceTypeName
+                        </td>
+                        <td>
+                            @item.AdvanceAmount
+                        </td>
+                        <td>
+                            <center><span class="label label-success">@item.AdvanceStatus</span></center> 
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+
+@*<script>
+    $(document).ready(function () {
+        $('#tblAdvanceApplicationList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>*@

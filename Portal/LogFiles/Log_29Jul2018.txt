@@ -1,0 +1,360 @@
+00:01:21 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+00:01:21 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:39:44 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:39:44 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:46:36 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:46:37 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:47:04 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:47:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:50:10 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditService
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Cannot set Column 'ServiceId' to be null. Please use DBNull instead.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:50:10 PM
+Source : Portal.Core.ServiceBL
+Method Name : AddEditService
+Error Line No : 53
+Exception Type : System.ArgumentException
+Details: Cannot set Column 'ServiceId' to be null. Please use DBNull instead.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:50:10 PM
+Source : Portal.Controllers.ServiceController
+Method Name : AddEditService
+Error Line No : 54
+Exception Type : System.ArgumentException
+Details: Cannot set Column 'ServiceId' to be null. Please use DBNull instead.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:20 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:20 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:55 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditService
+Error Line No : 0
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:55 PM
+Source : Portal.Core.ServiceBL
+Method Name : AddEditService
+Error Line No : 54
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:55 PM
+Source : Portal.Controllers.ServiceController
+Method Name : AddEditService
+Error Line No : 54
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:54:17 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditService
+Error Line No : 0
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:54:33 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditService
+Error Line No : 0
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:54:33 PM
+Source : Portal.Core.ServiceBL
+Method Name : AddEditService
+Error Line No : 54
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:54:33 PM
+Source : Portal.Controllers.ServiceController
+Method Name : AddEditService
+Error Line No : 54
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:54:40 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditService
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: The procedure "proc_AddEditesi" has no parameter named "@dtServiceItem".
+---------------------------------------------------------------------------------------------------------------------------
+
+13:54:40 PM
+Source : Portal.Core.ServiceBL
+Method Name : AddEditService
+Error Line No : 54
+Exception Type : System.Data.SqlClient.SqlException
+Details: The procedure "proc_AddEditesi" has no parameter named "@dtServiceItem".
+---------------------------------------------------------------------------------------------------------------------------
+
+13:54:40 PM
+Source : Portal.Controllers.ServiceController
+Method Name : AddEditService
+Error Line No : 54
+Exception Type : System.Data.SqlClient.SqlException
+Details: The procedure "proc_AddEditesi" has no parameter named "@dtServiceItem".
+---------------------------------------------------------------------------------------------------------------------------
+
+13:54:47 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditService
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: The procedure "proc_AddEditesi" has no parameter named "@dtServiceItem".
+---------------------------------------------------------------------------------------------------------------------------
+
+13:54:47 PM
+Source : Portal.Core.ServiceBL
+Method Name : AddEditService
+Error Line No : 54
+Exception Type : System.Data.SqlClient.SqlException
+Details: The procedure "proc_AddEditesi" has no parameter named "@dtServiceItem".
+---------------------------------------------------------------------------------------------------------------------------
+
+13:58:50 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:58:50 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:59:21 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditService
+Error Line No : 0
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:59:21 PM
+Source : Portal.Core.ServiceBL
+Method Name : AddEditService
+Error Line No : 54
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:59:21 PM
+Source : Portal.Controllers.ServiceController
+Method Name : AddEditService
+Error Line No : 54
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:04:10 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditService
+Error Line No : 0
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:04:10 PM
+Source : Portal.Core.ServiceBL
+Method Name : AddEditService
+Error Line No : 54
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:04:10 PM
+Source : Portal.Controllers.ServiceController
+Method Name : AddEditService
+Error Line No : 54
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:22:21 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:22:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:33:33 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:33:33 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:24:07 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:24:07 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:40:17 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:40:17 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:58:04 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:58:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:27:42 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:27:42 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

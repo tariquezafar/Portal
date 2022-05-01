@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "GetDashboardItemMappingDetail";
+}
+@model List<Portal.Core.ViewModel.DashboardItemMappingViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class= "table table-bordered table-hover" id="tblDashboardItemMappingList">
+            <thead>
+                <tr aling="center" style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                    
+                    <th style="text-align:center">Container Name</th>
+                    <th style="text-align:center">Container No.</th>
+                    <th style="text-align:center">Item Name</th>
+                    <th style="text-align:center"> Item Display Name</th>                   
+                    <th style="text-align:center" >Select</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">                                                                     
+                
+                        <td>@item.ContainerName</td>      
+                        <td>@item.ContainerNo</td>      
+                        <td>@item.ItemName
+
+                        <input type="hidden" id="hdnDashboardItemMappingID" value="@item.DashboardItemMappingID">
+                        <input type="hidden" id="hdnDashboardItemId" value="@item.DashboardItemId">
+
+                        <input type="hidden" id="hdnItemName" value="@item.ItemName">
+                        <input type="hidden" id="hdnItemDisplayName" value="@item.ItemDisplayName">
+                        <input type="hidden" id="hdnContainerNo" value="@item.ContainerNo">
+                                                    
+                         </td>
+                        <td>@item.ItemDisplayName</td>   
+                                             
+                        @if (@item.MappingStatus)
+                        {
+                            <td><input  type="checkbox" id="chkMappingStatus" checked="checked" tabindex="4" placeholder="Mapping Status">
+                             <input type="hidden" id="hdnMappingStatus" value="1">
+                        </td>
+                            
+                        }
+                        else
+                        {
+                            <td><input  type="checkbox" id="chkMappingStatus" tabindex="4" placeholder="Mapping Status">
+                                <input type="hidden" id="hdnMappingStatus" value="0">
+                            </td>
+                        }
+
+
+                        
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+
+

@@ -1,0 +1,120 @@
+10:35:44 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetProductAvailableStock
+Error Line No : 5485
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:35:44 AM
+Source : Portal.Core.StockLedgerBL
+Method Name : GetProductAvailableStock
+Error Line No : 59
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:35:44 AM
+Source : Portal.Controllers.ProductController
+Method Name : GetProductAvailableStock
+Error Line No : 227
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:38 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPOList
+Error Line No : 2566
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'PI'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:39 PM
+Source : Portal.Core.POBL
+Method Name : GetPOList
+Error Line No : 246
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'PI'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:39 PM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : GetPurchaseOrderList
+Error Line No : 262
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'PI'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:18 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPOList
+Error Line No : 2566
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'PI'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:18 PM
+Source : Portal.Core.POBL
+Method Name : GetPOList
+Error Line No : 246
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'PI'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:18 PM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : GetPurchaseOrderList
+Error Line No : 262
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'PI'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:23 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPOList
+Error Line No : 2566
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'PI'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:23 PM
+Source : Portal.Core.POBL
+Method Name : GetPOList
+Error Line No : 246
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'PI'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:23 PM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : GetPurchaseOrderList
+Error Line No : 262
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'PI'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:47:32 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPOList
+Error Line No : 2566
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'PI'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:47:32 PM
+Source : Portal.Core.POBL
+Method Name : GetPOList
+Error Line No : 246
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'PI'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:47:32 PM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : GetPurchaseOrderList
+Error Line No : 262
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'PI'.
+---------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,2588 @@
+10:19:31 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:19:31 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:19:31 AM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:19:34 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26411
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:19:34 AM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:19:34 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:19:35 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:19:35 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:27:21 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:27:21 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:27:22 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:27:22 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:27:22 AM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:27:22 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26411
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:27:22 AM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:27:22 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:12 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:12 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:14 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:14 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:14 AM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:17 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26411
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:17 AM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:17 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:44 AM
+Source : Portal.Controllers.FabricationController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'fabricationId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetFabricationProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.FabricationProductViewModel], Int64)' in 'Portal.Controllers.FabricationController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:55 AM
+Source : Portal.Controllers.FabricationController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'fabricationId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetFabricationProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.FabricationProductViewModel], Int64)' in 'Portal.Controllers.FabricationController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+10:39:24 AM
+Source : Portal.Controllers.FabricationController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'fabricationId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetFabricationProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.FabricationProductViewModel], Int64)' in 'Portal.Controllers.FabricationController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+10:40:07 AM
+Source : Portal.Controllers.FabricationController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'fabricationId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetFabricationProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.FabricationProductViewModel], Int64)' in 'Portal.Controllers.FabricationController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+10:40:18 AM
+Source : Portal.Controllers.FabricationController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'fabricationId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetFabricationProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.FabricationProductViewModel], Int64)' in 'Portal.Controllers.FabricationController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+10:43:07 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:43:07 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:43:23 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:43:23 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:43:23 AM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:43:26 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26411
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:43:26 AM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:43:26 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:48:52 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:48:52 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:49:01 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:49:01 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:49:01 AM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:49:01 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26411
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:49:01 AM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:49:01 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:09:15 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:09:15 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:09:57 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:09:58 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:09:58 AM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:01 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26411
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:01 AM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:01 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:52 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:52 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:54 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:54 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:54 AM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:54 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26411
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:54 AM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:55 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:19:19 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:19:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:19:21 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:19:21 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:19:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:19:24 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26476
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:19:24 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:19:24 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:19:28 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:19:28 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:20:48 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:20:48 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:58:48 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:58:48 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:37:21 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:37:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:33 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:33 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:39 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:39 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:44 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:44 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:44 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:44 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26476
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:44 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:44 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:06 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:06 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:09 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:09 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:09 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:10 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26476
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:10 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:10 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:20 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : CancelFabrication
+Error Line No : 20184
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_CancelFabrication' expects parameter '@RetFabricationId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:20 PM
+Source : Portal.Core.FabricationBL
+Method Name : CancelFabrication
+Error Line No : 443
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_CancelFabrication' expects parameter '@RetFabricationId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:20 PM
+Source : Portal.Controllers.FabricationController
+Method Name : CancelFabrication
+Error Line No : 383
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_CancelFabrication' expects parameter '@RetFabricationId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:52:14 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : CancelFabrication
+Error Line No : 20184
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_CancelFabrication' expects parameter '@RetFabricationId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:52:14 PM
+Source : Portal.Core.FabricationBL
+Method Name : CancelFabrication
+Error Line No : 443
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_CancelFabrication' expects parameter '@RetFabricationId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:52:14 PM
+Source : Portal.Controllers.FabricationController
+Method Name : CancelFabrication
+Error Line No : 383
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_CancelFabrication' expects parameter '@RetFabricationId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:43 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:43 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:43 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:46 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26476
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:46 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:46 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:47 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:47 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:56:51 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationList
+Error Line No : 90
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:56:51 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationList
+Error Line No : 116
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:56:59 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:56:59 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:01 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:01 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:01 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:01 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26476
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:01 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:01 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:05:14 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:05:14 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:05:16 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:05:16 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:05:16 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:05:17 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26476
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:05:17 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:05:17 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:11:20 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:11:20 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:11:28 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:11:29 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:11:29 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:11:29 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26476
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:11:29 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:11:29 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:14:01 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:14:01 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:14:03 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 26545
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:14:03 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:14:03 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1549
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:15:07 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 19992
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:15:07 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 291
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:15:07 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 265
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:16:33 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 19992
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:16:33 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 291
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:16:33 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 265
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:16:38 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 19992
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:16:38 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 291
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:16:38 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 265
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:16:47 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 19992
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:16:47 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 291
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:16:47 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 265
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:17:59 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 19992
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:17:59 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 291
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:17:59 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 265
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:18:34 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 19992
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:18:34 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 291
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:18:34 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 265
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:19:28 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 19992
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:19:28 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 291
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:19:28 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 265
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:21:47 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 19992
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:21:47 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 291
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:21:47 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 265
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:28:41 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:28:41 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:28:45 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:28:45 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:28:45 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:28:46 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26476
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:28:46 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:28:46 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:33:10 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:33:10 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:33:11 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 26545
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:33:11 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:33:11 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1549
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:34:09 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:34:09 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:34:10 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:34:10 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:34:10 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:34:10 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26476
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:34:10 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:34:10 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:34:18 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 19992
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:34:18 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 291
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:34:18 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 265
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:17 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 19992
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:17 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 291
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:17 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 265
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:51 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:51 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:54 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 26545
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:55 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:55 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1549
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:39:33 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 19992
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:39:33 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 291
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:39:33 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 265
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:39:57 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 19992
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:39:57 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 291
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:39:57 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 265
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:00:16 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:00:17 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:00:20 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 26545
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:00:21 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:00:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1549
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:04:32 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetStockLedgerDrilDownList
+Error Line No : 9390
+Exception Type : System.Data.SqlClient.SqlException
+Details: String or binary data would be truncated.
+The statement has been terminated.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:04:32 PM
+Source : Portal.Core.StockLedgerBL
+Method Name : GetStockLedgerDrilDownList
+Error Line No : 166
+Exception Type : System.Data.SqlClient.SqlException
+Details: String or binary data would be truncated.
+The statement has been terminated.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:04:32 PM
+Source : Portal.Controllers.StockLedgerController
+Method Name : GetStockLedgerDrilDownList
+Error Line No : 230
+Exception Type : System.Data.SqlClient.SqlException
+Details: String or binary data would be truncated.
+The statement has been terminated.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:06:01 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:06:01 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:06:02 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:06:02 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:06:02 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:06:02 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26476
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:06:03 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:06:03 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:15:02 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 19992
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:15:02 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 291
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:15:02 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 265
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:16:32 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 19992
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:16:32 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 291
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:16:32 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 265
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:17:15 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 19992
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:17:15 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 291
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:17:15 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 265
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:18:05 PM
+Source : Portal.Controllers.FabricationController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult CancelFabrication(Int64, System.String, Int32, System.String)' in 'Portal.Controllers.FabricationController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:18:52 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 19992
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:18:52 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 291
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:18:52 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 265
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:19:58 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 19992
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:19:59 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 291
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:19:59 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 265
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:43:45 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:43:46 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:44:01 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:44:01 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:44:01 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:44:04 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26476
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:44:05 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:44:05 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:08 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:09 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:16 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:16 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:16 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:17 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26476
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:17 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:17 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:59:24 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:59:24 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:21 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:21 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:25 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26476
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:25 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:25 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:20 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:20 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:21 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:21 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:21 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26476
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:21 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:11:19 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:11:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:56:39 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:56:39 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:56:41 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:56:41 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:56:41 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:56:45 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26541
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:56:45 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:56:45 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:41:04 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:41:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:42:12 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 26610
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:42:12 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:42:12 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1549
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:10 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:10 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:14 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:14 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:16 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:16 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:16 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:19 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26541
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:19 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:28:50 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : CancelAP
+Error Line No : 21199
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_CancelAssemblingProcess has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:28:50 PM
+Source : Portal.Core.AssemblingProcessBL
+Method Name : CancelAP
+Error Line No : 453
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_CancelAssemblingProcess has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:28:50 PM
+Source : Portal.Controllers.AssemblingProcessController
+Method Name : CancelAP
+Error Line No : 395
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_CancelAssemblingProcess has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:31:20 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:31:20 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:31:21 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:31:21 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:31:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:31:24 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26541
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:31:24 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:31:24 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:32:36 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : CancelAP
+Error Line No : 21199
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_CancelAssemblingProcess has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:32:36 PM
+Source : Portal.Core.AssemblingProcessBL
+Method Name : CancelAP
+Error Line No : 453
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_CancelAssemblingProcess has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:32:36 PM
+Source : Portal.Controllers.AssemblingProcessController
+Method Name : CancelAP
+Error Line No : 395
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_CancelAssemblingProcess has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:37 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:37 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:40 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14701
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:40 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:40 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:43 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26538
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:43 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:43 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+

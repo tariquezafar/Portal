@@ -1,0 +1,147 @@
+﻿@model List<Portal.Core.ViewModel.MaterialRejectNoteViewModel>
+
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+
+
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+
+    table tr:nth-child(2n+1) {
+        background-color: #dff0d8;
+    }
+
+    table tr:nth-child(2n) {
+        background-color: #dff0d8;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblMaterialRejectNoteList">
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Material Reject Note No.</th>
+                    @*<th >Material Reject Note Date</th>*@
+                    <th>Quality Check No.</th>
+                    <th>Quality Check Date</th>
+                    <th>GateIn No.</th>
+                    <th>GateIn Date</th>
+                    <th>PO No.</th>
+                    <th>Vendor Name</th>
+                    <th>Status</th>
+                    <th>Created By</th>
+                    <th>Created Date</th>
+                    <th>Modified By</th>
+                    <th>Modified Date</th>
+                    <th>Company Branch</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" title="View" href="~/MaterialRejectNote/AddEditMaterialRejectNote?materialReceiveNoteId=@item.MaterialReceiveNoteId&AccessMode=3"></a>
+                            @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                            {
+                                <a style="color:white" class="fa fa-pencil-square-o" title="Edit" href="~/MaterialRejectNote/AddEditMaterialRejectNote?materialReceiveNoteId=@item.MaterialReceiveNoteId&AccessMode=2"></a>
+                            }
+                        </td>
+                        <td>@item.MaterialReceiveNoteNo</td>
+                        @*<td>@item.MaterialReceiveNoteDate</td>*@
+                        <td>@item.QualityCheckNo</td>
+                        <td>@item.QualityCheckDate</td>
+                        <td>@item.GateInNo</td>
+                        <td>@item.GateInDate</td>
+                        <td>@item.PONo</td>
+                        <td>@item.VendorName</td>
+                      
+                        @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine">
+                                @item.ApprovalStatus
+                            </td>
+                        }
+
+                        else
+                        {
+                            <td style="background-color:green">
+                                @item.ApprovalStatus
+                            </td>
+
+                        }
+
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+                        <td>@item.CompanyBranchName</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+
+<script>
+    $(document).ready(function () {
+        $('#tblChallanList').paging({
+            limit: 25,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>
+@*<script>
+        $(document).ready(function () {
+            // Setup - add a text input to each footer cell
+            $("#tblChallanList tfoot th").each(function () {
+                var title = $(this).text();
+                $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+            });
+
+            // DataTable
+            var table = $("#tblChallanList").DataTable();
+
+            // Apply the search
+            table.columns().every(function () {
+                var that = this;
+
+                $('input', this.footer()).on('keyup change', function () {
+                    if (that.search() !== this.value) {
+                        that
+                            .search(this.value)
+                            .draw();
+                    }
+                });
+            });
+        });
+    </script>*@

@@ -1,0 +1,464 @@
+11:45:20 AM
+Source : Portal.Core.POBL
+Method Name : GetPOList
+Error Line No : 246
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+11:45:20 AM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : GetPurchaseOrderList
+Error Line No : 258
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:48:06 AM
+Source : Portal.Core.POBL
+Method Name : GetPOList
+Error Line No : 246
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:48:06 AM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : GetPurchaseOrderList
+Error Line No : 258
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:48:21 AM
+Source : Portal.Core.POBL
+Method Name : GetPOList
+Error Line No : 246
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:48:21 AM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : GetPurchaseOrderList
+Error Line No : 258
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:48:22 AM
+Source : Portal.Core.POBL
+Method Name : GetPOList
+Error Line No : 246
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:48:22 AM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : GetPurchaseOrderList
+Error Line No : 258
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:53:01 AM
+Source : Portal.Core.POBL
+Method Name : GetPOList
+Error Line No : 246
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:53:01 AM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : GetPurchaseOrderList
+Error Line No : 258
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:53:03 AM
+Source : Portal.Core.POBL
+Method Name : GetPOList
+Error Line No : 246
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:53:03 AM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : GetPurchaseOrderList
+Error Line No : 258
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:53:06 AM
+Source : Portal.Core.POBL
+Method Name : GetPOList
+Error Line No : 246
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:53:06 AM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : GetPurchaseOrderList
+Error Line No : 258
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:50 AM
+Source : Portal.Core.POBL
+Method Name : GetPOList
+Error Line No : 246
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:50 AM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : GetPurchaseOrderList
+Error Line No : 258
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:33:01 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditPI
+Error Line No : 2561
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditPurchaseInvoice' expects parameter '@RefNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:33:01 PM
+Source : Portal.Core.PurchaseInvoiceBL
+Method Name : AddEditPI
+Error Line No : 221
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditPurchaseInvoice' expects parameter '@RefNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:33:01 PM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : AddEditPI
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditPurchaseInvoice' expects parameter '@RefNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:33:06 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditPI
+Error Line No : 2561
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditPurchaseInvoice' expects parameter '@RefNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:33:06 PM
+Source : Portal.Core.PurchaseInvoiceBL
+Method Name : AddEditPI
+Error Line No : 221
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditPurchaseInvoice' expects parameter '@RefNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:33:06 PM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : AddEditPI
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditPurchaseInvoice' expects parameter '@RefNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:27 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditPI
+Error Line No : 2561
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditPurchaseInvoice' expects parameter '@RefNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:28 PM
+Source : Portal.Core.PurchaseInvoiceBL
+Method Name : AddEditPI
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditPurchaseInvoice' expects parameter '@RefNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:38:28 PM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : AddEditPI
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditPurchaseInvoice' expects parameter '@RefNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:42:33 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditMRN
+Error Line No : 0
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:42:33 PM
+Source : Portal.Core.MRNBL
+Method Name : AddEditMRN
+Error Line No : 110
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:42:33 PM
+Source : Portal.Controllers.MRNController
+Method Name : AddEditMRN
+Error Line No : 58
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:43:45 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditMRN
+Error Line No : 0
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:43:45 PM
+Source : Portal.Core.MRNBL
+Method Name : AddEditMRN
+Error Line No : 110
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:44:22 PM
+Source : Portal.Controllers.MRNController
+Method Name : AddEditMRN
+Error Line No : 58
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:38 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditMRN
+Error Line No : 0
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:38 PM
+Source : Portal.Core.MRNBL
+Method Name : AddEditMRN
+Error Line No : 110
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:38 PM
+Source : Portal.Controllers.MRNController
+Method Name : AddEditMRN
+Error Line No : 58
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:56 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditMRN
+Error Line No : 0
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:56 PM
+Source : Portal.Core.MRNBL
+Method Name : AddEditMRN
+Error Line No : 110
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:50:33 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditMRN
+Error Line No : 0
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:50:33 PM
+Source : Portal.Core.MRNBL
+Method Name : AddEditMRN
+Error Line No : 110
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:50:33 PM
+Source : Portal.Controllers.MRNController
+Method Name : AddEditMRN
+Error Line No : 58
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:52:11 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditMRN
+Error Line No : 0
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:52:11 PM
+Source : Portal.Core.MRNBL
+Method Name : AddEditMRN
+Error Line No : 110
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:52:11 PM
+Source : Portal.Controllers.MRNController
+Method Name : AddEditMRN
+Error Line No : 58
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:35:22 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditMRN
+Error Line No : 4488
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditMRN' expects parameter '@GRNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:35:22 PM
+Source : Portal.Core.MRNBL
+Method Name : AddEditMRN
+Error Line No : 110
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditMRN' expects parameter '@GRNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:35:22 PM
+Source : Portal.Controllers.MRNController
+Method Name : AddEditMRN
+Error Line No : 58
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditMRN' expects parameter '@GRNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:02:06 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetMRNList
+Error Line No : 4589
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'VendorNo'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:02:06 PM
+Source : Portal.Core.MRNBL
+Method Name : GetMRNList
+Error Line No : 130
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'VendorNo'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:02:06 PM
+Source : Portal.Controllers.MRNController
+Method Name : GetMRNList
+Error Line No : 102
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'VendorNo'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:02:18 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetMRNList
+Error Line No : 4589
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'VendorNo'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:02:18 PM
+Source : Portal.Core.MRNBL
+Method Name : GetMRNList
+Error Line No : 130
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'VendorNo'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:02:18 PM
+Source : Portal.Controllers.MRNController
+Method Name : GetMRNList
+Error Line No : 102
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'VendorNo'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:02:25 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetMRNList
+Error Line No : 4589
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'VendorNo'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:02:25 PM
+Source : Portal.Core.MRNBL
+Method Name : GetMRNList
+Error Line No : 130
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'VendorNo'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:02:25 PM
+Source : Portal.Controllers.MRNController
+Method Name : GetMRNList
+Error Line No : 102
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'VendorNo'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:46:14 PM
+Source : Portal.Controllers.MRNController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The view 'Index' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/MRN/Index.aspx
+~/Views/MRN/Index.ascx
+~/Views/Shared/Index.aspx
+~/Views/Shared/Index.ascx
+~/Views/MRN/Index.cshtml
+~/Views/MRN/Index.vbhtml
+~/Views/Shared/Index.cshtml
+~/Views/Shared/Index.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+18:46:43 PM
+Source : Portal.Controllers.MRNController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The view 'Index' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/MRN/Index.aspx
+~/Views/MRN/Index.ascx
+~/Views/Shared/Index.aspx
+~/Views/Shared/Index.ascx
+~/Views/MRN/Index.cshtml
+~/Views/MRN/Index.vbhtml
+~/Views/Shared/Index.cshtml
+~/Views/Shared/Index.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+

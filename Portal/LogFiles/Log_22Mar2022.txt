@@ -1,0 +1,8 @@
+23:47:45 PM
+Source : Portal.Controllers.CustomerController
+Method Name : GetCustomerList
+Error Line No : 123
+Exception Type : System.InvalidCastException
+Details: Unable to cast object of type 'Portal.Core.ViewModel.UserViewModel' to type 'System.IConvertible'.
+--------------------------------------------------------------------------------------------------------------------------------
+

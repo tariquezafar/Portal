@@ -1,0 +1,40 @@
+22:41:25 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+22:41:25 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:41:28 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:41:28 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:41:28 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 1650
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+

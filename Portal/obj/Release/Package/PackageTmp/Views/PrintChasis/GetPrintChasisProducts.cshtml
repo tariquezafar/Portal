@@ -1,0 +1,97 @@
+﻿@model List<Portal.Core.ViewModel.PrintChasisDetailViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+      .table th {
+      background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+      color:#fff;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div>
+        <table class="table table-bordered table-hover" id="tblPrintChasis" style="width:70%;">
+            <thead>
+                <tr>                                    
+                    <th><center>Product Sub Group</center></th>
+                    <th><center>Chasis Model Code</center></th>
+                    <th><center>Motor Code</center></th>
+                    <th><center>Chasis Serial No.</center></th>
+                    <th><center>Motor No.</center></th>                                       
+                    <th class="editonly">
+                        <center>
+                           Checked
+                            <input type="checkbox" name="chkAllPrintChasis" id="chkAllPrintChasis"  class="chkAllPrintChasis" />
+                        </center>
+                    </th>    
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                   
+                    <tr class="success">                                            
+                        <td align="center">@item.ProductSubGroupName</td>
+                        <td align="center">@item.ChasisModelCode</td>
+                        <td align="center">@item.MotorModelCode</td>
+                        <td align="center">@item.ChasisSerialNo
+                            <input type="hidden" id="hdnChasisSerialNo" value="@item.ChasisSerialNo.Trim()" />
+                            <input type="hidden" id="hdnPrintStatus" value="@item.PrintStatus" />
+                        </td>
+                        <td align="center">
+                            @item.MotorNo
+                        <input type="hidden" id="hdnMotorNo" value="@item.MotorNo.Trim()" />
+                        </td>
+                        <td class="editonly">
+                            <center>
+                                <input type="checkbox" name="chkPrintChasis"  id="chkPrintChasis" class="indent" />
+                            </center>
+                        </td>                     
+                    </tr>
+                   
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Currently No Chassis Serial Plan Exist For This Branch</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblPrintChasis').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+
+        if ($("#chkAllPrintChasis").prop('checked', true))
+        {
+            $('input:checkbox').not(this).prop('checked', this.checked);
+        }
+      
+           $("#chkAllPrintChasis").click(function () {
+                $('input:checkbox').not(this).prop('checked', this.checked);
+            });
+
+            $(".indent").click(function () {
+                if ($(".indent").length == $(".indent:checked").length) {
+                    $("#chkAllIndent").attr("checked", "checked");
+                }
+                else {
+                    $("#chkAllIndent").removeAttr("checked");
+                }
+            });
+    });
+
+
+</script>

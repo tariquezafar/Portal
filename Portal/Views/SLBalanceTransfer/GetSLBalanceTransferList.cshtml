@@ -1,0 +1,90 @@
+﻿@model List<Portal.Core.ViewModel.SLTransferClosingBalanceViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+
+
+
+<link href="~/Content/DataTable.css" rel="stylesheet" />
+<style>
+      .table th {
+    background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    color:#fff;
+    tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div>
+        <table class="table table-bordered table-hover" id="tblCarryForwardList">
+            <thead>
+                <tr style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">                   
+                    <th><center>From FinYear</center></th>
+                    <th><center>To FinYear</center></th>
+                    <th><center>Branch Name</center></th>                  
+                    <th><center>Created By User</center></th>
+                    <th><center>Created Date</center></th>                                        
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {                   
+                    <tr class="success">
+                        
+                        <td align="center">@item.FromFinYearID</td>
+                        <td align="center">@item.ToFinYearID</td>
+                        <td align="center">@item.BranchName</td>                     
+                        <td align="center">@item.UserName</td>
+                        <td align="center">@item.CreatedDate</td>
+                     
+                    </tr>
+                                     
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+   
+
+    $(document).ready(function () {
+        debugger;
+        // Setup - add a text input to each footer cell
+        $('#tblCarryForwardList tfoot th').each(function () {
+            //var title = $(this).text();
+            //$(this).html('<input type="text" placeholder="Search ' + title + '" />');
+            var title = $('#tblCarryForwardList thead th').eq($(this).index()).text();
+            $(this).html('<input type="text" placeholder="Search ' + title + '" data-index="' + i + '" />');
+        });
+
+        // DataTable
+        var table = $('#tblCarryForwardList').DataTable();
+
+        // Apply the search
+        table.columns().every(function () {
+
+            var that = this;
+            $(table.table().container()).on('keyup', 'tfoot input', function () {
+                table
+                    .column($(this).data('index'))
+                    .search(this.value)
+                    .draw();
+            });
+
+            //$('input', this.footer()).on('keyup change', function () {
+            //    if (that.search() !== this.value) {
+            //        that
+            //            .search(this.value)
+            //            .draw();
+            //    }
+            //});
+        });
+    });
+</script>

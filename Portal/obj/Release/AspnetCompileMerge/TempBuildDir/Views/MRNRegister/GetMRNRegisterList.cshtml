@@ -1,0 +1,110 @@
+﻿@model List<Portal.Core.MRNViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+   .table {
+    width: 243% !important;
+    max-width: 243% !important;
+    margin-bottom: 20px;
+}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblMRNList">
+            <thead>
+                <tr>
+                    <th>MRN No.</th>
+                    <th>MRN Date</th>
+                    <th>Invoice No.</th>
+                    <th>Invoice Date</th>
+                    <th>PO No.</th>
+                    <th>QC No.</th>
+                    <th>Vendor Name</th> 
+                    <th>Vendor Code</th> 
+                    <th>Company Branch Name</th> 
+                    <th>Branch Address</th> 
+                    <th>Branch City</th> 
+                    <th>Branch State Name</th> 
+                    <th>Branch Pin Code</th> 
+                    <th>Branch TIN No</th> 
+                    <th>Branch CST No</th> 
+                    <th>Remarks1</th>
+                    <th>Remarks2</th>
+                    <th>Dispatch Ref. No.</th>
+                    <th>Dispatch Ref. Date</th>
+                    <th>Created By User</th>
+                    <th>Created Date</th>
+                    <th>Modified By User</th>
+                    <th>Modified Date</th>
+                 
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="margin:0px 2px auto;">                            
+                            @if (item.InvoiceId > 0 && item.InvoiceNo != "")
+                            {
+                                <a target="_blank" style="color:dodgerblue" href="~/MRN/AddEditMRN?mrnId=@item.MRNId&AccessMode=3">@item.MRNNo</a>
+                            }
+                            else if (item.POId > 0 && item.PONo != "")
+                            {
+                                <a target="_blank" style="color:dodgerblue" href="~/MRNPO/AddEditMRNPO?mrnId=@item.MRNId&AccessMode=3">@item.MRNNo</a>
+                            }
+                            else if (item.QCId > 0 && item.QCNo != "")
+                            {
+                                <a target="_blank" style="color:dodgerblue" href="~/MRNQC/AddEditMRNQC?mrnId=@item.MRNId&AccessMode=3">@item.MRNNo</a>
+                            }
+                            else 
+                            {
+                                <a target="_blank" style="color:dodgerblue" href="~/MRN/AddEditMRN?mrnId=@item.MRNId&AccessMode=3">@item.MRNNo</a>
+                            }
+                        </td> 
+                        
+                        <td>@item.MRNDate</td>
+                        <td>@item.InvoiceNo</td>
+                        <td>@item.InvoiceDate</td>
+                        <td>@item.PONo</td>
+                        <td>@item.QCNo</td>
+                        <td>@item.VendorName</td>  
+                        <td>@item.VendorCode</td>  
+                        <td>@item.CompanyBranchName</td>  
+                        <td>@item.CompanyBranchAddress</td>  
+                        <td>@item.CompanyBranchCity</td>  
+                        <td>@item.CompanyBranchStateName</td>  
+                        <td>@item.CompanyBranchPinCode</td>  
+                        <td>@item.CompanyBranchTINNo</td>  
+                        <td>@item.CompanyBranchCSTNo</td>  
+                        <td>@item.Remarks1</td>  
+                        <td>@item.Remarks2</td>  
+                        <td>@item.DispatchRefNo</td>
+                        <td>@item.DispatchRefDate</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+                      
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblMRNList').paging({
+            limit: 100,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

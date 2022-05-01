@@ -1,0 +1,152 @@
+10:47:45 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:47:45 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:47:49 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTodayUsersCount
+Error Line No : 384
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTodayUsersCount' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:47:49 AM
+Source : Portal.Core.UserBL
+Method Name : GetTodayUsersCount
+Error Line No : 436
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTodayUsersCount' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:47:49 AM
+Source : Portal.Controllers.DashboardController
+Method Name : AdminDashboard
+Error Line No : 46
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTodayUsersCount' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:03:25 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:03:25 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:51 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:52 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:54 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTodayUsersCount
+Error Line No : 384
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTodayUsersCount' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:54 AM
+Source : Portal.Core.UserBL
+Method Name : GetTodayUsersCount
+Error Line No : 436
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTodayUsersCount' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:54 AM
+Source : Portal.Controllers.DashboardController
+Method Name : AdminDashboard
+Error Line No : 46
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTodayUsersCount' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:18:10 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:18:10 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:18:41 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTodayUsersCount
+Error Line No : 384
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTodayUsersCount' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:18:41 AM
+Source : Portal.Core.UserBL
+Method Name : GetTodayUsersCount
+Error Line No : 436
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTodayUsersCount' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:18:41 AM
+Source : Portal.Controllers.DashboardController
+Method Name : AdminDashboard
+Error Line No : 46
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTodayUsersCount' expects parameter '@CompanyId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:12:39 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:12:39 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

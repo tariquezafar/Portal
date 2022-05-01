@@ -1,0 +1,32 @@
+18:07:32 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\VINOD\Projects\Portal\Portal\Views\Voucher\AddEditBankVoucher.cshtml(411): error CS0201: Only assignment, call, increment, decrement, await, and new object expressions can be used as a statement
+--------------------------------------------------------------------------------------------------------------------------------
+
+18:08:32 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetBookBalance
+Error Line No : 1589
+Exception Type : System.Data.SqlClient.SqlException
+Details: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:08:33 PM
+Source : Portal.Core.BookBL
+Method Name : GetBookBalance
+Error Line No : 316
+Exception Type : System.Data.SqlClient.SqlException
+Details: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:08:33 PM
+Source : Portal.Controllers.VoucherController
+Method Name : GetBookBalance
+Error Line No : 445
+Exception Type : System.Data.SqlClient.SqlException
+Details: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+---------------------------------------------------------------------------------------------------------------------------
+

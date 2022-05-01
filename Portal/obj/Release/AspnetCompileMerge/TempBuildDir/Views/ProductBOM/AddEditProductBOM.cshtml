@@ -1,0 +1,233 @@
+﻿@{
+    ViewBag.Title = "Add/Edit Product BOM";
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+     .Mandatory {
+         color: red;
+         font-weight: bold;
+     }
+     /*** custom checkboxes ***/
+
+     input[type=checkbox] {
+         display: none;
+     }
+         /* to hide the checkbox itself */
+         input[type=checkbox] + label:before {
+             font-family: FontAwesome;
+             display: inline-block;
+         }
+
+         input[type=checkbox] + label:before {
+             content: "\f096";
+         }
+         /* unchecked icon */
+         input[type=checkbox] + label:before {
+             letter-spacing: 10px;
+         }
+         /* space between checkbox and label */
+
+         input[type=checkbox]:checked + label:before {
+             content: "\f046";
+         }
+         /* checked icon */
+         input[type=checkbox]:checked + label:before {
+             letter-spacing: 5px;
+         }
+     /* allow space for check mark */
+     .ui-autocomplete {
+         max-height: 500px;
+         overflow-y: auto;
+         /* prevent horizontal scrollbar */
+         overflow-x: hidden;
+     }
+     /* IE 6 doesn't support max-height
+    * we use height instead, but this forces the menu to always be this tall
+    */
+     * html .ui-autocomplete {
+         height: 500px;
+     }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/StoreDashboard">Production</a> >> Add/Edit Product BOM</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditProductBOM" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-6 ftop">
+                <div class="form-group">
+                    <label for="ddlAssemblyType" class="col-sm-4 control-label">Assembly Type&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlAssemblyType" name="ddlAssemblyType" tabindex="1" class="form-control">
+                            <option selected="selected" value="MA">Main Assembly</option>
+                            <option value="SA">Sub Assembly</option>
+                        </select>
+
+                    </div>
+                    <input id="hdnBOMId" type="hidden" value="@ViewData["bomId"]" />
+                    <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                    <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                </div>
+                <div class="form-group">
+                    <label for="txtAssemblyName" class="col-sm-4 control-label">Assembly/ Sub Assembly Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtAssemblyName" name="txtAssemblyName" tabindex="2" placeholder="Enter Assembly/ Sub Assembly Name" type="text" maxlength="100" />
+                        <input id="hdnAssemblyId" type="hidden" value="0" />
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="txtProductName" class="col-sm-4 control-label">Sub Assembly/ Raw Component Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtProductName" name="txtProductName" tabindex="3" placeholder="Enter Sub Assembly/ Raw Component  Name" type="text" maxlength="100" />
+                        <input id="hdnProductId" type="hidden" value="0" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="ddlProcessType" class="col-sm-4 control-label">Process Type&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlProcessType" name="ddlProcessType" tabindex="4" class="form-control">
+                            <option value="0">--Select Process Type--</option>
+                            <option value="Fabrication">Fabrication</option>
+                            <option value="Painting">Painting</option>
+                            <option value="Assembling">Assembling</option>
+                            <option value="FinishedGood">FinishedGood</option>
+                            <option value="Dispatch">Dispatch</option>
+                        </select>
+                    </div>
+                </div>
+               
+                <div class="form-group">
+                    <label for="txtBOMQty" class="col-sm-4 control-label">BOM Qty.&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-5">
+                        <input id="txtBOMQty" name="txtBOMQty" type="text" tabindex="5" placeholder="Enter BOM Quantity" maxlength="20" class="form-control input-number" onkeyup="checkDec(this)" />
+                    </div>
+                    <div class="col-sm-3">
+                        <input id="txtUOMName" name="txtUOMName" type="text" tabindex="6" placeholder="UOM" readonly="readonly" maxlength="20" class="form-control  input" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="txtScrapPercentage" class="col-sm-4 control-label">Scrap Percentage&nbsp;</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtScrapPercentage" name="txtScrapPercentage" tabindex="7" onkeyup="checkDec(this);" placeholder="Enter Scrap Percentage" type="text" maxlength="100" />
+                        <input id="hdnProductId" type="hidden" value="0" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtElectricityexpenses" class="col-sm-4 control-label">Electricity Expenses&nbsp;</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtElectricityexpenses" name="txtElectricityexpenses" tabindex="7"  placeholder="Enter Electricity Expenses" type="text" maxlength="100" />
+                       
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtLabourExpense" class="col-sm-4 control-label">Labour Expense&nbsp;</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtLabourExpense" name="txtLabourExpense" tabindex="7" placeholder="Enter Labour Expense" type="text" maxlength="100" />
+                        
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtOtherExpense" class="col-sm-4 control-label">Other Expense&nbsp;</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtOtherExpense" name="txtOtherExpense" tabindex="7" placeholder="Enter Other Expense" type="text" maxlength="100" />
+
+                    </div>
+                </div>
+
+
+
+                <div class="form-group" style="display:none;">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="7" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="chkStatus" class="col-sm-4 control-label">Active Status</label>
+                    <div class="col-sm-8">
+                        <input type="checkbox" name="chkStatus" id="chkStatus"  checked="checked"  class="" />
+                        <label style="font-size: 24px; " tabindex="8" for="chkStatus"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 ftop">
+                <div class="form-group" style="margin-bottom:30px">
+                    <div class="col-sm-12">
+                    &nbsp;
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input id="txtAssemblyCode" name="txtAssemblyCode"   type="text" style="background-color:transparent;border:none;" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input id="txtProductCode" name="txtProductCode" type="text" style="background-color:transparent;border:none;" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ftop">
+                <div class="form-group"  style="margin-bottom:30px">
+                    <div class="col-sm-12">
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input id="txtAssemblyShortDesc" name="txtAssemblyShortDesc"  type="text" style="background-color:transparent;border:none;" maxlength="100" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input id="txtProductShortDesc" name="txtProductShortDesc" type="text"  style="background-color:transparent;border:none;" maxlength="100" class="form-control" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="row col-sm-12 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="9" onclick="SaveData(1)" type="button" border="0"> 
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="9" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                        <a class="btn btn-success" id="btnReset" tabindex="12" href="@Url.Content("~/ProductBOM/AddEditProductBOM")">Reset</a>
+                          @*<input class="btn btn-success" type="button" id="btnReset" tabindex="9" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
+                        @*<input class="btn btn-success" type="button" id="btnList" value="Search Company" />*@
+                        <a class="btn btn-success" id="btnList"  tabindex="13" href="@Url.Content("~/ProductBOM/ListProductBOM")">Search Product BOM</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="10" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="11" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="11" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/Product/AddProductBOM.js"></script>

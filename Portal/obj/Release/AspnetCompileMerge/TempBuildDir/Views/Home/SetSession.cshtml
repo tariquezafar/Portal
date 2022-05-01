@@ -1,0 +1,7 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "SetSession";
+}
+
+<h2>SetSession</h2>
+<div>@(Session["Test"] == null ? "empty" : Session["Test"].ToString())</div>

@@ -1,0 +1,218 @@
+﻿@{
+    ViewBag.Title = "Salary JV";
+    Layout = "~/Views/Shared/_PayrollLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+
+    /* allow space for check mark */
+</style>
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/PayrollDashboard">Payroll</a> >> Salary JV</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmSalaryJV" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="ddlMonth" class="col-sm-4 control-label">Payroll Process Period&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlMonth" name="ddlMonth" onchange="GetPayrollProcessPeriodDetail(this)" tabindex="1" class="form-control"></select>
+                        <input id="hdnSalaryJVId" type="hidden" value="@ViewData["salaryJVId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlPayrollProcessStatus" class="col-sm-4 control-label">Payroll Status</label>
+                    <div class="col-sm-8">
+                        <select id="ddlPayrollProcessStatus" tabindex="2" name="ddlPayrollProcessStatus" class="form-control">
+                            <option value="PENDING">Pending</option>
+                            <option value="IN PROCESS">In Process</option>
+                            <option value="FINAL">Final</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="ddlPayrollLocked" class="col-sm-4 control-label">Payroll Locked</label>
+                    <div class="col-sm-8">
+                        <select id="ddlPayrollLocked" tabindex="3" name="ddlPayrollLocked" class="form-control">
+                            <option value="0">Unlocked</option>
+                            <option value="1">Locked</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-12">
+                    <label for="txtEmployeeCodes" class="col-sm-2 control-label">Employee Code(s)<br />* Comma Separated e.g. 100,101,102 (upto 50)</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="txtEmployeeCodes" name="txtEmployeeCodes" tabindex="4" rows="2" cols="30" maxlength="2000"> </textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Location</label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" tabindex="5" name="ddlCompanyBranch" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="ddlDepartment" class="col-sm-4 control-label">Department</label>
+                    <div class="col-sm-8">
+                        <select id="ddlDepartment" tabindex="6" name="ddlDepartment" onchange="BindDesignationList(0)" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlDesignation" class="col-sm-4 control-label">Designation</label>
+                    <div class="col-sm-8">
+                        <select id="ddlDesignation" tabindex="7" name="ddlDesignation" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="ddlEmployeeType" class="col-sm-4 control-label">Employee Type</label>
+                    <div class="col-sm-8">
+                        <select id="ddlEmploymentType" tabindex="8" name="ddlEmploymentType" tabindex="14" class="form-control">
+                            <option selected="selected" value="0">-Select Employee Type-</option>
+                            <option value="Regular">Regular</option>
+                            <option value="Casual">Casual</option>
+                            <option value="Consultant">Consultant</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="46" onchange="GetBranchStateId()" class="form-control"></select>
+                        <input id="hdnBillingStateId" type="hidden" value="0" />
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Salary JV Report" alt="Salary JV Report" tabindex="9" id="btnSalaryJVReport" onclick="OpenPrintPopup();" type="button" border="0">
+                            <input class="btn btn-success" value="Generate Salary JV Voucher" alt="Generate Salary JV Voucher" tabindex="12" id="btnSalaryJVVoucher" onclick="GenerateSalaryJVVoucher();" type="button" border="0">
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="10" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="11" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="11" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="printModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Salary JV Reports</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="ddlPrintOption" class="col-sm-4 control-label">Report Option</label>
+                            <div class="col-sm-8">
+                                <select id="ddlPrintOption" name="ddlPrintOption" onchange="ShowHidePrintOption()" tabindex="1" class="form-control">
+                                    <option selected="selected" value="PDF">PDF</option>
+                                    <option value="Excel">Excel</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-success" target="_blank" href="#" id="btnPdf">Print</a>
+                        <a class="btn btn-success" style="display:none;" target="_blank" href="#" id="btnExcel">Print</a>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+     
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/SalaryReport/SalaryJV.js"></script>

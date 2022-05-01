@@ -1,0 +1,120 @@
+13:04:58 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditPO
+Error Line No : 2538
+Exception Type : System.ArgumentException
+Details: Input string was not in a correct format.Couldn't store <C:\fakepath\Database_Log_Sheet_ERP.xlsx> in DocumentPath Column.  Expected type is Decimal.
+--------------------------------------------------------------------------------------------------------------------------------
+
+13:04:58 PM
+Source : Portal.Core.POBL
+Method Name : AddEditPO
+Error Line No : 277
+Exception Type : System.ArgumentException
+Details: Input string was not in a correct format.Couldn't store <C:\fakepath\Database_Log_Sheet_ERP.xlsx> in DocumentPath Column.  Expected type is Decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:04:58 PM
+Source : Portal.Controllers.POController
+Method Name : AddEditPO
+Error Line No : 62
+Exception Type : System.ArgumentException
+Details: Input string was not in a correct format.Couldn't store <C:\fakepath\Database_Log_Sheet_ERP.xlsx> in DocumentPath Column.  Expected type is Decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:06:07 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditPO
+Error Line No : 2538
+Exception Type : System.ArgumentException
+Details: Input string was not in a correct format.Couldn't store <C:\fakepath\Database_Log_Sheet_ERP.xlsx> in DocumentPath Column.  Expected type is Decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:06:23 PM
+Source : Portal.Core.POBL
+Method Name : AddEditPO
+Error Line No : 277
+Exception Type : System.ArgumentException
+Details: Input string was not in a correct format.Couldn't store <C:\fakepath\Database_Log_Sheet_ERP.xlsx> in DocumentPath Column.  Expected type is Decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:06:23 PM
+Source : Portal.Controllers.POController
+Method Name : AddEditPO
+Error Line No : 62
+Exception Type : System.ArgumentException
+Details: Input string was not in a correct format.Couldn't store <C:\fakepath\Database_Log_Sheet_ERP.xlsx> in DocumentPath Column.  Expected type is Decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:44:04 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Value cannot be null or empty.
+Parameter name: linkText
+---------------------------------------------------------------------------------------------------------------------------
+
+14:50:36 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Value cannot be null or empty.
+Parameter name: linkText
+---------------------------------------------------------------------------------------------------------------------------
+
+15:00:26 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Value cannot be null or empty.
+Parameter name: linkText
+---------------------------------------------------------------------------------------------------------------------------
+
+15:02:47 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Value cannot be null or empty.
+Parameter name: linkText
+---------------------------------------------------------------------------------------------------------------------------
+
+15:04:03 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Value cannot be null or empty.
+Parameter name: linkText
+---------------------------------------------------------------------------------------------------------------------------
+
+15:09:22 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Value cannot be null or empty.
+Parameter name: linkText
+---------------------------------------------------------------------------------------------------------------------------
+
+15:10:18 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Value cannot be null or empty.
+Parameter name: linkText
+---------------------------------------------------------------------------------------------------------------------------
+
+15:16:59 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Value cannot be null or empty.
+Parameter name: linkText
+---------------------------------------------------------------------------------------------------------------------------
+

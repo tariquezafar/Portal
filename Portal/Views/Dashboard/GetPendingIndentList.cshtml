@@ -1,0 +1,53 @@
+﻿@model List<Portal.Core.ViewModel.PurchaseIndentViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table int-product" id="tblSINPendingCountList" style="margin-top:10px;">
+            <thead style="border-top-left-radius:15px;">
+                <tr style="border:none;">
+                    <th style="background:#4f75c6; color:#fff;" colspan="8">Pending For PO</th>
+                </tr>
+                <tr style="background:#D0DDEC; border:1px solid #ccc;">
+                    <th style="text-align:center">Indent No.</th>
+                    <th style="text-align:center">Indent Date</th>                   
+                    <th style="text-align:center">Created By User</th>                    
+                </tr>
+
+            </thead>
+            <tbody style="border:1px solid #ccc;">
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                       
+                        <td align="center">@item.IndentNo </td>                       
+                       
+                        <td align="center">@item.IndentDate</td>
+                        <td align="center">@item.CreatedByUserName</td>
+
+                    </tr>
+                }
+                <tr>
+                    <td colspan="8" align="center" style="background:#bfdfff;">
+                        <a href="@Url.Content("~/PO/AddEditPO?accessMode=1")"  target="_blank">View All Pending Indent</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Pending PO Not Found !!!</h3>
+}
+@*<script>
+        $(document).ready(function () {
+            $('#tblSINPendingCountList').paging({SIN/AddEditSIN
+                limit:5,
+                rowDisplayStyle: 'block',
+                activePage: 0,
+                rows: []
+            });
+
+        });
+    </script>*@

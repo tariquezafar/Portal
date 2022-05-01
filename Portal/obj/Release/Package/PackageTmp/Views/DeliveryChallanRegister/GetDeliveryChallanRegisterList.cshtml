@@ -1,0 +1,105 @@
+﻿@model List<Portal.Core.ViewModel.DeliveryChallanViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table {
+    width: 350% !important;
+    max-width: 350%  !important;
+    margin-bottom: 20px;
+}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblSOList">
+            <thead>
+                <tr>
+                    <th>Challan No.</th>
+                    <th>Challan Date</th>
+                    <th>Company Branch</th>
+                    <th>Invoice No</th>
+                    <th>Invoice Date</th>
+                    <th>Customer Name</th>
+                    <th>Customer Code</th>
+                    <th>Contact Person</th>                             
+                    <th>Billing Shipping Address</th> 
+                    <th>Shipping City</th>
+                    <th>Shipping State</th>
+                    <th>State Name</th>
+                    <th>Shipping Pin Code</th> 
+                    <th>Shipping TIN No</th>
+                    <th>Shipping Email</th>
+                    <th>Shipping Mobile No</th>
+                    <th>Shipping Fax</th>
+                    <th>Fin Year</th>
+                    <th>No Of Packets</th>
+                    <th>LRNo</th>
+                    <th>DispatchRefNo</th>
+                    <th>Company Branch Name</th>                  
+                    <th>Net Amount</th>
+                    <th>Freight Value</th>
+                    <th>Loading Value</th>  
+                    <th>Gross Amount</th>
+                    <th>Created By User</th>
+                    <th>Created Date</th>
+                    <th>Modified By User</th>
+                    <th>Modified Date</th> 
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="margin:0px 2px auto;">
+                            <a style="color:dodgerblue" href="~/DeliveryChallan/AddEditDeliveryChallan?ChallanId=@item.ChallanId&AccessMode=3">@item.ChallanNo</a>
+                        </td> 
+                        <td>@item.ChallanDate</td>
+                        <td>@item.CompanyBranchName</td>
+                        <td>@item.InvoiceNo</td>
+                        <td>@item.InvoiceDate</td>
+                        <td>@item.CustomerName</td>
+                        <td>@item.CustomerCode</td>
+                        <td>@item.ContactPerson</td>
+                        <td>@item.ShippingBillingAddress</td>
+                        <td>@item.ShippingCity</td>
+                        <td>@item.ShippingStateName</td>
+                        <td>@item.StateName</td>
+                        <td>@item.ShippingPinCode</td>
+                        <td>@item.ShippingTINNo</td>
+                        <td>@item.ShippingEmail</td>                      
+                        <td>@item.ShippingMobileNo</td>
+                        <td>@item.ShippingFax</td>  
+                        <td>@item.FinYearId</td>               
+                        <td>@item.NoOfPackets</td>                        
+                        <td>@item.LRNo</td>
+                        <td>@item.DispatchRefNo</td>
+                        <td>@item.CompanyBranchName</td>
+                        <td>@item.BasicValue</td>
+                        <td>@item.FreightValue</td>
+                        <td>@item.LoadingValue</td>
+                        <td>@item.TotalValue</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td> 
+  </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblSOList').paging({
+            limit: 100,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

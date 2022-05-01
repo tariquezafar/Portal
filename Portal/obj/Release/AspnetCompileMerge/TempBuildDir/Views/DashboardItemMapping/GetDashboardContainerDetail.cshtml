@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "GetDashboardItemMappingDetail";
+}
+@model List<Portal.Core.ViewModel.DashboardContainerViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">        
+      
+        
+        @foreach (var item in Model)
+        {
+            <div class="col-md-12 ftop">
+               
+                <div class="form-group col-md-4">
+                    <label for="txtContainerDisplayName" class="col-sm-4 control-label">Container Display Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="txtDashBoardContainerDisplayName" name="txtContainerDisplayName" value="@item.ContainerDisplayName" tabindex="2" placeholder="Container Display Name" type="text" class="form-control" />
+
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="txtDashboardContainerNo" class="col-sm-4 control-label">Total Item in Container No. &nbsp;</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtContainerNo" name="txtContainerNo" value="@item.TotalItem" tabindex="3" placeholder="Container No." type="text" maxlength="10" />
+                        
+                    </div>
+                </div>
+
+            </div>
+        }
+        
+
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+
+

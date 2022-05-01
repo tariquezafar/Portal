@@ -1,0 +1,62 @@
+﻿@model List<Portal.Core.ViewModel.ClearanceTemplateViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblClearanceTemplateList">
+            <thead>
+                <tr>
+                    
+                    <th>Clearance Name</th>
+                    <th>Department</th>
+                    <th>Designation</th>    
+                    <th>Separation Category</th>    
+                    <th>Created By User</th>
+                    <th>Created Date</th> 
+                    <th>Modified By User</th>
+                    <th>Modified Date</th>  
+                    <th>Status</th> 
+                    <th align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success"> 
+                        <td>@item.ClearanceTemplateName</td>
+                        <td>@item.DepartmentName</td> 
+                        <td>@item.DesignationName</td>  
+                        <td>@item.SeparationCategoryName</td>  
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>  
+                        <td>@(item.ClearanceTemplate_Status == true ? "Active" : "Inactive")</td> 
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px auto;">
+                            <a style="color:white;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/ClearanceTemplate/AddEditClearanceTemplate?ClearanceTemplateId=@item.ClearanceTemplateId&AccessMode=3"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white;text-decoration:none" title="Edit" class="fa fa-pencil-square-o" href="~/ClearanceTemplate/AddEditClearanceTemplate?ClearanceTemplateId=@item.ClearanceTemplateId&AccessMode=2"></a>
+                        </td> 
+</tr>
+                } 
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblClearanceTemplateList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+ 

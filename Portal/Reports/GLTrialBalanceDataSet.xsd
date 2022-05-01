@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GLTrialBalanceDataSet" targetNamespace="http://tempuri.org/GLTrialBalanceDataSet.xsd" xmlns:mstns="http://tempuri.org/GLTrialBalanceDataSet.xsd" xmlns="http://tempuri.org/GLTrialBalanceDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="GLTrialBalanceDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="GLTrialBalanceDataSet" msprop:Generator_UserDSName="GLTrialBalanceDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TEMPGLTRIALBALANCEPRINT_2COLUMN" msprop:Generator_TableClassName="TEMPGLTRIALBALANCEPRINT_2COLUMNDataTable" msprop:Generator_TableVarName="tableTEMPGLTRIALBALANCEPRINT_2COLUMN" msprop:Generator_TablePropName="TEMPGLTRIALBALANCEPRINT_2COLUMN" msprop:Generator_RowDeletingName="TEMPGLTRIALBALANCEPRINT_2COLUMNRowDeleting" msprop:Generator_RowChangingName="TEMPGLTRIALBALANCEPRINT_2COLUMNRowChanging" msprop:Generator_RowEvHandlerName="TEMPGLTRIALBALANCEPRINT_2COLUMNRowChangeEventHandler" msprop:Generator_RowDeletedName="TEMPGLTRIALBALANCEPRINT_2COLUMNRowDeleted" msprop:Generator_UserTableName="TEMPGLTRIALBALANCEPRINT_2COLUMN" msprop:Generator_RowChangedName="TEMPGLTRIALBALANCEPRINT_2COLUMNRowChanged" msprop:Generator_RowEvArgName="TEMPGLTRIALBALANCEPRINT_2COLUMNRowChangeEvent" msprop:Generator_RowClassName="TEMPGLTRIALBALANCEPRINT_2COLUMNRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TRNID" msprop:Generator_ColumnVarNameInTable="columnTRNID" msprop:Generator_ColumnPropNameInRow="TRNID" msprop:Generator_ColumnPropNameInTable="TRNIDColumn" msprop:Generator_UserColumnName="TRNID" type="xs:long" minOccurs="0" />
+              <xs:element name="GLId" msprop:Generator_ColumnVarNameInTable="columnGLId" msprop:Generator_ColumnPropNameInRow="GLId" msprop:Generator_ColumnPropNameInTable="GLIdColumn" msprop:Generator_UserColumnName="GLId" type="xs:int" minOccurs="0" />
+              <xs:element name="GLCode" msprop:Generator_ColumnVarNameInTable="columnGLCode" msprop:Generator_ColumnPropNameInRow="GLCode" msprop:Generator_ColumnPropNameInTable="GLCodeColumn" msprop:Generator_UserColumnName="GLCode" type="xs:string" minOccurs="0" />
+              <xs:element name="GLHead" msprop:Generator_ColumnVarNameInTable="columnGLHead" msprop:Generator_ColumnPropNameInRow="GLHead" msprop:Generator_ColumnPropNameInTable="GLHeadColumn" msprop:Generator_UserColumnName="GLHead" type="xs:string" minOccurs="0" />
+              <xs:element name="SLTypeId" msprop:Generator_ColumnVarNameInTable="columnSLTypeId" msprop:Generator_ColumnPropNameInRow="SLTypeId" msprop:Generator_ColumnPropNameInTable="SLTypeIdColumn" msprop:Generator_UserColumnName="SLTypeId" type="xs:short" minOccurs="0" />
+              <xs:element name="BookId" msprop:Generator_ColumnVarNameInTable="columnBookId" msprop:Generator_ColumnPropNameInRow="BookId" msprop:Generator_ColumnPropNameInTable="BookIdColumn" msprop:Generator_UserColumnName="BookId" type="xs:int" minOccurs="0" />
+              <xs:element name="Debit" msprop:Generator_ColumnVarNameInTable="columnDebit" msprop:Generator_ColumnPropNameInRow="Debit" msprop:Generator_ColumnPropNameInTable="DebitColumn" msprop:Generator_UserColumnName="Debit" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Credit" msprop:Generator_ColumnVarNameInTable="columnCredit" msprop:Generator_ColumnPropNameInRow="Credit" msprop:Generator_ColumnPropNameInTable="CreditColumn" msprop:Generator_UserColumnName="Credit" type="xs:decimal" minOccurs="0" />
+              <xs:element name="YearOpeningBalance" msprop:Generator_ColumnVarNameInTable="columnYearOpeningBalance" msprop:Generator_ColumnPropNameInRow="YearOpeningBalance" msprop:Generator_ColumnPropNameInTable="YearOpeningBalanceColumn" msprop:Generator_UserColumnName="YearOpeningBalance" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ClosingDebitBalance" msprop:Generator_ColumnVarNameInTable="columnClosingDebitBalance" msprop:Generator_ColumnPropNameInRow="ClosingDebitBalance" msprop:Generator_ColumnPropNameInTable="ClosingDebitBalanceColumn" msprop:Generator_UserColumnName="ClosingDebitBalance" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ClosingCreditBalance" msprop:Generator_ColumnVarNameInTable="columnClosingCreditBalance" msprop:Generator_ColumnPropNameInRow="ClosingCreditBalance" msprop:Generator_ColumnPropNameInTable="ClosingCreditBalanceColumn" msprop:Generator_UserColumnName="ClosingCreditBalance" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ReportUserId" msprop:Generator_ColumnVarNameInTable="columnReportUserId" msprop:Generator_ColumnPropNameInRow="ReportUserId" msprop:Generator_ColumnPropNameInTable="ReportUserIdColumn" msprop:Generator_UserColumnName="ReportUserId" type="xs:int" minOccurs="0" />
+              <xs:element name="SessionId" msprop:Generator_ColumnVarNameInTable="columnSessionId" msprop:Generator_ColumnPropNameInRow="SessionId" msprop:Generator_ColumnPropNameInTable="SessionIdColumn" msprop:Generator_UserColumnName="SessionId" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

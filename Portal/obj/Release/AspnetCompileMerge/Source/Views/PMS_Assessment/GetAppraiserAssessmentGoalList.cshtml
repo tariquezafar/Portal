@@ -1,0 +1,144 @@
+﻿@model List<Portal.Core.ViewModel.PMS_EmployeeGoalsViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblEmployeeGoal">
+            <thead>
+                <tr>
+                    <th align="center">Action</th>
+                    <th>Sr. No.</th>
+                    <th>Goal Name</th>
+                    <th>Goal Desc</th>
+                    <th>Section</th>
+                    <th>Goal Category</th> 
+                    <th>Evalution Criterial</th> 
+                    <th>Start Date</th> 
+                    <th>Due Date</th> 
+                    <th>Weightage</th>
+                    <th>Self Score</th>
+                    <th>Self Remarks</th>
+                    <th>Appraiser Score</th>
+                    <th>Appraiser Remarks</th>
+                    <th>Active Status</th> 
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" onclick="EditGoalRow(this);" href="#"></a>
+                        </td>
+                        <td>@item.EmployeeGoal_SequenceNo
+                        <input type="hidden" id="hdnEmployeeGoalSequenceNo" name="hdnEmployeeGoalSequenceNo" value="@item.EmployeeGoal_SequenceNo" />
+                        <input type="hidden" id="hdnEmployeeGoalId" name="hdnEmployeeGoalId" value="@item.EmployeeGoalId" />
+                        </td>
+                        <td>@item.GoalName
+                            <input type="hidden" id="hdnGoalName" name="hdnGoalName" value="@item.GoalName" />
+                            <input type="hidden" id="hdnGoalId" name="hdnGoalId" value="@item.GoalId" />
+                        </td>
+                        <td>@item.GoalDescription
+                        <input type="hidden" id="hdnGoalDescription" name="hdnGoalDescription" value="@item.GoalDescription" />
+                        </td>
+                        <td>
+                            @item.SectionName
+                        <input type="hidden" id="hdnSectionName" name="hdnSectionName" value="@item.SectionName" />
+                        <input type="hidden" id="hdnSectionId" name="hdnSectionId" value="@item.SectionId" />
+                    </td>
+                        <td>
+                            @item.GoalCategoryName
+                            <input type="hidden" id="hdnGoalCategoryId" name="hdnGoalCategoryId" value="@item.GoalCategoryId" />
+                            <input type="hidden" id="hdnGoalCategoryName" name="hdnGoalCategoryName" value="@item.GoalCategoryName" />
+                        </td>
+                        <td>@item.EvalutionCriteria
+                            <input type="hidden" id="hdnEvalutionCriteria" name="hdnEvalutionCriteria" value="@item.EvalutionCriteria" />
+                        </td>
+                        <td>
+                            @item.StartDate
+                        <input type="hidden" id="hdnStartDate" name="hdnStartDate" value="@item.StartDate" />
+                    </td>
+                        <td>
+                            @item.DueDate
+                            <input type="hidden" id="hdnDueDate" name="hdnDueDate" value="@item.DueDate" />
+                        </td>
+                        <td>
+                            @item.Weight
+                            <input type="hidden" id="hdnWeight" name="hdnWeight" value="@item.Weight" />
+                            <input type="hidden" id="hdnFixedDynamic" name="hdnFixedDynamic" value="@item.FixedDyanmic" />
+                        </td>
+                        <td>
+                            @item.SelfScore
+                            <input type="hidden" id="hdnSelfScore" name="hdnSelfScore" value="@item.SelfScore" />
+                            
+                        </td>
+                        <td>
+                            @item.SelfRemarks
+                            <input type="hidden" id="hdnSelfRemarks" name="hdnSelfRemarks" value="@item.SelfRemarks" />
+
+                        </td>
+                        <td>
+                            @item.AppraiserScore
+                            <input type="hidden" id="hdnAppraiserScore" name="hdnAppraiserScore" value="@item.AppraiserScore" />
+
+                        </td>
+                        <td>
+                            @item.AppraiserRemarks
+                            <input type="hidden" id="hdnAppraiserRemarks" name="hdnAppraiserRemarks" value="@item.AppraiserRemarks" />
+
+                        </td>
+                        <td>@(item.EmployeeGoal_Status?"Active":"Inactive")
+                            @if (item.EmployeeGoal_Status)
+                            {
+                            <input type="hidden" id="hdnEmployeeGoal_Status" name="hdnEmployeeGoal_Status" value="Active" />
+                            }
+                            else
+                            {
+                            <input type="hidden" id="hdnEmployeeGoal_Status" name="hdnEmployeeGoal_Status" value="InActive" />
+                            }
+                        </td>
+                        
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblEmployeeGoal">
+            <thead>
+                <tr>
+                    <th align="center">Action</th>
+                    <th>Sr. No.</th>
+                    <th>Goal Name</th>
+                    <th>Goal Desc</th>
+                    <th>Section</th>
+                    <th>Goal Category</th>
+                    <th>Evalution Criterial</th>
+                    <th>Start Date</th>
+                    <th>Due Date</th>
+                    <th>Weightage</th>
+                    <th>Self Score</th>
+                    <th>Self Remarks</th>
+                    <th>Appraiser Score</th>
+                    <th>Appraiser Remarks</th>
+                    <th>Active Status</th> 
+                </tr>
+            </thead>
+        </table>
+    </div>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblEmployeeGoal').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

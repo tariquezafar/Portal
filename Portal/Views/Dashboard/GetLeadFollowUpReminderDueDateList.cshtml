@@ -1,0 +1,45 @@
+﻿@model List<Portal.Core.ViewModel.LeadFollowUpReminderDueDateListViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<script src="~/Scripts/paging.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table" id="tblLeadFollowupReminderList" style="margin-top:10px;margin-left: 37px; width: 500px;">
+            <thead style="border-top-left-radius:15px;">
+                <tr style="background:#D0DDEC; border:1px solid #ccc;">
+                    @*<th>Lead Id</th>*@
+                    <th>Lead Code</th>
+                    <th>Company Name</th>
+                </tr>
+               
+            </thead>
+            <tbody style="border:1px solid #ccc;">
+                @foreach (var item in Model)
+                {
+                <tr class="success">
+                    @*<td>@item.LeadId</td>*@
+                    <td><center style="margin-left: -117px;">@item.LeadCode</center></td>
+                    <td><center><a style="color:#337ab7; margin-left: -169px; text-decoration:underline;" target="_blank" href="~/Lead/AddEditLead?LeadId=@item.LeadId&AccessMode=2">@item.CompanyName</a></center></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+
+<script>
+    $(document).ready(function () {
+        $('#tblLeadFollowupReminderList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

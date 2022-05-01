@@ -1,0 +1,69 @@
+13:06:07 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetProductAvailableStock
+Error Line No : 8262
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+--------------------------------------------------------------------------------------------------------------------------------
+
+13:06:07 PM
+Source : Portal.Core.StockLedgerBL
+Method Name : GetProductAvailableStock
+Error Line No : 57
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:06:07 PM
+Source : Portal.Controllers.ProductController
+Method Name : GetProductAvailableStock
+Error Line No : 336
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:11:41 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+14:51:15 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:05:20 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:14:28 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:16:07 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+

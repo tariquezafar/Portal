@@ -1,0 +1,63 @@
+﻿@model List<Portal.Core.ViewModel.BookViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblBookList">
+            <thead>
+                <tr aling="center"  style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                    <th colspan="2">Action</th>
+                    <th>Book Name</th> 
+                    <th>Book Code</th> 
+                    <th>Book Type</th>  
+                    <th>Company Branch</th> 
+                    <th>Create By</th>  
+                    <th>Created Date</th> 
+                    <th>Modified By</th>
+                    <th>Modified Date</th> 
+                    <th>Book Status</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="width:30px; margin:0px auto;">
+                            <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/Book/AddEditBook?BookId=@item.BookId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/Book/AddEditBook?BookId=@item.BookId&AccessMode=2"></a>
+                        </td> 
+                        <td>@item.BookName</td>
+                        <td>@item.BookCode</td>  
+                        <td>@item.BookType</td> 
+                        <td>@item.CompanyBranchName</td> 
+                        <td>@item.CreatedName</td>
+                        <td>@item.CreatedDate</td>  
+                        <td>@item.ModifiedName</td>
+                        <td>@item.ModifiedDate</td> 
+                        <td>@(item.Book_Status == true ? "Active" : "Inactive")</td>
+                        
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblBookList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

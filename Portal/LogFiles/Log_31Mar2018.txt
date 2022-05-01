@@ -1,0 +1,2006 @@
+10:12:12 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:12:12 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:12:12 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:12:13 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:12:13 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:12:13 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:12:14 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:12:14 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 960
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:32 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:33 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 960
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:34 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:34 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:34 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:34 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:34 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:34 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:37 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:37 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 960
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:37 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_TotalSaleCount
+Error Line No : 13319
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSOTotalCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:37 AM
+Source : Portal.Core.SOBL
+Method Name : GetSOCount
+Error Line No : 703
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSOTotalCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:37 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 90
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSOTotalCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:41 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:42 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:42 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:42 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:42 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:42 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:43 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:43 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:43 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:44 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:44 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:44 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:35:11 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:35:11 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 960
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:35:12 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:35:12 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:35:12 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:35:14 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:35:14 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:35:14 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:35:14 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:35:14 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:35:14 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:35:15 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:35:15 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:35:15 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:22 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:22 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 960
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:23 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:23 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:23 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:23 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13705
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_SaleGetQuatationCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:23 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 530
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_SaleGetQuatationCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:23 AM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 246
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_SaleGetQuatationCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:23 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:23 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:23 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:23 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 25562
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:23 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:23 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1426
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:29 AM
+Source : Portal.Controllers.ProductController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'productMainGroupId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetProductList(System.String, System.String, System.String, System.String, Int32, Int32, Int32, System.String, System.String, System.String, System.String)' in 'Portal.Controllers.ProductController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+10:54:27 AM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+10:54:46 AM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+10:56:47 AM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:19 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:19 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:19 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:20 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:20 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 960
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:20 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:20 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:20 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:21 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:21 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:21 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:22 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:22 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:22 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:59:52 AM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:04 AM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:19 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:19 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 960
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:20 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:20 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:20 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:21 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:21 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:21 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:21 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13705
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_SaleGetQuatationCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:21 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 530
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_SaleGetQuatationCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:21 AM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 246
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_SaleGetQuatationCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:22 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 25562
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:22 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:22 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1426
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:55 AM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+11:08:06 AM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:32 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:32 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:32 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:33 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:33 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 960
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:33 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:33 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:33 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:03 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:03 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 960
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:04 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:04 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:04 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:04 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13705
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_SaleGetQuatationCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:04 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 530
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_SaleGetQuatationCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:04 AM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 246
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_SaleGetQuatationCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:04 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 25562
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:05 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:05 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1426
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:05 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:05 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:14:05 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:22:32 AM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+11:22:43 AM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+11:23:52 AM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:30 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:31 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:31 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:31 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:31 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 960
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:32 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:32 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:32 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:31:11 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:31:11 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 960
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:31:12 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:31:12 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:31:12 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:31:12 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_TotalSaleCount
+Error Line No : 13319
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSOTotalCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:31:12 AM
+Source : Portal.Core.SOBL
+Method Name : GetSOCount
+Error Line No : 703
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSOTotalCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:31:12 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 90
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSOTotalCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:31:13 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:31:13 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:31:13 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:31:13 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:31:13 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:31:13 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:31:14 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:31:14 AM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:31:14 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:51 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:51 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:51 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:52 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:52 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:52 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:52 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:52 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 960
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:52:01 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_TotalSaleCount
+Error Line No : 13319
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSOTotalCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:52:01 PM
+Source : Portal.Core.SOBL
+Method Name : GetSOCount
+Error Line No : 703
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSOTotalCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:52:01 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 90
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSOTotalCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:52:04 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:52:04 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:52:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:52:05 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:52:05 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:52:05 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:19 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:19 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:20 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:20 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:20 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:20 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:20 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 960
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:21 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_TotalSaleCount
+Error Line No : 13319
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSOTotalCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:21 PM
+Source : Portal.Core.SOBL
+Method Name : GetSOCount
+Error Line No : 703
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSOTotalCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 90
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSOTotalCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:22 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:22 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:22 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:24 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:24 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:24 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:53:42 PM
+Source : Portal.Controllers.SaleReturnController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: e:\VINOD\HTSNewWorkArea\Portal\Portal\Views\SaleReturn\GetSaleReturnChasisSIProductList.cshtml(39): error CS1061: 'Portal.Core.ViewModel.SaleInvoiceChasisProductSerialDetailViewModel' does not contain a definition for 'Price' and no extension method 'Price' accepting a first argument of type 'Portal.Core.ViewModel.SaleInvoiceChasisProductSerialDetailViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:14 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:14 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:15 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:15 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:15 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 960
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:16 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_TotalSaleCount
+Error Line No : 13319
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSOTotalCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:17 PM
+Source : Portal.Core.SOBL
+Method Name : GetSOCount
+Error Line No : 703
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSOTotalCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:17 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 90
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSOTotalCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:17 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:17 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:17 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:18 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:18 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:18 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:19 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:19 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:30 PM
+Source : Portal.Controllers.SaleReturnController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: e:\VINOD\HTSNewWorkArea\Portal\Portal\Views\SaleReturn\GetSaleReturnChasisSIProductList.cshtml(39): error CS1061: 'Portal.Core.ViewModel.SaleInvoiceChasisProductSerialDetailViewModel' does not contain a definition for 'Price' and no extension method 'Price' accepting a first argument of type 'Portal.Core.ViewModel.SaleInvoiceChasisProductSerialDetailViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:48 PM
+Source : Portal.Controllers.SaleReturnController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: e:\VINOD\HTSNewWorkArea\Portal\Portal\Views\SaleReturn\GetSaleReturnChasisSIProductList.cshtml(39): error CS1061: 'Portal.Core.ViewModel.SaleInvoiceChasisProductSerialDetailViewModel' does not contain a definition for 'Price' and no extension method 'Price' accepting a first argument of type 'Portal.Core.ViewModel.SaleInvoiceChasisProductSerialDetailViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:03 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 960
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:04 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:04 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:05 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:05 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:05 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:06 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_TotalSaleCount
+Error Line No : 13319
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSOTotalCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:06 PM
+Source : Portal.Core.SOBL
+Method Name : GetSOCount
+Error Line No : 703
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSOTotalCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:06 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 90
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSOTotalCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:09 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:09 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:09 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:09 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:09 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:09 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:31 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:31 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:31 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:31 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:31 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:31 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:32 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:32 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 960
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:35 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13705
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_SaleGetQuatationCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:35 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 530
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_SaleGetQuatationCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:35 PM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 246
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_SaleGetQuatationCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:36 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 25562
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:36 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:36 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1426
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:38 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:38 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 960
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:38 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:38 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:38 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:39 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:39 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:39 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:40 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 13344
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:40 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:40 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSICount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:40 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 25493
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:40 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:40 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1374
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:41 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleOrderCount
+Error Line No : 13296
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:41 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSOCountList
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:41 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSOCountList
+Error Line No : 442
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetSaleOrderCount' expects parameter '@companyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+

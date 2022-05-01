@@ -1,0 +1,104 @@
+﻿@model List<Portal.Core.ViewModel.VendorViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+.table {
+    width: 131% !important;
+    max-width: 131% !important;
+    margin-bottom: 20px;
+}
+
+     .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+
+
+
+     /*#tblVendorList tr th{text-align:center; border:1px solid #ccc!important; font-family:Arial; color:#000;}
+    table tr td {
+    border:1px solid #ccc!important; font-family:Arial;}*/
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblVendorList">
+            <thead>
+                <tr>
+                    <th colspan="2">Action</th>
+                    <th>Vendor Code</th>
+                    <th>Vendor Name</th>
+                    <th>Contact Person</th>
+                    <th>Email</th>
+                    <th>Mobile No.</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th> 
+                    <th>ExciseNo</th> 
+                    <th>Credit Limit</th> 
+                    <th>Credit Days</th> 
+                    <th>AnnualTurnover</th> 
+                    <th>Created By</th>
+                    <th>Created Date</th>
+                    <th>Status</th>
+                    @*<th>Company Branch Name</th>*@
+                  
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="width:30px; margin:0px auto;">
+                            <a style="color:darkblue;text-decoration:none" title="View"  class="fa fa-eye" aria-hidden="true" href="~/Vendor/AddEditVendor?VendorId=@item.VendorId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/Vendor/AddEditVendor?VendorId=@item.VendorId&AccessMode=2"></a>
+                        </td>
+                        <td>@item.VendorCode</td>
+                        <td>@item.VendorName</td>
+                        <td>@item.ContactPersonName</td>
+                        <td>@item.Email</td>
+                        <td>@item.MobileNo</td>
+                        <td>@item.Address</td>
+                        <td>@item.City</td> 
+                        <td>@item.StateName</td> 
+                        <td>@item.ExciseNo</td>  
+                        <td>@item.CreditLimit</td> 
+                        <td>@item.CreditDays</td> 
+                        <th>@item.AnnualTurnover</th> 
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@(item.Vendor_Status==true?"Active":"Inactive")</td>
+                        @*<td>@item.CompanyBranchName</td>*@
+                        
+
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblVendorList').paging({
+            limit: 25,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

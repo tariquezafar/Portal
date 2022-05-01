@@ -1,0 +1,392 @@
+﻿@{
+    ViewBag.Title = "AddEditSaleVoucher";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+    /* allow space for check mark */
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AccountDashboard">Account </a> >> Add/Edit Sale Voucher</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditBankVoucher" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            @if (!string.IsNullOrEmpty(Convert.ToString(ViewData["startInterface"])))
+            {
+                <div class="message col-md-12 ">
+                    <div class="form-group col-md-4">
+                    </div>
+                    <div class="form-group col-md-4">
+                        @if (Convert.ToString(ViewData["checkBalanceSheet"]) == "Yes")
+                        {
+                            if (string.IsNullOrEmpty(Convert.ToString(ViewData["slId"])) || Convert.ToString(ViewData["slId"]) == "0")
+                            {
+                                <a class="btn btn-success" style="width:80%;text-align:center;" href="../BalanceSheetDrillDown/GLLedgerDrillDown?ReportLevel=GLLedger&FromDate=@ViewData["drillFromDate"]&ToDate=@ViewData["drillToDate"]&StartInterface=@ViewData["startInterface"]&GLMainGroupId=@ViewData["gLMainGroupId"]&GLSubGroupId=@ViewData["gLSubGroupId"]&GLId=@ViewData["gLId"]" id="lnkBack">Back</a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-success" style="width:80%;text-align:center;" href="../BalanceSheetDrillDown/SLLedgerDrillDown?ReportLevel=SLLedger&FromDate=@ViewData["drillFromDate"]&ToDate=@ViewData["drillToDate"]&StartInterface=@ViewData["startInterface"]&GLMainGroupId=@ViewData["gLMainGroupId"]&GLSubGroupId=@ViewData["gLSubGroupId"]&GLId=@ViewData["gLId"]&SLId=@ViewData["sLId"]" id="lnkBack">Back</a>
+                            }
+                        }
+                        else
+                        {
+                            if (string.IsNullOrEmpty(Convert.ToString(ViewData["slId"])) || Convert.ToString(ViewData["slId"]) == "0")
+                            {
+                                <a class="btn btn-success" style="width:80%;text-align:center;" href="../TBDrillDown/GLLedgerDrillDown?ReportLevel=GLLedger&FromDate=@ViewData["drillFromDate"]&ToDate=@ViewData["drillToDate"]&StartInterface=@ViewData["startInterface"]&GLMainGroupId=@ViewData["gLMainGroupId"]&GLSubGroupId=@ViewData["gLSubGroupId"]&GLId=@ViewData["gLId"]" id="lnkBack">Back</a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-success" style="width:80%;text-align:center;" href="../TBDrillDown/SLLedgerDrillDown?ReportLevel=SLLedger&FromDate=@ViewData["drillFromDate"]&ToDate=@ViewData["drillToDate"]&StartInterface=@ViewData["startInterface"]&GLMainGroupId=@ViewData["gLMainGroupId"]&GLSubGroupId=@ViewData["gLSubGroupId"]&GLId=@ViewData["gLId"]&SLId=@ViewData["sLId"]" id="lnkBack">Back</a>
+                            }
+                        }
+                        @*@if (string.IsNullOrEmpty(Convert.ToString(ViewData["slId"])) || Convert.ToString(ViewData["slId"]) == "0")
+                        {
+                            <a class="btn btn-success" style="width:80%;text-align:center;" href="../TBDrillDown/GLLedgerDrillDown?ReportLevel=GLLedger&FromDate=@ViewData["drillFromDate"]&ToDate=@ViewData["drillToDate"]&StartInterface=@ViewData["startInterface"]&GLMainGroupId=@ViewData["gLMainGroupId"]&GLSubGroupId=@ViewData["gLSubGroupId"]&GLId=@ViewData["gLId"]" id="lnkBack">Back</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-success" style="width:80%;text-align:center;" href="../TBDrillDown/SLLedgerDrillDown?ReportLevel=SLLedger&FromDate=@ViewData["drillFromDate"]&ToDate=@ViewData["drillToDate"]&StartInterface=@ViewData["startInterface"]&GLMainGroupId=@ViewData["gLMainGroupId"]&GLSubGroupId=@ViewData["gLSubGroupId"]&GLId=@ViewData["gLId"]&SLId=@ViewData["sLId"]" id="lnkBack">Back</a>
+                        }*@
+
+                    </div>
+                    <div class="form-group col-md-4">
+                    </div>
+                </div>
+            }
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="txtVoucherNo" class="col-sm-4 control-label">Voucher No.</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtVoucherNo" name="txtVoucherNo" tabindex="1" placeholder="Auto Generated Voucher No." type="text" maxlength="100" />
+                        @if (string.IsNullOrEmpty(Convert.ToString(ViewData["startInterface"])))
+                        {
+                            <a style="display:none;color:#fff;" class="btn btn-success" id="btnAddNew" href="@Url.Content("~/JournalVoucher/AddEditJournalVoucher")">New</a>
+                        }
+                        <a style="display:none;color:#fff;" class="btn btn-success" target="_blank" href="@Url.Action("JournalVoucherPrint",new {voucherId=ViewData["jvId"], reportType="PDF" })" id="btnPrint">Print</a>
+                        <input id="hdnVoucherId" type="hidden" value="@ViewData["svId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                        <input id="hdnReportLevel" type="hidden" value="@ViewData["reportLevel"]" />
+                        <input id="hdnDrillFromDate" type="hidden" value="@ViewData["drillFromDate"]" />
+                        <input id="hdnDrillToDate" type="hidden" value="@ViewData["drillToDate"]" />
+                        <input id="hdnStartInterface" type="hidden" value="@ViewData["startInterface"]" />
+                        <input id="hdnGLMainGroupId" type="hidden" value="@ViewData["gLMainGroupId"]" />
+                        <input id="hdnGLSubGroupId" type="hidden" value="@ViewData["gLSubGroupId"]" />
+                        <input id="hdnDrillGlId" type="hidden" value="@ViewData["glId"]" />
+                        <input id="hdnDrillSlId" type="hidden" value="@ViewData["slId"]" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="txtVoucherDate" class="col-sm-4 control-label">Voucher Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtVoucherDate" name="txtVoucherDate" tabindex="2" placeholder="Enter Voucher Date" value="@ViewData["currentDate"]" type="text" maxlength="50" />
+                        <input id="hdnCurrentDate" name="hdnCurrentDate" value="@ViewData["currentDate"]" type="hidden" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlBook" class="col-sm-4 control-label">Book&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlBook" name="ddlBook" tabindex="3" class="form-control"></select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-12">
+
+                <div class="form-group col-md-6">
+                    <label for="txtVoucherAmount" class="col-sm-4 control-label">Voucher Amount&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control  input-number right-text " id="txtVoucherAmount" name="txtVoucherAmount" tabindex="4" placeholder="Enter Voucher Amount" onkeyup="checkDec(this);" type="text" maxlength="20" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="ddlPayeeSLType" class="col-sm-4 control-label">Payee/ Payer Type&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlPayeeSLType" name="ddlPayeeSLType" tabindex="5" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12" id="divCreated" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="txtCreatedBy" class="col-sm-4 control-label">Created By</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtCreatedBy" name="txtCreatedBy" tabindex="101" placeholder="Created By User Name" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtCreatedDate" class="col-sm-4 control-label">Created Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtCreatedDate" name="txtCreatedDate" tabindex="102" placeholder="Created Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="divModified" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="txtModifiedBy" class="col-sm-4 control-label">Modified By</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtModifiedBy" name="txtModifiedBy" tabindex="103" placeholder="Modified By User Name" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtModifiedDate" class="col-sm-4 control-label">Modified Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtModifiedDate" name="txtModifiedDate" tabindex="104" placeholder="Modified Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="divCancelled" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="txtCancelReason" class="col-sm-4 control-label">Cancelled Reason</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtCancelReason" name="txtCancelReason" tabindex="105" placeholder="Cancel Reason" type="text" maxlength="1000" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtCancelledDate" class="col-sm-4 control-label">Cancelled Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtCancelledDate" name="txtCancelledDate" tabindex="106" placeholder="Cancelled Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-sm-12 col-lg-12 col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="txtTotalDebit" class="col-sm-4 control-label">Total Debit</label>
+                    <div class="col-sm-8">
+                        <input id="txtTotalDebit" name="txtTotalDebit" type="text" tabindex="28" class="form-control right-text input-number " maxlength="20" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtTotalCredit" class="col-sm-4 control-label">Total Credit</label>
+                    <div class="col-sm-8">
+                        <input id="txtTotalCredit" name="txtTotalCredit" type="text" tabindex="29" class="form-control right-text input-number " maxlength="20" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <div id="divVoucherEntryList">
+
+                </div>
+            </div>
+            
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="SearchPurchaseInvoiceModel" role="dialog">
+            <div class="modal-dialog  modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Search Invoice</h4>
+                    </div>
+                    <div class="">
+                        <div class="col-md-12 ftop">
+                            <div class="form-group col-md-6">
+                                <label for="txtPISearchInvoiceNo" class="col-sm-4 control-label">Invoice No.</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtPISearchInvoiceNo" name="txtPISearchInvoiceNo" tabindex="1" placeholder="Search with Purchase Invoice No." type="text" maxlength="50" />
+                                </div>
+                            </div>
+                            <div class="form-group  col-md-6">
+                                <label for="txtPISearchRefNo" class="col-sm-4 control-label">Ref No.</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtPISearchRefNo" name="txtPISearchRefNo" tabindex="3" placeholder="Search with Ref. No." type="text" maxlength="50" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+                                <label for="txtPISearchFromDate" class="col-sm-4 control-label">Invoice From Date</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtPISearchFromDate" name="txtPISearchFromDate" tabindex="4" value="@ViewData["fromDate"]" type="text" maxlength="50" />
+
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtPISearchToDate" class="col-sm-4 control-label">To Date</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtPISearchToDate" name="txtPISearchToDate" tabindex="5" value="@ViewData["toDate"]" type="text" maxlength="50" />
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row col-sm-12 col-lg-12 col-md-12">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <center>
+                                    <input class="btn btn-success" value="Search" alt="Search" id="btnPISearch" onclick="SearchPI()" type="button" border="0">&nbsp;&nbsp;
+                                </center>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="row col-sm-6 col-lg-12 col-md-12">
+                            <div id="divPIList">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="SearchSaleInvoiceModel" role="dialog">
+            <div class="modal-dialog  modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Search Invoice</h4>
+                    </div>
+                    <div class="">
+                        <div class="col-md-12 ftop">
+                            <div class="form-group col-md-6">
+                                <label for="txtSISearchInvoiceNo" class="col-sm-4 control-label">Invoice No.</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtSISearchInvoiceNo" name="txtSISearchInvoiceNo" tabindex="1" placeholder="Search with Sale Invoice No." type="text" maxlength="50" />
+                                </div>
+                            </div>
+                            <div class="form-group  col-md-6">
+                                <label for="txtSISearchRefNo" class="col-sm-4 control-label">Ref No.</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtSISearchRefNo" name="txtSISearchRefNo" tabindex="3" placeholder="Search with Ref. No." type="text" maxlength="50" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+                                <label for="txtSISearchFromDate" class="col-sm-4 control-label">Invoice From Date</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtSISearchFromDate" name="txtSISearchFromDate" tabindex="4" value="@ViewData["fromDate"]" type="text" maxlength="50" />
+
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtSISearchToDate" class="col-sm-4 control-label">To Date</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtSISearchToDate" name="txtSISearchToDate" tabindex="5" value="@ViewData["toDate"]" type="text" maxlength="50" />
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row col-sm-12 col-lg-12 col-md-12">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <center>
+                                    <input class="btn btn-success" value="Search" alt="Search" id="btnSISearch" onclick="SearchSI()" type="button" border="0">&nbsp;&nbsp;
+                                </center>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="row col-sm-6 col-lg-12 col-md-12">
+                            <div id="divSIList">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </form>
+</section>
+
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/Common.js"></script>
+<script src="~/Scripts/SaleVoucher/AddSaleVoucher.js"></script>

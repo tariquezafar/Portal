@@ -1,0 +1,55 @@
+﻿@model List<Portal.Core.ViewModel.POViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblPOPurchaseProductList">
+            <thead>
+                <tr aling="center" style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                    <th>Product Name</th>
+                    <th>Vendor Name</th> 
+                    <th>Price(Without GST)</th> 
+                    <th>PO No.</th>
+                    <th>PO Date</th>
+                                       
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.ProductName</td>
+                        <td>@item.VendorName</td>
+                        <td>@item.Price</td>
+                        <td>@item.PONo</td>
+                        <td>@item.PODate</td>                                                
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblPOPurchaseProductList').paging({
+            limit: 10,  
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

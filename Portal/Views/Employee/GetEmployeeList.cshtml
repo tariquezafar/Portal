@@ -1,0 +1,102 @@
+﻿@model List<Portal.Core.ViewModel.EmployeeViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table {
+    width: 182% !important;
+    max-width: 182% !important;
+    margin-bottom: 20px;
+}
+     .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+        color: #fff;
+    } 
+    table tr {
+        background-color: #dff0d8 !important;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblCountryList">
+            <thead>
+                <tr>
+                    <th align="center">Action</th>
+                    <th>Employee Code</th>
+                    <th>Employee Name</th>
+                    <th>Company Branch</th>
+                    <th>Father/ Spouse Name</th>
+                    <th>Gender</th>
+                    <th>DOB</th>
+                    <th>Marital Status</th>
+                    <th>Email</th>
+                    <th>Contact No.</th>
+                    <th>Mobile No.</th>
+                    <th>Current Address</th>
+                    <th>City</th>
+                    <th>DOJ</th>
+                    <th>PAN</th>
+                    <th>Department</th>
+                    <th>Designation</th>
+                    <th>Employee Type</th>
+                    <th>Current Status</th>
+                    <th>Created By User</th>
+                    <th>Created Date</th>
+                    <th>Status</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px auto;">
+                            <a style="color:white;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/Employee/AddEditEmployee?EmployeeId=@item.EmployeeId&AccessMode=3"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white;text-decoration:none" title="Edit" class="fa fa-pencil-square-o" href="~/Employee/AddEditEmployee?EmployeeId=@item.EmployeeId&AccessMode=2"></a>
+                        </td>
+                        <td>@item.EmployeeCode</td>
+                        <td>@item.FirstName @item.LastName</td>
+                        <td>@item.BranchName</td>
+                        <td>@item.FatherSpouseName</td>
+                        <td>@item.Gender</td>
+                        <td>@item.DateOfBirth</td>
+                        <td>@item.MaritalStatus</td>
+                        <td>@item.Email</td>
+                        <td>@item.ContactNo</td>
+                        <td>@item.MobileNo</td>
+                        <td>@item.CAddress</td>
+                        <td>@item.CCity</td>
+                        <td>@item.DateOfJoin</td>
+                        <td>@item.PANNo</td>
+                        <td>@item.DepartmentName</td>
+                        <td>@item.DesignationName</td>
+                        <td>@item.EmploymentType</td>
+                        <td>@item.EmployeeCurrentStatus</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@(item.Emp_Status==true?"Active":"Inactive")</td>
+                       
+
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblCountryList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

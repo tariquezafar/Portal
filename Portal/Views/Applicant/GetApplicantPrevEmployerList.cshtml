@@ -1,0 +1,102 @@
+﻿@model List<Portal.Core.ViewModel.ApplicantPrevEmployerViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblEmployerList">
+            <thead>
+                <tr> 
+                    <th>S. No.</th>
+                    <th>Current Employer</th>
+                    <th>Employer</th> 
+                    <th>Job Start Date</th> 
+                    <th>Job End Date</th> 
+                    <th>Last CTC</th> 
+                    <th>Reason of Leaving</th> 
+                    <th>Designation</th> 
+                    <th>Employement Status</th> 
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success"> 
+                        <td>
+                            @item.EmployerSequenceNo
+                            <input type="hidden" id="hdnEmployerSequenceNo" value="@item.EmployerSequenceNo" />
+                            <input type="hidden" id="hdnApplicantPrevEmployerId" value="@item.ApplicantPrevEmployerId" />
+                        </td>
+                        <td>@if(item.CurrentEmployer==true)
+                        {
+                            <p>Yes</p>
+                            <input type="hidden" id="hdnCurrentEmployer" value="Yes" />
+                        }
+                        else
+                        {
+                            <p>No</p>
+                            <input type="hidden" id="hdnCurrentEmployer" value="No" />
+                        }
+                            
+                        </td>
+                        <td>@item.EmployerName
+                        <input type="hidden" id="hdnEmployerName" value="@item.EmployerName" /> 
+                        </td> 
+                        <td>@item.StartDate
+                            <input type="hidden" id="hdnStartDate" value="@item.StartDate" />
+                        </td> 
+                        <td>
+                            @item.EndDate
+                        <input type="hidden" id="hdnEndDate" value="@item.EndDate" />
+                    </td> 
+                        <td>
+                            @item.LastCTC
+                            <input type="hidden" id="hdnLastCTC" value="@item.LastCTC" />
+                        </td> 
+                        <td>
+                            @item.ReasonOfLeaving
+                            <input type="hidden" id="hdnReasonOfLeaving" value="@item.ReasonOfLeaving" />
+                        </td> 
+                        <td>
+                            @item.LastDesignationName
+                            <input type="hidden" id="hdnLastDesignationName" value="@item.LastDesignationName" />
+                            <input type="hidden" id="hdnLastDesignationId" value="@item.LastDesignationId" />
+                        </td> 
+                        <td>
+                            @item.EmploymentStatusName
+                            <input type="hidden" id="hdnEmploymentStatusName" value="@item.EmploymentStatusName" />
+                            <input type="hidden" id="hdnEmploymentStatusId" value="@item.EmploymentStatusId" />
+                        </td> 
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" onclick="EditEmployerRow(this);" href="#"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-trash"  onclick="RemoveEmployerRow(this)" href="#"></a>
+                        </td>
+                    </tr>
+                } 
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblEmployerList">
+            <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Current Employer</th>
+                    <th>Employer</th>
+                    <th>Job Start Date</th>
+                    <th>Job End Date</th>
+                    <th>Last CTC</th>
+                    <th>Reason of Leaving</th>
+                    <th>Designation</th>
+                    <th>Employement Status</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

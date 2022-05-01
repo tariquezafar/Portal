@@ -1,0 +1,132 @@
+13:34:41 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditQuotation
+Error Line No : 1874
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditQuotation' expects parameter '@RefNo', which was not supplied.
+--------------------------------------------------------------------------------------------------------------------------------
+
+13:34:41 PM
+Source : Portal.Core.QuotationBL
+Method Name : AddEditQuotation
+Error Line No : 87
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditQuotation' expects parameter '@RefNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:34:41 PM
+Source : Portal.Controllers.QuotationController
+Method Name : AddEditQuotation
+Error Line No : 58
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditQuotation' expects parameter '@RefNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:36:42 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditQuotation
+Error Line No : 1874
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditQuotation' expects parameter '@RefNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:36:42 PM
+Source : Portal.Core.QuotationBL
+Method Name : AddEditQuotation
+Error Line No : 87
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditQuotation' expects parameter '@RefNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:36:42 PM
+Source : Portal.Controllers.QuotationController
+Method Name : AddEditQuotation
+Error Line No : 58
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditQuotation' expects parameter '@RefNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:08 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditQuotation
+Error Line No : 2028
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'QuotationTermDetail'.
+Transaction count after EXECUTE indicates a mismatching number of BEGIN and COMMIT statements. Previous count = 0, current count = 1.
+A transaction that was started in a MARS batch is still active at the end of the batch. The transaction is rolled back.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:08 PM
+Source : Portal.Core.QuotationBL
+Method Name : AddEditQuotation
+Error Line No : 99
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'QuotationTermDetail'.
+Transaction count after EXECUTE indicates a mismatching number of BEGIN and COMMIT statements. Previous count = 0, current count = 1.
+A transaction that was started in a MARS batch is still active at the end of the batch. The transaction is rolled back.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:08 PM
+Source : Portal.Controllers.QuotationController
+Method Name : AddEditQuotation
+Error Line No : 58
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'QuotationTermDetail'.
+Transaction count after EXECUTE indicates a mismatching number of BEGIN and COMMIT statements. Previous count = 0, current count = 1.
+A transaction that was started in a MARS batch is still active at the end of the batch. The transaction is rolled back.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:50 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditQuotation
+Error Line No : 2028
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'QuotationTermDetail'.
+Transaction count after EXECUTE indicates a mismatching number of BEGIN and COMMIT statements. Previous count = 0, current count = 1.
+A transaction that was started in a MARS batch is still active at the end of the batch. The transaction is rolled back.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:34:02 PM
+Source : Portal.Core.QuotationBL
+Method Name : AddEditQuotation
+Error Line No : 99
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'QuotationTermDetail'.
+Transaction count after EXECUTE indicates a mismatching number of BEGIN and COMMIT statements. Previous count = 0, current count = 1.
+A transaction that was started in a MARS batch is still active at the end of the batch. The transaction is rolled back.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:34:02 PM
+Source : Portal.Controllers.QuotationController
+Method Name : AddEditQuotation
+Error Line No : 58
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'QuotationTermDetail'.
+Transaction count after EXECUTE indicates a mismatching number of BEGIN and COMMIT statements. Previous count = 0, current count = 1.
+A transaction that was started in a MARS batch is still active at the end of the batch. The transaction is rolled back.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:46:12 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.EntityException
+Details: An exception has been raised that is likely due to a transient failure. If you are connecting to a SQL Azure database consider using SqlAzureExecutionStrategy.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:46:12 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 57
+Exception Type : System.Data.Entity.Core.EntityException
+Details: An exception has been raised that is likely due to a transient failure. If you are connecting to a SQL Azure database consider using SqlAzureExecutionStrategy.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:46:12 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 36
+Exception Type : System.Data.Entity.Core.EntityException
+Details: An exception has been raised that is likely due to a transient failure. If you are connecting to a SQL Azure database consider using SqlAzureExecutionStrategy.
+---------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,176 @@
+﻿@{
+    ViewBag.Title = "AddEditDashDashboardItemMapping";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend {
+        display: block;
+        width: 37%;
+        padding: 0;
+        margin-bottom: 20px;
+        font-size: 21px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+</style>
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/DashboardItemMapping/Admin">Dashboard Item Mapping</a> >> Dashboard Item Mapping </b></p></div>
+</div>
+
+<section>
+    <form action="#" id="frmAddEditDashboardContiner" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+               
+
+                <div class="col-md-12">
+                   
+                    <div class="form-group col-md-4">
+                        <label for="ddlModule" class="col-sm-4 control-label">Module&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlModule" name="ddlModule" tabindex="5" class="form-control" onchange="BindDashboardContainerList()">
+                                <option value="0">-Select Module-</option>
+                                <option value="ADMIN">ADMIN</option>
+                                <option value="ACCOUNT">ACCOUNT</option>
+                                <option value="CRM">CRM</option>
+                                <option value="ESS">ESS</option>
+                                <option value="HR">HR</option>
+                                <option value="INVENTORY">INVENTORY</option>
+                                <option value="PAYROLL">PAYROLL</option>
+                                <option value="PRODUCTION">PRODUCTION</option>
+                                <option value="PURCHASE">PURCHASE</option>
+                                <option value="SALE">SALE</option>
+                            </select>
+
+                            <input id="hdnDashBoardItemMappingID" type="hidden" value="@ViewData["dashboardItemMappingID"]" />
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group col-md-4">
+                        <label for="ddlDashboardContainer" class="col-sm-4 control-label">Dashboard Container&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlDashboardContainer" name="ddlDashboardContainer" tabindex="5" class="form-control" onchange="DisplayDashboardContainerDetail()">                               
+                               
+                            </select>
+
+                            <input id="hdnDashBoardItemMappingID" type="hidden" value="@ViewData["dashboardItemMappingID"]" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4" >
+                        <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">                            
+                            <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="6" class="form-control"></select>
+                            <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                            <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-12">
+
+                    <div class="form-group col-md-4">
+                        <label for="ddlRole" class="col-sm-4 control-label">Role&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlRole" name="ddlRole" tabindex="1" class="form-control"></select>                          
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="txtContainerDisplayName" class="col-sm-4 control-label">Container Display Name&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input id="txtDashBoardContainerDisplayName" name="txtContainerDisplayName"  tabindex="2" placeholder="Container Display Name" type="text" class="form-control" />
+
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="txtDashboardContainerNo" class="col-sm-4 control-label">Total Item in Container No. &nbsp;</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtTotalItemInContainer" name="txtContainerNo" tabindex="3" placeholder="Container No." type="text" maxlength="10" />
+
+                        </div>
+                    </div>
+
+                   
+
+                </div>
+           
+
+
+                @*<div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div id="divListNew">
+                    </div>
+                </div>*@
+
+
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="GetDetail" alt="GetDetail" id="btnGetDetail" onclick="GetDashboardItemMappingDetail()" type="button" border="0" tabindex="11">
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" onclick="SaveData()" type="button" border="0" tabindex="11">
+                        <input class="btn btn-success" value="Update" style="display:none;" alt="Update" id="btnUpdate" onclick="SaveData()" type="button" border="0" tabindex="11">
+                        <a class="btn btn-success" id="btnReset" href="@Url.Content("~/DashboardContainer/AddEditDashBoardContainer")" tabindex="14">Reset</a>
+
+                        <a class="btn btn-success" id="btnList" href="@Url.Content("~/DashboardContainer/ListDashboardContainer")" tabindex="15">Search Dashboard Item Mapping</a>
+                    </center>
+                </div>
+
+               
+                <div class="col-md-3"></div>               
+
+            </div>
+
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div id="divList">
+                    </div>
+                </div>
+
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="16" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="17" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="18" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+
+<script src="~/Scripts/DashboardItemMapping/AddDashboardItemMapping.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>

@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "Purchase Dashboard";
+    Layout = "~/Views/Shared/_PurchaseLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .crm-box {
+    width:31%;}
+    .crm-box-1 {
+    margin-left:37px; width:31%;}
+</style>
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div id="wrapper">
+    <div id="page-content-wrapper" style="padding-top:5px !important;">
+        <div class="page-content">
+            <div class="container-fluid">
+                
+                <div class="row top-head">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-6" style="margin-top: 5px;margin-bottom:5px">
+                        <b><label for="ddlFinYear" class="col-sm-4" style="margin-top: 5px;color:#fff">Financial Year</label></b>
+                        <div class="col-sm-8">
+                            <select id="ddlFinYear" name="ddlFinYear" onchange="SetFinancialYearSession()" tabindex="1" class="form-control"></select>
+                            <input type="hidden" id="hdnCurrentFinyearId" value="@ViewData["currentFinyearId"]" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top:-50px;">
+                    <div class="col-md-4" style="top: 6px;">
+                        <label for="ddlTeamUser" class="col-sm-4 control-label" style="top: 8px;
+    left: 25px;">Team Member:</label>
+                        <div class="col-sm-8">
+                            <select id="ddlTeamUser" onchange="RefreshTeamData();" name="ddlTeamUser" tabindex="1" class="form-control" style="width: 100%;height: 31px;     margin-bottom: 9px;"></select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="market-updates" style="clear:both;margin-top: 10px;margin-left: 12px;">
+                    <a href="@Url.Content("~/PO/ListPO")">
+                        <div class="col-md-3 market-update-gd crm-box">
+                            <div class="market-update-block clr-block-2">
+                                <div class="col-md-8 market-update-left">
+                                    <h4>New Purchase order</h4>
+                                    <p>Today Purchase order value</p>
+                                    <h3><i style="font-size: 30px;color: aliceblue;" class="fa fa-inr">&nbsp;</i><label id="lblTodayPOSum" style="color: white;"></label></h3>
+                                </div>
+                                <div class="col-md-4 market-update-right">
+
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="@Url.Content("~/PurchaseInvoice/ListPI")">
+                        <div class="col-md-3 market-update-gd crm-box-1">
+                            <div class="market-update-block clr-block-3">
+                                <div class="col-md-8 market-update-left">
+                                    <h4>New Purchase Invoice</h4>
+                                    <p>Today Purchase Invoice value</p>
+                                    <h3><i style="font-size: 30px;color: aliceblue;" class="fa fa-inr">&nbsp;</i><label id="lblTodayPISum" style="color: white;"></label></h3>
+                                </div>
+                                <div class="col-md-4 market-update-right">
+
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="col-md-3 climate-grids crm-box" style="background:#fff;padding-right: 0; margin-left:45px;">
+                        <div class="climate-grid3">
+                            <div class="popular-brand" style="margin-top:18px;">
+                                <div class="col-md-6 popular-bran-left">
+                                    <h4><i  aria-hidden="true"></i><a href="@Url.Content("~/PO/AddEditPO?accessMode=1")" ) target="_blank">Add New PO</a></h4>
+                                    <h4><i  aria-hidden="true"></i><a href="@Url.Content("~/PurchaseInvoice/AddEditPI?accessMode=1")" )target="_blank">Add New PI</a></h4>
+                                    <h4><i  aria-hidden="true"></i><a href="@Url.Content("~/Vendor/AddEditVendor?accessMode=1")" )target="_blank">Add New Vendor</a></h4>
+
+                                </div>
+                                <div class="col-md-6 popular-bran-right" style="margin-top: -19px; min-height: 132px;">
+                                    <h3 style="margin-top: -17px;"><i class="fa fa-link" aria-hidden="true" style="color: white;font-size: 38px; margin-top: 16px;"></i></h3>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="clearfix"> </div>
+
+                </div>
+
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#tabs-1">Purchase Summary</a></li>
+                        <li><a href="#tabs-2">Graphical Representation</a></li>
+                    </ul>
+                    <div id="tabs-1">
+                        <div class="row">
+                            <div class="col-md-4" id="DivPOCount">
+
+                            </div>
+
+
+                            <div class="col-md-4" id="DivPIICount">
+
+                            </div>
+                        </div>
+                    </div>
+                        <div id="tabs-2">
+                            <div class="row">
+                                <div class="col-md-4" style="padding:10px" id="divPOCountChart">
+                                    <canvas id="barcanvasPO" height="200" width="200"></canvas>
+                                </div>
+                                <div class="col-md-4" style="padding:10px" id="divPIICountChart">
+                                    <canvas id="barcanvasPII" height="200" width="200"></canvas>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+                <!--end body content -->
+            </div>
+</div>
+<script src="~/Scripts/Chart.bundle.min.js"></script>
+<script src="~/Scripts/Dashboard/PurchaseTeamDashboard.js"></script>

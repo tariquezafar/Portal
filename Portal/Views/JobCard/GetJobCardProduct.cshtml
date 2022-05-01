@@ -1,0 +1,161 @@
+﻿@model List<Portal.Core.ViewModel.JobCardDetailViewModel>
+@*<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+        color: #fff;
+        width: 87px;
+    }
+
+    table tr:nth-child(2n+1) {
+        background-color: #dff0d8 !important;
+    }
+
+    .table {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 20px;
+    }
+</style>*@
+@if (Model != null && Model.Count > 0)
+{
+    <div class="divproductlist" style="padding:10px;">
+        <table class="table" id="tblProductList1">
+            <thead>
+                <tr style="background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                    @*<th style="display:none">S. No.</th>*@
+                    <th>Part Name</th>
+                    <th>Part Code</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Disc. Amt.</th>
+                    <th>CGST(%)</th>
+                    <th>CGST Amt</th>
+                    <th>SGST(%)</th>
+                    <th>SGST Amt</th>
+                    <th>Total Price</th>
+                    <th colspan="2" class="editonly" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        @*<td style="display:none">
+                            @item.SequenceNo
+
+                        </td>*@
+                        <td>
+                            @item.ProductName
+                            <input type="hidden" id="hdnJobCardDetailID" value="@item.JobCardDetailID" />
+                            <input type="hidden" id="hdnProductIdJob" value="@item.ProductId" />
+                            <input type="hidden" id="txtProductNameJob" value="@item.ProductName" />
+                            <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                            <input type="hidden" id="hdnJobSequenceNo" value="@item.SequenceNo" />
+                            <input type="hidden" id="hdnQuantity" value="@item.Quantity" />
+                            <input type="hidden" id="hdnCGSTPerc" value="@item.CGST_Perc" />
+                            <input type="hidden" id="hdnCGSTAmount" value="@item.CGST_Amount" />
+                            <input type="hidden" id="hdnSGSTPerc" value="@item.SGST_Perc" />
+                            <input type="hidden" id="hdnSGSTAmount" value="@item.SGST_Amount" />
+                            <input type="hidden" id="hdnTotalPrice" value="@item.TotalPrice" />
+                            <input type="hidden" id="hdnDiscountPerc" value="@item.DiscountPercentage" />
+                            <input type="hidden" id="hdnDiscountAmount" value="@item.DiscountAmount" />
+
+                        </td>
+                        <td>
+                            @item.ProductCode
+                           
+                        </td>
+
+                        
+                        <td>
+                            @item.Quantity
+
+
+
+                        </td>
+                        <td>
+                            @item.Price
+                            <input type="hidden" id="hdnPrice" value="@item.Price" />
+                        </td>
+
+                        <td>
+                            @(((item.Price * item.Quantity) - item.DiscountAmount).ToString("#######0.00"))
+                        </td>
+                        <td>
+                            @item.DiscountAmount
+                            
+                        </td>
+                        <td id="tdCGST_Perc">
+                            @item.CGST_Perc
+
+                        </td>
+                        <td id="tdCGSTAmount">
+                            @item.CGST_Amount
+
+                        </td>
+
+                        <td id="tdSGST_Perc">
+                            @item.SGST_Perc
+
+                        </td>
+                        <td id="tdSGSTAmount">
+                            @item.SGST_Amount
+
+
+                        </td>
+
+
+                        <td id="tdTotalPrice">
+                            @item.TotalPrice
+
+                        </td>
+
+                        <td class="btn btn-success table_btn editonly" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" onclick="EditProductRowGrid(this);" href="#"></a>
+                        </td>
+                        <td class="btn btn-success table_btn editonly selectpo" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-trash" onclick="RemoveProductRowGrid(this)" href="#"></a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="divproductlist" style="padding:10px;">
+        <table class="table" id="tblProductList1">
+            <thead>
+                <tr style="background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                    <th>Part Name</th>
+                    <th>Part Code</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Disc. Amt.</th>
+                    <th>CGST(%)</th>
+                    <th>CGST Amt</th>
+                    <th>SGST(%)</th>
+                    <th>SGST Amt</th>
+                    <th>Total Price</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+<script>
+    $(document).ready(function () {
+        if ($("#hdnAccessMode").val() == "3") {
+            $(".editonly").hide();
+        }
+        if ($("#hdnAccessMode").val() == "4") {
+            $(".editonly").hide();
+        }
+
+    });
+</script>

@@ -1,0 +1,93 @@
+﻿@model List<Portal.Core.ViewModel.AppointmentViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblAppointmentList">
+            <thead>
+                <tr>
+                    <th align="center">Action</th>
+                     <th>Appoint No.</th>
+                    <th>Interview No.</th>
+                    <th>Applicant No.</th>
+                    <th>Name</th>
+                    <th>MobileNo</th>
+                    <th>Email</th>
+                    <th>Appoint Date</th>
+                    <th>Joining Date</th>  
+                    <th>Status</th>         
+                    <th>Created By Name</th>
+                    <th>Created Date</th>
+                    <th>Modified By Name</th>
+                    <th>Modified Date</th>
+                    <th>Company Branch</th>
+                   
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/Appointment/AddEditAppointment?appointmentId=@item.AppointLetterId&AccessMode=3"></a>
+                            <a style="color:white" class="fa fa-pencil-square-o" href="~/Appointment/AddEditAppointment?appointmentId=@item.AppointLetterId&AccessMode=2"></a>
+                        </td>
+                       
+                        <td>@item.AppointLetterNo</td>
+                        <td>@item.InterviewNo</td>
+                        <td>@item.ApplicantNo</td>
+                        <td>@(item.FirstName+" "+item.LastName)</td>
+                        <td>@item.MobileNo</td>
+                        <td>@item.Email</td>
+                        <td>@item.AppointDate</td>
+                        <td>@item.JoiningDate</td>
+                        @if (item.AppointStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine;">
+                                @item.AppointStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green;color:white">
+                                @item.AppointStatus
+                            </td>
+
+                        }
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+                        <td>@item.companyBranchName</td>
+                       
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblAppointmentList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

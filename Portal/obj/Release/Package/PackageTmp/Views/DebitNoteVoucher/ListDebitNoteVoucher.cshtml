@@ -1,0 +1,164 @@
+﻿@{
+    ViewBag.Title = "List Debit Note Voucher";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+
+    table tr:nth-child(2n+1) {
+        background-color: #dbe5f7;
+    }
+
+    table tr:nth-child(2n) {
+        background-color: #dbe5f7;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AccountDashboard">Account </a> >> List Debit Note Voucher </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmListBankVoucher" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop" style="display:none">
+                
+                <div class="form-group col-md-6" >
+                     <label for="ddlVoucherMode" class="col-sm-4 control-label">Voucher Mode</label>
+                    <div class="col-sm-8">
+                        <select id="ddlVoucherMode" name="ddlVoucherMode" tabindex="2" class="form-control">
+                            <option selected="selected" value="">-Select Mode-</option>
+                            <option value="P">Payment</option>
+                            <option value="R">Receipt</option>
+                        </select>
+                    </div> 
+                </div>
+            </div>
+            <div class="col-md-12" ftop>
+                <div class="form-group col-md-4">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch</label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" onchange="BindBookTypeList();" tabindex="9" class="form-control"></select>
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+
+                    </div>
+                </div>
+              
+                <div class="form-group col-md-4">
+                    <label for="txtVoucherNo" class="col-sm-4 control-label">Voucher No.</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtVoucherNo" name="txtVoucherNo" tabindex="3" placeholder="Search with Voucher No." type="text" maxlength="50" />
+                    </div>
+                </div>
+                <div class="form-group  col-md-4">
+                    <label for="ddlVoucherStatus" class="col-sm-4 control-label">Voucher Status</label>
+                    <div class="col-sm-8">
+                        <select id="ddlVoucherStatus" name="ddlVoucherStatus" tabindex="4" class="form-control">
+                            <option value="0">--Status--</option>
+                            <option value="Final">Final</option>
+                            <option value="Approved">Approved</option>
+                            <option value="Cancel">Cancel</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtFromDate" class="col-sm-4 control-label">Voucher From Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtFromDate" name="txtFromDate" tabindex="5" value="@ViewData["fromDate"]"  type="text" maxlength="50" />
+                        <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["fromDate"]" type="hidden" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtToDate" class="col-sm-4 control-label">Voucher To Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtToDate" name="txtToDate" tabindex="6"  value="@ViewData["toDate"]"  type="text" maxlength="50" />
+                        <input id="hdnToDate" name="hdnToDate" value="@ViewData["toDate"]" type="hidden" />
+                    </div>
+                </div>
+              
+                <div class="form-group col-md-4">
+
+                    <label for="ddlBook" class="col-sm-4 control-label">Book&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlBook" name="ddlBook" tabindex="1" class="form-control"></select>
+                    </div>
+                </div>
+                
+            </div>
+          
+            <div class="col-md-12">
+                <div class="form-group  col-md-6">
+                 
+                </div>
+            </div>
+
+            <div class="row col-sm-12 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Search" alt="Save" tabindex="7" id="btnSearch" onclick="SearchDebitNoteVoucher()" type="button" border="0">
+                        <input class="btn btn-success" type="button" id="btnReset" tabindex="8" onclick="ClearFields()" value="Reset" /> 
+                        <a class="btn btn-success" id="btnList" tabindex="9" href="@Url.Content("~/DebitNoteVoucher/AddEditDebitNoteVoucher?accessMode=1")">Add More Debit Note Voucher</a>
+                        <a class="btn btn-success" alt="Export" tabindex="10" id="btnExport" onclick="OpenPrintPopup();" border="0">Export</a> 
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div id="divList">
+
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="printModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Debit Note Voucher</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="ddlPrintOption" class="col-sm-4 control-label">Report Option</label>
+                            <div class="col-sm-8">
+                                <select id="ddlPrintOption" name="ddlPrintOption" onchange="ShowHidePrintOption()" tabindex="1" class="form-control">
+                                    <option selected="selected" value="PDF">PDF</option>
+                                    <option value="Excel">Excel</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-success" target="_blank" href="#" id="btnPdf">Print</a>
+                        <a class="btn btn-success" style="display:none;" target="_blank" href="#" id="btnExcel">Print</a>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/DebitNoteVoucher/ListDebitNoteVoucher.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>

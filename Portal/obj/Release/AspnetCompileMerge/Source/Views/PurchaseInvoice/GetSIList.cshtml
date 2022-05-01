@@ -1,0 +1,92 @@
+﻿@model List<Portal.Core.ViewModel.SaleInvoiceViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+
+<style>
+    .table {
+    width: 120% !important;
+    max-width: 120% !important;
+    margin-bottom: 20px;
+    font-size:12px;
+
+}
+     #tblSaleInvoiceList tr th{text-align:center; border:1px solid #ccc!important; font-family:Arial; color:#fff;}
+    table tr td {
+    border:1px solid #ccc!important; font-family:Arial;}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblSaleInvoiceList">
+            <thead>
+                <tr aling="center"  style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                    <th align="center">Select</th>
+                    <th>Invoice No.</th>
+                    <th>Customer Name</th>                   
+                    <th>Ref. No.</th>
+                    <th>Ref. Date</th>
+                    <th>Basic Value</th>
+                    <th>Sub Total</th>
+                    <th>Net Amt</th>
+                    <th>Round Off Amt</th>
+                    <th>Gross Amt</th>                  
+                    <th>SI Status</th> 
+                    <th>Created By</th>
+                    <th>Created Date</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                      
+                        <td style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-pencil-square-o erp-btn" href="#" onclick="SelectSI('@item.InvoiceId','@item.InvoiceNo','@item.InvoiceDate')"></a>
+                        </td>                  
+                        <td>@item.InvoiceNo</td>                   
+                        <td>@item.CustomerName</td>                       
+                        <td>@item.RefNo</td>
+                        <td>@item.RefDate</td>
+                        <td>@item.BasicAmt</td>
+                        <td>@item.BasicValue</td>                       
+                        <td>@item.GrossValue</td>
+                        <td>@item.RoundOfValue</td>
+                        <td>@item.TotalValue</td>                    
+                        <td style="background-color: #128646;color: #fff; font-weight: bold;">
+                        @item.ApprovalStatus
+                        </td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>                      
+
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblSaleInvoiceList').paging({
+            limit: 25,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>
+

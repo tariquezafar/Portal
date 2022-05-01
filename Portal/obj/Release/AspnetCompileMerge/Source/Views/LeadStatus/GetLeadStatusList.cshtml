@@ -1,0 +1,48 @@
+﻿@model List<Portal.Core.ViewModel.LeadStatusViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblLeadStatusList">
+            <thead>
+                <tr class="danger">
+                    <th>Lead Status Name</th>
+                    <th>Status</th>
+                    <th class="text-right">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.LeadStatusName</td>
+                        <td>@(item.Lead_Status == true ? "Active" : "Inactive")</td>
+                        <td class="btn btn-success table_btn  text-right success " style="width:30px; margin:0px auto; float: right;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/LeadStatus/AddEditLeadStatus?LeadStatusId=@item.LeadStatusId&AccessMode=3"></a>
+                        </td>
+                        <td class="btn btn-success table_btn text-right success" style="width:30px; margin:0px 2px auto; float: right;">
+                            <a style="color:white" class="fa fa-pencil-square-o" href="~/LeadStatus/AddEditLeadStatus?LeadStatusId=@item.LeadStatusId&AccessMode=2"></a>
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblLeadStatusList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

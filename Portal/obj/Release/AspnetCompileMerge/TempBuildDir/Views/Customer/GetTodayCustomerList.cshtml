@@ -1,0 +1,142 @@
+﻿@model List<Portal.Core.ViewModel.CustomerViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table {
+        width: 156% !important;
+        max-width: 156% !important;
+        margin-bottom: 20px;
+    }
+
+        .table th {
+            background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+            color: #fff;
+        }
+
+    table tr:nth-child(2n+1) {
+        background-color: #dff0d8 !important;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll;">
+        <table class="table table-bordered table-hover" id="tblCountryList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>Customer Code</center></th>
+                    @*<th><center>Company Branch</center></th>*@
+                    <th><center>Customer Name</center></th>
+                    <th><center>Contact Person</center></th>
+                    <th><center>Email</center></th>
+                    <th><center>Mobile No.</center></th>
+                    <th><center>Contact No.</center></th>
+                    <th><center>Address</center></th>
+                    <th><center>City</center></th>
+                    <th><center>Country</center></th>
+                    <th><center>State</center></th>
+                    <th><center>Pin Code</center></th>
+                    @*<th><center>TINNo</center></th>*@
+                    <th><center>PANNo</center></th>
+                    <th><center>GSTNo</center></th>
+                    <th><center>Excise No.</center></th>
+                    <th><center>Customer Type</center></th>
+                    <th><center>Annual TurnOver</center></th>
+                    <th><center>GST Exempt</center></th>
+                    <th><center>IsComposition</center></th>
+                    <th><center>IsUIN</center></th>
+                    <th><center>UIN No</center></th>
+                    <th><center>Created By</center></th>
+                    <th><center>Created Date</center></th>
+                    <th><center>Status</center></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    if (item.Customer_Status == true)
+                    {
+                        <tr class="success">
+                            <td class="teal text" style="width:30px; margin:0px auto;">
+                                <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/Customer/AddEditCustomer?CustomerId=@item.CustomerId&AccessMode=3"></a>
+                            </td>
+                            <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                                <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/Customer/AddEditCustomer?CustomerId=@item.CustomerId&AccessMode=2"></a>
+                            </td>
+                            <td>@item.CustomerCode</td>
+                            @*<td>@item.CompanyBranchName</td>*@
+                            <td>@item.CustomerName</td>
+                            <td>@item.ContactPersonName</td>
+                            <td>@item.Email</td>
+                            <td>@item.MobileNo</td>
+                            <td>@item.ContactNo</td>
+                            <td>@item.PrimaryAddress</td>
+                            <td>@item.City</td>
+                            <td>@item.CountryName</td>
+                            <td>@item.StateName</td>
+                            <td>@item.PinCode</td>
+                            @*<td>@item.TINNo</td>*@
+                            <td>@item.PANNo</td>
+                            <td>@item.GSTNo</td>
+                            <td>@item.ExciseNo</td>
+                            <td>@item.CustomerTypeDesc</td>
+                            <td>@item.AnnualTurnover</td>
+                            <td>@(item.GST_Exempt == true ? "YES" : "NO")</td>
+                            <td>@(item.IsComposition == true ? "YES" : "NO")</td>
+                            <td>@(item.IsUIN == true ? "YES" : "NO")</td>
+                            <td>@item.UINNo</td>
+
+                            <td>@item.CreatedByUserName</td>
+                            <td>@item.CreatedDate</td>
+                            <td>@(item.Customer_Status == true ? "Active" : "Inactive")</td>
+
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr class="danger">
+                            <td class="teal text" style="width:30px; margin:0px auto;">
+                                <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/Customer/AddEditCustomer?CustomerId=@item.CustomerId&AccessMode=3"></a>
+                            </td>
+                            <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                                <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/Customer/AddEditCustomer?CustomerId=@item.CustomerId&AccessMode=2"></a>
+                            </td>
+                            <td>@item.CustomerCode</td>
+                            <td>@item.CustomerName</td>
+                            <td>@item.ContactPersonName</td>
+                            <td>@item.Email</td>
+                            <td>@item.MobileNo</td>
+                            <td>@item.PrimaryAddress</td>
+                            <td>@item.City</td>
+                            <td>@item.StateName</td>
+                            <td>@item.ExciseNo</td>
+                            <td>@item.CustomerTypeDesc</td>
+                            <td>@item.AnnualTurnover</td>
+                            <td>@item.CreatedByUserName</td>
+                            <td>@item.CreatedDate</td>
+                            <td>@(item.Customer_Status == true ? "Active" : "Inactive")</td>
+
+                        </tr>
+
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblCountryList').paging({
+            limit: 25,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

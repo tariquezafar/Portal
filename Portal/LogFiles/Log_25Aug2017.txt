@@ -1,0 +1,16 @@
+17:45:14 PM
+Source : Portal.Core.POBL
+Method Name : GetPurchaseQuotationProductList
+Error Line No : 814
+Exception Type : System.ArgumentException
+Details: Column 'Quantity' does not belong to table .
+--------------------------------------------------------------------------------------------------------------------------------
+
+17:45:14 PM
+Source : Portal.Controllers.POController
+Method Name : GetPurchaseQuotationProductList
+Error Line No : 567
+Exception Type : System.ArgumentException
+Details: Column 'Quantity' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+

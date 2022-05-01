@@ -1,0 +1,90 @@
+﻿@model List<Portal.Core.ViewModel.ProductTypeViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style type="text/javascript"> 
+         .table {
+        width: 100% !important ;
+        max-width: 99% !important;
+        margin-bottom: 18px !important;
+        margin-left: 30px !important;
+        margin-right: 30px !important;
+        
+    }
+  
+</style>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div>
+        <table class="table table-bordered" id="tblProductTypeList">           
+            <thead>
+                <tr>
+                    <th colspan="2" style="background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    color:#fff">Action</th>
+                    <th style="background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    color:#fff;"><center>Product Type Name</center></th>
+                    <th style="background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    color:#fff;"><center>Product Type Code</center></th>
+                    @*<th style="background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    color:#fff;"><center>Company Branch</center></th>*@
+                    <th style="background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    color:#fff;"><center>Status</center></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    if (item.ProductType_Status == true)
+                    {
+                    <tr class="success">
+                        <td class="teal text" style="width:30px; margin:0px auto;">
+                            <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/ProductType/AddEditProductType?ProductTypeId=@item.ProductTypeId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/ProductType/AddEditProductType?ProductTypeId=@item.ProductTypeId&AccessMode=2"></a>
+                        </td>
+                        <td align="center">@item.ProductTypeName</td>
+                        <td align="center">@item.ProductTypeCode</td>
+                        @*<td align="center">@item.CompanyBranchName</td>*@
+                        <td align="center">@(item.ProductType_Status == true ? "Active" : "Inactive")</td>
+                        
+
+                    </tr>
+                    }
+                    else
+                    {
+                        <tr class="danger">
+                            <td class="teal text" style="width:30px; margin:0px auto;">
+                                <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/ProductType/AddEditProductType?ProductTypeId=@item.ProductTypeId&AccessMode=3"></a>
+                            </td>
+                            <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                                <a style="color:darkgreen" class="fa fa-pencil" href="~/ProductType/AddEditProductType?ProductTypeId=@item.ProductTypeId&AccessMode=2"></a>
+                            </td>
+                            <td align="center">@item.ProductTypeName</td>
+                            <td align="center">@item.ProductTypeCode</td>
+                            <td align="center">@(item.ProductType_Status == true ? "Active" : "Inactive")</td>
+
+
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblProductTypeList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

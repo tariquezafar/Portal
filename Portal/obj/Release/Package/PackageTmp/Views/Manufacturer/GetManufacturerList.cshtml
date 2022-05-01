@@ -1,0 +1,67 @@
+﻿@model List<Portal.Core.ViewModel.ManufacturerViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+.table th {
+background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+color:#fff;
+}
+ table tr:nth-child(2n+1){
+background-color:  #dff0d8 !important;
+}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered" id="tblProductTypeList">
+            <thead>
+                <tr>
+                    <th>Manufacturer Name</th>
+                    <th>Manufacturer Code</th>
+                    <th>Created Date</th>
+                    <th>CreatedByUserName</th>
+                    <th>Modified Date</th>
+                    <th>ModifiedByUserName</th>
+                    <th>Status</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.ManufacturerName</td>
+                        <td>@item.ManufacturerCode</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+                        <td>@item.ModifiedByUserName</td> 
+                        <td>@(item.Manufacturer_Status == true?"Active":"Inactive")</td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:5px 5px;">
+                            <a style="color:white;text-decoration:none" title="View"  class="fa fa-eye" aria-hidden="true" href="~/Manufacturer/AddEditManufacturer?manufacturerId=@item.ManufacturerId&AccessMode=3"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:5px 0px;">
+                            <a style="color:white;text-decoration:none" title="Edit" class="fa fa-pencil-square-o" href="~/Manufacturer/AddEditManufacturer?manufacturerId=@item.ManufacturerId&AccessMode=2"></a>
+                        </td>
+
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblProductTypeIdList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

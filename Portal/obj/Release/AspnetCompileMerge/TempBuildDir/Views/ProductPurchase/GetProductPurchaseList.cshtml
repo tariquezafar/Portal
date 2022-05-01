@@ -1,0 +1,106 @@
+﻿@model List<Portal.Core.ViewModel.ProductPurchaseViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+<style>
+    .table {
+    width: 112% !important;
+    max-width: 112% !important;
+    margin-bottom: 20px;
+    font-size:12px;
+
+}
+     #tblSaleInvoiceList tr th{text-align:center; border:1px solid #ccc!important; font-family:Arial; color:#fff;}
+    table tr td {
+    border:1px solid #ccc!important; font-family:Arial;}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblSaleInvoiceList">
+            <thead>
+                <tr>
+                    <th>PO No.</th>
+                    <th>PO Date</th>
+                    <th>Vendor Name</th>
+                    <th>Vendor Code</th>
+                    <th>Billing Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>GSTNo.</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Discount</th>
+                    <th>Amount(Before tax)</th>
+                    <th>CGST Amount</th>
+                    <th>SGST Amount</th>
+                    <th>IGST Amount</th>
+                    <th>Gross Amount</th>
+                    <th>Created By User</th>
+                    <th>Created Date</th>
+                    <th>Modified By User</th>
+                    <th>Modified Date</th>
+                    <th>Company Branch</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>
+                            <a target="_blank" style="color:dodgerblue" href="~/PO/AddEditPO?POId=@item.POId&AccessMode=3">@item.PONo</a>
+                        </td>
+                        <td>@item.PODate</td>
+                        <td>@item.VendorName</td>
+                        <td>@item.VendorCode</td>
+                        <td>@item.BillingAddress</td>
+                        <td>@item.City</td>
+                        <td>@item.StateName</td>
+                        <td>@item.GSTNO</td>
+                        <td>@item.Price</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Discount</td>
+                        <td>@item.NetAmount</td>
+                        <td>@item.CGST_Amount</td>
+                        <td>@item.SGST_Amount</td>
+                        <td>@item.IGST_Amount</td>
+                        <td>@item.GrossAmount</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+                        <td>@item.companyBranch</td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblSaleInvoiceList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

@@ -1,0 +1,1007 @@
+10:55:01 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:55:01 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:55:04 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13831
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:55:04 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:55:04 AM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:01:06 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:01:06 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:49:13 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13832
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:49:13 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:49:13 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:49:17 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:49:17 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:51:23 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:51:24 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:52:44 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:52:45 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:52:56 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:52:57 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:53:20 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:53:20 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:55 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13832
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:55 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:55 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:57 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:57 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:06:23 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:06:23 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:06:53 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13832
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:06:53 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:06:53 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:17:12 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:17:12 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:17:27 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+14:17:28 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+14:17:40 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+14:17:41 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+14:17:43 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchID' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCompanyBranchDetails(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+14:37:48 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:37:49 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:37:51 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13832
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:37:51 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:37:51 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:12 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetProductAvailableStock
+Error Line No : 9043
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:12 PM
+Source : Portal.Core.StockLedgerBL
+Method Name : GetProductAvailableStock
+Error Line No : 57
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:12 PM
+Source : Portal.Controllers.ProductController
+Method Name : GetProductAvailableStock
+Error Line No : 358
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:57:08 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+14:59:24 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+14:59:38 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+14:59:52 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:13:00 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:13:00 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:13:58 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:14:12 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:14:52 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:22:25 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:22:25 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:26:19 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:26:31 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:26:41 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:27:52 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:39:27 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:39:27 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:51:00 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13832
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:51:00 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:51:00 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:55:23 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetProductAvailableStock
+Error Line No : 9043
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:55:23 PM
+Source : Portal.Core.StockLedgerBL
+Method Name : GetProductAvailableStock
+Error Line No : 57
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:55:23 PM
+Source : Portal.Controllers.ProductController
+Method Name : GetProductAvailableStock
+Error Line No : 358
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:55:39 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:55:39 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:55:41 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 25759
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:55:41 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:55:41 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1567
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:57:37 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:06:11 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13832
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:06:11 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:06:11 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:06:12 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:06:12 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:26 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:35 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:44 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:29 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:29 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:32 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 25759
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:32 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:32 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1567
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:10:15 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:10:22 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:10:34 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:10:40 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 13832
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:10:40 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:10:40 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:10:40 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:10:41 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:25:11 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:25:11 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:25:19 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 25759
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:25:19 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:25:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1567
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:25:36 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:25:36 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:25:39 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 25690
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:25:39 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:25:39 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1515
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:51:16 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:51:16 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:54:31 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:54:31 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:10:54 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:10:54 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:12:58 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:12:58 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:13:04 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 25759
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:13:04 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:13:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1567
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:08:19 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:08:20 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:08:43 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 25690
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:08:43 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:08:43 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1515
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+

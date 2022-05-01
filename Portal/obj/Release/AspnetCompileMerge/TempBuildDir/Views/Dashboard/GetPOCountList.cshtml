@@ -1,0 +1,51 @@
+﻿ @model List<Portal.Core.ViewModel.POCountViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table" id="tblBookBalanceList" style="margin-top:10px;background-color:#d95043!important;color:#fff!important;">
+            <thead style="border-top-left-radius:15px;">
+                <tr style="border:none; background-color:transparent;" >
+                    <td  style="color:#fff;width:100%;" colspan="3">PO Transaction Summary</td>
+                    @*<th style="border:none;"></th>*@
+                </tr>
+                <tr style="border:1px solid #ccc; background-color:transparent;">
+                    <td style="color:#fff!important;">Particulars</td>
+                    <td style="color:#fff!important;">PO Created</td>
+                </tr>
+            </thead>
+            <tbody style="border:1px solid #ccc;">
+                @foreach (var item in Model)
+                {
+                <tr style="border:none; background-color:transparent;">
+                    <td>@item.POCount_Head</td>
+                    <td>@item.POTotalCount</td>
+                </tr>
+                }
+            </tbody>           
+        </table>
+    </div>
+
+}
+else
+{
+    <h4 style="color:firebrick;text-align:center">PO Count not updated</h4>
+}
+ <script>
+     var barPOChartData =
+         {
+             labels: [@Html.Raw(ViewBag.POList)],
+             datasets: [{
+                 label: 'PO Transaction Summary',
+                 backgroundColor: [
+                     "#f990a7",
+                     "#aad2ed",
+                     "#9966FF",
+                     "#99e5e5",
+                     "#f7bd83",
+                 ],
+                 borderWidth: 2,
+                 data: [@ViewBag.POCountList]
+             }]
+         };
+
+</script> 

@@ -1,0 +1,72 @@
+13:23:48 PM
+Source : Portal.DAL.DBInterface
+Method Name : GetCountryList
+Error Line No : 135
+Exception Type : System.NotSupportedException
+Details: The entity or complex type 'ERPModel.Country' cannot be constructed in a LINQ to Entities query.
+--------------------------------------------------------------------------------------------------------------------------------
+
+13:24:18 PM
+Source : Portal.Core.CountryBL
+Method Name : GetCountryList
+Error Line No : 25
+Exception Type : System.NotSupportedException
+Details: The entity or complex type 'ERPModel.Country' cannot be constructed in a LINQ to Entities query.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:24:23 PM
+Source : Portal.Controllers.CompanyController
+Method Name : GetCountryList
+Error Line No : 53
+Exception Type : System.NotSupportedException
+Details: The entity or complex type 'ERPModel.Country' cannot be constructed in a LINQ to Entities query.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:27:46 PM
+Source : Portal.DAL.DBInterface
+Method Name : GetCountryList
+Error Line No : 135
+Exception Type : System.NotSupportedException
+Details: The entity or complex type 'ERPModel.Country' cannot be constructed in a LINQ to Entities query.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:27:46 PM
+Source : Portal.Core.CountryBL
+Method Name : GetCountryList
+Error Line No : 25
+Exception Type : System.NotSupportedException
+Details: The entity or complex type 'ERPModel.Country' cannot be constructed in a LINQ to Entities query.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:27:46 PM
+Source : Portal.Controllers.CompanyController
+Method Name : GetCountryList
+Error Line No : 53
+Exception Type : System.NotSupportedException
+Details: The entity or complex type 'ERPModel.Country' cannot be constructed in a LINQ to Entities query.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:30:57 PM
+Source : Portal.DAL.DBInterface
+Method Name : GetCountryList
+Error Line No : 135
+Exception Type : System.NotSupportedException
+Details: The entity or complex type 'ERPModel.Country' cannot be constructed in a LINQ to Entities query.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:30:57 PM
+Source : Portal.Core.CountryBL
+Method Name : GetCountryList
+Error Line No : 25
+Exception Type : System.NotSupportedException
+Details: The entity or complex type 'ERPModel.Country' cannot be constructed in a LINQ to Entities query.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:30:57 PM
+Source : Portal.Controllers.CompanyController
+Method Name : GetCountryList
+Error Line No : 53
+Exception Type : System.NotSupportedException
+Details: The entity or complex type 'ERPModel.Country' cannot be constructed in a LINQ to Entities query.
+---------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,1248 @@
+11:00:51 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 3498
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@PaymentTrnId', which was not supplied.
+--------------------------------------------------------------------------------------------------------------------------------
+
+11:00:51 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 47
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@PaymentTrnId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:00:51 AM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : AddEditCustomerPayment
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@PaymentTrnId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:00:58 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 27
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:00:58 AM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : AddEditCustomerPayment
+Error Line No : 66
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:01:05 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 3498
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@PaymentTrnId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:01:05 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 47
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@PaymentTrnId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:01:05 AM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : AddEditCustomerPayment
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@PaymentTrnId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:01:30 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 3498
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@PaymentTrnId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:01:31 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 47
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@PaymentTrnId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:01:31 AM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : AddEditCustomerPayment
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@PaymentTrnId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:04:25 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 3498
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@PaymentTrnId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:04:26 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 47
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@PaymentTrnId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:04:26 AM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : AddEditCustomerPayment
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@PaymentTrnId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:05:46 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 3498
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@PaymentTrnId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:05:46 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 47
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@PaymentTrnId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:26 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 3498
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@PaymentTrnId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:26 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 47
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@PaymentTrnId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:39 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 3498
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@PaymentTrnId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:09:26 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:09:27 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 47
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:09:27 AM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : AddEditCustomerPayment
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:09:33 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:09:33 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 47
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:09:33 AM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : AddEditCustomerPayment
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:11:49 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 3499
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:11:49 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 47
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:11:49 AM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : AddEditCustomerPayment
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:12:15 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 3499
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:12:15 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 47
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:12:46 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 3499
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:12:46 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 47
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:13:00 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 3499
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:17:01 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 3499
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:17:01 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 47
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:17:01 AM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : AddEditCustomerPayment
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:18:20 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 3499
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:18:20 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 47
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:18:46 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 3499
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:18:46 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 47
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:21:09 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 3499
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:21:09 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 47
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:21:09 AM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : AddEditCustomerPayment
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditCustomerPayment has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:49:53 AM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetSaleInvoiceList
+Error Line No : 145
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:50:00 AM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetSaleInvoiceList
+Error Line No : 145
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:50:08 AM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetSaleInvoiceList
+Error Line No : 145
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:58:16 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 3499
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@CustomerPaymentStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:58:16 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 46
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@CustomerPaymentStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:58:16 AM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : AddEditCustomerPayment
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@CustomerPaymentStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:59:01 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 3499
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@CustomerPaymentStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:59:01 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 46
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@CustomerPaymentStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:59:41 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditCustomerPayment
+Error Line No : 3499
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@CustomerPaymentStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:59:42 AM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 46
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditCustomerPayment' expects parameter '@CustomerPaymentStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:34:12 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3557
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:34:13 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentList
+Error Line No : 87
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:34:13 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentList
+Error Line No : 112
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:34:19 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentList
+Error Line No : 87
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:34:19 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentList
+Error Line No : 112
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:37:21 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3557
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:37:21 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentList
+Error Line No : 87
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:37:21 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentList
+Error Line No : 112
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:37:34 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3557
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:37:34 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentList
+Error Line No : 87
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:37:34 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentList
+Error Line No : 112
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:09 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3557
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:09 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentList
+Error Line No : 87
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:09 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentList
+Error Line No : 112
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:15 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3557
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:15 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentList
+Error Line No : 87
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:15 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentList
+Error Line No : 112
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:51 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3557
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:51 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentList
+Error Line No : 87
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:15 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3557
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:15 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentList
+Error Line No : 87
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:25 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3557
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:28 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentList
+Error Line No : 87
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:44 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3557
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'CustomerName'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:47:19 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3557
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCustomerPayments' expects parameter '@CustomerName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:47:19 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentList
+Error Line No : 87
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCustomerPayments' expects parameter '@CustomerName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:47:19 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentList
+Error Line No : 112
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCustomerPayments' expects parameter '@CustomerName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:47:30 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3557
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCustomerPayments' expects parameter '@CustomerName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:47:30 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentList
+Error Line No : 87
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCustomerPayments' expects parameter '@CustomerName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:48:19 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3557
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCustomerPayments' expects parameter '@CustomerName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:17:36 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3558
+Exception Type : System.Data.SqlClient.SqlException
+Details: Ambiguous column name 'RefDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:17:37 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentList
+Error Line No : 87
+Exception Type : System.Data.SqlClient.SqlException
+Details: Ambiguous column name 'RefDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:17:37 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentList
+Error Line No : 112
+Exception Type : System.Data.SqlClient.SqlException
+Details: Ambiguous column name 'RefDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:18:05 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3558
+Exception Type : System.Data.SqlClient.SqlException
+Details: Ambiguous column name 'RefDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:18:05 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentList
+Error Line No : 87
+Exception Type : System.Data.SqlClient.SqlException
+Details: Ambiguous column name 'RefDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:19:57 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3558
+Exception Type : System.Data.SqlClient.SqlException
+Details: Ambiguous column name 'RefDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:21:33 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3558
+Exception Type : System.Data.SqlClient.SqlException
+Details: Ambiguous column name 'RefDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:21:57 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentList
+Error Line No : 87
+Exception Type : System.Data.SqlClient.SqlException
+Details: Ambiguous column name 'RefDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:23:59 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3558
+Exception Type : System.Data.SqlClient.SqlException
+Details: Ambiguous column name 'RefDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:23:59 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentList
+Error Line No : 87
+Exception Type : System.Data.SqlClient.SqlException
+Details: Ambiguous column name 'RefDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:59:09 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3558
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'InvoiceNo'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:59:09 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentList
+Error Line No : 87
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'InvoiceNo'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:59:09 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentList
+Error Line No : 112
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'InvoiceNo'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:05:17 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCustomerPaymentList
+Error Line No : 3558
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'InvoiceNo'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:05:17 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentList
+Error Line No : 87
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'InvoiceNo'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:05:17 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentList
+Error Line No : 112
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'InvoiceNo'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:20:06 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'InvoiceId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:20:07 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'InvoiceId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:20:21 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'InvoiceId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:20:21 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'InvoiceId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:20:48 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'InvoiceId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:20:48 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'InvoiceId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:27:07 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'InvoiceId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:27:07 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'InvoiceId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:28:18 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'InvoiceId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:28:18 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'InvoiceId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:28:41 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'InvoiceId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:28:42 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'InvoiceId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:29:35 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'InvoiceId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:32:50 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'InvoiceId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:32:50 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'InvoiceId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:33:11 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'InvoiceDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:33:56 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'InvoiceDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:34:13 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'PaymentModeId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:36:36 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'PaymentModeId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:36:53 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'PaymentModeId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:37:28 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'PaymentModeId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:37:45 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'Amount' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:38:18 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'Amount' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:43:26 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'PaymentModeId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:43:26 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'PaymentModeId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:44:06 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'PaymentModeId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:44:27 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'PaymentModeId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:44:39 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:44:39 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:45:32 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:45:32 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:46:38 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:46:38 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:15 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:15 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:50:10 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:50:11 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:50:27 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:50:27 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:01:54 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:01:54 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:03:06 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:03:06 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:04:17 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:04:17 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:04:52 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:04:52 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:06:52 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:33 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.ArgumentException
+Details: Column 'ValueDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:46 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:48 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:23:56 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:23:57 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:24:23 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : GetCustomerPaymentDetail
+Error Line No : 127
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:25:20 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetCustomerPaymentDetail
+Error Line No : 128
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:53:33 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 36
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:53:47 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 36
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+

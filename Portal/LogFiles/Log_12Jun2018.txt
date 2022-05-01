@@ -1,0 +1,2990 @@
+10:51:24 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:51:24 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:51:37 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalJobWorkCount
+Error Line No : 14590
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:51:37 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalJobWorkCount
+Error Line No : 376
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:51:37 AM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:51:41 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 223
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+10:51:41 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 2010
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+10:55:19 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:55:19 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:56:11 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:56:11 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:56:35 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalJobWorkCount
+Error Line No : 14590
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:56:35 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalJobWorkCount
+Error Line No : 376
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:56:35 AM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:56:36 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 223
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+10:56:36 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 2010
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+10:56:47 AM
+Source : Portal.Controllers.ProductController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'productTypeId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetProductList(System.String, System.String, System.String, System.String, Int32, Int32, Int32, System.String, System.String, System.String, System.String)' in 'Portal.Controllers.ProductController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+11:28:42 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:28:42 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:02 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:02 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:04 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalJobWorkCount
+Error Line No : 14590
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:04 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalJobWorkCount
+Error Line No : 376
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:04 AM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:05 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 223
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:05 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 2010
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:36:00 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:36:00 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:39:41 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:39:41 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:19:22 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:19:22 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:21:02 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:21:02 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:21:03 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalJobWorkCount
+Error Line No : 14590
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:21:04 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalJobWorkCount
+Error Line No : 376
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:21:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 1421
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:21:04 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26984
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:21:04 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:21:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1958
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:25:34 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:25:34 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:25:36 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalJobWorkCount
+Error Line No : 14590
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:25:36 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalJobWorkCount
+Error Line No : 376
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:25:36 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 1421
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:25:38 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26984
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:25:38 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:25:38 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1958
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:19 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:21 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalJobWorkCount
+Error Line No : 14590
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:21 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalJobWorkCount
+Error Line No : 376
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 471
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:22 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 223
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:22 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 2010
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:00 PM
+Source : Portal.Controllers.SINController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchID' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetFromLocationList(Int32)' in 'Portal.Controllers.SINController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:00 PM
+Source : Portal.Controllers.SINController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchID' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetFromLocationList(Int32)' in 'Portal.Controllers.SINController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:02 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:02 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:03 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalJobWorkCount
+Error Line No : 14590
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:03 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalJobWorkCount
+Error Line No : 376
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:03 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 1421
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetPendingJobWorkMRN has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:04 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26984
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:04 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1958
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:20 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20786
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:20 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:20 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:43 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20786
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:43 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:44 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:51 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20786
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:51 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:51 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:33:35 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 20201
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:33:35 PM
+Source : Portal.Core.FabricationBL
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 291
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:33:35 PM
+Source : Portal.Controllers.FabricationController
+Method Name : GetFabricationProducedQuantityAgainstWorkOrder
+Error Line No : 265
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:33:54 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20786
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:33:54 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:33:54 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:29 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:29 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:42 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:42 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:42 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer9List
+Error Line No : 325
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:42 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:42 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:42 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer10List
+Error Line No : 341
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:42 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:42 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:42 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer11List
+Error Line No : 357
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:43 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:43 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:51 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:51 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:51:28 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:51:28 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:35 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:35 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:07 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductSerialDetailList
+Error Line No : 369
+Exception Type : System.ArgumentOutOfRangeException
+Details: Index and length must refer to a location within the string.
+Parameter name: length
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:07 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductSerialDetailList
+Error Line No : 212
+Exception Type : System.ArgumentOutOfRangeException
+Details: Index and length must refer to a location within the string.
+Parameter name: length
+---------------------------------------------------------------------------------------------------------------------------
+
+13:44:14 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:44:14 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:44:23 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:44:24 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:44:24 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer9List
+Error Line No : 325
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:44:24 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:44:24 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:44:24 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer11List
+Error Line No : 357
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:44:25 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:44:25 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:44:25 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer10List
+Error Line No : 341
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:44:39 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+13:44:39 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:01:50 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:01:50 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:02:01 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:02:01 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:19:26 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:19:26 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:19:31 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:19:31 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:19:31 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer10List
+Error Line No : 341
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:19:31 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:19:31 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:19:31 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer9List
+Error Line No : 325
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:19:32 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:19:32 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:19:32 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer11List
+Error Line No : 357
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:19:42 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:19:42 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:20:31 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:20:31 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:21:05 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:21:05 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:04 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:13 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:13 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:13 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer10List
+Error Line No : 341
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:13 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:13 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:13 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer9List
+Error Line No : 325
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:14 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:14 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:14 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer11List
+Error Line No : 357
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:22 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:22 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:42:49 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:42:49 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:42:51 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:42:51 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:05 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:05 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:12 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:12 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:12 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer9List
+Error Line No : 325
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:13 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:13 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:13 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer11List
+Error Line No : 357
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:13 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:13 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:13 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer10List
+Error Line No : 341
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:21 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:21 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:11:37 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:11:37 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:11:41 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:11:41 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:11:41 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer10List
+Error Line No : 341
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:11:41 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:11:42 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:11:42 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer9List
+Error Line No : 325
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:11:43 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:11:43 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:11:43 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer11List
+Error Line No : 357
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:12:05 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:12:05 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:15:54 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:15:54 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:15:59 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:15:59 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:15:59 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer9List
+Error Line No : 325
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:16:00 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:16:00 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:16:00 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer11List
+Error Line No : 357
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:16:02 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:16:02 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:16:02 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer10List
+Error Line No : 341
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:16:10 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:16:10 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:40:46 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:40:47 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:41:53 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:41:53 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:41:58 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:41:58 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:41:58 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer10List
+Error Line No : 341
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:41:58 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:41:58 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:41:58 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer11List
+Error Line No : 357
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:41:59 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:41:59 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:41:59 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer9List
+Error Line No : 325
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:42:08 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:42:08 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:16 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:16 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:22 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:22 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:22 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer10List
+Error Line No : 341
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:22 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:22 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:22 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer9List
+Error Line No : 325
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:23 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:23 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:23 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer11List
+Error Line No : 357
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:35 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:35 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:54:05 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:54:05 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:54:09 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:54:09 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:54:10 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer9List
+Error Line No : 325
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:54:10 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:54:10 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:54:10 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer10List
+Error Line No : 341
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:54:11 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:54:11 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:54:11 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer11List
+Error Line No : 357
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:54:25 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:54:25 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:07 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:07 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:13 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:13 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:13 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer9List
+Error Line No : 325
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:13 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:13 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:13 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer11List
+Error Line No : 357
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:14 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:14 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:14 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer10List
+Error Line No : 341
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:29 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:29 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:02 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:02 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:02 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer9List
+Error Line No : 325
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:04 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:05 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:05 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:05 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer11List
+Error Line No : 357
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:07 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:07 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:07 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer10List
+Error Line No : 341
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:12 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:12 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:12:38 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:12:38 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:12:43 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:12:43 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:12:43 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer9List
+Error Line No : 325
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:12:44 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:12:44 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:12:44 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer11List
+Error Line No : 357
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:12:44 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:12:44 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:12:44 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer10List
+Error Line No : 341
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:12:54 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:12:54 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:14:47 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:14:47 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:14:58 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:14:58 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:02 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:03 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:03 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer10List
+Error Line No : 341
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:06 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:06 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:06 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer9List
+Error Line No : 325
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:07 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:07 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:08 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:08 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:08 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer11List
+Error Line No : 357
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:11 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:11 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:02:04 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:02:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:02:30 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:02:30 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:05:11 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:05:12 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:05:21 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:05:21 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:05:22 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer9List
+Error Line No : 325
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:05:22 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:05:22 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:05:22 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer11List
+Error Line No : 357
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:05:26 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:05:26 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:05:26 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer10List
+Error Line No : 341
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:05:32 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:05:32 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:28:08 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:28:08 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:36 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:36 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:44 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:44 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:44 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer9List
+Error Line No : 325
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:45 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:45 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:45 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer10List
+Error Line No : 341
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:46 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:46 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:46 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer11List
+Error Line No : 357
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:55 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:37:55 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:36 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:36 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:35 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:35 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:43 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:43 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:43 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer9List
+Error Line No : 325
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:44 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:44 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:44 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer11List
+Error Line No : 357
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:45 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:45 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:45 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer10List
+Error Line No : 341
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:47:37 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:47:37 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:13 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:13 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:18 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:18 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:18 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer9List
+Error Line No : 325
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:20 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:20 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:20 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer10List
+Error Line No : 341
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:20 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SaleDashboardContainer9
+Error Line No : 13949
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:20 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetContainer9List
+Error Line No : 64
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:20 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetContainer11List
+Error Line No : 357
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetSaleDashboardContainer9'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:26 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:27 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:29 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:29 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:51:06 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:51:06 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:52:45 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:52:45 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:56:19 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:56:19 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:57:27 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:57:27 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:57:29 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:57:29 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:57:31 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:57:31 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:57:34 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:57:34 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:57:36 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:57:36 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:01:27 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:01:27 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:01:41 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceProductList
+Error Line No : 621
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:01:41 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceProductList
+Error Line No : 156
+Exception Type : System.ArgumentException
+Details: Column 'IsThirdPartyProduct' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:21:47 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:21:48 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1541
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

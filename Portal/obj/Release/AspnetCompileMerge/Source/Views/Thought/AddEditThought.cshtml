@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "AddEditThought";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AdminDashboard">Admin</a> >> List User </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditCity" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="txtThoughtMsg" class="col-sm-4 control-label">Thought Message&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control" id="txtThoughtMsg" name="txtThoughtMsg" tabindex="1" rows="4" cols="50" placeholder="Enter Thought Message" maxlength="500"></textarea>
+                        @*<input class="form-control" id="txtThoughtMsg" name="txtThoughtMsg" tabindex="3" placeholder="Enter Thought Message" type="text" maxlength="480" />*@
+                        <input id="hdnThoughtId" type="hidden" value="@ViewData["thoughtId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtThoughtType" class="col-sm-4 control-label">Thought Type&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtThoughtType" name="txtThoughtType" tabindex="2" placeholder="Enter Thought Type" type="text" maxlength="80" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtExpiryDate" class="col-sm-4 control-label">Expiry Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtExpiryDate" name="txtExpiryDate" tabindex="3" placeholder="Expiry Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-12">
+
+                <div class="form-group col-md-4">
+                    <label for="txtstatus" class="col-sm-4 control-label">Status&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="4" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" tabindex="5" id="btnSave" onclick="SaveData(1)"  type="button" border="0">&nbsp;&nbsp; 
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="5"  onclick="SaveData(2)" alt="Update" id="btnUpdate"  type="button" border="0">&nbsp;&nbsp;
+                        <input class="btn btn-success" type="button" id="btnReset" tabindex="8" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;
+                        @*<input class="btn btn-success" type="button" id="btnList" value="Search Thought" />*@
+                        <a class="btn btn-success" id="btnList"  tabindex="9" href="@Url.Content("~/Thought/ListThought")">Search Thought</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="6"  role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="7"  data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="7"  data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/Thought/AddThought.js"></script>

@@ -1,0 +1,1113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8E7D26A8-C628-40B3-B7F6-2788242B3BD3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Portal.DAL</RootNamespace>
+    <AssemblyName>Portal.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdditionalTax.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssemblingProcess.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssemblingProcessBOMDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssemblingProcessChasisDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssemblingProcessProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BankReconcilation.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BankReconcilationDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BankReconcilationSummary.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BankStatement.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BankStatementDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Book.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CarryForwardChasi.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CarryForwardChasisDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChallanProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChallanTaxDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChallanTermsDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChasisModel.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChasisSerialMapping.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChasisSerialModelDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChasisSerialPlan.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChasisSerialPlanDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComapnyBranch.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Company.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComplaintService.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComplaintServiceProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CostCenter.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Currency.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerBranch.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerFollowUp.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerForm.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPayment.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerProductMapping.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerType.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardContainer.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardInterface.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardItem.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardItemMapping.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailTemplate.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailTemplateType.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ERPDataSet.Designer.cs">
+      <DependentUpon>ERPDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Fabrication.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FabricationBOMDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FabricationChasisSerialDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FabricationProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FinishedGoodProcess.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FinishedGoodProcessBOMDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FinishedGoodProcessChasisDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FinishedGoodProcessProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBInterface.cs" />
+    <Compile Include="Country.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryChallan.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryChallanSupportingDocument.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Designation.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentType.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeFamilyInfo.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeePayInfo.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeReportingInfo.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeStateMapping.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ERP.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERP.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ERP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ERP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERP.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="FinancialYear.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FollowUpActivityType.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormType.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GateIn.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GateInProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GateInSupportingDocument.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GL.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GLDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GLMainGroup.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GLSubGroup.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GLTransferClosingBalance.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRMSDBInterface.cs" />
+    <Compile Include="HRSQLDBInterface.cs" />
+    <Compile Include="HSNCode.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImageGallery.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImageGalleryDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HRMS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRMS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HRMS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HRMS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRMS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_ActivityCalender.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_AdvanceType.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_Applicant.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_ApplicantEducation.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_ApplicantExtraActivity.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_ApplicantPrevEmployer.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_ApplicantProject.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_ApplicantVerification.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_Appointment.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_AppointmentCTC.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_AssetType.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_Calender.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_ClaimType.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_ClearanceTemplate.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_ClearanceTemplateDetail.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_CTC.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_Education.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_EmployeeAdvanceApplication.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_EmployeeAssetApplication.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_EmployeeAttendance.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_EmployeeClaimApplication.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_EmployeeClearanceProcess.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_EmployeeClearanceProcessDetail.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_EmployeeLeaveApplication.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_EmployeeLeaveDetail.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_EmployeeLoanApplication.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_EmployeeRoster.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_EmployeeTravelApplication.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_ExitInterview.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_HolidayCalender.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_HolidayType.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_Interview.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_InterviewType.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_JobOpening.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_Language.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_LeaveType.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_LoanType.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_PMS_AppraisalTemplate.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_PMS_AppraisalTemplateGoal.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_PMS_EmployeeAppraisalReview.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_PMS_EmployeeAppraisalTemplateMapping.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_PMS_EmployeeGoals.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_PMS_Goal.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_PMS_GoalCategory.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_PMS_PerformanceCycle.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_PMS_Section.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_PositionLevel.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_PositionType.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_Religion.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_ResourceRequisition.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_ResourceRequisitionInterviewStage.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_ResourceRequisitionSkill.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_ResumeSource.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_Roaster.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_RoasterWeek.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_SeparationApplication.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_SeparationCategory.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_SeparationClearList.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_SeparationOrder.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_Shift.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_ShiftType.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_Skills.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_TravelType.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\HR_VerificationAgency.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\PR_PayHeadGLMapping.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\PR_PayrollMonth.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\PR_PayrollMonthlyAdjustment.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\PR_PayrollOtherEarningDeduction.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\PR_PayrollProcessPeriod.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\PR_PayrollTdsSlab.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\PR_PayrollTransaction.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\PR_PayrollTransactionFullYear.cs">
+      <DependentUpon>HRMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoicePackingList.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoicePackingListProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobCard.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobCardDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobCardProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobWork.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobWorkINProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobWorkMRN.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobWorkMRNProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobWorkProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lead.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LeadFollowUp.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LeadMaster.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LeadSource.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LeadStatu.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Location.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MailLog.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manufacturer.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialRejectNote.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialRejectNoteProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Module.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MRN.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MRNProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MRNSupportingDocument.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="News.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PackingList.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PackingListDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PackingListType.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PackingMaterialBOM.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PackingMaterialBOMProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaintProcess.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaintProcessBOMDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaintProcessChasisSerialDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaintProcessProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentMode.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentTerm.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhysicalStock.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhysicalStockProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PISupportingDocument.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PO.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POSetting.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POSupportingDocument.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POTaxDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POTermsDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrintChasi.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrintChasisDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_GetRoleWiseChildUI_Result.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_GetRoleWiseParentUI_Result.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductBOM.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductBomManufacturingExpense.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductGLMapping.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductInternalStock.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductMainGroup.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductOpeningStock.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSerialDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSubCategoryStateTaxMapping.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSubGroup.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTrnStock.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductType.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Project.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseIndent.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseIndentProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseInvoice.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseInvoiceChasisDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseInvoiceImport.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseInvoiceImportProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseInvoiceImportTermsDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseInvoiceProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseInvoiceTaxDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseInvoiceTermsDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseQuotation.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseQuotationProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseReturn.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseReturnProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QualityCheck.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QualityCheckProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QualityCheckSupportingDocument.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Quotation.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuotationProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuotationSetting.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuotationSupportingDocument.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuotationTaxDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuotationTermsDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Return.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnedProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleUIActionMapping.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleInvoice.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleInvoiceProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleInvoiceProductSerialDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleInvoiceSupportingDocument.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleInvoiceTaxDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleInvoiceTermsDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleRetrunProductSerialDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleReturn.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaleReturnProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Service.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Service1.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceItem.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Size.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SL.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SLDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SLTransferClosingBalance.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SLType.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SO.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SOProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SOSetting.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SOSupportingDocument.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SOTaxDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SOTermsDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SQLDbInterface.cs" />
+    <Compile Include="State.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StickyNote.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STN.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STNProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StnProductSerialDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STNSupportingDocument.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockIssueNote.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockIssueNoteProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockIssueNoteSupportingDocument.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreRequisition.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreRequisitionProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STR.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STRProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STRProductSerialDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STRSupportingDocument.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubCostCenter.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Target.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TargetDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TargetType.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tax.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TDSSection.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TDSSectionDocumentDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TermsTemplate.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TermTemplateDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Thought.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransferClosingBalance.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UOM.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserEmailSetting.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vendor.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VendorForm.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VendorPayment.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VendorProductMapping.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Voucher.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VoucherDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VoucherSupportingDocument.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkOrder.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkOrderBOMDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkOrderProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkOrderProductSerialDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EntityModels\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ERP.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ERP.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="ERP.edmx.diagram">
+      <DependentUpon>ERP.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Infrastructure\HRMS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HRMS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ERPDataSet.xsc">
+      <DependentUpon>ERPDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="ERPDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ERPDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="ERPDataSet.xss">
+      <DependentUpon>ERPDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Infrastructure\HRMS.edmx.diagram">
+      <DependentUpon>HRMS.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ERP.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ERP.edmx</DependentUpon>
+      <LastGenOutput>ERP.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ERP.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ERP.edmx</DependentUpon>
+      <LastGenOutput>ERP.cs</LastGenOutput>
+    </Content>
+    <Content Include="Infrastructure\HRMS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HRMS.edmx</DependentUpon>
+      <LastGenOutput>HRMS.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Infrastructure\HRMS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HRMS.edmx</DependentUpon>
+      <LastGenOutput>HRMS.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Portal.Common\Portal.Common.csproj">
+      <Project>{7e75e996-ddde-4f91-9db3-60a4b683e994}</Project>
+      <Name>Portal.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

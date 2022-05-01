@@ -1,0 +1,152 @@
+﻿@{
+    ViewBag.Title = "Add/ Edit Product Opening Stock";
+    Layout = "~/Views/Shared/_InventoryLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+    /* allow space for check mark */
+     .ui-autocomplete {
+    max-height: 500px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+  }
+  /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+  * html .ui-autocomplete {
+    height: 500px;
+  }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/InventoryDashboard">Inventory</a> >> Add/Edit Product Opening Stock </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditProductOpeningStock" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="txtProductName" class="col-sm-4 control-label">Product Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtProductName" name="txtProductName" tabindex="1" placeholder="Enter Product Name" type="text" maxlength="100" />
+                        <input id="hdnProductId" type="hidden" value="0" />
+                        <input id="hdnOpeningTrnd" type="hidden" value="@ViewData["openingTrnId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    
+                        <label for="txtProductCode" class="col-sm-4 control-label">Product Code</label>
+                        <div class="col-sm-8">
+                            <input id="txtProductCode" name="txtProductCode" type="text" style="background-color:transparent;border:none;" maxlength="50" class="form-control" />
+                        </div>
+                    
+                </div>
+                <div class="form-group col-md-4">
+                    
+                        <label for="txtProductShortDesc" class="col-sm-4 control-label">Product Short Desc</label>
+                        <div class="col-sm-8">
+                            <input id="txtProductShortDesc" name="txtProductShortDesc" type="text" style="background-color:transparent;border:none;" maxlength="100" class="form-control" />
+                        </div>
+                   
+                </div>
+                </div>
+                <div class="col-md-12 ftop">
+                    <div class="form-group col-md-4">
+                        <label for="ddlFinYear" class="col-sm-4 control-label">Fin. Year&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlFinYear" name="ddlFinYear" tabindex="2" class="form-control"></select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="ddlcompanybranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlcompanybranch" name="ddlcompanybranch" tabindex="3" class="form-control"></select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="txtOpeningQty" class="col-sm-4 control-label">Opening Qty.&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input id="txtOpeningQty" name="txtOpeningQty" type="text" tabindex="4" placeholder="Enter Opening Quantity" maxlength="20" class="form-control  input-number" onkeyup="checkDec(this)" />
+                        </div>
+                    </div>
+                </div>
+               
+            
+                <div class="row col-sm-12 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="5" onclick="SaveData(1)" type="button" border="0"> 
+                            <input class="btn btn-success" value="Update" style="display:none;" tabindex="5" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                            <a class="btn btn-success" id="btnReset" tabindex="8" href="@Url.Content("~/ProductOpeningStock/AddEditProductOpening")">Reset</a>
+                             @*<input class="btn btn-success" type="button" id="btnReset" tabindex="8" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
+                            @*<input class="btn btn-success" type="button" id="btnList" value="Search Company" />*@
+                            <a class="btn btn-success" id="btnList" tabindex="9" href="@Url.Content("~/ProductOpeningStock/ListProductOpening")">Search Product Opening</a>
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="6" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="7" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="7" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script> 
+<script src="~/Scripts/Product/AddProductOpeningStock.js"></script>
+

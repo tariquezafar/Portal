@@ -1,0 +1,230 @@
+14:24:32 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditQuotation
+Error Line No : 1769
+Exception Type : System.InvalidOperationException
+Details: String[23]: the Size property has an invalid size of 0.
+--------------------------------------------------------------------------------------------------------------------------------
+
+14:24:33 PM
+Source : Portal.Core.QuotationBL
+Method Name : AddEditQuotation
+Error Line No : 54
+Exception Type : System.InvalidOperationException
+Details: String[23]: the Size property has an invalid size of 0.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:24:33 PM
+Source : Portal.Controllers.QuotationController
+Method Name : AddEditQuotation
+Error Line No : 59
+Exception Type : System.InvalidOperationException
+Details: String[23]: the Size property has an invalid size of 0.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:24:45 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditQuotation
+Error Line No : 1769
+Exception Type : System.InvalidOperationException
+Details: String[23]: the Size property has an invalid size of 0.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:24:45 PM
+Source : Portal.Core.QuotationBL
+Method Name : AddEditQuotation
+Error Line No : 54
+Exception Type : System.InvalidOperationException
+Details: String[23]: the Size property has an invalid size of 0.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:24:45 PM
+Source : Portal.Controllers.QuotationController
+Method Name : AddEditQuotation
+Error Line No : 59
+Exception Type : System.InvalidOperationException
+Details: String[23]: the Size property has an invalid size of 0.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:26:35 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditQuotation
+Error Line No : 1769
+Exception Type : System.InvalidOperationException
+Details: String[23]: the Size property has an invalid size of 0.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:26:35 PM
+Source : Portal.Core.QuotationBL
+Method Name : AddEditQuotation
+Error Line No : 54
+Exception Type : System.InvalidOperationException
+Details: String[23]: the Size property has an invalid size of 0.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:26:35 PM
+Source : Portal.Controllers.QuotationController
+Method Name : AddEditQuotation
+Error Line No : 59
+Exception Type : System.InvalidOperationException
+Details: String[23]: the Size property has an invalid size of 0.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:28:20 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditQuotation
+Error Line No : 1769
+Exception Type : System.InvalidOperationException
+Details: String[23]: the Size property has an invalid size of 0.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:28:20 PM
+Source : Portal.Core.QuotationBL
+Method Name : AddEditQuotation
+Error Line No : 54
+Exception Type : System.InvalidOperationException
+Details: String[23]: the Size property has an invalid size of 0.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:28:20 PM
+Source : Portal.Controllers.QuotationController
+Method Name : AddEditQuotation
+Error Line No : 59
+Exception Type : System.InvalidOperationException
+Details: String[23]: the Size property has an invalid size of 0.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:30:12 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditQuotation
+Error Line No : 1769
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditQuotation' expects parameter '@GSTNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:30:12 PM
+Source : Portal.Core.QuotationBL
+Method Name : AddEditQuotation
+Error Line No : 54
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditQuotation' expects parameter '@GSTNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:30:12 PM
+Source : Portal.Controllers.QuotationController
+Method Name : AddEditQuotation
+Error Line No : 59
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditQuotation' expects parameter '@GSTNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:31:19 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditQuotation
+Error Line No : 1769
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'Compay'.
+Transaction count after EXECUTE indicates a mismatching number of BEGIN and COMMIT statements. Previous count = 0, current count = 1.
+A transaction that was started in a MARS batch is still active at the end of the batch. The transaction is rolled back.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:31:19 PM
+Source : Portal.Core.QuotationBL
+Method Name : AddEditQuotation
+Error Line No : 54
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'Compay'.
+Transaction count after EXECUTE indicates a mismatching number of BEGIN and COMMIT statements. Previous count = 0, current count = 1.
+A transaction that was started in a MARS batch is still active at the end of the batch. The transaction is rolled back.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:31:19 PM
+Source : Portal.Controllers.QuotationController
+Method Name : AddEditQuotation
+Error Line No : 59
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'Compay'.
+Transaction count after EXECUTE indicates a mismatching number of BEGIN and COMMIT statements. Previous count = 0, current count = 1.
+A transaction that was started in a MARS batch is still active at the end of the batch. The transaction is rolled back.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:32:33 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditQuotation
+Error Line No : 1780
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:32:33 PM
+Source : Portal.Core.QuotationBL
+Method Name : AddEditQuotation
+Error Line No : 54
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:32:34 PM
+Source : Portal.Controllers.QuotationController
+Method Name : AddEditQuotation
+Error Line No : 59
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:52:16 PM
+Source : Portal.Controllers.QuotationController
+Method Name : GetCustomerAutoCompleteList
+Error Line No : 107
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:08:43 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditQuotation
+Error Line No : 1760
+Exception Type : System.ArgumentException
+Details: Cannot set Column 'DiscountPercentage' to be null. Please use DBNull instead.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:08:43 PM
+Source : Portal.Core.QuotationBL
+Method Name : AddEditQuotation
+Error Line No : 68
+Exception Type : System.ArgumentException
+Details: Cannot set Column 'DiscountPercentage' to be null. Please use DBNull instead.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:08:43 PM
+Source : Portal.Controllers.QuotationController
+Method Name : AddEditQuotation
+Error Line No : 58
+Exception Type : System.ArgumentException
+Details: Cannot set Column 'DiscountPercentage' to be null. Please use DBNull instead.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:09:37 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditQuotation
+Error Line No : 1760
+Exception Type : System.ArgumentException
+Details: Cannot set Column 'DiscountPercentage' to be null. Please use DBNull instead.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:09:37 PM
+Source : Portal.Core.QuotationBL
+Method Name : AddEditQuotation
+Error Line No : 68
+Exception Type : System.ArgumentException
+Details: Cannot set Column 'DiscountPercentage' to be null. Please use DBNull instead.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:09:37 PM
+Source : Portal.Controllers.QuotationController
+Method Name : AddEditQuotation
+Error Line No : 58
+Exception Type : System.ArgumentException
+Details: Cannot set Column 'DiscountPercentage' to be null. Please use DBNull instead.
+---------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,51 @@
+﻿@model List<Portal.Core.ViewModel.PICountViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table" id="tblBookBalanceList" style="margin-top:10px;background-color:#1c2a3c;color:#fff!important;">
+            <thead style="border-top-left-radius:15px;">
+                <tr style="border:none;background-color:transparent;">
+                    <td style="background-color:#1c2a3c!important;color:#fff!important;width:100%;" colspan="3">PI Transaction Summary</td>
+
+                </tr>
+                <tr style="border:1px solid #ccc;background-color:transparent;color:#fff!important;">
+                    <td style="color:#fff!important;">Particulars</td>
+                    <td style="color:#fff!important;">PI Created</td>
+                </tr>
+            </thead>
+            <tbody style="border:1px solid #ccc; background-color:transparent;">
+                @foreach (var item in Model)
+                {
+                <tr style="border:none; background-color:transparent;">
+                    <td>@item.PICount_Head</td>
+                    <td>@item.PITotalCount</td>
+                </tr>
+                }
+            </tbody>           
+        </table>
+    </div>
+
+}
+else
+{
+    <h4 style="color:firebrick;text-align:center">PI Count not updated</h4>
+}
+ <script>
+     var barPIChartData =
+         {
+             labels: [@Html.Raw(ViewBag.PIList)],
+             datasets: [{
+                 label: 'PI Transaction Summary',
+                 backgroundColor: [
+                     "#f990a7",
+                     "#aad2ed",
+                     "#9966FF",
+                     "#99e5e5",
+                     "#f7bd83",
+                 ],
+                 borderWidth: 2,
+                 data: [@ViewBag.PICountList]
+             }]
+         };
+
+</script> 

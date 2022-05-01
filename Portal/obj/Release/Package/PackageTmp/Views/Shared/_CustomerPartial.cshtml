@@ -1,0 +1,458 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Add New Customer</title>
+    <style>
+        .Mandatory {
+            color: red;
+            font-weight: bold;
+        }
+
+
+        fieldset.scheduler-border {
+            border: 1px groove #ddd !important;
+            padding: 0 1.4em 1.4em 1.4em !important;
+            margin: 0 0 1.5em 0 !important;
+            -webkit-box-shadow: 0px 0px 0px 0px #000;
+            box-shadow: 0px 0px 0px 0px #000;
+        }
+
+        legend {
+            display: block;
+            width: 37%;
+            padding: 0;
+            margin-bottom: 20px;
+            font-size: 21px;
+            line-height: inherit;
+            color: #333;
+            border: 0;
+            border-bottom: 0px solid #e5e5e5;
+        }
+    </style>
+</head>
+
+<body class="sidebar-condensed" id="body">
+
+    <section>
+        <form action="#" id="frmAddEditCustomer" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+            <div class="">
+                <div id="tabs">
+                    <div id="tabs-1">
+                        <div class="col-md-12 ftop">
+                            <div class="form-group col-md-6">
+                                <label for="txtPopUpCustomerCode" class="col-sm-4 control-label">Mobile no.&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtPopUpCustomerCode" name="txtPopUpCustomerCode" tabindex="11" placeholder="Enter Customer Mobile no" type="text" maxlength="50" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtPopUpCustomerName" class="col-sm-4 control-label">Customer Name&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtPopUpCustomerName" name="txtPopUpCustomerName" tabindex="10" placeholder="Enter Customer Name" type="text" maxlength="100" />
+                                    <input id="hdnCustomerMasterType" type="hidden" value="0" />
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-12" style="display:none;">
+                            <div class="form-group col-md-6">
+                                <label for="txtPopUpContactPersonName" class="col-sm-4 control-label">Contact Person Name</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control alpha-space-only" id="txtPopUpContactPersonName" name="txtPopUpContactPersonName" tabindex="12" placeholder="Enter Contact Person Name" type="text" maxlength="100" />
+                                </div>
+                            </div>
+                            <div class="form-group  col-md-6">
+                                <label for="txtPopUpPrimaryAddress" class="col-sm-4 control-label">Address</label>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control" id="txtPopUpPrimaryAddress" name="txtPopUpPrimaryAddress" tabindex="13" rows="2" cols="50" placeholder="Enter Address" maxlength="250"> </textarea>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+                                <label for="ddlPopUpCountry" class="col-sm-4 control-label">Country&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <select id="ddlPopUpCountry" name="ddlPopUpCountry" onchange="BindPrimaryStateList(0)" tabindex="14" class="form-control"></select>
+                                </div>
+                            </div>
+                            <div class="form-group  col-md-6">
+                                <label for="ddlPopUpState" class="col-sm-4 control-label">State&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <select id="ddlPopUpState" name="ddlPopUpState" tabindex="15" class="form-control"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group  col-md-6">
+                                <label for="txtPopUpCity" class="col-sm-4 control-label">City</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control alpha-space-only" id="txtPopUpCity" name="txtPopUpCity" tabindex="16" placeholder="Enter City" type="text" maxlength="50" />
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-12" style="display:none;">
+                            <div class="form-group  col-md-6">
+                                <label for="ddlPopUpCustomerType" class="col-sm-4 control-label">Customer Type&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <select id="ddlPopUpCustomerType" name="ddlPopUpCustomerType" tabindex="18" class="form-control"></select>
+                                </div>
+                            </div>
+                            <div class="form-group  col-md-6">
+                                <label for="txtPopUpGSTNo" class="col-sm-4 control-label">GST No.</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtPopUpGSTNo" name="txtPopUpGSTNo" tabindex="17" placeholder="Enter GST No." type="text" maxlength="15" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnPopUpSave" tabindex="19" onclick="SaveDataPopUp()" type="button" border="0">
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        </form>
+    </section>
+</body>
+</html>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script>
+    $(".alpha-only").on("input", function () {
+        var regexp = /[^a-zA-Z]/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+    $(".alpha-space-only").on("input", function () {
+        var regexp = /[^a-zA-Z\s]+$/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+    $(".numeric-only").on("input", function () {
+        var regexp = /\D/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+    $(".alpha-numeric-only").on("input", function () {
+        var regexp = /[^a-zA-Z0-9]/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+
+    $(document).ready(function () {
+        BindCountryList();
+        BindCustomerTypeList();
+    });
+
+    function BindCountryList() {
+        $.ajax({
+            type: "GET",
+            url: "../Company/GetCountryList",
+            data: "{}",
+            dataType: "json",
+            asnc: false,
+            success: function (data) {
+                // $("#ddlPopUpCountry").append($("<option></option>").val(0).html("-Select Country-"));
+                $.each(data, function (i, item) {
+
+                    $("#ddlPopUpCountry").append($("<option></option>").val(item.CountryId).html(item.CountryName));
+                    $(":input#ddlPopUpCountry").trigger('change');
+                });
+            },
+            error: function (Result) {
+                $("#ddlPopUpCountry").append($("<option></option>").val(0).html("-Select Country-"));
+            }
+        });
+    }
+
+    function BindCustomerTypeList() {
+        $.ajax({
+            type: "GET",
+            url: "../Customer/GetCustomerTypeList",
+            data: "{}",
+            dataType: "json",
+            asnc: false,
+            success: function (data) {
+                $("#ddlPopUpCustomerType").append($("<option></option>").val(0).html("-Select Customer Type-"));
+                $.each(data, function (i, item) {
+
+                    $("#ddlPopUpCustomerType").append($("<option></option>").val(item.CustomerTypeId).html(item.CustomerTypeDesc));
+                });
+            },
+            error: function (Result) {
+                $("#ddlPopUpCustomerType").append($("<option></option>").val(0).html("-Select Customer Type-"));
+            }
+        });
+    }
+
+    function BindPrimaryStateList(stateId) {
+        var countryId = $("#ddlPopUpCountry option:selected").val();
+        $("#ddlPopUpState").val(0);
+        $("#ddlPopUpState").html("");
+        if (countryId != undefined && countryId != "" && countryId != "0") {
+            var data = { countryId: countryId };
+            $.ajax({
+                type: "GET",
+                url: "../Company/GetStateList",
+                data: data,
+                asnc: false,
+                dataType: "json",
+                success: function (data) {
+                    $("#ddlPopUpState").append($("<option></option>").val(0).html("-Select State-"));
+                    $.each(data, function (i, item) {
+                        $("#ddlPopUpState").append($("<option></option>").val(item.StateId).html(item.StateName));
+                    });
+                    $("#ddlPopUpState").val(stateId);
+                },
+                error: function (Result) {
+                    $("#ddlPopUpState").append($("<option></option>").val(0).html("-Select State-"));
+                }
+            });
+        }
+        else {
+
+            $("#ddlPopUpState").append($("<option></option>").val(0).html("-Select State-"));
+        }
+
+    }
+
+    function checkDecPopUp(el) {
+        var ex = /^[0-9]+\.?[0-9]*$/;
+        if (ex.test(el.value) == false) {
+            el.value = el.value.substring(0, el.value.length - 1);
+        }
+
+    }
+
+    //Save Customer Data------------
+
+    function SaveDataPopUp() {
+        var txtPopUpCustomerName = $("#txtPopUpCustomerName");
+        var txtPopUpCustomerCode = $("#txtPopUpCustomerCode");
+        var txtPopUpContactPersonName = $("#txtPopUpContactPersonName");
+        var txtPopUpPrimaryAddress = $("#txtPopUpPrimaryAddress");
+        var ddlPopUpCustomerType = $("#ddlPopUpCustomerType");
+        var ddlPopUpCountry = $("#ddlPopUpCountry");
+        var ddlPopUpState = $("#ddlPopUpState");
+        var txtPopUpGSTNo = $("#txtPopUpGSTNo");
+        var txtPopUpCity = $("#txtPopUpCity");
+        var hdnCustomerMasterType = $("#hdnCustomerMasterType").val();
+
+        if (txtPopUpCustomerCode.val().trim() == "") {
+            alert("Please Enter Mobile No.");
+            txtPopUpCustomerCode.focus();
+            return false;
+        }
+        if (txtPopUpCustomerName.val().trim() == "") {
+            alert("Please Enter Customer Name");
+            txtPopUpCustomerName.focus();
+            return false;
+        }
+
+        //if (txtPopUpContactPersonName.val().trim() == "") {
+        //    alert("Please Enter Contact Person name");
+        //    txtPopUpContactPersonName.focus();
+        //    return false;
+        //}
+
+        //if (txtPopUpPrimaryAddress.val().trim() == "") {
+        //    alert("Please enter address");
+        //    txtPopUpPrimaryAddress.focus();
+        //    return false;
+        //}
+
+        //if (ddlPopUpCustomerType.val().trim() == "0"|| ddlPopUpCustomerType.val() == null) {
+        //    alert("Please select customer type");
+        //    ddlPopUpCustomerType.focus();
+        //    return false;
+        //}
+        if (ddlPopUpCountry.val() == "" || ddlPopUpCountry.val() == "0") {
+            alert("Please select Country");
+            ddlPopUpCountry.focus();
+            return false;
+        }
+        if (ddlPopUpState.val() == "" || ddlPopUpState.val() == "0") {
+            alert("Please select State");
+            ddlPopUpState.focus();
+            return false;
+        }
+
+        //if (txtPopUpCity.val().trim() == "") {
+        //    alert("Please enter city");
+        //    txtPopUpCity.focus();
+        //    return false;
+        //}
+
+        //if (txtPopUpGSTNo.val() != '' && txtPopUpGSTNo.val().length != 15) {
+
+        //    var confirmMessageGSTNo = confirm("WARNING : The GSTN No. entered is less than 15 character. Are you sure you want to save it?");
+        //    if (confirmMessageGSTNo == false) {
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        var customerViewModel = {
+        //            CustomerCode: txtPopUpCustomerCode.val().trim(),
+        //            CustomerName: txtPopUpCustomerName.val().trim(),
+        //            ContactPersonName: txtPopUpContactPersonName.val().trim(),
+        //            PrimaryAddress: txtPopUpPrimaryAddress.val().trim(),
+        //            CustomerTypeId: ddlPopUpCustomerType.val(),
+        //            StateId: ddlPopUpState.val(),
+        //            CountryId: ddlPopUpCountry.val(),
+        //            City: txtPopUpCity.val().trim(),
+        //            GSTNo: txtPopUpGSTNo.val().trim(),
+        //            Customer_Status: true
+        //        };
+        //        var requestData = { customerViewModel: customerViewModel };
+        //        $.ajax({
+        //            url: "../Customer/AddEditCustomerMaster",
+        //            cache: false,
+        //            type: "POST",
+        //            dataType: "json",
+        //            data: JSON.stringify(requestData),
+        //            contentType: 'application/json',
+        //            success: function (data) {
+        //                if (data.status == "SUCCESS") {
+        //                    alert(data.message);
+        //                    GetCustomerDetailsById(data.trnId);
+        //                    ClearFieldsPopUp();
+        //                    $("#AddNewCustomer").modal("hide");
+        //                }
+        //                else {
+        //                    alert(data.message);
+        //                }
+        //            },
+        //            error: function (err) {
+        //                ShowModel("Error", err)
+        //            }
+        //        });
+        //    }
+        //}
+
+        //else
+        //{
+
+        //}
+
+        var customerViewModel = {
+            CustomerCode: txtPopUpCustomerCode.val().trim(),
+            CustomerName: txtPopUpCustomerName.val().trim(),
+            ContactPersonName: txtPopUpContactPersonName.val().trim(),
+            PrimaryAddress: txtPopUpPrimaryAddress.val().trim(),
+            CustomerTypeId: ddlPopUpCustomerType.val(),
+            StateId: ddlPopUpState.val(),
+            CountryId: ddlPopUpCountry.val(),
+            City: txtPopUpCity.val().trim(),
+            GSTNo: txtPopUpGSTNo.val().trim(),
+            Customer_Status: true
+        };
+        var requestData = { customerViewModel: customerViewModel };
+        $.ajax({
+            url: "../Customer/AddEditCustomerMaster",
+            cache: false,
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify(requestData),
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.status == "SUCCESS") {
+                    alert(data.message);
+                    GetCustomerDetailsById(data.trnId);
+                    ClearFieldsPopUp();
+                    $("#AddNewCustomer").modal("hide");
+                }
+                else {
+                    alert(data.message);
+                }
+            },
+            error: function (err) {
+                ShowModel("Error", err)
+            }
+        });
+
+    }
+
+    function GetCustomerDetailsById(CustomerId) {
+        if (CustomerId != null && CustomerId != 0) {
+            var requestData = { customerId: CustomerId };
+            $.ajax({
+                url: "../Customer/GetCustomerDetailsById",
+                cache: false,
+                type: "POST",
+                dataType: "json",
+                data: JSON.stringify(requestData),
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data != null) {
+                        $("#hdnCustomerId").val(data[0].CustomerId);
+                        $("#txtCustomerName").val(data[0].CustomerName);
+                        $("#txtCustomerCode").val(data[0].CustomerCode);
+                        
+                    }
+                },
+                error: function (err) {
+                    ShowModel("Error", err)
+                }
+            });
+        }
+    }
+
+    function GetConsigneeDetailsById(ConsigneeId) {
+        if (ConsigneeId != null && ConsigneeId != 0) {
+            var requestData = { customerId: ConsigneeId };
+            $.ajax({
+                url: "../Customer/GetCustomerDetailsById",
+                cache: false,
+                type: "POST",
+                dataType: "json",
+                data: JSON.stringify(requestData),
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data != null) {
+                        $("#hdnConsigneeId").val(data[0].CustomerId);
+                        $("#txtConsigneeName").val(data[0].CustomerName);
+                        $("#txtConsigneeCode").val(data[0].CustomerCode);
+                        GetConsigneeDetail(data[0].CustomerId);
+                    }
+                },
+                error: function (err) {
+                    ShowModel("Error", err)
+                }
+            });
+        }
+    }
+
+    function ShowModelPopUp(headerText, bodyText) {
+        $("#alertModel").modal();
+        $("#modelHeader").html(headerText);
+        $("#modelText").html(bodyText);
+    }
+    function ClearFieldsPopUp() {
+        $("#txtPopUpCustomerName").val("");
+        $("#txtPopUpCustomerCode").val("");
+        $("#txtPopUpContactPersonName").val("");
+        $("#ddlPopUpCustomerType").val("0");
+        $("#txtPopUpPrimaryAddress").val("");
+        $("#ddlPopUpCountry").val("0");
+        $("#ddlPopUpState").val("0");
+        $("#txtPopUpGSTNo").val("");
+        $("#btnPopUpSave").show();
+    }
+
+
+</script>

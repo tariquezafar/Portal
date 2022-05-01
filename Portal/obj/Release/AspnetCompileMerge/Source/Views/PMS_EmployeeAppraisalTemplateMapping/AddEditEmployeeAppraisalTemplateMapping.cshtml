@@ -1,0 +1,415 @@
+﻿@{
+    ViewBag.Title = "Add/Edit Employee Appraisal Template Mapping";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    } 
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">HR </a> >> Add/Edit Employee Appraisal Template Mapping</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditEmployeeAppraisalTemplateMapping" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message"> 
+            </div>  
+                    <div class="col-md-12 ftop">
+                        <div class="form-group  col-md-4">
+                            <label for="txtTemplateName" class="col-sm-4 control-label">Appraisal Template&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtTemplateName" name="txtTemplateName" tabindex="1" placeholder="Enter Template Name" type="text" maxlength="100" />
+                                <input id="hdnTemplateId" type="hidden" value="0" />
+                                <input id="hdnEmpAppraisalTemplateMappingId" type="hidden" value="@ViewData["empAppraisalTemplateMappingId"]" />
+                                <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                            </div>
+                            <a class="fa fa-search col-sm-1" onclick="OpenApSearchPopup()" id="btnSearchSO" tabindex="2" style="padding-top:5px; float:left !important;position:absolute;z-index:500" href="#"></a>
+                        </div> 
+                        <div class="form-group  col-md-4">
+                             <label for="txtDepartment" class="col-sm-4 control-label">Department&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtDepartment" name="txtDepartment" tabindex="8" placeholder="Enter Department Name" type="text" maxlength="100" />
+                                <input id="hdnDepartmentId" type="hidden" value="0" />
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-4">
+                            <label for="txtDesignation" class="col-sm-4 control-label">Designation&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtDesignation" name="txtDesignation" tabindex="9" placeholder="Designation Name" type="text" maxlength="100" />
+                                <input id="hdnDesignationId" type="hidden" value="0" />
+                            </div>
+                        </div>
+          </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtEmployee" class="col-sm-4 control-label">Employee&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtEmployee" name="txtEmployee" tabindex="10" placeholder="Enter Employee" type="text" maxlength="2" />
+                        <input type="hidden" id="hdnEmployeeId" name="hdnEmployeeId" value="0" />
+                        
+                    </div>
+                </div>  
+                <div class="form-group  col-md-4">
+                    <label for="ddlFinYear" class="col-sm-4 control-label">FinYear&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlFinYear" name="ddlFinYear" tabindex="11" class="form-control"></select>
+                    </div>
+                </div> 
+                <div class="form-group  col-md-4">
+                    <label for="ddlPerformanceCycle" class="col-sm-4 control-label">PerformanceCycle&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlPerformanceCycle" name="ddlPerformanceCycle" tabindex="12" class="form-control"></select>
+                    </div>
+                </div> 
+            </div>
+
+              <div class="col-md-12"> 
+                  <div class="form-group col-md-4">
+                      <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                      <div class="col-sm-8">
+                          <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="46" class="form-control"></select>
+                          <input id="hdnBillingStateId" type="hidden" value="0" />
+                          <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                          <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                      </div>
+                  </div>
+
+
+                <div class="form-group col-md-4">
+                    <label for="chkstatus" class="col-sm-4 control-label">Status&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="13" />
+                    </div>
+                </div>
+            </div>
+             
+                <div class="col-md-12" id="divCreated" style="display:none;">
+                    <div class="form-group col-md-4">
+                        <label for="txtCreatedBy" class="col-sm-4 control-label">Created By</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtCreatedBy" name="txtCreatedBy" tabindex="14" placeholder="Created By User Name" type="text" maxlength="100" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="txtCreatedDate" class="col-sm-4 control-label">Created Date</label>
+                        <div class="col-sm-8 ">
+                            <input class="form-control" id="txtCreatedDate" name="txtCreatedDate" tabindex="15" placeholder="Created Date" type="text" maxlength="50" />
+                        </div>
+                    </div>
+                </div> 
+
+            <div class="col-md-12" id="divModified" style="display:none;">
+                <div class="form-group col-md-4">
+                    <label for="txtModifiedBy" class="col-sm-4 control-label">Modified By</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtModifiedBy" name="txtModifiedBy" tabindex="16" placeholder="Modified By User Name" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtModifiedDate" class="col-sm-4 control-label">Modified Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtModifiedDate" name="txtModifiedDate" tabindex="17" placeholder="Modified Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+             
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                </div>
+                <div class="form-group col-md-4" style="background-color:yellow">
+                    <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Goal Detail</b></label></h4>
+                </div>
+                <div class="form-group col-md-4">
+                    <input class="btn btn-success" value="Add New Goal" tabindex="18" alt="Add New Goal" id="btnAddNewGoal" onclick="ShowHideGoalPanel(1)" type="button" border="0">
+                </div>
+            </div>
+            <div class="col-md-12 goalsection" style="display:none;">
+                <div class="form-group col-md-4">
+                    <label for="txtGoalName" class="col-sm-4 control-label">Goal&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtGoalName" name="txtGoalName" tabindex="19" placeholder="Enter Goal Name" type="text" maxlength="100" />
+                        <input id="hdnGoalId" type="hidden" value="0" />
+                        <input id="hdnEmployeeGoalId" type="hidden" value="0" />
+                        <input id="hdnEmployeeGoalSequenceNo" type="hidden" value="0" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <a class="fa fa-plus col-sm-1" onclick="OpenNewGoalPopup()" tabindex="20" id="btnAddNewGoal" style="padding-top:5px; float:left !important" href="#"></a>
+                    <label for="txtGoalDescription" class="col-sm-3 control-label right-text">Goal Description&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <textarea rows="5" cols="3" class="form-control" id="txtGoalDescription" name="txtGoalDescription" tabindex="30" placeholder="Goal Description" type="text" maxlength="1000"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-12 goalsection" style="display:none;">
+                <div class="form-group col-md-4">
+                    <label for="ddlSectionName" class="col-sm-4 control-label">Section&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlSectionName" name="ddlSectionName" tabindex="31" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="ddlGoalCategoryName" class="col-sm-4 control-label">Goal Category&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlGoalCategoryName" name="ddlGoalCategoryName" tabindex="32" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 goalsection" style="display:none;">
+                <div class="form-group col-md-4">
+                    <label for="txtWeight" class="col-sm-4 control-label">Weightage(%)&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtWeight" name="txtWeight" tabindex="33" placeholder="Enter Weight" type="text" maxlength="100" onkeyup="checkDec(this)" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtEvalutionCriteria" class="col-sm-4 control-label right-text">Evalution Criteria&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <textarea rows="2" cols="2" class="form-control" id="txtEvalutionCriteria" name="txtEvalutionCriteria" tabindex="34" placeholder="Evalution Criteria" type="text" maxlength="1000"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 goalsection" style="display:none;">
+                <div class="form-group  col-md-4">
+                    <label for="txtGoalStartDate" class="col-sm-4 control-label">Goal Start Date&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtGoalStartDate" name="txtGoalStartDate" tabindex="35"  placeholder="Enter Goal Start Date" type="text" maxlength="2" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtGoalDueDate" class="col-sm-4 control-label">Goal Due Date&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtGoalDueDate" name="txtGoalDueDate" tabindex="36" placeholder="Enter Goal Due Date" type="text" maxlength="2" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 goalsection" style="display:none;">
+                <div class="form-group col-md-4">
+                    <label for="chkGoalStatus" class="col-sm-4 control-label">Status</label>
+                    <div class="col-sm-8">
+                        <input id="chkGoalStatus" name="chkGoalStatus" type="checkbox" checked="checked" tabindex="37" />
+                        <input id="hdnFixedDynamic" type="hidden" value="F" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-12 col-md-12 goalsection" style="display:none;">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Add Goal" alt="Add Goal" id="btnAddGoal" tabindex="38" onclick="AddGoal(1)" type="button" border="0">&nbsp;&nbsp;
+                        <input class="btn btn-success" value="Update Goal" style="display:none;" tabindex="38" alt="Update Goal" id="btnUpdateGoal" onclick="AddGoal(2)" type="button" border="0">&nbsp;&nbsp;
+                        <input class="btn btn-success" type="button" id="btnCancelGoal" tabindex="39" onclick="ShowHideGoalPanel(2)" value="Cancel" /> &nbsp;&nbsp;
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <div id="divTemplateGoalList">
+
+                </div>
+            </div>
+                <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                    <div class="col-md-12">
+                        <center>
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="40" onclick="SaveData(1)" type="button" border="0"> 
+                            <input class="btn btn-success" value="Update" style="display:none;" tabindex="40" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                            <input class="btn btn-success" type="button" id="btnReset" tabindex="43" onclick="ClearFields()" value="Reset" />  
+                            <a class="btn btn-success" id="btnList" tabindex="44" href="@Url.Content("~/PMS_EmployeeAppraisalTemplateMapping/ListEmployeeAppraisalTeamplateMapping")">Search Employee Appraisal Template</a>
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="41" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="42" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="42" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="SearchAppraisalTemplateModel" role="dialog">
+            <div class="modal-dialog  modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Search Appraisal Template</h4>
+                    </div>
+                    <div class="">
+                        <div class="col-md-12 ftop">
+                            <div class="form-group col-md-6">
+                                <label for="txtTemplateNameSearch" class="col-sm-4 control-label">Template Name</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtTemplateNameSearch" name="txtTemplateNameSearch" tabindex="3" placeholder="Search with Template Name" type="text" maxlength="100" />
+                                    <input id="hdnTemplatesId" type="hidden" value="0" />
+                                 </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                               
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group  col-md-6">
+                                <label for="ddlDepartmentSearch" class="col-sm-4 control-label">Department</label>
+                                <div class="col-sm-8">
+                                    <select id="ddlDepartmentSearch" name="ddlDepartmentSearch" onchange="BindDesignationList(0)" tabindex="4" class="form-control"></select>
+                                </div>
+                            </div>
+                            <div class="form-group  col-md-6">
+                                <label for="ddlDesignationSearch" class="col-sm-4 control-label">Designation</label>
+                                <div class="col-sm-8">
+                                    <select id="ddlDesignationSearch" name="ddlDesignationSearch" tabindex="5" class="form-control"></select>
+                                </div>
+                            </div>
+
+                        </div>
+                      
+                        <div class="row col-sm-12 col-lg-12 col-md-12">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <center>
+                                    <input class="btn btn-success" value="Search" alt="Search" id="btnSearch" tabindex="6" onclick="SearchTemplate()" type="button" border="0">&nbsp;&nbsp;
+                                </center>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="row col-sm-6 col-lg-12 col-md-12">
+                            <div id="divTemplateList">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" tabindex="7" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="AddNewGoalModel" role="dialog">
+            <div class="modal-dialog  modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add New Goal</h4>
+                    </div>
+                    <div class="">
+                      
+                        <div class="col-md-12 ftop">
+                            <div class="form-group col-md-6">
+                                <label for="txtNewGoalName" class="col-sm-4 control-label">Goal Name&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtNewGoalName" name="txtNewGoalName" tabindex="21" placeholder="Enter Goal Name" type="text" maxlength="100" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtNewGoalDescription" class="col-sm-4 control-label">Goal Description&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <textarea rows="5" cols="3"  class="form-control" id="txtNewGoalDescription" name="txtNewGoalDescription" tabindex="22" placeholder="Goal Description" type="text" maxlength="1000"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+                                <label for="ddlNewSectionName" class="col-sm-4 control-label">Section&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <select id="ddlNewSectionName" name="ddlNewSectionName" tabindex="23" class="form-control"></select>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="ddlNewGoalCategoryName" class="col-sm-4 control-label">Goal Category&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <select id="ddlNewGoalCategoryName" name="ddlNewGoalCategoryName" tabindex="24" class="form-control"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+                                <label for="txtNewWeight" class="col-sm-4 control-label">Weightage(%)&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtNewWeight" name="txtNewWeight" tabindex="25" placeholder="Enter Weight" type="text" maxlength="5" onkeyup="checkDec(this)" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group  col-md-6">
+                                <label for="txtNewGoalStartDate" class="col-sm-4 control-label">Goal Start Date&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtNewGoalStartDate" name="txtNewGoalStartDate" tabindex="26" placeholder="Enter Goal Start Date" type="text" maxlength="2" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtNewGoalDueDate" class="col-sm-4 control-label">Goal Due Date&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtNewGoalDueDate" name="txtNewGoalDueDate" tabindex="27" placeholder="Enter Goal Due Date" type="text" maxlength="2" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <center>
+                                    <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="28" onclick="SaveNewGoal(1)" type="button" border="0">
+                                 </center>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" tabindex="29" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+         
+    </form>
+</section> 
+
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/PMS_EmployeeAppraisalTemplateMapping/AddEmployeeAppraisalTemplateMapping.js"></script>

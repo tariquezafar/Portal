@@ -1,0 +1,72 @@
+12:45:09 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditPI
+Error Line No : 2820
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditPurchaseInvoice' expects parameter '@TINNo', which was not supplied.
+--------------------------------------------------------------------------------------------------------------------------------
+
+12:45:09 PM
+Source : Portal.Core.PurchaseInvoiceBL
+Method Name : AddEditPI
+Error Line No : 242
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditPurchaseInvoice' expects parameter '@TINNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:10 PM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : AddEditPI
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditPurchaseInvoice' expects parameter '@TINNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:50 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditPI
+Error Line No : 2820
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditPurchaseInvoice' expects parameter '@TINNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:50 PM
+Source : Portal.Core.PurchaseInvoiceBL
+Method Name : AddEditPI
+Error Line No : 242
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditPurchaseInvoice' expects parameter '@TINNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:45:50 PM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : AddEditPI
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditPurchaseInvoice' expects parameter '@TINNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:48:14 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditPI
+Error Line No : 2820
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditPurchaseInvoice' expects parameter '@TINNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:48:14 PM
+Source : Portal.Core.PurchaseInvoiceBL
+Method Name : AddEditPI
+Error Line No : 242
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditPurchaseInvoice' expects parameter '@TINNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:48:14 PM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : AddEditPI
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditPurchaseInvoice' expects parameter '@TINNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+

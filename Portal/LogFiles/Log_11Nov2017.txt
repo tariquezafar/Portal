@@ -1,0 +1,80 @@
+18:19:03 PM
+Source : Portal.Core.EmployeeBL
+Method Name : GetAllEmployeeDetail
+Error Line No : 652
+Exception Type : System.ArgumentException
+Details: Column 'DepartmentName' does not belong to table .
+--------------------------------------------------------------------------------------------------------------------------------
+
+18:19:03 PM
+Source : Portal.Controllers.EmployeeController
+Method Name : GetAllEmployeeList
+Error Line No : 358
+Exception Type : System.ArgumentException
+Details: Column 'DepartmentName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:22:46 PM
+Source : Portal.Core.EmployeeBL
+Method Name : GetAllEmployeeDetail
+Error Line No : 652
+Exception Type : System.ArgumentException
+Details: Column 'DepartmentName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:22:46 PM
+Source : Portal.Controllers.EmployeeController
+Method Name : GetAllEmployeeList
+Error Line No : 358
+Exception Type : System.ArgumentException
+Details: Column 'DepartmentName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:22:49 PM
+Source : Portal.Core.EmployeeBL
+Method Name : GetAllEmployeeDetail
+Error Line No : 652
+Exception Type : System.ArgumentException
+Details: Column 'DepartmentName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:22:49 PM
+Source : Portal.Controllers.EmployeeController
+Method Name : GetAllEmployeeList
+Error Line No : 358
+Exception Type : System.ArgumentException
+Details: Column 'DepartmentName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:23:00 PM
+Source : Portal.Core.EmployeeBL
+Method Name : GetAllEmployeeDetail
+Error Line No : 652
+Exception Type : System.ArgumentException
+Details: Column 'DepartmentName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:23:37 PM
+Source : Portal.Core.EmployeeBL
+Method Name : GetAllEmployeeDetail
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Column 'DesignationName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:23:37 PM
+Source : Portal.Controllers.EmployeeController
+Method Name : GetAllEmployeeList
+Error Line No : 358
+Exception Type : System.ArgumentException
+Details: Column 'DesignationName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:51:40 PM
+Source : Portal.Controllers.EmployeeController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.MissingMethodException
+Details: Method not found: 'System.Collections.Generic.List`1<Portal.Core.ViewModel.EmployeeViewModel> Portal.Core.EmployeeBL.GetAllEmployeeDetail()'.
+---------------------------------------------------------------------------------------------------------------------------
+

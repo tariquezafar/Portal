@@ -1,0 +1,98 @@
+﻿@model List<Portal.Core.ViewModel.ReturnViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;background-color:white;">
+        <table class="table table-bordered table-hover" id="tblJobWorkList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>Replacment No.</center></th>
+                    <th><center>Replacment Date</center></th>
+                    <th><center>Invoice No.</center></th>
+                    <th><center>Company Branch Name</center></th>
+                    <th><center>Approval Status</center></th>                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="margin:0px auto;">
+                            <a style="color:darkblue" title="View" class="fa fa-eye" aria-hidden="true" href="~/Return/AddEditReturn?returnedID=@item.ReturnedID&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="margin:0px auto;">
+                            @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                            {
+                                <a style="color:darkgreen" title="Edit" class="fa fa-pencil" href="~/Return/AddEditReturn?returnedID=@item.ReturnedID&AccessMode=2"></a>
+                            }
+
+                        </td>
+                        <td>@item.ReturnedNo</td>
+                        <td>@item.ReturnedDate</td>
+                        <td>@item.InvoiceNo</td>                      
+                        <td>@item.CompanyBranchName</td>
+                       
+                        @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine">
+                                @item.ApprovalStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green">
+                                @item.ApprovalStatus
+                            </td>
+
+                        }
+
+
+                        
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblJobWorkList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

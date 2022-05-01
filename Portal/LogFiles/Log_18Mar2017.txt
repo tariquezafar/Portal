@@ -1,0 +1,80 @@
+11:10:41 AM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.EntityException
+Details: An exception has been raised that is likely due to a transient failure. If you are connecting to a SQL Azure database consider using SqlAzureExecutionStrategy.
+--------------------------------------------------------------------------------------------------------------------------------
+
+11:10:41 AM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 57
+Exception Type : System.Data.Entity.Core.EntityException
+Details: An exception has been raised that is likely due to a transient failure. If you are connecting to a SQL Azure database consider using SqlAzureExecutionStrategy.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:41 AM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 36
+Exception Type : System.Data.Entity.Core.EntityException
+Details: An exception has been raised that is likely due to a transient failure. If you are connecting to a SQL Azure database consider using SqlAzureExecutionStrategy.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:11:33 AM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:11:33 AM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 57
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:11:33 AM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 36
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:09:53 PM
+Source : Portal.Core.EmployeeBL
+Method Name : GetEmployeeDetail
+Error Line No : 182
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:09:53 PM
+Source : Portal.Controllers.EmployeeController
+Method Name : GetEmployeeDetail
+Error Line No : 109
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:15:12 PM
+Source : Portal.Core.EmployeeBL
+Method Name : GetEmployeeDetail
+Error Line No : 0
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:15:12 PM
+Source : Portal.Controllers.EmployeeController
+Method Name : GetEmployeeDetail
+Error Line No : 109
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+

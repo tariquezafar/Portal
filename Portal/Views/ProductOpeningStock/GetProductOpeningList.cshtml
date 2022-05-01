@@ -1,0 +1,64 @@
+﻿@model List<Portal.Core.ViewModel.ProductOpeningViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style> 
+   .table th {
+            background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+            color: #fff;
+        }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll;">
+        <table class="table table-bordered table-hover"  id="tblUserList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>Product Name</center></th>
+                    <th><center>Product Code</center></th>
+                    <th><center>Short Desc</center></th>
+                    <th><center>Financial Year</center></th>
+                    <th><center>Company Branch</center></th>
+                    <th><center>Opening Qty.</center></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="width:30px; margin:0px auto;">
+                            <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/ProductOpeningStock/AddEditProductOpening?OpeningTrnId=@item.OpeningTrnId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:darkgreen" class="fa fa-pencil" href="~/ProductOpeningStock/AddEditProductOpening?OpeningTrnId=@item.OpeningTrnId&AccessMode=2"></a>
+                        </td>
+                        <td align="center">@item.ProductName</td>
+                        <td align="center">@item.ProductCode</td>
+                        <td>@item.ProductShortDesc</td>
+                        <td align="center">@item.FinYearDesc</td>
+                        <td align="center">@item.BranchName</td>
+                        <td align="center">@item.OpeningQty</td>
+                        
+
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblUserList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "Update Date Wise Shift";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">HR</a> >> Update Date Wise Shift</b></p></div>
+</div>
+
+<section>
+    <form action="#" id="frmUpdateShift" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="ddlRoster" class="col-sm-4 control-label">Roster Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlRoster" name="ddlRoster" onchange="GetRoasterDetail()" tabindex="1" class="form-control"></select>
+                        <input id="hdnEmployeeRoasterId" type="hidden" value="@ViewData["employeeRoasterId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    
+                        <label for="ddlDepartment" class="col-sm-4 control-label">Department&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlDepartment" name="ddlDepartment" tabindex="2" class="form-control"></select>
+                        </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtRoasterStartDate" class="col-sm-4 control-label">Shift From Date&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtRoasterStartDate" name="txtRoasterStartDate" tabindex="3" placeholder="Select From Date" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtRoasterEndDate" class="col-sm-4 control-label">To Date&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtRoasterEndDate" name="txtRoasterEndDate" tabindex="4" placeholder="Select To Date" type="text" maxlength="100" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group  col-md-6">
+                    <label for="ddlShift" class="col-sm-4 control-label">Shift&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlShift" name="ddlShift" tabindex="5" class="form-control"></select>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="5" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <div id="divEmployeeList">
+                </div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Update"  tabindex="6" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">&nbsp;&nbsp;
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                         <input class="btn btn-success" type="button" id="btnReset" tabindex="7" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/Roaster/UpdateDateWiseShift.js"></script>
+

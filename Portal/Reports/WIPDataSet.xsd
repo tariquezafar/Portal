@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WIPDataSet" targetNamespace="http://tempuri.org/WIPDataSet.xsd" xmlns:mstns="http://tempuri.org/WIPDataSet.xsd" xmlns="http://tempuri.org/WIPDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ERPConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ERPConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ERPConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="WIPDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="WIPDataSet" msprop:Generator_UserDSName="WIPDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WorkOrderID" msprop:Generator_ColumnVarNameInTable="columnWorkOrderID" msprop:Generator_ColumnPropNameInRow="WorkOrderID" msprop:Generator_ColumnPropNameInTable="WorkOrderIDColumn" msprop:Generator_UserColumnName="WorkOrderID" type="xs:string" minOccurs="0" />
+              <xs:element name="WorkOrderNo" msprop:Generator_ColumnVarNameInTable="columnWorkOrderNo" msprop:Generator_ColumnPropNameInRow="WorkOrderNo" msprop:Generator_ColumnPropNameInTable="WorkOrderNoColumn" msprop:Generator_UserColumnName="WorkOrderNo" type="xs:string" minOccurs="0" />
+              <xs:element name="WorkOrderQTY" msprop:Generator_ColumnVarNameInTable="columnWorkOrderQTY" msprop:Generator_ColumnPropNameInRow="WorkOrderQTY" msprop:Generator_ColumnPropNameInTable="WorkOrderQTYColumn" msprop:Generator_UserColumnName="WorkOrderQTY" type="xs:string" minOccurs="0" />
+              <xs:element name="ProcessType" msprop:Generator_ColumnVarNameInTable="columnProcessType" msprop:Generator_ColumnPropNameInRow="ProcessType" msprop:Generator_ColumnPropNameInTable="ProcessTypeColumn" msprop:Generator_UserColumnName="ProcessType" type="xs:string" minOccurs="0" />
+              <xs:element name="FabricationNo" msprop:Generator_ColumnVarNameInTable="columnFabricationNo" msprop:Generator_ColumnPropNameInRow="FabricationNo" msprop:Generator_ColumnPropNameInTable="FabricationNoColumn" msprop:Generator_UserColumnName="FabricationNo" type="xs:string" minOccurs="0" />
+              <xs:element name="PaintProcessNo" msprop:Generator_ColumnVarNameInTable="columnPaintProcessNo" msprop:Generator_ColumnPropNameInRow="PaintProcessNo" msprop:Generator_ColumnPropNameInTable="PaintProcessNoColumn" msprop:Generator_UserColumnName="PaintProcessNo" type="xs:string" minOccurs="0" />
+              <xs:element name="AssemblingNo" msprop:Generator_ColumnVarNameInTable="columnAssemblingNo" msprop:Generator_ColumnPropNameInRow="AssemblingNo" msprop:Generator_ColumnPropNameInTable="AssemblingNoColumn" msprop:Generator_UserColumnName="AssemblingNo" type="xs:string" minOccurs="0" />
+              <xs:element name="FinishedGoodNo" msprop:Generator_ColumnVarNameInTable="columnFinishedGoodNo" msprop:Generator_ColumnPropNameInRow="FinishedGoodNo" msprop:Generator_ColumnPropNameInTable="FinishedGoodNoColumn" msprop:Generator_UserColumnName="FinishedGoodNo" type="xs:string" minOccurs="0" />
+              <xs:element name="ProducedQTY" msprop:Generator_ColumnVarNameInTable="columnProducedQTY" msprop:Generator_ColumnPropNameInRow="ProducedQTY" msprop:Generator_ColumnPropNameInTable="ProducedQTYColumn" msprop:Generator_UserColumnName="ProducedQTY" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PendingQTY" msprop:Generator_ColumnVarNameInTable="columnPendingQTY" msprop:Generator_ColumnPropNameInRow="PendingQTY" msprop:Generator_ColumnPropNameInTable="PendingQTYColumn" msprop:Generator_UserColumnName="PendingQTY" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ProductName" msprop:Generator_ColumnVarNameInTable="columnProductName" msprop:Generator_ColumnPropNameInRow="ProductName" msprop:Generator_ColumnPropNameInTable="ProductNameColumn" msprop:Generator_UserColumnName="ProductName" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductCode" msprop:Generator_ColumnVarNameInTable="columnProductCode" msprop:Generator_ColumnPropNameInRow="ProductCode" msprop:Generator_ColumnPropNameInTable="ProductCodeColumn" msprop:Generator_UserColumnName="ProductCode" type="xs:string" minOccurs="0" />
+              <xs:element name="BOMQTY" msprop:Generator_ColumnVarNameInTable="columnBOMQTY" msprop:Generator_ColumnPropNameInRow="BOMQTY" msprop:Generator_ColumnPropNameInTable="BOMQTYColumn" msprop:Generator_UserColumnName="BOMQTY" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PENBOMQTY" msprop:Generator_ColumnVarNameInTable="columnPENBOMQTY" msprop:Generator_ColumnPropNameInRow="PENBOMQTY" msprop:Generator_ColumnPropNameInTable="PENBOMQTYColumn" msprop:Generator_UserColumnName="PENBOMQTY" type="xs:decimal" minOccurs="0" />
+              <xs:element name="WOBOMQTY" msprop:Generator_ColumnVarNameInTable="columnWOBOMQTY" msprop:Generator_ColumnPropNameInRow="WOBOMQTY" msprop:Generator_ColumnPropNameInTable="WOBOMQTYColumn" msprop:Generator_UserColumnName="WOBOMQTY" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ISSUEDQTY" msprop:Generator_ColumnVarNameInTable="columnISSUEDQTY" msprop:Generator_ColumnPropNameInRow="ISSUEDQTY" msprop:Generator_ColumnPropNameInTable="ISSUEDQTYColumn" msprop:Generator_UserColumnName="ISSUEDQTY" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

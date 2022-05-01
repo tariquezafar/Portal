@@ -1,0 +1,97 @@
+﻿@model List<Portal.Core.ViewModel.HR_EmployeeTravelApplicationViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblEmployeeTravelApplicationList">
+            <thead>
+                <tr>
+                    <th align="center">Action</th>
+                    <th>Application No.</th>
+                    <th>Application Date</th>
+                    <th>Employee </th>
+                    <th>Travel Type</th> 
+                    <th>Travel Destination</th>
+                    <th>Travel Reason</th> 
+                    <th>Travel Start Date</th>
+                    <th>Travel End Date</th>
+                    <th>Travel Status</th> 
+                    <th>Approve/ Reject By</th>
+                    <th>Approve/ Reject Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/EmployeeTravelApp/ApproveEmployeeTravelApp?applicationId=@item.ApplicationId&AccessMode=3"></a>
+                            @if (item.TravelStatus.ToUpper() == "PENDING")
+                            {
+                                <a style="color:white" class="fa fa-pencil-square-o" href="~/EmployeeTravelApp/ApproveEmployeeTravelApp?applicationId=@item.ApplicationId&AccessMode=2"></a>
+                            }
+                        </td>
+
+                        <td>@item.ApplicationNo</td>
+                        <td>@item.ApplicationDate</td>
+                        <td>@item.EmployeeName</td>
+                        <td>@item.TravelTypeName</td> 
+                        <td>@item.TravelDestination</td>
+                        <td>@item.TravelReason</td>
+                        <td>@item.TravelStartDate</td>
+                        <td>@item.TravelEndDate</td>
+                        @if (item.TravelStatus.ToUpper() == "PENDING")
+                        {
+                            <td style="background-color:aquamarine;">
+                                @item.TravelStatus
+                            </td>
+                        }
+                        else if (item.TravelStatus.ToUpper() == "REJECTED")
+                        {
+                            <td style="background-color:red;color:white">
+                                @item.TravelStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green;color:white">
+                                @item.TravelStatus
+                            </td>
+
+                        }
+
+ 
+                        <td>@item.ApprovedByUserName</td>
+                        <td>@item.ApproveDate @item.RejectDate</td>
+                     
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblEmployeeTravelApplicationList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

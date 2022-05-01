@@ -1,0 +1,63 @@
+﻿@model List<Portal.Core.ViewModel.HSNViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+.table th {
+background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+color:#fff;
+}
+ table tr:nth-child(2n+1){
+background-color:  #dff0d8 !important;
+}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered" id="tblProductTypeList">
+            <thead>
+                <tr>
+                    <th colspan="1" style="text-align:center;">Action</th>
+                    <th style="text-align:center;">HSN Code</th>
+                    <th style="text-align:center;">CGST (%)</th>
+                    <th style="text-align:center;">SGST (%)</th>                                 
+                    <th style="text-align:center;">Status</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="width:78px; margin:5px 5px;">
+                            <a style="color:white;text-decoration:none" title="View" class="fa fa-eye btn btn-success table_btn" aria-hidden="true" href="~/HSN/AddEditHSN?hSNID=@item.HSNID&AccessMode=3"></a>
+                            <a style="color:white;text-decoration:none" title="Edit" class="fa fa-pencil-square-o btn btn-success table_btn" href="~/HSN/AddEditHSN?hSNID=@item.HSNID&AccessMode=2"></a>
+                        </td>
+                       
+                        <td>@item.HSNCode</td>
+                        <td>@item.CGST_Perc</td>
+                        <td>@item.SGST_Perc</td>
+                       
+                        <td>@(item.HSN_Status == true?"Active":"Inactive")</td>
+                       
+
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblProductTypeIdList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

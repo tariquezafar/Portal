@@ -1,0 +1,48 @@
+18:48:59 PM
+Source : Portal.Core.TaxBL
+Method Name : GetTaxDetail
+Error Line No : 109
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+--------------------------------------------------------------------------------------------------------------------------------
+
+18:48:59 PM
+Source : Portal.Controllers.TaxController
+Method Name : GetTaxDetail
+Error Line No : 112
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:49:44 PM
+Source : Portal.Core.TaxBL
+Method Name : GetTaxDetail
+Error Line No : 109
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:49:44 PM
+Source : Portal.Controllers.TaxController
+Method Name : GetTaxDetail
+Error Line No : 112
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:49:48 PM
+Source : Portal.Core.TaxBL
+Method Name : GetTaxDetail
+Error Line No : 109
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:49:48 PM
+Source : Portal.Controllers.TaxController
+Method Name : GetTaxDetail
+Error Line No : 112
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,160 @@
+﻿@{
+    ViewBag.Title = "ListReturn";
+    Layout = "~/Views/Shared/_SaleLayout.cshtml";
+}
+<style>
+    .table {
+        width: 150% !important;
+        max-width: 150% !important;
+        margin-bottom: 20px;
+    }
+</style>
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/SaleDashboard">Sale Module </a> >> List Replacement </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditJobWork" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="txtjobWorkNo" class="col-sm-4 control-label">Returned No.</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtReturnedNo" name="txtReturnedNo" tabindex="1" placeholder="Search with Returned No." type="text" maxlength="50" />
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                    </div>
+                </div>
+                <div class="form-group  col-md-4">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch</label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="2" class="form-control"></select>
+                    </div>
+                </div>
+
+                <div class="form-group  col-md-4">
+                    <label for="ddlApprovalStatus" class="col-sm-4 control-label">Approval Status</label>
+                    <div class="col-sm-8">
+                        <select id="ddlApprovalStatus" name="ddlApprovalStatus" tabindex="3" class="form-control">
+                            <option value="0">--Status--</option>
+                            <option value="Final">Final</option>
+                            <option value="Draft">Draft</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 flop">
+                <div class="form-group  col-md-4">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Invoice No.</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtInvoiceNo" name="txtInvoiceNo" tabindex="4" placeholder="Search with Invoice No." type="text" maxlength="50" />
+                    </div>
+                </div>
+            
+                <div class="form-group col-md-4">
+                    <label for="txtFromDate" class="col-sm-4 control-label">Return From Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtFromDate" name="txtFromDate" tabindex="5" value="@ViewData["fromDate"]" type="text" maxlength="50" />
+                        <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["fromDate"]" type="hidden" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtToDate" class="col-sm-4 control-label">To Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtToDate" name="txtToDate" tabindex="6" value="@ViewData["toDate"]" type="text" maxlength="50" />
+                        <input id="hdnToDate" name="hdnToDate" value="@ViewData["toDate"]" type="hidden" />
+                    </div>
+                </div>
+            </div>  
+
+            <div class="col-md-12">
+                <div class="form-group  col-md-4">
+                    <label for="txtCustomerName" class="col-sm-4 control-label">Customer Name</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtCustomerName" name="txtCustomerName" tabindex="4" placeholder="Search with Customer Name" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="row col-sm-12 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                           
+                            <input class="btn btn-success" type="button" id="btnReset" tabindex="8" onclick="ClearFieldsReport()" value="Reset" />
+                            <a class="btn btn-success" alt="Export" tabindex="10" id="btnExport" onclick="OpenPrintPopup();" border="0">Export</a>
+                        </center>
+                    </div>
+
+                    <div class="col-md-3" style="text-align:right;display:none;">
+                        <input class="btn btn-success" value="Export" alt="Export" id="btnExport" onclick="Export()" type="button" border="0">
+                    </div>
+                </div>
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div id="divList">
+
+                    </div>
+                </div>
+            </div>
+        <!-- Modal -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="printModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Replacement Product Summary </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="ddlPrintOption" class="col-sm-4 control-label">Report Option</label>
+                            <div class="col-sm-8">
+                                <select id="ddlPrintOption" name="ddlPrintOption" onchange="ShowHidePrintOption()" tabindex="1" class="form-control">
+                                    <option selected="selected" value="PDF">PDF</option>
+                                    <option value="Excel">Excel</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-success" target="_blank" href="#" id="btnPdf">Print</a>
+                        <a class="btn btn-success" style="display:none;" target="_blank" href="#" id="btnExcel">Print</a>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="modal fade" tabindex="7" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="7" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" tabindex="7" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/Rerurn/ListReturn.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/Common.js"></script>

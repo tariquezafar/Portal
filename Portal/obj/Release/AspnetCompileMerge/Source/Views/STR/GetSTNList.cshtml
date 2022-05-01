@@ -1,0 +1,60 @@
+﻿@model List<Portal.Core.ViewModel.STNViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblSTNList">
+            <thead>
+                <tr>
+                    <th align="center">Select</th>
+                    <th>STN No.</th>
+                    <th>STN Date</th>
+                    <th>GR No</th>
+                    <th>From Loaction</th>
+                    <th>To Location</th>
+                    <th>Net Amount</th>
+                    <th>Created By User</th>
+                    <th>Created Date</th>
+             
+                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" href="#" onclick="SelectSTN('@item.STNId','@item.STNNo','@item.STNDate','@item.GRNo','@item.FromWarehouseId','@item.ToWarehouseId','@item.TotalValue')"></a>
+                        </td>
+                        <td>@item.STNNo</td>
+                        <td>@item.STNDate</td>
+                        <td>@item.GRNo</td>
+                        <td>@item.FormLocationName
+                        <input type="hidden" name="hdnFromLocationId" id="hdnFromLocationId" value="@item.FromWarehouseId" />
+                        </td>
+                        <td>@item.ToLocationName</td>
+                        <td>@item.TotalValue</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblSTNList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

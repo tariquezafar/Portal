@@ -1,0 +1,224 @@
+﻿@{
+    ViewBag.Title = "Add CTC";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<style>
+
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">HR</a> >> Add/Edit CTC </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditProductType" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+          
+
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="ddlDesignation" class="col-sm-4 control-label">Designation&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlDesignation" name="ddlDesignation" tabindex="1" class="form-control"></select>
+                        <input id="hdnCTCId" type="hidden" value="@ViewData["ctcId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    </div>
+                </div> 
+                <div class="form-group col-md-4">
+                    <label for="txtBasicPay" class="col-sm-4 control-label">Basic Pay&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtBasicPay"  name="txtBasicPay" onkeyup="checkDec(this);" onblur="CalculatateBasicPay();"   tabindex="2" placeholder="Enter Basic Salary" type="text" maxlength="100" />                       
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="txtHraPercentage" class="col-sm-4 control-label">HRA Percentage &nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="txtHraPercentage" name="txtHraPercentage"   onkeyup="checkDec(this);"  onblur="CalculatateBasicPay();" tabindex="3" type="text" placeholder="Enter HRA Percentage" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-12 ">
+                <div class="form-group col-md-4">
+                    <label for="txtHRAAmount" class="col-sm-4 control-label">HRA Amount&nbsp;</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtHRAAmount" name="txtHRAAmount" onkeyup="checkDec(this);" tabindex="4" placeholder="Enter HRA Amount" type="text" maxlength="100" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="txtConveyanceAllow" class="col-sm-4 control-label">Conveyance Allowance&nbsp;</label>
+                    <div class="col-sm-8">
+                        <input id="txtConveyanceAllow" name="txtConveyanceAllow" onkeyup="checkDec(this);" tabindex="5" type="text" placeholder="Enter Conveyance Allowance" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="txtMedicalAllow" class="col-sm-4 control-label">Medical Allowance&nbsp;</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtMedicalAllow" name="txtMedicalAllow" onkeyup="checkDec(this);" tabindex="6" placeholder="Enter Medical Allowance" type="text" maxlength="100" />
+                    </div>
+                </div>
+
+               
+            </div>
+            <div class="col-md-12 ">
+                <div class="form-group col-md-4">
+                    <label for="txtChildEduAllow" class="col-sm-4 control-label">Child Edu Allowance&nbsp;</label>
+                    <div class="col-sm-8">
+                        <input id="txtChildEduAllow" name="txtChildEduAllow" onkeyup="checkDec(this);" tabindex="7" type="text" placeholder="Enter Child Edu Allowance" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtLTA" class="col-sm-4 control-label">LTA&nbsp;</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtLTA" name="txtLTA" onkeyup="checkDec(this);" tabindex="8" placeholder="Enter LTA" type="text" maxlength="100" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="txtSpecialAllow" class="col-sm-4 control-label">Special Allowance&nbsp;</label>
+                    <div class="col-sm-8">
+                        <input id="txtSpecialAllow" name="txtSpecialAllow" onkeyup="checkDec(this);" tabindex="9" type="text" placeholder="Enter Special Allowance" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-12 ">
+                <div class="form-group col-md-4">
+                    <label for="txtOtherAllow" class="col-sm-4 control-label">Other Allowance&nbsp;</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtOtherAllow" name="txtOtherAllow" onkeyup="checkDec(this);" tabindex="10" placeholder="Enter Other Allowance" type="text" maxlength="100" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="txtGrossSalary" class="col-sm-4 control-label">Gross Salary&nbsp;</label>
+                    <div class="col-sm-8">
+                        <input id="txtGrossSalary" name="txtGrossSalary" onkeyup="checkDec(this);" tabindex="11" type="text" placeholder="Enter Gross Salary" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="txtEmployeePF" class="col-sm-4 control-label">Employee PF&nbsp;</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtEmployeePF" name="txtEmployeePF" onkeyup="checkDec(this);" tabindex="12" placeholder="Enter Employee PF" type="text" maxlength="100" />
+                    </div>
+                </div>
+
+             
+            </div>
+            <div class="col-md-12 ">
+                <div class="form-group col-md-4">
+                    <label for="txtEmployeeESI" class="col-sm-4 control-label">Employee ESI&nbsp;</label>
+                    <div class="col-sm-8">
+                        <input id="txtEmployeeESI" name="txtEmployeeESI" onkeyup="checkDec(this);" tabindex="13" type="text" placeholder="Enter Employee ESI" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtProfessionalTax" class="col-sm-4 control-label">Professional Tax&nbsp;</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtProfessionalTax" name="txtProfessionalTax" onkeyup="checkDec(this);" tabindex="14" placeholder="Enter Professional Tax" type="text" maxlength="100" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="txtNetSalary" class="col-sm-4 control-label">Net Salary&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="txtNetSalary" name="txtNetSalary" onkeyup="checkDec(this);" tabindex="15" type="text" placeholder="Enter Net Salary" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-12 ">
+                <div class="form-group col-md-4">
+                    <label for="txtEmployerPF" class="col-sm-4 control-label">Employer PF&nbsp;</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtEmployerPF" name="txtEmployerPF" onkeyup="checkDec(this);" tabindex="16" placeholder="Enter Employer PF" type="text" maxlength="100" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="txtEmployerESI" class="col-sm-4 control-label">Employer ESI&nbsp;</label>
+                    <div class="col-sm-8">
+                        <input id="txtEmployerESI" name="txtEmployerESI" onkeyup="checkDec(this);" tabindex="17" type="text" placeholder="Enter Employer ESI" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="txtMonthlyCTC" class="col-sm-4 control-label">Monthly CTC&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtMonthlyCTC" name="txtMonthlyCTC" onkeyup="checkDec(this);" tabindex="18" placeholder="Enter Monthly CTC" type="text" maxlength="100" />
+                    </div>
+                </div>
+
+               
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtYearlyCTC" class="col-sm-4 control-label">Yearly CTC&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="txtYearlyCTC" name="txtYearlyCTC" onkeyup="checkDec(this);" tabindex="19" type="text" placeholder="Enter Yearly CTC" maxlength="50" class="form-control" />
+                    </div>
+                </div>         
+                <div class="form-group col-md-4">
+                    <label for="txtstatus" class="col-sm-4 control-label">Status&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="20" />
+                    </div>
+                </div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="21" onclick="SaveData(1)" type="button" border="0"> 
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="21" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                
+                                <a class="btn btn-success" id="btnReset" tabindex="23" href="@Url.Content("~/CTCType/AddEditCTC")">Reset</a>                    
+                         @*<input class="btn btn-success" type="button" id="btnReset" tabindex="22" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@                       
+                        <a class="btn btn-success" id="btnList" tabindex="23" href="@Url.Content("~/CTCType/ListCTC")">Search CTC</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/CTC/AddCTC.js"></script>
+<script>
+        $( document ).ready(function() {
+            document.getElementById("ddlDesignation").focus();
+    });
+</script>

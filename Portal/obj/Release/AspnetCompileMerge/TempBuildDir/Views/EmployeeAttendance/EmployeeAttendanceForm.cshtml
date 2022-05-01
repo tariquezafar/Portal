@@ -1,0 +1,165 @@
+﻿@{
+    ViewBag.Title = "List Employee Attendance";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style type="text/css">
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">HR </a> >> List Employee Attendance</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditEmployeeAttendance" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="txtAttendanceDate" class="col-sm-4 control-label">Attendance From Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtAttendanceDate" name="txtAttendanceDate" tabindex="1" value="@ViewData["attendanceDate"]" type="text" maxlength="50" />
+                        <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["attendanceDate"]" type="hidden" />
+                        <input id="hdnLoggedInUserRoleId" name="" type="hidden" value="@ViewData["loggedInUserRoleId"]" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="ddlEmploymentType" class="col-sm-4 control-label">Employee Type</label>
+                    <div class="col-sm-8">
+                        <select id="ddlEmploymentType" name="ddlEmploymentType" tabindex="14" class="form-control">
+                            <option selected="selected" value="0">-Select Employee Type-</option>
+                            @*@if (@ViewData["loggedInUserRoleId"].ToString().Trim().Equals("2"))
+                                {
+                                    <option value="Regular">Regular</option>
+                                }
+                                else
+                                {
+                                <option value="Workers">Workers</option>
+                                <option value="Local">Local</option>
+                                <option value="Temporary">Temporary</option>
+                                <option value="Consultant">Consultant</option>
+                                }*@
+                            <option value="Regular">Regular</option>
+                            <option value="Workers">Workers</option>
+                            <option value="Local">Local</option>
+                            <option value="Temporary">Temporary</option>
+                            @*<option value="Consultant">Consultant</option>*@
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlDepartment" class="col-sm-4 control-label">Department</label>
+                    <div class="col-sm-8">
+                        <select id="ddlDepartment" name="ddlDepartment" onchange="BindDesignationList(0)" tabindex="7" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="ddlDesignation" class="col-sm-4 control-label">Designation</label>
+                    <div class="col-sm-8">
+                        <select id="ddlDesignation" name="ddlDesignation" tabindex="7" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="txtCustomerName" class="col-sm-4 control-label">Customer Name&nbsp;<span class="Mandatory" id="spnCustomerName" style="display:none;">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtCustomerName" name="txtCustomerName" tabindex="11" placeholder="Enter Customer Name" type="text" maxlength="100" />
+                        <input id="hdnCustomerId" type="hidden" value="0" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtCustomerCode" class="col-sm-4 control-label">Customer Site&nbsp;<span class="Mandatory" id="spnCustomerSite" style="display:none;">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCustomerBranch" name="ddlCustomerBranch" tabindex="9" class="form-control"></select>
+                        <input id="hdnCustomerBranchId" type="hidden" value="0" />
+                    </div>
+                </div>
+            </div>
+            @*<div class="col-md-12" style="top: 33px;margin-bottom: 54px;">
+                    <div class="form-group col-md-6">
+                        <label for="txtAttendanceDate" class="col-sm-4 control-label">Attendance From Date</label>
+                        <div class="col-sm-8 ">
+                            <input class="form-control" id="txtAttendanceDate" name="txtAttendanceDate" tabindex="1" value="@ViewData["attendanceDate"]" type="text" maxlength="50" />
+                            <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["attendanceDate"]" type="hidden" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="ddlDepartment" class="col-sm-4 control-label">Department</label>
+                        <div class="col-sm-8">
+                            <select id="ddlDepartment" name="ddlDepartment" onchange="BindDesignationList(0)" tabindex="7" class="form-control"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group col-md-6">
+                        <label for="ddlDesignation" class="col-sm-4 control-label">Designation</label>
+                        <div class="col-sm-8">
+                            <select id="ddlDesignation" name="ddlDesignation" tabindex="7" class="form-control"></select>
+                        </div>
+                    </div>
+                </div>*@
+
+
+            <div class="row col-sm-12 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6" style="margin-bottom: 25px;">
+                    <center>
+                        @*<input class="btn btn-success" value="Search" alt="Search" tabindex="3" id="btnSearch" onclick="SearchEmployeeAttendance()" type="button" border="0">*@&nbsp;&nbsp;
+                        <a class="btn btn-success" id="btnList" tabindex="5" onclick="RoleBasedAttendanceMark()">Add Attendance</a>
+                        <a class="btn btn-success" id="btnList" tabindex="5" href="@Url.Action("EmployeeAttendanceForm")">Reset</a>
+                        @*<input class="btn btn-success" type="button" id="btnReset" tabindex="4" onclick="@Url.Action("EmployeeAttendanceForm","EmployeeAttendance")" value="Reset" />*@ &nbsp;&nbsp;
+                        <input type="hidden" id="hdnEmployeeId" value="0" />
+                        <input type="hidden" id="hdnEmployeeName" value="0" />
+
+                        @*<a class="btn btn-success" id="btnList" tabindex="5" href="@Url.Action("AddEditEmployeeAttendance", new { employeeId = ViewData["employeeId"], employeeName = ViewData["employeeName"] })">Add More Attendance</a>*@
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div id="divEmployeeAttendanceList">
+
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/jquery.datetimepicker.full.js"></script>
+<script src="~/Scripts/jquery.datetimepicker.full.min.js"></script>
+<script src="~/Scripts/jquery.datetimepicker.min.js"></script>
+<script src="~/Scripts/EmployeeAttendance/EmployeeAttendanceForm.js"></script>
+<script type="text/javascript">
+    $("body").on('click', '.dropdown-toggle', function () {
+        $(".dropdown-toggle").parent().toggleClass('open');
+    });
+
+</script>

@@ -1,0 +1,160 @@
+11:25:18 AM
+Source : Portal.DAL.DBInterface
+Method Name : AuthorizeUser
+Error Line No : 106
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+--------------------------------------------------------------------------------------------------------------------------------
+
+11:25:40 AM
+Source : Portal.Controllers.LeadController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:26:40 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The partial view 'GetPOProductList' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/PO/GetPOProductList.aspx
+~/Views/PO/GetPOProductList.ascx
+~/Views/Shared/GetPOProductList.aspx
+~/Views/Shared/GetPOProductList.ascx
+~/Views/PO/GetPOProductList.cshtml
+~/Views/PO/GetPOProductList.vbhtml
+~/Views/Shared/GetPOProductList.cshtml
+~/Views/Shared/GetPOProductList.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+15:28:59 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The partial view 'GetPOProductList' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/PO/GetPOProductList.aspx
+~/Views/PO/GetPOProductList.ascx
+~/Views/Shared/GetPOProductList.aspx
+~/Views/Shared/GetPOProductList.ascx
+~/Views/PO/GetPOProductList.cshtml
+~/Views/PO/GetPOProductList.vbhtml
+~/Views/Shared/GetPOProductList.cshtml
+~/Views/Shared/GetPOProductList.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+15:29:39 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The partial view 'GetPOProductList' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/PO/GetPOProductList.aspx
+~/Views/PO/GetPOProductList.ascx
+~/Views/Shared/GetPOProductList.aspx
+~/Views/Shared/GetPOProductList.ascx
+~/Views/PO/GetPOProductList.cshtml
+~/Views/PO/GetPOProductList.vbhtml
+~/Views/Shared/GetPOProductList.cshtml
+~/Views/Shared/GetPOProductList.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+15:29:41 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The partial view 'GetPOProductList' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/PO/GetPOProductList.aspx
+~/Views/PO/GetPOProductList.ascx
+~/Views/Shared/GetPOProductList.aspx
+~/Views/Shared/GetPOProductList.ascx
+~/Views/PO/GetPOProductList.cshtml
+~/Views/PO/GetPOProductList.vbhtml
+~/Views/Shared/GetPOProductList.cshtml
+~/Views/Shared/GetPOProductList.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+18:32:51 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'poId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetPOTaxList(System.Collections.Generic.List`1[Portal.Core.ViewModel.POTaxViewModel], Int64)' in 'Portal.Controllers.POController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:32:51 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'poId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetPOProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.POProductViewModel], Int64)' in 'Portal.Controllers.POController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:04 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'poId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetPOTermList(System.Collections.Generic.List`1[Portal.Core.ViewModel.POTermViewModel], Int64)' in 'Portal.Controllers.POController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:35:39 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'poId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetPOTaxList(System.Collections.Generic.List`1[Portal.Core.ViewModel.POTaxViewModel], Int64)' in 'Portal.Controllers.POController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:35:39 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'poId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetPOProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.POProductViewModel], Int64)' in 'Portal.Controllers.POController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:35:42 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'poId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetPOTermList(System.Collections.Generic.List`1[Portal.Core.ViewModel.POTermViewModel], Int64)' in 'Portal.Controllers.POController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:35:47 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'poId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetPOTermList(System.Collections.Generic.List`1[Portal.Core.ViewModel.POTermViewModel], Int64)' in 'Portal.Controllers.POController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:58:39 PM
+Source : Portal.Controllers.POController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'poId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetPOTaxList(System.Collections.Generic.List`1[Portal.Core.ViewModel.POTaxViewModel], Int64)' in 'Portal.Controllers.POController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+19:36:28 PM
+Source : Portal.Controllers.PurchaseInvoiceController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\Anil Work Area\Portal\Portal\Views\PurchaseInvoice\GetPIProductList.cshtml(23): error CS1061: 'Portal.Core.ViewModel.PurchaseInvoiceProductDetailViewModel' does not contain a definition for 'PIProductDetailId' and no extension method 'PIProductDetailId' accepting a first argument of type 'Portal.Core.ViewModel.PurchaseInvoiceProductDetailViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+

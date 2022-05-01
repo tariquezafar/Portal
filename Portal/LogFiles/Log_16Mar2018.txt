@@ -1,0 +1,920 @@
+10:39:03 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GenerateBankBook
+Error Line No : 11386
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_PrintBankBook has too many arguments specified.
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:39:03 AM
+Source : Portal.Core.BankBookPrintBL
+Method Name : GenerateBankBook
+Error Line No : 27
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_PrintBankBook has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:39:03 AM
+Source : Portal.Controllers.BookPrintController
+Method Name : BankBookGenerate
+Error Line No : 53
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_PrintBankBook has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:43:44 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 223
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+10:43:44 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1422
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+10:43:48 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 223
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+10:43:48 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1422
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:16 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:16 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:08:37 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:08:37 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:21:47 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:21:47 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:22:45 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:22:45 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:35:48 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:35:48 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:45:27 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:45:27 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:50:32 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GenerateBankBook
+Error Line No : 11386
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_PrintBankBook has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:50:32 AM
+Source : Portal.Core.BankBookPrintBL
+Method Name : GenerateBankBook
+Error Line No : 27
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_PrintBankBook has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:50:32 AM
+Source : Portal.Controllers.BookPrintController
+Method Name : BankBookGenerate
+Error Line No : 53
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_PrintBankBook has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:58:05 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:58:05 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:48:48 PM
+Source : Portal.Controllers.BookPrintController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'bookId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult BankBookGenerate(Int32, System.String, System.String, Int32)' in 'Portal.Controllers.BookPrintController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:26 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:26 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:33 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPurchaseIndentList
+Error Line No : 18540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPurchaseIndent' expects parameter '@companyBranch', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:33 PM
+Source : Portal.Core.PurchaseIndentBL
+Method Name : GetPurchaseIndentList
+Error Line No : 173
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPurchaseIndent' expects parameter '@companyBranch', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:33 PM
+Source : Portal.Controllers.PurchaseIndentController
+Method Name : GetPurchaseIndentList
+Error Line No : 153
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPurchaseIndent' expects parameter '@companyBranch', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:30 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:30 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:30 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:43 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:43 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:43 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:47 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:47 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:47 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:54 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:54 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:54 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:43:20 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:43:20 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:43:20 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:43:31 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:43:31 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:43:31 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:43:54 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:43:54 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:43:54 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:44:49 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:44:49 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:45:08 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:45:19 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+13:45:19 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:11 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:11 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:02:12 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:02:12 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:14:35 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:14:35 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:14:59 PM
+Source : Portal.Controllers.BookPrintController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'CompanyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult BankBookReport(System.String, System.String, System.String, System.String, Int32, System.String)' in 'Portal.Controllers.BookPrintController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+14:16:15 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:16:16 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:25:22 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:25:22 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:52:40 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:52:40 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:06:21 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:06:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:46:27 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:46:30 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:46:56 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:46:56 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:47:00 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:47:02 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:50:14 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:50:28 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:57:14 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:01:54 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:02:04 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:05:34 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:05:56 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:05:56 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:05:59 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:27:22 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:47:50 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:51 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:53:58 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:57:51 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:57:53 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:57:56 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:58:00 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+17:03:18 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:03:18 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:04:02 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:04:02 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:10:27 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:10:27 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:24:35 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:24:35 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:27:45 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:27:45 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:24 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:24 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:41:58 PM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetBookList(System.String, Int32)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:10:57 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:10:57 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

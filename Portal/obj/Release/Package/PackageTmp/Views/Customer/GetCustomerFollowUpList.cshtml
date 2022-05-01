@@ -1,0 +1,121 @@
+﻿@model List<Portal.Core.ViewModel.CustomerFollowUpViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblLeadList" >
+            <thead>
+                <tr> 
+                    <th>Follow Up</th>   
+                    <th>Due DateTime</th>  
+                    <th>Reminder DateTime</th>  
+                    <th>Remarks</th> 
+                    <th>Status Reason</th> 
+                    <th>Priority</th>  
+                    <th>Status</th>
+                    <th>Follow Up By User</th>
+                    @*<th>Created By</th> 
+                    <th>Created Date</th> 
+                    <th>Modified By</th>
+                    <th>Modified Date</th>*@ 
+                     
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success"> 
+                        <td>
+                            @item.FollowUpActivityTypeName 
+                            <input type="hidden" id="hdnCustomerFollowUpId" value="@item.CustomerFollowUpId" />
+                            <input type="hidden" id="hdnFollowUpActivityTypeId" value="@item.FollowUpActivityTypeId" />
+                            <input type="hidden" id="hdnFollowUpActivityTypeName" value="@item.FollowUpActivityTypeName" />
+                            <input type="hidden" id="hdnFollowUpSequenceNo" value="@item.FollowUpSequenceNo" />
+                        </td>
+                        <td>@item.FollowUpDueDateTime 
+                            <input type="hidden" id="hdnFollowUpDueDateTime" value="@item.FollowUpDueDateTime" />
+                        </td>
+                        <td>@item.FollowUpReminderDateTime 
+                            <input type="hidden" id="hdnFollowUpReminderDateTime" value="@item.FollowUpReminderDateTime" />
+                         </td>
+                        <td>@item.FollowUpRemarks
+                            <input type="hidden" id="hdnFollowUpRemarks" value="@item.FollowUpRemarks" />
+                        </td>
+                        <td>@item.PriorityName
+                            <input type="hidden" id="hdnPriority" value="@item.Priority" />
+                            <input type="hidden" id="hdnPriorityName" value="@item.PriorityName" />
+                        </td>
+                        <td>@item.FollowUpStatusName
+                            <input type="hidden" id="hdnFollowUpStatusId" value="@item.FollowUpStatusId" />
+                            <input type="hidden" id="hdnFollowUpStatusName" value="@item.FollowUpStatusName" />
+                        </td>
+                        <td>@item.FollowUpStatusReason
+                            <input type="hidden" id="hdnFollowUpStatusReason" value="@item.FollowUpStatusReason" />
+                        </td>
+                        <td>@item.FollowUpByUserName
+                            <input type="hidden" id="hdnFollowUpByUserId" value="@item.FollowUpByUserId" />
+                            <input type="hidden" id="hdnFollowUpByUserName" value="@item.FollowUpByUserName" />
+                            <input type="hidden" id="hdnFollowUpCreatedBy" value="@item.CreatedBy" />
+                            
+                       </td>
+                        
+                        @*<td>@item.CreatedBy
+                           
+                        </td>
+                        <td> @item.CreatedDate
+                            <input type="hidden" id="hdnLeadCreatedDate" value="@item.CreatedDate" />
+                        </td>
+                        <td> @item.ModifiedBy
+                            <input type="hidden" id="hdnLeadModifiedBy" value="@item.ModifiedBy" />
+                        </td>
+                        <td>@item.ModifiedDate
+                            <input type="hidden" id="hdnLeadModifiedDate" value="@item.ModifiedDate" />
+                        </td>*@ 
+                        
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" onclick="EditFollowUpRow(this);" href="#"></a>
+                        </td>
+                        
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    @*<h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>*@
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblLeadList">
+            <thead>
+                <tr> 
+                    <th>Acitivity Type</th>
+                    <th>Due Date</th>
+                    <th>Reminder Date</th>
+                    <th>Remarks</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Status Reason</th>
+                    <th>Follow Up By User</th>
+                    @*<th>Created Date</th>
+                        <th>Modified By</th>
+                        <th>Modified Date</th>*@
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+        </table>
+        </div>
+        }
+        @*<script>
+                $(document).ready(function () {
+                    $('#tblLeadList').paging({
+                        limit: 10,
+                        rowDisplayStyle: 'block',
+                        activePage: 0,
+                        rows: []
+                    });
+
+                });
+            </script>*@

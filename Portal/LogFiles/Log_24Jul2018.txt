@@ -1,0 +1,16 @@
+21:50:49 PM
+Source : Portal.DAL.DBInterface
+Method Name : GetChasisSerialNoList
+Error Line No : 0
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+--------------------------------------------------------------------------------------------------------------------------------
+
+21:50:49 PM
+Source : Portal.Core.ChasisSerialPlanBL
+Method Name : GetChasisSerialNoList
+Error Line No : 393
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+

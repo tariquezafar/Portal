@@ -1,0 +1,94 @@
+﻿@model List<Portal.Core.ViewModel.PurchaseSummaryRegisterViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+<style>
+    .table {
+        width: 112% !important;
+        max-width: 112% !important;
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+
+    #tblSaleInvoiceList tr th {
+        text-align: center;
+        border: 1px solid #ccc !important;
+        font-family: Arial;
+        color: #fff;
+    }
+
+    table tr td {
+        border: 1px solid #ccc !important;
+        font-family: Arial;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblPurchaseInvoiceList">
+            <thead>
+                <tr>
+                    <th>Invoice No.</th>
+                    <th>Invoice Date</th> 
+                    <th>Vendor Name</th>
+                    <th>State</th>
+                    <th>Gross Amount</th> 
+                    <th>Total Amount</th>
+                    <th>Amount Paid</th>
+                    <th>Amount Pending</th>
+                    <th>Created By User</th>
+                    <th>Company Branch</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="margin:0px 2px auto;">
+                            @item.InvoiceNo
+                        </td> 
+                        <td>@item.InvoiceDate</td> 
+                        <td>@item.VendorName</td>
+                        <td>@item.StateName</td>
+                        <td>@item.BasicValue</td> 
+                        <td>@item.TotalValue</td>
+                        <td>@item.AmountPaid</td>
+                        <td>@item.AmountPending</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.companyBranch</td>
+                        
+  </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblPurchaseInvoiceList').paging({
+            limit: 100,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

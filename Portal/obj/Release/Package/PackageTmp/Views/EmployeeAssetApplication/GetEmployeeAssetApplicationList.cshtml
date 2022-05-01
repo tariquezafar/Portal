@@ -1,0 +1,123 @@
+﻿@model List<Portal.Core.ViewModel.EmployeeAssetApplicationViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+
+    table tr:nth-child(2n+1) {
+        background-color: #dff0d8;
+    }
+
+    table tr:nth-child(2n) {
+        background-color: #dff0d8;
+    }
+</style>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblEmployeeAssetApplicationList">
+            <thead>
+                <tr>
+                    <th>Application No.</th>
+                    <th>Application Date</th>
+                    <th>Company Branch</th>
+                    <th>Employee Name</th>
+                    <th>Asset Type Name</th>
+                    <th>Asset Reason </th>
+                    <th>Asset Status </th>
+                    <th align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.ApplicationNo</td>
+                        <td>@item.ApplicationDate</td>
+                        <td>@item.CompanyBranchName</td>
+                        <td>@item.EmployeeName</td>
+                        <td>@item.AssetTypeName</td>
+                        <td>@item.AssetReason</td>
+
+                        @if (item.ApplicationStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine;">
+                                @item.ApplicationStatus
+                            </td>
+                        }
+                        else if (item.ApplicationStatus.ToUpper() == "REJECTED")
+                        {
+                            <td style="background-color:red;color:white">
+                                @item.ApplicationStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green;color:white">
+                                @item.ApplicationStatus
+                            </td>
+
+                        }
+
+
+                        <td class="btn btn-success table_btn" style="margin:0px auto;">
+                            @if (Convert.ToString(ViewData["essEmployeeId"]) != "0" && Convert.ToString(ViewData["essEmployeeName"]) != "")
+                            {
+                                <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/EmployeeAssetApplication/AddEditEmployeeAssetApplication?applicationId=@item.ApplicationId&AccessMode=3&essEmployeeId=@item.EmployeeId&essEmployeeName=@item.EmployeeName"></a>
+                                if (item.ApplicationStatus.ToUpper() == "DRAFT")
+                                {
+                                    <a style="color:white" class="fa fa-pencil-square-o" href="~/EmployeeAssetApplication/AddEditEmployeeAssetApplication?applicationId=@item.ApplicationId&AccessMode=2&essEmployeeId=@item.EmployeeId&essEmployeeName=@item.EmployeeName"></a>
+                                }
+                            }
+                            else
+                            {
+                                <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/EmployeeAssetApplication/AddEditEmployeeAssetApplication?applicationId=@item.ApplicationId&AccessMode=3"></a>
+                                if (item.ApplicationStatus.ToUpper() == "DRAFT")
+                                {
+                                    <a style="color:white" class="fa fa-pencil-square-o" href="~/EmployeeAssetApplication/AddEditEmployeeAssetApplication?applicationId=@item.ApplicationId&AccessMode=2"></a>
+                                }
+                            }
+                        </td>
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblEmployeeAssetApplicationList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

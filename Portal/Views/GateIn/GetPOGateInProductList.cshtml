@@ -1,0 +1,143 @@
+﻿@model List<Portal.Core.ViewModel.POProductViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    @*<th>S. No.</th>*@
+                    <th style="display:none">S. No.</th>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Product Desc</th>
+                    <th>Unit</th>
+                    <th>Price</th>
+                    <th>Total Qty.</th>
+                    <th>Total Rec. Qty.</th>
+                    <th>Pending Qty.</th>
+                    <th>Rec. Qty.</th>
+                    <th>Accept Qty.</th>
+                    <th style="display:none;">Reject Qty.</th>
+                    @*<th colspan="2" align="center" class="editonly">Action</th>*@
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+
+
+                        <td>
+                            @item.ProductName
+                        <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                        <input type="hidden" id="hdnProductDetailId" value="@item.POProductDetailId" />
+                        <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                        <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                        <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                    </td>
+                        <td>@item.ProductCode</td>
+                        <td>@item.ProductShortDesc</td>
+                    <td> @item.UOMName
+                    <input type="hidden" id="hdnUOMName" value="@item.UOMName" />
+                    <input type="hidden" id="hdnProductShortDesc" value="@item.ProductShortDesc" />
+
+                </td>
+                <td>
+                    @item.Price
+                    <input type="hidden" id="hdnPrice" value="@item.Price" />
+                </td>
+                <td>
+                    @item.Quantity
+                    <input type="hidden" id="hdnQuantity" value="@item.Quantity" />
+                </td>
+               <td>
+                    @item.TotalRecQuantity
+                    <input type="hidden" id="hdnTotalRecQuantity" value="@item.TotalRecQuantity" />
+                </td>
+                <td>
+                    @item.PendingQuantity
+                    <input type="hidden" id="hdnPendingQuantity" value="@item.PendingQuantity" />
+                </td>
+               <td>
+                   <input type="text" id="txtReceivedQuantity"  class="receivedQuantity form-control  input-number right-text" value="@item.ReceivedQuantity" style="width:120px;height:25px;" />
+       
+        <input type="hidden" id="hdnReceivedQuantity" value="@item.ReceivedQuantity"  />
+    </td>
+    <td>
+        <input type="text" id="txtAcceptQuantity" class="acceptQuantity form-control  input-number right-text" value="@item.AcceptQuantity" style="width:120px;height:25px;"  disabled="disabled" />
+       
+        <input type="hidden" id="hdnAcceptQuantity" value="@item.AcceptQuantity" class="acceptQuantity" />
+    </td>
+
+    <td style="display:none;">
+        <input type="text" id="txtRejectQuantity" class="rejectQuantity form-control  input-number right-text" value="@item.RejectQuantity" style="width:120px;height:25px;" disabled="disabled"  />
+       
+        <input type="hidden" id="hdnRejectQuantity" value="@item.RejectQuantity" />
+    </td>
+@*
+    <td>
+        @item.TotalPrice
+        <input type="hidden" id="hdnTotalPrice" value="@item.TotalPrice" />
+    </td>*@
+                @*<td class="btn btn-success table_btn editonly" style="width:30px; margin:0px 2px auto;">
+                    <a style="color:white" class="fa fa-pencil-square-o" onclick="EditProductRow(this);" href="#"></a>
+                </td>
+                <td class="btn btn-success table_btn editonly" style="width:30px; margin:0px 2px auto;">
+                    <a style="color:white" class="fa fa-trash" onclick="RemoveProductRow(this)" href="#"></a>
+                </td>*@
+            </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Product Desc</th>
+                    <th>Unit</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                   <th>Total Rec. QTY.</th>
+                    <th>Pending QTY.</th>
+                    <th>Rec. QTY.</th>
+                    <th>Acc. QTY.</th>
+                    <th style="display:none;">Rej. QTY</th>
+                    @*<th>Total Price</th>*@
+                    @*<th colspan="2" align="center">Action</th>*@
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+<script>
+    $(document).ready(function () {
+        if ($("#hdnAccessMode").val() == "3") {
+            $(".editonly").hide();
+        }
+
+    });
+    $(".receivedQuantity").keypress(function (e) {
+        //if the letter is not digit then display error and don't type anything
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            //display error message
+            // $("#errmsg").html("Digits Only").show().fadeOut("slow");
+            return false;
+        }
+    });
+    $(".receivedQuantity").keypress(function (e) {
+        //if the letter is not digit then display error and don't type anything
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            //display error message
+            // $("#errmsg").html("Digits Only").show().fadeOut("slow");
+            return false;
+        }
+    });
+</script>

@@ -1,0 +1,74 @@
+﻿@model List<Portal.Core.ViewModel.FinYearViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+ .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+ table tr:nth-child(2n+1) {
+    
+    background-color: #dff0d8;
+    }
+
+     table tr:nth-child(2n) {
+    
+    background-color: #dff0d8;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px; background-color:white">
+        <table class="table table-bordered table-hover"  id="tblFinYearList">
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Start Period</th>
+                    <th>End Period</th>
+                    <th>Fin. Year Code</th>
+                    <th>Fin. Year Desc.</th>
+                    <th>Fin. Year Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="info">
+                       
+                        <td class="teal text" style="margin:0px auto;">
+                             <a style="color:darkgreen" title="Edit" class="fa fa-pencil" href="~/FinYear/AddEditFinYear?finYearId=@item.FinYearId&AccessMode=2"></a>
+                          </td>
+                        <td>@item.StartDate</td>
+                        <td>@item.EndDate</td>
+                        <td>@item.FinYearCode</td>
+                        <td>@item.FinYearDesc</td>
+                        <td>@(item.FinYearStatus==true?"Active":"Inactive")</td>
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblFinYearList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

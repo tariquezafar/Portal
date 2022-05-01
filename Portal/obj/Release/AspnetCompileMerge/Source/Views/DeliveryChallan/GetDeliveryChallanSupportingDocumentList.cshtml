@@ -1,0 +1,57 @@
+﻿@model List<Portal.Core.ViewModel.DeliveryChallanSupportingDocumentViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblDocumentList">
+            <thead>
+                <tr>
+                    <th style="display:none">S. No.</th>
+                    <th style="text-align:center">Document Type</th>
+                    <th style="text-align:center">Document Name</th>
+                    <th align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="display:none">
+                            @item.DocumentSequenceNo
+                        <input type="hidden" id="hdnDocumentSequenceNo" value="@item.DocumentSequenceNo" />
+                        </td>
+                        <td>@item.DocumentTypeDesc
+                        <input type="hidden" id="hdnDeliveryChallanDocId" value="@item.DeliveryChallanDocId" />
+                        <input type="hidden" id="hdnDocumentTypeId" value="@item.DocumentTypeId" />
+                            <input type="hidden" id="hdnDocumentTypeDesc" value="@item.DocumentTypeDesc" />
+                        </td>
+                        <td>
+                           @Html.ActionLink(item.DocumentName, "DocumentDownload",new { fileName =item.DocumentName})
+                        <input type="hidden" id="hdnDocumentName" value="@item.DocumentName" />
+                            <input type="hidden" id="hdnDocumentPath" value="@item.DocumentPath" />
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-trash"  onclick="RemoveDocumentRow(this)" href="#"></a>
+                        </td>
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblDocumentList">
+            <thead>
+                <tr>
+                    <th style="display:none">S. No.</th>
+                    <th>Document Type</th>
+                    <th>Document Name</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

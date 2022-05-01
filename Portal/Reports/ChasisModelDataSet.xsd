@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ChasisModelDataSet" targetNamespace="http://tempuri.org/ChasisModelDataSet.xsd" xmlns:mstns="http://tempuri.org/ChasisModelDataSet.xsd" xmlns="http://tempuri.org/ChasisModelDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ChasisModelDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ChasisModelDataSet" msprop:Generator_UserDSName="ChasisModelDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ChasisModelDataSet" msprop:Generator_TableClassName="ChasisModelDataSetDataTable" msprop:Generator_TableVarName="tableChasisModelDataSet" msprop:Generator_TablePropName="_ChasisModelDataSet" msprop:Generator_RowDeletingName="ChasisModelDataSetRowDeleting" msprop:Generator_RowChangingName="ChasisModelDataSetRowChanging" msprop:Generator_RowEvHandlerName="ChasisModelDataSetRowChangeEventHandler" msprop:Generator_RowDeletedName="ChasisModelDataSetRowDeleted" msprop:Generator_UserTableName="ChasisModelDataSet" msprop:Generator_RowChangedName="ChasisModelDataSetRowChanged" msprop:Generator_RowEvArgName="ChasisModelDataSetRowChangeEvent" msprop:Generator_RowClassName="ChasisModelDataSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ChasisModelName" msprop:Generator_ColumnVarNameInTable="columnChasisModelName" msprop:Generator_ColumnPropNameInRow="ChasisModelName" msprop:Generator_ColumnPropNameInTable="ChasisModelNameColumn" msprop:Generator_UserColumnName="ChasisModelName" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductSubGroupName" msprop:Generator_ColumnVarNameInTable="columnProductSubGroupName" msprop:Generator_ColumnPropNameInRow="ProductSubGroupName" msprop:Generator_ColumnPropNameInTable="ProductSubGroupNameColumn" msprop:Generator_UserColumnName="ProductSubGroupName" type="xs:string" minOccurs="0" />
+              <xs:element name="ChasisModelCode" msprop:Generator_ColumnVarNameInTable="columnChasisModelCode" msprop:Generator_ColumnPropNameInRow="ChasisModelCode" msprop:Generator_ColumnPropNameInTable="ChasisModelCodeColumn" msprop:Generator_UserColumnName="ChasisModelCode" type="xs:string" minOccurs="0" />
+              <xs:element name="MotorModelCode" msprop:Generator_ColumnVarNameInTable="columnMotorModelCode" msprop:Generator_ColumnPropNameInRow="MotorModelCode" msprop:Generator_ColumnPropNameInTable="MotorModelCodeColumn" msprop:Generator_UserColumnName="MotorModelCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ChasisModelStatus" msprop:Generator_ColumnVarNameInTable="columnChasisModelStatus" msprop:Generator_ColumnPropNameInRow="ChasisModelStatus" msprop:Generator_ColumnPropNameInTable="ChasisModelStatusColumn" msprop:Generator_UserColumnName="ChasisModelStatus" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

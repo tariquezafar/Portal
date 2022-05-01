@@ -1,0 +1,617 @@
+14:24:56 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+--------------------------------------------------------------------------------------------------------------------------------
+
+14:24:56 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 57
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:24:57 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 36
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:25:14 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:25:14 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 57
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:25:14 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 36
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:25:23 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:25:23 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 57
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:25:23 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 36
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:26:02 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:26:02 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 57
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:26:02 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 36
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:26:05 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:26:05 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 57
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:26:05 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 36
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:26:10 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:26:10 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 57
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:26:11 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 36
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:26:30 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:26:30 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 57
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:26:30 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 36
+Exception Type : System.Data.Entity.Core.EntityCommandCompilationException
+Details: An error occurred while preparing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:42:14 PM
+Source : Portal.Controllers.STNController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'stnId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetSTNProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.STNProductDetailViewModel], Int64)' in 'Portal.Controllers.STNController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+17:29:24 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditSTR
+Error Line No : 5021
+Exception Type : System.Data.SqlClient.SqlException
+Details: The procedure "proc_AddEditSTN" has no parameter named "@STRProductDetail".
+---------------------------------------------------------------------------------------------------------------------------
+
+17:29:24 PM
+Source : Portal.Core.STRBL
+Method Name : AddEditSTR
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: The procedure "proc_AddEditSTN" has no parameter named "@STRProductDetail".
+---------------------------------------------------------------------------------------------------------------------------
+
+17:29:24 PM
+Source : Portal.Controllers.STRController
+Method Name : AddEditSTR
+Error Line No : 63
+Exception Type : System.Data.SqlClient.SqlException
+Details: The procedure "proc_AddEditSTN" has no parameter named "@STRProductDetail".
+---------------------------------------------------------------------------------------------------------------------------
+
+17:29:41 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditSTR
+Error Line No : 5021
+Exception Type : System.Data.SqlClient.SqlException
+Details: The procedure "proc_AddEditSTN" has no parameter named "@STRProductDetail".
+---------------------------------------------------------------------------------------------------------------------------
+
+17:29:41 PM
+Source : Portal.Core.STRBL
+Method Name : AddEditSTR
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: The procedure "proc_AddEditSTN" has no parameter named "@STRProductDetail".
+---------------------------------------------------------------------------------------------------------------------------
+
+17:29:41 PM
+Source : Portal.Controllers.STRController
+Method Name : AddEditSTR
+Error Line No : 63
+Exception Type : System.Data.SqlClient.SqlException
+Details: The procedure "proc_AddEditSTN" has no parameter named "@STRProductDetail".
+---------------------------------------------------------------------------------------------------------------------------
+
+17:29:44 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditSTR
+Error Line No : 5021
+Exception Type : System.Data.SqlClient.SqlException
+Details: The procedure "proc_AddEditSTN" has no parameter named "@STRProductDetail".
+---------------------------------------------------------------------------------------------------------------------------
+
+17:29:44 PM
+Source : Portal.Core.STRBL
+Method Name : AddEditSTR
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: The procedure "proc_AddEditSTN" has no parameter named "@STRProductDetail".
+---------------------------------------------------------------------------------------------------------------------------
+
+17:29:44 PM
+Source : Portal.Controllers.STRController
+Method Name : AddEditSTR
+Error Line No : 63
+Exception Type : System.Data.SqlClient.SqlException
+Details: The procedure "proc_AddEditSTN" has no parameter named "@STRProductDetail".
+---------------------------------------------------------------------------------------------------------------------------
+
+17:35:42 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditSTR
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: The procedure "proc_AddEditSTN" has no parameter named "@STRProductDetail".
+---------------------------------------------------------------------------------------------------------------------------
+
+17:35:42 PM
+Source : Portal.Core.STRBL
+Method Name : AddEditSTR
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: The procedure "proc_AddEditSTN" has no parameter named "@STRProductDetail".
+---------------------------------------------------------------------------------------------------------------------------
+
+17:35:42 PM
+Source : Portal.Controllers.STRController
+Method Name : AddEditSTR
+Error Line No : 63
+Exception Type : System.Data.SqlClient.SqlException
+Details: The procedure "proc_AddEditSTN" has no parameter named "@STRProductDetail".
+---------------------------------------------------------------------------------------------------------------------------
+
+17:36:34 PM
+Source : Portal.Controllers.STRController
+Method Name : AddEditSTR
+Error Line No : 63
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:39:03 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditSTR
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSTR' expects parameter '@STRDate', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:39:04 PM
+Source : Portal.Core.STRBL
+Method Name : AddEditSTR
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSTR' expects parameter '@STRDate', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:39:04 PM
+Source : Portal.Controllers.STRController
+Method Name : AddEditSTR
+Error Line No : 63
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSTR' expects parameter '@STRDate', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:42:09 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditSTR
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSTR' expects parameter '@STNNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:42:09 PM
+Source : Portal.Core.STRBL
+Method Name : AddEditSTR
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSTR' expects parameter '@STNNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:42:09 PM
+Source : Portal.Controllers.STRController
+Method Name : AddEditSTR
+Error Line No : 63
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSTR' expects parameter '@STNNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:42:31 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditSTR
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSTR' expects parameter '@STNNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:42:31 PM
+Source : Portal.Core.STRBL
+Method Name : AddEditSTR
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSTR' expects parameter '@STNNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:42:31 PM
+Source : Portal.Controllers.STRController
+Method Name : AddEditSTR
+Error Line No : 63
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSTR' expects parameter '@STNNo', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:45:40 PM
+Source : Portal.Controllers.STNController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'stnId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.JsonResult GetSTNDetail(Int64)' in 'Portal.Controllers.STNController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+17:45:41 PM
+Source : Portal.Core.STRBL
+Method Name : GetSTRProductList
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Column 'STRProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:45:41 PM
+Source : Portal.Controllers.STRController
+Method Name : GetSTRProductList
+Error Line No : 93
+Exception Type : System.ArgumentException
+Details: Column 'STRProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:16 PM
+Source : Portal.Core.STRBL
+Method Name : GetSTRProductList
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Column 'STRProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:16 PM
+Source : Portal.Controllers.STRController
+Method Name : GetSTRProductList
+Error Line No : 93
+Exception Type : System.ArgumentException
+Details: Column 'STRProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:50:18 PM
+Source : Portal.Controllers.STNController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'stnId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.JsonResult GetSTNDetail(Int64)' in 'Portal.Controllers.STNController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+17:54:14 PM
+Source : Portal.Controllers.STNController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'stnId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.JsonResult GetSTNDetail(Int64)' in 'Portal.Controllers.STNController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+17:54:15 PM
+Source : Portal.Core.STRBL
+Method Name : GetSTRProductList
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Column 'STRProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:54:15 PM
+Source : Portal.Controllers.STRController
+Method Name : GetSTRProductList
+Error Line No : 93
+Exception Type : System.ArgumentException
+Details: Column 'STRProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:58:27 PM
+Source : Portal.Core.STRBL
+Method Name : GetSTRProductList
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Column 'STRProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:58:27 PM
+Source : Portal.Controllers.STRController
+Method Name : GetSTRProductList
+Error Line No : 93
+Exception Type : System.ArgumentException
+Details: Column 'STRProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:58:28 PM
+Source : Portal.Controllers.STNController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'stnId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.JsonResult GetSTNDetail(Int64)' in 'Portal.Controllers.STNController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:09:32 PM
+Source : Portal.Controllers.STRController
+Method Name : GetSTNList
+Error Line No : 112
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:14:07 PM
+Source : Portal.Controllers.STNController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'stnId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.JsonResult GetSTNDetail(Int64)' in 'Portal.Controllers.STNController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:47:08 PM
+Source : Portal.Controllers.STNController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'stnId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.JsonResult GetSTNDetail(Int64)' in 'Portal.Controllers.STNController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+19:33:53 PM
+Source : Portal.Core.STRBL
+Method Name : GetSTRList
+Error Line No : 138
+Exception Type : System.ArgumentException
+Details: Column 'STNId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+19:33:53 PM
+Source : Portal.Controllers.STRController
+Method Name : GetSTRList
+Error Line No : 163
+Exception Type : System.ArgumentException
+Details: Column 'STNId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+19:35:33 PM
+Source : Portal.Core.STRBL
+Method Name : GetSTRList
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Column 'STNId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+19:35:33 PM
+Source : Portal.Controllers.STRController
+Method Name : GetSTRList
+Error Line No : 163
+Exception Type : System.ArgumentException
+Details: Column 'STNId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+19:35:42 PM
+Source : Portal.Core.STRBL
+Method Name : GetSTRList
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Column 'STNNo' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+19:36:20 PM
+Source : Portal.Core.STRBL
+Method Name : GetSTRList
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Column 'STNDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+19:36:20 PM
+Source : Portal.Controllers.STRController
+Method Name : GetSTRList
+Error Line No : 163
+Exception Type : System.ArgumentException
+Details: Column 'STNDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+19:36:34 PM
+Source : Portal.Controllers.STNController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'stnId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.JsonResult GetSTNDetail(Int64)' in 'Portal.Controllers.STNController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+19:36:56 PM
+Source : Portal.Controllers.STNController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'stnId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.JsonResult GetSTNDetail(Int64)' in 'Portal.Controllers.STNController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+19:39:59 PM
+Source : Portal.Core.STRBL
+Method Name : GetSTRDetail
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Column 'STRDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+19:39:59 PM
+Source : Portal.Controllers.STRController
+Method Name : GetSTRDetail
+Error Line No : 147
+Exception Type : System.ArgumentException
+Details: Column 'STRDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+19:41:27 PM
+Source : Portal.Core.STRBL
+Method Name : GetSTRDetail
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Column 'STRDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+19:41:27 PM
+Source : Portal.Controllers.STRController
+Method Name : GetSTRDetail
+Error Line No : 147
+Exception Type : System.ArgumentException
+Details: Column 'STRDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+19:43:16 PM
+Source : Portal.Core.STRBL
+Method Name : GetSTRDetail
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Column 'STRDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+19:43:16 PM
+Source : Portal.Controllers.STRController
+Method Name : GetSTRDetail
+Error Line No : 147
+Exception Type : System.ArgumentException
+Details: Column 'STRDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+19:43:51 PM
+Source : Portal.Core.STRBL
+Method Name : GetSTRDetail
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Column 'ContactPerson' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+19:43:51 PM
+Source : Portal.Controllers.STRController
+Method Name : GetSTRDetail
+Error Line No : 147
+Exception Type : System.ArgumentException
+Details: Column 'ContactPerson' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+

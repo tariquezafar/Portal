@@ -1,0 +1,62 @@
+﻿@model List<Portal.Core.QualityCheckViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblSearchInvoiceList">
+            <thead>
+                <tr>
+                    <th align="center">Select</th>
+                    <th>Gate In No.</th>
+                    <th>Gate In Date</th>
+                    <th>PO No.</th> 
+                    <th>Recived At</th>     
+                    <th>Approval Status</th>                        
+                   
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-pencil-square-o erp-btn" href="#" onclick="SelectGateIN('@item.GateInId','@item.GateInNo','@item.GateInDate','@item.POId','@item.PONo','@item.CompanyBranchId')"></a>
+                        </td>
+                        <td>
+                            @item.GateInNo
+                            <input type="hidden" id="hdnGateInNo" value="@item.GateInNo" />
+                        </td>
+                        <td>
+                            @item.GateInDate
+                            <input type="hidden" id="hdnGateInDate" value="@item.GateInDate" />
+                        </td>
+                        <td>
+                            @item.PONo
+                            <input type="hidden" id="hdnSearchInvoiceNo" value="@item.PONo" />
+                        </td>                                                             
+                        <td>@item.CompanyBranchName</td>
+                        <td>@item.ApprovalStatus</td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblSearchInvoiceList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

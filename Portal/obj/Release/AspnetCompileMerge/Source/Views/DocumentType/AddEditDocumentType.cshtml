@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Add DocumentType";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AdminDashboard">Admin</a> >> Add/Edit Document Type </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditDocumentType" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4"> 
+                        <label for="txtDocumentTypeDesc" class="col-sm-4 control-label">Document Type Desc&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtDocumentTypeDesc" name="txtDocumentTypeDesc" tabindex="1" placeholder="Enter Document Type Desc" type="text" maxlength="100" />
+                            <input id="hdnDocumentTypeId" type="hidden" value="@ViewData["documenttypeId"]" />
+                            <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                            <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                            <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                        </div> 
+                </div> 
+                <div class="form-group col-md-4">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="2" class="form-control"></select>
+                    </div>
+                </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="chkstatus" class="col-sm-4 control-label">Active Status&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="2" />
+                        </div>
+                    </div> 
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="3" onclick="SaveData(1)" type="button" border="0"> 
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="3" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                        <a class="btn btn-success" id="btnReset" tabindex="6" href="@Url.Content("~/DocumentType/AddEditDocumentType")">Reset</a>
+                          @*<input class="btn btn-success" type="button" id="btnReset" tabindex="4" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
+                        @*<input class="btn btn-success" type="button" id="btnList" value="Search Company" />*@
+                        <a class="btn btn-success" id="btnList" tabindex="7" href="@Url.Content("~/DocumentType/ListDocumentType")">Search Document Type</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="4" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="5" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block"  tabindex="5" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/DocumentType/AddDocumentType.js"></script>

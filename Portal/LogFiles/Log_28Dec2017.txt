@@ -1,0 +1,104 @@
+13:29:12 PM
+Source : Portal.Controllers.EmployeeAttendanceController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The partial view 'GetEmployeeAttendanceFormList' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/EmployeeAttendance/GetEmployeeAttendanceFormList.aspx
+~/Views/EmployeeAttendance/GetEmployeeAttendanceFormList.ascx
+~/Views/Shared/GetEmployeeAttendanceFormList.aspx
+~/Views/Shared/GetEmployeeAttendanceFormList.ascx
+~/Views/EmployeeAttendance/GetEmployeeAttendanceFormList.cshtml
+~/Views/EmployeeAttendance/GetEmployeeAttendanceFormList.vbhtml
+~/Views/Shared/GetEmployeeAttendanceFormList.cshtml
+~/Views/Shared/GetEmployeeAttendanceFormList.vbhtml
+--------------------------------------------------------------------------------------------------------------------------------
+
+13:29:24 PM
+Source : Portal.Controllers.EmployeeAttendanceController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The partial view 'GetEmployeeAttendanceFormList' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/EmployeeAttendance/GetEmployeeAttendanceFormList.aspx
+~/Views/EmployeeAttendance/GetEmployeeAttendanceFormList.ascx
+~/Views/Shared/GetEmployeeAttendanceFormList.aspx
+~/Views/Shared/GetEmployeeAttendanceFormList.ascx
+~/Views/EmployeeAttendance/GetEmployeeAttendanceFormList.cshtml
+~/Views/EmployeeAttendance/GetEmployeeAttendanceFormList.vbhtml
+~/Views/Shared/GetEmployeeAttendanceFormList.cshtml
+~/Views/Shared/GetEmployeeAttendanceFormList.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+13:29:41 PM
+Source : Portal.Controllers.EmployeeAttendanceController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The partial view 'GetEmployeeAttendanceFormList' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/EmployeeAttendance/GetEmployeeAttendanceFormList.aspx
+~/Views/EmployeeAttendance/GetEmployeeAttendanceFormList.ascx
+~/Views/Shared/GetEmployeeAttendanceFormList.aspx
+~/Views/Shared/GetEmployeeAttendanceFormList.ascx
+~/Views/EmployeeAttendance/GetEmployeeAttendanceFormList.cshtml
+~/Views/EmployeeAttendance/GetEmployeeAttendanceFormList.vbhtml
+~/Views/Shared/GetEmployeeAttendanceFormList.cshtml
+~/Views/Shared/GetEmployeeAttendanceFormList.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+13:29:48 PM
+Source : Portal.Controllers.EmployeeAttendanceController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The partial view 'GetEmployeeAttendanceFormList' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/EmployeeAttendance/GetEmployeeAttendanceFormList.aspx
+~/Views/EmployeeAttendance/GetEmployeeAttendanceFormList.ascx
+~/Views/Shared/GetEmployeeAttendanceFormList.aspx
+~/Views/Shared/GetEmployeeAttendanceFormList.ascx
+~/Views/EmployeeAttendance/GetEmployeeAttendanceFormList.cshtml
+~/Views/EmployeeAttendance/GetEmployeeAttendanceFormList.vbhtml
+~/Views/Shared/GetEmployeeAttendanceFormList.cshtml
+~/Views/Shared/GetEmployeeAttendanceFormList.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+14:39:29 PM
+Source : Portal.Controllers.EmployeeAttendanceController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The view 'PrintEmployeeAttendanceReport' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/EmployeeAttendance/PrintEmployeeAttendanceReport.aspx
+~/Views/EmployeeAttendance/PrintEmployeeAttendanceReport.ascx
+~/Views/Shared/PrintEmployeeAttendanceReport.aspx
+~/Views/Shared/PrintEmployeeAttendanceReport.ascx
+~/Views/EmployeeAttendance/PrintEmployeeAttendanceReport.cshtml
+~/Views/EmployeeAttendance/PrintEmployeeAttendanceReport.vbhtml
+~/Views/Shared/PrintEmployeeAttendanceReport.cshtml
+~/Views/Shared/PrintEmployeeAttendanceReport.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+14:45:29 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : GetEmployeeAttendanceReport
+Error Line No : 4207
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetEmployeeAttendanceRecords'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:45:29 PM
+Source : Portal.Core.EmployeeAttendanceBL
+Method Name : GetEmployeeAttendanceReport
+Error Line No : 174
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetEmployeeAttendanceRecords'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:46:38 PM
+Source : Portal.Controllers.EmployeeAttendanceController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_GetEmployeeAttendanceRecords'.
+---------------------------------------------------------------------------------------------------------------------------
+

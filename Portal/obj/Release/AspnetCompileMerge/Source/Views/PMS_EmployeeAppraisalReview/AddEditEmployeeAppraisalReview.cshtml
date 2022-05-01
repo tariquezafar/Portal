@@ -1,0 +1,248 @@
+﻿@{
+    ViewBag.Title = "Add/Edit Employee Appraisal Review";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    } 
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">HR </a> >> Add/Edit Employee Appraisal Review </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditEmployeeAppraisalReview" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message"> 
+            </div>                                  
+            <div class="col-md-12 ftop">
+                
+                <div class="form-group col-md-4">
+                    <label for="" class="col-sm-4 control-label">Search Employee Assessment&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input type="text"  class="form-control"tabindex="1"  id="hdnEmpAppraisalTemplateMappingId" width="100" name="hdnEmpAppraisalTemplateMappingId" value="0"  /> 
+                        <a class="fa fa-search col-sm-1" onclick="OpenApSearchPopup()" tabindex="2" id="btnSearchSO" style="padding-top:5px; float: right !important; z-index:99999;margin-right: -21px; margin-top: -29px;z-index:500" href="#"></a>                      
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                  </div>
+                   
+                </div>
+                <div class="form-group" style="display:none">
+                    
+                    <a class="fa fa-print col-sm-1" target="_blank" href="#" id="btnPrint" tabindex="7" style="padding-top:5px; float:left !important;display:none;"></a>  
+                </div>
+                <div class="form-group col-md-4">
+                     
+                    
+                    <label for="ddlPerformanceCycle" class="col-sm-4 control-label">Performance Cycle&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlPerformanceCycle" name="ddlPerformanceCycle" tabindex="8" class="form-control"></select>
+
+                        <input id="hdnPMSReviewId" type="hidden" value="@ViewData["pMSReviewId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    </div>
+                </div>
+                       
+                <div class="form-group col-md-4">
+                    <label for="txtEmployee" class="col-sm-4 control-label">Employee&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtEmployee" name="txtEmployee" tabindex="9" placeholder="Enter Employee" type="text" maxlength="50" />
+                        <input type="hidden" id="hdnEmployeeId" name="hdnEmployeeId" value="0" />                       
+                    </div>
+                </div> 
+                
+            </div> 
+
+            <div class="col-md-12">
+                <div class="form-group  col-md-4">
+                    <label for="ddlFinYear" class="col-sm-4 control-label">FinYear&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlFinYear" name="ddlFinYear" tabindex="10" class="form-control"></select>
+
+                    </div>
+                </div>   
+                <div class="form-group  col-md-4">
+                    <label for="ddlPMSFormStatus" class="col-sm-4 control-label">PMS Form Status&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlPMSFormStatus" name="ddlPMSFormStatus" tabindex="11" class="form-control">
+                            <option value="0">Form Submit Status</option>
+                            <option value="Submitted">Submitted</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Hold">Hold</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="txtPMSFormSubmitDate" class="col-sm-4 control-label">PMS Form Submit Date&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtPMSFormSubmitDate" name="txtPMSFormSubmitDate" tabindex="12" placeholder="Select PMS Form SubmitDate" type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group  col-md-4">
+                    <label for="txtPMSReviewRemarks" class="col-sm-4 control-label">Remarks&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <textarea rows="5" cols="2" class="form-control" id="txtPMSReviewRemarks" name="txtPMSReviewRemarks" tabindex="13" placeholder="PMS Review Remarks" type="text" maxlength="1000"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="ddlPMSFinalStatus" class="col-sm-4 control-label">Final Status&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlPMSFinalStatus" name="ddlPMSFinalStatus" tabindex="14" class="form-control">
+                            <option value="0">Select Final Status</option>
+                            <option value="Reviewed">Reviewed</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Hold">Hold</option>
+                        </select>                       
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="5" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="col-md-12" id="divCreated" style="display:none;">
+                    <div class="form-group col-md-4">
+                        <label for="txtCreatedBy" class="col-sm-4 control-label">Created By</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtCreatedBy" name="txtCreatedBy" tabindex="15" placeholder="Created By User Name" type="text" maxlength="100" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="txtCreatedDate" class="col-sm-4 control-label">Created Date</label>
+                        <div class="col-sm-8 ">
+                            <input class="form-control" id="txtCreatedDate" name="txtCreatedDate" tabindex="16" placeholder="Created Date" type="text" maxlength="50" />
+                        </div>
+                    </div>
+                </div> 
+
+            <div class="col-md-12" id="divModified" style="display:none;">
+                <div class="form-group col-md-4">
+                    <label for="txtModifiedBy" class="col-sm-4 control-label">Modified By</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtModifiedBy" name="txtModifiedBy" tabindex="17" placeholder="Modified By User Name" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtModifiedDate" class="col-sm-4 control-label">Modified Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtModifiedDate" name="txtModifiedDate" tabindex="18" placeholder="Modified Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>            
+            
+            <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                    <div class="col-md-12">
+                        <center>
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="19" onclick="SaveData(1)" type="button" border="0"> 
+                            <input class="btn btn-success" value="Update" style="display:none;" tabindex="19" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                            <a class="btn btn-success" id="btnReset" tabindex="20" href="@Url.Content("~/PMS_EmployeeAppraisalReview/AddEditEmployeeAppraisalReview")">Reset</a>  
+                            <a class="btn btn-success" id="btnList" tabindex="21" href="@Url.Content("~/PMS_EmployeeAppraisalReview/ListEmployeeAppraisalReview")">Search Employee Appraisal Review</a>
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+            <div class="modal fade" id="SearchAppraisalTemplateModel" role="dialog">
+            <div class="modal-dialog  modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Search Employee Assessment</h4>
+                    </div>
+                    <div class="">
+                        <div class="col-md-12 ftop">
+                            <div class="form-group col-md-6">
+                                <label for="txtTemplateNameSearch" class="col-sm-4 control-label">Template Name</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtTemplateNameSearch" name="txtTemplateNameSearch" tabindex="3" placeholder="Search with Template Name" type="text" maxlength="100" />
+
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtEmployeeNameSearch" class="col-sm-4 control-label">Employee Name</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtEmployeeNameSearch" name="txtEmployeeNameSearch" tabindex="4" placeholder="Search with Employe Name" type="text" maxlength="100" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row col-sm-12 col-lg-12 col-md-12">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <center>
+                                    <input class="btn btn-success" value="Search" tabindex="5" alt="Search" id="btnSearch" onclick="SearchTemplate()" type="button" border="0">&nbsp;&nbsp;
+                                </center>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="row col-sm-6 col-lg-12 col-md-12">
+                            <div id="divTemplateList">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" tabindex="6" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+         
+    </form>
+</section> 
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/Common.js"></script> 
+<script src="~/Scripts/PMS_EmployeeAppraisalReview/AddEmployeeAppraisalReview.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>

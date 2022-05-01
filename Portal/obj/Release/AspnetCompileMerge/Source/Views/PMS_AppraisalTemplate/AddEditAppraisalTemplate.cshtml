@@ -1,0 +1,276 @@
+﻿@{
+    ViewBag.Title = "Add/Edit Appraisal Template";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    } 
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">HR </a> >> Add/Edit Appraisal Template</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditAppraisalTemplate" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message"> 
+            </div>  
+                    <div class="col-md-12 ftop">
+                        <div class="form-group col-md-4">
+                            <label for="txtTemplateName" class="col-sm-4 control-label">Template Name</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtTemplateName" name="txtTemplateName" tabindex="1" placeholder="Enter Template Name" type="text" maxlength="100" /> 
+                                <input id="hdnTemplateId" type="hidden" value="@ViewData["templateId"]" />
+                                <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                                <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                                <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-4">
+                            <label for="ddlDepartment" class="col-sm-4 control-label">Department&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlDepartment" name="ddlDepartment" onchange="BindDesignationList(0)" tabindex="2" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-4">
+                            <label for="ddlDesignation" class="col-sm-4 control-label">Designation&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlDesignation" name="ddlDesignation" tabindex="3" class="form-control"></select>
+                            </div>
+                        </div>
+                    </div>
+           
+            <div class="col-md-12"> 
+                <div class="form-group col-md-4">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="5" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtstatus" class="col-sm-4 control-label">Status&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="4" />
+                    </div>
+                </div>
+            </div>
+             
+                <div class="col-md-12" id="divCreated" style="display:none;">
+                    <div class="form-group col-md-4">
+                        <label for="txtCreatedBy" class="col-sm-4 control-label">Created By</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtCreatedBy" name="txtCreatedBy" tabindex="5" placeholder="Created By User Name" type="text" maxlength="100" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="txtCreatedDate" class="col-sm-4 control-label">Created Date</label>
+                        <div class="col-sm-8 ">
+                            <input class="form-control" id="txtCreatedDate" name="txtCreatedDate" tabindex="6" placeholder="Created Date" type="text" maxlength="50" />
+                        </div>
+                    </div>
+                </div> 
+
+            <div class="col-md-12" id="divModified" style="display:none;">
+                <div class="form-group col-md-4">
+                    <label for="txtModifiedBy" class="col-sm-4 control-label">Modified By</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtModifiedBy" name="txtModifiedBy"  placeholder="Modified By User Name" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtModifiedDate" class="col-sm-4 control-label">Modified Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtModifiedDate" name="txtModifiedDate"  placeholder="Modified Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div> 
+
+                <div class="col-md-12 ftop">
+                    <div class="form-group col-md-4">
+                    </div>
+                    <div class="form-group col-md-4" style="background-color:yellow">
+                        <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Appraisal Template Goal Detail</b></label></h4>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input class="btn btn-success" value="Add New Appraisal Template Goal" tabindex="7" alt="Add New Appraisal Template Goal" id="btnAddNewTax" onclick="ShowHideAppraisalTemplateGoalPanel(1)" type="button" border="0">
+                    </div>
+
+                </div>
+                <div class="col-md-12 appraisaltemplategoalsection" style="display:none;">
+                    <div class="form-group col-md-4">
+                        <label for="txtGoalName" class="col-sm-4 control-label">Goal&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtGoalName" name="txtGoalName" tabindex="8" placeholder="Enter Goal Name" type="text" maxlength="100" />
+                            <input id="hdnGoalId" type="hidden" value="0" />
+                            <input id="hdnTemplateGoalId" type="hidden" value="0" />
+                            <input id="hdnTaxSequenceNo" type="hidden" value="0" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <a class="fa fa-search col-sm-1" onclick="OpenSOSearchPopup()" tabindex="9" id="btnSearchSO" style="padding-top:5px; float:left !important" href="#"></a>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="chkstatusGoal" class="col-sm-4 control-label">Status&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input id="chkstatusGoal" name="chkstatusGoal" type="checkbox" checked="checked" tabindex="18" />
+                            </div>
+                        </div>
+
+                    </div>
+                <div class="col-sm-12 col-lg-12 col-md-12 appraisaltemplategoalsection" style="display:none;">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Add Appraisal Template Goal" alt="Add Appraisal Template Goal" id="btnAddAppraisalTemplateGoal" tabindex="19" onclick="AddAppraisalTemplateGoal(1)" type="button" border="0">&nbsp;&nbsp;
+                            <input class="btn btn-success" value="Update Appraisal Template Goal" style="display:none;" tabindex="19" alt="Update Appraisal Template Goal" id="btnUpdateAppraisalTemplateGoal" onclick="AddAppraisalTemplateGoal(2)" type="button" border="0">&nbsp;&nbsp;
+                            <input class="btn btn-success" type="button" id="btnCancelTax" tabindex="20" onclick="ShowHideAppraisalTemplateGoalPanel(2)" value="Cancel" /> &nbsp;&nbsp;
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                <div class="col-sm-12 col-lg-12 col-md-12">
+                    <div id="divGoalList">
+
+                    </div>
+                </div>
+            
+                <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                    <div class="col-md-12">
+                        <center>
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="21" onclick="SaveData(1)" type="button" border="0"> 
+                            <input class="btn btn-success" value="Update" style="display:none;" tabindex="21" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">
+                            <input class="btn btn-success" type="button" id="btnReset" tabindex="24" onclick="ClearFields()" value="Reset" />  
+                            <a class="btn btn-success" id="btnList" tabindex="25" href="@Url.Content("~/PMS_AppraisalTemplate/ListAppraisalTemplate")">Search Appraisal Template</a>
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="22" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="23" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="23" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="SearchGoalModel" role="dialog">
+            <div class="modal-dialog  modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Search Goal</h4>
+                    </div>
+                    <div class="">
+                        <div class="col-md-12 ftop">
+                            <div class="form-group col-md-6">
+                                <label for="txtGoalNameSearch" class="col-sm-4 control-label">Goal Name</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtGoalNameSearch" name="txtGoalNameSearch" tabindex="9" placeholder="Search with Goal Name" type="text" maxlength="100" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="ddlSectionName" class="col-sm-4 control-label">Section</label>
+                                <div class="col-sm-8">
+                                    <select id="ddlSectionName" name="ddlSectionName"  tabindex="10"  class="form-control"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+                                <label for="ddlGoalCategoryName" class="col-sm-4 control-label">Goal Category</label>
+                                <div class="col-sm-8">
+                                    <select id="ddlGoalCategoryName" name="ddlGoalCategoryName" tabindex="11"  class="form-control"></select>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="ddlPerformanceName" class="col-sm-4 control-label">Performance Cycle</label>
+                                <div class="col-sm-8">
+                                    <select id="ddlPerformanceName" name="ddlPerformanceName"  tabindex="12"  class="form-control"></select>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+                                <label for="txtFromDate" class="col-sm-4 control-label">Goal From Date</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtFromDate" name="txtFromDate" tabindex="13"  value="@ViewData["fromDate"]" type="text" maxlength="50" />
+                                    <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["fromDate"]" type="hidden" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtToDate" class="col-sm-4 control-label">To Date</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtToDate" name="txtToDate" tabindex="14"  value="@ViewData["toDate"]" type="text" maxlength="50" />
+                                    <input id="hdnToDate" name="hdnToDate" value="@ViewData["toDate"]" type="hidden" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row col-sm-12 col-lg-12 col-md-12">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <center>
+                                    <input class="btn btn-success" value="Search" alt="Search" id="btnSearch" onclick="SearchGoal()" tabindex="15"  type="button" border="0">&nbsp;&nbsp;
+                                </center>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="row col-sm-6 col-lg-12 col-md-12">
+                            <div id="divTemplateGoalList">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" tabindex="16"  data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+ 
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/Common.js"></script>
+<script src="~/Scripts/PMS_AppraisalTemplate/AddAppraisalTemplate.js"></script>

@@ -1,0 +1,83 @@
+﻿@model List<Portal.Core.ViewModel.ApplicantProjectViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProjectList">
+            <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Project</th>
+                    <th>Client</th>
+                    <th>Role Desc</th>
+                    <th>Team Size</th>
+                    <th>Project Desc</th>
+                    <th>Technologies Used</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>
+                            @item.ProjectSequenceNo
+                            <input type="hidden" id="hdnProjectSequenceNo" value="@item.ProjectSequenceNo" />
+                            <input type="hidden" id="hdnApplicantProjectId" value="@item.ApplicantProjectId" />
+                        </td>
+                        <td>
+                            @item.ProjectName
+                            <input type="hidden" id="hdnProjectName" value="@item.ProjectName" />
+
+                        </td>
+                        <td>
+                            @item.ClientName
+                            <input type="hidden" id="hdnClientName" value="@item.ClientName" />
+                        </td>
+                        <td>
+                            @item.RoleDesc
+                            <input type="hidden" id="hdnRoleDesc" value="@item.RoleDesc" />
+                        </td>
+                        <td>
+                            @item.TeamSize
+                            <input type="hidden" id="hdnTeamSize" value="@item.TeamSize" />
+                        </td>
+                        <td>
+                            @item.ProjectDesc
+                            <input type="hidden" id="hdnProjectDesc" value="@item.ProjectDesc" />
+                        </td>
+                        <td>
+                            @item.TechnologiesUsed
+                            <input type="hidden" id="hdnTechnologiesUsed" value="@item.TechnologiesUsed" />
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" onclick="EditProjectRow(this);" href="#"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-trash" onclick="RemoveProjectRow(this)" href="#"></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProjectList">
+            <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Project</th>
+                    <th>Client</th>
+                    <th>Role Desc</th>
+                    <th>Team Size</th>
+                    <th>Project Desc</th>
+                    <th>Technologies Used</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

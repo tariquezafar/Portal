@@ -1,0 +1,967 @@
+10:42:03 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:42:03 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:04 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:04 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:46 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPIAndPIImportMergeList
+Error Line No : 4890
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:46 AM
+Source : Portal.Core.PurchaseInvoiceBL
+Method Name : GetPIAndPIImportMergeList
+Error Line No : 427
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:46 AM
+Source : Portal.Controllers.VoucherController
+Method Name : GetPIList
+Error Line No : 646
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:28:59 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPIAndPIImportMergeList
+Error Line No : 4890
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:28:59 AM
+Source : Portal.Core.PurchaseInvoiceBL
+Method Name : GetPIAndPIImportMergeList
+Error Line No : 427
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:28:59 AM
+Source : Portal.Controllers.VoucherController
+Method Name : GetPIList
+Error Line No : 646
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:29:03 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPIAndPIImportMergeList
+Error Line No : 4890
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:29:03 AM
+Source : Portal.Core.PurchaseInvoiceBL
+Method Name : GetPIAndPIImportMergeList
+Error Line No : 427
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:29:04 AM
+Source : Portal.Controllers.VoucherController
+Method Name : GetPIList
+Error Line No : 646
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:51 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPIAndPIImportMergeList
+Error Line No : 4890
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:51 AM
+Source : Portal.Core.PurchaseInvoiceBL
+Method Name : GetPIAndPIImportMergeList
+Error Line No : 427
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:51 AM
+Source : Portal.Controllers.VoucherController
+Method Name : GetPIList
+Error Line No : 646
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:55 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPIAndPIImportMergeList
+Error Line No : 4890
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:55 AM
+Source : Portal.Core.PurchaseInvoiceBL
+Method Name : GetPIAndPIImportMergeList
+Error Line No : 427
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:30:55 AM
+Source : Portal.Controllers.VoucherController
+Method Name : GetPIList
+Error Line No : 646
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:36:06 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPIAndPIImportMergeList
+Error Line No : 4890
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:36:06 AM
+Source : Portal.Core.PurchaseInvoiceBL
+Method Name : GetPIAndPIImportMergeList
+Error Line No : 427
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:36:06 AM
+Source : Portal.Controllers.VoucherController
+Method Name : GetPIList
+Error Line No : 646
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:36:09 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPIAndPIImportMergeList
+Error Line No : 4890
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:36:09 AM
+Source : Portal.Core.PurchaseInvoiceBL
+Method Name : GetPIAndPIImportMergeList
+Error Line No : 427
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:36:09 AM
+Source : Portal.Controllers.VoucherController
+Method Name : GetPIList
+Error Line No : 646
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:42:07 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPIAndPIImportMergeList
+Error Line No : 4890
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:42:07 AM
+Source : Portal.Core.PurchaseInvoiceBL
+Method Name : GetPIAndPIImportMergeList
+Error Line No : 427
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:42:07 AM
+Source : Portal.Controllers.VoucherController
+Method Name : GetPIList
+Error Line No : 646
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:45:17 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPIAndPIImportMergeList
+Error Line No : 4890
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:45:17 AM
+Source : Portal.Core.PurchaseInvoiceBL
+Method Name : GetPIAndPIImportMergeList
+Error Line No : 427
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:45:17 AM
+Source : Portal.Controllers.VoucherController
+Method Name : GetPIList
+Error Line No : 646
+Exception Type : System.Data.DataException
+Details: <target>.InvoiceRevisedStatus and <source>.InvoiceRevisedStatus have conflicting properties: DataType property mismatch.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:18 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:18 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:54:15 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:54:15 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:55:23 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:55:23 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:55:26 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14560
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:55:26 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 444
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:55:26 AM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 989
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:55:27 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 25925
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:55:27 AM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:55:27 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1515
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:47 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:51:47 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:40 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:40 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:41 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalStockReceiveCount
+Error Line No : 14415
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTotalStockReceive' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:41 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalStockReceiveCount
+Error Line No : 360
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTotalStockReceive' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:41 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 978
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTotalStockReceive' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:42 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 25925
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:42 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:42 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1515
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:48 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:48 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:50 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalStockReceiveCount
+Error Line No : 14415
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTotalStockReceive' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:50 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalStockReceiveCount
+Error Line No : 360
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTotalStockReceive' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:50 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 978
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTotalStockReceive' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:51 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 25925
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:51 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:51 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1515
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:44:18 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:44:18 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:44:21 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 25994
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:44:21 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:44:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1567
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:45:14 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20115
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:45:14 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:45:14 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:48:52 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20115
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:48:52 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:48:52 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:53:48 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20115
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:53:48 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:53:48 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:09:19 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:09:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:09:21 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 14067
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:09:21 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:09:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:09:23 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleQutationDashboard
+Error Line No : 14067
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:09:23 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetSaleQutationDashboard
+Error Line No : 531
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:09:23 PM
+Source : Portal.Controllers.DashboardController
+Method Name : SaleDashboard
+Error Line No : 264
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:35:01 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:35:01 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:35:03 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 25994
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:35:03 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:35:03 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1567
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:49:47 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:49:47 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:49:50 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 25994
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:49:50 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:49:50 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1567
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:49:51 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:49:51 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:49:51 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:49:51 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:49:52 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalStockReceiveCount
+Error Line No : 14415
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTotalStockReceive' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:49:52 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalStockReceiveCount
+Error Line No : 360
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTotalStockReceive' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:49:52 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 978
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTotalStockReceive' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:49:52 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 25925
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:49:53 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:49:53 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1515
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:03:44 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:03:44 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:03:45 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:03:45 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:03:47 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalStockReceiveCount
+Error Line No : 14415
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTotalStockReceive' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:03:47 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalStockReceiveCount
+Error Line No : 360
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTotalStockReceive' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:03:47 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 978
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_Dashboard_GetTotalStockReceive' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:03:48 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 25925
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:03:48 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:03:48 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1515
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:54:16 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:54:16 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:54:21 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:54:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:16:46 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:16:46 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1100
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

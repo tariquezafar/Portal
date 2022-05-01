@@ -1,0 +1,40 @@
+18:00:30 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthorizeUser
+Error Line No : 106
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+--------------------------------------------------------------------------------------------------------------------------------
+
+18:00:39 PM
+Source : Portal.Controllers.SLController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:11:56 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetGLDetail
+Error Line No : 6112
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLDetail' expects parameter '@FinYearId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:11:56 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLDetail
+Error Line No : 108
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLDetail' expects parameter '@FinYearId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:11:56 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLDetail
+Error Line No : 115
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetGLDetail' expects parameter '@FinYearId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+

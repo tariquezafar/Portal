@@ -1,0 +1,203 @@
+﻿@{
+    ViewBag.Title = "Add EmployeeAdvanceApplication";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">HR </a> >> Add/Edit Employee Advance Application</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditEmployeeAdvanceApplication" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="txtApplicationNo" class="col-sm-4 control-label">Application No</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtApplicationNo" name="txtApplicationNo" tabindex="1" placeholder="Auto Application No." type="text" maxlength="100" />
+                        <a style="display:none;color:#fff;" class="btn btn-success" id="btnAddNew" tabindex="2" href="@Url.Content("~/EmployeeAdvanceApp/AddEditEmployeeAdvanceApp?accessMode=1")">New</a>
+                        <input id="hdnApplicationId" type="hidden" value="@ViewData["applicationId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtApplicationDate" class="col-sm-4 control-label right-text">Application Date&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtApplicationDate" name="txtApplicationDate" tabindex="3" value="@ViewData["currentDate"]" placeholder="Enter Application Date" type="text" maxlength="2" />
+                    </div>
+                </div>
+     
+                <div class="form-group col-md-4">
+                    <label for="txtEmployee" class="col-sm-4 control-label">Employee&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtEmployee" name="txtEmployee" value="" tabindex="4" placeholder="Enter Employee" type="text"/>
+                        <input type="hidden" id="hdnEmployeeId" name="hdnEmployeeId" value="0" />
+
+                        <input type="hidden" id="hdnEssEmployeeId" name="hdnEssEmployeeId" value="@ViewData["essEmployeeId"]" />
+                        <input type="hidden" id="hdnEssEmployeeName" name="hdnEssEmployeeName" value="@ViewData["essEmployeeName"]" />
+                    </div>
+                </div>
+               
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="ddlAdvanceType" class="col-sm-4 control-label">Advance Type&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlAdvanceType" name="ddlAdvanceType" tabindex="5" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group  col-md-4">
+                    <label for="txtAdvanceAmount" class="col-sm-4 control-label">Advance Amount&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control  input-number numeric-only" id="txtAdvanceAmount" name="txtAdvanceAmount" tabindex="6" placeholder="Enter Advance Amount" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group  col-md-4">
+                    <label for="txtAdvanceStartDate" class="col-sm-4 control-label">Advance Start Date&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtAdvanceStartDate" name="txtAdvanceStartDate" tabindex="7" placeholder="Enter Advance Start Date" type="text" maxlength="2" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtAdvanceInstallmentAmount" class="col-sm-4 control-label">Advance Installment Amount&nbsp;<span class="Mandatory">(*)</span> </label>
+                    <div class="col-sm-8">
+                        <input class="form-control input-number numeric-only" id="txtAdvanceInstallmentAmount" name="txtAdvanceInstallmentAmount" tabindex="8" placeholder="Enter Advance Installment Amount" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtAdvanceEndDate" class="col-sm-4 control-label">Advance End Date&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtAdvanceEndDate" name="txtAdvanceEndDate" tabindex="9" placeholder="Enter Advance End Date" type="text" maxlength="2" />
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="col-md-12">
+
+                <div class="form-group col-md-4">
+                    <label for="txtAdvanceReason" class="col-sm-4 control-label">Advance Reason&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <textarea rows="5" cols="5" class="form-control" id="txtAdvanceReason" name="txtAdvanceReason" tabindex="10" placeholder="Enter Advance Reason" type="text" maxlength="1000"></textarea>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="ddlAdvanceStatus" class="col-sm-4 control-label">Advance Status</label>
+                    <div class="col-sm-8">
+                        <select id="ddlAdvanceStatus" name="ddlAdvanceStatus" tabindex="13" class="form-control">
+                            <option selected="selected" value="Draft">Draft</option>
+                            <option value="Final">Final</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="46" class="form-control"></select>
+                        <input id="hdnBillingStateId" type="hidden" value="0" />
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12" id="divReject" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="txtRejectReason" class="col-sm-4 control-label">Rejection Reason</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtRejectReason" name="txtRejectReason" tabindex="11" placeholder="Rejection Reason" type="text" maxlength="1000" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtRejectedDate" class="col-sm-4 control-label">Rejected Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtRejectedDate" name="txtRejectedDate" tabindex="12" placeholder="Rejected Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+               
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="14" onclick="SaveData(1)" type="button" border="0">
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="14" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">
+                        <input class="btn btn-success" type="button" id="btnReset" tabindex="17" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;
+                        @if (Convert.ToString(ViewData["essEmployeeId"]) != "0")
+                        {
+                            <a class="btn btn-success" id="btnList" tabindex="18" href="@Url.Action("ListEmployeeAdvanceApp", new { essEmployeeId = ViewData["essEmployeeId"], essEmployeeName = ViewData["essEmployeeName"] })">Search Employee Advance Application</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-success" id="btnList" tabindex="18" href="~/EmployeeAdvanceApp/ListEmployeeAdvanceApp">Search Employee Advance Application</a>
+                        }
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="15" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="16" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="16" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+</section>
+
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/EmployeeAdvanceApplication/AddEmployeeAdvanceApplication.js"></script>

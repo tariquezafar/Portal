@@ -1,0 +1,172 @@
+﻿@model List<Portal.Core.ViewModel.BankStatementDetailViewModel>
+@using System.Data;
+
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+
+    table tr:nth-child(2n+1) {
+        background-color: #dff0d8;
+    }
+
+    table tr:nth-child(2n) {
+        background-color: #dff0d8;
+    }
+</style>
+ 
+        @if (!String.IsNullOrEmpty(Convert.ToString(ViewBag.Error)) && ViewBag.Error != " ")
+        {   <div class="message" style="padding-left:20px;color:red;">
+        @MvcHtmlString.Create((ViewBag.Error != null ? ViewBag.Error.ToString() : "").Replace(Environment.NewLine, "<br />"))
+
+        <div class="row col-sm-6 col-lg-12 col-md-12">
+            <div id="divList" style="overflow-x:scroll; padding-left:20px;padding-top:20px;">
+                <table class="table" id="tblBankStatementDetail">
+                    @if (ViewBag.Data != null)
+                    {
+                        <thead>
+                            <tr style="text-align:center;">
+                                @foreach (DataColumn column in (ViewBag.Data as System.Data.DataTable).Columns)
+                                {
+                                    <th>@column.ColumnName.ToUpper()</th>
+                                }
+                            </tr>
+                        </thead>
+                        if ((ViewBag.Data as System.Data.DataTable).Rows.Count > 0)
+                        {
+                            foreach (DataRow dr in (ViewBag.Data as System.Data.DataTable).Rows)
+                            {
+                                if (!string.IsNullOrEmpty(Convert.ToString(dr["UploadStatus"])) && Convert.ToBoolean(dr["UploadStatus"]) == true)
+                                {
+                                    <tr style="background-color:greenyellow;">
+                                        @foreach (DataColumn column in (ViewBag.Data as System.Data.DataTable).Columns)
+                                        {
+
+                                            <td data-title='@column.ColumnName' style="text-align:center;">
+                                                @dr[column].ToString()
+
+                                                <input type="hidden" id="@column.ColumnName" value="@dr[column].ToString()" />
+
+                                            </td>
+                                        }
+                                    </tr>
+                                }
+                                else
+                                {
+                                    <tr style="background-color:lightcoral!important;">
+                                        @foreach (DataColumn column in (ViewBag.Data as System.Data.DataTable).Columns)
+                                        {
+                                            <td data-title='@column.ColumnName' style="text-align:center;">
+                                                @dr[column].ToString()
+                                                <input type="hidden" id="@column.ColumnName" value="@dr[column].ToString()" />
+                                            </td>
+                                        }
+                                    </tr>
+                                }
+                            }
+                        }
+                        else
+                        {
+                            int count = (ViewBag.Data as System.Data.DataTable).Columns.Count;
+                            <tr>
+                                <td colspan='@count' style="color:red;">
+                                    @*Please Upload Files in .xls, .xlsx or .csv with Proper  format.*@
+
+                                </td>
+                            </tr>
+
+                        }
+
+                    }
+                </table>
+            </div>
+        </div>
+
+    </div>
+        }
+   
+else if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblBankStatementDetail">
+            <thead>
+                <tr>
+                    <th>Transaction Date</th>
+                    <th>Cheque Number</th>
+                    <th>Withdrawal</th>
+                    <th>Deposit</th>
+                    <th>Balance</th>
+                    <th>Narration</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+               
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>
+                            @item.TransactionDate
+                            <input type="hidden" id="hdnSNo" value="@item.SequenceNo" />
+                            <input type="hidden" id="hdnBankStatementDetailId" value="0" />
+                            <input type="hidden" id="hdnTransactionDate" value="@item.TransactionDate" />
+                            <input type="hidden" id="hdnChequeNumber" value="@item.ChequeNumber" />
+                            <input type="hidden" id="hdnWithdrawal" value="@item.Withdrawal" />
+                            <input type="hidden" id="hdnDeposit" value="@item.Deposit" />
+                            <input type="hidden" id="hdnBalance" value="@item.Balance" />
+                            <input type="hidden" id="hdnNarration" value="@item.Narration" />
+                        </td>
+
+                        <td>
+                            @item.ChequeNumber
+                        </td>
+                        <td>
+                            @item.Withdrawal
+
+                        </td>
+                        <td>
+                            @item.Deposit
+                        </td>
+                        <td>
+                            @item.Balance
+                        </td>
+                        <td>
+                            @item.Narration
+                        </td>
+                    </tr>
+                   
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblBankStatementDetail">
+            <thead>
+                <tr>
+                    <th>Transaction Date</th>
+                    <th>Cheque Number</th>
+                    <th>Withdrawal</th>
+                    <th>Deposit</th>
+                    <th>Balance</th>
+                    <th>Narration</th>
+
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

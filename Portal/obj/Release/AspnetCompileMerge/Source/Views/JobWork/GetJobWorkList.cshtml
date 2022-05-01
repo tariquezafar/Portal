@@ -1,0 +1,116 @@
+﻿@model List<Portal.Core.ViewModel.JobOrderViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;background-color:white;">
+        <table class="table table-bordered table-hover" id="tblJobWorkList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>JW No.</center></th>
+                    <th><center>JW Date</center></th>
+                    <th><center>JW Time</center></th>
+                    <th><center>Vendor Name</center></th>
+                    <th><center>Destination</center></th>
+                    <th><center>Motor/VehicleNo</center></th>
+                    <th><center>Transport Name</center></th>
+                    <th><center>Branch Name</center></th>
+                    <th><center>Status</center></th>
+                    <th><center>Created By</center></th>
+                    <th><center>Created Date</center></th>
+                    <th><center>Modified By</center></th>
+                    <th><center>Modified Date</center></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="margin:0px auto;">
+                            <a style="color:darkblue" title="View" class="fa fa-eye" aria-hidden="true" href="~/JobWork/AddEditJobWork?jobWorkId=@item.JobWorkId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="margin:0px auto;">
+                            @if (item.JobWorkStatus.ToUpper() == "DRAFT")
+                            {
+                                <a style="color:darkgreen" title="Edit" class="fa fa-pencil" href="~/JobWork/AddEditJobWork?jobWorkId=@item.JobWorkId&AccessMode=2"></a>
+                            }
+
+                        </td>
+                        <td>@item.JobWorkNo</td>
+                        <td>@item.JobWorkDate</td>
+                        <td>@item.JobWorkTime</td>
+                        @*<td>@item.JobWorkTime.Split(' ')[1] @item.JobWorkTime.Split(' ')[2]</td>*@
+                        <td style="text-align:left;">@item.VendorName</td>
+                        <td style="text-align:left;">@item.Destination</td>
+                        <td style="text-align:left;">@item.MotorVehicleNo</td>
+                        <td style="text-align:left;">@item.TransportName</td>
+                        <td style="text-align:left;">@item.CompanyBranchName</td>
+                        @if (item.JobWorkStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine">
+                                @item.JobWorkStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green">
+                                @item.JobWorkStatus
+                            </td>
+
+                        }
+
+
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblJobWorkList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

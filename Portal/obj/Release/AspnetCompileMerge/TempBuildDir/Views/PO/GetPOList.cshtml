@@ -1,0 +1,139 @@
+﻿@model List<Portal.Core.ViewModel.POViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table {
+    width: 151% !important;
+    max-width: 151% !important;
+    margin-bottom: 20px;
+}
+     #tblPOList tr th{text-align:center; border:1px solid #ccc!important; font-family:Arial; color:#fff;}
+    table tr td {
+    border:1px solid #ccc!important; font-family:Arial;}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblPOList">
+            <thead>
+                <tr aling="center" style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                    <th rowspan="2">Action</th>
+                    <th>PO No.</th>
+                    <th>PO Date</th>
+                    <th>Vendor Name</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Ref. No.</th>
+                    <th>Ref. Date</th>
+                    <th>Gross Amount</th>
+                    <th>Net Amount</th>
+                    <th>Revised Status</th>
+                    <th>PO Status</th>
+                    <th>PO Type</th>
+                    <th>Created By User</th>
+                    <th>Created Date</th>
+                    <th>Modified By User</th>
+                    <th>Modified Date</th>
+                    <th>Company Branch</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="margin:0px auto;">
+                            <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/PO/AddEditPO?POId=@item.POId&AccessMode=3"></a>
+                                @if (item.PORevisedStatus == false && item.POStatus.ToUpper() == "DRAFT")
+                                {
+                                    <a style="color:darkgreen" class="fa fa-pencil" title="Modify PO" href="~/PO/AddEditPO?POId=@item.POId&AccessMode=2"></a>
+                                }
+                                @if (item.PORevisedStatus == false && item.POStatus.ToUpper() == "FINAL")
+                                {
+                                    <a style="color:darkgreen" class="fa fa-repeat" title="Revise PO" href="~/PO/AddRevisedPO?POId=@item.POId&AccessMode=5"></a>
+                                }
+
+                            @if (item.POStatus.ToUpper() == "DRAFT" || item.POStatus.ToUpper() == "FINAL")
+                            {
+                                <a style="color:red" title="Cancel" class="fa fa-times" aria-hidden="true" href="~/PO/CancelPO?POId=@item.POId&AccessMode=4"></a>
+                            }
+
+
+                            @*@if (item.PORevisedStatus == false && item.ApprovalStatus.ToUpper() == "DRAFT")
+                            {
+                                <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/PO/AddEditPO?POId=@item.POId&AccessMode=2"></a>
+                            }
+                            @if (item.PORevisedStatus == false && item.ApprovalStatus.ToUpper() == "FINAL")
+                            {
+                                <a style="color:darkgreen;text-decoration:none" title="Plus" class="fa fa-plus" href="~/PO/AddRevisedPO?POId=@item.POId&AccessMode=1"></a>
+                            }*@
+
+                        </td>
+                        <td>@item.PONo</td>
+                        <td>@item.PODate</td>
+                        <td>@item.VendorName</td>
+                        <td>@item.City</td>
+                        <td>@item.StateName</td>
+                        <td>@item.RefNo</td>
+                        <td>@item.RefDate</td>
+                        <td>@item.BasicValue</td>
+                        <td>@item.TotalValue</td>
+                        <td>@(item.PORevisedStatus == true ? "Revised" : "")</td>
+                        @if (item.POStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine">
+                                @item.POStatus
+                            </td>
+                        }
+
+
+                        else if (item.POStatus.ToUpper() == "CANCELLED")
+                        {
+                            <td style="background-color:red;color:white;">
+                                @item.POStatus
+                            </td>
+                        }                       
+                        else
+                        {
+                            <td style="background-color:green">
+                                @item.POStatus
+                            </td>
+
+                        }
+                        <td>@item.POType</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+                        <td>@item.CompanyBranch</td>
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblPOList').paging({
+            limit: 25,  
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

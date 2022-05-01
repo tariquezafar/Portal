@@ -1,0 +1,424 @@
+12:04:14 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+--------------------------------------------------------------------------------------------------------------------------------
+
+12:04:26 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:05:13 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:05:48 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:58:05 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetStoreRequisitionList
+Error Line No : 165
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:17:51 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\HTSNewWorkArea\Portal\Portal\Views\StoreRequisition\GetStoreRequisitionApprovalList.cshtml(48): error CS1061: 'Portal.Core.ViewModel.StoreRequisitionViewModel' does not contain a definition for 'ApprovedByUserName' and no extension method 'ApprovedByUserName' accepting a first argument of type 'Portal.Core.ViewModel.StoreRequisitionViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+16:17:53 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\HTSNewWorkArea\Portal\Portal\Views\StoreRequisition\GetStoreRequisitionApprovalList.cshtml(48): error CS1061: 'Portal.Core.ViewModel.StoreRequisitionViewModel' does not contain a definition for 'ApprovedByUserName' and no extension method 'ApprovedByUserName' accepting a first argument of type 'Portal.Core.ViewModel.StoreRequisitionViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+16:18:10 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\HTSNewWorkArea\Portal\Portal\Views\StoreRequisition\GetStoreRequisitionApprovalList.cshtml(48): error CS1061: 'Portal.Core.ViewModel.StoreRequisitionViewModel' does not contain a definition for 'ApprovedByUserName' and no extension method 'ApprovedByUserName' accepting a first argument of type 'Portal.Core.ViewModel.StoreRequisitionViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+16:35:32 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetStoreRequisitionApprovelList
+Error Line No : 272
+Exception Type : System.ArgumentException
+Details: Column 'CreatedByName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:35:32 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetStoreRequisitionApprovalList
+Error Line No : 303
+Exception Type : System.ArgumentException
+Details: Column 'CreatedByName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:35:34 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetStoreRequisitionApprovelList
+Error Line No : 272
+Exception Type : System.ArgumentException
+Details: Column 'CreatedByName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:35:34 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetStoreRequisitionApprovalList
+Error Line No : 303
+Exception Type : System.ArgumentException
+Details: Column 'CreatedByName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:35:35 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetStoreRequisitionApprovelList
+Error Line No : 272
+Exception Type : System.ArgumentException
+Details: Column 'CreatedByName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:35:35 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetStoreRequisitionApprovalList
+Error Line No : 303
+Exception Type : System.ArgumentException
+Details: Column 'CreatedByName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:43:58 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetStoreRequisitionApprovelList
+Error Line No : 272
+Exception Type : System.ArgumentException
+Details: Column 'CreatedByName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:43:58 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetStoreRequisitionApprovalList
+Error Line No : 303
+Exception Type : System.ArgumentException
+Details: Column 'CreatedByName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:44:03 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetStoreRequisitionApprovelList
+Error Line No : 272
+Exception Type : System.ArgumentException
+Details: Column 'CreatedByName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:44:03 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetStoreRequisitionApprovalList
+Error Line No : 303
+Exception Type : System.ArgumentException
+Details: Column 'CreatedByName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:44:48 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetStoreRequisitionApprovelList
+Error Line No : 272
+Exception Type : System.ArgumentException
+Details: Column 'CreatedByName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:44:48 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetStoreRequisitionApprovalList
+Error Line No : 303
+Exception Type : System.ArgumentException
+Details: Column 'CreatedByName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:45:55 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:53:34 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetStoreRequisitionApprovalList
+Error Line No : 303
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:34:22 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditStoreRequisition
+Error Line No : 15436
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:34:22 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : AddEditStoreRequisition
+Error Line No : 64
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:34:22 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : ApprovalStoreRequisition
+Error Line No : 224
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:41:42 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditStoreRequisition
+Error Line No : 15436
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:41:42 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : AddEditStoreRequisition
+Error Line No : 64
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:41:42 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : ApprovalStoreRequisition
+Error Line No : 224
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:42:04 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditStoreRequisition
+Error Line No : 15436
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:42:04 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : AddEditStoreRequisition
+Error Line No : 64
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:42:04 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : ApprovalStoreRequisition
+Error Line No : 224
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:42:08 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditStoreRequisition
+Error Line No : 15436
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:42:08 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : AddEditStoreRequisition
+Error Line No : 64
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:42:08 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : ApprovalStoreRequisition
+Error Line No : 224
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:43:03 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditStoreRequisition
+Error Line No : 15436
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:43:03 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : AddEditStoreRequisition
+Error Line No : 64
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:43:03 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : ApprovalStoreRequisition
+Error Line No : 224
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:43:55 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditStoreRequisition
+Error Line No : 15436
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:43:56 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : AddEditStoreRequisition
+Error Line No : 64
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:43:56 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : ApprovalStoreRequisition
+Error Line No : 224
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:30:07 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetStoreRequisitionApprovelList
+Error Line No : 272
+Exception Type : System.ArgumentException
+Details: Column 'ApprovedDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:30:07 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetStoreRequisitionApprovalList
+Error Line No : 304
+Exception Type : System.ArgumentException
+Details: Column 'ApprovedDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:30:16 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetStoreRequisitionApprovelList
+Error Line No : 272
+Exception Type : System.ArgumentException
+Details: Column 'ApprovedDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:30:16 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetStoreRequisitionApprovalList
+Error Line No : 304
+Exception Type : System.ArgumentException
+Details: Column 'ApprovedDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:36:28 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetStoreRequisitionApprovelList
+Error Line No : 272
+Exception Type : System.ArgumentException
+Details: Column 'ApprovedDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:36:28 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetStoreRequisitionApprovalList
+Error Line No : 304
+Exception Type : System.ArgumentException
+Details: Column 'ApprovedDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:37:34 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetStoreRequisitionApprovelList
+Error Line No : 272
+Exception Type : System.ArgumentException
+Details: Column 'ApprovedDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:37:34 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetStoreRequisitionApprovalList
+Error Line No : 304
+Exception Type : System.ArgumentException
+Details: Column 'ApprovedDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:37:48 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetStoreRequisitionApprovelList
+Error Line No : 272
+Exception Type : System.ArgumentException
+Details: Column 'ApprovedDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:37:48 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetStoreRequisitionApprovalList
+Error Line No : 304
+Exception Type : System.ArgumentException
+Details: Column 'ApprovedDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:39:40 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetStoreRequisitionApprovelList
+Error Line No : 272
+Exception Type : System.ArgumentException
+Details: Column 'ApprovedDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:39:40 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetStoreRequisitionApprovalList
+Error Line No : 304
+Exception Type : System.ArgumentException
+Details: Column 'ApprovedDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:40:19 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetStoreRequisitionApprovelList
+Error Line No : 272
+Exception Type : System.ArgumentException
+Details: Column 'ApprovedDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+

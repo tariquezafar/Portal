@@ -1,0 +1,495 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/styles.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/Home/Login.js"></script>
+    <style type="text/css">
+	header {
+  background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #b3d3f7 0%, #ffffff 92%, #ffffff 100%) repeat scroll 0 0;
+  background-image:-webkit-linear-gradient(#b3d3f7 0%, #ffffff 92%, #ffffff 100%);
+  height: 120px;
+  width: 100%;
+}
+	.login_background {
+  background-color:#FFFFFF;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.logintitle {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  
+  border-image: none;
+  border-radius: 2px 2px 0 0;
+  
+  border-width: 1px 1px 0;
+  color: #666;
+  font-size: 17px;
+  line-height: 21px;
+  padding: 5px;
+  
+  
+}
+.loginwrapperinner {
+  background: transparent none repeat scroll 0 0;
+  border-radius: 0 0 2px 2px;
+  padding: 20px;
+  OPACITY:0.9;
+}
+.loginwrapper p:first-child {
+  margin-top: 0;
+}
+.loginwrapper input {
+  
+  border: 0 none;
+  box-sizing: border-box;
+  color: #999;
+  font-size: 14px !important;
+  width: 100%;
+}
+.loginwrapper a {
+  color: #999;
+}
+.log {
+  color: #fff !important;
+  text-decoration: none;
+}
+.loginwrapper p:last-child {
+  margin-bottom: 0;
+}
+.loginwrapper button.btn {
+  border: 0 none;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  font-size: 13px;
+  /*padding: 12px 0;*/
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+}
+.btn-block {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+}
+.btn-default {
+    background-image:-webkit-linear-gradient(#3b6998 0%, #0b4073 100%);
+  background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #3b6998 0%, #0b4073 100%) repeat scroll 0 0! important;
+  color: #fff! important;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+}
+.btn-default:hover {
+  background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #4e86b7 0%, #035f9a 100%) repeat scroll 0 0! important;
+  color: #fff! important;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard{margin-top:20px;}
+
+.dashboard img{border:1px solid #2875A5;}
+
+.btn_pad
+{
+    padding:6px !important;
+}
+.login {
+  background: rgba(0, 0, 0, 0) url("./../Images/login_bg.png") no-repeat scroll left top;
+  float: right;
+  height: 446px;
+  padding: 0 -1% 0 0;
+  width: 320px;
+}
+.tbx {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #c8e2ff! important;
+  padding: 7px;
+  width: 83%;
+  box-shadow:0px;
+  border-radius:none;
+}
+.form-control:focus {
+  border-color: #c8e2ff!;
+  box-shadow: none;
+  outline: 0 none;
+}
+#loginS{    margin-top: 155px;
+    
+@@media(max-width:640px){
+
+.login_background {
+  
+  background-size:800PX;
+  
+}
+}
+    </style>
+</head>
+<body class="login_background">
+    <header>
+        <div class="logo" style="padding:10px; padding-left:50px;">
+            <div class="col-sm-2">
+                @*<a href="/" target="_blank" title="HTS">  <img src="~/Images/logo-new.png" class="img-responsive" width="150"></a>*@
+            </div>
+        </div>
+    </header>
+    <!-- Login Container -->
+    <div class="loginwrapper">
+        <div class="row" style="margin:0px;">
+            <div class="col-md-1"></div>
+            <div class="col-md-5 col-sm-6 col-xs-12">
+                <img src="~/Images/Pikpartlogo.jpg"  style="width: 40%;margin-left: 11%;margin-top: 10%;" class="img-responsive">  
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2"></div>
+            <div class="loginwrapper col-md-3 col-sm-3 col-xs-12">
+                
+                
+                <div class="loginwrapperinner login" id="loginbox">
+                    <form action="" id="loginS" class="form-horizontal" method="post" accept-charset="utf-8">
+                        <p><input autofocus="" class="input-large span10 validate[required] form-control tbx" name="txtUserName" id="txtUserName" maxlength="50" placeholder="User Name/ Email Id" onkeydown="if (event.keyCode == 13) document.getElementById('btnLogin').click()" type="text"></p>
+                        <p><input class="input-large span10 validate[required] form-control tbx" name="txtPassword" id="txtPassword" placeholder="Password" maxlength="50" type="password" onkeydown="if (event.keyCode == 13) document.getElementById('btnLogin').click()"></p>
+                        <p>
+                            <center>
+                                <input type="button" id="btnLogin" style="cursor:pointer; width:31%;" onclick="ValidateLogin()" class="btn btn-default btn-block" value="Login" />
+                            </center> </p>
+                        <p><a href="#" data-toggle="modal" data-target="#ForgotPasswordModel" style="font-size:11px; color:#000;">Forgot Password?</a></p>
+                    </form>
+                </div>
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="loginModel" role="dialog">
+                    <div class="modal-dialog  modal-sm">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button"  class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title" id="modelHeader"></h4>
+                            </div>
+                            <div class="modal-body">
+                                <p id="modelText"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="closebtn" class="btn btn-default  btn-block" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="ForgotPasswordModel" role="dialog">
+                    <div class="modal-dialog  modal-md">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Forgot Password</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group" style="display: -webkit-box;">
+                                    <label for="txtForgotEmail" class="col-sm-4 control-label">Email Id&nbsp;<span class="Mandatory">(*)</span></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" id="txtForgotEmail" name="txtForgotEmail" tabindex="1" placeholder="Enter registered email id" type="email" maxlength="100" />
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary btn_pad" onclick="SendMail()">Submit</button>
+                                <button type="button" class="btn btn-primary btn_pad" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="copy" style="width:100%; text-align:center; position:static; bottom:10px; padding-top:100px;">
+            @*<span style="font-size: 11px;color:#888;">Copyright © HTS Solutions Inc 2017 All Rights Reserved. </span>*@
+
+        </div>
+</body>
+</html>
+<script>
+  function ajaxindicatorstart(text) {
+            if ($('body').find('#resultLoading').attr('id') != 'resultLoading') {
+               // $('body').append('<div id="resultLoading" style="display:none"><div><img src="../Content/Home/images/ajax-loader2.gif"><div>' + text + '</div></div><div class="bg"></div></div>');
+                $('body').append('<div id="resultLoading" style="display:none"><div><div id="cssload-loader"><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div></div><div>' + text + '</div></div><div class="bg"></div></div>');
+            }
+
+            $('#resultLoading').css({
+                'width': '100%',
+                'height': '100%',
+                'position': 'fixed',
+                'z-index': '10000000',
+                'top': '0',
+                'left': '0',
+                'right': '0',
+                'bottom': '0',
+                'margin': 'auto'
+            });
+
+            $('#resultLoading .bg').css({
+                'background': '#000000',
+                'opacity': '0.7',
+                'width': '100%',
+                'height': '100%',
+                'position': 'absolute',
+                'top': '0'
+            });
+
+            $('#resultLoading>div:first').css({
+                'width': '250px',
+                'height': '75px',
+                'text-align': 'center',
+                'position': 'fixed',
+                'top': '0',
+                'left': '0',
+                'right': '0',
+                'bottom': '0',
+                'margin': 'auto',
+                'font-size': '16px',
+                'z-index': '10',
+                'color': '#ffffff'
+
+            });
+
+            $('#resultLoading .bg').height('100%');
+            $('#resultLoading').fadeIn(300);
+            $('body').css('cursor', 'wait');
+        }
+
+        function ajaxindicatorstop() {
+            $('#resultLoading .bg').height('100%');
+            $('#resultLoading').fadeOut(300);
+            $('body').css('cursor', 'default');
+        }
+
+        $(document).ajaxStart(function () {
+            //show ajax indicator
+            ajaxindicatorstart('Processing.. please wait..');
+        }).ajaxStop(function () {
+            //hide ajax indicator
+            ajaxindicatorstop();
+        });
+</script>
+<style>
+    #cssload-loader {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 171px;
+        height: 171px;
+        margin: auto;
+    }
+
+        #cssload-loader .cssload-dot {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 85.5px;
+            height: 100%;
+            margin: auto;
+        }
+
+            #cssload-loader .cssload-dot:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 85.5px;
+                height: 85.5px;
+                border-radius: 100%;
+                transform: scale(0);
+                -o-transform: scale(0);
+                -ms-transform: scale(0);
+                -webkit-transform: scale(0);
+                -moz-transform: scale(0);
+            }
+
+            #cssload-loader .cssload-dot:nth-child(7n+1) {
+                transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+            }
+
+                #cssload-loader .cssload-dot:nth-child(7n+1):before {
+                    background: rgb(0,255,128);
+                    animation: cssload-load 0.92s linear 0.12s infinite;
+                    -o-animation: cssload-load 0.92s linear 0.12s infinite;
+                    -ms-animation: cssload-load 0.92s linear 0.12s infinite;
+                    -webkit-animation: cssload-load 0.92s linear 0.12s infinite;
+                    -moz-animation: cssload-load 0.92s linear 0.12s infinite;
+                }
+
+            #cssload-loader .cssload-dot:nth-child(7n+2) {
+                transform: rotate(90deg);
+                -o-transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                -webkit-transform: rotate(90deg);
+                -moz-transform: rotate(90deg);
+            }
+
+                #cssload-loader .cssload-dot:nth-child(7n+2):before {
+                    background: rgb(0,255,234);
+                    animation: cssload-load 0.92s linear 0.23s infinite;
+                    -o-animation: cssload-load 0.92s linear 0.23s infinite;
+                    -ms-animation: cssload-load 0.92s linear 0.23s infinite;
+                    -webkit-animation: cssload-load 0.92s linear 0.23s infinite;
+                    -moz-animation: cssload-load 0.92s linear 0.23s infinite;
+                }
+
+            #cssload-loader .cssload-dot:nth-child(7n+3) {
+                transform: rotate(135deg);
+                -o-transform: rotate(135deg);
+                -ms-transform: rotate(135deg);
+                -webkit-transform: rotate(135deg);
+                -moz-transform: rotate(135deg);
+            }
+
+                #cssload-loader .cssload-dot:nth-child(7n+3):before {
+                    background: rgb(0,170,255);
+                    animation: cssload-load 0.92s linear 0.35s infinite;
+                    -o-animation: cssload-load 0.92s linear 0.35s infinite;
+                    -ms-animation: cssload-load 0.92s linear 0.35s infinite;
+                    -webkit-animation: cssload-load 0.92s linear 0.35s infinite;
+                    -moz-animation: cssload-load 0.92s linear 0.35s infinite;
+                }
+
+            #cssload-loader .cssload-dot:nth-child(7n+4) {
+                transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+            }
+
+                #cssload-loader .cssload-dot:nth-child(7n+4):before {
+                    background: rgb(0,64,255);
+                    animation: cssload-load 0.92s linear 0.46s infinite;
+                    -o-animation: cssload-load 0.92s linear 0.46s infinite;
+                    -ms-animation: cssload-load 0.92s linear 0.46s infinite;
+                    -webkit-animation: cssload-load 0.92s linear 0.46s infinite;
+                    -moz-animation: cssload-load 0.92s linear 0.46s infinite;
+                }
+
+            #cssload-loader .cssload-dot:nth-child(7n+5) {
+                transform: rotate(225deg);
+                -o-transform: rotate(225deg);
+                -ms-transform: rotate(225deg);
+                -webkit-transform: rotate(225deg);
+                -moz-transform: rotate(225deg);
+            }
+
+                #cssload-loader .cssload-dot:nth-child(7n+5):before {
+                    background: rgb(42,0,255);
+                    animation: cssload-load 0.92s linear 0.58s infinite;
+                    -o-animation: cssload-load 0.92s linear 0.58s infinite;
+                    -ms-animation: cssload-load 0.92s linear 0.58s infinite;
+                    -webkit-animation: cssload-load 0.92s linear 0.58s infinite;
+                    -moz-animation: cssload-load 0.92s linear 0.58s infinite;
+                }
+
+            #cssload-loader .cssload-dot:nth-child(7n+6) {
+                transform: rotate(270deg);
+                -o-transform: rotate(270deg);
+                -ms-transform: rotate(270deg);
+                -webkit-transform: rotate(270deg);
+                -moz-transform: rotate(270deg);
+            }
+
+                #cssload-loader .cssload-dot:nth-child(7n+6):before {
+                    background: rgb(149,0,255);
+                    animation: cssload-load 0.92s linear 0.69s infinite;
+                    -o-animation: cssload-load 0.92s linear 0.69s infinite;
+                    -ms-animation: cssload-load 0.92s linear 0.69s infinite;
+                    -webkit-animation: cssload-load 0.92s linear 0.69s infinite;
+                    -moz-animation: cssload-load 0.92s linear 0.69s infinite;
+                }
+
+            #cssload-loader .cssload-dot:nth-child(7n+7) {
+                transform: rotate(315deg);
+            }
+
+                #cssload-loader .cssload-dot:nth-child(7n+7):before {
+                    background: magenta;
+                    animation: cssload-load 0.92s linear 0.81s infinite;
+                    -o-animation: cssload-load 0.92s linear 0.81s infinite;
+                    -ms-animation: cssload-load 0.92s linear 0.81s infinite;
+                    -webkit-animation: cssload-load 0.92s linear 0.81s infinite;
+                    -moz-animation: cssload-load 0.92s linear 0.81s infinite;
+                }
+
+            #cssload-loader .cssload-dot:nth-child(7n+8) {
+                transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+            }
+
+                #cssload-loader .cssload-dot:nth-child(7n+8):before {
+                    background: rgb(255,0,149);
+                    animation: cssload-load 0.92s linear 0.92s infinite;
+                    -o-animation: cssload-load 0.92s linear 0.92s infinite;
+                    -ms-animation: cssload-load 0.92s linear 0.92s infinite;
+                    -webkit-animation: cssload-load 0.92s linear 0.92s infinite;
+                    -moz-animation: cssload-load 0.92s linear 0.92s infinite;
+                }
+
+
+
+    @@keyframes cssload-load {
+        100% {
+            opacity: 0;
+            transform: scale(1);
+        }
+    }
+
+    @@-o-keyframes cssload-load {
+        100% {
+            opacity: 0;
+            -o-transform: scale(1);
+        }
+    }
+
+    @@-ms-keyframes cssload-load {
+        100% {
+            opacity: 0;
+            -ms-transform: scale(1);
+        }
+    }
+
+    @@-webkit-keyframes cssload-load {
+        100% {
+            opacity: 0;
+            -webkit-transform: scale(1);
+        }
+    }
+
+    @@-moz-keyframes cssload-load {
+        100% {
+            opacity: 0;
+            -moz-transform: scale(1);
+        }
+    }
+</style>

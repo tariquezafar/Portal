@@ -1,0 +1,673 @@
+00:01:11 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+00:01:11 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+00:06:34 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+00:06:34 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+00:09:06 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+00:09:06 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+00:10:01 AM
+Source : Portal.Controllers.InvoicePackingListController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'invoiceID' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.ActionResult CheckListReport(Int64, Int32, Int64, System.String)' in 'Portal.Controllers.InvoicePackingListController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+00:10:28 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+00:10:28 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+00:10:49 AM
+Source : Portal.Controllers.InvoicePackingListController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'invoiceID' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.ActionResult CheckListReport(Int64, Int32, Int64, System.String)' in 'Portal.Controllers.InvoicePackingListController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+01:07:01 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+01:07:01 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+01:07:32 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+01:07:32 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+02:00:07 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+02:00:07 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+02:00:13 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 223
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+02:00:13 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1422
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+02:12:08 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+02:12:08 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+02:12:10 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 223
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+02:12:10 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1422
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+03:08:49 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+03:08:49 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+03:15:56 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+03:15:56 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+03:16:09 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSubGroupdWiseChassisNoSoldDetails
+Error Line No : 6102
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetSubGroupWiseChassisQtySold has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+03:16:09 AM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSubGroupWiseChassisNoSoldDetailsDataTable
+Error Line No : 1030
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetSubGroupWiseChassisQtySold has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+03:16:23 AM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetSubGroupWiseChassisQtySold has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+03:20:13 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSubGroupdWiseChassisNoSoldDetails
+Error Line No : 6102
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetSubGroupWiseChassisQtySold has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+03:20:13 AM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSubGroupWiseChassisNoSoldDetailsDataTable
+Error Line No : 1030
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetSubGroupWiseChassisQtySold has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+03:20:16 AM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetSubGroupWiseChassisQtySold has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+03:20:56 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+03:20:56 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+03:21:02 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSubGroupdWiseChassisNoSoldDetails
+Error Line No : 6102
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'si'.
+select 
+COUNT(SIPD.RefSerial1) Quantity,
+ISNULL(PSG.ProductSubGroupName,'') ProductSubGroupName
+si.CompanyBranchId,
+from SaleInvoiceProductSerialDetail SIPD
+inner join SaleInvoice SI on SIPD.InvoiceId = SI.InvoiceId
+inner join Product P on P.Productid = SIPD.ProductId 
+inner join ProductSubGroup PSG on P.ProductSubGroupId = PSG.ProductSubGroupId 
+inner join ComapnyBranch cb on si.CompanyBranchId = cb.CompanyBranchId         
+where  SI.CompanyId=1  and  SI.InvoiceDate BETWEEN 'Apr  1 2017 12:00AM' AND  'Mar 31 2018 12:00AM'  and p.ProductSubGroupId= 4  and SI.ApprovalStatus='Final'  group by PSG.ProductSubGroupName order by PSG.ProductSubGroupName Asc 
+---------------------------------------------------------------------------------------------------------------------------
+
+03:21:02 AM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSubGroupWiseChassisNoSoldDetailsDataTable
+Error Line No : 1030
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'si'.
+select 
+COUNT(SIPD.RefSerial1) Quantity,
+ISNULL(PSG.ProductSubGroupName,'') ProductSubGroupName
+si.CompanyBranchId,
+from SaleInvoiceProductSerialDetail SIPD
+inner join SaleInvoice SI on SIPD.InvoiceId = SI.InvoiceId
+inner join Product P on P.Productid = SIPD.ProductId 
+inner join ProductSubGroup PSG on P.ProductSubGroupId = PSG.ProductSubGroupId 
+inner join ComapnyBranch cb on si.CompanyBranchId = cb.CompanyBranchId         
+where  SI.CompanyId=1  and  SI.InvoiceDate BETWEEN 'Apr  1 2017 12:00AM' AND  'Mar 31 2018 12:00AM'  and p.ProductSubGroupId= 4  and SI.ApprovalStatus='Final'  group by PSG.ProductSubGroupName order by PSG.ProductSubGroupName Asc 
+---------------------------------------------------------------------------------------------------------------------------
+
+03:21:12 AM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'si'.
+select 
+COUNT(SIPD.RefSerial1) Quantity,
+ISNULL(PSG.ProductSubGroupName,'') ProductSubGroupName
+si.CompanyBranchId,
+from SaleInvoiceProductSerialDetail SIPD
+inner join SaleInvoice SI on SIPD.InvoiceId = SI.InvoiceId
+inner join Product P on P.Productid = SIPD.ProductId 
+inner join ProductSubGroup PSG on P.ProductSubGroupId = PSG.ProductSubGroupId 
+inner join ComapnyBranch cb on si.CompanyBranchId = cb.CompanyBranchId         
+where  SI.CompanyId=1  and  SI.InvoiceDate BETWEEN 'Apr  1 2017 12:00AM' AND  'Mar 31 2018 12:00AM'  and p.ProductSubGroupId= 4  and SI.ApprovalStatus='Final'  group by PSG.ProductSubGroupName order by PSG.ProductSubGroupName Asc 
+---------------------------------------------------------------------------------------------------------------------------
+
+03:21:26 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSubGroupdWiseChassisNoSoldDetails
+Error Line No : 6102
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'si'.
+select 
+COUNT(SIPD.RefSerial1) Quantity,
+ISNULL(PSG.ProductSubGroupName,'') ProductSubGroupName
+si.CompanyBranchId
+from SaleInvoiceProductSerialDetail SIPD
+inner join SaleInvoice SI on SIPD.InvoiceId = SI.InvoiceId
+inner join Product P on P.Productid = SIPD.ProductId 
+inner join ProductSubGroup PSG on P.ProductSubGroupId = PSG.ProductSubGroupId 
+inner join ComapnyBranch cb on si.CompanyBranchId = cb.CompanyBranchId         
+where  SI.CompanyId=1  and  SI.InvoiceDate BETWEEN 'Apr  1 2017 12:00AM' AND  'Mar 31 2018 12:00AM'  and p.ProductSubGroupId= 4  and SI.ApprovalStatus='Final'  group by PSG.ProductSubGroupName order by PSG.ProductSubGroupName Asc 
+---------------------------------------------------------------------------------------------------------------------------
+
+03:21:26 AM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSubGroupWiseChassisNoSoldDetailsDataTable
+Error Line No : 1030
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'si'.
+select 
+COUNT(SIPD.RefSerial1) Quantity,
+ISNULL(PSG.ProductSubGroupName,'') ProductSubGroupName
+si.CompanyBranchId
+from SaleInvoiceProductSerialDetail SIPD
+inner join SaleInvoice SI on SIPD.InvoiceId = SI.InvoiceId
+inner join Product P on P.Productid = SIPD.ProductId 
+inner join ProductSubGroup PSG on P.ProductSubGroupId = PSG.ProductSubGroupId 
+inner join ComapnyBranch cb on si.CompanyBranchId = cb.CompanyBranchId         
+where  SI.CompanyId=1  and  SI.InvoiceDate BETWEEN 'Apr  1 2017 12:00AM' AND  'Mar 31 2018 12:00AM'  and p.ProductSubGroupId= 4  and SI.ApprovalStatus='Final'  group by PSG.ProductSubGroupName order by PSG.ProductSubGroupName Asc 
+---------------------------------------------------------------------------------------------------------------------------
+
+03:22:03 AM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'si'.
+select 
+COUNT(SIPD.RefSerial1) Quantity,
+ISNULL(PSG.ProductSubGroupName,'') ProductSubGroupName
+si.CompanyBranchId
+from SaleInvoiceProductSerialDetail SIPD
+inner join SaleInvoice SI on SIPD.InvoiceId = SI.InvoiceId
+inner join Product P on P.Productid = SIPD.ProductId 
+inner join ProductSubGroup PSG on P.ProductSubGroupId = PSG.ProductSubGroupId 
+inner join ComapnyBranch cb on si.CompanyBranchId = cb.CompanyBranchId         
+where  SI.CompanyId=1  and  SI.InvoiceDate BETWEEN 'Apr  1 2017 12:00AM' AND  'Mar 31 2018 12:00AM'  and p.ProductSubGroupId= 4  and SI.ApprovalStatus='Final'  group by PSG.ProductSubGroupName order by PSG.ProductSubGroupName Asc 
+---------------------------------------------------------------------------------------------------------------------------
+
+03:22:16 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+03:22:16 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+03:22:20 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSubGroupdWiseChassisNoSoldDetails
+Error Line No : 6102
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'si'.
+select 
+COUNT(SIPD.RefSerial1) Quantity,
+ISNULL(PSG.ProductSubGroupName,'') ProductSubGroupName
+si.CompanyBranchId
+from SaleInvoiceProductSerialDetail SIPD
+inner join SaleInvoice SI on SIPD.InvoiceId = SI.InvoiceId
+inner join Product P on P.Productid = SIPD.ProductId 
+inner join ProductSubGroup PSG on P.ProductSubGroupId = PSG.ProductSubGroupId 
+inner join ComapnyBranch cb on si.CompanyBranchId = cb.CompanyBranchId         
+where  SI.CompanyId=1  and  SI.InvoiceDate BETWEEN 'Apr  1 2017 12:00AM' AND  'Mar 31 2018 12:00AM'  and SI.ApprovalStatus='Final'  group by PSG.ProductSubGroupName order by PSG.ProductSubGroupName Asc 
+---------------------------------------------------------------------------------------------------------------------------
+
+03:22:20 AM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSubGroupWiseChassisNoSoldDetailsDataTable
+Error Line No : 1030
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'si'.
+select 
+COUNT(SIPD.RefSerial1) Quantity,
+ISNULL(PSG.ProductSubGroupName,'') ProductSubGroupName
+si.CompanyBranchId
+from SaleInvoiceProductSerialDetail SIPD
+inner join SaleInvoice SI on SIPD.InvoiceId = SI.InvoiceId
+inner join Product P on P.Productid = SIPD.ProductId 
+inner join ProductSubGroup PSG on P.ProductSubGroupId = PSG.ProductSubGroupId 
+inner join ComapnyBranch cb on si.CompanyBranchId = cb.CompanyBranchId         
+where  SI.CompanyId=1  and  SI.InvoiceDate BETWEEN 'Apr  1 2017 12:00AM' AND  'Mar 31 2018 12:00AM'  and SI.ApprovalStatus='Final'  group by PSG.ProductSubGroupName order by PSG.ProductSubGroupName Asc 
+---------------------------------------------------------------------------------------------------------------------------
+
+03:22:26 AM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'si'.
+select 
+COUNT(SIPD.RefSerial1) Quantity,
+ISNULL(PSG.ProductSubGroupName,'') ProductSubGroupName
+si.CompanyBranchId
+from SaleInvoiceProductSerialDetail SIPD
+inner join SaleInvoice SI on SIPD.InvoiceId = SI.InvoiceId
+inner join Product P on P.Productid = SIPD.ProductId 
+inner join ProductSubGroup PSG on P.ProductSubGroupId = PSG.ProductSubGroupId 
+inner join ComapnyBranch cb on si.CompanyBranchId = cb.CompanyBranchId         
+where  SI.CompanyId=1  and  SI.InvoiceDate BETWEEN 'Apr  1 2017 12:00AM' AND  'Mar 31 2018 12:00AM'  and SI.ApprovalStatus='Final'  group by PSG.ProductSubGroupName order by PSG.ProductSubGroupName Asc 
+---------------------------------------------------------------------------------------------------------------------------
+
+03:22:43 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSubGroupdWiseChassisNoSoldDetails
+Error Line No : 6102
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'si'.
+select 
+COUNT(SIPD.RefSerial1) Quantity,
+ISNULL(PSG.ProductSubGroupName,'') ProductSubGroupName
+si.CompanyBranchId
+from SaleInvoiceProductSerialDetail SIPD
+inner join SaleInvoice SI on SIPD.InvoiceId = SI.InvoiceId
+inner join Product P on P.Productid = SIPD.ProductId 
+inner join ProductSubGroup PSG on P.ProductSubGroupId = PSG.ProductSubGroupId 
+inner join ComapnyBranch cb on si.CompanyBranchId = cb.CompanyBranchId         
+where  SI.CompanyId=1  and  SI.InvoiceDate BETWEEN 'Apr  1 2017 12:00AM' AND  'Mar 31 2018 12:00AM'  and p.ProductSubGroupId= 4  and SI.ApprovalStatus='Final'  group by PSG.ProductSubGroupName order by PSG.ProductSubGroupName Asc 
+---------------------------------------------------------------------------------------------------------------------------
+
+03:22:43 AM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSubGroupWiseChassisNoSoldDetailsDataTable
+Error Line No : 1030
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'si'.
+select 
+COUNT(SIPD.RefSerial1) Quantity,
+ISNULL(PSG.ProductSubGroupName,'') ProductSubGroupName
+si.CompanyBranchId
+from SaleInvoiceProductSerialDetail SIPD
+inner join SaleInvoice SI on SIPD.InvoiceId = SI.InvoiceId
+inner join Product P on P.Productid = SIPD.ProductId 
+inner join ProductSubGroup PSG on P.ProductSubGroupId = PSG.ProductSubGroupId 
+inner join ComapnyBranch cb on si.CompanyBranchId = cb.CompanyBranchId         
+where  SI.CompanyId=1  and  SI.InvoiceDate BETWEEN 'Apr  1 2017 12:00AM' AND  'Mar 31 2018 12:00AM'  and p.ProductSubGroupId= 4  and SI.ApprovalStatus='Final'  group by PSG.ProductSubGroupName order by PSG.ProductSubGroupName Asc 
+---------------------------------------------------------------------------------------------------------------------------
+
+03:22:45 AM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'si'.
+select 
+COUNT(SIPD.RefSerial1) Quantity,
+ISNULL(PSG.ProductSubGroupName,'') ProductSubGroupName
+si.CompanyBranchId
+from SaleInvoiceProductSerialDetail SIPD
+inner join SaleInvoice SI on SIPD.InvoiceId = SI.InvoiceId
+inner join Product P on P.Productid = SIPD.ProductId 
+inner join ProductSubGroup PSG on P.ProductSubGroupId = PSG.ProductSubGroupId 
+inner join ComapnyBranch cb on si.CompanyBranchId = cb.CompanyBranchId         
+where  SI.CompanyId=1  and  SI.InvoiceDate BETWEEN 'Apr  1 2017 12:00AM' AND  'Mar 31 2018 12:00AM'  and p.ProductSubGroupId= 4  and SI.ApprovalStatus='Final'  group by PSG.ProductSubGroupName order by PSG.ProductSubGroupName Asc 
+---------------------------------------------------------------------------------------------------------------------------
+
+03:23:48 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSubGroupdWiseChassisNoSoldDetails
+Error Line No : 6102
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'si'.
+select 
+COUNT(SIPD.RefSerial1) Quantity,
+ISNULL(PSG.ProductSubGroupName,'') ProductSubGroupName
+si.CompanyBranchId
+from SaleInvoiceProductSerialDetail SIPD
+inner join SaleInvoice SI on SIPD.InvoiceId = SI.InvoiceId
+inner join Product P on P.Productid = SIPD.ProductId 
+inner join ProductSubGroup PSG on P.ProductSubGroupId = PSG.ProductSubGroupId 
+inner join ComapnyBranch cb on si.CompanyBranchId = cb.CompanyBranchId         
+where  SI.CompanyId=1  and  SI.InvoiceDate BETWEEN 'Apr  1 2017 12:00AM' AND  'Mar 31 2018 12:00AM'  and p.ProductSubGroupId= 4  and SI.ApprovalStatus='Final'  group by PSG.ProductSubGroupName order by PSG.ProductSubGroupName Asc 
+---------------------------------------------------------------------------------------------------------------------------
+
+03:23:48 AM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSubGroupWiseChassisNoSoldDetailsDataTable
+Error Line No : 1030
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'si'.
+select 
+COUNT(SIPD.RefSerial1) Quantity,
+ISNULL(PSG.ProductSubGroupName,'') ProductSubGroupName
+si.CompanyBranchId
+from SaleInvoiceProductSerialDetail SIPD
+inner join SaleInvoice SI on SIPD.InvoiceId = SI.InvoiceId
+inner join Product P on P.Productid = SIPD.ProductId 
+inner join ProductSubGroup PSG on P.ProductSubGroupId = PSG.ProductSubGroupId 
+inner join ComapnyBranch cb on si.CompanyBranchId = cb.CompanyBranchId         
+where  SI.CompanyId=1  and  SI.InvoiceDate BETWEEN 'Apr  1 2017 12:00AM' AND  'Mar 31 2018 12:00AM'  and p.ProductSubGroupId= 4  and SI.ApprovalStatus='Final'  group by PSG.ProductSubGroupName order by PSG.ProductSubGroupName Asc 
+---------------------------------------------------------------------------------------------------------------------------
+
+03:25:15 AM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'si'.
+select 
+COUNT(SIPD.RefSerial1) Quantity,
+ISNULL(PSG.ProductSubGroupName,'') ProductSubGroupName
+si.CompanyBranchId
+from SaleInvoiceProductSerialDetail SIPD
+inner join SaleInvoice SI on SIPD.InvoiceId = SI.InvoiceId
+inner join Product P on P.Productid = SIPD.ProductId 
+inner join ProductSubGroup PSG on P.ProductSubGroupId = PSG.ProductSubGroupId 
+inner join ComapnyBranch cb on si.CompanyBranchId = cb.CompanyBranchId         
+where  SI.CompanyId=1  and  SI.InvoiceDate BETWEEN 'Apr  1 2017 12:00AM' AND  'Mar 31 2018 12:00AM'  and p.ProductSubGroupId= 4  and SI.ApprovalStatus='Final'  group by PSG.ProductSubGroupName order by PSG.ProductSubGroupName Asc 
+---------------------------------------------------------------------------------------------------------------------------
+
+03:36:39 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+03:36:39 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+03:51:38 AM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+03:51:38 AM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+03:51:38 AM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+03:54:03 AM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+03:54:03 AM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+03:54:03 AM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+03:54:09 AM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+03:54:09 AM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+03:54:09 AM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+03:59:44 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+03:59:44 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

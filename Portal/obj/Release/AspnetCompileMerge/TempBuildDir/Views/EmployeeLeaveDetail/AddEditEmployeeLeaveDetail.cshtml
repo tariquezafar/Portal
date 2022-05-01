@@ -1,0 +1,176 @@
+﻿@{
+    ViewBag.Title = "Add/Edit Employee Leave Detail";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+    /* allow space for check mark */
+</style>
+
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">HR</a> >> Add/Edit Employee Leave Detail</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditEmployeeLeaveDetail" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="txtEmployeeName" class="col-sm-4 control-label">Employee Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtEmployeeName" name="txtEmployeeName" tabindex="1" placeholder="Enter Employee Name" type="text" maxlength="100" />
+                        <input id="hdnEmployeeId" type="hidden" value="0" />
+                        <input id="hdnEmployeeLeaveId" type="hidden" value="@ViewData["employeeLeaveId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                        <input id="hdnCurrentDate" name="hdnCurrentDate" value="@ViewData["currentDate"]" type="hidden" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="ddlLeaveType" class="col-sm-4 control-label">Leave Type&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlLeaveType" name="ddlLeaveType" tabindex="2" class="form-control"></select>
+                    </div>
+                </div>
+        
+                <div class="form-group col-md-4">
+                    <label for="txtLeaveCount" class="col-sm-4 control-label">Leave Count</label>
+                    <div class="col-sm-8">
+                        <input class="form-control input-number numeric-only right-text"  id="txtLeaveCount" name="txtLeaveCount" tabindex="3" placeholder="Enter Leave Count" type="text" maxlength="50" />    
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtLeaveDate" class="col-sm-4 control-label">Leave Date</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtLeaveDate" name="txtLeaveDate" tabindex="4" placeholder="Select Leave Date" type="text" value="@ViewData["currentDate"]" maxlength="100" />
+
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="chkStatus"  class="col-sm-4 control-label">Active Status</label>
+                    <div class="col-sm-8">
+                        <input type="checkbox" name="chkStatus" id="chkStatus"  class="" checked="checked" />
+                        <label style="font-size: 24px;" tabindex="5" for="chkStatus"></label>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="col-md-12" id="divCreated" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="txtCreatedBy" class="col-sm-4 control-label">Created By</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtCreatedBy" name="txtCreatedBy" tabindex="6" placeholder="Created By User Name" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtCreatedDate" class="col-sm-4 control-label">Created Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtCreatedDate" name="txtCreatedDate" tabindex="7" placeholder="Created Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="divModified" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="txtModifiedBy" class="col-sm-4 control-label">Modified By</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtModifiedBy" name="txtModifiedBy" tabindex="8" placeholder="Modified By User Name" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtModifiedDate" class="col-sm-4 control-label">Modified Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtModifiedDate" name="txtModifiedDate" tabindex="9" placeholder="Modified Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+             <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" tabindex="10" id="btnSave" onclick="SaveData(1)" type="button" border="0"> 
+                        <input class="btn btn-success" value="Update" tabindex="10" style="display:none;" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                        <input class="btn btn-success" type="button" tabindex="13" id="btnReset" onclick="ClearFields()" value="Reset" /> 
+                        <a class="btn btn-success" id="btnList" tabindex="14" href="@Url.Content("~/EmployeeLeaveDetail/ListEmployeeLeaveDetail")">Search Leave Detail</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="11" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="12" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="12" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/EmployeeLeaveDetail/AddEmployeeLeaveDetail.js"></script>

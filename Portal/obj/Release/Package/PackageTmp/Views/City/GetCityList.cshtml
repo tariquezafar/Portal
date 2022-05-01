@@ -1,0 +1,76 @@
+﻿@model List<Portal.Core.ViewModel.CityViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblCityList">
+            <thead>
+                <tr>
+                    <th>City Name</th>
+                    <th>State Name</th>
+                    <th>Country Name</th>
+
+                    <th>Population</th>
+                    <th>Area</th>
+                    <th>Railway</th>
+                    <th>Airport</th>
+                    <th>Point Of Interest</th>
+                    <th>City Class</th>
+                    <th>Pop. Factor</th>
+                    <th>Effective Pop.</th>
+                    <th>Vehicles</th>
+                    <th>Per Dealar</th>
+                    <th>Dealerships Nos</th>
+
+                    <th>Status</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.CityName</td>
+                        <td>@item.StateName</td>
+                        <td>@item.CountryName</td>
+                        <td>@item.Population</td>
+                        <td>@item.Area</td>
+                        <td>@item.Railway</td>
+                        <td>@item.Airport</td>
+                        <td>@item.PointOfInterest</td>
+                        <td>@item.CityClass</td>
+                        <td>@item.PopFactor</td>
+                        <td>@item.EffectivePopulation</td>
+                        <td>@item.Vehicles</td>
+                        <td>@item.PerDealar</td>
+                        <td>@item.DealershipsNos</td>
+                        <td>@(item.CityStatus == true ? "Active" : "Inactive")</td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px auto;">
+                            <a style="color:white;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/City/AddEditCity?cityId=@item.CityId&AccessMode=3"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white;text-decoration:none" title="Edit" class="fa fa-pencil-square-o" href="~/City/AddEditCity?cityId=@item.CityId&AccessMode=2"></a>
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblCityList').paging({
+            limit: 25,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

@@ -1,0 +1,73 @@
+﻿@model List<Portal.Core.ViewModel.SINViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+   .table {
+    width: 130% !important;
+    max-width: 130% !important;
+    margin-bottom: 20px;
+}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblSTNList">
+            <thead>
+                <tr>
+                    <th>Stock Issue No.</th>
+                    <th>Stock Issue Date</th>
+                    <th>Requisition No.</th>
+                    <th>Work Order No.</th>
+                    <th>Received By</th>
+                    <th>Location</th>
+                    <th>From Department</th>
+                    <th>To Department</th>
+                    <th>Remarks1</th>
+                    <th>Remarks2</th> 
+                    <th>Created By User</th>
+                    <th>Created Date</th>
+                    <th>Modified By User</th>
+                    <th>Modified Date</th> 
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="margin:0px 2px auto;">
+                            <a  target="_blank" style="color:dodgerblue"  href="~/SIN/AddEditSIN?sinId=@item.SINId&AccessMode=3">@item.SINNo</a>
+                        </td>  
+                        <td>@item.SINDate</td>
+                        <td>@item.RequisitionNo</td>
+                        <td>@item.JobNo</td>
+                        <td>@item.EmployeeName</td>
+                        <td>@item.BranchName</td>
+                        <td>@item.FromLocationName</td>
+                        <td>@item.ToLocationName</td>
+                        <td>@item.Remarks1</td>
+                        <td>@item.Remarks2</td>                                              
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>  
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblSTNList').paging({
+            limit: 100,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

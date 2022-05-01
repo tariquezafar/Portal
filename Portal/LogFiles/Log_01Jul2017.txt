@@ -1,0 +1,129 @@
+17:10:45 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_SICount
+Error Line No : 10712
+Exception Type : System.Data.SqlClient.SqlException
+Details: A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+--------------------------------------------------------------------------------------------------------------------------------
+
+17:10:45 PM
+Source : Portal.Core.SaleDashboardBL
+Method Name : GetSICountList
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+---------------------------------------------------------------------------------------------------------------------------
+
+17:10:45 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetSICountList
+Error Line No : 197
+Exception Type : System.Data.SqlClient.SqlException
+Details: A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+---------------------------------------------------------------------------------------------------------------------------
+
+17:12:38 PM
+Source : Portal.DAL.DBInterface
+Method Name : GetStateList
+Error Line No : 162
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:12:38 PM
+Source : Portal.Core.StateBL
+Method Name : GetStateList
+Error Line No : 51
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:12:38 PM
+Source : Portal.Controllers.CompanyController
+Method Name : GetStateList
+Error Line No : 137
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:25:29 PM
+Source : Portal.DAL.DBInterface
+Method Name : GetRoleWiseParentUI
+Error Line No : 58
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:25:29 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 156
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:25:29 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 39
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:26:10 PM
+Source : Portal.DAL.DBInterface
+Method Name : GetRoleWiseChildUI
+Error Line No : 72
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:26:10 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 171
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:26:10 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 39
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:56:17 PM
+Source : Portal.DAL.DBInterface
+Method Name : GetTermTemplateList
+Error Line No : 4609
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:56:17 PM
+Source : Portal.Core.TermTemplateBL
+Method Name : GetTermTemplateList
+Error Line No : 197
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:56:17 PM
+Source : Portal.Controllers.QuotationController
+Method Name : GetTermTemplateList
+Error Line No : 237
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:02:21 PM
+Source : Portal.Controllers.DeliveryChallanController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchID' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCompanyBranchStateId(Int32)' in 'Portal.Controllers.DeliveryChallanController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+

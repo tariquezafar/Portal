@@ -1,0 +1,62 @@
+﻿@model List<Portal.Core.ViewModel.STNChasisProductSerialDetailViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblStnProductChasisList">
+            <thead>
+                <tr>
+                   
+                    <th>Sr No.</th>
+                    <th>Product Name</th>
+                    <th>Serial No</th>
+                    <th>Price</th>
+                    <th>Select</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+
+                        <td>@item.SequenceNo</td>
+
+                        <td>@item.ProductName
+                            <input type="hidden" id="hdnSrnoPopup" value="@item.SequenceNo" />
+                            <input type="hidden" id="hdnProductIdPopup" value="@item.ProductId" />
+                            <input type="hidden" id="hdnChasisNoPopup" value="@item.RefSerial1" />
+                            <input type="hidden" id="hdnProductNamePopup" value="@item.ProductName" />
+                            <input type="hidden" id="hdnPricePopup" value="@item.Price" />
+                            <input type="hidden" id="hdnIsSerializedProductPopup" value="@item.IsSerializedProduct" />
+                        </td>
+                       
+                        <td>@item.RefSerial1
+                             
+                        </td>
+                <td>@item.Price</td>
+              
+                <td>
+                    <input type="checkbox" name="chkStatus" id="chkStatus" class="" />
+                </td>
+            </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblStnProductChasisList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

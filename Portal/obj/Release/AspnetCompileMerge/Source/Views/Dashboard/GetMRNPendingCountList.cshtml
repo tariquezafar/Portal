@@ -1,0 +1,53 @@
+﻿@model List<Portal.Core.QualityCheckViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table int-product" id="tblSINPendingCountList" style="margin-top:10px;">
+            <thead style="border-top-left-radius:15px;">
+                <tr style="border:none;">
+                    <th style="background:#4f75c6; color:#fff;" colspan="8">Pending For MRN</th>
+                </tr>
+                <tr style="background:#D0DDEC; border:1px solid #ccc;">
+                    <th style="text-align:center">Qualtity Check No.</th>
+                    <th style="text-align:center">Qualtity Date</th>                   
+                    <th style="text-align:center">Created By User</th>                    
+                </tr>
+
+            </thead>
+            <tbody style="border:1px solid #ccc;">
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                       
+                        <td align="center">@item.QualityCheckNo </td>                       
+                       
+                        <td align="center">@item.QualityCheckDate</td>
+                        <td align="center">@item.CreatedByUserName</td>
+
+                    </tr>
+                }
+                <tr>
+                    <td colspan="8" align="center" style="background:#bfdfff;">
+                        <a href="@Url.Content("~/MRNQC/AddEditMRNQC")"  target="_blank">View All Pending QC</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Pending QC Not Found !!!</h3>
+}
+@*<script>
+        $(document).ready(function () {
+            $('#tblSINPendingCountList').paging({SIN/AddEditSIN
+                limit:5,
+                rowDisplayStyle: 'block',
+                activePage: 0,
+                rows: []
+            });
+
+        });
+    </script>*@

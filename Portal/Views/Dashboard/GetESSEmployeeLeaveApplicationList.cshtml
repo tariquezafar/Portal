@@ -1,0 +1,92 @@
+﻿@model List<Portal.Core.ViewModel.EmployeeLeaveApplicationViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<script src="~/Scripts/paging.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table" id="tblleaveApplicationList">
+            <thead>
+                <tr>
+                    <th>Application No</th>
+                    <th>Application Date</th>
+                    <th>Leave Type</th>
+                    <th>No Of Days</th>
+                    <th>From Date</th>
+                    <th>To Date</th>
+                    <th>Reason</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @if (item.LeaveStatus == "Draft")
+                            {
+                               <a href='../EmployeeLeaveApplication/AddEditEmployeeLeaveApplication?applicationId=@item.ApplicationId&AccessMode=2&essEmployeeId=@item.EmployeeId&essEmployeeName=@item.EmployeeName' id="lnkLeaveApplicationNo" target="_blank">@item.ApplicationNo</a>
+                            }
+                            else
+                            {
+                                <a href='../EmployeeLeaveApplication/AddEditEmployeeLeaveApplication?applicationId=@item.ApplicationId&AccessMode=3&essEmployeeId=@item.EmployeeId&essEmployeeName=@item.EmployeeName' id="lnkLeaveApplicationNo" target="_blank">@item.ApplicationNo</a>
+                            }
+                        </td>
+                        <td>
+                            @item.ApplicationDate
+                        </td>
+                        <td>
+                            @item.LeaveTypeName
+                        </td>
+                        <td>
+                            @item.NoofDays
+                        </td>
+                        <td>
+                            @item.FromDate
+                        </td>
+                        <td>
+                            @item.ToDate
+                        </td>
+                        <td>
+                            @item.LeaveReason
+                        </td>
+                        @if (item.LeaveStatus == "Draft")
+                        {
+                            <td>
+                                <center><span class="label label-default">@item.LeaveStatus</span></center>
+                            </td>
+                        }
+                        else if (item.LeaveStatus == "Final")
+                        {
+                            <td>
+                                <center><span class="label label-success">@item.LeaveStatus</span></center>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                <center><span class="label label-danger">@item.LeaveStatus</span></center>
+                            </td>
+                        }
+
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+
+@*<script>
+    $(document).ready(function () {
+        $('#tblAdvanceApplicationList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>*@

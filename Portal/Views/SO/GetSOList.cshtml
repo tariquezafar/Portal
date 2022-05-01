@@ -1,0 +1,123 @@
+﻿@model List<Portal.Core.ViewModel.SOViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table {
+    width: 112% !important;
+    max-width: 112% !important;
+    margin-bottom: 20px;
+    font-size:12px;
+
+}
+    #tblSOList tr th{text-align:center; border:1px solid #ccc!important; font-family:Arial; color:#fff;}
+    table tr td {
+    border:1px solid #ccc!important; font-family:Arial;}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblSOList">
+            <thead>
+                <tr align="center" style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                    <th>Action</th>
+                    <th>SO No.</th>
+                    <th>SO Date</th>
+                    <th>Customer Name</th>
+                    <th>Quotation No.</th>
+                    <th>Company Branch</th>
+                    <th>Ref. No.</th>
+                    <th>Ref. Date</th>
+                    <th>Basic Value</th>
+                    <th>Sub Total</th>
+                    <th>Net Amt.</th>
+                    <th>SO Status</th>
+                    <th>Created By</th>
+                    <th>Created Date</th>
+                    <th>Modified By</th>
+                    <th>Modified Date</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="margin:0px auto;" >
+                            <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/SO/AddEditSO?SOId=@item.SOId&AccessMode=3"></a>
+                            @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                            {
+                                <a style="color:darkgreen" class="fa fa-pencil" href="~/SO/AddEditSO?SOId=@item.SOId&AccessMode=2"></a>
+                            }
+                            @if (item.ApprovalStatus.ToUpper() == "FINAL")
+                            {
+
+                                <a style="color:red" title="Cancel" class="fa fa-times" aria-hidden="true" href="~/SO/CancelSO?soId=@item.SOId&AccessMode=4"></a>
+                            }
+                        </td>
+
+                        <td>@item.SONo</td>
+                        <td>@item.SODate</td>
+                        <td>@item.CustomerName</td>
+                        <td>@item.QuotationNo</td>
+                        <td>@item.CompanyBranchName</td>
+                        <td>@item.RefNo</td>
+                        <td>@item.RefDate</td>
+                        <td>@item.BasicAmt</td>
+                        <td>@item.BasicValue</td>
+                        <td>@item.TotalValue</td>
+                    
+
+                        @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color: deepskyblue;color: #fff; font-weight: bold;">
+                                @item.ApprovalStatus
+                            </td>
+                        }
+                        else if (item.ApprovalStatus.ToUpper() == "CANCELLED")
+                        {
+                            <td style="background-color:red;color:white">
+                                @item.ApprovalStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color: #128646;color: #fff; font-weight: bold;">
+                                @item.ApprovalStatus
+                            </td>
+
+                        }
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+                        
+
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblSOList').paging({
+            limit: 25,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

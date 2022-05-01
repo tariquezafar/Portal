@@ -1,0 +1,597 @@
+﻿@{
+    ViewBag.Title = "Add/Edit Interview";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/Common.js"></script>
+<script src="~/Scripts/Interview/AddInterview.js"></script>
+
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+
+    legend {
+        font-weight:600;
+        display: block;
+        width: 15%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+        text-align:center;
+    }
+
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+    /* allow space for check mark */
+
+  
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">HR </a> >> Add/Edit Interview</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditInterview" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+                <div id="tabs-1">
+                    <div class="col-md-12 ftop">
+                        <div class="form-group col-md-6">
+                            <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="46" class="form-control"></select>
+                                <input id="hdnBillingStateId" type="hidden" value="0" />
+                                <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                                <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtApplicantNo" class="col-sm-4 control-label">Applicant No</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtApplicantNo" name="txtApplicantNo" tabindex="1" placeholder="Search Applicant No" type="text" maxlength="50"  />
+                                <a style="display:none;color:#fff;" class="btn btn-success" id="btnAddNew" tabindex="14" href="@Url.Content("~/Interview/AddEditInterview?accessMode=1")">New</a>
+                               
+                                <input id="hdnApplicantId" type="hidden" value="0" />
+                                
+                            </div>
+                            <a class="fa fa-search col-sm-1" onclick="OpenInterviewSearchPopup()" tabindex="2" id="btnSearchSO" style="padding-top:5px; float: right !important; z-index:99999;margin-right: -21px; margin-top: -29px;" href="#"> </a> 
+                        </div>
+                        <div class="form-group col-md-6">
+                           
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="txtInterviewNo" class="col-sm-4 control-label">Interview No</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtInterviewNo" name="txtInterviewNo" tabindex="15" placeholder="Auto Generated Interview No." type="text" maxlength="100" />
+                                <a style="display:none;color:#fff;" class="btn btn-success" id="btnAddNew" href="@Url.Content("~/Interview/AddEditInterview")">New</a>
+                                <input id="hdnInterviewId" type="hidden" value="@ViewData["interviewId"]" />
+                                <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                          
+                        </div>
+                    </div>
+                    <fieldset class="scheduler-border">
+                        <legend class="scheduler-border">Aptitude Round </legend>
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+
+                                <label for="ddlAptitudeTestStatus" class="col-sm-4 control-label"> Status</label>
+                                <div class="col-sm-8">
+                                    <select id="ddlAptitudeTestStatus" name="ddlAptitudeTestStatus" tabindex="16" class="form-control">
+                                        <option value="0">Pending</option>
+                                        <option value="Final">Final</option>
+                                        <option value="Inprocess">Inprocess</option>
+                                        <option value="Hold">Hold</option>
+                                        <option value="Rejected">Rejected</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="txtAptitudeTestRemarks" class="col-sm-4 control-label"> Remarks</label>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control" rows="2" cols="50" id="txtAptitudeTestRemarks" name="txtAptitudeTestRemarks" tabindex="17" placeholder="Enter Remark" value="" type="text" maxlength="50"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+
+                                <label for="txtAptitudeTestTotalMarks" class="col-sm-4 control-label"> Marks&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input onkeyup="checkDec(this);" class="form-control input-number right-text" id="txtAptitudeTestTotalMarks" name="txtAptitudeTestTotalMarks" tabindex="18" placeholder="Enter Aptitude Test Total Mark" type="text" maxlength="50" />
+                                </div>
+
+                            </div>
+                            <div class="form-group col-md-6">
+
+                                <label for="txtAptitudeTestMarkObtained" class="col-sm-4 control-label"> Mark Obtained&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input onkeyup="checkDec(this);" class="form-control input-number right-text" id="txtAptitudeTestMarkObtained" name="txtAptitudeTestMarkObtained" tabindex="19" placeholder="Enter Aptitude Test Mark Obtained" type="text" maxlength="50" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        
+                    </fieldset>
+
+                    <fieldset class="scheduler-border">
+                        <legend class="scheduler-border"> Technical Round - 1</legend>
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+
+                                <label for="ddlTechnicalRound1_Status" class="col-sm-4 control-label">Status</label>
+                                <div class="col-sm-8">
+                                    <select id="ddlTechnicalRound1_Status" name="ddlTechnicalRound1_Status" tabindex="20" class="form-control">
+                                        <option value="0">Pending</option>
+                                        <option value="Final">Final</option>
+                                        <option value="Inprocess">Inprocess</option>
+                                        <option value="Hold">Hold</option>
+                                        <option value="Rejected">Rejected</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="txtTechnicalRound1_Remarks" class="col-sm-4 control-label">Remarks</label>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control" rows="2" cols="50" id="txtTechnicalRound1_Remarks" name="txtTechnicalRound1_Remarks" tabindex="21" placeholder="Enter Remark" value="" type="text" maxlength="50"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+
+                                <label for="txtTechnicalRound1_TotalMarks" class="col-sm-4 control-label">Total Marks&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input onkeyup="checkDec(this);" class="form-control input-number right-text" id="txtTechnicalRound1_TotalMarks" name="txtTechnicalRound1_TotalMarks" tabindex="22" placeholder="Total Marks" type="text" maxlength="50" />
+                                </div>
+
+                            </div>
+                            <div class="form-group col-md-6">
+
+                                <label for="txtTechnicalRound1_MarkObtained" class="col-sm-4 control-label">Mark Obtained&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input onkeyup="checkDec(this);" class="form-control input-number right-text" id="txtTechnicalRound1_MarkObtained" name="txtTechnicalRound1_MarkObtained" tabindex="23" placeholder="Enter Aptitude Test Mark Obtained" type="text" maxlength="50" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="scheduler-border">
+                        <legend class="scheduler-border"> Technical Round - 2</legend>
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+
+                                <label for="ddlTechnicalRound2_Status" class="col-sm-4 control-label">Status</label>
+                                <div class="col-sm-8">
+                                    <select id="ddlTechnicalRound2_Status" name="ddlTechnicalRound2_Status" tabindex="24" class="form-control">
+                                        <option value="0">Pending</option>
+                                        <option value="Final">Final</option>
+                                        <option value="Inprocess">Inprocess</option>
+                                        <option value="Hold">Hold</option>
+                                        <option value="Rejected">Rejected</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="txtTechnicalRound2_Remarks" class="col-sm-4 control-label">Remarks</label>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control" rows="2" cols="50" id="txtTechnicalRound2_Remarks" name="txtTechnicalRound2_Remarks" tabindex="25" placeholder="Enter Remark" value="" type="text" maxlength="50"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+
+                                <label for="txtTechnicalRound2_TotalMarks" class="col-sm-4 control-label">Total Marks&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input onkeyup="checkDec(this);" class="form-control input-number right-text" id="txtTechnicalRound2_TotalMarks" name="txtTechnicalRound1_TotalMarks" tabindex="26" placeholder="Total Marks" type="text" maxlength="50" />
+                                </div>
+
+                            </div>
+                            <div class="form-group col-md-6">
+
+                                <label for="txtTechnicalRound2_MarkObtained" class="col-sm-4 control-label">Mark Obtained&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input onkeyup="checkDec(this);" class="form-control input-number right-text" id="txtTechnicalRound2_MarkObtained" name="txtTechnicalRound1_MarkObtained" tabindex="27" placeholder="Mark Obtained" type="text" maxlength="50" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="scheduler-border">
+                        <legend class="scheduler-border"> Technical Round - 3</legend>
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+
+                                <label for="ddlTechnicalRound3_Status" class="col-sm-4 control-label">Status</label>
+                                <div class="col-sm-8">
+                                    <select id="ddlTechnicalRound3_Status" name="ddlTechnicalRound3_Status" tabindex="28" class="form-control">
+                                        <option value="0">Pending</option>
+                                        <option value="Final">Final</option>
+                                        <option value="Inprocess">Inprocess</option>
+                                        <option value="Hold">Hold</option>
+                                        <option value="Rejected">Rejected</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="txtTechnicalRound3_Remarks" class="col-sm-4 control-label">Remarks</label>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control" rows="2" cols="50" id="txtTechnicalRound3_Remarks" name="txtTechnicalRound2_Remarks" tabindex="29" placeholder="Enter Remark" value="" type="text" maxlength="50"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+
+                                <label for="txtTechnicalRound3_TotalMarks" class="col-sm-4 control-label">Total Marks&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input onkeyup="checkDec(this);" class="form-control input-number right-text" id="txtTechnicalRound3_TotalMarks" name="txtTechnicalRound1_TotalMarks" tabindex="30" placeholder="Total Marks" type="text" maxlength="50" />
+                                </div>
+
+                            </div>
+                            <div class="form-group col-md-6">
+
+                                <label for="txtTechnicalRound3_MarkObtained" class="col-sm-4 control-label">Mark Obtained&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input onkeyup="checkDec(this);" class="form-control input-number right-text" id="txtTechnicalRound3_MarkObtained" name="txtTechnicalRound1_MarkObtained" tabindex="31" placeholder="Mark Obtained" type="text" maxlength="50" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="scheduler-border">
+                        <legend class="scheduler-border">Machine Round</legend>
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+
+                                <label for="ddlMachineRoundStatus" class="col-sm-4 control-label">Status</label>
+                                <div class="col-sm-8">
+                                    <select id="ddlMachineRoundStatus" name="ddlMachineRoundStatus" tabindex="32" class="form-control">
+                                        <option value="0">Pending</option>
+                                        <option value="Final">Final</option>
+                                        <option value="Inprocess">Inprocess</option>
+                                        <option value="Hold">Hold</option>
+                                        <option value="Rejected">Rejected</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="txtMachineRoundRemarks" class="col-sm-4 control-label">Remarks</label>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control" rows="2" cols="50" id="txtMachineRoundRemarks" name="txtMachineRoundRemarks" tabindex="33" placeholder="Enter Remark" value="" type="text" maxlength="50"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+
+                                <label for="txtMachineRound_TotalMarks" class="col-sm-4 control-label">Total Marks&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input onkeyup="checkDec(this);" class="form-control input-number right-text" id="txtMachineRound_TotalMarks" name="txtMachineRound_TotalMarks" tabindex="34" placeholder="Total Marks" type="text" maxlength="50" />
+                                </div>
+
+                            </div>
+                            <div class="form-group col-md-6">
+
+                                <label for="txtMachineRound_MarkObtained" class="col-sm-4 control-label">Mark Obtained&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input onkeyup="checkDec(this);" class="form-control input-number right-text" id="txtMachineRound_MarkObtained" name="txtMachineRound_MarkObtained" tabindex="35" placeholder="Mark Obtained" type="text" maxlength="50" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="scheduler-border">
+                        <legend class="scheduler-border">HR Round Status</legend>
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+
+                                <label for="ddlHRRound_Status" class="col-sm-4 control-label">Status</label>
+                                <div class="col-sm-8">
+                                    <select id="ddlHRRound_Status" name="ddlHRRound_Status" tabindex="36" class="form-control">
+                                        <option value="0">--Status--</option>
+                                        <option value="Final">Final</option>
+                                        <option value="Inprocess">Inprocess</option>
+                                        <option value="Hold">Hold</option>
+                                        <option value="Rejected">Rejected</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="txtHRRound_Remarks" class="col-sm-4 control-label">Remarks</label>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control" rows="2" cols="50" id="txtHRRound_Remarks" name="txtHRRound_Remarks" tabindex="37" placeholder="Enter Remark" value="" type="text" maxlength="50"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+
+                                <label for="txtHRRound_TotalMarks" class="col-sm-4 control-label">Total Marks&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input onkeyup="checkDec(this);" class="form-control input-number right-text" id="txtHRRound_TotalMarks" name="txtHRRound_TotalMarks" tabindex="38" placeholder="Total Marks" type="text"  maxlength="50" />
+                                </div>
+
+                            </div>
+                            <div class="form-group col-md-6">
+
+                                <label for="txtHRRound_MarkObtained" class="col-sm-4 control-label">Mark Obtained&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input onkeyup="checkDec(this);" class="form-control input-number right-text" id="txtHRRound_MarkObtained" name="txtHRRound_MarkObtained" tabindex="39" placeholder="Mark Obtained" type="text" maxlength="50" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+
+                                <label for="txtInterviewFinalStatus" class="col-sm-4 control-label">Interview Final Status<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <select id="ddlInterviewFinalStatus" name="ddlInterviewFinalStatus" tabindex="40" class="form-control">
+                                        <option value="0">--Status--</option>
+                                        <option value="Final">Final</option>
+                                        <option value="Inprocess">Inprocess</option>
+                                        <option value="Hold">Hold</option>
+                                        <option value="Rejected">Rejected</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                
+                                <label for="txtFinalRemarks" class="col-sm-4 control-label">Final Remarks</label>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control" rows="2" cols="50" id="txtFinalRemarks" name="txtFinalRemarks" tabindex="41" placeholder="Enter Remark" value="" type="text" maxlength="50"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    
+
+</fieldset>
+
+                    <div class="col-md-12" id="divCreated" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="txtCreatedBy" class="col-sm-4 control-label">Created By</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtCreatedBy" name="txtCreatedBy" tabindex="42" placeholder="Created By User Name" type="text" maxlength="100" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtCreatedDate" class="col-sm-4 control-label">Created Date</label>
+                            <div class="col-sm-8 ">
+                                <input class="form-control" id="txtCreatedDate" name="txtCreatedDate" tabindex="43" placeholder="Created Date" type="text" maxlength="50" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" id="divModified" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="txtModifiedBy" class="col-sm-4 control-label">Modified By</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtModifiedBy" name="txtModifiedBy" placeholder="Modified By User Name" type="text" maxlength="100" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtModifiedDate" class="col-sm-4 control-label">Modified Date</label>
+                            <div class="col-sm-8 ">
+                                <input class="form-control" id="txtModifiedDate" name="txtModifiedDate"  placeholder="Modified Date" type="text" maxlength="50" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+              
+            
+
+         
+
+
+            <div class="col-md-12">
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="44" onclick="SaveData(1)" type="button" border="0"> 
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="44" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">
+                        <input class="btn btn-success" type="button" id="btnReset" tabindex="47" onclick="ClearFields()" value="Reset" /> 
+                        <a class="btn btn-success" id="btnList" tabindex="48" href="@Url.Content("~/Interview/ListInterview")">Search Interview</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="45" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="46" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="46" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="modal fade" id="SearchApplicantModel" role="dialog">
+            <div class="modal-dialog  modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Search Applicant</h4>
+                    </div>
+                    <div class="">
+                        <div class="col-md-12 ftop">
+                            <div class="form-group col-md-6">
+                                <label for="txtApplicantNo" class="col-sm-4 control-label">Applicant No.</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtApplicantNo" name="txtApplicantNo" tabindex="3" placeholder="Search with Applicant No." type="text" maxlength="50" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtProjectNo" class="col-sm-4 control-label">Project No.</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtProjectNo" name="txtProjectNo" tabindex="4" placeholder="Search with Project No." type="text" maxlength="50" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+                                <label for="txtFirstName" class="col-sm-4 control-label">Applicant First Name</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtFirstName" name="txtFirstName" tabindex="5" placeholder="Search with Applicant First Name" type="text" maxlength="50" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtLastName" class="col-sm-4 control-label">Applicant Last Name</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtLastName" name="txtLastName" tabindex="6" placeholder="Search with Applicant Last Name" type="text" maxlength="50" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group  col-md-6">
+                                <label for="ddlResumeSource" class="col-sm-4 control-label">Resume Source&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <select id="ddlResumeSource" name="ddlResumeSource" tabindex="7" class="form-control"></select>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="ddlDesignation" class="col-sm-4 control-label">Position Applied</label>
+                                <div class="col-sm-8">
+                                    <select id="ddlDesignation" name="ddlDesignation" tabindex="8" class="form-control"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group  col-md-6">
+                                <label for="ddlApplicantStatus" class="col-sm-4 control-label">Applicant Status</label>
+                                <div class="col-sm-8">
+                                    <select id="ddlApplicantStatus" name="ddlApplicantStatus" tabindex="9" class="form-control">
+                                        <option value="0">--Status--</option>
+                                        <option value="Final">Final</option>
+                                        <option value="Draft">Draft</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+                                <label for="txtFromDate" class="col-sm-4 control-label">Application From Date</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtFromDate" name="txtFromDate" tabindex="10" value="@ViewData["fromDate"]" type="text" maxlength="50" />
+                                    <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["fromDate"]" type="hidden" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtToDate" class="col-sm-4 control-label">To Date</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtToDate" name="txtToDate" tabindex="11" value="@ViewData["toDate"]" type="text" maxlength="50" />
+                                    <input id="hdnToDate" name="hdnToDate" value="@ViewData["toDate"]" type="hidden" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row col-sm-12 col-lg-12 col-md-12">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <center>
+                                    <input class="btn btn-success" value="Search" alt="Search" id="btnSearch" tabindex="12" onclick="SearchApplicant()" type="button" border="0">&nbsp;&nbsp;
+                                </center>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="row col-sm-6 col-lg-12 col-md-12">
+                            <div id="divList">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" tabindex="13" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+
+

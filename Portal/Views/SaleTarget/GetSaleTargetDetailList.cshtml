@@ -1,0 +1,131 @@
+﻿@model List<Portal.Core.ViewModel.TargetDetailViewModel>
+    <script src="~/Scripts/jquery.tablesorter.js"></script>
+    <style>
+        .table th {
+            background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+        }
+
+        .table th {
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .table tr {
+            text-align: center;
+        }
+    </style>
+    @if(Model != null && Model.Count>0){
+        <div style="overflow-x:scroll; padding:10px;">
+            <table class="table" id="tblTargetDetailList">
+                <thead>
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Designation</th>
+                        @*<th>Target Type</th>
+                        <th>Product Name</th>*@
+                        <th>State</th>
+                        <th>City</th>
+                        <th>Vehicles</th>
+                        <th>Dealerships Nos</th>
+                        <th>Target Vehicles Qty</th>
+                        <th>Target Dealership Nos</th>
+                        <th>Target Amount</th>
+                        <th colspan="2" align="center" class="editonly">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                {
+                        <tr class="success">
+                            <td>@item.EmployeeName</td>
+                            <td>@item.DesignationName
+                                <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                                <input type="hidden" id="hdnTargetDetailId" value="@item.TargetDetailId" />
+                                <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                                <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                                <input type="hidden" id="hdnEmployeeId" value="@item.EmpId" />
+                                <input type="hidden" id="hdnEmployeeName" value="@item.EmployeeName" />
+                                <input type="hidden" id="hdnTargetTypeId" value="@item.TargetTypeId" />
+                                <input type="hidden" id="hdnTargetTypeName" value="@item.TargetTypeName" />
+                                <input type="hidden" id="hdnStateId" value="@item.StateId" />
+                                <input type="hidden" id="hdnStateName" value="@item.StateName" />
+                                <input type="hidden" id="hdnCityId" value="@item.CityId" />
+                                <input type="hidden" id="hdnCityName" value="@item.CityName" />
+                                <input type="hidden" id="hdnQuantity" value="@item.TargetQty" />
+                                <input type="hidden" id="hdnDesignationId" value="@item.DesignationId" />
+                                <input type="hidden" id="hdnDesignationName" value="@item.DesignationName" />
+                                <input type="hidden" id="hdnVehicles" value="@item.Vehicles" />
+                                <input type="hidden" id="hdnTargetAmount" value="@item.Amount" />
+
+                                <input type="hidden" id="hdnPerDealar" value="@item.PerDealar" />
+                                <input type="hidden" id="hdnDealershipsNos" value="@item.DealershipsNos" />
+                                <input type="hidden" id="hdnTargetDealershipsNos" value="@item.TargetDealershipsNos" />
+                            </td>
+                            @*<td>@item.TargetTypeName</td>
+                              <td>@item.ProductName</td>*@
+                            <td>
+                                @item.StateName
+                            </td>
+                            <td>
+                                @item.CityName
+                            </td>
+                            <td>
+                                @item.Vehicles
+                            </td>
+                            <td>
+                                @item.DealershipsNos
+                            </td>
+                            <td>
+                                @item.TargetQty
+                            </td>
+                            <td>
+                                @item.TargetDealershipsNos
+                            </td>
+                            <td>
+                                @item.Amount
+                            </td>
+                            <td class="btn btn-success table_btn editonly" style="width:30px; margin:0px 2px auto;">
+                                <a style="color:white" class="fa fa-pencil-square-o" onclick="EditProductRow(this);" href="#"></a>
+                            </td>
+                            <td class="btn btn-success table_btn editonly" style="width:30px; margin:0px 2px auto;">
+                                <a style="color:white" class="fa fa-trash" onclick="RemoveProductRow(this)" href="#"></a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div style="overflow-x:scroll; padding:10px;">
+            <table class="table" id="tblTargetDetailList">
+                <thead>
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Designation</th>
+                        @*<th>Target Type</th>
+                        <th>Product Name</th>*@
+                        <th>State</th>
+                        <th>City</th>
+                        <th>Vehicles</th>
+                        <th>Dealerships Nos</th>
+                        <th>Target Vehicles Qty</th>
+                        <th>Target Dealership Nos</th>
+                        <th>Target Amount</th>
+                        <th colspan="2" align="center" class="editonly">Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    }
+    <script>
+    $(document).ready(function () {
+        if ($("#hdnAccessMode").val() == "3") {
+            $(".editonly").hide();
+        }
+
+    });
+    </script>

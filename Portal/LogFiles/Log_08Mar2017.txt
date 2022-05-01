@@ -1,0 +1,32 @@
+15:07:36 PM
+Source : Portal.Core.ProductBOMBL
+Method Name : GetAssemblyList
+Error Line No : 58
+Exception Type : System.ArgumentException
+Details: Column 'AssemblyName' does not belong to table .
+--------------------------------------------------------------------------------------------------------------------------------
+
+15:07:36 PM
+Source : Portal.Controllers.ProductBOMController
+Method Name : GetAssemblyList
+Error Line No : 94
+Exception Type : System.ArgumentException
+Details: Column 'AssemblyName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:09:34 PM
+Source : Portal.Core.ProductBOMBL
+Method Name : GetAssemblyList
+Error Line No : 58
+Exception Type : System.ArgumentException
+Details: Column 'AssemblyName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:09:35 PM
+Source : Portal.Controllers.ProductBOMController
+Method Name : GetAssemblyList
+Error Line No : 94
+Exception Type : System.ArgumentException
+Details: Column 'AssemblyName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+

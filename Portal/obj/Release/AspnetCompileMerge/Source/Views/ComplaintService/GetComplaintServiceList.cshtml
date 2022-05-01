@@ -1,0 +1,120 @@
+﻿@model List<Portal.Core.ViewModel.ComplaintServiceViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+ table tr:nth-child(2n+1) {
+    
+    background-color: #dbe5f7;
+    }
+
+     table tr:nth-child(2n) {
+    
+    background-color: #dbe5f7;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblPurchaseIndentList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>Complaint No.</center></th>
+                    <th><center>EnquiryType</center></th>
+                    <th><center>Company Branch</center></th>
+                    <th><center>ComplaintMode</center></th>
+                    <th><center>Customer Mobile</center></th>
+                    <th><center>Customer Name</center></th>
+                    <th><center>Status</center></th>         
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    if (item.ComplaintService_Status == true)
+                    {
+                        <tr class="success">
+                            @*<td class="teal text" style="margin:0px auto;" colspan="2">
+                                <a style="color:darkblue" title="View" class="fa fa-eye" aria-hidden="true" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=3"></a>
+                            </td>*@
+                            
+                            <td class="teal text" style="margin:0px auto;">
+                                <a style="color:darkblue" title="View" class="fa fa-eye" aria-hidden="true" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=3"></a>
+                            </td>
+                            <td class="teal text" style="margin:0px auto;">
+
+                                <a style="color:darkgreen" title="Edit" class="fa fa-pencil" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=2"></a>
+
+                            </td>
+                            
+                            <td>@item.ComplaintNo</td>
+                            <td>@item.EnquiryType</td>
+                            <td>@item.CompanyBranchName</td>
+                            <td>@item.ComplaintMode</td>
+                            <td>@item.CustomerMobile</td>
+                            <td>@item.CustomerName</td>
+                            <td>@(item.ComplaintService_Status == true ? "Active" : "Inactive")</td>
+
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr class="danger">
+                            <td class="teal text" style="width:30px; margin:0px auto;">
+                                <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=3"></a>
+                            </td>
+                            <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                                <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=2"></a>
+                            </td>
+                            <td>@item.ComplaintNo</td>
+                            <td>@item.EnquiryType</td>
+                            <td>@item.ComplaintMode</td>
+                            <td>@item.CustomerMobile</td>
+                            <td>@item.CustomerName</td>
+                            <td>@(item.ComplaintService_Status == true ? "Active" : "Inactive")</td>
+
+
+                        </tr>
+
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblPurchaseIndentList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

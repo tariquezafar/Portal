@@ -1,0 +1,1099 @@
+﻿@{
+    ViewBag.Title = "ESS Dashboard";
+    Layout = "";
+}
+<!doctype html>
+<!--[if IE 8]>         <html class="ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html>
+<!--<![endif]-->
+<head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Employee Dashboard </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!--<link rel="shortcut icon" href="/favicon.ico">-->
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/ESSstyle.css" rel="stylesheet" />
+    <link href="~/Content/style-1.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <!--[if lt IE 9]>
+    <script src="dist/assets/libs/html5shiv/html5shiv.min.js"></script>
+    <script src="dist/assets/libs/respond/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    .mini-chart .chart-value {
+    color: inherit;
+    font-family: inherit;
+    font-size: 12px;
+    }
+    </style>
+    @{
+        if (Session["IsAuthenticated"] == null || Convert.ToBoolean(Session["IsAuthenticated"]) == false)
+        {
+            Session.Abandon();
+            Response.Redirect("~/Home/Login");
+        }
+        
+    }
+</head>
+<body class="sidebar-condensed" id="body">
+    <header>
+
+        <nav class="navbar navbar-default navbar-static-top no-margin" role="navigation" style="background:rgba(0, 0, 0, 0) linear-gradient(to bottom, #80bcff 0%, #ffffff 92%, #ffffff 100%) repeat scroll 0 0 !important;">
+            <div class="navbar-brand-group" >
+                <a class="navbar-sidebar-toggle navbar-link" data-sidebar-toggle>
+                    <i class="fa fa-lg fa-fw fa-bars"></i>
+                </a>
+                <a class="navbar-brand hidden-xxs" href="" target="_blank" title="HTS" style="border:none;">
+                    <span class="sc-visible" style="color:blue; font-weight:bold;">
+                          <img src="~/Images/logo-new.png" style="float: left; width: 116px;margin-top:10px;">
+</span>
+                    <span class="sc-hidden" style="color:blue; font-weight:bold;">
+
+                        <img src="~/Images/logo-new.png" style="float: left; width: 116px;margin-top:10px;">
+                    </span>
+                </a>
+            </div>
+            <div class="col-md-5 col-xs-3">
+                @*<img src="~/Images/sale1.png" class="img-responsive pull-right" width="70px" style="padding-bottom:5px;" />*@
+                <h3 style="color: #480dfd;font-weight: bold;padding-top: 8px;" class="pull-right text-module">ESS Module</h3>
+            </div>
+            <ul class="nav navbar-nav navbar-nav-expanded pull-right margin-md-right">
+                <li class="hidden-xs">
+                    <form class="navbar-form">
+                        <div style="margin-top:15px;color:blue;font-size:17px;">
+                            <img src="~/Images/phone.png" width="34px" /><strong>&nbsp;89 2985 2839</strong>
+                        </div> 
+                       <!-- <div class="navbar-search">
+                            <input type="text" placeholder="Search &hellip;" class="form-control">
+                            <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                        </div>-->
+                    </form>
+                </li>
+                @*<li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;">
+                        <i class="glyphicon glyphicon-envelope"></i>
+                        <span class="badge badge-up badge-dark badge-small">3</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages pull-right">
+                        <li class="dropdown-title bg-inverse">New Messages</li>
+                        <li class="unread">
+                            <a href="javascript:;" class="message">
+                                <img class="message-image img-circle" src="images/avatars/1.jpg">
+                                <div class="message-body">
+                                    <strong>Ernest Kerry</strong><br>
+                                    Hello, You there?<br>
+                                    <small class="text-muted">8 minutes ago</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="unread">
+                            <a href="javascript:;" class="message">
+                                <img class="message-image img-circle" src="images/avatars/3.jpg">
+                                <div class="message-body">
+                                    <strong>Don Mark</strong><br>
+                                    I really appreciate your &hellip;<br>
+                                    <small class="text-muted">21 hours</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="message">
+                                <img class="message-image img-circle" src="images/avatars/8.jpg">
+                                <div class="message-body">
+                                    <strong>Jess Ronny</strong><br>
+                                    Let me know when you free<br>
+                                    <small class="text-muted">5 days ago</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="message">
+                                <img class="message-image img-circle" src="images/avatars/7.jpg">
+                                <div class="message-body">
+                                    <strong>Wilton Zeph</strong><br>
+                                    If there is anything else &hellip;<br>
+                                    <small class="text-muted">06/10/2014 5:31 pm</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-footer">
+                            <a href="javascript:;"><i class="fa fa-share"></i> See all messages</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;">
+                        <i class="fa fa-globe"></i>
+                        <span class="badge badge-up badge-danger badge-small">3</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-notifications pull-right">
+                        <li class="dropdown-title bg-inverse">Notifications (3)</li>
+                        <li>
+                            <a href="javascript:;" class="notification">
+                                <div class="notification-thumb pull-left">
+                                    <i class="fa fa-clock-o fa-2x text-info"></i>
+                                </div>
+                                <div class="notification-body">
+                                    <strong>Call with John</strong><br>
+                                    <small class="text-muted">8 minutes ago</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="notification">
+                                <div class="notification-thumb pull-left">
+                                    <i class="fa fa-life-ring fa-2x text-warning"></i>
+                                </div>
+                                <div class="notification-body">
+                                    <strong>New support ticket</strong><br>
+                                    <small class="text-muted">21 hours ago</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="notification">
+                                <div class="notification-thumb pull-left">
+                                    <i class="fa fa-exclamation fa-2x text-danger"></i>
+                                </div>
+                                <div class="notification-body">
+                                    <strong>Running low on space</strong><br>
+                                    <small class="text-muted">3 days ago</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="notification">
+                                <div class="notification-thumb pull-left">
+                                    <i class="fa fa-user fa-2x text-muted"></i>
+                                </div>
+                                <div class="notification-body">
+                                    New customer registered<br>
+                                    <small class="text-muted">06/18/2014 12:31 am</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-footer">
+                            <a href="javascript:;"><i class="fa fa-share"></i> See all notifications</a>
+                        </li>
+                    </ul>
+                </li>*@
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle navbar-user" href="javascript:;">
+                        <img class="img-circle" src="~/Images/UserImages/@(Convert.ToString(Session["UserPicName"])==""?"ProfilePic.png":Session["UserPicName"])">
+                        <span class="hidden-xs">@(Session["UserFullName"] != null ? Session["UserFullName"] : "")</span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu pull-right-xs">
+                        <li class="arrow"></li>
+                        <li><a href="javascript:;">Profile</a></li>
+                                                @*<li><a href="javascript:;"><span class="badge badge-danger pull-right">2</span> Inbox</a></li>
+        <li><a href="javascript:;">Messages</a></li>
+        <li><a href="javascript:;">Settings</a></li>*@
+            <li><a href="~/Home/ChangePassword">Change Password</a></li>
+        <li class="divider"></li>
+                        <li><a href="~/Home/SignOut">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+
+        </nav>
+    </header>
+ 
+    <div class="page-wrapper">
+        <aside class="sidebar sidebar-default">
+            <div class="sidebar-profile">
+                <img class="img-circle profile-image" id="profileimage"/>
+                <div class="profile-body">
+                    <h4 id="profilename"></h4>
+                    <div class="sidebar-user-links">
+                        <a class="btn btn-link btn-xs" href="pages-profile.html" data-placement="bottom" data-toggle="tooltip" data-original-title="Profile"><i class="fa fa-user"></i></a>
+                        <a class="btn btn-link btn-xs" href="javascript:;" data-placement="bottom" data-toggle="tooltip" data-original-title="Messages"><i class="fa fa-envelope"></i></a>
+                        <a class="btn btn-link btn-xs" href="javascript:;" data-placement="bottom" data-toggle="tooltip" data-original-title="Settings"><i class="fa fa-cog"></i></a>
+                        <a class="btn btn-link btn-xs" href="pages-sign-in.html" data-placement="bottom" data-toggle="tooltip" data-original-title="Logout"><i class="fa fa-sign-out"></i></a>
+                    </div>
+                </div>
+            </div>
+            <nav>
+              
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="nav-dropdowns active">
+                        <a href="#" title="Dashboards">
+                            <i class="fa fa-lg fa-fw fa-home"></i>ESS Dashboards
+                        </a>
+                        <ul class="nav-sub">
+                            <li>
+                                <a href="~/Dashboard/ModuleDashboard" title="Dashboard">
+                                    <i class="fa fa-fw fa-caret-right"></i>Module Dashboard
+                                </a>
+                            </li>
+                            @*<li>
+                                <a href="analytics-overview.html" title="Analytics Overview">
+                                    <i class="fa fa-fw fa-caret-right"></i> Analytics Overview
+                                    <span class="label label-danger pull-right">New</span>
+                                </a>
+                            </li>*@
+                        </ul>
+                    </li>
+                    <li class="nav-dropdowns active open">
+                        <a href="#" title="Account">
+                            <i class="fa fa-lg fa-fw fa-lock"></i> My Account
+                        </a>
+                        <ul class="nav-sub">
+                            <li class="active">
+                                <a id="editProfile" href="~/Employee/AddEditEmployeeProfile?EmployeeId=@Session["EmployeeId"]&AccessMode=2" title="Profile">
+                                    <i class="fa fa-fw fa-caret-right"></i> My Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="Password">
+                                    <i class="fa fa-fw fa-caret-right"></i> Change Password
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-dropdowns">
+                        <a href="#" title="Users">
+                            <i class="fa fa-lg fa-fw fa-bookmark"></i> ESS
+                            @*<span class="label label-danger pull-right">New</span>*@
+                        </a>
+                        <ul class="nav-sub">
+                            <li>
+                                <a href="~/Attendance/MarkAttendance?essEmployeeId=@Session["EmployeeId"]&essEmployeeName=@Session["EmployeeFullName"]" title="Mark Attendance">
+                                    <i class="fa fa-fw fa-money"></i> Mark Today's Attendance
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/EmployeeAdvanceApp/AddEditEmployeeAdvanceApp?essEmployeeId=@Session["EmployeeId"]&essEmployeeName=@Session["EmployeeFullName"]" title="Application for Advance">
+                                    <i class="fa fa-fw fa-money"></i> Apply Advance
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/EmployeeAssetApplication/AddEditEmployeeAssetApplication?essEmployeeId=@Session["EmployeeId"]&essEmployeeName=@Session["EmployeeFullName"]" title="Application for Asset">
+                                    <i class="fa   fa-fw fa-share"></i> Apply Asset
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/EmployeeClaimApplication/AddEditEmployeeClaimApplication?essEmployeeId=@Session["EmployeeId"]&essEmployeeName=@Session["EmployeeFullName"]" title="Application for Claim">
+                                    <i class="fa fa-fw fa-caret-right"></i> Apply Claim 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/EmployeeLeaveApplication/AddEditEmployeeLeaveApplication?essEmployeeId=@Session["EmployeeId"]&essEmployeeName=@Session["EmployeeFullName"]" title="Application for Leave">
+                                    <i class="fa fa-fw fa-caret-right"></i> Apply Leave
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/EmployeeLoanApplication/AddEditEmployeeLoanApplication?essEmployeeId=@Session["EmployeeId"]&essEmployeeName=@Session["EmployeeFullName"]" title="Application for Loan">
+                                    <i class="fa fa-fw fa-caret-right"></i> Apply Loan
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/EmployeeTravelApp/AddEditEmployeeTravelApp?essEmployeeId=@Session["EmployeeId"]&essEmployeeName=@Session["EmployeeFullName"]" title="Application for Travel">
+                                    <i class="fa fa-fw fa-caret-right"></i> Apply Travel
+                                </a>
+                            </li>
+                           
+                            
+                            
+                        </ul>
+                    </li>
+                    @*<li class="nav-dropdowns">
+                        <a href="#" title="UI Elements">
+                            <i class="fa fa-lg fa-fw fa-suitcase"></i> UI Elements
+                        </a>
+                        <ul class="nav-sub">
+                            <li>
+                                <a href="ui-typography.html" title="Typography">
+                                    <i class="fa fa-fw fa-caret-right"></i> Typography
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ui-buttons.html" title="Buttons">
+                                    <i class="fa fa-fw fa-caret-right"></i> Buttons
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ui-panels.html" title="Panels">
+                                    <i class="fa fa-fw fa-caret-right"></i> Panels
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ui-tabs-accordions.html" title="Tabs & Accordions">
+                                    <i class="fa fa-fw fa-caret-right"></i> Tabs & Accordions
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ui-tooltips-popovers.html" title="Tooltips & Popovers">
+                                    <i class="fa fa-fw fa-caret-right"></i> Tooltips & Popovers
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ui-alerts.html" title="Alerts">
+                                    <i class="fa fa-fw fa-caret-right"></i> Alerts
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ui-components.html" title="Components">
+                                    <i class="fa fa-fw fa-caret-right"></i> Components
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ui-icons.html" title="Icons">
+                                    <i class="fa fa-fw fa-caret-right"></i> Icons
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                   <li class="nav-dropdowns">
+        <a href="#" title="Forms">
+            <i class="fa fa-lg fa-fw fa-edit"></i> Forms
+            <span class="label label-warning pull-right">Updated</span>
+        </a>
+        <ul class="nav-sub">
+            <li>
+                <a href="forms-form-layouts.html" title="Form Layouts">
+                    <i class="fa fa-fw fa-caret-right"></i> Form Layouts
+                </a>
+            </li>
+            <li>
+                <a href="forms-basic-elements.html" title="Basic Elements">
+                    <i class="fa fa-fw fa-caret-right"></i> Basic Elements
+                </a>
+            </li>
+            <li>
+                <a href="forms-advanced-components.html" title="Advanced Components">
+                    <i class="fa fa-fw fa-caret-right"></i> Advanced Components
+                </a>
+            </li>
+            <li>
+                <a href="forms-sliders.html" title="Sliders">
+                    <i class="fa fa-fw fa-caret-right"></i> Sliders
+                </a>
+            </li>
+            <li>
+                <a href="forms-form-wizards.html" title="Form Wizards">
+                    <i class="fa fa-fw fa-caret-right"></i> Form Wizards
+                </a>
+            </li>
+            <li>
+                <a href="forms-form-validation.html" title="Form Validation">
+                    <i class="fa fa-fw fa-caret-right"></i> Form Validation
+                </a>
+            </li>
+            <li>
+                <a href="forms-editors.html" title="Editors">
+                    <i class="fa fa-fw fa-caret-right"></i> Editors
+                    <span class="label label-danger pull-right">New</span>
+                </a>
+            </li>
+        </ul>
+    </li>*@
+    </ul>
+                
+               
+            </nav>
+        </aside>
+        <div class="page-content">
+            <div class="page-subheading page-subheading-md">
+                <ol class="breadcrumb">
+                    <li><a href="~/Dashboard/ModuleDashboard">Module Dashboard</a></li>
+                    <li><a href="javascript:;">ESS Dashboard</a></li>
+                    
+                </ol>
+            </div>
+            
+            <div class="container-fluid-md">
+                <div class="row">
+
+                    <div class="col-md-7 col-lg-8">
+                        <div class="panel panel-default panel-profile-details">
+                            <div class="panel-body">
+                                <div class="text-right">
+                                    <a class="fa fa-pencil-square-o" id="edit" href="~/Employee/AddEditEmployeeProfile?EmployeeId=@Session["EmployeeId"]&AccessMode=2" title="Edit Profile">&nbsp;Edit</a>
+                                    <input type="hidden" id="hdnEmployeeId" value="@Session["EmployeeId"]" />
+                                    <input type="hidden" id="hdnEmployeeCode" value="0" />
+                                    <input type="hidden" id="hdnCompanyBranchId" value="0" />
+                                    <input type="hidden" id="hdnDepartmentId" value="0" />
+                                    <input type="hidden" id="hdnDesignationId" value="0" />
+                                    <input type="hidden" id="hdnEmployeeType" value="" />
+                                    
+                                </div>
+                                
+                                <div class="col-sm-5 text-center">
+                                    <img alt="image" class="img-circle img-profile" id="userimage" width="120px" height="120px">
+                                </div>
+                                <div class="col-sm-7 profile-details">
+                                    <h3 id="userName"></h3>
+                                    <h4 class="thin" id="designation"></h4>
+                                    <p>
+                                        <a href="javascript:;" class="text-gray text-no-decoration">
+                                            <i class="fa fa-fw fa-envelope"></i>
+                                            <span id="email"></span>
+                                        </a>
+                                    </p>
+                                    <p>
+                                        <a href="javascript:;" class="text-gray text-no-decoration">
+                                            <i class="fa fa-fw fa-phone"></i>
+                                            <span id="contactno"></span>
+                                        </a>
+                                    </p>
+                                </div>
+                                <div>
+                                    
+                                </div>
+                            </div>
+                            <div class="panel-body">
+
+                                <div class="col-sm-4">
+                                    <dl>
+                                        <dt>Email</dt>
+                                        <dd><span id="alternatemail"></span> </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Gender</dt>
+                                        <dd><span id="gender"></span></dd>
+                                    </dl>
+                                   
+                                </div>
+                                <div class="col-sm-4">
+                                    <dl>
+                                        <dt>Mobile</dt>
+                                        <dd><span id="mobile"></span></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Marital Status</dt>
+                                        <dd><span id="maritalstatus"></span></dd>
+                                    </dl>
+                                   
+                                </div>
+                                <div class="col-sm-4">
+                                    <dl>
+                                        <dt>Department</dt>
+                                        <dd><span id="department"></span></dd>
+                                    </dl>
+                                    <dl class="margin-sm-bottom">
+                                        <dt>Employment Type</dt>
+                                        <dd><span id="employmenttype"></span></dd>
+                                    </dl>
+                                    </div>
+                                </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-3">
+                                            <div class="mini-chart">
+
+                                                <div class="chart-details text-left" style="width: 129px;">
+                                                    <div class="chart-name">Date of Birth</div>
+                                                    <div class="chart-value" id="dob"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3">
+                                            <div class="mini-chart">
+                                                <div id="mini-chart-2" class="chart"></div>
+                                                <div class="chart-details" style="width: 79px;">
+                                                    <div class="chart-name">Blood Group</div>
+                                                    <div class="chart-value text-center" id="bloodgroup"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3">
+                                            <div class="mini-chart">
+                                               
+                                                <div class="chart-details" style="width: 129px;">
+                                                    <div class="chart-name">PAN No.</div>
+                                                    <div class="chart-value" id="panno"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3">
+                                            <div class="mini-chart">
+                                                <div id="mini-chart-4" class="chart"></div>
+                                                <div class="chart-details" style="width: 79px;">
+                                                    <div class="chart-name">Aadhar No</div>
+                                                    <div class="chart-value" id="adharno"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <div class="panel-body">
+                                <h5>Address Detail</h5>
+                                <div class="row">
+                                    <div class="col-xs-6 col-sm-3">
+                                        <div class="mini-chart">
+
+                                            <div class="chart-details text-left" style="width: 129px;">
+                                                <div class="chart-name">Address</div>
+                                                <div class="chart-value" id="address"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-3">
+                                        <div class="mini-chart">
+                                            <div id="mini-chart-2" class="chart"></div>
+                                            <div class="chart-details" style="width: 79px;">
+                                                <div class="chart-name">City</div>
+                                                <div class="chart-value" id="cityname"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-3">
+                                        <div class="mini-chart">
+                                            
+                                            <div class="chart-details" style="width: 129px;">
+                                                <div class="chart-name">State</div>
+                                                <div class="chart-value" id="statename"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-3">
+                                        <div class="mini-chart">
+                                            <div id="mini-chart-4" class="chart"></div>
+                                            <div class="chart-details" style="width: 79px;">
+                                                <div class="chart-name">Pin Code.</div>
+                                                <div class="chart-value" id="pinno"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="nav nav-tabs nav-dark" style="width:152%; background-color:#337ab7 !important;">
+                            @*<li class=""><a href="#tab1-1" data-toggle="tab" >Rosters Applications</a></li>*@
+                            <li class="active"><a href="#tab1-1" data-toggle="tab">Leave Applications</a></li>
+                            <li class=""><a href="#tab1-2" data-toggle="tab" >Advance Applications</a></li>
+                            <li class=""><a href="#tab1-3" data-toggle="tab" >Asset Applications</a></li>
+                            <li class=""><a href="#tab1-4" data-toggle="tab" >Claim Applications</a></li>
+                            <li class=""><a href="#tab1-5" data-toggle="tab" >Loan Applications</a></li>
+                            <li class=""><a href="#tab1-6" data-toggle="tab" >Travel Applications</a></li>
+                        </ul>
+                        <div class="tab-content" style="width:153%;">
+                            <div id="tab1-1" class="tab-pane tab-pane-table">
+                                <div class="table-responsive" id="divList">
+                                    
+                                </div>
+                            </div>
+                            <div id="tab1-2" class="tab-pane tab-pane-table active">
+                                <div class="table-responsive" id="divleaveApplicationList">
+                                    
+                                </div>
+                            </div>
+                            <div id="tab1-3" class="tab-pane tab-pane-table">
+                                <div class="table-responsive" id="divAdvanceApplicationList">
+
+                                </div>
+                            </div>
+                            <div id="tab1-4" class="tab-pane tab-pane-table">
+                                <div class="table-responsive" id="divAssetApplicationList">
+
+                                </div>
+                            </div>
+                            <div id="tab1-5" class="tab-pane tab-pane-table">
+                                <div class="table-responsive" id="divClaimApplicationList">
+
+                                </div>
+                            </div>
+                            <div id="tab1-6" class="tab-pane tab-pane-table">
+                                <div class="table-responsive" id="divLoanApplicationList">
+
+                                </div>
+                            </div>
+                            <div id="tab1-7" class="tab-pane tab-pane-table">
+                                <div class="table-responsive" id="divTravelApplicationList">
+
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-lg-4">
+                      
+                        <div class="panel panel-metric panel-metric-sm">
+                            <div class="panel-body panel-body-warning" style="background-color:#68ae00;">
+                                <div class="metric-content metric-icon">
+                                    @*<div class="value"   style="font-size:18px;color:#fff;" id="holidaydate">
+                                   
+                                    </div>*@
+                                    <a href="~/Attendance/MarkAttendance?essEmployeeId=@Session["EmployeeId"]&essEmployeeName=@Session["EmployeeFullName"]">
+                                        <div class="trend" style="margin-right: 74px;">
+                                            <p class="text-success" style="color:#fff;">
+                                                <i class="fa fa-pencil-square-o" style="font-size:20px;"></i>&nbsp;
+                                                <strong style="text-align:center;font-size:16px;color:white;">Mark Today's Attendance</strong>
+
+                                            </p>
+
+                                        </div>
+                                    </a>
+                                    <div id="metric-sales" class="chart"></div>
+                                    <header>
+                                        <h3 class="thin" style="font-size:15px;float: left;margin-left: 8px;font-size: 13px;">In Time: <label id="lblInTime"></label></h3>
+                                        <h3 class="thin" style="font-size:15px;float: right;margin-right: 8px;font-size: 13px;">Out Time: <label id="lblOutTime"></label></h3>
+                                        <input type="hidden" id="hdnEssEmployeeId" name="hdnEssEmployeeId" value="@ViewData["essEmployeeId"]" />
+                                        <input id="hdnAttendanceDate" type="hidden" value="@ViewData["currentDate"]" />
+                                    </header>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-metric panel-metric-sm">
+                            <div class="panel-body panel-body-info" style="background-color:#FC8213;">
+                                <div class="metric-content metric-icon">
+                                    <div class="value" id="activityDate" style="font-size:18px;" > </div>
+                                    <div class="trend">
+                                        <p style="color:#fff;">
+                                           <i class="fa fa-trophy" style="font-size:20px"></i>&nbsp;
+                                            <strong>Upcoming Activity</strong>
+                                        </p>
+                                    </div>
+                                    <div id="metric-orders" class="chart"></div>
+                                    <header>
+                                        <h3 class="thin" style="font-size:15px;" id="activityDescription"></h3>
+                                    </header>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-metric panel-metric-sm">
+                            <div class="panel-body panel-body-info1" style="background-color:#007fff;">
+                                <div class="">
+                                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+                                        <!-- Indicators --> <!-- Wrapper for slides -->
+                                     
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="panel panel-metric panel-metric-sm" style="margin-top: -14px;" >
+                            <div class="panel-body panel-body-info" style="background-color:rgb(0,170,255);">
+                                <div class="metric-content metric-icon">
+                                    <div class="value" id="activityDate" style="font-size:18px;"> </div>
+                                    <div class="trend">
+                                    </div>
+                                    <div id="metric-orders" class="chart" style="margin-bottom:-10px;">
+                                        <div class="row">
+                                            <p style="color:#fff; padding-left:22px; padding-top:5px;">
+                                                <i class="fa fa-sticky-note-o" style="font-size:15px; float:left"></i><label for="ddlMonth" class="col-md-4" style="color:#fff; font-weight:bold;#fff;font-size:18px;">Salary Slip</label></p>
+                                                <div class="col-md-12" style="padding:10px;">
+                                                    <div class="col-md-6">
+                                                        <label for="ddlYear" class="col-md-4" style="color:#fff;">Year</label>
+                                                        <div class="col-md-8">
+                                                            <select id="ddlYear" class="form-control">
+                                                                <option value="0">-Year-</option>
+                                                            </select>
+                                                            
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label for="ddlMonth" class="col-md-4" style="color:#fff;">Month</label>
+                                                        <div class="col-md-8">
+                                                            <select id="ddlMonth" class="form-control" onchange="GetPayrollProcessPeriodDetail(this)">
+                                                                <option value="0">-Month-</option>
+                                                            </select>
+                                                            <input id="hdnPayrollProcessingPeriodId" type="hidden" value="0" />
+                                                        </div>
+                                                    </div>
+                                                  
+                                                </div>
+                                            </div>
+                                        <div class="row">
+                                            
+                                            <div class="col-md-12">
+                                                <div class="col-md-4">
+                                                    
+                                                </div>
+                                                <div class="col-md-2">
+
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input class="btn btn-success" value="Generate Salary Slip(s)" alt="Generate Salary Slip(s)" tabindex="10" id="btnGenerateSalarySlip" onclick="OpenSlipPrintPopup();" type="button" border="0">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                        <!-- Print Salary Slip Modal content-->
+                        <div class="modal fade" id="printModelSalarySlip" role="dialog">
+                            <div class="modal-dialog  modal-sm">
+                             
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Salary Slip(s)</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label for="ddlSlipPrintOption" class="col-sm-4 control-label">Print Option</label>
+                                            <div class="col-sm-8">
+                                                <select id="ddlSlipPrintOption" name="ddlSlipPrintOption" onchange="ShowHideSlipPrintOption()" tabindex="1" class="form-control">
+                                                    <option selected="selected" value="PDF">PDF</option>
+                                                    <option value="Excel">Excel</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a class="btn btn-success" target="_blank" href="#" id="btnSlipPdf">Print</a>
+                                        <a class="btn btn-success" style="display:none;" target="_blank" href="#" id="btnSlipExcel">Print</a>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+     <script src="~/Scripts/jquery-1.10.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    function resize() {
+     var $window = $("#body");
+     if ($window.width() <= 767) {
+      $("#body").removeClass('sidebar-condensed');
+      }
+    }
+    resize();
+    });
+
+        </script>
+
+
+    <script src="~/Scripts/jquery.min.js"></script>
+        <script src="~/Scripts/jquery-ui.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.navgoco.js"></script>
+    <script src="~/Scripts/main.js"></script>
+        <link href="~/Content/timeout-dialog.css" rel="stylesheet" />
+        <script src="~/Scripts/timeout-dialog.js"></script>
+        <script>
+        $(function () {
+            var fnTimeOut = function () {
+                jQuery.timeoutDialog.setupDialogTimer({
+                    timeout: 1200,
+                    countdown: 180,
+                    logout_redirect_url: '@Url.Action("SignOut", "Home")',
+                    keep_alive_url: '@Url.Action("Keepalive", "Home")'
+               });
+            };
+            fnTimeOut();
+        });
+        </script>
+
+    <script src="~/Scripts/Dashboard/ESSDashboard.js"></script>
+        <script>
+        function ajaxindicatorstart(text) {
+            if ($('body').find('#resultLoading').attr('id') != 'resultLoading') {
+                // $('body').append('<div id="resultLoading" style="display:none"><div><img src="../Content/Home/images/ajax-loader2.gif"><div>' + text + '</div></div><div class="bg"></div></div>');
+                $('body').append('<div id="resultLoading" style="display:none"><div><div id="cssload-loader"><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div></div><div>' + text + '</div></div><div class="bg"></div></div>');
+            }
+
+            $('#resultLoading').css({
+                'width': '100%',
+                'height': '100%',
+                'position': 'fixed',
+                'z-index': '10000000',
+                'top': '0',
+                'left': '0',
+                'right': '0',
+                'bottom': '0',
+                'margin': 'auto'
+            });
+
+            $('#resultLoading .bg').css({
+                'background': '#000000',
+                'opacity': '0.7',
+                'width': '100%',
+                'height': '100%',
+                'position': 'absolute',
+                'top': '0'
+            });
+
+            $('#resultLoading>div:first').css({
+                'width': '250px',
+                'height': '75px',
+                'text-align': 'center',
+                'position': 'fixed',
+                'top': '0',
+                'left': '0',
+                'right': '0',
+                'bottom': '0',
+                'margin': 'auto',
+                'font-size': '16px',
+                'z-index': '10',
+                'color': '#ffffff'
+
+            });
+
+            $('#resultLoading .bg').height('100%');
+            $('#resultLoading').fadeIn(300);
+            $('body').css('cursor', 'wait');
+        }
+
+        function ajaxindicatorstop() {
+            $('#resultLoading .bg').height('100%');
+            $('#resultLoading').fadeOut(300);
+            $('body').css('cursor', 'default');
+        }
+
+        $(document).ajaxStart(function () {
+            //show ajax indicator
+            ajaxindicatorstart('Processing.. please wait..');
+        }).ajaxStop(function () {
+            //hide ajax indicator
+            ajaxindicatorstop();
+        });
+        $(document).ajaxComplete(function () {
+            jQuery.timeoutDialog.setupDialogTimer();
+        });
+        </script>
+        <style>
+            #cssload-loader {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 171px;
+                height: 171px;
+                margin: auto;
+            }
+
+                #cssload-loader .cssload-dot {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 85.5px;
+                    height: 100%;
+                    margin: auto;
+                }
+
+                    #cssload-loader .cssload-dot:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        width: 85.5px;
+                        height: 85.5px;
+                        border-radius: 100%;
+                        transform: scale(0);
+                        -o-transform: scale(0);
+                        -ms-transform: scale(0);
+                        -webkit-transform: scale(0);
+                        -moz-transform: scale(0);
+                    }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+1) {
+                        transform: rotate(45deg);
+                        -o-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        -webkit-transform: rotate(45deg);
+                        -moz-transform: rotate(45deg);
+                    }
+
+                        #cssload-loader .cssload-dot:nth-child(7n+1):before {
+                            background: rgb(0,255,128);
+                            animation: cssload-load 0.92s linear 0.12s infinite;
+                            -o-animation: cssload-load 0.92s linear 0.12s infinite;
+                            -ms-animation: cssload-load 0.92s linear 0.12s infinite;
+                            -webkit-animation: cssload-load 0.92s linear 0.12s infinite;
+                            -moz-animation: cssload-load 0.92s linear 0.12s infinite;
+                        }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+2) {
+                        transform: rotate(90deg);
+                        -o-transform: rotate(90deg);
+                        -ms-transform: rotate(90deg);
+                        -webkit-transform: rotate(90deg);
+                        -moz-transform: rotate(90deg);
+                    }
+
+                        #cssload-loader .cssload-dot:nth-child(7n+2):before {
+                            background: rgb(0,255,234);
+                            animation: cssload-load 0.92s linear 0.23s infinite;
+                            -o-animation: cssload-load 0.92s linear 0.23s infinite;
+                            -ms-animation: cssload-load 0.92s linear 0.23s infinite;
+                            -webkit-animation: cssload-load 0.92s linear 0.23s infinite;
+                            -moz-animation: cssload-load 0.92s linear 0.23s infinite;
+                        }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+3) {
+                        transform: rotate(135deg);
+                        -o-transform: rotate(135deg);
+                        -ms-transform: rotate(135deg);
+                        -webkit-transform: rotate(135deg);
+                        -moz-transform: rotate(135deg);
+                    }
+
+                        #cssload-loader .cssload-dot:nth-child(7n+3):before {
+                            background: rgb(0,170,255);
+                            animation: cssload-load 0.92s linear 0.35s infinite;
+                            -o-animation: cssload-load 0.92s linear 0.35s infinite;
+                            -ms-animation: cssload-load 0.92s linear 0.35s infinite;
+                            -webkit-animation: cssload-load 0.92s linear 0.35s infinite;
+                            -moz-animation: cssload-load 0.92s linear 0.35s infinite;
+                        }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+4) {
+                        transform: rotate(180deg);
+                        -o-transform: rotate(180deg);
+                        -ms-transform: rotate(180deg);
+                        -webkit-transform: rotate(180deg);
+                        -moz-transform: rotate(180deg);
+                    }
+
+                        #cssload-loader .cssload-dot:nth-child(7n+4):before {
+                            background: rgb(0,64,255);
+                            animation: cssload-load 0.92s linear 0.46s infinite;
+                            -o-animation: cssload-load 0.92s linear 0.46s infinite;
+                            -ms-animation: cssload-load 0.92s linear 0.46s infinite;
+                            -webkit-animation: cssload-load 0.92s linear 0.46s infinite;
+                            -moz-animation: cssload-load 0.92s linear 0.46s infinite;
+                        }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+5) {
+                        transform: rotate(225deg);
+                        -o-transform: rotate(225deg);
+                        -ms-transform: rotate(225deg);
+                        -webkit-transform: rotate(225deg);
+                        -moz-transform: rotate(225deg);
+                    }
+
+                        #cssload-loader .cssload-dot:nth-child(7n+5):before {
+                            background: rgb(42,0,255);
+                            animation: cssload-load 0.92s linear 0.58s infinite;
+                            -o-animation: cssload-load 0.92s linear 0.58s infinite;
+                            -ms-animation: cssload-load 0.92s linear 0.58s infinite;
+                            -webkit-animation: cssload-load 0.92s linear 0.58s infinite;
+                            -moz-animation: cssload-load 0.92s linear 0.58s infinite;
+                        }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+6) {
+                        transform: rotate(270deg);
+                        -o-transform: rotate(270deg);
+                        -ms-transform: rotate(270deg);
+                        -webkit-transform: rotate(270deg);
+                        -moz-transform: rotate(270deg);
+                    }
+
+                        #cssload-loader .cssload-dot:nth-child(7n+6):before {
+                            background: rgb(149,0,255);
+                            animation: cssload-load 0.92s linear 0.69s infinite;
+                            -o-animation: cssload-load 0.92s linear 0.69s infinite;
+                            -ms-animation: cssload-load 0.92s linear 0.69s infinite;
+                            -webkit-animation: cssload-load 0.92s linear 0.69s infinite;
+                            -moz-animation: cssload-load 0.92s linear 0.69s infinite;
+                        }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+7) {
+                        transform: rotate(315deg);
+                    }
+
+                        #cssload-loader .cssload-dot:nth-child(7n+7):before {
+                            background: magenta;
+                            animation: cssload-load 0.92s linear 0.81s infinite;
+                            -o-animation: cssload-load 0.92s linear 0.81s infinite;
+                            -ms-animation: cssload-load 0.92s linear 0.81s infinite;
+                            -webkit-animation: cssload-load 0.92s linear 0.81s infinite;
+                            -moz-animation: cssload-load 0.92s linear 0.81s infinite;
+                        }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+8) {
+                        transform: rotate(360deg);
+                        -o-transform: rotate(360deg);
+                        -ms-transform: rotate(360deg);
+                        -webkit-transform: rotate(360deg);
+                        -moz-transform: rotate(360deg);
+                    }
+
+                        #cssload-loader .cssload-dot:nth-child(7n+8):before {
+                            background: rgb(255,0,149);
+                            animation: cssload-load 0.92s linear 0.92s infinite;
+                            -o-animation: cssload-load 0.92s linear 0.92s infinite;
+                            -ms-animation: cssload-load 0.92s linear 0.92s infinite;
+                            -webkit-animation: cssload-load 0.92s linear 0.92s infinite;
+                            -moz-animation: cssload-load 0.92s linear 0.92s infinite;
+                        }
+
+
+
+            @@keyframes cssload-load {
+                100% {
+                    opacity: 0;
+                    transform: scale(1);
+                }
+            }
+
+            @@-o-keyframes cssload-load {
+                100% {
+                    opacity: 0;
+                    -o-transform: scale(1);
+                }
+            }
+
+            @@-ms-keyframes cssload-load {
+                100% {
+                    opacity: 0;
+                    -ms-transform: scale(1);
+                }
+            }
+
+            @@-webkit-keyframes cssload-load {
+                100% {
+                    opacity: 0;
+                    -webkit-transform: scale(1);
+                }
+            }
+
+            @@-moz-keyframes cssload-load {
+                100% {
+                    opacity: 0;
+                    -moz-transform: scale(1);
+                }
+            }
+        </style>
+</body>
+</html>

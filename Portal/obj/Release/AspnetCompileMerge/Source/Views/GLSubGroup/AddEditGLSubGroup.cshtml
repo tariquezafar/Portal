@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "Add GLSubGroup";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AccountAdminDashboard">Account</a> >> Add/Edit GL Sub Group </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditGLSubGroup" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div> 
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4"> 
+                        <label for="txtGLSubGroupName" class="col-sm-4 control-label">GL Sub Group Name&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtGLSubGroupName" name="txtGLSubGroupName" tabindex="1" placeholder="Enter GL Sub Group Name" type="text" maxlength="100" />
+                            <input id="hdnGLSubGroupId" type="hidden" value="@ViewData["glsubgroupId"]" />
+                            <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                        </div> 
+                </div>
+                <div class="form-group col-md-4"> 
+                        <label for="ddlGLMainGroupId" class="col-sm-4 control-label">GL Main Group &nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlGLMainGroupId" name="ddlGLMainGroupId"  tabindex="2" class="form-control"></select> 
+                        </div> 
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtSequenceNo" class="col-sm-4 control-label">Sequence No.</label>
+                    <div class="col-sm-8">
+                        <input class="form-control numeric-only" id="txtSequenceNo" name="txtSequenceNo" tabindex="3" placeholder="Enter Sequence No" type="text" maxlength="100" />
+                    </div>
+                </div>
+            </div>
+          
+            <div class="col-md-12">  
+                <div class="form-group col-md-4">
+                    <label for="ddlScheduleName" class="col-sm-4 control-label">Schedule Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlScheduleName" name="ddlScheduleName" tabindex="4" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="chkstatus" class="col-sm-4 control-label">Status&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="5" />
+                    </div>
+                </div>
+            </div> 
+
+
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="6" onclick="SaveData(1)" type="button" border="0"> 
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="6" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                        <a class="btn btn-success" id="btnList" tabindex="9" href="@Url.Content("~/GLSubGroup/AddEditGLSubGroup")">Reset</a>
+                         @*<input class="btn btn-success" type="button" id="btnReset" tabindex="7" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
+                        @*<input class="btn btn-success" type="button" id="btnList" value="Search Company" />*@
+                        <a class="btn btn-success" id="btnList" tabindex="10" href="@Url.Content("~/GLSubGroup/ListGLSubGroup")">Search GL Sub Group</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="7" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="8" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="8" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/GLSubGroup/AddGLSubGroup.js"></script>

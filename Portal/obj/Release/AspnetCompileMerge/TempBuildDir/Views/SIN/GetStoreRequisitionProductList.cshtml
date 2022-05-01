@@ -1,0 +1,213 @@
+﻿@model List<Portal.Core.ViewModel.SINProductDetailViewModel>
+<style>
+    .table {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 18px !important;
+        margin-left: 10px !important;
+        margin-right: 5px !important;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table  table-bordered" id="tblSINProductList">
+            <thead>
+                <tr>
+
+                    <th><center>Product Name</center></th>
+                    <th><center>Product Code</center></th>
+                    <th><center>Product Desc</center></th>
+                    <th><center>Unit</center></th>
+                    <th><center>Req. Quantity</center></th>
+                    <th><center>Total Issued Qty</center></th>
+                    <th><center>Pending Qty</center></th>
+                    <th><center>Available Stock</center></th>
+                    <th><center>Issue Qty</center></th>
+                    <th>
+                        <center>
+                            Raise Indent<br />  
+                            <input type="checkbox" name="chkAllIndent" id="chkAllIndent" />
+                        </center>
+                    </th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+
+                        <td>
+                            @item.ProductName
+                            <input type="hidden" id="hdnSINProductDetailId" value="@item.SINProductDetailId" />
+                            <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                            <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                            <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                            <input type="hidden" id="hdnIndentProductDetailId" value="0" />
+                        </td>
+                        <td>
+                            @item.ProductCode
+                            <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                        </td>
+                        <td>
+                            @item.ProductShortDesc
+                            <input type="hidden" id="hdnProductShortDesc" value="@item.ProductShortDesc" />
+                        </td>
+                        <td>
+                            @item.UOMName
+                            <input type="hidden" id="hdnUOMName" value="@item.UOMName" />
+                        </td>
+                        <td>
+                            @item.Quantity
+                            <input type="hidden" id="hdnQuantity" value="@item.Quantity" />
+
+                        </td>
+                        <td>
+                            @if (Convert.ToInt32(@item.IssuedQuantity) > 0)
+                            {
+                                @item.IssuedQuantity
+                            }                           
+                            <input type="hidden" id="hdnIssuedQuantity" value="@item.IssuedQuantity" />
+
+                        </td>
+                        <td>
+                            @item.BalanceQuantity
+                            <input type="hidden" id="hdnBalanceQuantity" value="@item.BalanceQuantity" />
+
+                        </td>
+                        <td>
+                            @item.AvailableStock
+                            <input type="hidden" id="hdnAvailableStock" value="@item.AvailableStock" />
+
+                        </td>
+                        <td class="Quantity">
+                            @*@item.IssueQuantity*@
+                            @if (Convert.ToDecimal(@item.BalanceQuantity) <= Convert.ToDecimal(@item.AvailableStock))
+                            {
+                                <input id="unitval" type="text" value="@item.BalanceQuantity" class="modify" onkeyup="checkDec(this);"style="width: 64px;" />
+                                @*<input type="hidden" id="hdnIssueQuantity" value="@item.IssueQuantity" />*@
+                                <input type="hidden" id="hdnIssueQuantity" value="@item.BalanceQuantity" />
+
+                            }
+                            @if (Convert.ToDecimal(@item.BalanceQuantity) > Convert.ToDecimal(@item.AvailableStock))
+                            {
+                               
+                                <input id="unitval" type="text" value="@item.AvailableStock" class="modify"  style="width: 64px;" />
+                                <input type="hidden" id="hdnIssueQuantity" value="@item.AvailableStock" />
+                            }
+                           
+                         
+
+                        </td>  
+                        <td>
+                            @if (Convert.ToDecimal(@item.IndentQuantity) > 0)
+                            {
+                                <center>
+                                    Indented
+                                </center>
+
+                            }
+                            else
+                            {
+                            <center>
+                                <input type="checkbox" name="chkIndent" id="chkIndent" class="indent" />
+                            </center>
+                            }
+                        </td> 
+                        @*<td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;text-align:center;">
+                            <a style="color:white" class="fa fa-pencil-square-o" onclick="EditProductRow(this);" href="#"></a>
+                        </td>*@
+                        
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblSINProductList">
+            <thead>
+                <tr>
+
+                    <th><center>Product Name</center></th>
+                    <th><center>Product Code</center></th>
+                    <th><center>Product Desc</center></th>
+                    <th><center>Unit</center></th>
+                    <th><center>Req. Quantity</center></th>
+                    <th><center>Total Issued Qty</center></th>
+                    <th><center>Balance Qty</center></th>
+                    <th><center>Issue Qty</center></th>
+                    <th  align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+<script>
+    $(document).ready(function () {
+        $("#chkAllIndent").click(function () {
+            $('input:checkbox').not(this).prop('checked', this.checked);
+        });
+
+        $(".indent").click(function () {
+            if ($(".indent").length == $(".indent:checked").length) {
+                $("#chkAllIndent").attr("checked", "checked");
+            }
+            else {
+                $("#chkAllIndent").removeAttr("checked");
+            }
+        });
+
+        $('.modify').keypress(function (event) {
+            var $this = $(this);
+            if ((event.which != 46 || $this.val().indexOf('.') != -1) &&
+               ((event.which < 48 || event.which > 57) &&
+               (event.which != 0 && event.which != 8))) {
+                event.preventDefault();
+            }
+
+            var text = $(this).val();
+            if ((event.which == 46) && (text.indexOf('.') == -1)) {
+                setTimeout(function () {
+                    if ($this.val().substring($this.val().indexOf('.')).length > 3) {
+                        $this.val($this.val().substring(0, $this.val().indexOf('.') + 3));
+                    }
+                }, 1);
+            }
+
+            if ((text.indexOf('.') != -1) &&
+                (text.substring(text.indexOf('.')).length > 2) &&
+                (event.which != 0 && event.which != 8) &&
+                ($(this)[0].selectionStart >= text.length - 2)) {
+                event.preventDefault();
+            }
+        });
+
+        $('.modify').bind("paste", function (e) {
+            var text = e.originalEvent.clipboardData.getData('Text');
+            if ($.isNumeric(text)) {
+                if ((text.substring(text.indexOf('.')).length > 3) && (text.indexOf('.') > -1)) {
+                    e.preventDefault();
+                    $(this).val(text.substring(0, text.indexOf('.') + 3));
+                }
+            }
+            else {
+                e.preventDefault();
+            }
+        });
+
+        //$(".modify").keypress(function (e) {
+        //    //if the letter is not digit then display error and don't type anything
+        //    if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //        //display error message
+        //        // $("#errmsg").html("Digits Only").show().fadeOut("slow");
+        //        return false;
+        //    }
+        //});
+    });
+</script>

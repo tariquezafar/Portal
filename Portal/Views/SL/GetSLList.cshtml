@@ -1,0 +1,82 @@
+﻿@model List<Portal.Core.ViewModel.SLViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+
+    table tr:nth-child(2n+1) {
+        background-color: #dff0d8;
+    }
+
+    table tr:nth-child(2n) {
+        background-color: #dff0d8;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table table-bordered table-hover" id="tblGLList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>SL Code</center></th> 
+                    <th><center>SL Head</center></th> 
+                    <th><center>Company Branch</center></th> 
+                    <th><center>REF Code</center></th> 
+                    <th><center>SL Type</center></th>  
+                    <th><center>Cost Center</center></th>  
+                    <th><center>SL Status</center></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="info">
+                       
+                        <td class="teal text" style="width:30px; margin:0px auto;">
+                            <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/SL/AddEditSL?SLId=@item.SLId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:darkgreen" class="fa fa-pencil" href="~/SL/AddEditSL?SLId=@item.SLId&AccessMode=2"></a>
+                        </td> 
+                        <td align="center">@item.SLCode</td>
+                        <td align="center">@item.SLHead</td>
+                        <td align="center">@item.CompanyBranchName</td> 
+                        <td align="center">@item.RefCode</td>
+                        <td align="center">@item.SLTypeName</td>
+                        <td align="center">@item.CostCenterName</td>
+                        <td>@(item.SL_Status == true ? "Active" : "Inactive")</td>
+                        
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblGLList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

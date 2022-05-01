@@ -1,0 +1,100 @@
+﻿@model List<Portal.Core.ViewModel.PrintChasisViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+   .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+ table tr:nth-child(2n+1) {
+    
+    background-color: #dff0d8;
+    }
+
+     table tr:nth-child(2n) {
+    
+    background-color: #dff0d8;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div>
+        <table class="table table-bordered table-hover" id="tblPrintChasisList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>Print No.</center></th>
+                    <th><center>Print Date</center></th>
+                    <th><center>Branch Name</center></th>                   
+                    <th><center>Approval Status</center></th>
+                    <th><center>Created By User</center></th>
+                    <th><center>Created Date</center></th>
+                    <th><center>Modified By User</center></th>
+                    <th><center>Modified Date</center></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {                   
+                    <tr class="success">
+                        <td class="teal text" style="margin:0px auto;">
+                            <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/PrintChasis/AddEditPrintChasis?printID=@item.PrintID&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="margin:0px auto;">
+                            @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                            {
+                                <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/PrintChasis/AddEditPrintChasis?printID=@item.PrintID&AccessMode=2"></a>
+                            }
+
+                        </td>
+                        <td align="center">@item.PrintNo</td>
+                        <td align="center">@item.PrintDate</td>
+                        <td align="center">@item.CompanyBranchName</td>
+                        @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine">
+                                @item.ApprovalStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green">
+                                @item.ApprovalStatus
+                            </td>
+
+                        }
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+                    </tr>
+                                     
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblProductSubGroupList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

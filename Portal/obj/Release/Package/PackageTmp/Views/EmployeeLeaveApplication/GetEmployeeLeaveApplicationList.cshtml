@@ -1,0 +1,115 @@
+﻿@model List<Portal.Core.ViewModel.EmployeeLeaveApplicationViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblEmployeeLeaveApplicationList">
+            <thead>
+                <tr>
+                    <th>Application No.</th>
+                    <th>Application Date</th>
+                    <th>Company Branch</th>
+                    <th>Employee </th>
+                    <th>Leave Type</th> 
+                    <th>No.Of Days<h>  
+                    <th>Leave Reason</th>
+                    <th>From Date</th>
+                    <th>To Date</th>
+                    <th>Leave Status</th> 
+                    <th align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.ApplicationNo</td>
+                        <td>@item.ApplicationDate</td>
+                        <td>@item.CompanyBranchName</td>
+                        <td>@item.EmployeeName</td>
+                        <td>@item.LeaveTypeName</td> 
+                        <td>@item.NoofDays</td> 
+                        <td>@item.LeaveReason</td>
+                        <td>@item.FromDate</td>
+                        <td>@item.ToDate</td>
+                        @if (item.LeaveStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine;">
+                                @item.LeaveStatus
+                            </td>
+                        }
+                        else if (item.LeaveStatus.ToUpper() == "REJECTED")
+                        {
+                            <td style="background-color:red;color:white">
+                                @item.LeaveStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green;color:white">
+                                @item.LeaveStatus
+                            </td>
+
+                        } 
+                         @*<td class="btn btn-success table_btn" style="margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/EmployeeLeaveApplication/AddEditEmployeeLeaveApplication?applicationId=@item.ApplicationId&AccessMode=3&essEmployeeId=@item.EmployeeId&essEmployeeName=@item.EmployeeName"></a>
+                            @if (item.LeaveStatus.ToUpper() == "DRAFT")
+                            {
+                                <a style="color:white" class="fa fa-pencil-square-o" href="~/EmployeeLeaveApplication/AddEditEmployeeLeaveApplication?applicationId=@item.ApplicationId&AccessMode=2&essEmployeeId=@item.EmployeeId&essEmployeeName=@item.EmployeeName"></a>
+                            }
+                        </td>*@
+
+
+
+                        <td class="btn btn-success table_btn" style="margin:0px auto;">
+                            @if (Convert.ToString(ViewData["essEmployeeId"]) != "0" && Convert.ToString(ViewData["essEmployeeName"]) != "")
+                            {
+                                <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/EmployeeLeaveApplication/AddEditEmployeeLeaveApplication?applicationId=@item.ApplicationId&AccessMode=3&essEmployeeId=@item.EmployeeId&essEmployeeName=@item.EmployeeName"></a>
+                                if (item.LeaveStatus.ToUpper() == "DRAFT")
+                                {
+                                    <a style="color:white" class="fa fa-pencil-square-o" href="~/EmployeeLeaveApplication/AddEditEmployeeLeaveApplication?applicationId=@item.ApplicationId&AccessMode=2&essEmployeeId=@item.EmployeeId&essEmployeeName=@item.EmployeeName"></a>
+                                }
+                            }
+                            else
+                            {
+                                <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/EmployeeLeaveApplication/AddEditEmployeeLeaveApplication?applicationId=@item.ApplicationId&AccessMode=3"></a>
+                                if (item.LeaveStatus.ToUpper() == "DRAFT")
+                                {
+                                    <a style="color:white" class="fa fa-pencil-square-o" href="~/EmployeeLeaveApplication/AddEditEmployeeLeaveApplication?applicationId=@item.ApplicationId&AccessMode=2"></a>
+                                }
+                            }
+                        </td>
+
+
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblEmployeeLeaveApplicationList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

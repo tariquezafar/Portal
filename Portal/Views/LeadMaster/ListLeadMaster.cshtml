@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "List Lead Type";
+    Layout = "~/Views/Shared/_CRMLayout.cshtml";
+}
+
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/CRMDashboard">CRM</a> >> List Lead Type </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmListProductMainGroup" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+          
+
+            <div class="col-md-12 ftop">
+
+                <div class="form-group col-md-4">
+                    <label for="txtLeadType" class="col-sm-4 control-label">Enter Lead Name&nbsp;<span class="Mandatory" style="color:red;">(*)</span></label>
+                    <div class="col-sm-8">
+                       
+                            <input class="form-control" id="txtLeadType" name="txtLeadType" tabindex="1" placeholder="Enter Lead Name" type="text" maxlength="100" />
+                      
+
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory" style="color:red;">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="46" onchange="GetBranchStateId()" class="form-control"></select>
+                        <input id="hdnBillingStateId" type="hidden" value="0" />
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+
+                </div>
+            </div>
+
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Search" alt="Save" id="btnSearch" tabindex="4" onclick="SearchLead()" type="button" border="0">
+                        <input class="btn btn-success" value="Reset" type="button" id="btnReset" tabindex="5" onclick="ClearFields()" />
+                        <a class="btn btn-success" id="btnList" tabindex="6" href="@Url.Content("~/LeadMaster/AddEditLeadMaster?accessMode=1")">Add Lead Type</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div id="divList" style="margin:50px;margin-top:10px">
+
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<script src="~/Scripts/lightbox.js"></script>
+<script src="~/Scripts/LeadType/ListLeadTypeMaster.js"></script>

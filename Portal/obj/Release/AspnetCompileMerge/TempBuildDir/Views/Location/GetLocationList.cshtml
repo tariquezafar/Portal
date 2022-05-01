@@ -1,0 +1,89 @@
+﻿@model List<Portal.Core.ViewModel.LocationViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 20px;
+    }
+    .table th {
+    background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    color:#fff;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div>
+        <table class="table table-bordered table-hover" id="tblLocationList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>Location Name</center></th>
+                    <th><center>Location Code</center></th> 
+                    <th><center>Company Branch Name</center></th>  
+                    <th><center>Is Store Location</center></th>  
+                    <th><center>Location Status</center></th> 
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    if (item.LocationStatus == true)
+                    {
+                    <tr class="success">
+                        <td class="teal text" style="margin:0px auto;">
+                            <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/Location/AddEditLocation?LocationId=@item.LocationId&AccessMode=3"></a>
+                        <td class="teal text" style="margin:0px auto;">
+                            <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/Location/AddEditLocation?LocationId=@item.LocationId&AccessMode=2"></a>
+                        </td>
+                        <td align="center">@item.LocationName</td>
+                        <td align="center">@item.LocationCode</td>
+                        <td align="center">@item.CompanyBranchName</td> 
+                        <td align="center">@(item.IsStoreLocation == true ? "Yes" : "No")</td> 
+                        <td align="center">@(item.LocationStatus == true ? "Active" : "Inactive")</td>                                               
+                    </tr>
+                    }
+                    else
+                    {
+                        <tr class="danger">
+                            <td class="teal text" style="margin:0px auto;">
+                                <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/Location/AddEditLocation?LocationId=@item.LocationId&AccessMode=3"></a>
+                            <td class="teal text" style="margin:0px auto;">
+                                <a style="color:darkgreen" class="fa fa-pencil" href="~/Location/AddEditLocation?LocationId=@item.LocationId&AccessMode=2"></a>
+                            </td>
+                            <td align="center">@item.LocationName</td>
+                            <td align="center">@item.LocationCode</td>
+                            <td align="center">@item.CompanyBranchName</td>
+                            <td align="center">@(item.IsStoreLocation == true ? "Yes" : "No")</td>
+                            <td align="center">@(item.LocationStatus == true ? "Active" : "Inactive")</td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblLocationList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

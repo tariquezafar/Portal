@@ -1,0 +1,58 @@
+﻿@model List<Portal.Core.ViewModel.STNChasisProductSerialDetailViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblStnAllProductChasisList">
+            <thead>
+                <tr>
+
+                    <th>Sr No.</th>
+                    <th>Product Name</th>
+                    <th>Serial No</th>
+                    <th>Price</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+
+                        <td class="trCol">@item.SequenceNo
+                            <input type="hidden" id="hdnSrnoAll" value="@item.SequenceNo" />
+                            <input type="hidden" id="hdnProductIdAll" value="@item.ProductId" />
+                            <input type="hidden" id="hdnChasisNoAll" value="@item.RefSerial1" />
+                            <input type="hidden" id="hdnProductNameAll" value="@item.ProductName" />
+                            <input type="hidden" id="hdnPriceAll" value="@item.Price" /> 
+                            <input type="hidden" id="hdnIsSerializedProductAll" value="@item.IsSerializedProduct" />
+                        
+                        </td>
+
+                        <td class="trCol">@item.ProductName</td>
+                        <td class="trCol">@item.RefSerial1</td>
+                        <td class="trCol">@item.Price</td>
+
+                
+            </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblStnAllProductChasisList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

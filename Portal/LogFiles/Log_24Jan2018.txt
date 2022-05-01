@@ -1,0 +1,868 @@
+14:21:28 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+--------------------------------------------------------------------------------------------------------------------------------
+
+14:21:28 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:21:28 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:21:32 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:21:32 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:21:32 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:21:46 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:21:46 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:21:47 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:22:05 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:22:05 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:22:05 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:22:16 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:22:16 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:22:16 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:22:29 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:22:29 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:22:29 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:22:34 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:22:34 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:22:34 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:27:47 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:27:47 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:27:47 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:28:09 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:28:09 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:28:09 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:32:49 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:32:49 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:32:49 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:33:19 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:33:19 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:33:19 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:33:34 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:33:34 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:33:34 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:34:42 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:34:43 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:34:43 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:48 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:48 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:48 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:59 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:59 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:59 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:43:40 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:43:52 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:57:56 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:58:46 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:58:46 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:58:46 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:58:54 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:58:54 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:58:54 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:02:59 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:02:59 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:02:59 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:03:05 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:03:05 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:03:05 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MetadataException
+Details: Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'PR_PayrollTdsSlab'. Previously found CLR type 'Portal.DAL.PR_PayrollTdsSlab', newly found CLR type 'Portal.DAL.Infrastructure.PR_PayrollTdsSlab'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:05:58 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:05:58 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:17:23 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:17:23 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:20:30 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:20:30 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:25:41 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:25:41 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:29:28 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:29:28 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:29:43 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:29:43 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:32:45 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:32:45 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:17:47 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:17:47 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:21:41 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:21:41 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:23:03 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:23:03 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:25:09 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:25:09 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:00:25 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:00:25 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:03:52 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditPayrollTds
+Error Line No : 1711
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:03:52 PM
+Source : Portal.Core.PayrollTdsBL
+Method Name : AddEditPayrollTds
+Error Line No : 48
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:03:52 PM
+Source : Portal.Controllers.PayrollTdsSlabController
+Method Name : AddEditPayrollTdsSlab
+Error Line No : 75
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:04:05 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditPayrollTds
+Error Line No : 1711
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:04:06 PM
+Source : Portal.Core.PayrollTdsBL
+Method Name : AddEditPayrollTds
+Error Line No : 48
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:04:06 PM
+Source : Portal.Controllers.PayrollTdsSlabController
+Method Name : AddEditPayrollTdsSlab
+Error Line No : 75
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:07:47 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:07:47 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:09:21 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditPayrollTds
+Error Line No : 1711
+Exception Type : System.Data.SqlClient.SqlException
+Details: Implicit conversion from data type datetime to decimal is not allowed. Use the CONVERT function to run this query.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:10:38 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditPayrollTds
+Error Line No : 1711
+Exception Type : System.Data.SqlClient.SqlException
+Details: Implicit conversion from data type datetime to decimal is not allowed. Use the CONVERT function to run this query.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:13:00 PM
+Source : Portal.Core.PayrollTdsBL
+Method Name : AddEditPayrollTds
+Error Line No : 48
+Exception Type : System.Data.SqlClient.SqlException
+Details: Implicit conversion from data type datetime to decimal is not allowed. Use the CONVERT function to run this query.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:13:00 PM
+Source : Portal.Controllers.PayrollTdsSlabController
+Method Name : AddEditPayrollTdsSlab
+Error Line No : 63
+Exception Type : System.Data.SqlClient.SqlException
+Details: Implicit conversion from data type datetime to decimal is not allowed. Use the CONVERT function to run this query.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:14:46 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditPayrollTds
+Error Line No : 1711
+Exception Type : System.Data.SqlClient.SqlException
+Details: Implicit conversion from data type datetime to decimal is not allowed. Use the CONVERT function to run this query.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:14:46 PM
+Source : Portal.Core.PayrollTdsBL
+Method Name : AddEditPayrollTds
+Error Line No : 48
+Exception Type : System.Data.SqlClient.SqlException
+Details: Implicit conversion from data type datetime to decimal is not allowed. Use the CONVERT function to run this query.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:14:46 PM
+Source : Portal.Controllers.PayrollTdsSlabController
+Method Name : AddEditPayrollTdsSlab
+Error Line No : 63
+Exception Type : System.Data.SqlClient.SqlException
+Details: Implicit conversion from data type datetime to decimal is not allowed. Use the CONVERT function to run this query.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:15:55 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:15:55 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

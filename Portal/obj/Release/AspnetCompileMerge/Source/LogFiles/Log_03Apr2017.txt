@@ -1,0 +1,760 @@
+09:52:54 AM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+--------------------------------------------------------------------------------------------------------------------------------
+
+09:52:54 AM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 57
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+09:52:54 AM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 36
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:35:42 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'soId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetSOTermList(System.Collections.Generic.List`1[Portal.Core.ViewModel.SOTermViewModel], Int64)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:35:43 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'soId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetSOProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.SOProductViewModel], Int64)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:35:43 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'soId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetSOTaxList(System.Collections.Generic.List`1[Portal.Core.ViewModel.SOTaxViewModel], Int64)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:35:43 PM
+Source : Portal.Core.QuotationBL
+Method Name : GetQuotationList
+Error Line No : 162
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:35:43 PM
+Source : Portal.Controllers.QuotationController
+Method Name : GetQuotationList
+Error Line No : 114
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:35:45 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'soId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.JsonResult GetSODetail(Int64)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:35:52 PM
+Source : Portal.Core.QuotationBL
+Method Name : GetQuotationList
+Error Line No : 162
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:35:52 PM
+Source : Portal.Controllers.QuotationController
+Method Name : GetQuotationList
+Error Line No : 114
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:35:53 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'soId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetSOProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.SOProductViewModel], Int64)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:35:53 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'soId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetSOTermList(System.Collections.Generic.List`1[Portal.Core.ViewModel.SOTermViewModel], Int64)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:35:53 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'soId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetSOTaxList(System.Collections.Generic.List`1[Portal.Core.ViewModel.SOTaxViewModel], Int64)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:35:54 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'soId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.JsonResult GetSODetail(Int64)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:05 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'soId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetSOTaxList(System.Collections.Generic.List`1[Portal.Core.ViewModel.SOTaxViewModel], Int64)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:06 PM
+Source : Portal.Core.QuotationBL
+Method Name : GetQuotationList
+Error Line No : 162
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:06 PM
+Source : Portal.Controllers.QuotationController
+Method Name : GetQuotationList
+Error Line No : 114
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:06 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'soId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetSOProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.SOProductViewModel], Int64)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:07 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'soId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetSOTermList(System.Collections.Generic.List`1[Portal.Core.ViewModel.SOTermViewModel], Int64)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:07 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'soId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.JsonResult GetSODetail(Int64)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:14 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'soId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetSOTaxList(System.Collections.Generic.List`1[Portal.Core.ViewModel.SOTaxViewModel], Int64)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:14 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'soId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetSOProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.SOProductViewModel], Int64)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:14 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'soId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetSOTermList(System.Collections.Generic.List`1[Portal.Core.ViewModel.SOTermViewModel], Int64)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:14 PM
+Source : Portal.Core.QuotationBL
+Method Name : GetQuotationList
+Error Line No : 162
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:14 PM
+Source : Portal.Controllers.QuotationController
+Method Name : GetQuotationList
+Error Line No : 114
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:15 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'soId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.JsonResult GetSODetail(Int64)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+13:07:02 PM
+Source : Portal.Core.QuotationBL
+Method Name : GetQuotationList
+Error Line No : 162
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:07:02 PM
+Source : Portal.Controllers.QuotationController
+Method Name : GetQuotationList
+Error Line No : 114
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:08:07 PM
+Source : Portal.Core.QuotationBL
+Method Name : GetQuotationList
+Error Line No : 162
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:08:07 PM
+Source : Portal.Controllers.QuotationController
+Method Name : GetQuotationList
+Error Line No : 114
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:43:48 PM
+Source : Portal.Core.QuotationBL
+Method Name : GetQuotationList
+Error Line No : 162
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:43:48 PM
+Source : Portal.Controllers.QuotationController
+Method Name : GetQuotationList
+Error Line No : 114
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:45:26 PM
+Source : Portal.Core.QuotationBL
+Method Name : GetQuotationList
+Error Line No : 162
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:45:26 PM
+Source : Portal.Controllers.QuotationController
+Method Name : GetQuotationList
+Error Line No : 114
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:45:45 PM
+Source : Portal.Core.QuotationBL
+Method Name : GetQuotationList
+Error Line No : 162
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:45:45 PM
+Source : Portal.Controllers.QuotationController
+Method Name : GetQuotationList
+Error Line No : 114
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:50:51 PM
+Source : Portal.Core.QuotationBL
+Method Name : GetQuotationList
+Error Line No : 162
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:50:51 PM
+Source : Portal.Controllers.QuotationController
+Method Name : GetQuotationList
+Error Line No : 114
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:52:07 PM
+Source : Portal.Core.QuotationBL
+Method Name : GetQuotationList
+Error Line No : 162
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:52:07 PM
+Source : Portal.Controllers.QuotationController
+Method Name : GetQuotationList
+Error Line No : 114
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:52:21 PM
+Source : Portal.Core.QuotationBL
+Method Name : GetQuotationList
+Error Line No : 162
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:52:22 PM
+Source : Portal.Controllers.QuotationController
+Method Name : GetQuotationList
+Error Line No : 114
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:36:54 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceList
+Error Line No : 163
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:36:54 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetSaleInvoiceList
+Error Line No : 139
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:36:54 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The partial view 'GetSaleInvoiceList' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/CustomerPayment/GetSaleInvoiceList.aspx
+~/Views/CustomerPayment/GetSaleInvoiceList.ascx
+~/Views/Shared/GetSaleInvoiceList.aspx
+~/Views/Shared/GetSaleInvoiceList.ascx
+~/Views/CustomerPayment/GetSaleInvoiceList.cshtml
+~/Views/CustomerPayment/GetSaleInvoiceList.vbhtml
+~/Views/Shared/GetSaleInvoiceList.cshtml
+~/Views/Shared/GetSaleInvoiceList.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+15:36:55 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceList
+Error Line No : 163
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:36:56 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetSaleInvoiceList
+Error Line No : 139
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:36:56 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The partial view 'GetSaleInvoiceList' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/CustomerPayment/GetSaleInvoiceList.aspx
+~/Views/CustomerPayment/GetSaleInvoiceList.ascx
+~/Views/Shared/GetSaleInvoiceList.aspx
+~/Views/Shared/GetSaleInvoiceList.ascx
+~/Views/CustomerPayment/GetSaleInvoiceList.cshtml
+~/Views/CustomerPayment/GetSaleInvoiceList.vbhtml
+~/Views/Shared/GetSaleInvoiceList.cshtml
+~/Views/Shared/GetSaleInvoiceList.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+15:37:05 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceList
+Error Line No : 163
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:37:05 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetSaleInvoiceList
+Error Line No : 139
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:37:05 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The partial view 'GetSaleInvoiceList' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/CustomerPayment/GetSaleInvoiceList.aspx
+~/Views/CustomerPayment/GetSaleInvoiceList.ascx
+~/Views/Shared/GetSaleInvoiceList.aspx
+~/Views/Shared/GetSaleInvoiceList.ascx
+~/Views/CustomerPayment/GetSaleInvoiceList.cshtml
+~/Views/CustomerPayment/GetSaleInvoiceList.vbhtml
+~/Views/Shared/GetSaleInvoiceList.cshtml
+~/Views/Shared/GetSaleInvoiceList.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+15:45:33 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceList
+Error Line No : 163
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:45:34 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetSaleInvoiceList
+Error Line No : 139
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:46:39 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceList
+Error Line No : 163
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:46:39 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetSaleInvoiceList
+Error Line No : 139
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:40 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceList
+Error Line No : 163
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:48:40 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetSaleInvoiceList
+Error Line No : 139
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:49:04 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceList
+Error Line No : 163
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:49:04 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetSaleInvoiceList
+Error Line No : 139
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:50:32 PM
+Source : Portal.Core.QuotationBL
+Method Name : GetQuotationList
+Error Line No : 162
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:50:32 PM
+Source : Portal.Controllers.QuotationController
+Method Name : GetQuotationList
+Error Line No : 114
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:51:55 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceList
+Error Line No : 163
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:51:56 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetSaleInvoiceList
+Error Line No : 139
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:52:01 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceList
+Error Line No : 163
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:52:01 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetSaleInvoiceList
+Error Line No : 139
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:03:37 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceList
+Error Line No : 163
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:03:38 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetSaleInvoiceList
+Error Line No : 139
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:06:31 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceList
+Error Line No : 163
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:06:31 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetSaleInvoiceList
+Error Line No : 139
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:07 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceList
+Error Line No : 163
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:07 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetSaleInvoiceList
+Error Line No : 139
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:13:21 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceList
+Error Line No : 163
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:13:21 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetSaleInvoiceList
+Error Line No : 139
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:15:15 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceList
+Error Line No : 163
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:15:15 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : GetSaleInvoiceList
+Error Line No : 139
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:15:02 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 27
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:15:02 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : AddEditCustomerPayment
+Error Line No : 66
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:15:11 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 27
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:15:11 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : AddEditCustomerPayment
+Error Line No : 66
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:15:18 PM
+Source : Portal.Core.CustomerPaymentBL
+Method Name : AddEditCustomerPayment
+Error Line No : 27
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:15:18 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : AddEditCustomerPayment
+Error Line No : 66
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:23:58 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthorizeUser
+Error Line No : 90
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:24:36 PM
+Source : Portal.Controllers.CustomerPaymentController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:52 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:52 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 57
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:52 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 36
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:28:51 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:28:51 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 57
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:28:51 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 36
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+

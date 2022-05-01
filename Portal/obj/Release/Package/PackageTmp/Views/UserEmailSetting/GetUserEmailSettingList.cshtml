@@ -1,0 +1,98 @@
+﻿@model List<Portal.Core.ViewModel.UserEmailSettingViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table{
+        background-color:white;
+        margin-left:0px;
+        margin-right:20px
+    }
+     .table th {
+    background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    color:#fff;
+}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div>
+        <table class="table table-bordered" id="tblUserList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th> 
+                    <th><center>Full Name</center></th>
+                    <th><center>Company Branch</center></th>
+                    <th><center>SMTP User Name</center></th>
+                    <th><center>Enable Ssl</center></th>
+                    <th><center>Port</center></th>
+                    <th><center>SmtpServer</center></th>
+                    <th><center>Display Name</center></th>
+                    <th><center>Created By</center></th>
+                    <th><center>Created Date</center></th>
+                    <th><center>Status</center></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    if (item.UserStatus == true)
+                    {
+                    <tr class="success"> 
+                        <td class="teal text" style="width:30px; margin:0px auto;">
+                            <a title="View" style="color:darkblue;text-decoration:none;" class="fa fa-eye" aria-hidden="true" href="~/UserEmailSetting/AddEditUserEmailSetting?userEmailSettingId=@item.SettingId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            <a title="Edit"  style="color:darkgreen;text-decoration:none;" class="fa fa-pencil" href="~/UserEmailSetting/AddEditUserEmailSetting?userEmailSettingId=@item.SettingId&AccessMode=2"></a>
+                        </td>
+                        <td>@item.FullName</td>
+                        <td>@item.CompanyBranchName</td>
+                        <td>@item.SmtpUser</td>
+                        <td>@(item.EnableSsl == true ? "Active" : "Inactive")</td>
+                        <td>@item.SmtpPort</td>
+                        <td>@item.SmtpServer</td>
+                        <td>@item.SmtpDisplayName</td>
+                        <td>@item.CreatedByName</td>
+                        <td>@item.CreatedDate</td>                        
+                        <td>@(item.UserStatus == true ? "Active" : "Inactive")</td>                        
+                    </tr>
+                    }
+                    else
+                    {
+                        <tr class="success">
+                            <td class="teal text" style="width:30px; margin:0px auto;">
+                                <a title="View" style="color:darkblue;text-decoration:none;" class="fa fa-eye" aria-hidden="true" href="~/UserEmailSetting/AddEditUserEmailSetting?userEmailSettingId=@item.SettingId&AccessMode=3"></a>
+                            </td>
+                            <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                                <a title="Edit"  style="color:darkgreen;text-decoration:none;" class="fa fa-pencil" href="~/UserEmailSetting/AddEditUserEmailSetting?userEmailSettingId=@item.SettingId&AccessMode=2"></a>
+                            </td>
+                            <td>@item.FullName</td>
+                            <td>@item.SmtpUser</td>
+                            <td>@(item.EnableSsl == true ? "Active" : "Inactive")</td>
+                            <td>@item.SmtpPort</td>
+                            <td>@item.SmtpServer</td>
+                            <td>@item.SmtpDisplayName</td>
+                            <td>@item.CreatedByName</td>
+                            <td>@item.CreatedDate</td>
+                            <td>@(item.UserStatus == true ? "Active" : "Inactive")</td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblUserList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

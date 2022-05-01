@@ -1,0 +1,91 @@
+﻿@model List<Portal.Core.ViewModel.InvoicePackingListProductDetailViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                    <th>IS Product Warranty</th>
+                    <th>Packing Product Type</th>
+                    <th>No Of Boxes / Remarks</th>
+                    <th colspan="2" align="center" class="editonly">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.ProductName
+                            <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                        <input type="hidden" id="hdnInvoicePackingListProductDetailId" value="@item.InvoicePackingListProductDetailId" />
+                        <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                            <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                        </td>
+                        <td>@item.ProductCode
+                        <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                        </td>
+                        <td>@item.UOMName
+                            <input type="hidden" id="hdnUOMName" value="@item.UOMName" />
+                            <input type="hidden" id="hdnProductShortDesc" value="@item.ProductShortDesc" />
+
+                        </td>
+                        <td>
+                            @item.Quantity
+                            <input type="hidden" id="hdnQuantity" value="@item.Quantity" />
+                        </td>
+                        <td>
+                            @item.IsWarrantyProduct
+                            <input type="hidden" id="hdnIsWarrantyProduct" value="@item.IsWarrantyProduct" />
+                            <input type="hidden" id="hdnWarrantyInMonth" value="@item.WarrantyInMonth" />
+                        </td>
+                        <td>
+                            @item.PackingProductType
+                            <input type="hidden" id="hdnPackingProductType" value="@item.PackingProductType" />
+                        </td>
+                        <td>
+                            @item.ProductShortDesc
+                        </td>
+                        <td class="editonly" style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-pencil-square-o erp-btn" onclick="EditProductRow(this);" href="#"></a>
+                        </td>
+                        <td class="editonly" style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-trash erp-btn"  onclick="RemoveProductRow(this)" href="#"></a>
+                        </td>
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                    <th>IS Product Warranty</th>
+                    <th>Packing Product Type</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+<script>
+    $(document).ready(function () {
+        if ($("#hdnAccessMode").val() == "3") {
+            $(".editonly").hide();
+        }
+
+    });
+</script>

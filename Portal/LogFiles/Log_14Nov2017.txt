@@ -1,0 +1,72 @@
+15:47:02 PM
+Source : Portal.Core.HolidayCalenderBL
+Method Name : GetHolidays
+Error Line No : 155
+Exception Type : System.ArgumentException
+Details: Column 'HolidayDescription' does not belong to table .
+--------------------------------------------------------------------------------------------------------------------------------
+
+15:47:02 PM
+Source : Portal.Controllers.CommonAPIController
+Method Name : GetDepartmentList
+Error Line No : 86
+Exception Type : System.ArgumentException
+Details: Column 'HolidayDescription' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:51:25 PM
+Source : Portal.Core.HolidayCalenderBL
+Method Name : GetHolidays
+Error Line No : 155
+Exception Type : System.ArgumentException
+Details: Column 'HolidayDescription' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:51:25 PM
+Source : Portal.Controllers.CommonAPIController
+Method Name : GetDepartmentList
+Error Line No : 86
+Exception Type : System.ArgumentException
+Details: Column 'HolidayDescription' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:51:38 PM
+Source : Portal.Core.HolidayCalenderBL
+Method Name : GetHolidays
+Error Line No : 155
+Exception Type : System.ArgumentException
+Details: Column 'HolidayDescription' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:52:34 PM
+Source : Portal.Core.HolidayCalenderBL
+Method Name : GetHolidays
+Error Line No : 155
+Exception Type : System.ArgumentException
+Details: Column 'HolidayDescription' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:52:35 PM
+Source : Portal.Controllers.CommonAPIController
+Method Name : GetDepartmentList
+Error Line No : 86
+Exception Type : System.ArgumentException
+Details: Column 'HolidayDescription' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:37:11 PM
+Source : Portal.Core.EmployeeBL
+Method Name : GetEmployeeLeaveDetails
+Error Line No : 697
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:37:11 PM
+Source : Portal.Controllers.CommonAPIController
+Method Name : GetDepartmentList
+Error Line No : 124
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

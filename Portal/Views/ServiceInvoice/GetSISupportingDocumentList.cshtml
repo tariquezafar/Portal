@@ -1,0 +1,131 @@
+﻿@model List<Portal.Core.ViewModel.SISupportingDocumentViewModel>
+<style>
+    #tblSOList tr th {
+        text-align: center;
+        border: 1px solid #ccc !important;
+        font-family: Arial;
+        color: #fff;
+    }
+
+    table tr td {
+        border: 1px solid #ccc !important;
+        font-family: Arial;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblDocumentList">
+            <thead>
+                <tr>
+                    <th style="text-align:center">Labour Code</th>
+                    <th style="text-align:center">Product Name</th>                    
+                    <th style="text-align:center">Description</th>
+                    <th align="center">Discount Amount</th>
+                    <th align="center">CGST Amount</th>
+                    <th align="center">SGST Amount</th>
+                    @*<th align="center">IGST Amount</th>*@
+                    <th align="center">Total Amount</th>
+                    <th align="center" style="width:5%;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="display:none">
+                            @item.LabourCode
+                            <input type="hidden" id="hdnLabourCode" value="@item.LabourCode" />
+                            <input type="hidden" id="hdnDescription" value="@item.Description" />
+                            <input type="hidden" id="hdnLabourRate" value="@item.LabourRate" />
+                            
+                            
+
+                            <input type="hidden" id="hdnDiscountPerc" value="@item.DiscountPerc" />
+                            <input type="hidden" id="hdnDiscountAmount" value="@item.DiscountAmount" />
+
+
+                            <input type="hidden" id="hdnCGST_Perc" value="@item.CGST_Perc" />
+                            <input type="hidden" id="hdnCGST_Amount" value="@item.CGST_Amount" />
+                            <input type="hidden" id="hdnSGST_Perc" value="@item.SGST_Perc" />
+                            <input type="hidden" id="hdnSGST_Amount" value="@item.SGST_Amount" />
+                            <input type="hidden" id="hdnIGST_Perc" value="@item.IGST_Perc" />
+                            <input type="hidden" id="hdnIGST_Amount" value="@item.IGST_Amount" />
+                            <input type="hidden" id="hdnTotalAmount" value="@item.TotalAmount" />
+
+                            
+                            <input type="hidden" id="hdnDocumentSequenceNo" value="@item.DocumentSequenceNo" />
+                            <input type="hidden" id="hdnSaleInvoiceDocId" value="@item.SaleInvoiceDocId" />
+                            <input type="hidden" id="hdnDocumentTypeId" value="@item.DocumentTypeId" />
+                            <input type="hidden" id="hdnDocumentTypeDesc" value="@item.DocumentTypeDesc" />
+                        </td>
+                        <td>
+                            @item.Description
+
+                    </td>
+                        <td>
+                            @item.ProductName
+                            <input type="hidden" id="hdnLabourProductID" value="@item.ProductId" />
+                            <input type="hidden" id="hdnLabourProductName" value="@item.ProductName" />
+
+                        </td>
+                    <td>
+                        @item.LabourRate
+
+                    </td>
+                    <td>
+                        @item.DiscountAmount
+
+                    </td>
+                    <td>
+                        @item.CGST_Amount
+
+                    </td>
+                    <td>
+                        @item.SGST_Amount
+
+                    </td>
+                    @*<td>
+                        @item.IGST_Amount
+
+                    </td>*@
+                    <td class="rowDataSd">
+                        @item.TotalAmount
+
+                    </td>
+                    @*<td>
+                           @Html.ActionLink(item.DocumentName, "DocumentDownload",new { fileName =item.DocumentName})
+                        <input type="hidden" id="hdnDocumentName" value="@item.DocumentName" />
+                            <input type="hidden" id="hdnDocumentPath" value="@item.DocumentPath" />
+                        </td>*@
+                    <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                        <a style="color:white" class="fa fa-trash" onclick="RemoveDocumentRow(this)" href="#"></a>
+                    </td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblDocumentList">
+            <thead>
+                <tr>
+                    <th style="text-align:center">Labour Code</th>
+                    <th style="text-align:center">Product Name</th>     
+                    <th style="text-align:center">Description</th>
+                    <th align="center">Discount Amount</th>
+                    <th align="center">CGST Amount</th>
+                    <th align="center">SGST Amount</th>
+                    <th align="center">IGST Amount</th>
+                    <th align="center">Total Amount</th>
+                    <th align="center" style="width:5%;">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

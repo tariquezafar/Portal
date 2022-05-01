@@ -1,0 +1,239 @@
+﻿@model Portal.Core.ViewModel.TBDrillDownViewModel
+@{
+    ViewBag.Title = "Sub Group Wise Trial Balance Drill-Down";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AccountDashboard">Account </a> >> Sub Group Wise Profit And Loss Drill-Down</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmBankBookPrint" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-12">
+                    <label for="rdoReportLevel" class="col-sm-2 control-label">Report Level</label>
+                    <div class="col-sm-8">
+                        <label style="font-weight:bold;"><input type="radio" id="rdoMainGroup" name="ReportLevel" value="MainGroup" /> &nbsp;&nbsp;Main Group Wise</label>
+                        &nbsp;&nbsp; &nbsp;&nbsp;
+                        <label style="font-weight:bold;background-color:aquamarine;"><input type="radio" checked="checked" id="rdoSubGroup" name="ReportLevel" value="SubGroup" /> &nbsp;&nbsp;Sub Group Wise</label>
+                        &nbsp;&nbsp; &nbsp;&nbsp;
+                        <label style="font-weight:bold"><input type="radio" id="rdoGLTrial" name="ReportLevel" value="GLWise" /> &nbsp;&nbsp;General Ledger Wise</label>
+                        &nbsp;&nbsp; &nbsp;&nbsp;
+                        <label style="font-weight:bold"><input type="radio" id="rdoSLTrial" name="ReportLevel" value="SLWise" /> &nbsp;&nbsp;Sub Ledger Wise</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch</label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="9" class="form-control"></select>
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtFromDate" class="col-sm-4 control-label">From Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtFromDate" name="txtFromDate" tabindex="2" value="@ViewData["fromDate"]" type="text" maxlength="50" />
+                        <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["fromDate"]" type="hidden" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtToDate" class="col-sm-4 control-label">To Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtToDate" name="txtToDate" tabindex="3" value="@ViewData["toDate"]" type="text" maxlength="50" />
+                        <input id="hdnToDate" name="hdnToDate" value="@ViewData["toDate"]" type="hidden" />
+                    </div>
+                </div>
+            </div>
+            <div class="row col-sm-12 col-lg-12 col-md-12">
+                <div class="col-md-3">
+                    @if (Convert.ToString(ViewData["startInterface"]) == "MainGroup")
+                    {
+                        <a class="btn btn-success" href="~/PLDrillDown/MainGroupWisePLDrillDown?ReportLevel=MainGroup&FromDate=@ViewData["fromDate"]&ToDate=@ViewData["toDate"]&StartInterface=@ViewData["startInterface"]&GLMainGroupId=@ViewData["gLMainGroupId"]&companyBranchId=@ViewData["CompanyBranchId"]" id="lnkBack">Back</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-success" href="~/PLDrillDown/PLDrillDown" id="lnkBack">Back</a>
+                    }
+
+
+                </div>
+                <div class="col-md-6">
+                    <center>
+                        <a class="btn btn-success" onclick="GenerateDrillDown();" href="#" id="lnkExport">Process</a> &nbsp;&nbsp;
+                        <input class="btn btn-success" type="button" id="btnReset" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;
+
+
+                    </center>
+                </div>
+                <div class="col-md-3">
+                    <a class="btn btn-success" href="~/TBDrillDown/TBDrillDown" id="lnkBack">Home</a> &nbsp;&nbsp;
+                </div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                @if (Model.GLTypeList != null && Model.GLTypeList.Count > 0)
+                {
+                    <div style="overflow-x:scroll; padding:10px;">
+                        <table class="table" id="tblGLTypeList" cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th width="40%" style="text-align:left;padding-left:20px;" colspan="2">Particulars</th>
+                                    <th width="20%" style="text-align:center" colspan="2"></th>
+                                    <th width="20%" style="text-align:center" colspan="2"></th>
+                                    <th width="20%" style="text-align:center" colspan="2">Closing Balance</th>
+                                </tr>
+                                <tr>
+                                    <th width="40%" style="text-align:left" colspan="2"></th>
+                                    <th width="10%" style="text-align:center"></th>
+                                    <th width="10%" style="text-align:center"></th>
+                                    <th width="10%" style="text-align:center"></th>
+                                    <th width="10%" style="text-align:center"></th>
+                                    <th width="10%" style="text-align:center"></th>
+                                    <th width="10%" style="text-align:center">CLOSING Amt.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.GLTypeList)
+                                {
+                                    <tr>
+                                        <td width="40%" colspan="2" style="text-align:left;background-color:antiquewhite;">@item.GLTYPE</td>
+                                        <td width="20%" colspan="2" style="text-align:center;background-color:antiquewhite;"></td>
+                                        <td width="20%" colspan="2" style="text-align:center;background-color:antiquewhite;"></td>
+                                        <td width="20%" colspan="2" style="text-align:center;background-color:antiquewhite;"></td>
+                                    </tr>
+                                    if (Model.MainGroupList != null && Model.MainGroupList.Where(x => x.GLTYPE == item.GLTYPE).ToList().Count > 0)
+                                    {
+                                        foreach (var mgitem in Model.MainGroupList.Where(x => x.GLTYPE == item.GLTYPE).ToList())
+                                        {
+                                            <tr>
+                                                <td width="40%" colspan="2" style="text-align:left;padding-left:20px;background-color:lightblue;">@mgitem.GLMainGroupName</td>
+                                                <td width="20%" colspan="2" style="text-align:center;background-color:lightblue;"></td>
+                                                <td width="20%" colspan="2" style="text-align:center;background-color:lightblue;"></td>
+                                                <td width="20%" colspan="2" style="text-align:center;background-color:lightblue;"></td>
+                                            </tr>
+                                            if (Model.SubGroupList != null && Model.SubGroupList.Where(x => x.GLMainGroupId == mgitem.GLMainGroupId).ToList().Count > 0)
+                                            {
+                                                foreach (var sgitem in Model.SubGroupList.Where(x => x.GLMainGroupId == mgitem.GLMainGroupId).ToList())
+                                                {
+
+                                                    <tr>
+                                                        <td colspan="2" style="text-align:left;padding-left:40px;"><a href="~/PLDrillDown/GLWisePLDrillDown?ReportLevel=GLWise&FromDate=@ViewData["fromDate"]&ToDate=@ViewData["toDate"]&StartInterface=@ViewData["startInterface"]&GLMainGroupId=@mgitem.GLMainGroupId&GLSubGroupId=@sgitem.GLSubGroupId&companyBranchId=@mgitem.CompanyBranchId">@sgitem.GLSubGroupName</a></td>
+                                                        <td style="text-align:center"></td>
+                                                        <td style="text-align:center"></td>
+                                                        <td style="text-align:center"></td>
+                                                        <td style="text-align:center"></td>
+                                                        <td style="text-align:center"></td>
+                                                        <td style="text-align:center">@sgitem.CLOSING</td>
+                                                    </tr>
+                                                }
+                                            }
+
+                                            <tr>
+                                                <th colspan="2" style="text-align:left;padding-left:20px;">Total of @mgitem.GLMainGroupName</th>
+                                                <th style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
+                                                <th style="text-align:center"></th>
+                                                <th style="text-align:center">@mgitem.CLOSING</th>
+                                            </tr>
+                                        }
+
+                                    }
+
+
+                                    <tr>
+                                        <th colspan="2" style="text-align:left">Total of @item.GLTYPE</th>
+                                        <th style="text-align:center"></th>
+                                        <th style="text-align:center"></th>
+                                        <th style="text-align:center"></th>
+                                        <th style="text-align:center"></th>
+                                        <th style="text-align:center"></th>
+                                        <th style="text-align:center">@item.CLOSING</th>
+                                    </tr>
+
+                                }
+
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th colspan="2" style="text-align:left;background-color:darksalmon;">Grand Total</th>
+                                    <th style="text-align:center;background-color:darksalmon"></th>
+                                    <th style="text-align:center;background-color:darksalmon"></th>
+                                    <th style="text-align:center;background-color:darksalmon"></th>
+                                    <th style="text-align:center;background-color:darksalmon"></th>
+                                    <th style="text-align:center;background-color:darksalmon"></th>
+                                    <th style="text-align:center;background-color:darksalmon">@Model.GLTypeList.Sum(x => x.CLOSING)</th>
+                                </tr>
+                                @{
+                                    var closingDifference = Model.GLTypeList.Sum(x => x.CLOSINGBALANCEDEBIT) - Model.GLTypeList.Sum(x => x.CLOSINGBALANCECREDIT);
+                                    if (closingDifference != 0)
+                                    {
+                                        <tr>
+                                            <th colspan="2" style="text-align:left;color:red;">Closing Difference</th>
+                                            <th style="text-align:center"></th>
+                                            <th style="text-align:center"></th>
+                                            <th style="text-align:center"></th>
+                                            <th style="text-align:center"></th>
+                                            <th style="text-align:center"></th>
+                                            <th style="text-align:center;color:red;">@closingDifference</th>
+                                        </tr>
+                                    }
+                                }
+                            </tfoot>
+                        </table>
+                    </div>
+                                    }
+                                    else
+                                    {
+                                        <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+                                    }
+
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/PLDrillDown/SubGroupPLDrillDown.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#tblGLTypeList').paging({
+            limit: 50,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

@@ -1,0 +1,1351 @@
+10:22:17 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:22:17 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:26:16 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:26:16 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:32:11 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:32:11 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:36:48 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:36:49 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:41:02 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:41:02 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:41:04 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 223
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+10:41:04 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1422
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:03:14 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:03:14 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:06:59 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetProductAvailableStock
+Error Line No : 8853
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:00 AM
+Source : Portal.Core.StockLedgerBL
+Method Name : GetProductAvailableStock
+Error Line No : 57
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:00 AM
+Source : Portal.Controllers.ProductController
+Method Name : GetProductAvailableStock
+Error Line No : 358
+Exception Type : System.InvalidCastException
+Details: Object cannot be cast from DBNull to other types.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:07:47 AM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+11:28:24 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:28:24 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:39:55 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:39:55 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:48:33 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:48:33 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:56:10 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:56:10 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:56:39 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:56:39 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:25:42 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:25:42 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:26:41 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLDetail
+Error Line No : 120
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:26:41 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLDetail
+Error Line No : 119
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:26:48 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLDetail
+Error Line No : 120
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:26:48 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLDetail
+Error Line No : 119
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:03 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLDetail
+Error Line No : 120
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:03 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLDetail
+Error Line No : 119
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:13 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLDetail
+Error Line No : 120
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:13 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLDetail
+Error Line No : 119
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:31 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLDetail
+Error Line No : 120
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:31 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLDetail
+Error Line No : 119
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:10 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLDetail
+Error Line No : 120
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:10 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLDetail
+Error Line No : 119
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:18 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLDetail
+Error Line No : 120
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:18 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLDetail
+Error Line No : 119
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:52 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLDetail
+Error Line No : 120
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:52 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLDetail
+Error Line No : 119
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:30:52 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLDetail
+Error Line No : 120
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:30:52 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLDetail
+Error Line No : 119
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:31:02 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLDetail
+Error Line No : 120
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:31:02 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLDetail
+Error Line No : 119
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:31:49 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLDetail
+Error Line No : 120
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:31:49 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLDetail
+Error Line No : 119
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:35:43 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:35:43 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:32 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLDetail
+Error Line No : 120
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:32 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLDetail
+Error Line No : 119
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:39:52 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLDetail
+Error Line No : 120
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:39:52 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLDetail
+Error Line No : 119
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:40:00 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLDetail
+Error Line No : 120
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:40:00 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLDetail
+Error Line No : 119
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:40:15 PM
+Source : Portal.Core.GLBL
+Method Name : GetGLDetail
+Error Line No : 120
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+12:40:15 PM
+Source : Portal.Controllers.GLController
+Method Name : GetGLDetail
+Error Line No : 119
+Exception Type : System.ArgumentException
+Details: Column 'OpeningBalanceDebit' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+13:03:44 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:03:44 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:39:46 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:39:46 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:50 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:50 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:51 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:51 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:54 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:54 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:10:00 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:10:00 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:10:36 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:10:36 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:28:20 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:28:20 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:55:48 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:55:48 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:45 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:45 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:24:28 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:24:28 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:58:15 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:58:15 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:01:29 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:01:29 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:01:31 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:01:31 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:12:49 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:12:49 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:25:11 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:25:11 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:34:07 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:34:07 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:37 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:37 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:44 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:38:44 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:40:28 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:40:28 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:40:28 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:40:38 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:40:39 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:40:39 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:40:42 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:40:42 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:40:42 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:40:59 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:41:00 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:41:00 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:41:09 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:41:09 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:41:09 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:41:28 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:41:28 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:41:28 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:42:30 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:43:19 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:43:39 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 80
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:43:39 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.ArgumentException
+Details: The supplied connection is not valid because it contains insufficient mapping or metadata information.
+Parameter name: connection
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:32 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:32 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:47:06 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:47:06 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:47:31 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:47:31 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:47:37 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 223
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:47:37 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1422
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:51:09 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:51:09 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:55:10 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:55:11 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:59:16 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:59:16 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:21:25 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:21:26 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:26:09 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:26:09 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:09:06 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:09:06 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:15:19 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:15:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:16:09 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:16:09 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:30:58 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:30:58 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:46:22 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:46:22 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:49:46 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:49:46 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:51:02 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:51:02 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:55:25 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:55:25 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:55:35 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:55:35 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:02:04 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:02:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:02:07 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:02:07 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:14:43 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:14:43 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:30:00 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:30:00 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,110 @@
+﻿@model List<Portal.Core.ViewModel.EmployeeLoanApplicationViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table {
+    width: 143% !important;
+    max-width: 143% !important;
+    margin-bottom: 20px;
+}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblEmployeeLoanApplicationList">
+            <thead>
+                <tr>
+                    <th align="center">Action</th>
+                    <th>Application No.</th>
+                    <th>Application Date</th>
+                    <th>Employee </th>
+                    <th>Loan Type</th>                   
+                    <th>Loan Interest Rate</th>
+                    <th>Interest Calc On</th>
+                    <th>Loan Amount</th>
+                    <th>Loan Installment Amount</th>
+                    <th>Loan Reason</th>
+                    <th>Loan Start Date</th>
+                    <th>Loan End Date</th>      
+                    <th>Approve/Rejected UserName</th>                                                
+                    <th>Approve/Rejected Date</th>                 
+                    <th>Loan Status</th>                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/EmployeeLoanApplication/ApprovalEmployeeLoanApplication?applicationId=@item.ApplicationId&AccessMode=3"></a>
+                            @if (item.LoanStatus.ToUpper() == "PENDING")
+                            {
+                                <a style="color:white" class="fa fa-pencil-square-o" href="~/EmployeeLoanApplication/ApprovalEmployeeLoanApplication?applicationId=@item.ApplicationId&AccessMode=2"></a>
+                            }
+                        </td>
+                        <td>@item.ApplicationNo</td>
+                        <td>@item.ApplicationDate</td>
+                        <td>@item.EmployeeName</td>
+                        <td>@item.LoanTypeName</td>
+                        <td>@item.LoanInterestRate</td>
+                        <td>@item.InterestCalcOn</td>
+                        <td>@item.LoanAmount</td>
+                        <td>@item.LoanInstallmentAmount</td>
+                        <td>@item.LoanReason</td>
+                        <td>@item.LoanStartDate</td>
+                        <td>@item.LoanEndDate</td>   
+                        <td>@item.ApprovedByUserName</td>                   
+                        <td>@item.ApproveDate</td>                                                                   
+                        @if (item.LoanStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine;">
+                                @item.LoanStatus
+                            </td>
+                        }
+                        else if (item.LoanStatus.ToUpper() == "REJECTED")
+                        {
+                            <td style="background-color:red;color:white">
+                                @item.LoanStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green;color:white">
+                                @item.LoanStatus
+                            </td>
+
+                        }
+
+                 
+                         
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblEmployeeLoanApplicationList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

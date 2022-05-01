@@ -1,0 +1,78 @@
+﻿@model List<Portal.Core.ViewModel.GLViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblGLList">
+            <thead>
+                <tr aling="center"  style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                    <th>Action</th>
+                    <th>GL Code</th> 
+                    <th>GL Head</th> 
+                    <th>GL Type</th> 
+                   <th>Company Branch</th>
+                    <th>GL Main Group</th>  
+                    <th>GL Sub Group</th>  
+                    <th>SL Type Name</th>  
+                    <th>GL Status</th>
+                    <th>Opening Balance</th>
+                    <th>Opening Bal Debit</th>
+                    <th>Opening Bal Credit</th>
+                    @*<th>Created Date</th>
+                    <th>Created By User Name</th>
+                    <th>Modified Date</th>
+                    <th>Modified By User Name</th>*@
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        @*<td class="teal text" style="width:30px; margin:0px auto;">
+                            <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/GL/AddEditGL?GLId=@item.GLId&AccessMode=3"></a>
+                        </td>*@
+                        <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:darkgreen" class="fa fa-pencil"  onclick="SelectGLMappingOpeningDetail(@item.GLId,@item.CompanyBranchId,@item.OpeningBalance,@item.OpeningBalanceCredit,@item.OpeningBalanceDebit,'@item.GLHead')"></a>
+                        </td> 
+                        <td>@item.GLCode
+                            <input id="hdnGLId" type="hidden" value="@item.GLId" />
+                        </td>
+                        <td>@item.GLHead</td>
+                        <td>@item.GLType</td>
+                        <td>@item.CompanyBranchName</td>
+                        <td>@item.GLMainGroupName</td>
+                        <td>@item.GLSubGroupName</td>
+                        <td>@item.SLTypeName</td>
+                         
+                        <td>@(item.GLStatus == true ? "Active" : "Inactive")</td>
+                        <td>@item.OpeningBalance</td>
+                        <td>@item.OpeningBalanceCredit</td>
+                        <td>@item.OpeningBalanceDebit</td>
+                        @*<td>@item.CreatedDate</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+                        <td>@item.ModifiedByUserName</td>*@
+                        
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblGLList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

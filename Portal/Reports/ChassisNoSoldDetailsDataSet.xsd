@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ChassisNoSoldDetailsDataSet" targetNamespace="http://tempuri.org/ChassisNoSoldDetailsDataSet.xsd" xmlns:mstns="http://tempuri.org/ChassisNoSoldDetailsDataSet.xsd" xmlns="http://tempuri.org/ChassisNoSoldDetailsDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ChassisNoSoldDetailsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ChassisNoSoldDetailsDataSet" msprop:Generator_UserDSName="ChassisNoSoldDetailsDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ChassisNoSoldDetailsDataSet" msprop:Generator_TableClassName="ChassisNoSoldDetailsDataSetDataTable" msprop:Generator_TableVarName="tableChassisNoSoldDetailsDataSet" msprop:Generator_RowChangedName="ChassisNoSoldDetailsDataSetRowChanged" msprop:Generator_TablePropName="_ChassisNoSoldDetailsDataSet" msprop:Generator_RowDeletingName="ChassisNoSoldDetailsDataSetRowDeleting" msprop:Generator_RowChangingName="ChassisNoSoldDetailsDataSetRowChanging" msprop:Generator_RowEvHandlerName="ChassisNoSoldDetailsDataSetRowChangeEventHandler" msprop:Generator_RowDeletedName="ChassisNoSoldDetailsDataSetRowDeleted" msprop:Generator_RowClassName="ChassisNoSoldDetailsDataSetRow" msprop:Generator_UserTableName="ChassisNoSoldDetailsDataSet" msprop:Generator_RowEvArgName="ChassisNoSoldDetailsDataSetRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ChassisNo" msprop:Generator_ColumnVarNameInTable="columnChassisNo" msprop:Generator_ColumnPropNameInRow="ChassisNo" msprop:Generator_ColumnPropNameInTable="ChassisNoColumn" msprop:Generator_UserColumnName="ChassisNo" type="xs:string" minOccurs="0" />
+              <xs:element name="MotorNo" msprop:Generator_ColumnVarNameInTable="columnMotorNo" msprop:Generator_ColumnPropNameInRow="MotorNo" msprop:Generator_ColumnPropNameInTable="MotorNoColumn" msprop:Generator_UserColumnName="MotorNo" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductName" msprop:Generator_ColumnVarNameInTable="columnProductName" msprop:Generator_ColumnPropNameInRow="ProductName" msprop:Generator_ColumnPropNameInTable="ProductNameColumn" msprop:Generator_UserColumnName="ProductName" type="xs:string" minOccurs="0" />
+              <xs:element name="InvoiceNo" msprop:Generator_ColumnVarNameInTable="columnInvoiceNo" msprop:Generator_ColumnPropNameInRow="InvoiceNo" msprop:Generator_ColumnPropNameInTable="InvoiceNoColumn" msprop:Generator_UserColumnName="InvoiceNo" type="xs:string" minOccurs="0" />
+              <xs:element name="InvoiceDate" msprop:Generator_ColumnVarNameInTable="columnInvoiceDate" msprop:Generator_ColumnPropNameInRow="InvoiceDate" msprop:Generator_ColumnPropNameInTable="InvoiceDateColumn" msprop:Generator_UserColumnName="InvoiceDate" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerName" msprop:Generator_ColumnVarNameInTable="columnCustomerName" msprop:Generator_ColumnPropNameInRow="CustomerName" msprop:Generator_ColumnPropNameInTable="CustomerNameColumn" msprop:Generator_UserColumnName="CustomerName" type="xs:string" minOccurs="0" />
+              <xs:element name="StateName" msprop:Generator_ColumnVarNameInTable="columnStateName" msprop:Generator_ColumnPropNameInRow="StateName" msprop:Generator_ColumnPropNameInTable="StateNameColumn" msprop:Generator_UserColumnName="StateName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

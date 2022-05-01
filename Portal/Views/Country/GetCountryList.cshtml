@@ -1,0 +1,60 @@
+﻿@model List<Portal.Core.ViewModel.CountryViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table{
+        margin-left:0px;
+        margin-right:20px
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;background-color:white;">
+        <table class="table table-bordered table-hover" id="tblCountryList">
+            <thead>
+                <tr>
+                    <th colspan="2">Action</th>
+                    <th><center>Country Name</center></th>
+                    <th><center>Country Code</center></th>
+                    <th><center>Status</center></th>
+                    
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="info">
+                        <td style="width:30px; margin:0px auto;">
+                            <div class="teal text "><a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/Country/AddEditCountry?CountryId=@item.CountryId&AccessMode=3"></a></div>
+                        </td>
+                        <td style="width:30px; margin:0px 2px auto;">
+                            <div class="teal text">  <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/Country/AddEditCountry?CountryId=@item.CountryId&AccessMode=2"></a></div>
+                        </td>
+                        <td align="center">@item.CountryName</td>
+                        <td align="center">@item.CountryCode</td>
+                        <td align="center">@(item.Country_Status==true?"Active":"Inactive")</td>
+                        
+
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblCountryList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

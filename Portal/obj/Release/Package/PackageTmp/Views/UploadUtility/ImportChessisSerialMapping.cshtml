@@ -1,0 +1,135 @@
+﻿@using System.Data;
+@{
+    ViewBag.Title = "Import Chessis Serial Mapping";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<script>
+    function Errormsg() {
+        if ($('#FileUpload1').val() == '') {
+           alert("Please Select File");
+            return false;
+        }
+    }
+
+</script>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AdminDashboard">Admin </a> >> Import Chessis Serial Mapping </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmImportLead" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner"> 
+            <div class="col-md-12 ftop">
+                <div class="form-group  col-md-12">
+                    <label for="lnkDownloadSample" class="col-sm-2 control-label">Sample Download</label>
+                    <div class="col-sm-10">
+                        <a class="fa-link" tabindex="1" href="http://software.htssolutions.org/sampledoc/ChessisSerialMapping.xls" target="_blank">Click here to Download Sample Chessis Serial Mapping Sheet</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="FileUpload" class="col-sm-4 control-label">Select File:</label>
+                    <div class="col-sm-8 ">
+                        <input type="file" tabindex="2" id="FileUpload1" name="FileUpload1" />
+                    </div>
+                </div>
+                <div class="form-group  col-md-6">  
+                    <div class="col-sm-8">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row col-sm-12 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Submit"  onclick="Errormsg();" alt="Submit" tabindex="3" id="btnSubmit" type="submit" border="0">&nbsp;&nbsp;
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row col-sm-12 col-lg-12 col-md-12" style="padding-left:20px;">
+                @if (ViewBag.Error != null)
+                {
+                   @MvcHtmlString.Create((ViewBag.Error != null ? ViewBag.Error.ToString() : "").Replace(Environment.NewLine, "<br />")) 
+                }
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div id="divList" style="overflow-x:scroll; padding-left:20px;padding-top:20px;">
+                    <table class="table" id="tblVendorList">
+                        @if (ViewBag.Data != null)
+                        {
+                            <thead>
+                                <tr>
+                                    @foreach (DataColumn column in (ViewBag.Data as System.Data.DataTable).Columns)
+                                    {
+                                        <th>@column.ColumnName.ToUpper()</th>
+                                    }
+                                </tr>
+                            </thead>
+                            if ((ViewBag.Data as System.Data.DataTable).Rows.Count > 0)
+                            {
+                                foreach (DataRow dr in (ViewBag.Data as System.Data.DataTable).Rows)
+                                {
+                                    if (!string.IsNullOrEmpty(Convert.ToString(dr["UploadStatus"])) && Convert.ToBoolean(dr["UploadStatus"]) == true)
+                                    {
+                                        <tr style="background-color:greenyellow;">
+                                            @foreach (DataColumn column in (ViewBag.Data as System.Data.DataTable).Columns)
+                                            {
+                                                <td data-title='@column.ColumnName'>
+                                                    @dr[column].ToString()
+                                                </td>
+                                            }
+                                        </tr>
+                                    }
+                                    else
+                                    {
+                                        <tr style="background-color:lightcoral;">
+                                            @foreach (DataColumn column in (ViewBag.Data as System.Data.DataTable).Columns)
+                                            {
+                                                <td data-title='@column.ColumnName'>
+                                                    @dr[column].ToString()
+                                                </td>
+                                            }
+                                        </tr>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                int count = (ViewBag.Data as System.Data.DataTable).Columns.Count;
+                                <tr>
+                                <td colspan = '@count' style = "color:red;" >
+                                No Data Found.
+                                </td>
+                                </tr>
+
+                            }
+
+                        }
+                        </table>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>

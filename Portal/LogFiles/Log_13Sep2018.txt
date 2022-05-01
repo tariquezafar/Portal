@@ -1,0 +1,144 @@
+23:19:28 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+23:19:29 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:19:46 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:19:46 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:19:46 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 2263
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:20:11 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditProduct
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditProduct' expects parameter '@CC', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:20:11 PM
+Source : Portal.Core.ProductBL
+Method Name : AddEditProduct
+Error Line No : 74
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditProduct' expects parameter '@CC', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:20:11 PM
+Source : Portal.Controllers.ProductController
+Method Name : AddEditProduct
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditProduct' expects parameter '@CC', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:20:51 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditProduct
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditProduct' expects parameter '@CC', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:21:09 PM
+Source : Portal.Core.ProductBL
+Method Name : AddEditProduct
+Error Line No : 74
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditProduct' expects parameter '@CC', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:21:09 PM
+Source : Portal.Controllers.ProductController
+Method Name : AddEditProduct
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditProduct' expects parameter '@CC', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:21:31 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditProduct
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Parameter '@OtherTaxRate' was supplied multiple times.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:21:31 PM
+Source : Portal.Core.ProductBL
+Method Name : AddEditProduct
+Error Line No : 74
+Exception Type : System.Data.SqlClient.SqlException
+Details: Parameter '@OtherTaxRate' was supplied multiple times.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:21:31 PM
+Source : Portal.Controllers.ProductController
+Method Name : AddEditProduct
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Parameter '@OtherTaxRate' was supplied multiple times.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:21:40 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditProduct
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Parameter '@OtherTaxRate' was supplied multiple times.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:21:40 PM
+Source : Portal.Core.ProductBL
+Method Name : AddEditProduct
+Error Line No : 74
+Exception Type : System.Data.SqlClient.SqlException
+Details: Parameter '@OtherTaxRate' was supplied multiple times.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:29:14 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:29:14 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

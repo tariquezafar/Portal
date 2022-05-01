@@ -1,0 +1,355 @@
+﻿@{
+    ViewBag.Title = "Add/Edit Vendor";
+    Layout = "~/Views/Shared/_PurchaseLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }  
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+    /* allow space for check mark */
+
+     .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/PurchaseDashboard">Purchase </a> >> Add/Edit Vendor</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditVendor" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div> 
+            <div id="tabs">
+                <ul>
+                    <li><a href="#tabs-1">Vendor Basic Info</a></li>
+                    
+                    <li><a href="#tabs-2">Interested Product(s)</a></li>
+                </ul>
+                <div id="tabs-1">
+                    <div class="col-md-12 ftop">
+                        <div class="form-group col-md-4">
+                            <label for="txtVendorName" class="col-sm-4 control-label">Vendor Name&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtVendorName" name="txtVendorName" tabindex="1" placeholder="Enter Vendor Name" type="text" maxlength="100" />
+                                <input id="hdnVendorId" type="hidden" value="@ViewData["vendorId"]" />
+                                <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtVendorCode" class="col-sm-4 control-label">Vendor Code&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8 ">
+                                <input class="form-control" id="txtVendorCode" name="txtVendorCode"  tabindex="2" placeholder="Enter Vendor Code" type="text" maxlength="50" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtContactPersonName" class="col-sm-4 control-label">Contact Person Name&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control alpha-space-only" id="txtContactPersonName" name="txtContactPersonName" tabindex="3" placeholder="Enter Contact Person Name" type="text" maxlength="100" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12">
+
+                        <div class="form-group  col-md-4">
+                            <label for="txtEmail" class="col-sm-4 control-label">Email</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtEmail" name="txtEmail" tabindex="4" placeholder="Enter Email" type="text" maxlength="100" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtMobileNo" class="col-sm-4 control-label">Mobile No.&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number numeric-only" id="txtMobileNo" name="txtMobileNo" tabindex="5" placeholder="Enter Mobile No." type="text" maxlength="10" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtContactNo" class="col-sm-4 control-label">Contact No.</label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number numeric-only" id="txtContactNo" name="txtContactNo" tabindex="6" placeholder="Enter Contact No." type="text" maxlength="10" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-4">
+                            <label for="txtFax" class="col-sm-4 control-label">Fax</label>
+                            <div class="col-sm-8">
+                                <input class="form-control numeric-only" id="txtFax" name="txtFax" tabindex="7" placeholder="Enter Fax" type="text" maxlength="20" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtAddress" class="col-sm-4 control-label">Address&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtAddress" name="txtAddress" tabindex="8" placeholder="Enter Address" type="text" maxlength="250" />
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-4">
+                            <label for="txtCity" class="col-sm-4 control-label">City&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control alpha-space-only" id="txtCity" name="txtCity" tabindex="9" placeholder="Enter City" type="text" maxlength="50" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12">
+
+                        <div class="form-group  col-md-4">
+                            <label for="txtPinCode" class="col-sm-4 control-label">Pin Code</label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number numeric-only" id="txtPinCode" name="txtPinCode" tabindex="10" placeholder="Enter Pin Code" type="text" maxlength="20" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4 ">
+                            <label for="ddlCountry" class="col-sm-4 control-label">Country&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlCountry" name="ddlCountry" onchange="BindPrimaryStateList(0)" tabindex="11" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-4 ">
+                            <label for="ddlState" class="col-sm-4 control-label">State&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlState" name="ddlState" tabindex="12" class="form-control"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group  col-md-4">
+                            <label for="txtCSTNo" class="col-sm-4 control-label">CST No.</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtCSTNo" name="txtCSTNo" tabindex="13" placeholder="Enter CST No." type="text" maxlength="20" />
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-4">
+                            <label for="txtTINNo" class="col-sm-4 control-label">TIN No.</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtTINNo" name="txtTINNo" tabindex="14" placeholder="Enter TIN No." type="text" maxlength="20" />
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-4">
+                            <label for="txtPANNo" class="col-sm-4 control-label">PAN No.</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtPANNo" name="txtPANNo" tabindex="15" placeholder="Enter PAN No." type="text" maxlength="20" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group  col-md-4 ">
+                            <label for="txtGSTNo" class="col-sm-4 control-label">GST No.</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtGSTNo" name="txtGSTNo" tabindex="16" placeholder="Enter GST No." type="text" maxlength="20" />
+                            </div>
+                        </div>
+                   
+                        <div class="form-group  col-md-4">
+                            <label for="txtCreditLimit" class="col-sm-4 control-label">Credit Limit</label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number numeric-only" id="txtCreditLimit" value="0" name="txtCreditLimit" tabindex="17" placeholder="Enter Credit Limit" type="text" maxlength="20" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4 ">
+                            <label for="txtCreditDays" class="col-sm-4 control-label">Credit Day(s)</label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number numeric-only" id="txtCreditDays" value="0" name="txtCreditDays" tabindex="18" placeholder="Enter Credit Days" type="text" maxlength="20" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group  col-md-4">
+                            <label for="txtExciseNo" class="col-sm-4 control-label">Excise No</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtExciseNo" name="txtExciseNo" tabindex="19" placeholder="Enter Excise No" type="text" maxlength="100" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtAnnualTurnOver" class="col-sm-4 control-label">Annual TurnOver</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtAnnualTurnOver" name="txtAnnualTurnOver" tabindex="20" placeholder="Enter Annual TurnOver" type="text" maxlength="100" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4" style="display:none;">
+                            <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlCompanyBranch" name="ddlCompanyBranch" onchange="GetBranchStateId()" tabindex="24" class="form-control"></select>
+                                <input id="hdnBillingStateId" type="hidden" value="0" />
+                                <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                                <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="chkGSTExempt" class="col-sm-4 control-label">Unregistered Vendor</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" name="chkGSTExempt" id="chkGSTExempt" class="" />
+                                <label style="font-size: 24px;" tabindex="22" for="chkGSTExempt"></label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12">
+
+                       
+                        <div class="form-group  col-md-4">
+                            <label for="chkStatus" class="col-sm-4 control-label">Active Status</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" name="chkStatus" id="chkStatus" checked="checked" class="" />
+                                <label style="font-size: 24px; " tabindex="23" for="chkStatus"></label>
+                            </div> 
+                        </div>
+
+                        <div class="form-group col-md-4 ">
+                            <label for="chkComposition" class="col-sm-4 control-label">Is Composition</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" name="chkComposition" id="chkComposition" class="" />
+                                <label style="font-size: 24px;" tabindex="21" for="chkComposition"></label>
+                            </div>
+
+                        </div>
+
+                     
+                       
+                        </div>
+                </div>
+
+                
+                <div id="tabs-2">
+                    <div class="col-md-12 ftop">
+                        <div class="form-group col-md-4">
+                            <label for="txtProductName" class="col-sm-4 control-label">Product Name&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtProductName" name="txtProductName" tabindex="25" placeholder="Enter Product Name" type="text" maxlength="100" />
+                                <input id="hdnProductId" type="hidden" value="0" />
+                                <input id="hdnMappingId" type="hidden" value="0" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtProductCode" class="col-sm-6 control-label">Product Code</label>
+                            <div class="col-sm-6">
+                                <input id="txtProductCode" name="txtProductCode" tabindex="26" type="text" style="background-color:transparent;border:none;" maxlength="50" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtProductShortDesc" class="col-sm-4 control-label">Product Short Desc</label>
+                            <div class="col-sm-8">
+                                <input id="txtProductShortDesc" name="txtProductShortDesc" type="text" tabindex="27" style="background-color:transparent;border:none;" maxlength="100" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12 ftop">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <center>
+                                <input class="btn btn-success" value="Add Product" alt="Add Product"  tabindex="28" id="btnAddProduct" onclick="AddProduct(1)" type="button" border="0">
+                                <input class="btn btn-success" value="Update Product" style="display:none;" alt="Update Product"  tabindex="28" id="btnUpdateProduct" onclick="AddProduct(2)" type="button" border="0">
+                                <input class="btn btn-success" type="button" id="btnResetProduct" onclick="ClearProductFields()"  tabindex="29" value="Reset" /> 
+                            </center>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12 ftop">
+                        <div id="divProductList">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    <div class="row col-sm-12 col-lg-12 col-md-12">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <center>
+                              <input class="btn btn-success" value="Save" alt="Save" id="btnSave"  tabindex="30" onclick="SaveData(1)" type="button" border="0"> 
+                              <input class="btn btn-success" value="Update" style="display:none;"  tabindex="30" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                              <a class="btn btn-success" id="btnReset" href="@Url.Content("~/Vendor/AddEditVendor")" tabindex="33">Reset</a>
+                              @*<input class="btn btn-success" type="button" id="btnReset" onclick="ClearFields()"  tabindex="23" value="Reset" /> &nbsp;&nbsp;*@
+                              <a class="btn btn-success" id="btnList" href="@Url.Content("~/Vendor/ListVendor")" tabindex="34">Search Vendor</a>
+                            </center>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="alertModel" tabindex="31" role="dialog">
+                    <div class="modal-dialog  modal-sm">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close"  tabindex="32" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title" id="modelHeader"></h4>
+                            </div>
+                            <div class="modal-body">
+                                <p id="modelText"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary  btn-block" tabindex="32"  data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+</form>
+</section>
+
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/Vendor/AddVendor.js"></script>
+

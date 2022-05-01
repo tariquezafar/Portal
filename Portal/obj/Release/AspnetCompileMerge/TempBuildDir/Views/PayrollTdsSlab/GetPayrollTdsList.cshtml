@@ -1,0 +1,87 @@
+﻿@model List<Portal.Core.ViewModel.PayRollTdsViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll;background-color:white;">
+        <table class="table table-bordered table-hover" id="tblCountryList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    
+                    <th><center>From Date</center></th>
+                    <th><center>To Date</center></th>
+                    <th><center>From Amount</center></th>
+                    <th><center>To Amount</center></th>
+                    <th><center>Category</center></th>
+                    <th><center>TDS Perc</center></th>
+                    <th><center>Cess Perc</center></th>
+                    <th><center>Yearly Discount</center></th>
+                    <th><center>Monthly Discount</center></th>
+                    <th><center>Created By User</center></th>
+                    <th><center>Created Date</center></th>
+                    <th><center>Modified By User</center></th>
+                    <th><center>Modified Date</center></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="margin:0px auto;">
+                            <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/PayrollTdsSlab/AddEditPayrollTdsSlab?PayrollTdsSlaBid=@item.TdsSlaBid&AccessMode=3"></a>
+                        </td>
+
+                        
+                        <td class="teal text" style="margin:0px auto;">
+                            <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/PayrollTdsSlab/AddEditPayrollTdsSlab?PayrollTdsSlaBid=@item.TdsSlaBid&AccessMode=2"></a>
+                        </td>
+                       
+                        <td>@item.FromDate</td>
+                        <td>@item.ToDate</td>
+                        <td>@item.FromAmount</td>
+                        <td>@item.ToAmount</td>
+                        <td>@item.Category</td>
+                        <td>@item.TDSPerc</td>
+                        <td>@item.CessPerc</td>
+                        <td>@item.YearlyDiscount</td>
+                        <td>@item.MonthlyDiscount</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedbyUserName</td>
+                        <td>@item.ModifiedDate</td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+
+

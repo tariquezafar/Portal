@@ -1,0 +1,104 @@
+﻿@model List<Portal.Core.ViewModel.JobCardViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div class="divproductlist" style="padding:10px;">
+        <table class="table" id="tblProductServiceList" style="width:100% !important">
+            <thead>
+                <tr>
+                    <th style="width: 5%" colspan="1" class="editonly" align="center">Action</th>
+                    <th >Job Card No.</th>
+                    <th >Job Card Date</th>
+                    <th >Customer Name</th>
+                    <th>Customer Code</th>
+                    <th>Model Name</th>                  
+                    <th>Reg No.</th>
+                    <th>Engine No</th>
+                    <th>Key No</th>
+                    <th>Approval Status</th>
+                   
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" href="#" onclick="SelectJobCard('@item.JobCardID','@item.JobCardNo','@item.JobCardDate','@item.CustomerID','@item.CustomerCode','@item.CustomerName')"></a>
+                        </td>   
+
+                        <td>
+                            @item.JobCardNo
+
+                        </td>
+                        <td>
+                            @item.JobCardDate
+
+                        </td>
+                        <td>
+                            @item.CustomerName
+
+                        </td>
+                        <td>
+                            @item.CustomerCode
+
+                        </td>
+                        <td>
+                            @item.ModelName
+
+                        </td>
+                        <td>
+                            @item.RegNo
+
+                        </td>
+                        <td>
+                            @item.EngineNo
+
+                        </td>
+                        <td>
+                            @item.KeyNo
+
+                        </td>
+
+                        @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color: deepskyblue;color: #fff; font-weight: bold;">
+                                @item.ApprovalStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green;color:white">
+                                @item.ApprovalStatus
+                            </td>
+                        }
+                       
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="divproductlist" style="padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th style="width: 5%" colspan="1" class="editonly" align="center">Action</th>
+                    <th>Job Card No.</th>
+                    <th>Job Card Date</th>
+                    <th>Customer Name</th>
+                    <th>Customer Code</th>
+                    <th>Model Name</th>
+                    <th>Reg No.</th>
+                    <th>Engine No</th>
+                    <th>Key No</th>
+                    <th>Approval Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

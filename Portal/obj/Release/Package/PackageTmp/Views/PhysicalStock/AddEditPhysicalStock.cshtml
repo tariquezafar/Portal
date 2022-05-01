@@ -1,0 +1,191 @@
+﻿@using System.Data;
+
+@{
+    ViewBag.Title = "Add Edit PhysicalStock";
+    Layout = "~/Views/Shared/_InventoryLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend {
+        display: block;
+        width: 37%;
+        padding: 0;
+        margin-bottom: 20px;
+        font-size: 21px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+</style>
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/InventoryDashboard">Inventory</a> >> Add/Edit Physical Stock</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditLeadSource" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+                <div class="col-md-12 ftop">
+                    <div class="form-group col-md-4">
+                        <label for="txtPhysicalStockNo" class="col-sm-4 control-label">Physical Stock No.</label>
+
+                        <div class="col-sm-8">
+                            <input id="txtPhysicalStockNo" name="txtPhysicalStockNo" tabindex="1" placeholder="Auto Generated Physical Stock No." type="text" class="form-control" maxlength="50" />
+                            <a style="display:none;color:#fff;" class="btn btn-success" tabindex="4" id="btnAddNew" href="@Url.Content("~/PhysicalStock/AddEditPhysicalStock?accessMode=1")">New</a>                          
+                            <a style="display:none;" class="btn btn-success" tabindex="5" target="_blank" href="@Url.Action("Report",new {physicalStockID=ViewData["physicalStockID"], reportType="PDF" })" id="btnPrint">Print</a>
+                            <input id="hdnPhysicalStockID" type="hidden" value="@ViewData["physicalStockID"]" />
+                            <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                        </div>
+
+                    </div>
+                    <div class="form-group col-md-4 ">
+                        <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="2" onchange="GenerateReportParameters();" class="form-control"></select>
+                            <input id="hdnBillingStateId" type="hidden" value="0" />
+                            <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                            <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+
+                        </div>
+                    </div> 
+                    <div class="form-group col-md-4">
+                        <label for="txtPhysicalStockDate" class="col-sm-4 control-label">Physical Stock Date</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtPhysicalStockDate" name="txtPhysicalStockDate" tabindex="3" placeholder="Physical Stock Date." type="text" value="@ViewData["monthStartDate"]" maxlength="80" />
+
+                        </div>
+                    </div> 
+                </div>
+                
+                <div class="col-md-12">
+                    
+                    <div class="form-group col-md-4">
+                        <label for="txtPhysicalAsOnDate" class="col-sm-4 control-label">Physical As On Date</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtPhysicalAsOnDate" name="txtPhysicalAsOnDate" tabindex="5" placeholder="Physical As On Date" type="text" value="@ViewData["toDate"]" maxlength="80" />
+                            <input id="hdnToDate" name="hdnFromDate" value="@ViewData["toDate"]" type="hidden" />
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                
+                
+
+                <div class="col-md-12  ftop">
+                    <div class="form-group col-md-4">
+
+                    </div>
+                    <div class="form-group col-md-4" style="background-color:yellow">
+                        <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Physical Stock Document(s) Detail</b></label></h4>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input class="btn btn-success editonly" value="Add Physical Stock" tabindex="6" alt="Add Bank Statement" id="btnPhysicalStock" onclick="ShowHideDocumentPanel(1)" type="button" border="0">
+                    </div>
+                </div>
+                <div class="col-md-12 documentsection" style="display:none;">
+                    <div class="form-group  col-md-12">
+                        <label for="lnkDownloadSample" class="col-sm-2 control-label">Sample Download</label>
+                        <div class="col-sm-10">                           
+                            <a class="btn btn-success" href="#" tabindex="7" id="btnExcel">Click here to Download Sample Physical Stock Import File</a>                           
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-12 documentsection" style="display:none;">
+                   
+
+                    <div class="form-group col-md-6">
+                        <label for="FileUpload1" class="col-sm-4 control-label">Upload Physical Stock Files</label>
+                        <div class="col-sm-8">
+                            <input type="file" id="FileUpload1" tabindex="8" name="FileUpload1" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+
+                    </div>
+
+                </div>
+                <div class="col-sm-12 col-lg-12 col-md-12 documentsection" style="display:none;">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Upload Physical Stock" alt="Add Document" id="btnAddDocumentTypeTerm" tabindex="9" onclick="SavePhisicalStock();" type="button" border="0">
+                            <input class="btn btn-success" value="Upload Physical Stock" style="display:none;" tabindex="9" alt="Update Document" id="btnUpdateDocument" onclick="SavePhisicalStock();" type="button" border="0">
+                            <input class="btn btn-success" type="button" id="btnCancelDocument" tabindex="10" onclick="ShowHideDocumentPanel(2)" value="Cancel" />
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                <div class="col-sm-12 col-lg-12 col-md-12">
+                    <div id="divBankStatementList">
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="row col-sm-12 col-lg-12 col-md-12 ftop ">
+                <div class="col-md-3">
+                    <label for="ddlPhysicalStockStatus" class="col-sm-4 control-label">Save Mode</label>
+                    <div class="col-sm-8">
+                        <select id="ddlPhysicalStockStatus" name="ddlPhysicalStockStatus" tabindex="11" class="form-control">
+                            <option selected="selected" value="Draft">Draft</option>
+                            <option value="Final">Final</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="12" onclick="SaveData();" type="button" border="0">
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="12" alt="Update" id="btnUpdate" onclick="SaveData()" type="button" border="0">                     
+                        <a class="btn btn-success" id="btnReset" tabindex="16" href="@Url.Content("~/PhysicalStock/AddEditPhysicalStock")">Reset</a>
+                        <a class="btn btn-success" id="btnList" tabindex="17" href="@Url.Content("~/PhysicalStock/ListPhysicalStock")">Search Physical Stock</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+
+
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" tabindex="13" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" tabindex="14" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" tabindex="15" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+    </form>
+</section>
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/PhysicalStock/AddPhysicalStock.js"></script>
+

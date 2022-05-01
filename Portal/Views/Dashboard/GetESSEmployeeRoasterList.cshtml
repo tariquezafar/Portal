@@ -1,0 +1,112 @@
+﻿@model List<Portal.Core.ViewModel.HR_RoasterViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    int i = 1;
+    <div class="carousel-inner" style="color:#fff!important;">
+        @foreach (var item in Model)
+        {
+            if (i == 1)
+            {
+       <div class="item active">
+            <div class="row">
+                <div class="col-xs-12 metric-content metric-icon ">
+                    <div class="thumbnail adjust1">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="value" style="font-size:20px;color:#fff;">
+                               @item.RoasterStartDate
+                            </div>
+                            <div class="trend" >
+                                <p class="text-success" style="color:#fff;font-size:18px;">
+                                    <i class="fa fa-tags"></i>&nbsp;
+                                    <strong>Weekly Roster @*@item.ShiftTypeName*@</strong>
+                                </p>
+                                <strong>@item.RoasterDay</strong>
+                            </div>
+                            <div id="metric-sales" class="chart"></div>
+                            <header>
+                                <h3 class="thin" style="font-size:15px;color:#fff;">
+                                @item.ShiftStartTime - @item.ShiftEndTime
+                                </h3>
+                            </header>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                i++;
+            }
+            else
+            {
+                <div class="item">
+                    <div class="row">
+                        <div class="col-xs-12 metric-content metric-icon ">
+                            <div class="thumbnail adjust1">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="value" style="font-size:20px;color:#fff;">
+                                        @item.RoasterStartDate
+                                    </div>
+                                    <div class="trend">
+                                        <p class="text-success" style="color:#fff; font-size:18px;">
+                                           
+                                            <p style="font-size:18px;">
+                                                <i class="fa fa-tags"></i> &nbsp;
+                                                <strong>Weekly Roster @*@item.ShiftTypeName*@</strong>
+                                                </p>
+                                        </p>
+                                        <strong>@item.RoasterDay</strong>
+                                    </div>
+                                    <div id="metric-sales" class="chart"></div>
+                                    <header>
+                                        <h3 class="thin" style="font-size:15px;color:#fff;">
+                                            @item.ShiftStartTime - @item.ShiftEndTime
+                                        </h3>
+                                    </header>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+
+    </div> <!-- Controls -->
+   
+<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev"> <span class="fa fa-arrow-left fa-1"></span> </a> <a class="right carousel-control" href="#carousel-example-generic" data-slide="next"> <span class="fa fa-arrow-right fa-1"></span> </a>
+
+}
+else
+{
+
+    <div class="item">
+        <div class="row">
+            <div class="col-xs-12 metric-content metric-icon ">
+                <div class="thumbnail adjust1">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="value" style="font-size:20px;color:#fff;">
+                           Roaster  Date
+                        </div>
+                        <div class="trend" style="color:#fff!important;">
+                            <p class="text-success" style="color:#fff; font-size:18px;">
+
+                            <p style="font-size:18px;color:#fff;">
+                                <i class="fa fa-tags"></i> &nbsp;
+                                <strong style="color:#fff;">Weekly Roster @*@item.ShiftTypeName*@</strong>
+                            </p>
+                            </p>
+                            <strong style="color:#fff;">Roaster Day</strong>
+                        </div>
+                        <div id="metric-sales" class="chart"></div>
+                        <header>
+                            <h3 class="thin" style="font-size:15px;color:#fff;">
+                                
+                            </h3>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     @*<h3 style="color:white;text-align:center">Records not Found!!!</h3>*@
+
+}
+

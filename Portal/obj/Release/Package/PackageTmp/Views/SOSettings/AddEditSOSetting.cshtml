@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "Add SOSetting";
+    Layout = "~/Views/Shared/_SaleLayout.cshtml";
+}
+ 
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+  
+</style>
+ 
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/SaleDashboard">Sale</a> >> Add/Edit Sale Order Setting </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditSOSetting" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+                <div class="col-md-12 ftop">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="chkNormalApprovalRequired" class="col-sm-6 control-label">Normal Approval Required</label>
+                            <div class="col-sm-6">
+                                <input id="chkNormalApprovalRequired" onclick="changeNormalApproval()" name="chkNormalApprovalRequired" type="checkbox" tabindex="4" />  
+                                <input id="hdnSOSettingId" type="hidden" value="@ViewData["sosettingId"]" />
+                                <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="form-group">
+                          <label for="txtNormalApprovedByUser"  class="col-sm-4 control-label">Normal Approved By User</label>
+                            <div class="col-sm-8">
+                                <input class="form-control"  id="txtNormalApprovedByUser" name="txtNormalApprovedByUser" tabindex="1" placeholder="Enter Normal Approved By User" type="text" maxlength="100" />
+                                <input type="hidden" id="hdnNormalApprovalByUserId" name="hdnUserId" value="0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                            <label for="chkRevisedApprovalRequired" class="col-sm-6 control-label">Revised Approval Required</label>
+                            <div class="col-sm-6">
+                                <input id="chkRevisedApprovalRequired" onclick="changeRevisedApproval()" name="chkRevisedApprovalRequired" type="checkbox" tabindex="4" /> 
+                            </div> 
+                        </div>
+                        </div>
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="txtRevisedApprovedByUser" class="col-sm-4 control-label">Revised Approved By User</label>
+                            <div class="col-sm-8">
+                                <input class="form-control"  id="txtRevisedApprovedByUser" name="txtRevisedApprovedByUser" tabindex="1" placeholder="Enter Revised Approved By User" type="text" maxlength="100" />
+                                <input type="hidden" id="hdnRevisedApprovalByUserId" name="hdnUserId" value="0"  disabled="disabled"/>
+                            </div>
+                        </div> 
+                    </div>
+                    </div> 
+                <div class="col-md-12">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="chkstatus" class="col-sm-6 control-label">Status&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-6">
+                                <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="4" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        </div>
+
+                    </div>
+                    <div class="row col-sm-6 col-lg-12 col-md-12">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <center>
+                                <input class="btn btn-success" value="Save" alt="Save" id="btnSave" onclick="SaveData(1)" type="button" border="0"> 
+                                <input class="btn btn-success" value="Update" style="display:none;" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                                <input class="btn btn-success" type="button" id="btnReset" onclick="ClearFields()" value="Reset" />  
+                                @*<input class="btn btn-success" type="button" id="btnList" value="Search Company" />*@
+                                <a class="btn btn-success" id="btnList" href="@Url.Content("~/SOSettings/ListSOSetting")">Search Sale Order Setting</a>
+                            </center>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="alertModel" role="dialog">
+                    <div class="modal-dialog  modal-sm">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title" id="modelHeader"></h4>
+                            </div>
+                            <div class="modal-body">
+                                <p id="modelText"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+</form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/SOSettings/AddSOSetting.js"></script>

@@ -1,0 +1,144 @@
+﻿@model List<Portal.Core.QualityCheckViewModel>
+ @*<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />*@
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@*<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>*@
+
+<style>
+    tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+    .table {
+        width: 112% !important;
+        max-width: 112% !important;
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+
+    #tblSaleInvoiceList tr th {
+        text-align: center;
+        border: 1px solid #ccc !important;
+        font-family: Arial;
+        color: #fff;
+    }
+
+    table tr td {
+        border: 1px solid #ccc !important;
+        font-family: Arial;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblChallanList">
+            <thead>
+                <tr aling="center" style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                    <th class="erp-btn">Action</th>
+                    <th style="text-align:center;">Qualtity Check No.</th> 
+                    <th style="text-align:center;">Qualtity Check Date</th>
+                    <th style="text-align:center;">GateIn No.</th>                    
+                    @*<th style="text-align:center;">PO No.</th>*@ 
+                    <th style="text-align:center;">Recived At</th>                                      
+                    <th style="text-align:center;">Status</th>
+                    <th style="text-align:center;">Created By</th>
+                    <th style="text-align:center;">Created Date</th>
+                    <th style="text-align:center;">Modified By</th>
+                    <th style="text-align:center;">Modified Date</th>
+                    <th style="text-align:center;">Company Branch</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="margin:0px auto;">
+                            <a style="color:darkblue; text-decoration:none;" class="fa fa-eye" aria-hidden="true" title="View" href="~/QualityCheck/AddEditQualityCheck?qualityCheckId=@item.QualityCheckId&AccessMode=3"></a>
+                            @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                            {
+                                <a style="color:darkgreen;text-decoration:none;" class="fa fa-pencil achr" title="Edit" href="~/QualityCheck/AddEditQualityCheck?qualityCheckId=@item.QualityCheckId&AccessMode=2"></a>
+                            }                           
+                        </td>
+                        <td>@item.QualityCheckNo</td>
+                        <td>@item.QualityCheckDate</td>
+                        <td>@item.GateInNo</td>                       
+                        @*<td>@item.PONo</td>*@
+                        <td>@item.CompanyBranchName</td>
+                        @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine">
+                                @item.ApprovalStatus
+                            </td>
+                        }
+                       
+                        else
+                        {
+                            <td style="background-color:green">
+                                @item.ApprovalStatus
+                            </td>
+
+                        }
+
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+                        <td>@item.CompanyBranchName</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+
+<script>
+    $(document).ready(function () {
+        $('#tblChallanList').paging({
+            limit: 25,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>
+@*<script>
+    $(document).ready(function () {
+        // Setup - add a text input to each footer cell
+        $("#tblChallanList tfoot th").each(function () {
+            var title = $(this).text();
+            $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+        });
+
+        // DataTable
+        var table = $("#tblChallanList").DataTable();
+
+        // Apply the search
+        table.columns().every(function () {
+            var that = this;
+
+            $('input', this.footer()).on('keyup change', function () {
+                if (that.search() !== this.value) {
+                    that
+                        .search(this.value)
+                        .draw();
+                }
+            });
+        });
+    });
+</script>*@

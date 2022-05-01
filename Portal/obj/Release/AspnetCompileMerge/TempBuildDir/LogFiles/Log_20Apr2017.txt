@@ -1,0 +1,48 @@
+16:45:50 PM
+Source : Portal.Core.SLBL
+Method Name : GetSLDetail
+Error Line No : 101
+Exception Type : System.ArgumentException
+Details: Column 'CostCenterName' does not belong to table .
+--------------------------------------------------------------------------------------------------------------------------------
+
+16:45:51 PM
+Source : Portal.Controllers.SLController
+Method Name : GetSLDetail
+Error Line No : 112
+Exception Type : System.ArgumentException
+Details: Column 'CostCenterName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:46:01 PM
+Source : Portal.Core.SLBL
+Method Name : GetSLDetail
+Error Line No : 101
+Exception Type : System.ArgumentException
+Details: Column 'CostCenterName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:46:01 PM
+Source : Portal.Controllers.SLController
+Method Name : GetSLDetail
+Error Line No : 112
+Exception Type : System.ArgumentException
+Details: Column 'CostCenterName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:46:40 PM
+Source : Portal.Core.SLBL
+Method Name : GetSLDetail
+Error Line No : 101
+Exception Type : System.ArgumentException
+Details: Column 'CostCenterName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:48:11 PM
+Source : Portal.Controllers.SLController
+Method Name : GetSLDetail
+Error Line No : 112
+Exception Type : System.ArgumentException
+Details: Column 'CostCenterName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+

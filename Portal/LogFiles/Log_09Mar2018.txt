@@ -1,0 +1,1306 @@
+11:36:48 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+11:36:49 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:36:50 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:36:50 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:36:50 AM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:36:58 AM
+Source : Portal.Core.BalanceTransferBL
+Method Name : GetFinYearDetail
+Error Line No : 77
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:36:58 AM
+Source : Portal.Controllers.BalanceTransferController
+Method Name : GetFinYearDetail
+Error Line No : 85
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:37:02 AM
+Source : Portal.Core.BalanceTransferBL
+Method Name : GetFinYearDetail
+Error Line No : 77
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:37:02 AM
+Source : Portal.Controllers.BalanceTransferController
+Method Name : GetFinYearDetail
+Error Line No : 85
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:40:28 AM
+Source : Portal.Core.BalanceTransferBL
+Method Name : GetFinYearDetail
+Error Line No : 77
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:40:28 AM
+Source : Portal.Controllers.BalanceTransferController
+Method Name : GetFinYearDetail
+Error Line No : 85
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:41:43 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:41:43 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:41:46 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:41:46 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:41:46 AM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:43:15 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:43:15 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:43:16 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:43:16 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:43:17 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:43:17 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:43:17 AM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:09 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBalanceClosingTransfer
+Error Line No : 25404
+Exception Type : System.Data.SqlClient.SqlException
+Details: Trying to pass a table-valued parameter with 6 column(s) where the corresponding user-defined table type requires 5 column(s).
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:09 AM
+Source : Portal.Core.BalanceTransferBL
+Method Name : AddEditBalanceClosingTransfer
+Error Line No : 51
+Exception Type : System.Data.SqlClient.SqlException
+Details: Trying to pass a table-valued parameter with 6 column(s) where the corresponding user-defined table type requires 5 column(s).
+---------------------------------------------------------------------------------------------------------------------------
+
+11:46:09 AM
+Source : Portal.Controllers.BalanceTransferController
+Method Name : BalanceTransfer
+Error Line No : 59
+Exception Type : System.Data.SqlClient.SqlException
+Details: Trying to pass a table-valued parameter with 6 column(s) where the corresponding user-defined table type requires 5 column(s).
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:01 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBalanceClosingTransfer
+Error Line No : 25404
+Exception Type : System.Data.SqlClient.SqlException
+Details: Trying to pass a table-valued parameter with 6 column(s) where the corresponding user-defined table type requires 5 column(s).
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:01 AM
+Source : Portal.Core.BalanceTransferBL
+Method Name : AddEditBalanceClosingTransfer
+Error Line No : 51
+Exception Type : System.Data.SqlClient.SqlException
+Details: Trying to pass a table-valued parameter with 6 column(s) where the corresponding user-defined table type requires 5 column(s).
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:01 AM
+Source : Portal.Controllers.BalanceTransferController
+Method Name : BalanceTransfer
+Error Line No : 59
+Exception Type : System.Data.SqlClient.SqlException
+Details: Trying to pass a table-valued parameter with 6 column(s) where the corresponding user-defined table type requires 5 column(s).
+---------------------------------------------------------------------------------------------------------------------------
+
+11:49:25 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBalanceClosingTransfer
+Error Line No : 25404
+Exception Type : System.Data.SqlClient.SqlException
+Details: Trying to pass a table-valued parameter with 6 column(s) where the corresponding user-defined table type requires 5 column(s).
+---------------------------------------------------------------------------------------------------------------------------
+
+11:49:25 AM
+Source : Portal.Core.BalanceTransferBL
+Method Name : AddEditBalanceClosingTransfer
+Error Line No : 51
+Exception Type : System.Data.SqlClient.SqlException
+Details: Trying to pass a table-valued parameter with 6 column(s) where the corresponding user-defined table type requires 5 column(s).
+---------------------------------------------------------------------------------------------------------------------------
+
+11:49:25 AM
+Source : Portal.Controllers.BalanceTransferController
+Method Name : BalanceTransfer
+Error Line No : 59
+Exception Type : System.Data.SqlClient.SqlException
+Details: Trying to pass a table-valued parameter with 6 column(s) where the corresponding user-defined table type requires 5 column(s).
+---------------------------------------------------------------------------------------------------------------------------
+
+11:50:31 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:50:31 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:50:32 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:50:32 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:50:32 AM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:44 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:44 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:48 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:48 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:49 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:49 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:49 AM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:05:42 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:05:42 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:05:45 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:05:45 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:05:45 PM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:17 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:17 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:26 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:26 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:26 PM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:35:05 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:35:05 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:35:06 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:35:07 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:35:07 PM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:19 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:19 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:19 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:27 PM
+Source : Portal.DAL.DBInterface
+Method Name : GetCompanyBranchList
+Error Line No : 472
+Exception Type : System.InvalidOperationException
+Details: Failed to compare two elements in the array.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:27 PM
+Source : Portal.Core.CompanyBL
+Method Name : GetCompanyBranchList
+Error Line No : 271
+Exception Type : System.InvalidOperationException
+Details: Failed to compare two elements in the array.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:27 PM
+Source : Portal.Controllers.DeliveryChallanController
+Method Name : GetCompanyBranchList
+Error Line No : 305
+Exception Type : System.InvalidOperationException
+Details: Failed to compare two elements in the array.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:37 PM
+Source : Portal.DAL.DBInterface
+Method Name : GetCompanyBranchList
+Error Line No : 472
+Exception Type : System.InvalidOperationException
+Details: Failed to compare two elements in the array.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:37 PM
+Source : Portal.Core.CompanyBL
+Method Name : GetCompanyBranchList
+Error Line No : 271
+Exception Type : System.InvalidOperationException
+Details: Failed to compare two elements in the array.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:37 PM
+Source : Portal.Controllers.DeliveryChallanController
+Method Name : GetCompanyBranchList
+Error Line No : 305
+Exception Type : System.InvalidOperationException
+Details: Failed to compare two elements in the array.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:52 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:52 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:53 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:53 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:54 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:54 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:55 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:55 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:56 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:56 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:37:00 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:37:00 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:37:00 PM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:55:11 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:55:11 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:55:11 PM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:58:13 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:58:13 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:58:15 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:58:15 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:58:15 PM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:04 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:24:15 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:24:15 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:24:15 PM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:20:21 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:20:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:20:23 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:20:23 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:20:23 PM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:01:13 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:01:13 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:01:15 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:01:15 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:01:17 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:01:17 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:01:17 PM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:30:36 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:30:36 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:40:41 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:40:41 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:41:22 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:41:22 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:41:22 PM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:25:19 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:25:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:25:20 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:25:20 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:25:20 PM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:25:29 PM
+Source : Portal.Controllers.BalanceTransferController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'fromFinYearID' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetBalanceTransferList(Int32, Int32, Int32, System.String)' in 'Portal.Controllers.BalanceTransferController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:25:31 PM
+Source : Portal.Controllers.BalanceTransferController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'fromFinYearID' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetBalanceTransferList(Int32, Int32, Int32, System.String)' in 'Portal.Controllers.BalanceTransferController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:25:31 PM
+Source : Portal.Controllers.BalanceTransferController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'fromFinYearID' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetBalanceTransferList(Int32, Int32, Int32, System.String)' in 'Portal.Controllers.BalanceTransferController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:25:31 PM
+Source : Portal.Controllers.BalanceTransferController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'fromFinYearID' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetBalanceTransferList(Int32, Int32, Int32, System.String)' in 'Portal.Controllers.BalanceTransferController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:25:32 PM
+Source : Portal.Controllers.BalanceTransferController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'fromFinYearID' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetBalanceTransferList(Int32, Int32, Int32, System.String)' in 'Portal.Controllers.BalanceTransferController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:25:37 PM
+Source : Portal.Controllers.BalanceTransferController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'fromFinYearID' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetBalanceTransferList(Int32, Int32, Int32, System.String)' in 'Portal.Controllers.BalanceTransferController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:18 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:18 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:20 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:20 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:20 PM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:41 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetBalanceTransferList
+Error Line No : 25462
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near the keyword 'from'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:41 PM
+Source : Portal.Core.BalanceTransferBL
+Method Name : GetBalanceTransferList
+Error Line No : 180
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near the keyword 'from'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:41 PM
+Source : Portal.Controllers.BalanceTransferController
+Method Name : GetBalanceTransferList
+Error Line No : 217
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near the keyword 'from'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:44 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetBalanceTransferList
+Error Line No : 25462
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near the keyword 'from'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:44 PM
+Source : Portal.Core.BalanceTransferBL
+Method Name : GetBalanceTransferList
+Error Line No : 180
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near the keyword 'from'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:44 PM
+Source : Portal.Controllers.BalanceTransferController
+Method Name : GetBalanceTransferList
+Error Line No : 217
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near the keyword 'from'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:32:51 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetBalanceTransferList
+Error Line No : 25462
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'MotorModelCode'.
+select p.TransferId, p.FromFinYearID, p.ToFinYearID,  
+p.CompanyBranchId,
+cb.BranchName,
+u.UserName,
+replace(convert(varchar, P.CreatedDate,106),' ','-') CreatedDate  
+from   
+[TransferClosingBalance] p 
+inner join [User] u on p.CreatedBy=u.UserId 
+inner join [ComapnyBranch] cb on p.CompanyBranchId=cb.CompanyBranchId 
+where 1=1  and p.MotorModelCode like '%admin%' order by p.TransferId desc 
+---------------------------------------------------------------------------------------------------------------------------
+
+18:32:51 PM
+Source : Portal.Core.BalanceTransferBL
+Method Name : GetBalanceTransferList
+Error Line No : 180
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'MotorModelCode'.
+select p.TransferId, p.FromFinYearID, p.ToFinYearID,  
+p.CompanyBranchId,
+cb.BranchName,
+u.UserName,
+replace(convert(varchar, P.CreatedDate,106),' ','-') CreatedDate  
+from   
+[TransferClosingBalance] p 
+inner join [User] u on p.CreatedBy=u.UserId 
+inner join [ComapnyBranch] cb on p.CompanyBranchId=cb.CompanyBranchId 
+where 1=1  and p.MotorModelCode like '%admin%' order by p.TransferId desc 
+---------------------------------------------------------------------------------------------------------------------------
+
+18:32:51 PM
+Source : Portal.Controllers.BalanceTransferController
+Method Name : GetBalanceTransferList
+Error Line No : 217
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'MotorModelCode'.
+select p.TransferId, p.FromFinYearID, p.ToFinYearID,  
+p.CompanyBranchId,
+cb.BranchName,
+u.UserName,
+replace(convert(varchar, P.CreatedDate,106),' ','-') CreatedDate  
+from   
+[TransferClosingBalance] p 
+inner join [User] u on p.CreatedBy=u.UserId 
+inner join [ComapnyBranch] cb on p.CompanyBranchId=cb.CompanyBranchId 
+where 1=1  and p.MotorModelCode like '%admin%' order by p.TransferId desc 
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:00 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetBalanceTransferList
+Error Line No : 25462
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'MotorModelCode'.
+select p.TransferId, p.FromFinYearID, p.ToFinYearID,  
+p.CompanyBranchId,
+cb.BranchName,
+u.UserName,
+replace(convert(varchar, P.CreatedDate,106),' ','-') CreatedDate  
+from   
+[TransferClosingBalance] p 
+inner join [User] u on p.CreatedBy=u.UserId 
+inner join [ComapnyBranch] cb on p.CompanyBranchId=cb.CompanyBranchId 
+where 1=1  and p.MotorModelCode like '%admin%' order by p.TransferId desc 
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:00 PM
+Source : Portal.Core.BalanceTransferBL
+Method Name : GetBalanceTransferList
+Error Line No : 180
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'MotorModelCode'.
+select p.TransferId, p.FromFinYearID, p.ToFinYearID,  
+p.CompanyBranchId,
+cb.BranchName,
+u.UserName,
+replace(convert(varchar, P.CreatedDate,106),' ','-') CreatedDate  
+from   
+[TransferClosingBalance] p 
+inner join [User] u on p.CreatedBy=u.UserId 
+inner join [ComapnyBranch] cb on p.CompanyBranchId=cb.CompanyBranchId 
+where 1=1  and p.MotorModelCode like '%admin%' order by p.TransferId desc 
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:01 PM
+Source : Portal.Controllers.BalanceTransferController
+Method Name : GetBalanceTransferList
+Error Line No : 217
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid column name 'MotorModelCode'.
+select p.TransferId, p.FromFinYearID, p.ToFinYearID,  
+p.CompanyBranchId,
+cb.BranchName,
+u.UserName,
+replace(convert(varchar, P.CreatedDate,106),' ','-') CreatedDate  
+from   
+[TransferClosingBalance] p 
+inner join [User] u on p.CreatedBy=u.UserId 
+inner join [ComapnyBranch] cb on p.CompanyBranchId=cb.CompanyBranchId 
+where 1=1  and p.MotorModelCode like '%admin%' order by p.TransferId desc 
+---------------------------------------------------------------------------------------------------------------------------
+
+18:55:49 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:55:49 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:55:54 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:55:54 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:56:01 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 24953
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_dashboardWOPending'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:56:01 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_dashboardWOPending'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:56:01 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1370
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'proc_dashboardWOPending'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:56:01 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:56:01 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:56:02 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPhysicalAsOnDate
+Error Line No : 13847
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:56:02 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetPhysicalAsOnDate
+Error Line No : 477
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:56:02 PM
+Source : Portal.Controllers.DashboardController
+Method Name : InventoryDashboard
+Error Line No : 240
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'Proc_GetPhysicalAsOnDate'.
+---------------------------------------------------------------------------------------------------------------------------
+

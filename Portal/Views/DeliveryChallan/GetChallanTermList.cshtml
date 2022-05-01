@@ -1,0 +1,52 @@
+﻿@model List<Portal.Core.ViewModel.ChallanTermsViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblTermList">
+            <thead>
+                <tr>
+                    <th width="10%" style="display:none">Sr. No.</th>
+                    <th width="70%" style="text-align:center">Terms</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        
+                        <td width="10%" style="display:none">@item.TermSequence
+                        <input type="hidden" id="hdnChallanTermDetailId" value="@item.ChallanTermDetailId" />
+                        <input type="hidden" id="hdnTermDesc" value="@item.TermDesc" />
+                        <input type="hidden" id="hdnTermSequence" value="@item.TermSequence" />
+                        </td>
+                        <td width="70%">@item.TermDesc
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" onclick="EditTermRow(this);" href="#"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-trash"  onclick="RemoveTermRow(this)" href="#"></a>
+                        </td>
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblTermList">
+            <thead>
+                <tr>
+                    <th width="10%" style="display:none">Sr. No.</th>
+                    <th width="70%">Terms</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

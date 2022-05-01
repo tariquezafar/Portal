@@ -1,0 +1,488 @@
+12:55:18 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+12:55:18 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:55:29 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:55:29 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:55:29 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 2263
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:56:24 PM
+Source : Portal.DAL.DBInterface
+Method Name : AddEditProduct
+Error Line No : 0
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:56:24 PM
+Source : Portal.Core.ProductBL
+Method Name : AddEditProduct
+Error Line No : 79
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:56:24 PM
+Source : Portal.Controllers.ProductController
+Method Name : AddEditProduct
+Error Line No : 62
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:56:46 PM
+Source : Portal.DAL.DBInterface
+Method Name : AddEditProduct
+Error Line No : 0
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:56:46 PM
+Source : Portal.Core.ProductBL
+Method Name : AddEditProduct
+Error Line No : 79
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:56:46 PM
+Source : Portal.Controllers.ProductController
+Method Name : AddEditProduct
+Error Line No : 62
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:57:03 PM
+Source : Portal.DAL.DBInterface
+Method Name : AddEditProduct
+Error Line No : 0
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:57:03 PM
+Source : Portal.Core.ProductBL
+Method Name : AddEditProduct
+Error Line No : 79
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:57:03 PM
+Source : Portal.Controllers.ProductController
+Method Name : AddEditProduct
+Error Line No : 62
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:58:15 PM
+Source : Portal.DAL.DBInterface
+Method Name : AddEditProduct
+Error Line No : 0
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:27:27 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:27:27 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:27:32 PM
+Source : Portal.DAL.DBInterface
+Method Name : AddEditProduct
+Error Line No : 0
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:27:32 PM
+Source : Portal.Core.ProductBL
+Method Name : AddEditProduct
+Error Line No : 79
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:27:32 PM
+Source : Portal.Controllers.ProductController
+Method Name : AddEditProduct
+Error Line No : 62
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:27:53 PM
+Source : Portal.DAL.DBInterface
+Method Name : AddEditProduct
+Error Line No : 0
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:28:22 PM
+Source : Portal.DAL.DBInterface
+Method Name : AddEditProduct
+Error Line No : 0
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:29:12 PM
+Source : Portal.DAL.DBInterface
+Method Name : AddEditProduct
+Error Line No : 0
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:29:13 PM
+Source : Portal.Core.ProductBL
+Method Name : AddEditProduct
+Error Line No : 79
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:29:13 PM
+Source : Portal.Controllers.ProductController
+Method Name : AddEditProduct
+Error Line No : 62
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:29:23 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:29:23 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:29:23 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 2263
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:30:24 PM
+Source : Portal.DAL.DBInterface
+Method Name : AddEditProduct
+Error Line No : 0
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:30:24 PM
+Source : Portal.Core.ProductBL
+Method Name : AddEditProduct
+Error Line No : 79
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:30:24 PM
+Source : Portal.Controllers.ProductController
+Method Name : AddEditProduct
+Error Line No : 62
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:30:46 PM
+Source : Portal.DAL.DBInterface
+Method Name : AddEditProduct
+Error Line No : 0
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:30:46 PM
+Source : Portal.Core.ProductBL
+Method Name : AddEditProduct
+Error Line No : 79
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:37:48 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:37:48 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:38:04 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:38:04 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:38:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 2263
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:38:47 PM
+Source : Portal.DAL.DBInterface
+Method Name : AddEditProduct
+Error Line No : 0
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:38:48 PM
+Source : Portal.Core.ProductBL
+Method Name : AddEditProduct
+Error Line No : 79
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:38:48 PM
+Source : Portal.Controllers.ProductController
+Method Name : AddEditProduct
+Error Line No : 62
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:56:44 PM
+Source : Portal.DAL.DBInterface
+Method Name : AddEditProduct
+Error Line No : 0
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:56:44 PM
+Source : Portal.Core.ProductBL
+Method Name : AddEditProduct
+Error Line No : 79
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:56:44 PM
+Source : Portal.Controllers.ProductController
+Method Name : AddEditProduct
+Error Line No : 62
+Exception Type : System.Data.Entity.Infrastructure.DbUpdateException
+Details: An error occurred while updating the entries. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:13:34 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:13:34 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:13:55 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:13:55 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:13:55 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 2263
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:39:15 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:39:15 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:39:28 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:39:28 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:39:28 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 2263
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:33 PM
+Source : Portal.Controllers.ProductController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\Dheeraj\Portal\Portal\Views\Product\GetProductList.cshtml(74): error CS1061: 'Portal.Core.ViewModel.ProductViewModel' does not contain a definition for 'ProductId' and no extension method 'ProductId' accepting a first argument of type 'Portal.Core.ViewModel.ProductViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:37 PM
+Source : Portal.Controllers.ProductController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\Dheeraj\Portal\Portal\Views\Product\GetProductList.cshtml(74): error CS1061: 'Portal.Core.ViewModel.ProductViewModel' does not contain a definition for 'ProductId' and no extension method 'ProductId' accepting a first argument of type 'Portal.Core.ViewModel.ProductViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:38 PM
+Source : Portal.Controllers.ProductController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\Dheeraj\Portal\Portal\Views\Product\GetProductList.cshtml(74): error CS1061: 'Portal.Core.ViewModel.ProductViewModel' does not contain a definition for 'ProductId' and no extension method 'ProductId' accepting a first argument of type 'Portal.Core.ViewModel.ProductViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:39 PM
+Source : Portal.Controllers.ProductController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\Dheeraj\Portal\Portal\Views\Product\GetProductList.cshtml(74): error CS1061: 'Portal.Core.ViewModel.ProductViewModel' does not contain a definition for 'ProductId' and no extension method 'ProductId' accepting a first argument of type 'Portal.Core.ViewModel.ProductViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+14:42:52 PM
+Source : Portal.Controllers.ProductController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\Dheeraj\Portal\Portal\Views\Product\GetProductList.cshtml(74): error CS1061: 'Portal.Core.ViewModel.ProductViewModel' does not contain a definition for 'ProductId' and no extension method 'ProductId' accepting a first argument of type 'Portal.Core.ViewModel.ProductViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+14:46:07 PM
+Source : Portal.Controllers.ProductController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\Dheeraj\Portal\Portal\Views\Product\GetProductList.cshtml(75): error CS1061: 'Portal.Core.ViewModel.ProductViewModel' does not contain a definition for 'ProductId' and no extension method 'ProductId' accepting a first argument of type 'Portal.Core.ViewModel.ProductViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+14:46:08 PM
+Source : Portal.Controllers.ProductController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\Dheeraj\Portal\Portal\Views\Product\GetProductList.cshtml(75): error CS1061: 'Portal.Core.ViewModel.ProductViewModel' does not contain a definition for 'ProductId' and no extension method 'ProductId' accepting a first argument of type 'Portal.Core.ViewModel.ProductViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+

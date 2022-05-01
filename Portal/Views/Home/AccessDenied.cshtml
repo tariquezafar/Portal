@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Access Denied</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12" style="background-color:#C0C0C0; margin:0px auto; min-height:500px; background-color:#F4F4F4;">
+            <div style="min-height:20px; background-color:#C0C0C0; padding:0px; padding:0px;">
+            </div>
+            <div class="container" style="min-height:80px; background-color:#FF0000; margin-top:20px; padding:0px;">
+                <p style="font-size:50px; color:#fff; text-align:center;">Access Denied</p>
+            </div>
+            <div class="container" style="min-height:150px; background-color:#E2E2E2; margin-top:20px; padding:0px;">
+
+                @if (ViewBag.ErrorMessage != null)
+                {
+                    <p style="font-weight:bold; font-size:15px; text-align:center;line-height:25px; margin-top:28px;"> @Html.Raw(@ViewBag.ErrorMessage) </p>
+                }
+                else
+                {
+                    <p style="font-weight:bold; font-size:15px; text-align:center;line-height:25px; margin-top:28px;">Access to the requested page has been denied </p>
+                }
+                @if (ViewBag.redirectURL != null && ViewBag.redirectURL == "SA")
+                {
+                    <p style="font-size:15px; text-align:center;">
+                        Please contact to administrator. <a href="@Url.Content("~/Dashboard/ModuleDashboard")" class="btn btn-success">Click Here </a> to go back to your Dashboard
+                    </p>
+                }
+            </div>
+            <div style="min-height:20px; background-color:#C0C0C0; padding:0px; padding:0px; margin-top:20px;">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+19:56:35 PM
+Source : Portal.Core.JobOpeningBL
+Method Name : GetJobOpeningList
+Error Line No : 79
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+19:56:36 PM
+Source : Portal.Controllers.JobOpeningController
+Method Name : GetJobOpeningList
+Error Line No : 107
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

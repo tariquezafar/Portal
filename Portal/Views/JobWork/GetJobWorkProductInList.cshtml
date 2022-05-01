@@ -1,0 +1,117 @@
+﻿@model List<Portal.Core.ViewModel.JobWorkINProductDetailViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblMRNProductList">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>HSN Code </th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                    <th>Weight</th>
+                    <th colspan="2" align="center" class="editonly">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>
+                            @item.ProductName
+                            <input type="hidden" id="hdnMRNSequenceNo" value="@item.SequenceNo" />
+                            <input type="hidden" id="hdnMRNJobWorkProductInDetailId" value="@item.JobWorkProductInDetailId" />
+                            <input type="hidden" id="hdnMRNProductId" value="@item.ProductId" />
+                            <input type="hidden" id="hdnMRNProductName" value="@item.ProductName" />
+                            <input type="hidden" id="hdnMRNProductCode" value="@item.ProductCode" />
+                            <input type="hidden" id="hdnMRNProductShortDesc" value="@item.ProductShortDesc" />
+                            <input type="hidden" id="hdnMRNUOMName" value="@item.UOMName" />
+                            <input type="hidden" id="hdnMRNUOMId" value="@item.UomId" />
+                            <input type="hidden" id="hdnMRNQuantity" value="@item.Quantity" />
+                            <input type="hidden" id="hdnMRNWeight" value="@item.Weight" />
+                            <input type="hidden" id="hdnMRNProductHSNCode" value="@item.ProductHSNCode" />
+                        </td>
+
+                        <td>
+                            @item.ProductCode
+                          
+                        </td>
+
+                        <td>
+                            @item.ProductHSNCode
+                          
+                        </td>
+                        <td>
+                            @item.UOMName
+                          
+
+
+                        </td>
+
+                        <td>
+                            @item.Quantity
+                            
+                        </td>
+
+
+                        <td>
+                            @item.Weight
+                           
+                        </td>
+
+                        <td class="editonly" style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-pencil-square-o erp-btn" onclick="EditMRNProductRow(this);" href="javascript:void(0);"></a>
+                        </td>
+                        <td class="editonly" style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-trash erp-btn" onclick="RemoveMRNProductRow(this)" href="javascript:void(0);"></a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblMRNProductList">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>HSN Code </th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                    <th>Weight</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+<script>
+    $(document).ready(function () {
+        if ($("#hdnAccessMode").val() == "3") {
+            $(".editonly").hide();
+        }
+
+    });
+</script>

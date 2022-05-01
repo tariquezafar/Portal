@@ -1,0 +1,66 @@
+﻿@model List<Portal.Core.ViewModel.SaleInvoiceViewModel>
+<script src="~/Scripts/paging.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblSISearchInvoiceList">
+            <thead>
+                <tr>
+                    <th align="center">Select</th>
+                    <th>Invoice No.</th>
+                    <th>Invoice Date</th>
+                    <th>S.O. No.</th>
+                    <th>Customer Name</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Ref. No.</th>
+                    <th>Ref. Date</th>
+                    <th>Gross Amount</th>
+                    <th>Net Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" href="#" onclick="SelectSaleInvoice('@item.InvoiceNo','@item.InvoiceDate','@item.SONo')"></a>
+                        </td>
+                        <td>
+                            @item.InvoiceNo
+                        
+                    </td>
+                    <td>
+                        @item.InvoiceDate
+                    
+                </td>
+                        <td>@item.SONo</td>
+                <td>@item.CustomerName</td>
+                <td>@item.City</td>
+                <td>@item.StateName</td>
+                <td>@item.RefNo</td>
+                <td>@item.RefDate</td>
+                <td>@item.BasicValue</td>
+                <td>@item.TotalValue</td>
+            </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblSISearchInvoiceList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

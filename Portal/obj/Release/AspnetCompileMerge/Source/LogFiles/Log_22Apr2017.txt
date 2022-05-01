@@ -1,0 +1,53 @@
+13:40:45 PM
+Source : Portal.Controllers.SLController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'sLId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetSLDetail(Int32)' in 'Portal.Controllers.SLController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+--------------------------------------------------------------------------------------------------------------------------------
+
+15:19:04 PM
+Source : Portal.Controllers.SLDetailController
+Method Name : GetSLDetailList
+Error Line No : 103
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:45:19 PM
+Source : Portal.Controllers.SLController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'sLId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetSLDetail(Int32)' in 'Portal.Controllers.SLController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:56:19 PM
+Source : Portal.Controllers.SLController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'sLId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetSLDetail(Int32)' in 'Portal.Controllers.SLController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:57:42 PM
+Source : Portal.Controllers.SLController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'sLId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetSLDetail(Int32)' in 'Portal.Controllers.SLController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+19:01:25 PM
+Source : Portal.Controllers.SLController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'sLId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetSLDetail(Int32)' in 'Portal.Controllers.SLController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+

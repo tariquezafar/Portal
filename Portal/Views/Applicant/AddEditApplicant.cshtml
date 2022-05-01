@@ -1,0 +1,758 @@
+﻿@{
+    ViewBag.Title = "Add/Edit Applicant";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">HR </a> >> Add/Edit Job Applicant</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditApplicant" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div id="tabs">
+                <ul>
+                    <li><a href="#tabs-1">Applicant Detail (Office Use Only)</a></li>
+                    <li><a href="#tabs-2">Applicant Detail</a></li>
+                    <li><a href="#tabs-3">Education Qualification</a></li>
+                    <li><a href="#tabs-4">Previous Employer</a></li>
+                    <li><a href="#tabs-5">Project Handled</a></li>
+                    <li><a href="#tabs-6">Extra Activity</a></li>
+
+                </ul>
+                <div id="tabs-1">
+                    <div class="col-md-12 ftop">
+                        <div class="form-group col-md-4">
+                            <label for="txtApplicantNo" class="col-sm-4 control-label">Applicant No.</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtApplicantNo" name="txtApplicantNo" tabindex="1" placeholder="Auto Generated Applicant No." type="text" maxlength="100" />
+                                <a style="display:none;color:#fff;" class="btn btn-success" id="btnAddNew" tabindex="3" href="@Url.Content("~/Applicant/AddEditApplicant?accessMode=1")">New</a>
+                                <input id="hdnApplicantId" type="hidden" value="@ViewData["applicantId"]" />
+                                <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtApplicationDate" class="col-sm-4 control-label right-text">Date&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtApplicationDate" name="txtApplicationDate" tabindex="2" placeholder="Select Application Date" value="@ViewData["currentDate"]" type="text" maxlength="20" />
+                                <input id="hdnApplicationDate" name="hdnApplicationDate" value="@ViewData["currentDate"]" type="hidden" />
+                            </div>
+                        </div>
+                
+                        <div class="form-group col-md-4">
+                            <label for="txtJobOpeningNo" class="col-sm-4 control-label">Job Opening No.&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtJobOpeningNo" name="txtJobOpeningNo" tabindex="4" placeholder="Select Job Opening Reference No." type="text" />
+                                <input type="hidden" id="hdnJobOpeningId" value="0" />
+                            </div>
+                            <a class="fa fa-search col-sm-1" onclick="OpenJobOpeningSearchPopup()" id="btnSearchInvoice" tabindex="5" style="padding-top:5px; float:left !important;position:absolute" href="#"></a>
+                        </div>
+                       
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="form-group col-md-4">
+                            
+                            <label for="ddlCompanyBranch" class="col-sm-4 control-label">Location&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="14" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-4">
+                            <label for="txtProjectNo" class="col-sm-4 control-label">Project</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtProjectNo" maxlength="50" name="txtProjectNo" tabindex="15" placeholder="Enter Project" type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-4">
+                            <label for="ddlResumeSource" class="col-sm-4 control-label">Resume Source&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlResumeSource" name="ddlResumeSource" tabindex="16" class="form-control"></select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group  col-md-4">
+                            <label for="ddlDesignation" class="col-sm-4 control-label">Position Applied&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlDesignation" name="ddlDesignation" tabindex="17" class="form-control"></select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12" id="divCreated" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="txtCreatedBy" class="col-sm-4 control-label">Created By</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtCreatedBy" name="txtCreatedBy" tabindex="18" placeholder="Created By User Name" type="text" maxlength="100" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtCreatedDate" class="col-sm-4 control-label">Created Date</label>
+                            <div class="col-sm-8 ">
+                                <input class="form-control" id="txtCreatedDate" name="txtCreatedDate" tabindex="19" placeholder="Created Date" type="text" maxlength="50" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" id="divModified" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="txtModifiedBy" class="col-sm-4 control-label">Modified By</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtModifiedBy" name="txtModifiedBy" tabindex="20" placeholder="Modified By User Name" type="text" maxlength="100" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtModifiedDate" class="col-sm-4 control-label">Modified Date</label>
+                            <div class="col-sm-8 ">
+                                <input class="form-control" id="txtModifiedDate" name="txtModifiedDate" tabindex="21" placeholder="Modified Date" type="text" maxlength="50" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" id="divShortlistStatus" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="txtApplicantStortlistStatus" class="col-sm-4 control-label">Applicant Shortlist Status</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtApplicantStortlistStatus" name="txtApplicantStortlistStatus"  type="text" maxlength="100" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+
+                        </div>
+                    </div>
+
+                </div>
+                <div id="tabs-2">
+                    <div class="col-md-12 ftop">
+                        <div class="form-group col-md-4">
+                            <label for="txtFirstName" class="col-sm-4 control-label">First Name&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtFirstName" name="txtFirstName" tabindex="22" placeholder="Enter First Name" type="text" maxlength="50" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtLastName" class="col-sm-4 control-label">Last Name</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtLastName" name="txtLastName" tabindex="23" placeholder="Enter Last Name" type="text" maxlength="50" />
+                            </div>
+                        </div>
+                   
+                        <div class="form-group col-md-4">
+                            <label for="rdoGender" class="col-sm-4 control-label">Gender</label>
+                            <div class="col-sm-8">
+                                <input class="" id="rdoGenderM" checked="checked" value="M" name="rdoGender" tabindex="24" type="radio" /> Male &nbsp;
+                                <input class="" id="rdoGenderF" value="F" name="rdoGender" tabindex="25" type="radio" /> Female &nbsp;
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-4">
+                            <label for="txtFatherSpouseName" class="col-sm-4 control-label">Father/Spouse Name&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtFatherSpouseName" name="txtFatherSpouseName" tabindex="26" placeholder="Enter Father/ Spouse name" type="text" maxlength="100" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtDateOfBirth" class="col-sm-4 control-label">DOB&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtDateOfBirth" name="txtDateOfBirth" tabindex="27" placeholder="Enter Date of Birth" type="text" maxlength="50" />
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-4">
+                            <label for="ddlBloodGroup" class="col-sm-4 control-label">Blood Group</label>
+                            <div class="col-sm-8">
+                                <select id="ddlBloodGroup" name="ddlBloodGroup" tabindex="28" class="form-control">
+                                    <option selected="selected" value="0">-Select Blood Group-</option>
+                                    <option value="A+">A+</option>
+                                    <option value="O+">O+</option>
+                                    <option value="B+">B+</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="O-">O-</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB-">AB-</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-4">
+                            <label for="ddlMaritalStatus" class="col-sm-4 control-label">Marital Status&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlMaritalStatus" name="ddlMaritalStatus" tabindex="29" class="form-control">
+                                    <option selected="selected" value="0">-Select Marital Status-</option>
+                                    <option value="Single">Single</option>
+                                    <option value="Married">Married</option>
+                                    <option value="Divorced">Divorced</option>
+                                    <option value="Widowed">Widowed</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-4">
+                            <label for="txtApplicantAddress" class="col-sm-4 control-label">Address&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtApplicantAddress" name="txtApplicantAddress" tabindex="30" placeholder="Enter Address" type="text" maxlength="500" />
+                            </div>
+                        </div>
+                 
+                        <div class="form-group  col-md-4">
+                            <label for="txtCity" class="col-sm-4 control-label">City&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtCity" name="txtCity" tabindex="31" placeholder="Enter City" type="text" maxlength="50" />
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group  col-md-4">
+                            <label for="ddlCountry" class="col-sm-4 control-label">Country&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlCountry" name="ddlCountry" onchange="BindStateList(0)" tabindex="32" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-4">
+                            <label for="ddlState" class="col-sm-4 control-label">State&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlState" name="ddlState" tabindex="33" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-4">
+                            <label for="txtPinCode" class="col-sm-4 control-label">Pin Code</label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number numeric-only" id="txtPinCode" name="txtPinCode" tabindex="34" placeholder="Enter Pin Code" type="text" maxlength="20" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group col-md-4">
+                            <label for="txtContactNo" class="col-sm-4 control-label">Contact No.</label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number" onkeyup="checkPhone(this)" id="txtContactNo" name="txtContactNo" tabindex="35" placeholder="Enter Contact No." type="text" maxlength="20" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtMobileNo" class="col-sm-4 control-label">Mobile No.&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number numeric-only" id="txtMobileNo" name="txtMobileNo" tabindex="36" placeholder="Enter Mobile No." type="text" maxlength="20" />
+                            </div>
+                        </div>
+           
+                        <div class="form-group col-md-4">
+                            <label for="txtEmail" class="col-sm-4 control-label">Email&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtEmail" name="txtEmail" tabindex="37" placeholder="Enter Employee Primary Email" type="text" maxlength="100" />
+                            </div>
+                        </div>
+                       
+
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-4">
+                            <label for="txtNoticePeriod" class="col-sm-4 control-label">Notice Period (in Days)&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number" id="txtNoticePeriod" name="txtNoticePeriod" tabindex="38" placeholder="Enter Notice Period Days" type="text" maxlength="20" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtTotalExperience" class="col-sm-4 control-label">Total Experience(in Yrs)&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number" id="txtTotalExperience" name="txtTotalExperience" tabindex="39" placeholder="Enter Total Experience" type="text" maxlength="20" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtReleventExperience" class="col-sm-4 control-label">Relevent Experience(in Yrs)&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number" id="txtReleventExperience" name="txtReleventExperience" tabindex="40" placeholder="Enter Relevant Experience" type="text" maxlength="20" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-4">
+                            <label for="txtCurrentCTC" class="col-sm-4 control-label">Current CTC ( in Lakh)&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number" id="txtCurrentCTC" name="txtCurrentCTC" tabindex="41" placeholder="Enter Current CTC" type="text" maxlength="20" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtExpectedCTC" class="col-sm-4 control-label">Expected CTC (In Lakh)&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number" id="txtExpectedCTC" name="txtExpectedCTC" tabindex="42" placeholder="Enter Expected CTC" type="text" maxlength="20" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtPreferredLocation" class="col-sm-4 control-label">Preferred Location</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="txtPreferredLocation" name="txtPreferredLocation" tabindex="42" rows="3" cols="30" maxlength="1000"> </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        
+                        <div class="form-group col-md-4">
+                            <label for="txtResumeText" class="col-sm-4 control-label">Paste Resume</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="txtResumeText" name="txtResumeText" tabindex="42" rows="3" cols="30" maxlength="4000"> </textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="tabs-3">
+                    <div class="col-md-12 ftop">
+                        <div class="form-group col-md-4">
+                        </div>
+                        <div class="form-group col-md-4" style="background-color:yellow">
+                            <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Education Qualification Detail</b></label></h4>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input class="btn btn-success" value="Add New Education" tabindex="45" alt="Add New Education" id="btnAddNewEducation" onclick="ShowHideEducationPanel(1)" type="button" border="0">
+                        </div>
+                    </div>
+                    <div class="col-md-12 educationsection" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="ddlEducation" class="col-sm-4 control-label">Degree/ Diploma&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlEducation" name="ddlEducation" tabindex="46" class="form-control"></select>
+                                <input id="hdnApplicantEducationId" type="hidden" value="0" />
+                                <input id="hdnEducationSequenceNo" type="hidden" value="0" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ddlRegularDistant" class="col-sm-4 control-label">Regular/ Distant&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlRegularDistant" name="ddlRegularDistant" tabindex="47" class="form-control">
+                                    <option value="0">-Select-</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Distant">Distant</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12 educationsection" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="txtBoardName" class="col-sm-4 control-label">Board/ University Name&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control " id="txtBoardName" name="txtBoardName" tabindex="48" placeholder="Enter Board/University Name" type="text" maxlength="100" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtPercentageObtained" class="col-sm-4 control-label">Percentage Obtained&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control  input-number" id="txtPercentageObtained" name="txtPercentageObtained" tabindex="49" placeholder="Enter Percentage Obtained" type="text" maxlength="8" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12 educationsection" style="display:none;">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <center>
+                                <input class="btn btn-success" value="Add Education" alt="Add Education" tabindex="50" id="btnAddEducation" onclick="AddEducation(1)" type="button" border="0">&nbsp;&nbsp;
+                                <input class="btn btn-success" value="Update Education" style="display:none;" tabindex="50" alt="Update Education" id="btnUpdateEducation" onclick="AddEducation(2)" type="button" border="0">&nbsp;&nbsp;
+                                <input class="btn btn-success" type="button" id="btnCancelEducation" tabindex="51" onclick="ShowHideEducationPanel(2)" value="Cancel" /> &nbsp;&nbsp;
+                            </center>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12">
+                        <div id="divEducationList">
+                        </div>
+                    </div>
+                </div>
+                <div id="tabs-4">
+                    <div class="col-md-12 ftop">
+                        <div class="form-group col-md-4">
+                        </div>
+                        <div class="form-group col-md-4" style="background-color:yellow">
+                            <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Previous Employer Detail</b></label></h4>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input class="btn btn-success" value="Add New Employer" tabindex="52" alt="Add New Employer" id="btnAddNewEmployer" onclick="ShowHideEmployerPanel(1)" type="button" border="0">
+                        </div>
+                    </div>
+                    <div class="col-md-12 employersection" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="chkCurrentEmployer" class="col-sm-4 control-label">Current Employer</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" name="chkCurrentEmployer" id="chkCurrentEmployer" class="" />
+                                <label style="font-size: 24px; " tabindex="53" for="chkCurrentEmployer"></label>
+                                <input id="hdnApplicantPrevEmployerId" type="hidden" value="0" />
+                                <input id="hdnEmployerSequenceNo" type="hidden" value="0" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtEmployerName" class="col-sm-4 control-label">Employer Name&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtEmployerName" name="txtEmployerName" tabindex="54" placeholder="Enter Employer Name" type="text" maxlength="100" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12 employersection" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="txtJobStartDate" class="col-sm-4 control-label">Start Date&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtJobStartDate" name="txtJobStartDate" tabindex="55" placeholder="Enter Job Start Date" type="text" maxlength="50" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtJobEndDate" class="col-sm-4 control-label">End Date&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtJobEndDate" name="txtJobEndDate" tabindex="56" placeholder="Enter Job End Date" type="text" maxlength="50" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 employersection" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="txtLastCTC" class="col-sm-4 control-label">Last Drawn Salary&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control input-number " id="txtLastCTC" name="txtLastCTC" tabindex="57" placeholder="Enter Last Drawn Salary" type="text" maxlength="10" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtReasonOfLeaving" class="col-sm-4 control-label">Reason of Leaving&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <div class="col-sm-8">
+                                    <textarea class="form-control" id="txtReasonOfLeaving" name="txtReasonOfLeaving" tabindex="58" rows="4" cols="30" maxlength="1000"> </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 employersection" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="ddlLastDesignation" class="col-sm-4 control-label">Last Designation&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlLastDesignation" name="ddlLastDesignation" tabindex="59" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ddlEmploymentStatus" class="col-sm-4 control-label">Employment Status&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <div class="col-sm-8">
+                                    <select id="ddlEmploymentStatus" name="ddlEmploymentStatus" tabindex="60" class="form-control">
+                                        <option value="0">-Select-</option>
+                                        <option value="1">Permanent</option>
+                                        <option value="2">Contract</option>
+                                        <option value="3">Part-Time</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12 employersection" style="display:none;">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <center>
+                                <input class="btn btn-success" value="Add Employer" alt="Add Employer" tabindex="61" id="btnAddEmployer" onclick="AddEmployer(1)" type="button" border="0">&nbsp;&nbsp;
+                                <input class="btn btn-success" value="Update Employer" style="display:none;" tabindex="61" alt="Update Employer" id="btnUpdateEmployer" onclick="AddEmployer(2)" type="button" border="0">&nbsp;&nbsp;
+                                <input class="btn btn-success" type="button" id="btnCancelEmployer" tabindex="62" onclick="ShowHideEmployerPanel(2)" value="Cancel" /> &nbsp;&nbsp;
+                            </center>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12">
+                        <div id="divEmployerList">
+                        </div>
+                    </div>
+                </div>
+                <div id="tabs-5">
+                    <div class="col-md-12 ftop">
+                        <div class="form-group col-md-4">
+                        </div>
+                        <div class="form-group col-md-4" style="background-color:yellow">
+                            <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Project Detail</b></label></h4>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input class="btn btn-success" value="Add New Project" tabindex="63" alt="Add New Project" id="btnAddNewEmployer" onclick="ShowHideProjectPanel(1)" type="button" border="0">
+                        </div>
+                    </div>
+                    <div class="col-md-12 projectsection" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="txtProjectName" class="col-sm-4 control-label">Project Name&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtProjectName" name="txtProjectName" tabindex=64" placeholder="Enter Project Name" type="text" maxlength="100" />
+                                <input id="hdnApplicantProjectId" type="hidden" value="0" />
+                                <input id="hdnProjectSequenceNo" type="hidden" value="0" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtClientName" class="col-sm-4 control-label">Client Name</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtClientName" name="txtClientName" tabindex="65" placeholder="Enter Client Name" type="text" maxlength="100" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12 projectsection" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="txtRoleDesc" class="col-sm-4 control-label">Role Description</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="txtRoleDesc" name="txtRoleDesc" tabindex="66" rows="4" cols="30" maxlength="1000"> </textarea>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtTeamSize" class="col-sm-4 control-label">Team Size&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control numeric-only input-number" id="txtTeamSize" name="txtTeamSize" tabindex="67" placeholder="Enter Team Size" type="text" maxlength="3" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12 projectsection" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="txtProjectDesc" class="col-sm-4 control-label">Project Description</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="txtProjectDesc" name="txtProjectDesc" tabindex="68" rows="4" cols="30" maxlength="1000"> </textarea>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtTechnologyUsed" class="col-sm-4 control-label">Technology Used</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="txtTechnologyUsed" name="txtTechnologyUsed" tabindex="69" rows="4" cols="30" maxlength="1000"> </textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12 projectsection" style="display:none;">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <center>
+                                <input class="btn btn-success" value="Add Project" alt="Add Project" tabindex="70" id="btnAddProject" onclick="AddProject(1)" type="button" border="0">&nbsp;&nbsp;
+                                <input class="btn btn-success" value="Update Project" style="display:none;" tabindex="70" alt="Update Project" id="btnUpdateProject" onclick="AddProject(2)" type="button" border="0">&nbsp;&nbsp;
+                                <input class="btn btn-success" type="button" id="btnCancelProject" tabindex="71" onclick="ShowHideProjectPanel(2)" value="Cancel" /> &nbsp;&nbsp;
+                            </center>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12">
+                        <div id="divProjectList">
+                        </div>
+                    </div>
+                </div>
+                <div id="tabs-6">
+                    <div class="col-md-12 ftop">
+                        <div class="form-group col-md-4">
+                            <label for="txtStrength1" class="col-sm-4 control-label">Strength 1</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="txtStrength1" name="txtStrength1" tabindex="72" rows="4" cols="30" maxlength="1000"> </textarea>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtWeakness1" class="col-sm-4 control-label">Weakness 1</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="txtWeakness1" name="txtWeakness1" tabindex="77" rows="4" cols="30" maxlength="1000"> </textarea>
+                            </div>
+                        </div>
+                  
+                        <div class="form-group col-md-4">
+                            <label for="txtStrength2" class="col-sm-4 control-label">Strength 2</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="txtStrength2" name="txtStrength2" tabindex="74" rows="4" cols="30" maxlength="1000"> </textarea>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-4">
+                            <label for="txtWeakness2" class="col-sm-4 control-label">Weakness 2</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="txtWeakness2" name="txtWeakness2" tabindex="78" rows="4" cols="30" maxlength="1000"> </textarea>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtStrength3" class="col-sm-4 control-label">Strength 3</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="txtStrength3" name="txtStrength3" tabindex="75" rows="4" cols="30" maxlength="1000"> </textarea>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtWeakness3" class="col-sm-4 control-label">Weakness 3</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="txtWeakness3" name="txtWeakness3" tabindex="79" rows="4" cols="30" maxlength="1000"> </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-4">
+                            <label for="txtHobbies" class="col-sm-4 control-label">Hobbies</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="txtHobbies" name="txtHobbies" tabindex="76" rows="4" cols="30" maxlength="500"> </textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                <div class="col-md-3">
+                    <label for="ddlApplicantStatus" class="col-sm-6 control-label">Save Mode</label>
+                    <div class="col-sm-6">
+                        <select id="ddlApplicantStatus" name="ddlApplicantStatus" tabindex="80" class="form-control">
+                            <option selected="selected" value="Final">Final</option>
+                            <option value="Draft">Draft</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="81" onclick="SaveData(1)" type="button" border="0"> 
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="81" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                        <input class="btn btn-success" type="button" id="btnReset" tabindex="84" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;
+                        <a class="btn btn-success" id="btnList" tabindex="85" href="@Url.Content("~/Applicant/ListApplicant")">Search Applicant</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="82" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="83" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="83" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="SearchJobOpeningModel" role="dialog">
+            <div class="modal-dialog  modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Search Job Opening</h4>
+                    </div>
+                    <div class="">
+                        <div class="col-md-12 ftop">
+                            <div class="form-group col-md-6">
+                                <label for="txtSearchJobOpeningNo" class="col-sm-4 control-label">Job Opening No.</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtSearchJobOpeningNo" name="txtSearchJobOpeningNo" tabindex="6" placeholder="Search with Job Opening No." type="text" maxlength="50" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtResourceRequisitionNo" class="col-sm-4 control-label">Requisition No.</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtResourceRequisitionNo" name="txtResourceRequisitionNo" tabindex="7" placeholder="Search with Requisition No." type="text" maxlength="50" />
+                                </div>
+                            </div>
+
+                            
+
+
+                        </div>
+                        <div class="col-md-12">
+
+                            <div class="form-group col-md-6">
+                                <label for="txtJobTitle" class="col-sm-4 control-label">Job Title</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtJobTitle" name="txtJobTitle" tabindex="8" placeholder="Search with Job Title" type="text" maxlength="50" />
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="txtJobPortalRefNo" class="col-sm-4 control-label">Job Portal RefNo.</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtJobPortalRefNo" name="txtJobPortalRefNo" tabindex="9" placeholder="Search with Job Portal RefNo" type="text" maxlength="50" />
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+                                <label for="txtJobFromDate" class="col-sm-4 control-label">Job Opening From Date</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtJobFromDate" name="txtJobFromDate" tabindex="10" value="@ViewData["fromDate"]" type="text" maxlength="50" />
+                                    <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["fromDate"]" type="hidden" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtJobToDate" class="col-sm-4 control-label">To Date</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtJobToDate" name="txtJobToDate" tabindex="11" value="@ViewData["toDate"]" type="text" maxlength="50" />
+                                    <input id="hdnToDate" name="hdnToDate" value="@ViewData["toDate"]" type="hidden" />
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row col-sm-12 col-lg-12 col-md-12">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <center>
+                                    <input class="btn btn-success" value="Search" alt="Search" tabindex="12" id="btnSearch" onclick="SearchJobOpenings()" type="button" border="0">&nbsp;&nbsp;
+                                </center>
+                            </div>
+                            <div class="col-md-3 text-right">
+                                
+                            </div>
+                        </div>
+                        <div class="row col-sm-6 col-lg-12 col-md-12">
+                            <div id="divList">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" tabindex="13" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["fromDate"]" type="hidden" />
+        <input id="hdnToDate" name="hdnFromDate" value="@ViewData["toDate"]" type="hidden" />
+    </form>
+</section>
+
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/Applicant/AddApplicant.js"></script>

@@ -1,0 +1,180 @@
+﻿@{
+    ViewBag.Title = "Payroll Process Report";
+    Layout = "~/Views/Shared/_PayrollLayout.cshtml";
+}
+@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/TableExport/5.0.2/css/tableexport.css">*@
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+       
+    /* allow space for check mark */
+</style>
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/PayrollDashboard">Payroll</a> >>ESI Report</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditPayrollProcessPeriod" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="ddlMonth" class="col-sm-4 control-label">Payroll Process Month&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlMonth" name="ddlMonth" tabindex="1" class="form-control"></select>                       
+                    </div>
+                </div>
+               
+               
+                <div class="form-group col-md-4">
+                    <label for="ddlPayrollProcessStatus" class="col-sm-4 control-label">Payroll Process Year</label>
+                    <div class="col-sm-8">
+                        <select id="ddlPayrollProcessYear" name="ddlPayrollProcessYear" tabindex="5" class="form-control">
+                            <option value="0">Select PayRoll Process Year</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        
+          
+            
+            
+            
+            
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Search ESI" alt="Search ESI" tabindex="12" id="btnSearch" onclick="GeneratePayrollProcessReportESI();" type="button" border="0"> 
+                        <input class="btn btn-success" value="Search ESI Report" alt="Search ESI Report" tabindex="12" id="btnESISearch" onclick="GeneratePayrollProcessReportESIREPORT();" type="button" border="0"> 
+                        <input class="btn btn-success" type="button" id="btnSave" onclick="SaveData();" value="Save" tabindex="10" /> &nbsp;&nbsp;
+                        <a class="btn btn-success" alt="Export" tabindex="11" id="btnESIExport" onclick="OpenPrintPopupESI();" border="0">Generate ESI Report</a>
+                        <input class="btn btn-success" value="Generate ECR" alt="Generate ECR" id="btnESITXTExport" onclick="GenerateESIECRTXT();" tabindex="8" type="button" border="0">
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div id="divList">
+
+                </div>
+            </div>
+
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="13" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="14" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="14" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="printModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">SO Register Reports</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="ddlPrintOption" class="col-sm-4 control-label">Report Option</label>
+                            <div class="col-sm-8">
+                                <select id="ddlPrintOption" name="ddlPrintOption" onchange="ShowHidePrintOptionESI();" tabindex="1" class="form-control">
+                                    <option selected="selected" value="PDF">PDF</option>
+                                    <option value="Excel">Excel</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-success" target="_blank" href="#" id="btnPdf">Print</a>
+                        <a class="btn btn-success" style="display:none;" target="_blank" href="#" id="btnExcel">Print</a>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/PayRollProcessReport/PayRollProcessReport.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/tableExport.js"></script>
+<script src="~/Scripts/tableExport.min.js"></script>

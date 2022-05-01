@@ -1,0 +1,108 @@
+﻿@model List<Portal.Core.ViewModel.EmployeeClaimApplicationViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+ .table {
+    width: 143% !important;
+    max-width: 143% !important;
+    margin-bottom: 20px;
+}
+    </style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblEmployeeAssetApplicationList">
+            <thead>
+                <tr>
+                    <th align="center">Action</th>
+                    <th>Application No.</th>
+                    <th>Application Date</th>
+                    <th>Company Branch</th>
+                    <th>Employee Name</th>
+                    <th>Claim Type Name</th>
+                    <th>Claim Amount</th>                                       
+                    <th>Claim Reason </th>                 
+                    <th>Claim Status </th> 
+                    <th>Approve/Reject By UserName</th>
+                    <th>Approve/Reject Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/EmployeeClaimApplication/ApprovalRejectedEmployeeClaimApplication?applicationId=@item.ApplicationId&AccessMode=3"></a>
+                            @if (item.ClaimStatus.ToUpper() == "PENDING")
+                            {
+                                <a style="background-color:paleturquoise;color:white" class="fa fa-pencil-square-o" href="~/EmployeeClaimApplication/ApprovalRejectedEmployeeClaimApplication?applicationId=@item.ApplicationId&AccessMode=2"></a>
+                            }
+                        </td>
+                        <td>@item.ApplicationNo</td>
+                        <td>@item.ApplicationDate</td>
+                        <td>@item.CompanyBranchName</td>
+                        <td>@item.EmployeeName</td>
+                        <td>@item.ClaimTypeName</td>
+                        <td>@item.ClaimAmount</td>
+                        <td>@item.ClaimReason</td>
+                       
+                        @if (item.ClaimStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine;">
+                                @item.ClaimStatus
+                            </td>
+                        }
+                        else if (item.ClaimStatus.ToUpper() == "REJECTED")
+                        {
+                            <td style="background-color:red;color:white">
+                                @item.ClaimStatus
+                            </td>
+                        }
+                        else if (item.ClaimStatus.ToUpper() == "PENDING")
+                        {
+                            <td style="background-color: #006280;color:white;">
+                                @item.ClaimStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green;color:white">
+                                @item.ClaimStatus
+                            </td>
+
+                        }
+
+                        <td>@item.ApprovedByUserName</td>
+                        <td>@item.ApproveDate</td>
+                        
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblEmployeeAssetApplicationList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

@@ -1,0 +1,112 @@
+﻿@model List<Portal.Core.ViewModel.PayrollProcessReportPFViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/TableExport/5.0.2/css/tableexport.css">
+<style>
+    table, tr td {
+        border: 1px solid red;
+    }
+
+    tbody {
+        display: block;
+        height: 450px;
+        overflow: auto;
+    }
+
+        thead, tbody tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed; /* even columns width , fix width of table too*/
+        }
+
+    thead {
+        width: calc( 100% - 1em ); /* scrollbar is average 1em/16px width, remove it from thead width */
+    }
+
+  
+
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+
+
+
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;background-color:white;">
+        <table class="table table-bordered table-striped" id="tblPayRollProcessReport">
+            <thead>
+                <tr>
+
+                    <th><center>UAN No.</center></th>
+                    <th><center>Employee Name</center></th>
+                    <th><center>Gross Salary</center></th>
+                    <th><center>EPF Wages</center></th>
+                    <th><center>EPS Wages</center></th>
+
+                    <th><center>EDLI Wages</center></th>
+                    <th><center>Employee PF</center></th>
+                    <th><center>Employer PF</center></th>
+                    <th><center>Employer PS</center></th>
+                    <th><center>WorkingDays</center></th>
+                    <th><center>Refunds</center></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.UANNo</td>
+                        <td>@item.EmployeeName</td>
+                        <td>@item.GrossSalary</td>
+                        <td>@item.EPFWages</td>
+                        <td>@item.EPSWages</td>
+                        <td>@item.EDLIWages</td>
+
+                        <td>@item.EmployeePF</td>
+                        <td>@item.EmployerPF</td>
+                        <td>@item.EmployerEPS</td>
+                        <td>@item.WorkingDays</td>
+                        <td>@item.Refunds</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+@*<script>
+        $(document).ready(function () {
+            $('#tblPayRollProcessReport').paging({
+                limit: 10,
+                rowDisplayStyle: 'block',
+                activePage: 0,
+                rows: []
+            });
+
+        });
+    </script>*@
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

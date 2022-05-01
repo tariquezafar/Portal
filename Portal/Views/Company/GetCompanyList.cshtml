@@ -1,0 +1,72 @@
+﻿@model List<Portal.Core.ViewModel.CompanyViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+ .table{
+        margin-right: -11px;
+        margin-left: -6px;
+ }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;background-color:white;overflow-x: scroll;">
+        <table class="table table-bordered table-hover" id="tblCompanyList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>Company Name</center></th>
+                    <th><center>Company Code</center></th>
+                    <th><center>Contact Person</center></th>
+                    <th><center>Phone</center></th>
+                    <th><center>Email</center></th>
+                    <th><center>Website</center></th>
+                    <th><center>City</center></th>
+                    <th><center>PAN No.</center></th>
+                    <th><center>TIN No.</center></th>
+                    <th><center>GST No.</center></th>
+                    <th><center>Annual TurnOver</center></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="info">
+                        <td class="teal text" style="width:30px; margin:0px auto;">
+                            <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/Company/AddEditCompany?CompanyId=@item.CompanyId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/Company/AddEditCompany?CompanyId=@item.CompanyId&AccessMode=2"></a>
+                        </td>
+                        <td>@item.CompanyName</td>
+                        <td>@item.CompanyCode</td>
+                        <td>@item.ContactPersonName</td>
+                        <td>@item.Phone</td>
+                        <td>@item.Email</td>
+                        <td>@item.Website</td>
+                        <td>@item.City</td>
+                        <td>@item.PANNo</td>
+                        <td>@item.TINNo</td>  
+                        <td>@item.TanNo</td>  
+                        <td>@item.AnnualTurnover</td>
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblCompanyList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

@@ -1,0 +1,74 @@
+﻿@model List<Portal.Core.ViewModel.JobOpeningViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblJobOpeningList">
+            <thead>
+                <tr>
+                    <th align="center">Select</th>
+                    <th>Job Opening No.</th>
+                    <th>Requisition No.</th>
+                    <th>Job Title</th>
+                    <th>Job Opening Date</th>
+                    <th>Job Portal RefNo</th>
+                    <th>No Of Opening</th>
+                    <th>Min Exp</th>
+                    <th>Max Exp</th>
+                    <th>Min Salary</th>
+                    <th>Max Salary</th>
+                    <th>Job Start Date</th>
+                    <th>Job Expiry Date</th>
+                    <th>Key Skills</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" href="#" onclick="SelectJobOpening('@item.JobOpeningId','@item.JobOpeningNo')"></a>
+                        </td>
+                        <td>@item.JobOpeningNo</td>
+                        <td>@item.RequisitionNo</td>
+                        <td>@item.JobTitle</td>
+                        <td>@item.JobOpeningDate</td>
+                        <td>@item.JobPortalRefNo</td>
+                        <td>@item.NoOfOpening</td>
+                        <td>@item.MinExp</td>
+                        <td>@item.MaxExp</td>
+                        <td>@item.MinSalary</td>
+                        <td>@item.MaxSalary</td>
+                        <td>@item.JobStartDate</td>
+                        <td>@item.JobExpiryDate</td>
+                        <td>@item.KeySkills</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblJobOpeningList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

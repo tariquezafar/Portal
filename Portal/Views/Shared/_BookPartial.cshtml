@@ -1,0 +1,382 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Account</title>
+    @*<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/fon-awesome/4.5.0/css/font-awesome.min.css" />*@
+    @*<link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/Content/SuperAdminStyles.css" rel="stylesheet" />
+        <link href="~/Content/style-1.css" rel="stylesheet" />
+        <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+
+        <script src="~/Scripts/jquery-1.10.1.min.js"></script>
+        <script src="~/Scripts/jquery.min.js"></script>
+        <script src="~/Scripts/jquery-ui.js"></script>
+        <script>
+        $(document).ready(function(){
+        function resize() {
+         var $window = $("#body");
+         if ($window.width() <= 767) {
+          $("#body").removeClass('sidebar-condensed');
+          }
+        }
+        resize();
+        });
+
+        </script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/jquery.navgoco.js"></script>*@
+
+    <style>
+        .Mandatory {
+            color: red;
+            font-weight: bold;
+        }
+
+        fieldset.scheduler-border {
+            border: 1px groove #ddd !important;
+            padding: 0 1.4em 1.4em 1.4em !important;
+            margin: 0 0 1.5em 0 !important;
+            -webkit-box-shadow: 0px 0px 0px 0px #000;
+            box-shadow: 0px 0px 0px 0px #000;
+        }
+
+        legend {
+            display: block;
+            width: 37%;
+            padding: 0;
+            margin-bottom: 20px;
+            font-size: 21px;
+            line-height: inherit;
+            color: #333;
+            border: 0;
+            border-bottom: 0px solid #e5e5e5;
+        }
+    </style>
+</head>
+
+<body class="sidebar-condensed" id="body">
+
+    <section>
+        <form action="#" id="frmAddEditLeadSource" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+            <div class="">
+                <div class="message">
+                    <div class="col-md-12 ftop">
+                        <div class="form-group col-md-6">
+                            <label for="ddlBookTypePopUp" class="col-sm-4 control-label">Book Type&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlBookTypePopUp" name="ddlBookTypePopUp" style="width: 100%;height: 35px;" tabindex="1" onChange="changeBookTypePopUp()">
+                                    <option value="0">Select Book Type</option>
+                                    <option value="B">Bank</option>
+                                    <option value="C">Cash</option>
+                                    <option value="JV">JV</option>
+                                    <option value="S">Sale</option>
+                                    <option value="P">Purchase</option>
+                                    <option value="CN">Credit Note</option>
+                                    <option value="DN">Debit Note</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtGLHeadPopUp" class="col-sm-4 control-label">GL Head&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input id="txtGLHeadPopUp" name="txtGLHeadPopUp" tabindex="2" placeholder="Enter GL Head" type="text" class="form-control" />
+                                <input id="hdnGLCodePopUp" type="hidden" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="txtBookNamePopUp" class="col-sm-4 control-label">Book Name&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtBookNamePopUp" name="txtBookNamePopUp" tabindex="3" placeholder="Enter Book Name" type="text" maxlength="100" />
+                                <input id="hdnBookIdPopUp" type="hidden" value="@ViewData["bookId"]" />
+                                <input id="hdnAccessModePopUp" type="hidden" value="@ViewData["accessMode"]" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtBookCodePopUp" class="col-sm-4 control-label">Book Code&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtBookCodePopUp" name="txtBookCodePopUp" tabindex="4" placeholder="Enter Book Code" type="text" maxlength="2" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="txtBankBranchPopUp" class="col-sm-4 control-label">Bank Branch</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtBankBranchPopUp" name="txtBankBranchPopUp" tabindex="5" placeholder="Bank Branch" type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtBankAccountNoPopUp" class="col-sm-4 control-label">Bank Account No.</label>
+                            <div class="col-sm-8">
+                                <input id="txtBankAccountNoPopUp" name="txtBankAccountNoPopUp" tabindex="6" placeholder="Enter Bank Account No" class="form-control" style="width: 100%;height: 31px;" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="txtIFSCCodePopUp" class="col-sm-4 control-label">IFSC Code</label>
+                            <div class="col-sm-8">
+                                <input id="txtIFSCCodePopUp" name="txtIFSCCodePopUp" tabindex="7" class="form-control" placeholder="Enter Bank IFSC Code" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtOverDraftLimitPopUp" class="col-sm-4 control-label">Over Draft Limit</label>
+                            <div class="col-sm-8">
+                                <input id="txtOverDraftLimitPopUp" name="txtOverDraftLimitPopUp" tabindex="8" class="form-control numeric-only" placeholder="Enter Over Draft Limit " />
+                            </div>
+                        </div>
+                    </div>
+
+                    @*<div class="col-md-12">
+                            <div class="form-group col-md-6">
+                                <label for="chkstatusPopUp" class="col-sm-4 control-label">Status&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input id="chkstatusPopUp" name="chkstatusPopUp" type="checkbox" checked="checked" tabindex="9" />
+                                </div>
+                            </div>
+                        </div>*@
+
+                </div>
+
+
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnSave" onclick="SaveDataPopUp(1)" type="button" border="0" tabindex="9">
+                            <a class="btn btn-success" id="btnReset" onclick="ClearFieldsPopUp()" tabindex="10">Reset</a>
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" tabindex="11" id="alertModel" role="dialog">
+                <div class="modal-dialog  modal-sm">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" tabindex="12" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title" id="modelHeader"></h4>
+                        </div>
+                        <div class="modal-body">
+                            <p id="modelText"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" tabindex="13" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </section>
+</body>
+</html>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script>
+    $(".alpha-only").on("input", function () {
+        var regexp = /[^a-zA-Z]/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+    $(".alpha-space-only").on("input", function () {
+        var regexp = /[^a-zA-Z\s]+$/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+    $(".numeric-only").on("input", function () {
+        var regexp = /\D/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+    $(".alpha-numeric-only").on("input", function () {
+        var regexp = /[^a-zA-Z0-9]/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+
+
+    function changeBookTypePopUp() {
+        var ddlBookTypePopUp = $("#ddlBookTypePopUp").val();
+        if (ddlBookTypePopUp != "0" && ddlBookTypePopUp != undefined) {
+            if (ddlBookTypePopUp == 'B' || ddlBookTypePopUp == 'C') {
+                $("#txtGLHeadPopUp").attr("disabled", false);
+                $("#txtBankBranchPopUp").attr("disabled", false);
+                $("#txtBankAccountNoPopUp").attr("disabled", false);
+                $("#txtIFSCCodePopUp").attr("disabled", false);
+                $("#txtOverDraftLimitPopUp").attr("disabled", false);
+            }
+            else {
+                $("#txtGLHeadPopUp").attr("disabled", true);
+                $("#txtBankBranchPopUp").attr("disabled", true);
+                $("#txtBankAccountNoPopUp").attr("disabled", true);
+                $("#txtIFSCCodePopUp").attr("disabled", true);
+                $("#txtOverDraftLimitPopUp").attr("disabled", true);
+            }
+        }
+
+    }
+    function checkDecPopUp(el) {
+        var ex = /^[0-9]+\.?[0-9]*$/;
+        if (ex.test(el.value) == false) {
+            el.value = el.value.substring(0, el.value.length - 1);
+        }
+
+    }
+    function SaveDataPopUp() {
+        var txtBookNamePopUp = $("#txtBookNamePopUp");
+        var txtBookCodePopUp = $("#txtBookCodePopUp");
+        var ddlBookTypePopUp = $("#ddlBookTypePopUp");
+        var txtGLCodePopUp = $("#hdnGLCodePopUp");
+        var txtBankBranchPopUp = $("#txtBankBranchPopUp");
+        var txtBankAccountNoPopUp = $("#txtBankAccountNoPopUp");
+        var txtIFSCCodePopUp = $("#txtIFSCCodePopUp");
+        var txtOverDraftLimitPopUp = $("#txtOverDraftLimitPopUp");
+        var hdnBookIdPopUp = $("#hdnBookIdPopUp");
+        var chkstatusPopUp = true;
+
+        if (ddlBookTypePopUp.val().trim() == 0) {
+            alert("Please Select Book Type");
+            ddlBookTypePopUp.focus();
+            return false;
+        }
+        if (ddlBookTypePopUp.val().trim() == "B" || ddlBookTypePopUp.val().trim() == "C") {
+            if ($("#txtGLHeadPopUp").val() == "") {
+                alert("Please Enter GL Head");
+                $("#txtGLHeadPopUp").focus();
+                return false;
+            }
+        }
+        if (txtBookNamePopUp.val().trim() == "") {
+            alert("Please Enter Book Name");
+            txtBookNamePopUp.focus();
+            return false;
+        }
+        if (txtBookCodePopUp.val().trim() == "") {
+            alert("Please Enter Book Code");
+            txtBookCodePopUp.focus();
+            return false;
+        }
+        if (txtBookCodePopUp.val().length != 2) {
+            alert("Please Enter Book Code Maximum 2 Word");
+            txtBookCodePopUp.focus();
+            return false;
+        }
+
+        var bookViewModelPopUp = {
+            BookId: hdnBookIdPopUp.val(),
+            BookName: txtBookNamePopUp.val().trim(),
+            BookCode: txtBookCodePopUp.val().trim(),
+            BookType: ddlBookTypePopUp.val().trim(),
+            GLCode: txtGLCodePopUp.val(),
+            BankBranch: txtBankBranchPopUp.val().trim(),
+            BankAccountNo: txtBankAccountNoPopUp.val().trim(),
+            IFSC: txtIFSCCodePopUp.val().trim(),
+            OverDraftLimit: txtOverDraftLimitPopUp.val().trim(),
+            Book_Status: chkstatusPopUp
+        };
+        var requestData = { bookViewModel: bookViewModelPopUp };
+        $.ajax({
+            url: "../Book/AddEditBook",
+            cache: false,
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify(requestData),
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.status == "SUCCESS") {
+                    alert(data.message);
+                    if (ddlBookTypePopUp.val() == "B") {
+                        $("#ddlBook").html("");
+                        BindBookTypeList(data.trnId);
+                    }
+                    else{
+                        $("#ddlBook").append($("<option></option>").val(data.trnId).html(txtBookNamePopUp.val().trim()));
+                        $("#ddlBook").val(data.trnId);
+                    }
+                    ClearFieldsPopUp();
+                    $("#btnSave").show();
+                    $(".Book").modal("hide");
+                }
+                else {
+                    alert(data.message)
+                }
+            },
+            error: function (err) {
+                alert(err)
+            }
+        });
+
+    }
+    function ShowModelPopUp(headerText, bodyText) {
+        $("#alertModel").modal();
+        $("#modelHeader").html(headerText);
+        $("#modelText").html(bodyText);
+    }
+    function ClearFieldsPopUp() {
+        $("#hdnBookIdPopUp").val("0");
+        $("#txtBookNamePopUp").val("");
+        $("#txtBookCodePopUp").val("");
+        //$("#ddlBookTypePopUp").val("0");
+        $("#hdnGLCodePopUp").val("");
+        $("#txtGLHeadPopUp").val("");
+        $("#txtBankBranchPopUp").val("");
+        $("#txtBankAccountNoPopUp").val("");
+        $("#txtIFSCCodePopUp").val("");
+        $("#txtOverDraftLimitPopUp").val("");
+    }
+
+    $("#txtGLHeadPopUp").autocomplete({
+        minLength: 0,
+        source: function (request, response) {
+            $.ajax({
+                url: "../Book/GetBookGLAutoCompleteList",
+                type: "GET",
+                dataType: "json",
+                data: { term: request.term },
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return { label: item.GLHead, value: item.GLCode };
+                    }))
+                }
+            })
+        },
+        focus: function (event, ui) {
+            $("#txtGLHeadPopUp").val(ui.item.label);
+            return false;
+        },
+        select: function (event, ui) {
+            $("#txtGLHeadPopUp").val(ui.item.label);
+            $("#txtBookNamePopUp").val(ui.item.label);
+            $("#hdnGLCodePopUp").val(ui.item.value);
+            return false;
+        },
+        change: function (event, ui) {
+            if (ui.item == null) {
+                $("#txtGLHeadPopUp").val("");
+                $("#hdnGLCodePopUp").val("0");
+                alert("Please select GL Head from List")
+            }
+            return false;
+        }
+
+    })
+    .autocomplete("instance")._renderItem = function (ul, item) {
+        return $("<li>")
+          .append("<div><b>" + item.label + " || " + item.value + "</b></div>")
+          .appendTo(ul);
+    };
+</script>

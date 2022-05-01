@@ -1,0 +1,50 @@
+﻿@model List<Portal.Core.ViewModel.SOCountViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table" id="tblBookBalanceList" style="margin-top:10px;">
+            <thead style="border-top-left-radius:15px;">
+                <tr style="border:none;">
+                    <th style="background:#337AB7; color:#fff;width:100%;" colspan="3">SO Transaction Summary</th> 
+                </tr>
+                <tr style="background:#fff; border:1px solid #ccc;">
+                    <th>Particulars</th>
+                    <th>SO Created</th>
+                </tr>
+            </thead>
+            <tbody style="border:1px solid #ccc;">
+                @foreach (var item in Model)
+                {
+                <tr class="success">
+                    <td>@item.sOCount_Head</td>
+                    <td>@item.sOTotalCount</td>
+                </tr>
+                }
+            </tbody>           
+        </table>
+    </div>
+
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Quotation Count not updated</h3>
+}
+ <script>
+     var barChartData =
+         {
+             labels: [@Html.Raw(ViewBag.SOList)],
+             datasets: [{
+                 label: 'SO Transaction Summary',
+                 backgroundColor: [
+                     "#f990a7",
+                     "#aad2ed",
+                     "#9966FF",
+                     "#99e5e5",
+                     "#f7bd83",
+                 ],
+                 borderWidth: 2,
+                 data: [@ViewBag.SOCountList]
+             }]
+         };
+
+</script> 

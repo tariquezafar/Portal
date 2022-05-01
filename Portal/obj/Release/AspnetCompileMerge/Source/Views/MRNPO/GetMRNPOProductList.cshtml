@@ -1,0 +1,112 @@
+﻿@model List<Portal.Core.MRNProductDetailViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>                   
+                    <th>Product Name</th>                                     
+                    <th>Unit</th>
+                    <th>Price</th>
+                    <th>QTY.</th>                   
+                    <th>Total Rec. QTY.</th>
+                    <th>Pending QTY.</th>
+                    <th>Rec. QTY.</th>
+                    <th>Acc. QTY.</th>
+                    <th>Rej. QTY</th>
+                    <th colspan="2" align="center" class="editonly">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        
+                        <td>@item.ProductName
+                        <input type="hidden" id="hdnMRNProductDetailId" value="@item.MRNProductDetailId" />
+                        <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                            <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                            <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                            <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                            <input type="hidden" id="hdnProductShortDesc" value="@item.ProductShortDesc" />
+                        </td> 
+                        <td>
+                            @item.UOMName
+                        <input type="hidden" id="hdnUOMName" value="@item.UOMName" />
+                       
+
+                    </td>                     
+                        <td>
+                            @item.Price
+                        <input type="hidden" id="hdnPrice" value="@item.Price" />
+                        </td>                      
+                        <td>
+                            @item.Quantity
+                            <input type="hidden" id="hdnQuantity" value="@item.Quantity" />
+                        </td>
+                        <td>
+                            @item.TotalRecQuantity
+                            <input type="hidden" id="hdnTotalRecQuantity" value="@item.TotalRecQuantity" />
+                        </td>
+                        <td>
+                            @item.PendingQuantity
+                            <input type="hidden" id="hdnPendingQuantity" value="@item.PendingQuantity" />
+                        </td>
+                       
+                        <td>
+                            @item.ReceivedQuantity
+                            <input type="hidden" id="hdnReceivedQuantity" value="@item.ReceivedQuantity" />
+                        </td>
+
+                        <td>
+                            @item.AcceptQuantity
+                            <input type="hidden" id="hdnAcceptQuantity" value="@item.AcceptQuantity" />
+                        </td>
+
+                        <td>
+                            @item.RejectQuantity
+                            <input type="hidden" id="hdnRejectQuantity" value="@item.RejectQuantity" />
+                        </td>
+                        <td style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-pencil-square-o erp-btn" onclick="EditProductRow(this);" href="#"></a>
+                        </td>
+                        <td style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-trash erp-btn"  onclick="RemoveProductRow(this)" href="#"></a>
+                        </td>
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Unit</th>
+                    <th>Price</th>
+                    <th>QTY.</th>
+                    <th>Total Rec. QTY.</th>
+                    <th>Pending QTY.</th>
+                    <th>Rec. QTY.</th>
+                    <th>Acc. QTY.</th>
+                    <th>Rej. QTY</th>
+                    <th colspan="2" align="center" >Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+<script>
+    $(document).ready(function () {
+        if ($("#hdnAccessMode").val() == "3") {
+            $(".editonly").hide();
+        }
+
+    });
+</script>

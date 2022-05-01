@@ -1,0 +1,422 @@
+﻿@{
+    ViewBag.Title = "Add/Edit Cash Voucher";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+    /* allow space for check mark */
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AccountDashboard">Account </a> >> Add/Edit Cash Voucher</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditBankVoucher" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message"></div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="txtVoucherNo" class="col-sm-4 control-label">Voucher No.</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtVoucherNo" name="txtVoucherNo" tabindex="1" placeholder="Auto Generated Voucher No." type="text" maxlength="100" />
+                        <a style="display:none;color:#fff;" class="btn btn-success" id="btnAddNew" href="@Url.Content("~/CashVoucher/AddEditCashVoucher")">New</a>
+                        <a style="display:none;color:#fff;" class="btn btn-success" target="_blank" href="@Url.Action("CashVoucherPrint",new {voucherId=ViewData["voucherId"], reportType="PDF" })" id="btnPrint">Print</a>
+                        <input id="hdnVoucherId" type="hidden" value="@ViewData["voucherId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    </div>
+                </div>
+                
+                <div class="form-group col-md-6">
+                    <label for="txtVoucherDate" class="col-sm-4 control-label">Voucher Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtVoucherDate" name="txtVoucherDate" tabindex="2" placeholder="Enter Voucher Date" value="@ViewData["currentDate"]" type="text" maxlength="50" />
+                        <input id="hdnCurrentDate" name="hdnCurrentDate" value="@ViewData["currentDate"]" type="hidden" />
+                    </div>
+                </div>
+               
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlBook" class="col-sm-4 control-label">Book&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlBook" name="ddlBook" tabindex="3" class="form-control"></select>
+                    </div>
+                </div>
+                
+                <div class="form-group col-md-6">
+                    <label for="txtBookBalance" class="col-sm-4 control-label">Book Balance</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control  input-number right-text " id="txtBookBalance" name="txtBookBalance" tabindex="8" placeholder="Book Balance Amount" onkeyup="checkDec(this);" type="text" maxlength="20" />
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlVoucherMode" class="col-sm-4 control-label">Voucher Mode&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlVoucherMode" name="ddlVoucherMode" tabindex="4" class="form-control">
+                            <option selected="selected" value="P">Payment</option>
+                            <option value="R">Receipt</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group col-md-6">
+                    <label for="txtVoucherAmount" class="col-sm-4 control-label">Voucher Amount&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control  input-number right-text " id="txtVoucherAmount" name="txtVoucherAmount" tabindex="8" placeholder="Enter Voucher Amount" onkeyup="checkDec(this);" type="text" maxlength="20" />
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlPayeeSLType" class="col-sm-4 control-label">Payee/ Payer Type&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlPayeeSLType" name="ddlPayeeSLType" tabindex="4" class="form-control"></select>
+                    </div>
+                </div>
+                
+                <div class="form-group col-md-6">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="9" class="form-control"></select>
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="divCreated" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="txtCreatedBy" class="col-sm-4 control-label">Created By</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtCreatedBy" name="txtCreatedBy" tabindex="21" placeholder="Created By User Name" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtCreatedDate" class="col-sm-4 control-label">Created Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtCreatedDate" name="txtCreatedDate" tabindex="22" placeholder="Created Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="divModified" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="txtModifiedBy" class="col-sm-4 control-label">Modified By</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtModifiedBy" name="txtModifiedBy" tabindex="23" placeholder="Modified By User Name" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtModifiedDate" class="col-sm-4 control-label">Modified Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtModifiedDate" name="txtModifiedDate" tabindex="24" placeholder="Modified Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="divCancelled" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="txtCancelReason" class="col-sm-4 control-label">Cancelled Reason</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtCancelReason" name="txtCancelReason" tabindex="25" placeholder="Cancel Reason" type="text" maxlength="1000" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtCancelledDate" class="col-sm-4 control-label">Cancelled Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtCancelledDate" name="txtCancelledDate" tabindex="26" placeholder="Cancelled Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12  ftop">
+                <div class="form-group col-md-4"></div>
+                <div class="form-group col-md-4" style="background-color:yellow">
+                    <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Voucher Detail</b></label></h4>
+                </div>
+                <div class="form-group col-md-4">
+                    <input class="btn btn-success" value="Add New Entry" tabindex="27" alt="Add New Entry" id="btnAddNewEntry" onclick="ShowHideVoucherEntryPanel(1)" type="button" border="0">
+                </div>
+
+            </div>
+            <div class="col-md-12 voucherentrysection" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="ddlEntryMode" class="col-sm-4 control-label">Entry Mode&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlEntryMode" name="ddlEntryMode" tabindex="4" class="form-control">
+                            <option selected="selected" value="P">Debit</option>
+                            <option value="R">Credit</option>
+                        </select>
+                        <input id="hdnVoucherDetailId" type="hidden" value="0" />
+                        <input id="hdnSequenceNo" type="hidden" value="0" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtPayee" class="col-sm-2 control-label">Payee/ Payer</label>
+                    <div class="col-sm-10">
+                        <input id="txtPayee" name="txtPayee" type="text" tabindex="30" class="form-control" maxlength="100" />
+                        <input id="hdnPayeeId" type="hidden" value="0" />
+                    </div>
+                    
+                    </div>
+               
+
+            </div>
+            <div class="col-md-12 voucherentrysection" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="txtGLHead" class="col-sm-4 control-label">GL&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtGLHead" name="txtGLHead" tabindex="28" placeholder="Enter GL" type="text" maxlength="100" />
+                        <input id="hdnGLId" type="hidden" value="0" />
+                        <input id="hdnSLTypeId" type="hidden" value="0" />
+
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="txtGLCode" class="col-sm-4 control-label">GL Code</label>
+                    <div class="col-sm-8">
+                        <input id="txtGLCode" name="txtGLCode" tabindex="29" type="text" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="txtGLBalance" class="col-sm-4 control-label">Ledger Balance</label>
+                    <div class="col-sm-8">
+                        <input id="txtGLBalance" name="txtGLBalance" type="text" tabindex="30" class="form-control input-number " />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 voucherentrysection sltype" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="txtSLHead" class="col-sm-4 control-label">SL&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtSLHead" name="txtSLHead" tabindex="28" placeholder="Enter SL" type="text" maxlength="100" />
+                        <input id="hdnSLId" type="hidden" value="0" />
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="txtSLCode" class="col-sm-4 control-label">SL Code</label>
+                    <div class="col-sm-8">
+                        <input id="txtSLCode" name="txtSLCode" tabindex="29" type="text" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="txtSLBalance" class="col-sm-4 control-label">Ledger Balance</label>
+                    <div class="col-sm-8">
+                        <input id="txtSLBalance" name="txtSLBalance" type="text" tabindex="30" class="form-control input-number " />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 voucherentrysection" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="txtNarration" class="col-sm-4 control-label">Narration&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <textarea id="txtNarration" name="txtNarration" class="form-control" tabindex="10" maxlength="250" style="height:50px;"></textarea>
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="ddlPaymentMode" class="col-sm-4 control-label">Payment Mode&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlPaymentMode" name="ddlPaymentMode" tabindex="4" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="txtAmount" class="col-sm-4 control-label">Amount&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="txtAmount" name="txtAmount" type="text" tabindex="30" class="form-control  input-number right-text" maxlength="20" onkeyup="checkDec(this);" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 voucherentrysection" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="txtChequeRefNo" class="col-sm-4 control-label">Cheque/ Ref. No.</label>
+                    <div class="col-sm-8">
+                        <input id="txtChequeRefNo" name="txtChequeRefNo" type="text" tabindex="30" class="form-control" maxlength="20" />
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="txtChequeRefDate" class="col-sm-4 control-label">Cheque/ Ref. Date</label>
+                    <div class="col-sm-8">
+                        <input id="txtChequeRefDate" name="txtChequeRefDate" type="text" tabindex="30" class="form-control" maxlength="20" />
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="txtValueDate" class="col-sm-4 control-label">Value Date</label>
+                    <div class="col-sm-8">
+                        <input id="txtValueDate" name="txtValueDate" type="text" tabindex="30" class="form-control" maxlength="20" />
+                    </div>
+                </div>
+            
+
+            </div>
+            <div class="col-md-12 voucherentrysection" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="txtDrawnOnBank" class="col-sm-4 control-label">Drawn On Bank</label>
+                    <div class="col-sm-8">
+                        <input id="txtDrawnOnBank" name="txtDrawnOnBank" type="text" tabindex="30" class="form-control" maxlength="20" />
+                    </div>
+                </div>
+                
+                <div class="form-group col-md-6">
+                    <label for="ddlCostCenter" class="col-sm-2 control-label">Cost Center</label>
+                    <div class="col-sm-10">
+                        <select id="ddlCostCenter" name="ddlCostCenter" tabindex="4" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 voucherentrysection" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="txtPO_SONo" class="col-sm-4 control-label">P.O. No.</label>
+                    <div class="col-sm-8">
+                        <input id="txtPO_SONo" name="txtPO_SONo" type="text" tabindex="30" class="form-control" maxlength="20" />
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="txtBillNo" class="col-sm-4 control-label">Bill No.</label>
+                    <div class="col-sm-8">
+                        <input id="txtBillNo" name="txtBillNo" type="text" tabindex="30" class="form-control" maxlength="20" />
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="txtBillDate" class="col-sm-4 control-label">Bill Date</label>
+                    <div class="col-sm-8">
+                        <input id="txtBillDate" name="txtBillDate" type="text" tabindex="30" class="form-control" maxlength="20" />
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-sm-12 col-lg-12 col-md-12 voucherentrysection" style="display:none;">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Add Entry" alt="Add Entry" id="btnAddEntry" onclick="AddVoucherEntry(1)" type="button" border="0">&nbsp;&nbsp;
+                        <input class="btn btn-success" value="Update Entry" style="display:none;" alt="Update Entry" id="btnUpdateEntry" onclick="AddVoucherEntry(2)" type="button" border="0">&nbsp;&nbsp;
+                        <input class="btn btn-success" type="button" id="btnCancelEntry" onclick="ShowHideVoucherEntryPanel(2)" value="Cancel" /> &nbsp;&nbsp;
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="col-sm-12 col-lg-12 col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="txtTotalDebit" class="col-sm-4 control-label">Total Debit</label>
+                    <div class="col-sm-8">
+                        <input id="txtTotalDebit" name="txtTotalDebit" type="text" tabindex="30" class="form-control right-text input-number " maxlength="20" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtTotalCredit" class="col-sm-4 control-label">Total Credit</label>
+                    <div class="col-sm-8">
+                        <input id="txtTotalCredit" name="txtTotalCredit" type="text" tabindex="30" class="form-control right-text input-number " maxlength="20" />
+                    </div>
+                </div>
+            </div> 
+
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <div id="divVoucherEntryList">
+
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-lg-12 col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="ddlApprovalStatus" class="col-md-4 control-label">Save Mode</label>
+                    <div class="col-md-8">
+                        <select id="ddlApprovalStatus" name="ddlApprovalStatus" tabindex="7" class="form-control" onchange="changeSaveMode()">
+                            <option selected="selected" value="Approved">Approved</option>
+                            <option value="Cancel">Cancel</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-md-6" id="txtCancelReasonhide" style="display:none">
+                    <label for="txtCancelReasons" class="col-md-4 control-label">Cancel Reason</label>
+                    <div class="col-md-8">
+                        <textarea class="form-control" id="txtCancelReasons" name="txtCancelReasons" value="0" tabindex="46" rows="4" cols="50" maxlength="500"> </textarea>
+                    </div>
+                </div>
+            </div> 
+            <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                <div class="col-md-3"></div>
+                <div class="col-md-6"> 
+                        <center>
+                            <input class="btn btn-success" value="Submit" alt="Submit" id="btnCancel" onclick="CancelCashVoucher()" type="button" border="0">&nbsp;&nbsp;
+                            <a class="btn btn-success" id="btnList" href="@Url.Content("~/CashVoucher/ListCashVoucher")">Back to Cash Voucher</a>
+                        </center> 
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/Common.js"></script>
+<script src="~/Scripts/CashVoucher/CancelApprovedCashVoucher.js"></script>

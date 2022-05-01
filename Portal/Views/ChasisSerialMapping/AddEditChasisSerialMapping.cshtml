@@ -1,0 +1,250 @@
+﻿@{
+    ViewBag.Title = "Add/Edit Chassis Serial Mapping";
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+<link href="~/Content/lightbox.css" rel="stylesheet" />
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+    /* allow space for check mark */
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/StoreDashboard">Production</a> >> Add/Edit Chassis Serial Mapping </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditProduct" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="txtProductName" class="col-sm-4 control-label">Product Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtProductName" name="txtProductName" tabindex="1" placeholder="Enter Product Name" type="text" maxlength="100" />
+                        <input id="hdnProductId" type="hidden" value="0" />
+                        <input id="hdnchasisSerialMappingId" type="hidden" value="@ViewData["chasisSerialMappingId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" /> 
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtChasisSerialNo" class="col-sm-4 control-label">Chassis Serial No&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="txtChasisSerialNo" name="txtChasisSerialNo" tabindex="2" type="text" placeholder="Enter Chasis Serial No" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtMotorNo" class="col-sm-4 control-label">Motor No&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="txtMotorNo" name="txtMotorNo" type="text" tabindex="3" placeholder="Enter Motor No" maxlength="100" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtControllerNo" class="col-sm-4 control-label">Controller No</label>
+                    <div class="col-sm-8">
+                        <input id="txtControllerNo" name="txtControllerNo" type="text" tabindex="4" placeholder="Enter Controller No" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+            
+                <div class="form-group col-md-4">
+                    <label for="ddlColor" class="col-sm-4 control-label">Color</label>
+                    <div class="col-sm-8">
+                        <select id="ddlColor" name="ddlColor" tabindex="5" class="form-control">
+                            <option value="0">-Select Color-</option>
+                            <option value="Red">Red</option>
+                            <option value="Green">Green</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Maroon">Maroon</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtBatteryPower" class="col-sm-4 control-label">Battery Power</label>
+                    <div class="col-sm-8">
+                        <input id="txtBatteryPower" name="txtBatteryPower" type="text" tabindex="6" placeholder="Enter Battery Power" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtBatterySerialNo1" class="col-sm-4 control-label">Battery Serial No1 </label>
+                    <div class="col-sm-8">
+                        <input id="txtBatterySerialNo1" name="txtBatteryPower" type="text" tabindex="7" placeholder="Enter Battery Serial No1" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtBatterySerialNo2" class="col-sm-4 control-label">Battery Serial No2</label>
+                    <div class="col-sm-8">
+                        <input id="txtBatterySerialNo2" name="txtBatterySerialNo2" type="text" tabindex="8" placeholder="Enter Battery Serial No2" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="txtBatterySerialNo3" class="col-sm-4 control-label">Battery Serial No3</label>
+                    <div class="col-sm-8">
+                        <input id="txtBatterySerialNo3" name="txtBatteryPower" type="text" tabindex="9" placeholder="Enter Battery Serial No3" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtBatterySerialNo4" class="col-sm-4 control-label">Battery Serial No4</label>
+                    <div class="col-sm-8">
+                        <input id="txtBatterySerialNo4" name="txtBatteryPower" type="text" tabindex="10" placeholder="Enter Battery Serial No4" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+           
+                <div class="form-group col-md-4">
+                    <label for="txtTier" class="col-sm-4 control-label">Tyre</label>
+                    <div class="col-sm-8">
+                        <input id="txtTier" name="txtTier" type="text" tabindex="11" placeholder="Enter Tyre" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch</label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch"  tabindex="12" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="checkFrontGlassAvailable" class="col-sm-4 control-label">Front Glass Available</label>
+                    <div class="col-sm-8">
+                        <input type="checkbox" name="chkFrontGlassAvailable" id="chkFrontGlassAvailable" tabindex="12" checked="checked" class="" />
+                        <label style="font-size: 24px;" tabindex="13" for="chkFrontGlassAvailable"></label>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="checkViperAvailable" class="col-sm-4 control-label">Viper Available</label>
+                    <div class="col-sm-8">
+                        <input type="checkbox" name="chkViperAvailable" id="checkViperAvailable" tabindex="13" checked="checked" class="" />
+                        <label style="font-size: 24px;" tabindex="14" for="checkViperAvailable"></label>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="checkRearShockerAvailable" class="col-sm-4 control-label">Rear Shocker Available</label>
+                    <div class="col-sm-8">
+                        <input type="checkbox" name="checkRearShockerAvailable" id="checkRearShockerAvailable" tabindex="12" checked="checked" class="" />
+                        <label style="font-size: 24px;" tabindex="15" for="checkRearShockerAvailable"></label>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="checkChargerAvailable" class="col-sm-4 control-label">Charger Available</label>
+                    <div class="col-sm-8">
+                        <input type="checkbox" name="checkChargerAvailable" id="checkChargerAvailable" tabindex="13" checked="checked" class="" />
+                        <label style="font-size: 24px;" tabindex="16" for="checkChargerAvailable"></label>
+                    </div>
+                </div>
+           
+
+                <div class="form-group col-md-4">
+                    <label for="checkFM" class="col-sm-4 control-label">FM Available</label>
+                    <div class="col-sm-8">
+                        <input type="checkbox" name="checkFM" id="checkFM" tabindex="12" checked="checked" class="" />
+                        <label style="font-size: 24px;" tabindex="17" for="checkFM"></label>
+
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="chkStatus" class="col-sm-4 control-label">Active Status</label>
+                    <div class="col-sm-8">
+                        <input type="checkbox" name="chkStatus" id="chkStatus" checked="checked" class="" />
+                        <label style="font-size: 24px;" tabindex="18" for="chkStatus"></label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="19" onclick="SaveData(1)" type="button" border="0"> 
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="19" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                        <input class="btn btn-success" type="button" id="btnReset" tabindex="20" onclick="ClearFields()" value="Reset" />  
+                        <a class="btn btn-success" id="btnList" tabindex="21" href="@Url.Content("~/ChasisSerialMapping/ListChasisSerial")">Search Chasis Serial</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="21"  role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="22"  data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="22"  data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/lightbox.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/ChasisSerialMapping/AddChasisSerialMapping.js"></script>
+
+<script>
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true
+    })
+    $(document).ready(function () {
+        document.getElementById("txtProductName").focus();
+    });
+</script>

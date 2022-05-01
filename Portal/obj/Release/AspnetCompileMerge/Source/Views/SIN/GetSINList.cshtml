@@ -1,0 +1,132 @@
+﻿@model List<Portal.Core.ViewModel.SINViewModel>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+
+    table tr:nth-child(2n+1) {
+        background-color: #dff0d8;
+    }
+
+    table tr:nth-child(2n) {
+        background-color: #dff0d8;
+    }
+</style>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblSTNList">
+            <thead>
+                <tr>
+                    <th rowspan="3" style="width:71px !important;">Action</th>
+                    <th>SIN No.</th>
+                    <th>SIN Date</th>
+                    <th>Requisition No.</th>
+                    <th>Work Order No.</th>
+                    <th>Location</th>
+                    <th>Received By</th>
+                    <th>From Department</th>
+                    <th>To Department</th>
+                    <th>Ref. No.</th>
+                    <th>Issue Status</th>
+                    <th>Created By User</th>
+                    <th>Created Date</th>
+                    <th>Modified By</th>
+                    <th>Modified Date</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="margin:0px auto;">
+                            <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/SIN/AddEditSIN?sinId=@item.SINId&AccessMode=3"></a>
+                          
+                            @if (item.SINStatus.ToUpper() == "DRAFT")
+                            {
+                              <a style="color:darkgreen" class="fa fa-pencil" title="Modify SIN" href="~/SIN/AddEditSIN?sinId=@item.SINId&AccessMode=2"></a>
+                            }
+                            @if (item.SINStatus.ToUpper()!= "CANCELLED")
+                            {
+                              <a style="color:red;" title="cancel" class="fa fa-times" aria-hidden="true" href="~/SIN/CancelSIN?sinid=@item.SINId&accessmode=4"></a>
+                            }
+                        </td>
+
+                        <td>@item.SINNo</td>
+                        <td>@item.SINDate</td>
+                        <td>@item.RequisitionNo</td>
+                        <td>@item.JobNo</td>
+                        <td>@item.BranchName</td>
+                        <td>@item.EmployeeName</td>
+                        <td>@item.FromLocationName</td>
+                        <td>@item.ToLocationName</td>
+                        <td>@item.RefNo</td>
+                        @if (item.SINStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine">
+                                @item.SINStatus
+                            </td>
+                        }
+                        else if (item.SINStatus.ToUpper() == "CANCELLED")
+                        {
+                            <td style="background-color:red">
+                                @item.SINStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green">
+                                @item.SINStatus
+                            </td>
+
+                        }
+
+
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+                       
+                       
+
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblSTNList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

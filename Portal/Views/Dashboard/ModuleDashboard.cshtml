@@ -1,0 +1,1340 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>PikPart</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/SuperAdminStyles.css" rel="stylesheet" />
+    <link href="~/Content/ModuleStyles.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Content/main.css">
+    <link href="~/Content/dashboard.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Content/hover.css">
+    <link href="~/Content/dashboard-new.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.1.min.js"></script>
+    <link href="~/Content/ModuleDashboard.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/Dashboard/ModuleDashboard.js"></script>
+    <link href='~/Content/fullcalendar.min.css' rel='stylesheet' />
+    <link href='~/Content/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+    <script src='~/Scripts/moment.min.js'></script>
+    <script src='~/Scripts/fullcalendar.min.js'></script>
+    @{
+        if (Session["IsAuthenticated"] == null || Convert.ToBoolean(Session["IsAuthenticated"]) == false)
+        {
+            Session.Abandon();
+            Response.Redirect("~/Home/Login");
+        }
+
+    }
+    
+    @{
+        var parentMenuList = Session["RoleWiseUIMatrix"] as List<Portal.Core.ViewModel.ParentMenu>; 
+    }
+
+
+
+    <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <link href="~/Content/timeout-dialog.css" rel="stylesheet" />
+    <script src="~/Scripts/timeout-dialog.js"></script>
+    <script>
+        $(function () {
+            var fnTimeOut = function () {
+                jQuery.timeoutDialog.setupDialogTimer({
+                    timeout: 7200,
+                    countdown: 300,
+                    logout_redirect_url: '@Url.Action("SignOut", "Home")',
+                    keep_alive_url: '@Url.Action("Keepalive", "Home")'
+                });
+            };
+            fnTimeOut();
+        });
+    </script>
+    @*<script type="text/javascript" src="js/bootstrap.min.js"></script>*@
+    <script>
+        function htmlbodyHeightUpdate() {
+            var height3 = $(window).height()
+            var height1 = $('.nav').height() + 50
+            height2 = $('.main').height()
+            if (height2 > height3) {
+                $('html').height(Math.max(height1, height3, height2) + 10);
+                $('body').height(Math.max(height1, height3, height2) + 10);
+            }
+            else {
+                $('html').height(Math.max(height1, height3, height2));
+                $('body').height(Math.max(height1, height3, height2));
+            }
+
+        }
+        $(document).ready(function () {
+            htmlbodyHeightUpdate()
+            $(window).resize(function () {
+                htmlbodyHeightUpdate()
+            });
+            $(window).scroll(function () {
+                height2 = $('.main').height()
+                htmlbodyHeightUpdate()
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#left-side-menu').mouseover(function () {
+                $('#wrapper').addClass('wrapper-padding');
+            });
+        });
+
+        $(document).ready(function () {
+            $('#left-side-menu').mouseout(function () {
+                $('#wrapper').removeClass('wrapper-padding');
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-submenu a.test').on("click", function (e) {
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+        });
+        $(document).ajaxComplete(function () {
+            jQuery.timeoutDialog.setupDialogTimer();
+        });
+    </script>
+
+    <style>
+        .dropdown-submenu {
+            position: relative;
+        }
+
+            .dropdown-submenu .dropdown-menu {
+                top: 0;
+                left: 100%;
+                margin-top: -1px;
+            }
+
+        .dashboardItemBody {
+            margin: 10px;
+            overflow: hidden;
+        }
+
+        .tbl {
+            border-collapse: collapse;
+            table-layout: auto;
+            width: 100%;
+        }
+
+            .tbl thead th {
+                background-color: #ededed;
+                border-bottom: 1px solid #ededed;
+                color: #444;
+                font-size: 0.9em;
+                font-weight: bold;
+                padding: 5px;
+                text-align: center;
+            }
+
+            .tbl tbody td {
+                border-bottom: 1px solid #ededed;
+                color: #222;
+                font-size: 0.9em;
+                padding: 5px;
+            }
+
+        .dashboardItemHeader {
+            background-color: #dbdbdb;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 11px;
+            padding: 10px 12px;
+        }
+
+        table {
+            margin: 0px;
+        }
+        /*.fc-content-skeleton tr{border:1px solid #ccc!important;padding:1px;}
+           .fc-content-skeleton th{border:1px solid #ccc!important;padding:1px;}
+           .fc-content-skeleton td{border:1px solid #ccc!important;padding:1px;}*/
+        .smallbox1 {
+            min-height: 200px;
+            background-color: #fff;
+            width: 17%;
+            border-radius: 5px;
+        }
+
+        .smallbox2 {
+            min-height: 200px;
+            background-color: #fff;
+            width: 17%;
+            margin-left: 15px;
+            border-radius: 5px;
+        }
+
+        .smallbox3 {
+            min-height: 200px;
+            background-color: #fff;
+            width: 17%;
+            margin-left: 15px;
+            border-radius: 5px;
+        }
+
+        .smallbox4 {
+            min-height: 200px;
+            background-color: #fff;
+            width: 17%;
+            margin-left: 15px;
+            border-radius: 5px;
+        }
+
+        .smallbox5 {
+            min-height: 200px;
+            background-color: #fff;
+            width: 17%;
+            margin-left: 15px;
+            border-radius: 5px;
+        }
+
+        @@media(max-width:767px) {
+
+            .smallbox1 {
+                width: 100% !important;
+                margin-top: 20px;
+            }
+
+            .smallbox2 {
+                width: 100% !important;
+                margin-top: 20px;
+            }
+
+            .smallbox3 {
+                width: 100% !important;
+                margin-top: 20px;
+            }
+
+            .smallbox4 {
+                width: 100% !important;
+                margin-top: 20px;
+            }
+
+            .smallbox5 {
+                width: 100% !important;
+                margin-top: 20px;
+            }
+
+            .upperbox {
+                margin-top: 20px;
+            }
+        }
+
+        <!-- circle css-- >
+        /**
+        * Position icons into circle (SO)
+        * http://stackoverflow.com/q/12813573/1397351
+        */
+        .circle-container {
+            position: relative;
+            width: 24em;
+            height: 24em;
+            padding: 2.8em; /*= 2em * 1.4 (2em = half the width of an img, 1.4 = sqrt(2))*/
+            border: dashed 1px;
+            border-radius: 50%;
+            margin: 1.75em auto 0;
+        }
+
+        .circle-container a {
+            display: block;
+            position: absolute;
+            top: 41%; 
+            left: 43%;
+            <!-- width: 9em; -->
+            margin: -2em; /* 2em = 4em/2 */ /* half the width */
+        }
+
+        .circle-container img {
+            display: block;
+        }
+
+        .deg0 { -webkit-transform:translate(11em) rotate(60deg) rotate(-61deg);
+    margin-top: 37px; } /* 12em = half the width of the wrapper */
+	.deg25 { -webkit-transform:rotate(93deg) translate(12em) rotate(-93deg); }
+.deg45 { -webkit-transform:rotate(55deg) translate(12em) rotate(-59deg); }
+.deg135 { -webkit-transform:rotate(157deg) translate(15em) rotate(-155deg); }
+.deg180 { -webkit-transform:rotate(8deg) translate(-15em) rotate(-8deg); }
+.deg225 { -webkit-transform:rotate(218deg) translate(14em) rotate(-219deg); }
+.deg315 { -webkit-transform:rotate(332deg) translate(12em) rotate(-331deg); }
+ .deg425 {
+    -webkit-transform:rotate(310deg) translate(-15em) rotate(-308deg); }
+.deg515{ -webkit-transform:rotate(211deg) translate(2em) rotate(150deg);
+    margin-top: -20%; }
+.deg610{ -webkit-transform:rotate(150deg) translate(12em) rotate(209deg); }
+.deg290{ -webkit-transform:rotate(295deg) translate(11em) rotate(70deg); }
+        /* this is just for showing the angle on hover */
+        .circle-container a:not(.center):before {
+            position: absolute;
+            width: 4em;
+            color: white;
+            opacity: 0;
+            background: rgba(0,0,0,.5);
+            font: 1.25em/3.45 Courier, monospace;
+            letter-spacing: 2px;
+            text-decoration: none;
+            text-indent: -2em;
+            text-shadow: 0 0 .1em deeppink;
+            transition: .7s; /* only works in Firefox */
+            content: attr(class)'°';
+            display: none;
+        }
+
+        .circle-container a:hover:before {
+            opacity: 1;
+        }
+
+        /* this is for showing the circle on which the images are placed */
+        .circle-container:after {
+            position: absolute;
+            top: 2.8em;
+            left: 2.8em;
+            width: 24em;
+            height: 24em;
+            border: dashed 1px deeppink;
+            border-radius: 50%;
+            opacity: 0;
+            pointer-events: none;
+            content: '';
+        }
+
+        .circle-container:hover:after {
+            opacity: 0;
+        }
+
+        .circle-container a:not(.center):after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            box-shadow: 0 0 .5em .5em white;
+            margin: -2px;
+            background: deeppink;
+            opacity: .3;
+            content: '';
+        }
+
+        .circle-container:hover a:after {
+            opacity: 1;
+        }
+
+        .circle-container a:hover:after {
+            opacity: .3;
+        }
+
+        .mob-box {
+            margin-top: 20px;
+        }
+
+        .mob-grid {
+            display: none;
+        }
+
+        @@media(max-width:767px) {
+            .market-update-gd {
+                width: 100%;
+                float: none;
+            }
+
+            .first-box {
+                margin-left: 0px;
+            }
+
+            .head-phone {
+                color: #480dfd;
+                font-size: 17px;
+                position: absolute;
+                right: 207px;
+                top: 8px;
+            }
+
+            .popular-bran-right h3 {
+                margin-top: 29px;
+            }
+
+            .blank {
+                display: none;
+            }
+
+            .climate-grids {
+                width: 100%;
+                margin-left: 0px;
+            }
+
+            .mob-grid {
+                display: block;
+                width: 100%;
+                
+            }
+            .mob-box{padding-right:0px!important;
+                padding-left:0px!important;}
+            #page-content-wrapper {
+                display: none;
+            }
+
+            #wrapper {
+                padding-top: 44px;
+            }
+
+            .btn-primary {
+                margin-top: 10px !important;
+                padding: 0px;
+                margin: 0px;
+                width: 65px;
+                border-radius: 2px;
+                margin-left: 13px;
+            }
+
+            .icon-size {
+                font-size: 35px;
+                float: left;
+            }
+
+            .text-left {
+                margin-top: 0px;
+            }
+
+            .navbar-nav .open .dropdown-menu > li > a {
+                line-height: 0px;
+                font-size: 13px;
+            }
+
+            .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+                color: #000;
+            }
+        }
+
+        .top-head p {
+            color: #000 !important;
+            font-size: 15px;
+            margin-top: 5px;
+            padding: 3px 0;
+        }
+
+        span {
+            position: static;
+            text-indent: initial;
+        }
+
+        a {
+            text-decoration: none !important;
+            color: #000 !important;
+        }
+
+            a:hover {
+                color: #00c6ff !important;
+            }
+
+        <!-- pie chart-- >
+        /* isotope transition */
+        .isotope,
+        .isotope .isotope-item {
+            /* change duration value to whatever you like */
+            -webkit-transition-duration: 0.3s;
+            -moz-transition-duration: 0.3s;
+            -ms-transition-duration: 0.3s;
+            -o-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+        }
+
+        .isotope {
+            -webkit-transition-property: height, width;
+            -moz-transition-property: height, width;
+            -ms-transition-property: height, width;
+            -o-transition-property: height, width;
+            transition-property: height, width;
+        }
+
+            .isotope .isotope-item {
+                -webkit-transition-property: -webkit-transform, opacity;
+                -moz-transition-property: -moz-transform, opacity;
+                -ms-transition-property: -ms-transform, opacity;
+                -o-transition-property: -o-transform, opacity;
+                transition-property: transform, opacity;
+                width: 98%;
+            }
+
+                /**** disabling Isotope CSS3 transitions ****/
+                .isotope.no-transition,
+                .isotope.no-transition .isotope-item,
+                .isotope .isotope-item.no-transition {
+                    -webkit-transition-duration: 0s;
+                    -moz-transition-duration: 0s;
+                    -ms-transition-duration: 0s;
+                    -o-transition-duration: 0s;
+                    transition-duration: 0s;
+                }
+
+
+        .panel-body > .full-line {
+            margin-right: -15px;
+            margin-left: -15px;
+            border-radius: 0 !important;
+            border-right: none;
+            border-left: none;
+        }
+
+            .panel-body > .full-line:first-child:not(.panel-body-heading) {
+                margin-top: -15px;
+                border-top: none;
+            }
+
+            .panel-body > .full-line:last-child {
+                margin-bottom: -15px;
+                border-bottom: none;
+            }
+
+        .panel-body-heading {
+            position: relative;
+            display: block;
+            color: inherit;
+            padding: 15px 15px 0 15px;
+        }
+
+        a.panel-body-heading:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .panel-body > .panel-body-heading {
+            padding: 0;
+        }
+
+        .panel-body-heading.bordered {
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+            margin-bottom: 10px;
+        }
+
+        .panel-body > .panel-body-heading.full-line {
+            margin-right: -15px;
+            margin-left: -15px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .panel-body-heading:after {
+            clear: both;
+            display: table;
+            content: '';
+        }
+
+        .panel-body-heading .pb-object {
+            float: left;
+            vertical-align: middle;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+            .panel-body-heading .pb-object.pb-object-circle img {
+                border-radius: 23px;
+            }
+
+            .panel-body-heading .pb-object img {
+                width: 46px;
+                height: 46px;
+            }
+
+            .panel-body-heading .pb-object .pbo-icon {
+                font-size: 46px;
+                line-height: 46px;
+            }
+
+            .panel-body-heading .pb-object.pb-object-sm .pbo-icon {
+                font-size: 32px;
+                line-height: 32px;
+                vertical-align: middle;
+                margin-top: -9px;
+            }
+
+            .panel-body-heading .pb-object.pb-object-sm img {
+                margin-top: -6px;
+                width: 32px;
+                height: 32px;
+                vertical-align: middle;
+            }
+
+        .panel-body-heading .pb-title {
+            color: #fff;
+            font-size: 18px;
+            margin: 0;
+            max-width: 80%;
+            overflow: hidden;
+            padding: 0 0 11px;
+            position: relative;
+            text-overflow: ellipsis;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+            .panel-body-heading .pb-title.pb-title-sm {
+                font-weight: normal;
+                font-size: 14px;
+            }
+
+            .panel-body-heading .pb-title > strong {
+                font-weight: 400;
+            }
+
+            .panel-body-heading .pb-title > small {
+                display: block;
+                font-size: 14px;
+                line-height: 24px;
+                font-weight: 300;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .panel-body-heading .pb-title.pb-title-sm > small {
+                display: inline;
+                padding-left: 5px;
+                font-weight: normal;
+                font-size: .8em;
+            }
+
+        .panel-body-heading .pb-watermark {
+            position: absolute;
+            right: 15px;
+            bottom: -10px;
+            font-size: 68px;
+            color: rgba(0, 0, 0, .05);
+            -webkit-transform: rotate(-20deg);
+            -moz-transform: rotate(-20deg);
+            -ms-transform: rotate(-20deg);
+            -o-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+            .panel-body-heading .pb-watermark.pb-watermark-sm {
+                font-size: 46px;
+            }
+
+        .panel-body-heading .pb-actions {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            visibility: hidden;
+            opacity: 0;
+            z-index: 4;
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -ms-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+        }
+
+        .panel-body > .panel-body-heading .pb-actions {
+            right: 0;
+            top: -5px;
+        }
+
+        .panel-body > .panel-body-heading.full-line .pb-actions {
+            right: 15px;
+        }
+        /* Landscape tablet & small desktop */
+        @@media (max-width: 1024px) {
+            .panel-body-heading .pb-actions {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        .panel:hover .panel-body-heading .pb-actions {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .panel-body-heading .pb-actions .btn.btn-icon {
+            color: inherit;
+            top: 6px;
+            padding: 0 5px;
+            line-height: 1 !important;
+            font-size: 1.2em;
+        }
+
+        /* panel tags, only available on panel-body */
+        .panel-body > .panel-tags {
+            position: absolute;
+            top: 40px;
+            right: -4px;
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -ms-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+            z-index: 99;
+        }
+
+        .panel:hover .panel-body > .panel-tags:hover {
+            -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.125);
+            -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.125);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.125);
+        }
+
+        .panel-body > .panel-tags .panel-tag-item {
+            position: relative;
+            display: none;
+            /*float: right;*/
+            width: 120px;
+            line-height: 26px;
+            padding: 0 10px;
+            color: inherit;
+            text-decoration: none;
+            text-align: right;
+            font-size: .8em;
+            background-color: #ecf0f1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -ms-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+        }
+
+        .panel-body > .panel-tags:hover .panel-tag-item {
+            background-color: #ffffff;
+            display: block;
+        }
+
+        .panel:hover .panel-body > .panel-tags .panel-tag-item:hover {
+            color: #3498db;
+            background-color: #ecf0f1;
+        }
+
+        .panel-body > .panel-tags .panel-tag-item:first-child {
+            display: block;
+        }
+
+        .panel:hover .panel-body > .panel-tags .panel-tag-item:first-child {
+            -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.125);
+            -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.125);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.125);
+        }
+
+        .panel-body > .panel-tags:hover .panel-tag-item:first-child {
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+        }
+
+        .panel-body > .panel-tags .panel-tag-item .pt-border {
+            position: absolute;
+            display: block;
+            right: 0;
+            width: 4px;
+            background-color: #3498db;
+            height: 26px;
+        }
+
+        .kits-media img {
+            width: 100%;
+            height: auto;
+        }
+
+        .kits-embed {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            padding-top: 25px;
+            height: 0;
+        }
+
+            .kits-embed object,
+            .kits-embed embed,
+            .kits-embed iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+
+
+
+        /**
+        * Tabs
+        */
+        .tab-content {
+            margin-top: 20px;
+        }
+
+        .magic-layout, .col-md-6 {
+            padding: 0px;
+        }
+
+        .panel {
+            background: transparent;
+        }
+
+        .first-box {
+            background-color: #fff;
+            min-height: 450px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            margin-left: 45px;
+        }
+
+        .head-phone {
+            position: absolute;
+            right: 210px;
+            font-size: 19px;
+            top: 23px;
+            color: #480dfd;
+        }
+        <!-- end chart-- >
+    </style>
+</head>
+<body>
+    <!--/.nav-collapse -->
+    <nav class="navbar navbar-default navbar-fixed-top menu-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*<a href="http://www.ic3technologies.in/" target="_blank" title="PikPart">
+                    <img src="~/Images/Pikpartlogo.jpg" style="float: left; width: 78px;margin-top:0px;" />
+                </a>*@
+                <a class="navbar-brand none" href="#" style="color:#fff; font-weight:bold;">
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="head-phone">
+                    <img src="~/Images/phone.png" width="34px" /><strong>&nbsp;89 2985 2839</strong>
+                </div>
+                <ul class="nav navbar-nav navbar-right uder-dash">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle navbar-user" href="javascript:;">
+                            <img class="img-circle" src="~/Images/UserImages/@(Convert.ToString(Session["UserPicName"])==""?"ProfilePic.png":Session["UserPicName"])" width="50" height="50">
+                            <span class="hidden-xs">@(Session["UserFullName"] != null ? Session["UserFullName"] : "")</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu pull-right-xs">
+                            <li><a href="~/Home/ChangePassword">Change Password</a></li>
+                            <li class="divider"></li>
+                            <li><a href="~/Home/SignOut">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--/.nav-collapse -->
+    <!--nav sidebar -->
+    <div id="wrapper">
+        <!--start body content -->
+        <div id="page-content-wrapper">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="col-md-12 col-sm-12 rhtdash" style="margin-bottom:15px;">
+
+                        <div class="col-md-6 first-box">
+                            <div class="row top-head" style="margin:-2px; visibiliy:hidden; background:transparent; color:#000; font-weight:bold;">
+                                <div class="col-md-12"><p></p></div>
+                            </div>
+                            <!-- content to be placed inside <body>…</body> -->
+                            <div class='circle-container'>
+                                @if (parentMenuList != null && parentMenuList.Count > 0)
+                                {
+                                    foreach (var item in parentMenuList.GroupBy(g => g.InterfaceType).Select(s => s.First()).ToList())
+                                    {
+                                        switch (item.InterfaceType)
+                                        {
+                                            case "ADMIN":
+                                                {
+                                                    <a href='@Url.Content("~/Dashboard/AdminDashboard")' class='deg0'><img src='~/Images/erpadmin.png' class="img-responsive"></a>
+                                                    @*<a href='@Url.Content("~/Dashboard/EssDashboard")' class='deg225'><img src='~/Images/admin1.png' class="img-responsive"></a>*@
+                                                  break;
+                                                 }
+                                case "CRM":
+                                    {
+                                        <a href='@Url.Content("~/Dashboard/CRMDashboard")' class='deg45'><img src='/Images/erpcrm.png' class="img-responsive"></a>
+                                                    break;
+                                                }
+                                            case "SALE":
+                                                {
+
+                                                    <a href='@Url.Content("~/Dashboard/SaleDashboard")' class='deg135'><img src='/Images/erpsales.png' class="img-responsive"></a>
+                                                    break;
+                                                }
+                                            case "PURCHASE":
+                                                {
+                                                    <a href='@Url.Content("~/Dashboard/PurchaseDashboard")' class='deg180'><img src='~/Images/erppurchase.png' class="img-responsive"></a>
+                                                    break;
+                                                }
+                                            case "PRODUCTION":
+                                                {
+                                                    <a href='@Url.Content("~/Dashboard/StoreDashboard")' class='deg225'><img src='~/Images/erpproduction.png' class="img-responsive"></a>
+                                                    break;
+                                                }
+                                            case "INVENTORY":
+                                                {
+                                                    <a href='@Url.Content("~/Dashboard/InventoryDashboard")' class='deg315'><img src='~/Images/erpinventory.png' class="img-responsive"></a>
+                                                    break;
+                                                }
+
+                                            case "PAYROLL":
+                                                {
+                                                    <a href='@Url.Content("~/Dashboard/PayrollDashboard")' class='deg25'><img src='~/Images/payroll.png' class="img-responsive"></a>
+                                                    break;
+                                                }
+
+                                            case "HR":
+                                                {
+                                                    <a href='@Url.Content("~/Dashboard/HRDashboard")' class='deg425'><img src='~/Images/erphr.png' class="img-responsive"></a>
+                                                    break;
+                                                }
+
+                                            case "ACCOUNT":
+                                                {
+                                                    <a href='@Url.Content("~/Dashboard/AccountDashboard")' class='deg515'><img src='~/Images/acc.png' class="img-responsive"></a>
+                                                    break;
+                                                }
+
+
+
+                                        }
+                                    }
+                                }
+                                <a href='@Url.Content("~/Dashboard/EssDashboard")' class='deg290'><img src='~/Images/erpess.png' class="img-responsive"></a>
+                                <a href='#' class='center'><img src='~/Images/Pikpartlogo.jpg' class="img-responsive" style="width:166px;margin-top:0px; margin-left:-43px;"></a>
+
+                                <!--<a href='#' class='deg610'><img src='img/icon7.png' class="img-responsive"></a>-->
+                            </div>
+
+                        </div>
+                        <div class="col-md-5 upperbox" style="min-height: 415px; margin-left:10px;">
+                            <div class="row">
+                                <div class="col-md-12" style="min-height:205px; background-color: #fff; border-radius:5px;">
+                                    <div class="row top-head" style="margin:-2px; visibiliy:hidden; background:transparent; color:#000;">
+                                        <div class="col-md-12"><p><strong>Quick Links</strong></p></div>
+                                        <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4" style="padding:0px; margin:0px;">
+                                            <ul style="list-style:none; line-height:35px;margin-left:20px;">
+                                                <li><a href="@Url.Content("~/Product/AddEditProduct")" target="_blank"><span><i class="fa fa-product-hunt fa-3" aria-hidden="true"></i></span>&nbsp;Products</a></li>
+                                                <li><a href="@Url.Content("~/Lead/AddEditLead")" target="_blank"><span><i class="fa fa-handshake-o fa-3" aria-hidden="true"></i></span>&nbsp;&nbsp;Leads</a></li>
+                                                <li><a href="@Url.Content("~/SaleInvoice/AddEditSaleInvoice")" target="_blank"><span><i class="fa fa-print fa-3" aria-hidden="true"></i></span>&nbsp;&nbsp;Sale Invoice</a></li>
+                                                <li><a href="@Url.Content("~/PurchaseInvoice/AddEditPI?accessMode=1")" target="_blank"><span><i class="fa fa-print fa-3" aria-hidden="true"></i></span>&nbsp;&nbsp;Purchase Invoice</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4" style="padding:0px; margin-top:0px;">
+                                            <ul style="list-style:none; line-height:35px;margin-left:15px;">
+                                                <li><a href="@Url.Content("~/STN/AddEditSTN")" target="_blank"><span><i class="fa fa-book fa-3" aria-hidden="true"></i></span>&nbsp;Stock</a></li>
+                                                <li><a href="@Url.Content("~/Customer/AddEditCustomer")" target="_blank"><span><i class="fa fa-user-plus fa-3" aria-hidden="true"></i></span>&nbsp;Customers</a></li>
+                                                <li><a href="@Url.Content("~/Vendor/AddEditVendor?accessMode=1")" target="_blank"><span><i class="fa fa-user fa-3" aria-hidden="true"></i></span>&nbsp;&nbsp;Vendor</a></li>
+                                                <li><a href="@Url.Content("~/User/AddEditUser")" target="_blank"><span><i class="fa fa-user-plus fa-3" aria-hidden="true"></i></span>&nbsp;&nbsp;Users </a></li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4" style="padding:0px; margin:0px;">
+                                            <ul style="list-style:none; line-height:35px;margin-left:15px">
+                                                <li><a href="@Url.Content("~/StockLedger/PrintStockLedger")" target="_blank"><span><i class="fa fa-book fa-3" aria-hidden="true"></i></span>&nbsp;Stock Ledger</a></li>
+                                                <li><a href="@Url.Content("~/SO/AddEditSO")" target="_blank"><span><i class="fa fa-print fa-3" aria-hidden="true"></i></span>&nbsp;&nbsp;Sale Order</a></li>
+                                                <li><a href="@Url.Content("~/PO/AddEditPO?accessMode=1")" target="_blank"><span><i class="fa fa-print fa-3" aria-hidden="true"></i></span>&nbsp;&nbsp;Purchase Order</a></li>
+                                                <li><a href="@Url.Content("~/Role/AddEditRole")" target="_blank"><span><i class="fa fa-user-plus fa-3" aria-hidden="true"></i></span>&nbsp;&nbsp;Roles</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-12" style="margin-top:10px;">
+                                    <div class="row">
+                                        <div class="col-md-12" style="min-height:231px; background-color: #fff; border-radius:5px;">
+                                            <div class="row top-head" style="margin:-2px; visibiliy:hidden; background:transparent; color:#000;">
+                                                <div class="col-md-12"><p><strong>WELCOME TO PIKPART</strong></p></div>
+                                                @*<div class="col-md-4 col-xs-4 col-sm-4 col-lg-4" style="padding:0px; margin:0px;">
+
+                                                    <img src="~/Images/tree.png" width="150px" />
+
+                                                </div>*@
+                                                <div class="col-md-8 col-xs-8 col-sm-8 col-lg-8" style="padding:0px; margin-top:0px; margin-left: 3%;text-align:justify;line-height:1.5em;">
+                                                    The Idea of introducing Pikpart not come over night it has taken lot of year's of research and time. We are fortunate to have such a great team behind this game changing concept of Two Wheeler service. The ideology of starting Pikpart Service Center is to provide a platform to customer's where they can get best of  Service and repair for their two wheeler in affordable price and an unforgettable experience.
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-12" style="padding: 28px;padding-top: 0; padding-bottom: 0; padding-right: 53px;">
+                            <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4" style="padding-right: 0px;">
+                                <div class="panel panel-default magic-element isotope-item" style="background:#fff;min-height: 247px;">
+                                    <div class="panel-body-heading bg-success" style="background:#68AE00;">
+                                        <h3 class="pb-title">Thoughts</h3>
+                                    </div>
+                                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4" style="padding-right: 0px;">
+                                <div class="panel panel-default magic-element isotope-item" style="background:#fff; min-height: 247px;">
+                                    <div class="panel-body-heading bg-success" style="background:#3498db;">
+                                        <h3 class="pb-title">Sticky Notes</h3>
+                                    </div>
+                                    <div id="divSticker" class="chart" style="position: relative;  height:180px;">
+                                        <textarea class="form-control" id="txtStickyNoteMessage" name="txtStickyNoteMessage" style="margin-top: 0px; margin-bottom: 0px; height: 200px;" tabindex="1" rows="16" cols="50" placeholder="Enter Sticky Note Message" maxlength="500"></textarea>
+
+                                        <input id="hdnStickyNoteId" type="hidden" value="0" />
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4" style="padding-right: 0px;">
+                                <div class="panel panel-default magic-element isotope-item" style="background:#fff; min-height: 247px;">
+                                    <div class="panel-body-heading bg-success" style="background:#b200ff;">
+                                        <h3 class="pb-title">Time Zone</h3>
+                                    </div>
+                                    <div id="divSticker" class="chart" style="position: relative;  height:180px; text-align:center;">
+
+                                        <canvas id="canvas" width="180" height="180"
+                                                style="background-color:transparent;"></canvas>
+                                        <script>
+                                            var canvas = document.getElementById("canvas");
+                                            var ctx = canvas.getContext("2d");
+                                            var radius = canvas.height / 2;
+                                            ctx.translate(radius, radius);
+                                            radius = radius * 0.90
+                                            setInterval(drawClock, 1000);
+
+                                            function drawClock() {
+                                                drawFace(ctx, radius);
+                                                drawNumbers(ctx, radius);
+                                                drawTime(ctx, radius);
+                                            }
+
+                                            function drawFace(ctx, radius) {
+                                                var grad;
+                                                ctx.beginPath();
+                                                ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+                                                ctx.fillStyle = 'white';
+                                                ctx.fill();
+                                                grad = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05);
+                                                grad.addColorStop(0, '#333');
+                                                grad.addColorStop(0.5, 'white');
+                                                grad.addColorStop(1, '#333');
+                                                ctx.strokeStyle = grad;
+                                                ctx.lineWidth = radius * 0.1;
+                                                ctx.stroke();
+                                                ctx.beginPath();
+                                                ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI);
+                                                ctx.fillStyle = '#333';
+                                                ctx.fill();
+                                            }
+
+                                            function drawNumbers(ctx, radius) {
+                                                var ang;
+                                                var num;
+                                                ctx.font = radius * 0.15 + "px arial";
+                                                ctx.textBaseline = "middle";
+                                                ctx.textAlign = "center";
+                                                for (num = 1; num < 13; num++) {
+                                                    ang = num * Math.PI / 6;
+                                                    ctx.rotate(ang);
+                                                    ctx.translate(0, -radius * 0.85);
+                                                    ctx.rotate(-ang);
+                                                    ctx.fillText(num.toString(), 0, 0);
+                                                    ctx.rotate(ang);
+                                                    ctx.translate(0, radius * 0.85);
+                                                    ctx.rotate(-ang);
+                                                }
+                                            }
+
+                                            function drawTime(ctx, radius) {
+                                                var now = new Date();
+                                                var hour = now.getHours();
+                                                var minute = now.getMinutes();
+                                                var second = now.getSeconds();
+                                                //hour
+                                                hour = hour % 12;
+                                                hour = (hour * Math.PI / 6) +
+                                                (minute * Math.PI / (6 * 60)) +
+                                                (second * Math.PI / (360 * 60));
+                                                drawHand(ctx, hour, radius * 0.5, radius * 0.07);
+                                                //minute
+                                                minute = (minute * Math.PI / 30) + (second * Math.PI / (30 * 60));
+                                                drawHand(ctx, minute, radius * 0.8, radius * 0.07);
+                                                // second
+                                                second = (second * Math.PI / 30);
+                                                drawHand(ctx, second, radius * 0.9, radius * 0.02);
+                                            }
+
+                                            function drawHand(ctx, pos, length, width) {
+                                                ctx.beginPath();
+                                                ctx.lineWidth = width;
+                                                ctx.lineCap = "round";
+                                                ctx.moveTo(0, 0);
+                                                ctx.rotate(pos);
+                                                ctx.lineTo(0, -length);
+                                                ctx.stroke();
+                                                ctx.rotate(-pos);
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="market-updates" style="clear:both; margin-top:10px;margin-left:45px;">
+
+
+                            @*<div class="market-updates">
+
+                                    <div class="magic-layout isotope">
+                                        <div class="col-md-6" style="width:48%;">
+                                            <div class="panel panel-default magic-element isotope-item" style="background:#fff;">
+                                                <div class="panel-body-heading bg-primary" style="background:#68AE00;">
+                                                    <h3 class="pb-title">Calendar</h3>
+                                                </div>
+                                                <div id="divCalendar" class="chart" style="position: relative; height:310px;">
+
+                                                </div>
+                                            </div><!-- /panel -->
+                                        </div>
+                                        <div class="col-md-6" style="width:49%;">
+                                            <div class="panel panel-default magic-element isotope-item" style="background:#fff;">
+                                                <div class="panel-body-heading bg-success" style="background:#FC8213;">
+                                                    <h3 class="pb-title">&nbsp;</h3>
+                                                </div>
+                                                <div id="divSticker" class="chart" style="position: relative;  height:330px;">
+
+                                                    <img src="~/Images/makeindia.jpg" height="330px" width="100%" alt="Make In India" />
+                                                </div>
+                                            </div>
+
+                                        </div><!-- /panel -->
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                    <div class="clearfix"> </div>
+                                    <!-- /panel -->
+                                </div>*@
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="copy" style="width:100%; text-align:center; position:static; bottom:10px; padding-top:25px;">
+            @*<span style="font-size: 11px;color:#888;">Copyright © HTS Solutions Inc 2017 All Rights Reserved. </span>*@
+
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <!--Start Module Dashboard Mobile View-->
+    <div class="container mob-grid" style="background-color:#fff; margin-top:32px;">
+        <div class="row top-head" style="margin:-2px; visibiliy:hidden; background:transparent; color:#000; font-weight:bold;">
+            <div class="col-md-12"><center><p>Welcome</p></center></div>
+        </div>
+
+            <div class="row">
+    <div class="col-xs-4 mob-box">
+        <a href='@Url.Content("~/Dashboard/EssDashboard")'><img src='~/Images/erpess.png' class="img-responsive"></a>
+    </div>
+
+    @if (parentMenuList != null && parentMenuList.Count > 0)
+    {
+        foreach (var item in parentMenuList.GroupBy(g => g.InterfaceType).Select(s => s.First()).ToList())
+        {
+            switch (item.InterfaceType)
+            {
+                case "ADMIN":
+                    {
+                        <div class="col-xs-4 mob-box">
+                            <a href='@Url.Content("~/Dashboard/AdminDashboard")'><img src='~/Images/erpadmin.png' class="img-responsive"></a>
+                        </div>
+                        @*<a href='@Url.Content("~/Dashboard/EssDashboard")' class='deg225'><img src='~/Images/admin1.png' class="img-responsive"></a>*@
+            break;
+        }
+    case "CRM":
+        {
+            <div class="col-xs-12 mob-box">
+                <a href='@Url.Content("~/Dashboard/CRMDashboard")'><img src='/Images/erpcrm.png' class="img-responsive"></a>
+            </div>
+
+                        break;
+                    }
+
+            case "SALE":
+            {
+
+            <div class="col-xs-4 mob-box">
+                <a href='@Url.Content("~/Dashboard/SaleDashboard")'><img src='/Images/erpsales.png' class="img-responsive"></a>
+            </div>
+            break;
+            }
+
+            case "PURCHASE":
+            {
+            <div class="col-xs-4 mob-box">
+                <a href='@Url.Content("~/Dashboard/PurchaseDashboard")'><img src='~/Images/erppurchase.png' class="img-responsive"></a>
+            </div>
+            break;
+            }
+            case "STORE":
+            {
+            <div class="col-xs-4 mob-box">
+                <a href='@Url.Content("~/Dashboard/StoreDashboard")'><img src='~/Images/erpproduction.png' class="img-responsive"></a>
+            </div>
+
+            break;
+            }
+
+            case "INVENTORY":
+            {
+
+            <div class="col-xs-4 mob-box">
+                <a href='@Url.Content("~/Dashboard/InventoryDashboard")'><img src='~/Images/erpinventory.png' class="img-responsive"></a>
+            </div>
+                        break;
+                    }
+                case "PAYROLL":
+                    {
+
+                        <div class="col-xs-4 mob-box">
+                            <a href='@Url.Content("~/Dashboard/PayrollDashboard")'><img src='~/Images/payroll.png' class="img-responsive"></a>
+                        </div>
+                        break;
+                    }
+
+                case "HR":
+                    {
+            <div class="col-xs-4 mob-box">
+                <a href='@Url.Content("~/Dashboard/HRDashboard")'><img src='~/Images/erphr.png' class="img-responsive"></a>
+            </div>
+            break;
+            }
+
+            case "ACCOUNT":
+            {
+            <div class="col-xs-4 mob-box">
+                <a href='@Url.Content("~/Dashboard/AccountDashboard")'><img src='~/Images/acc.png' class="img-responsive"></a>
+            </div>
+
+            break;
+            }
+            }
+            }
+            }
+        </div>
+
+            <div class="row">
+                <div class="market-updates" style="clear:both; margin-top:10px;">
+                    <div class="col-md-3 market-update-gd">
+                        <div class="market-update-block clr-block-1">
+                            <div class="col-md-8 col-xs-8  market-update-left">
+                                <h3>@ViewData["TotalUsersCount"]</h3>
+                                <h4>Registered User(s)</h4>
+                                <p>Total Registered Users</p>
+                            </div>
+                            <div class="col-md-4 col-xs-4 market-update-right">
+                                <i class="fa fa-file-text-o"> </i>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 market-update-gd">
+                        <div class="market-update-block clr-block-2">
+                            <div class="col-md-8 col-xs-8 market-update-left">
+                                <h3><i style="font-size: 30px;color: aliceblue;" class="fa fa-inr">&nbsp;</i><label id="lblTodayPISum" style="color: white; font-size: 33px;"></label></h3>
+                                <h4>Today's Purchase</h4>
+                                <p>Today Purchase Invoice Value</p>
+                            </div>
+                            <div class="col-md-4 col-xs-4 market-update-right">
+                                <i class="fa fa-eye"> </i>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 market-update-gd">
+                        <div class="market-update-block clr-block-3">
+                            <div class="col-md-8 col-xs-8 market-update-left">
+                                <h3><i style="font-size: 30px;color: aliceblue;" class="fa fa-inr">&nbsp;</i><label id="lblSiSumAmount" style="color: white; font-size: 33px;"></label></h3>
+                                <h4>Today's Sale</h4>
+                                <p>Today Sale Invoice Value</p>
+                            </div>
+                            <div class="col-md-4 col-xs-4 market-update-right">
+                                <i class="fa fa-envelope-o"> </i>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 climate-grids" style="background:#fff; padding-right: 0; top: 14px;">
+                        <div class="climate-grid3">
+                            <div class="popular-brand">
+                                <div class="col-md-6 col-xs-6 popular-bran-left">
+                                    <h3 style="font-size: 2.1em; margin-top: 30px;">Total Products</h3>
+                                    @*<h4>New Product</h4>
+                                        <p>Best Product Details</p>*@
+                                </div>
+                                <div class="col-md-6 col-xs-6 popular-bran-right">
+                                    <h3>@ViewData["totalProductCount"]</h3>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="copy" style="width:100%; text-align:center; clear:both; padding-top:25px;">
+                        <span style="font-size: 11px; font-weight: bold; color: rgb(68, 68, 68);">Copyright &copy; HTSERP 2017 All Rights Reserved. </span>
+
+                    </div>
+                    <div class="clearfix"> </div>
+
+
+                </div>
+
+            </div>
+        </div>
+        <!--End Module Dashboard Mobile View-->
+    </body>
+    <!-- Modal -->
+    <div class="modal fade" id="alertModel" role="dialog">
+        <div class="modal-dialog  modal-sm">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="modelHeader"></h4>
+                </div>
+                <div class="modal-body">
+                    <p id="modelText"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--end body content -->
+</html>

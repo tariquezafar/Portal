@@ -1,0 +1,9 @@
+12:13:22 PM
+Source : Portal.Controllers.RoasterController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'roasterId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetRoasterWeekList(System.Collections.Generic.List`1[Portal.Core.ViewModel.HR_RoasterWeekViewModel], Int32)' in 'Portal.Controllers.RoasterController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+--------------------------------------------------------------------------------------------------------------------------------
+

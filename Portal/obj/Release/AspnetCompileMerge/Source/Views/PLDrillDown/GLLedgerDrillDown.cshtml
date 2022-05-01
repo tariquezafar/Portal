@@ -1,0 +1,188 @@
+﻿@model Portal.Core.ViewModel.GLDrillDownViewModel
+@{
+    ViewBag.Title = "GL Ledger Drill-Down";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AccountDashboard">Account </a> >> GL Ledger Drill-Down</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmBankBookPrint" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-12">
+                    <label for="rdoReportLevel" class="col-sm-2 control-label">Report Level</label>
+                    <div class="col-sm-8">
+                        <label style="font-weight:bold;"><input type="radio" id="rdoMainGroup" name="ReportLevel" value="MainGroup" /> &nbsp;&nbsp;Main Group Wise</label>
+                        &nbsp;&nbsp; &nbsp;&nbsp;
+                        <label style="font-weight:bold;"><input type="radio" id="rdoSubGroup" name="ReportLevel" value="SubGroup" /> &nbsp;&nbsp;Sub Group Wise</label>
+                        &nbsp;&nbsp; &nbsp;&nbsp;
+                        <label style="font-weight:bold;background-color:aquamarine;"><input type="radio" checked="checked"  id="rdoGLTrial" name="ReportLevel" value="GLWise" /> &nbsp;&nbsp;General Ledger Wise</label>
+                        &nbsp;&nbsp; &nbsp;&nbsp;
+                        <label style="font-weight:bold"><input type="radio" id="rdoSLTrial" name="ReportLevel" value="SLWise" /> &nbsp;&nbsp;Sub Ledger Wise</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtFromDate" class="col-sm-4 control-label">From Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtFromDate" name="txtFromDate" tabindex="2" value="@ViewData["fromDate"]" type="text" maxlength="50" />
+                        <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["fromDate"]" type="hidden" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtToDate" class="col-sm-4 control-label">To Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtToDate" name="txtToDate" tabindex="3" value="@ViewData["toDate"]" type="text" maxlength="50" />
+                        <input id="hdnToDate" name="hdnToDate" value="@ViewData["toDate"]" type="hidden" />
+                    </div>
+                </div>
+            </div>
+            <div class="row col-sm-12 col-lg-12 col-md-12">
+                <div class="col-md-3">
+                    @if (Convert.ToString(ViewData["startInterface"]) == "MainGroup" || Convert.ToString(ViewData["startInterface"]) == "SubGroup" || Convert.ToString(ViewData["startInterface"]) == "GLWise")
+                    {
+                        <a class="btn btn-success" href="~/TBDrillDown/GLWiseTBDrillDown?ReportLevel=GLWise&FromDate=@ViewData["fromDate"]&ToDate=@ViewData["toDate"]&StartInterface=@ViewData["startInterface"]&GLMainGroupId=@ViewData["gLMainGroupId"]&GLSubGroupId=@ViewData["gLSubGroupId"]&GLId=@ViewData["gLId"]" id="lnkBack">Back</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-success" href="~/TBDrillDown/TBDrillDown" id="lnkBack">Back</a>
+                    }
+
+
+                </div>
+                <div class="col-md-6">
+                    <center>
+                        <a class="btn btn-success" onclick="GenerateDrillDown();" href="#" id="lnkExport">Process</a> &nbsp;&nbsp;
+                        <input class="btn btn-success" type="button" id="btnReset" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;
+                    </center>
+                </div>
+                <div class="col-md-3">
+                    <a class="btn btn-success" href="~/TBDrillDown/TBDrillDown" id="lnkBack">Home</a> &nbsp;&nbsp;
+                </div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                @if (Model.GLOpeningList != null && Model.GLOpeningList.Count > 0)
+                {
+                    <div style="overflow-x:scroll; padding:10px;">
+                        <table class="table" id="tblGLOpeningList" cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th width="10%" style="text-align:left;background-color:burlywood;">Voucher No.</th>
+                                    <th width="10%" style="text-align:center;background-color:burlywood;" >Voucher Date</th>
+                                    <th width="5%" style="text-align:center;background-color:burlywood" >Voucher Type</th>
+                                    <th width="15%" style="text-align:left;background-color:burlywood" >Narration</th>
+                                    <th width="10%" style="text-align:center;background-color:burlywood">Bill No.</th>
+                                    <th width="10%" style="text-align:center;background-color:burlywood">Bill Date</th>
+                                    <th width="10%" style="text-align:center;background-color:burlywood">Payee/Payer Name</th>
+                                    <th width="10%" style="text-align:center;background-color:burlywood">Debit</th>
+                                    <th width="10%" style="text-align:center;background-color:burlywood">Credit</th>
+                                    <th width="10%" style="text-align:center;background-color:burlywood">Balance</th>
+                                </tr>
+                                
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.GLOpeningList)
+                                {
+                                    <tr>
+                                        <th width="40%" style="text-align:left;padding-left:20px;" colspan="4">@item.GLHead - (@item.GLCode) </th>
+                                        <th width="10%" style="text-align:center" >&nbsp;</th>
+                                        <th width="10%" style="text-align:center">&nbsp;</th>
+                                        <th width="10%" style="text-align:center">&nbsp;</th>
+                                        <th width="10%" style="text-align:center">&nbsp;</th>
+                                        <th width="10%" style="text-align:center">&nbsp;</th>
+                                        <th width="10%" style="text-align:center">&nbsp;</th>
+                                    </tr>
+                                 
+                                    if (Model.GLLedgerList != null && Model.GLLedgerList.Where(x => x.GLId == item.GLId).ToList().Count > 0)
+                                    {
+                                        foreach (var ledgeritem in Model.GLLedgerList.Where(x => x.GLId == item.GLId).ToList())
+                                        {
+                                            <tr>
+                                                <td width="10%" style="text-align:left;">
+                                                    <a href="@ledgeritem.VoucherViewPagePath?ReportLevel=Voucher&FromDate=@ViewData["fromDate"]&ToDate=@ViewData["toDate"]&StartInterface=@ViewData["startInterface"]&GLMainGroupId=@ViewData["gLMainGroupId"]&GLSubGroupId=@ViewData["gLSubGroupId"]&GLId=@ViewData["glId"]&VoucherId=@ledgeritem.VoucherId&AccessMode=2">@ledgeritem.VoucherNo</a>
+                                                </td>
+                                                <td width="10%"  style="text-align:center;">@ledgeritem.VoucherDate</td>
+                                                <td width="5%" style="text-align:center;">@ledgeritem.VoucherType</td>
+                                                <td width="15%" style="text-align:left;">@ledgeritem.Narration</td>
+                                                <td width="10%" style="text-align:center;">@ledgeritem.BillNo</td>
+                                                <td width="10%" style="text-align:center;">@ledgeritem.BillDate</td>
+                                                <td width="10%" style="text-align:center;">@ledgeritem.PayeeName</td>
+                                                <td width="10%" style="text-align:center;">@ledgeritem.DBAmount</td>
+                                                <td width="10%" style="text-align:center;">@ledgeritem.CRAmount</td>
+                                                <td width="10%" style="text-align:center;">@ledgeritem.RunningBalance @ledgeritem.RunningBalanceDrCr</td>
+                                            </tr>
+                                        }
+
+                                    }
+
+
+                                    <tr>
+                                        <th colspan="4" style="text-align:left">Total of @item.GLHead</th>
+                                        <th width="10%" style="text-align:center">&nbsp;</th>
+                                        <th width="10%" style="text-align:center">&nbsp;</th>
+                                        <th width="10%" style="text-align:center">&nbsp;</th>
+                                        <th width="10%" style="text-align:center">@item.DBAmount</th>
+                                        <th width="10%" style="text-align:center">@item.CRAmount</th>
+                                        <th width="10%" style="text-align:center">@item.Balance @item.BalanceDRCR</th>
+                                    </tr>
+
+                                }
+
+                            </tbody>
+                      </table>
+                    </div>
+                                    }
+                                    else
+                                    {
+                                        <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+                                    }
+
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/TBDrillDown/GLWiseTBDrillDown.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#tblGLOpeningList').paging({
+            limit: 50,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

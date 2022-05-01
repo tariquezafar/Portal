@@ -1,0 +1,129 @@
+﻿@{
+    ViewBag.Title = "Add PayHead GL Mapping";
+    Layout = "~/Views/Shared/_PayrollLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend {
+        display: block;
+        width: 37%;
+        padding: 0;
+        margin-bottom: 20px;
+        font-size: 21px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+</style>
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/PayrollDashboard">Payroll</a> >> Add/Edit PayHead GL Mapping</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditLeadSource" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+                <div class="col-md-12 ftop">
+                    <div class="form-group col-md-4">
+                        <label for="txtPayHeadName" class="col-sm-4 control-label">Pay Head Name&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtPayHeadName" name="txtPayHeadName" tabindex="1" placeholder="Enter Pay Head Name" type="text" maxlength="100" />
+                            <input id="hdnPayHeadMappingId" type="hidden" value="@ViewData["payHeadMappingId"]" />
+                            <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="txtTaxGLHead" class="col-sm-4 control-label">GL Head&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input id="txtTaxGLHead" name="txtTaxGLHead" tabindex="2" class="form-control" style="width: 100%;height: 31px;" />
+                            <input id="hdnTaxGLCode" name="hdnTaxGLCode" type="hidden" value="0" />
+                            <input id="hdnTaxGLId" name="hdnTaxGLId" type="hidden" value="0" />
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="txtTaxSLHead" class="col-sm-4 control-label">SL Head&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input id="txtTaxSLHead" name="txtTaxSLHead" tabindex="3" class="form-control" />
+                            <input id="hdnTaxSLCode" name="hdnTaxSLCode" type="hidden" value="0" />
+                            <input id="hdnTaxSLId" name="hdnTaxSLId" type="hidden" value="0" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group col-md-4">
+                        <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="46" onchange="GetBranchStateId()" class="form-control"></select>
+                            <input id="hdnBillingStateId" type="hidden" value="0" />
+                            <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                            <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="chkstatus" class="col-sm-4 control-label">Status&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="4" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                  
+
+                </div>
+
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            @*<input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="5" onclick="SaveData(1)" type="button" border="0">*@ 
+                            <input class="btn btn-success" value="Update" style="display:none;" tabindex="5" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                            @*<a class="btn btn-success" id="btnList" tabindex="6" href="@Url.Content("~/AdditionalTax/AddEditAdditionalTax")">Reset</a>*@                                             
+                            <a class="btn btn-success" id="btnList" tabindex="7" href="@Url.Content("~/PayHeadGLMapping/ListPayHeadGLMapping?accessMode=1")">Search Pay Head GL</a>
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="alertModel" role="dialog">
+                <div class="modal-dialog  modal-sm">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title" id="modelHeader"></h4>
+                        </div>
+                        <div class="modal-body">
+                            <p id="modelText"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/Common.js"></script>
+<script src="~/Scripts/PayHeadGLMapping/AddPayHeadGLMapping.js"></script>

@@ -1,0 +1,122 @@
+10:43:54 AM
+Source : Portal.Controllers.PurchaseQuotationController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'indentId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.ActionResult Report(Int64, System.String)' in 'Portal.Controllers.PurchaseQuotationController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+--------------------------------------------------------------------------------------------------------------------------------
+
+12:39:35 PM
+Source : Portal.Controllers.PurchaseQuotationController
+Method Name : GetPurchaseIndentList
+Error Line No : 217
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:40:49 PM
+Source : Portal.Controllers.PurchaseQuotationController
+Method Name : GetPurchaseIndentList
+Error Line No : 217
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:42:23 PM
+Source : Portal.Controllers.PurchaseQuotationController
+Method Name : GetPurchaseIndentList
+Error Line No : 217
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:42:25 PM
+Source : Portal.Controllers.PurchaseQuotationController
+Method Name : GetPurchaseIndentList
+Error Line No : 217
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:42:37 PM
+Source : Portal.Controllers.PurchaseQuotationController
+Method Name : GetPurchaseIndentList
+Error Line No : 217
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:25 PM
+Source : Portal.Controllers.PurchaseQuotationController
+Method Name : GetPurchaseIndentList
+Error Line No : 217
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:30:51 PM
+Source : Portal.Core.PurchaseQuotationBL
+Method Name : GetPurchaseQuotationDetail
+Error Line No : 202
+Exception Type : System.ArgumentException
+Details: Column 'FreightValue' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+13:30:51 PM
+Source : Portal.Controllers.PurchaseQuotationController
+Method Name : GetPurchaseQuotationDetail
+Error Line No : 135
+Exception Type : System.ArgumentException
+Details: Column 'FreightValue' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+13:37:26 PM
+Source : Portal.Core.PurchaseQuotationBL
+Method Name : GetPurchaseQuotationDetail
+Error Line No : 202
+Exception Type : System.ArgumentException
+Details: Column 'FreightValue' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:42 PM
+Source : Portal.Core.PurchaseQuotationBL
+Method Name : GetPurchaseQuotationDetail
+Error Line No : 202
+Exception Type : System.ArgumentException
+Details: Column 'FreightValue' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:42 PM
+Source : Portal.Controllers.PurchaseQuotationController
+Method Name : GetPurchaseQuotationDetail
+Error Line No : 135
+Exception Type : System.ArgumentException
+Details: Column 'FreightValue' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:52 PM
+Source : Portal.Core.PurchaseQuotationBL
+Method Name : GetPurchaseQuotationDetail
+Error Line No : 202
+Exception Type : System.ArgumentException
+Details: Column 'FreightValue' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:58 PM
+Source : Portal.Controllers.PurchaseQuotationController
+Method Name : GetPurchaseQuotationDetail
+Error Line No : 135
+Exception Type : System.ArgumentException
+Details: Column 'FreightValue' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:27:33 PM
+Source : Portal.Controllers.PurchaseQuotationController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'indentId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.ActionResult QuotationComparison(Int64)' in 'Portal.Controllers.PurchaseQuotationController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+

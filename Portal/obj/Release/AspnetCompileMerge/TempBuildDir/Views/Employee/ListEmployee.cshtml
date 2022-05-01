@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "List Employee";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">HR </a> >> List Employee </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditEmployee" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group  col-md-4">
+                    <label for="txtEmployeeName" class="col-sm-4 control-label">Employee Name</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtEmployeeName" name="txtEmployeeName" tabindex="1" placeholder="Search with Employee Name" type="text" maxlength="100" />
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+</div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtEmployeeCode" class="col-sm-4 control-label">Employee Code</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtEmployeeCode" name="txtEmployeeCode" tabindex="2" placeholder="Search with Employee Code" type="text" maxlength="50" />
+                    </div>
+                </div>
+  
+                <div class="form-group  col-md-4">
+                    <label for="txtEmail" class="col-sm-4 control-label">Email</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtEmail" name="txtEmail" tabindex="3" placeholder="Search with Employee Email" type="text" maxlength="100" />
+                    </div>
+                </div>
+               
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtMobileNo" class="col-sm-4 control-label">Mobile No.</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtMobileNo" name="txtMobileNo" tabindex="4" placeholder="Search with Employee Mobile No." type="text" maxlength="50" />
+                    </div>
+                </div>
+                <div class="form-group  col-md-4">
+                    <label for="txtPANNo" class="col-sm-4 control-label">PAN No.</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtPANNo" name="txtPANNo" tabindex="5" placeholder="Search with Employee PAN No." type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group  col-md-4">
+                    <label for="ddlDepartment" class="col-sm-4 control-label">Department</label>
+                    <div class="col-sm-8">
+                        <select id="ddlDepartment" name="ddlDepartment" tabindex="6" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group  col-md-4">
+                    <label for="ddlEmploymentType" class="col-sm-4 control-label">Employee Type</label>
+                    <div class="col-sm-8">
+                        <select id="ddlEmploymentType" name="ddlEmploymentType" tabindex="7" class="form-control">
+                            <option selected="selected" value="0">-Select Employee Type-</option>
+                            
+                            <option value="Casual">Casual</option>
+                            <option value="Consultant">Consultant</option>
+                            <option value="Regular">Regular</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="ddlCurrentStatus" class="col-sm-4 control-label">Employee Status</label>
+                    <div class="col-sm-8">
+                        <select id="ddlCurrentStatus" name="ddlCurrentStatus" tabindex="8" class="form-control">
+                            <option selected="selected" value="0">-Select Employee Status-</option>
+                            <option value="Probation">Probation</option>
+                            <option value="Regular">Regular</option>
+                            <option value="Retired">Retired</option>
+                            <option value="Suspend">Suspend</option>
+                            <option value="Temporary">Temporary</option>
+                            <option value="Terminated">Terminated</option>
+                            <option value="Trainee">Trainee</option>
+                              
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group  col-md-4">
+                    <label for="ddlStatus" class="col-sm-4 control-label">Status</label>
+                    <div class="col-sm-8">
+                        <select name="ddlStatus" id="ddlStatus" tabindex="9" class="form-control">
+                            <option value="">All</option>
+                            <option value="1">Active</option>
+                            <option value="0">InActive</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="10" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+
+                <div class="row col-sm-12 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Search" alt="Save" tabindex="10" id="btnSearch" onclick="SearchEmployee()" type="button" border="0">&nbsp;&nbsp;
+                            <input class="btn btn-success" type="button" id="btnReset" tabindex="11" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;
+                            <a class="btn btn-success" id="btnList" tabindex="12" href="@Url.Content("~/Employee/AddEditEmployee?accessMode=1")">Add More Employee</a>
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div id="divList">
+
+                    </div>
+                </div>
+            </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/Employee/ListEmployee.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>
+<script>
+        $( document ).ready(function() {
+            document.getElementById("txtEmployeeName").focus();
+    });
+</script>

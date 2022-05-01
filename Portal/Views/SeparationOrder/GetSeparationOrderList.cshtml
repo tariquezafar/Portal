@@ -1,0 +1,78 @@
+﻿@model List<Portal.Core.ViewModel.SeparationOrderViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 20px;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblSeparationOrderList">
+            <thead>
+                <tr>
+                    <th align="center">Action</th>
+                    <th>Separation Order No</th>
+                    <th>Separation Order Date</th>
+                    <th>Employee </th> 
+                    <th>Exit Interview No.</th> 
+                    <th>Employee Clearance No.</th>   
+                    <th>Separation Remarks</th>  
+                    <th>Separation Status</th> 
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/SeparationOrder/AddEditSeparationOrder?SeparationOrderId=@item.SeparationOrderId&AccessMode=3"></a>
+                           @if(item.SeparationStatus.ToUpper() !="FINAL")
+                           { 
+                            <a style="color:white" class="fa fa-pencil-square-o" href="~/SeparationOrder/AddEditSeparationOrder?SeparationOrderId=@item.SeparationOrderId&AccessMode=2"></a>
+                           }
+                        </td>
+                        <td>@item.SeparationOrderNo</td>
+                        <td>@item.SeparationOrderDate</td>
+                        <td>@item.EmployeeName</td> 
+                        <td>@item.ExitInterviewNo</td> 
+                        <td>@item.EmployeeClearanceNo</td>   
+                        <td>@item.SepartionRemarks</td> 
+                        <td>@item.SeparationStatus</td>
+                       
+                         
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblSeparationOrderList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

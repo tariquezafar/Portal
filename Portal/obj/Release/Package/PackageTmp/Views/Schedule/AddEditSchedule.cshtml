@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Add Schedule";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AccountDashboard">Account</a> >> Add/Edit Schedule </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditGLMainGroup" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div> 
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4"> 
+                    <label for="txtScheduleName" class="col-sm-4 control-label">Sehedule Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtScheduleName" name="txtScheduleName" tabindex="1" placeholder="Enter Schedule Name" type="text" maxlength="100" />
+                        <input id="hdnScheduleId" type="hidden" value="@ViewData["ScheduleId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    </div>
+                </div>
+                    <div class="form-group col-md-4">
+                        <label for="txtScheduleNo" class="col-sm-4 control-label">Schedule No&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control"  id="txtScheduleNo" onkeyup="checkDec(this)" name="txtScheduleNo" tabindex="2" placeholder="Enter Schedule No" type="text" maxlength="100" />  
+                        </div> 
+                     </div> 
+                <div class="form-group col-md-4">
+                    <label for="chkstatus" class="col-sm-4 control-label">Status&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="3" />
+                    </div>
+                </div>
+            </div>
+           
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="4" onclick="SaveData(1)" type="button" border="0"> 
+                            <input class="btn btn-success" value="Update" style="display:none;" tabindex="4" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                            <a class="btn btn-success" id="btnReset" tabindex="7" href="@Url.Content("~/Schedule/AddEditSchedule")">Reset</a>
+                            @*<input class="btn btn-success" type="button" id="btnReset" tabindex="5" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@ 
+                            <a class="btn btn-success" id="btnList" tabindex="8" href="@Url.Content("~/Schedule/ListSchedule")">Search Schedule</a>
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="5" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="6" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="6" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/Schedule/AddSchedule.js"></script>
+
+

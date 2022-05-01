@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "List SL Type";
+    Layout = "~/Views/Shared/_SuperAdminLayout.cshtml";
+}
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Company/SuperAdminDashboard">Control Panel</a> >> List SL Type </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmListUser" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="txtSLTypeName" class="col-sm-4 control-label">SL Type Name</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtSLTypeName" name="txtSLTypeName" tabindex="1" placeholder="Serch with SL Type Name" type="text" maxlength="100" />
+                        <input id="hdnSLTypeId" type="hidden" value="@ViewData["SLTypeId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="selstatus" class="col-sm-4 control-label">Status</label>
+                    <div class="col-sm-8">
+                        <select name="ddlStatus" tabindex="2" id="ddlStatus">
+                            <option value="">All</option>
+                            <option value="1">Active</option>
+                            <option value="0">InActive</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Search" alt="Save" tabindex="3" id="btnSearch" onclick="SearchSLType()" type="button" border="0">
+                        <input class="btn btn-success" type="button" id="btnReset" tabindex="4" onclick="ClearFields()" value="Reset" /> 
+                        <a class="btn btn-success" id="btnList" tabindex="5" href="@Url.Content("~/SLType/AddEditSLType")">Add More SL Type</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div id="divList" style="margin:50px;margin-top:10px">
+
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/SLType/ListSLType.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>

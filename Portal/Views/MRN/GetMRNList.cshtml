@@ -1,0 +1,117 @@
+﻿@model List<Portal.Core.MRNViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+    background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    color:#fff;
+    }
+    .achr {
+        text-decoration:none;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblChallanList">
+            <thead>
+                <tr aling="center"  style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                    <th>Action</th>
+                    <th>MRN No.</th>
+                    <th>MRN Date</th>
+                    <th>Invoice No.</th>
+                    <th>Invoice Date</th>
+                    <th>Vendor Name</th>
+                    <th>Shipping City</th>
+                    <th>Shipping State</th>
+                    <th>Dispatch Ref. No.</th>
+                    <th>Dispatch Ref. Date</th>
+                    <th>MRN Status</th>
+                    <th>Cancelled Date</th>
+                    <th>Created By User</th>
+                    <th>Created Date</th>
+                    <th>Modified By User</th>
+                    <th>Modified Date</th> 
+                    <th>Company Branch</th> 
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="margin:0px auto;">
+                            <a style="color:darkblue; text-decoration:none;" class="fa fa-eye" aria-hidden="true" title="View" href="~/MRN/AddEditMRN?mrnId=@item.MRNId&AccessMode=3"></a>
+                            @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                            {
+                                <a style="color:darkgreen;text-decoration:none;" class="fa fa-pencil achr" title="Edit" href="~/MRN/AddEditMRN?mrnId=@item.MRNId&AccessMode=2"></a>
+                            }
+                            @if (item.ApprovalStatus.ToUpper() == "DRAFT" || item.ApprovalStatus.ToUpper() == "FINAL")
+                            {
+                                <a style="color:red" title="Cancel" class="fa fa-times" aria-hidden="true" href="~/MRN/CancelMRN?mrnId=@item.MRNId&AccessMode=4"></a>
+                            }
+                           
+                        </td>
+                        <td>@item.MRNNo</td>
+                        <td>@item.MRNDate</td>
+                        <td>@item.InvoiceNo</td>
+                        <td>@item.InvoiceDate</td>
+                        <td>@item.VendorName</td>
+                        <td>@item.ShippingCity</td>
+                        <td>@item.ShippingStateName</td>
+                        <td>@item.DispatchRefNo</td>
+                        <td>@item.DispatchRefDate</td>
+
+                        @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine">
+                                @item.ApprovalStatus
+                            </td>
+                        }
+                        else if (item.ApprovalStatus.ToUpper() == "CANCELLED")
+                        {
+                            <td style="background-color:red;color:white;">
+                                @item.ApprovalStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green">
+                                @item.ApprovalStatus
+                            </td>
+
+                        }
+                        <td>@item.CancelDate</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td> 
+                        <td>@item.CompanyBranchName</td> 
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblChallanList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

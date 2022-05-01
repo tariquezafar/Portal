@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "List PositionLevels";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">Admin</a> >>List Position Level </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditPositionType" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="txtPositionLevelName" class="col-sm-4 control-label">Position Level Name</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtPositionLevelName" tabindex="1" name="txtPositionTypeName" placeholder="Search with Position Level Name" type="text" maxlength="100" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="txtPositionLevelCode" class="col-sm-4 control-label">Position Level Code</label>
+                    <div class="col-sm-8">
+                        <input id="txtPositionLevelCode" name="txtPositionLevelCode" tabindex="2" type="text" placeholder="Search with Position Level Code" maxlength="100" class="form-control alpha-space-only" />
+                    </div>
+                </div>
+
+               
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="selstatus" class="col-sm-4 control-label">Status</label>
+                    <div class="col-sm-8"> 
+                        <select name="ddlStatus" class="form-control"  tabindex="3" id="ddlStatus">
+                            <option value="">All</option>
+                            <option value="1">Active</option>
+                            <option value="0">InActive</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Search" alt="Save" tabindex="4" id="btnSearch" onclick="SearchPositionLevel()" type="button" border="0">&nbsp;&nbsp;
+                        <input class="btn btn-success" type="button" tabindex="5" id="btnReset" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;
+                        <a class="btn btn-success" id="btnList" tabindex="6" href="@Url.Content("~/PositionLevel/AddEditPositionLevel?accessMode=1")">Add More Position Level</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div id="divList">
+
+                </div>
+            </div>
+         </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/PositionLevel/ListPositionLevel.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>

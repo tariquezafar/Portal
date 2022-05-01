@@ -1,0 +1,103 @@
+﻿@model List<Portal.Core.ChasisSerialMappingViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+     .table {
+    width: 125% !important;
+    max-width: 125% !important;
+    margin-bottom: 20px;
+}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblUserList">
+            <thead>
+                <tr>
+                    
+                    <th>Product Name</th>
+                    <th>Chasis Serial No</th>
+                    <th>Motor No</th>
+                    <th>Controller No</th>
+                    <th>Color</th>
+                    <th>Battery Power</th>
+                    <th>Battery Serial No1</th>
+                    <th>Battery Serial No2</th>
+                    <th>Tier</th>
+                    <th>Front Glass</th>
+                    <th>Viper</th>
+                    <th>RearShocker</th>
+                    <th>Charger</th>
+                    <th>FM</th>
+                    <th>Company Branch</th>
+                    <th>Serial No. Status</th>
+                    <th>CreatedBy</th>
+                    <th>Status</th>
+                    <th colspan="2" align="center">Action</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                     
+                        <td>@item.ProductName</td>
+                        <td>@item.ChasisSerialNo</td>
+                        <td>@item.MotorNo</td>
+                        <td>@item.ControllerNo</td>
+                        <td>@item.Color</td>
+                        <td>@item.BatteryPower</td>
+                        <td>@item.BatterySerialNo1</td>
+                        <td>@item.BatterySerialNo2</td>
+                        <td>@item.Tier</td>
+                        <td style="text-align:center;">@(item.FrontGlassAvailable==true?"YES":"NO")</td>
+                        <td style="text-align:center;">@(item.ViperAvailable==true?"YES":"NO")</td>
+                        <td style="text-align:center;">@(item.RearShockerAvailable == true ? "YES" : "NO")</td>
+                        <td style="text-align:center;">@(item.ChargerAvailable == true ? "YES" : "NO")</td>
+                        <td style="text-align:center;">@(item.FM == true ? "YES" : "NO")</td>
+                        <td style="text-align:center;">@item.ComapnyBranchName</td>
+                        <td style="text-align:center;">@item.ProductSerialStatus</td>
+                        <td style="text-align:center;">@item.CreatedByName</td>
+                        <td style="text-align:center;">@(item.ChasisSerialMapping_Status == true?"Active":"Inactive")</td>
+
+                        <td  style="width:25px; margin:0px auto;">
+                            <a title="View" class="fa fa-eye erp-btn" aria-hidden="true" href="~/ChasisSerialMapping/AddEditChasisSerialMapping?chasisSerialMappingId=@item.MappingId&AccessMode=3"></a>
+                        </td>
+                        <td style="width:25px; margin:0px 2px auto;">
+                            <a title="Edit" class="fa fa-pencil-square-o erp-btn" href="~/ChasisSerialMapping/AddEditChasisSerialMapping?chasisSerialMappingId=@item.MappingId&AccessMode=2"></a>
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblUserList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

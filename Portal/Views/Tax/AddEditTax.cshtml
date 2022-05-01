@@ -1,0 +1,307 @@
+﻿@{
+    ViewBag.Title = "Add Tax";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend {
+        display: block;
+        width: 37%;
+        padding: 0;
+        margin-bottom: 20px;
+        font-size: 21px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+</style>
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AccountDashboard">Account</a> >> Add/Edit Tax </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditLeadSource" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+                <div class="col-md-12 ftop">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtTaxName" class="col-sm-4 control-label">Tax Name&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtTaxName" name="txtTaxName" tabindex="1" placeholder="Enter Tax Name" type="text" maxlength="100" />
+                                <input id="hdnTaxId" type="hidden" value="@ViewData["taxId"]" />
+                                <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtTaxPercentage" class="col-sm-4 control-label">Tax Percentage&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control input-number " id="txtTaxPercentage" onkeyup="checkDec(this);" name="txtTaxPercentage" tabindex="2" placeholder="Enter Tax Percentage" type="text" maxlength="100" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="ddlTaxType" class="col-sm-4 control-label">Tax Type&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlTaxType" name="ddlTaxType" class="form-control" tabindex="3" style="width: 100%;height: 35px;">
+                                    <option value="0">Select Tax Type</option>
+                                    <option value="Local">Local</option>
+                                    <option value="Central">Central</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="ddlTaxSubType" class="col-sm-4 control-label">Tax Sub Type&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlTaxSubType" name="ddlTaxSubType" class="form-control" tabindex="4" style="width: 100%;height: 35px;">
+                                    <option value="0">Select Sub Type</option>
+                                    <option value="Sale">Sale</option>
+                                    <option value="Purchase">Purchase</option>
+                                    <option value="Service">Service</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtCFormApplicable" class="col-sm-4 control-label">C Form Applicable</label>
+                            <div class="col-sm-8">
+                                <input id="chkCFormApplicable"  onclick="changeESINoStatus()" name="chkCFormApplicable" type="checkbox" tabindex="5" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtWithCFormTaxPercentage" class="col-sm-4 control-label">With Out C Form Tax Percentage</label>
+                            <div class="col-sm-8">
+                                <input class="form-control input-number" tabindex="6" onkeyup="checkDec(this);" id="txtWithCFormTaxPercentage" name="txtWithCFormTaxPercentage"  placeholder="Enter With Out C Form Tax Percentage" type="text" maxlength="100" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="ddlFormTypeDesc" class="col-sm-4 control-label">Form Type.</label>
+                            <div class="col-sm-8">
+                                <select id="ddlFormTypeDesc" name="ddlFormTypeDesc"  class="form-control" tabindex="7"></select> 
+                            </div>
+                            </div>
+                        </div>
+                    <div class="col-md-6">
+                        </div>
+                    </div>
+
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtTaxGLHead" class="col-sm-4 control-label">Tax GL Head&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input id="txtTaxGLHead" name="txtTaxGLHead" tabindex="8" class="form-control" style="width: 100%;height: 31px;" />
+                                <input id="hdnTaxGLCode" name="hdnTaxGLCode" type="hidden" value="0" />
+                                <input id="hdnTaxGLId" name="hdnTaxGLId" type="hidden"  value="0"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtTaxSLHead" class="col-sm-4 control-label">Tax SL Head&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input id="txtTaxSLHead" name="txtTaxSLHead" tabindex="9" class="form-control" />
+                                <input id="hdnTaxSLCode" name="hdnTaxSLCode" type="hidden" value="0" />
+                                <input id="hdnTaxSLId" name="hdnTaxSLId" type="hidden" value="0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="DivSurcharge" class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtCFormApplicable" class="col-sm-4 control-label">Add Surcharge</label>
+                            <div class="col-sm-8">
+                                <input id="chkSurchage1"  tabindex="10" onclick="ShowSurcharge()" name="chkSurchage1" type="checkbox" tabindex="10" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">                            
+                            <div class="col-sm-8">                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="DivHead1" class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtTaxGLHead" class="col-sm-4 control-label">Tax GL Head-1</label>
+                            <div class="col-sm-8">
+                                <input id="txtTaxGLHead1" name="txtTaxGLHead" tabindex="11" class="form-control" style="width: 100%;height: 31px;" />
+                                <input id="hdnTaxGLCode1" name="hdnTaxGLCode" type="hidden" value="0" />
+                                <input id="hdnTaxGLId1" name="hdnTaxGLId" type="hidden" value="0" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtTaxSLHead" class="col-sm-4 control-label">Tax SL Head-1</label>
+                            <div class="col-sm-8">
+                                <input id="txtTaxSLHead1" name="txtTaxSLHead1" tabindex="12" class="form-control" />
+                                <input id="hdnTaxSLCode1" name="hdnTaxSLCode1" type="hidden" value="0" />
+                                <input id="hdnTaxSLId1" name="hdnTaxSLId1" type="hidden" value="0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="DivSurcharge1" class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtSurchageName_1" class="col-sm-4 control-label">Surcharge Name-1</label>
+                            <div class="col-sm-8">
+                                <input id="txtSurchageName_1" name="txtSurchageName_1" tabindex="13" class="form-control" style="width: 100%;height: 31px;" />                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtTaxSLHead" class="col-sm-4 control-label">Surcharge Percentage-1</label>
+                            <div class="col-sm-8">
+                                <input id="txtSurchargepercentage_1" name="txtSurchargepercentage_1" onkeyup="checkDec(this);" tabindex="14" class="form-control input-number " />                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="DivChkSurcharge" class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtCFormApplicable" class="col-sm-4 control-label">Add More Surcharge</label>
+                            <div class="col-sm-8">
+                                <input id="chkSurchage2" onclick="ShowSurcharge1()" name="chkSurchage2" type="checkbox" tabindex="15" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="col-sm-8">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="DivHead2" class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtTaxGLHead" class="col-sm-4 control-label">Tax GL Head-2</label>
+                            <div class="col-sm-8">
+                                <input id="txtTaxGLHead2" name="txtTaxGLHead2" tabindex="16" class="form-control" style="width: 100%;height: 31px;" />
+                                <input id="hdnTaxGLCode2" name="hdnTaxGLCode2" type="hidden" value="0" />
+                                <input id="hdnTaxGLId2" name="hdnTaxGLId2" type="hidden" value="0" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtTaxSLHead" class="col-sm-4 control-label">Tax SL Head-2</label>
+                            <div class="col-sm-8">
+                                <input id="txtTaxSLHead2" name="txtTaxSLHead2" tabindex="17" class="form-control" />
+                                <input id="hdnTaxSLCode2" name="hdnTaxSLCode2" type="hidden" value="0" />
+                                <input id="hdnTaxSLId2" name="hdnTaxSLId2" type="hidden" value="0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="DivSurcharge2" class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtSurchageName_2" class="col-sm-4 control-label">Surcharge Name-2</label>
+                            <div class="col-sm-8">
+                                <input id="txtSurchageName_2" name="txtSurchageName_2" tabindex="18" class="form-control" style="width: 100%;height: 31px;" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="txtSurchargepercentage_2" class="col-sm-4 control-label">Surcharge Percentage-2</label>
+                            <div class="col-sm-8">
+                                <input id="txtSurchargepercentage_2" name="txtSurchargepercentage_2" onkeyup="checkDec(this);" tabindex="19" class="form-control input-number " />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="chkstatus" class="col-sm-4 control-label">Status&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input id="chkstatus" name="chkstatus"  type="checkbox" checked="checked" tabindex="20" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="21" onclick="SaveData(1)" type="button" border="0"> 
+                            <input class="btn btn-success" value="Update" style="display:none;" tabindex="21" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                            <a class="btn btn-success" id="btnReset" tabindex="24" href="@Url.Content("~/Tax/AddEditTax")">Reset</a>
+                            @*<input class="btn btn-success" type="button" id="btnReset" tabindex="24" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
+                            @*<input class="btn btn-success" type="button" id="btnList" value="Search Company" />*@
+                            <a class="btn btn-success" id="btnList" tabindex="25" href="@Url.Content("~/Tax/ListTax")">Search Tax</a>
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="alertModel" tabindex="22" role="dialog">
+                <div class="modal-dialog  modal-sm">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" tabindex="23" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title" id="modelHeader"></h4>
+                        </div>
+                        <div class="modal-body">
+                            <p id="modelText"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary  btn-block" tabindex="23" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/Common.js"></script>
+<script src="~/Scripts/Tax/AddTax.js"></script>

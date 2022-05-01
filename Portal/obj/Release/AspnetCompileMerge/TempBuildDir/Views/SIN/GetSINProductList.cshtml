@@ -1,0 +1,170 @@
+﻿@model List<Portal.Core.ViewModel.SINProductDetailViewModel>
+<style>
+    .table {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 18px !important;
+        margin-left: 10px !important;
+        margin-right: 5px !important;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table  table-bordered" id="tblSINProductList">
+            <thead>
+                <tr>
+                    <th><center>Product Name</center></th>
+                    <th><center>Product Code</center></th>
+                    <th><center>Product Desc</center></th>
+                    <th><center>Unit</center></th>
+                    <th><center>Req. Quantity</center></th>
+                    <th><center>Total Issued Qty</center></th>
+                    <th><center>Issue Qty</center></th>
+                    <th><center>Pending Qty</center></th>
+                    <th class="editonly"><center>Available Stock</center></th>
+                    <th  class="editonly"><center>Issue Qty</center></th>   
+                    <th class="editonly">
+                        <center>
+                            Raise Indent
+                            <input type="checkbox" name="chkAllIndent" id="chkAllIndent" class="chkAllIndent" />
+                        </center>
+                    </th>         
+                    @*<th align="center"  class="editonly">Action</th>*@
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        
+                        <td>
+                            @item.ProductName
+                            <input type="hidden" id="hdnSINProductDetailId" value="@item.SINProductDetailId" />
+                            <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                            <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                            <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                        </td>
+                        <td>
+                            @item.ProductCode
+                            <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                        </td>
+                        <td>
+                            @item.ProductShortDesc
+                            <input type="hidden" id="hdnProductShortDesc" value="@item.ProductShortDesc" />
+                        </td>
+                        <td>
+                            @item.UOMName
+                            <input type="hidden" id="hdnUOMName" value="@item.UOMName" />
+                        </td>
+                        <td>
+                            @item.Quantity
+                            <input type="hidden" id="hdnQuantity" value="@item.Quantity" />
+
+                        </td>
+                        <td>
+                            @if (@item.IssuedQuantity > 0)
+                            {   @item.IssuedQuantity
+                            }
+                            <input type="hidden" id="hdnIssuedQuantity" value="@item.IssuedQuantity" />
+
+                        </td>
+
+                        <td>@item.IssueQuantity
+                            <input type="hidden" id="hdnIssueQuantity" value="@item.IssueQuantity" />
+                        </td>
+                        <td>
+                            @if ((item.BalanceQuantity > 0) && (ViewData.ContainsKey("accessMode").Equals("2")))
+                            {
+                                @(item.BalanceQuantity - item.IssueQuantity)
+                            }
+                            else
+                            {
+                                @item.BalanceQuantity
+                            }
+                            <input type="hidden" id="hdnBalanceQuantity" value="@item.BalanceQuantity" />
+
+                        </td>
+                        <td class="editonly">
+                            @item.AvailableStock
+                            <input type="hidden" id="hdnAvailableStock" value="@item.AvailableStock" />
+                        </td>
+                        <td class="Quantity editonly">
+                            <input id="quantity" type="text" value="@item.IssueQuantity" class="modify editonly QuantityOnlyNumeric" style="width: 64px;" />&nbsp;<span id="errmsg"></span>
+                           
+
+                        </td>  
+                        <td class="editonly">
+                            <center>
+                                <input type="checkbox" name="chkIndent" id="chkIndent" class="indent" />
+                            </center>
+                        </td>                      
+                        @*<td class="btn btn-success table_btn editonly" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o " onclick="EditProductRow(this);" href="#"></a>
+                        </td>*@
+                        
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered" id="tblSINProductList">
+            <thead>
+                <tr>
+                    <th><center>Product Name</center></th>
+                    <th><center>Product Code</center></th>
+                    <th><center>Product Desc</center></th>
+                    <th><center>Unit</center></th>
+                    <th><center>Req. Quantity</center></th>
+                    <th><center>Total Issued Qty</center></th>
+                    <th><center>Balance Qty</center></th>
+                    <th><center>Issue Qty</center></th>                 
+                    <th  align="center"  class="editonly">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+<script>
+    $(document).ready(function () {
+        if ($("#hdnAccessMode").val() == "3") {
+            $(".editonly").hide();
+        }
+        if ($("#hdnAccessMode").val() == "4") {
+            $(".editonly").hide();
+        }
+
+            $("#chkAllIndent").click(function () {
+                $('input:checkbox').not(this).prop('checked', this.checked);
+            });
+
+            $(".indent").click(function () {
+                if ($(".indent").length == $(".indent:checked").length) {
+                    $("#chkAllIndent").attr("checked", "checked");
+                }
+                else {
+                    $("#chkAllIndent").removeAttr("checked");
+                }
+            });
+
+            $('.modify').bind('blur', function () {
+                if ((parseFloat($(this).val()) < 0) || (parseFloat($(this).val()) == -0) )
+                {
+                    ShowModel('Alert', 'Issue quantity should be greater than zero.');
+                    $(this).val("0.00");
+                    return false;
+                }
+            });
+
+          
+
+    });
+
+
+</script>

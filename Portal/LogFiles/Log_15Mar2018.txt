@@ -1,0 +1,945 @@
+10:28:04 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:28:04 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:51:15 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:51:15 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:59:40 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GenerateBankVoucherReports
+Error Line No : 9976
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetBankVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:59:40 AM
+Source : Portal.Core.VoucherBL
+Method Name : GenerateBankVoucherReports
+Error Line No : 247
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetBankVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:03:17 AM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetBankVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:05:09 AM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GenerateBankVoucherReport(Int32, System.String, System.String, System.String, System.String, System.String, Int32, System.String)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:06 AM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GenerateBankVoucherReport(Int32, System.String, System.String, System.String, System.String, System.String, Int32, System.String)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:51 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:51 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:11:02 AM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GenerateBankVoucherReport(Int32, System.String, System.String, System.String, System.String, System.String, Int32, System.String)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+11:11:08 AM
+Source : Portal.Controllers.VoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GenerateBankVoucherReport(Int32, System.String, System.String, System.String, System.String, System.String, Int32, System.String)' in 'Portal.Controllers.VoucherController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+11:19:51 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:19:51 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:32 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:33 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:09:10 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:09:10 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:38 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:38 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:03:34 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:03:34 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:45:46 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:45:46 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:44 PM
+Source : Portal.Controllers.DebitNoteVoucherController
+Method Name : OnException
+Error Line No : 0
+Exception Type : Microsoft.Reporting.WebForms.LocalProcessingException
+Details: An error occurred during local report processing.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:56:14 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:56:14 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:59:40 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:59:40 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:02:36 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:02:37 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:08:47 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetApprovedCashVoucherList
+Error Line No : 11002
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCashVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:08:48 PM
+Source : Portal.Core.CashVoucherBL
+Method Name : GetApprovedCashVoucherList
+Error Line No : 203
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCashVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:08:48 PM
+Source : Portal.Controllers.CashVoucherController
+Method Name : GetApprovedCashVoucherList
+Error Line No : 406
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetCashVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:09:01 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetApprovedJournalVoucherList
+Error Line No : 10313
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetJournalVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:09:01 PM
+Source : Portal.Core.JournalVoucherBL
+Method Name : GetApprovedJournalVoucherList
+Error Line No : 219
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetJournalVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:09:01 PM
+Source : Portal.Controllers.JournalVoucherController
+Method Name : GetApprovedJournalVoucherList
+Error Line No : 530
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetJournalVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:09:09 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetApprovedBankVoucherList
+Error Line No : 10007
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetBankVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:09:09 PM
+Source : Portal.Core.VoucherBL
+Method Name : GetApprovedBankVoucherList
+Error Line No : 312
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetBankVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:09:09 PM
+Source : Portal.Controllers.VoucherController
+Method Name : GetApprovedBankVoucherList
+Error Line No : 402
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetBankVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:37:57 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:37:57 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:38:01 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCreditNoteVoucherList
+Error Line No : 10560
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCreditNoteVouchers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:38:01 PM
+Source : Portal.Core.CreditNoteVoucherBL
+Method Name : GetCreditNoteVoucherList
+Error Line No : 164
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCreditNoteVouchers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:38:01 PM
+Source : Portal.Controllers.CreditNoteVoucherController
+Method Name : GetCreditNoteVoucherList
+Error Line No : 161
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCreditNoteVouchers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:38:11 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCreditNoteVoucherList
+Error Line No : 10560
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCreditNoteVouchers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:38:11 PM
+Source : Portal.Core.CreditNoteVoucherBL
+Method Name : GetCreditNoteVoucherList
+Error Line No : 164
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCreditNoteVouchers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:38:11 PM
+Source : Portal.Controllers.CreditNoteVoucherController
+Method Name : GetCreditNoteVoucherList
+Error Line No : 161
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCreditNoteVouchers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:38:43 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCreditNoteVoucherList
+Error Line No : 10560
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCreditNoteVouchers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:38:43 PM
+Source : Portal.Core.CreditNoteVoucherBL
+Method Name : GetCreditNoteVoucherList
+Error Line No : 164
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCreditNoteVouchers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:38:43 PM
+Source : Portal.Controllers.CreditNoteVoucherController
+Method Name : GetCreditNoteVoucherList
+Error Line No : 161
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCreditNoteVouchers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:39:29 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCreditNoteVoucherList
+Error Line No : 10560
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCreditNoteVouchers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:39:29 PM
+Source : Portal.Core.CreditNoteVoucherBL
+Method Name : GetCreditNoteVoucherList
+Error Line No : 164
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCreditNoteVouchers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:39:29 PM
+Source : Portal.Controllers.CreditNoteVoucherController
+Method Name : GetCreditNoteVoucherList
+Error Line No : 161
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCreditNoteVouchers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:41:40 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetCreditNoteVoucherList
+Error Line No : 10560
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCreditNoteVouchers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:41:40 PM
+Source : Portal.Core.CreditNoteVoucherBL
+Method Name : GetCreditNoteVoucherList
+Error Line No : 164
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCreditNoteVouchers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:41:40 PM
+Source : Portal.Controllers.CreditNoteVoucherController
+Method Name : GetCreditNoteVoucherList
+Error Line No : 161
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_GetCreditNoteVouchers has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:43:44 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:43:44 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:47:03 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetApprovedBankVoucherList
+Error Line No : 10007
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetBankVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:47:03 PM
+Source : Portal.Core.VoucherBL
+Method Name : GetApprovedBankVoucherList
+Error Line No : 312
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetBankVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:47:03 PM
+Source : Portal.Controllers.VoucherController
+Method Name : GetApprovedBankVoucherList
+Error Line No : 402
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetBankVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:58:03 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetApprovedBankVoucherList
+Error Line No : 10019
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetBankVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:58:03 PM
+Source : Portal.Core.VoucherBL
+Method Name : GetApprovedBankVoucherList
+Error Line No : 312
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetBankVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:58:03 PM
+Source : Portal.Controllers.VoucherController
+Method Name : GetApprovedBankVoucherList
+Error Line No : 402
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetBankVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:28 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:07:28 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:08 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:08 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:14 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:14 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:18 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:18 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:23:00 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:23:00 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:31 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:59:31 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:04:24 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:04:24 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:08:27 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetApprovedJournalVoucherList
+Error Line No : 10326
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetJournalVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:08:28 PM
+Source : Portal.Core.JournalVoucherBL
+Method Name : GetApprovedJournalVoucherList
+Error Line No : 219
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetJournalVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:08:28 PM
+Source : Portal.Controllers.JournalVoucherController
+Method Name : GetApprovedJournalVoucherList
+Error Line No : 530
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetJournalVouchers' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:20:29 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:20:29 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:39:54 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:39:55 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:42:37 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:42:37 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:04:38 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:04:38 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:04:47 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:04:47 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:12:39 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:12:39 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:29:23 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:29:23 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:31:18 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPIList
+Error Line No : 4632
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near the keyword 'and'.
+Incorrect syntax near the keyword 'and'.
+select PI.InvoiceId,          
+PI.InvoiceNo, 
+PI.PONo,                 
+replace(convert(varchar, PI.InvoiceDate,106),' ','-') InvoiceDate,              
+PI.VendorName,           
+PI.City,      
+PI.VendorId,    
+V.VendorCode,      
+St.StateName,         
+PI.RefNo,  
+PI.ApprovalStatus,    
+ISNULL(PI.InvoiceRevisedStatus,0)  InvoiceRevisedStatus,     
+case when PI.RefDate is null or RefDate < '1900-12-01' then '' else replace(convert(varchar, PI.RefDate,106),' ','-') end RefDate,          
+PI.BasicValue,    
+PI.TotalValue,
+isnull(PI.PurchaseType,'') as PurchaseType,    
+PI.CreatedBy,          
+cu.FullName CreatedByName,            
+replace(convert(varchar, PI.CreatedDate,106),' ','-') CreatedDate,              
+PI.ModifiedBy,               
+isnull(mu.FullName,'') ModifiedByName,            
+case when PI.ModifiedDate is null then '' else replace(convert(varchar, PI.ModifiedDate,106),' ','-') end ModifiedDate,
+isnull(cb.BranchName,'') as BranchName    
+from [PurchaseInvoice] PI       
+left join [Vendor] V on PI.VendorId=V.VendorId     
+inner join [State] St on PI.StateId=St.StateId         
+inner join [User] cu on PI.createdBy=cu.UserId            
+left join [User] mu on PI.ModifiedBy=mu.Userid  
+left join ComapnyBranch CB on CB.CompanyBranchId=PI.CompanyBranchId          
+where  PI.CompanyId=1  and  PI.InvoiceDate BETWEEN '2017-04-01' AND  '2018-03-31'  and isnull(PI.CompanyBranchId,0) =  and PI.InvoiceId not in (Select isnull(InvoiceId,0) as InvoiceId from MRN where ApprovalStatus <> 'Cancelled' )   and PI.ApprovalStatus ='Final' order by PI.InvoiceNo Desc 
+---------------------------------------------------------------------------------------------------------------------------
+
+18:31:18 PM
+Source : Portal.Core.PurchaseInvoiceBL
+Method Name : GetPIList
+Error Line No : 382
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near the keyword 'and'.
+Incorrect syntax near the keyword 'and'.
+select PI.InvoiceId,          
+PI.InvoiceNo, 
+PI.PONo,                 
+replace(convert(varchar, PI.InvoiceDate,106),' ','-') InvoiceDate,              
+PI.VendorName,           
+PI.City,      
+PI.VendorId,    
+V.VendorCode,      
+St.StateName,         
+PI.RefNo,  
+PI.ApprovalStatus,    
+ISNULL(PI.InvoiceRevisedStatus,0)  InvoiceRevisedStatus,     
+case when PI.RefDate is null or RefDate < '1900-12-01' then '' else replace(convert(varchar, PI.RefDate,106),' ','-') end RefDate,          
+PI.BasicValue,    
+PI.TotalValue,
+isnull(PI.PurchaseType,'') as PurchaseType,    
+PI.CreatedBy,          
+cu.FullName CreatedByName,            
+replace(convert(varchar, PI.CreatedDate,106),' ','-') CreatedDate,              
+PI.ModifiedBy,               
+isnull(mu.FullName,'') ModifiedByName,            
+case when PI.ModifiedDate is null then '' else replace(convert(varchar, PI.ModifiedDate,106),' ','-') end ModifiedDate,
+isnull(cb.BranchName,'') as BranchName    
+from [PurchaseInvoice] PI       
+left join [Vendor] V on PI.VendorId=V.VendorId     
+inner join [State] St on PI.StateId=St.StateId         
+inner join [User] cu on PI.createdBy=cu.UserId            
+left join [User] mu on PI.ModifiedBy=mu.Userid  
+left join ComapnyBranch CB on CB.CompanyBranchId=PI.CompanyBranchId          
+where  PI.CompanyId=1  and  PI.InvoiceDate BETWEEN '2017-04-01' AND  '2018-03-31'  and isnull(PI.CompanyBranchId,0) =  and PI.InvoiceId not in (Select isnull(InvoiceId,0) as InvoiceId from MRN where ApprovalStatus <> 'Cancelled' )   and PI.ApprovalStatus ='Final' order by PI.InvoiceNo Desc 
+---------------------------------------------------------------------------------------------------------------------------
+
+18:31:18 PM
+Source : Portal.Controllers.VendorPaymentController
+Method Name : GetPIList
+Error Line No : 145
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near the keyword 'and'.
+Incorrect syntax near the keyword 'and'.
+select PI.InvoiceId,          
+PI.InvoiceNo, 
+PI.PONo,                 
+replace(convert(varchar, PI.InvoiceDate,106),' ','-') InvoiceDate,              
+PI.VendorName,           
+PI.City,      
+PI.VendorId,    
+V.VendorCode,      
+St.StateName,         
+PI.RefNo,  
+PI.ApprovalStatus,    
+ISNULL(PI.InvoiceRevisedStatus,0)  InvoiceRevisedStatus,     
+case when PI.RefDate is null or RefDate < '1900-12-01' then '' else replace(convert(varchar, PI.RefDate,106),' ','-') end RefDate,          
+PI.BasicValue,    
+PI.TotalValue,
+isnull(PI.PurchaseType,'') as PurchaseType,    
+PI.CreatedBy,          
+cu.FullName CreatedByName,            
+replace(convert(varchar, PI.CreatedDate,106),' ','-') CreatedDate,              
+PI.ModifiedBy,               
+isnull(mu.FullName,'') ModifiedByName,            
+case when PI.ModifiedDate is null then '' else replace(convert(varchar, PI.ModifiedDate,106),' ','-') end ModifiedDate,
+isnull(cb.BranchName,'') as BranchName    
+from [PurchaseInvoice] PI       
+left join [Vendor] V on PI.VendorId=V.VendorId     
+inner join [State] St on PI.StateId=St.StateId         
+inner join [User] cu on PI.createdBy=cu.UserId            
+left join [User] mu on PI.ModifiedBy=mu.Userid  
+left join ComapnyBranch CB on CB.CompanyBranchId=PI.CompanyBranchId          
+where  PI.CompanyId=1  and  PI.InvoiceDate BETWEEN '2017-04-01' AND  '2018-03-31'  and isnull(PI.CompanyBranchId,0) =  and PI.InvoiceId not in (Select isnull(InvoiceId,0) as InvoiceId from MRN where ApprovalStatus <> 'Cancelled' )   and PI.ApprovalStatus ='Final' order by PI.InvoiceNo Desc 
+---------------------------------------------------------------------------------------------------------------------------
+
+18:32:25 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:32:25 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:34:03 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:34:03 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:48:00 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:48:00 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 956
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

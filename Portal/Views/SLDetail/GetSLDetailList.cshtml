@@ -1,0 +1,159 @@
+﻿@model List<Portal.Core.ViewModel.SLDetailViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+
+    table tr:nth-child(2n+1) {
+        background-color: #dff0d8;
+    }
+
+    table tr:nth-child(2n) {
+        background-color: #dff0d8;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table sldetail-list" id="tblGLList">
+            <thead>
+                <tr>
+                <tr>
+                    <th>SL Id</th>
+                    <th>SL Code</th>
+                    <th>SL Head</th>
+                    <th>Opening Balance Debit</th>
+                    <th>Opening Balance Credit</th>
+                    
+                    <th>Select <input type="checkbox" id="checkAll" name="checkAll" onclick="CheckAll(this)" /> </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.SLId
+                            <input id="hdnSLDetailId" type="hidden" value="@item.SLDetailId" />
+                            
+                            <input id="hdnSLId" type="hidden" value="@item.SLId" />
+
+                        </td>
+                        <td>@item.SLCode
+                            <input id="hdnSLCode" type="hidden" value="@item.SLCode" />
+                        </td>
+                        <td>@item.SLHead
+                            <input id="hdnSLHead" type="hidden" value="@item.SLHead" />
+                        </td>
+
+                        <td>
+                            @if(item.OpeningBalanceDebit.ToString() == "0.00")
+                            {
+                            <input type="text" id="txtOpeningBalanceDebit" name="txtOpeningBalanceDebit"  value="@item.OpeningBalanceDebit" class="form-control  right-text Quantity" />
+                            }
+                            else
+                            {
+                                <input type="text" id="txtOpeningBalanceDebit" name="txtOpeningBalanceDebit" value="@item.OpeningBalanceDebit" class="form-control  right-text Quantity" />
+                            }
+                        </td>
+                        <td>
+                            @if (item.OpeningBalanceCredit.ToString() == "0.00")
+                            {
+                                <input type="text" id="txtOpeningBalanceCredit" name="txtOpeningBalanceCredit" value="@item.OpeningBalanceCredit" class="form-control right-text Quantity" />
+                            }
+                            else
+                            {
+                                <input type="text" id="txtOpeningBalanceCredit" name="txtOpeningBalanceCredit" value="@item.OpeningBalanceCredit" class="form-control right-text Quantity"/>
+                            }
+
+                        </td>
+                        <td align="center">
+                            @if(item.SLDetailStatus==true)
+                            {
+                            <input type="checkbox" id="checkstatus" class="checkstatus" checked="checked" />
+                            }
+                            else
+                            {
+                            <input type="checkbox" id="checkstatus" class="checkstatus" />
+                            }
+                        </td>
+                        @*<td class="btn btn-success table_btn" style="width:30px; margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/SL/AddEditSL?SLId=@item.SLId&AccessMode=3"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" href="~/SL/AddEditSL?SLId=@item.SLId&AccessMode=2"></a>
+                        </td>*@ 
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+@*<script>
+    $(document).ready(function () {
+        $('#tblGLList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>*@
+
+<script>
+        $(document).ready(function () {
+            $('.Quantity').keypress(function (event) {
+                var $this = $(this);
+                if ((event.which != 46 || $this.val().indexOf('.') != -1) &&
+                   ((event.which < 48 || event.which > 57) &&
+                   (event.which != 0 && event.which != 8))) {
+                    event.preventDefault();
+                }
+
+                var text = $(this).val();
+                if ((event.which == 46) && (text.indexOf('.') == -1)) {
+                    setTimeout(function () {
+                        if ($this.val().substring($this.val().indexOf('.')).length > 3) {
+                            $this.val($this.val().substring(0, $this.val().indexOf('.') + 3));
+                        }
+                    }, 1);
+                }
+
+                if ((text.indexOf('.') != -1) &&
+                    (text.substring(text.indexOf('.')).length > 2) &&
+                    (event.which != 0 && event.which != 8) &&
+                    ($(this)[0].selectionStart >= text.length - 2)) {
+                    event.preventDefault();
+                }
+            });
+
+            $('.Quantity').bind("paste", function (e) {
+                var text = e.originalEvent.clipboardData.getData('Text');
+                if ($.isNumeric(text)) {
+                    if ((text.substring(text.indexOf('.')).length > 3) && (text.indexOf('.') > -1)) {
+                        e.preventDefault();
+                        $(this).val(text.substring(0, text.indexOf('.') + 3));
+                    }
+                }
+                else {
+                    e.preventDefault();
+                }
+            });
+
+        });
+    </script>

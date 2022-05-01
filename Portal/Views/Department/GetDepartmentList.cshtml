@@ -1,0 +1,63 @@
+﻿@model List<Portal.Core.ViewModel.DepartmentViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+.table th {
+background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+color:#fff;
+}
+ table tr{
+background-color:  #dff0d8 !important;
+}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered" id="tblUserList">
+            <thead>
+                <tr>
+                    <th>Department Name</th>
+                    @*<th>Company Branch</th>*@
+                    <th>Department Code</th>  
+                    <th>Created Date</th> 
+                    <th>Departent Status</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.DepartmentName</td>
+                        @*<td>@item.CompanyBranchName</td>*@
+                        <td>@item.DepartmentCode</td> 
+                        <td>@item.CreatedDate</td> 
+                        <td>@(item.DepartmentStatus == true ? "Active" : "Inactive")</td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:5px 5px;">
+                            <a style="color:white;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/Department/AddEditDepartment?DepartmentId=@item.DepartmentId&AccessMode=3"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:5px 0px;">
+                            <a style="color:white;text-decoration:none" title="Edit" class="fa fa-pencil-square-o" href="~/Department/AddEditDepartment?DepartmentId=@item.DepartmentId&AccessMode=2"></a>
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblDepartmentList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

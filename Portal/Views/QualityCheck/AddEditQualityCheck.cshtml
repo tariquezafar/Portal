@@ -1,0 +1,661 @@
+﻿@{
+    ViewBag.Title = "AddEditQualityCheck";
+    Layout = "~/Views/Shared/_InventoryLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+    /* allow space for check mark */
+
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/InventoryDashboard">Inventory </a> >> Add/Edit Quality Check</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditSO" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div id="tabs">
+                <ul style="display:none;">
+                    <li><a href="#tabs-1">Quality Check Detail</a></li>
+                    <li><a href="#tabs-2">Support Document</a></li>
+                </ul>
+                <div id="tabs-1">
+                    <div class="col-md-12 ftop">
+                        <div class="form-group col-md-4">
+
+                            <label for="txtQualityCheckNo" class="col-sm-4 control-label">Quality Check No.</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtQualityCheckNo" name="txtQualityCheckNo" placeholder="Auto Generated Quality Check No" type="text" maxlength="100" tabindex="1" />
+                                <a style="display:none;" class="btn btn-success" id="btnAddNew" tabindex="11" href="@Url.Content("~/QualityCheck/AddEditQualityCheck?accessMode=1")">New</a>
+                                <a style="display:none;" class="btn btn-success" target="_blank" tabindex="12" href="@Url.Action("Report",new {qualityCheckId=ViewData["qualityCheckId"], reportType="PDF" })" id="btnPrint">Print</a>
+                                <input id="hdnQualityCheckId" type="hidden" value="@ViewData["qualityCheckId"]" />
+                                <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtQualityCheckDate" class="col-sm-4 control-label">Quality Check Date</label>
+                            <div class="col-sm-8 ">
+                                <input class="form-control" id="txtQualityCheckDate" name="txtQualityCheckDate" tabindex="2" placeholder="Select Quality Check Date" value="@ViewData["currentDate"]" type="text" maxlength="50" />
+                                <input id="hdntxtQualityCheckDate" name="hdntxtQualityCheckDate" value="@ViewData["currentDate"]" type="hidden" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtGateInDate" class="col-sm-4 control-label">Gate In Date </label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtGateInDate" name="txtGateInDate" tabindex="15" placeholder="Select Gate In Date" type="text" maxlength="100" />
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-12">
+
+                        <div class="form-group col-md-4">
+                            <label for="txtPoNo" class="col-sm-4 control-label">PO No. </label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtPoNo" name="txtPoNo" tabindex="13" placeholder="Enter PO No " type="text" maxlength="100" />
+                                <input id="hdnPOId" type="hidden" value="0" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4 ">
+                            <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="14" class="form-control"></select>
+                                <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                                <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <a class="fa fa-search col-sm-1 editonly" onclick="OpenInvoiceSearchPopup()" data-toggle="btnSearchInvoice" title="Search Gate IN" id="btnSearchInvoice" tabindex="4" style="padding-top:5px; position:absolute; right:-4px;color: #337ab7;" href="#"></a>
+                            <label for="txtGateInNo" class="col-sm-4 control-label">Gate In No.&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtGateInNo" name="txtGateInNo" tabindex="3" placeholder="Select Gate In No." type="text" maxlength="50" />
+                                <input id="hdnGateInId" type="hidden" value="0" />
+                            </div>
+
+                        </div>
+
+
+                       
+
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="col-md-6" id="divCreated" style="display:none;">
+                            <div class="form-group col-md-6">
+                                <label for="txtCreatedBy" class="col-sm-4 control-label">Created By</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtCreatedBy" name="txtCreatedBy" tabindex="16" placeholder="Created By User Name" type="text" maxlength="100" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtCreatedDate" class="col-sm-4 control-label">Created Date</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtCreatedDate" name="txtCreatedDate" tabindex="17" placeholder="Created Date" type="text" maxlength="50" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" id="divModified" style="display:none;">
+                            <div class="form-group col-md-6">
+                                <label for="txtModifiedBy" class="col-sm-4 control-label">Modified By</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtModifiedBy" name="txtModifiedBy" tabindex="18" placeholder="Modified By User Name" type="text" maxlength="100" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtModifiedDate" class="col-sm-4 control-label">Modified Date</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtModifiedDate" name="txtModifiedDate" tabindex="19" placeholder="Modified Date" type="text" maxlength="50" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-12" id="divReject" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="txtRejectReason" class="col-sm-4 control-label">Rejection Reason</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtRejectReason" name="txtRejectReason" tabindex="20" placeholder="Rejection Reason" type="text" maxlength="1000" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtRejectedDate" class="col-sm-4 control-label">Rejected Date</label>
+                            <div class="col-sm-8 ">
+                                <input class="form-control" id="txtRejectedDate" name="txtRejectedDate" tabindex="21" placeholder="Rejected Date" type="text" maxlength="50" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="txtInvoiceNo" class="col-sm-4 control-label">Invoice No</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtInvoiceNo" name="txtInvoiceNo" tabindex="22" placeholder="Invoice No" type="text" maxlength="100" />
+                                <input id="hdnInvoiceId" type="hidden" value="0" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <a class="fa fa-search col-sm-1 editonly" onclick="OpenInvoiceSearchPopup()" id="btnSearchInvoice" tabindex="23" style="padding-top:5px; float:left !important" href="#"></a>
+                            <label for="txtInvoiceDate" id="lblInvoiceDate" class="col-sm-3 control-label">Invoice Date</label>
+                            <div class="col-sm-8 ">
+                                <input class="form-control" id="txtInvoiceDate" name="txtInvoiceDate" tabindex="24" placeholder="Invoice Date" type="text" maxlength="50" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    @*<div class="col-md-12 " id="accordion">
+                    <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="panel-title expand" style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0; padding:10px;">
+                        <div class="right-arrow pull-right" style="font-weight:bold; color:#fff;">+</div>
+                        <a href="#" style="font-weight:bold; color:#fff;">Product Detail</a>
+                    </h4>
+                    <div id="collapse1" class="panel-collapse collapse">*@
+                    <div class="col-md-12  ftop">
+                        <div class="form-group col-md-4">
+
+                        </div>
+                        <div class="form-group col-md-4" style="background-color:yellow">
+                            <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Product Detail</b></label></h4>
+                        </div>
+                        <div class="form-group col-md-4" style="display:none;">
+                            <input class="btn btn-success editonly" value="Add New Product" tabindex="25" alt="Add New Product" id="btnAddNewProduct" onclick="ShowHideProductPanel(1)" type="button" border="0">
+                        </div>
+
+                    </div>
+                    <div class="col-md-12 productsection" style="display:none;">
+                        <div class="form-group col-md-4">
+                            <label for="txtProductName" class="col-sm-4 control-label">Product Name&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtProductName" name="txtProductName" tabindex="26" placeholder="Enter Product Name" type="text" maxlength="100" />
+                                <input id="hdnProductId" type="hidden" value="0" />
+                                <input id="hdnQualityCheckDetailId" type="hidden" value="0" />
+                                <input id="hdnSequenceNo" type="hidden" value="0" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtProductCode" class="col-sm-4 control-label">Product Code</label>
+                            <div class="col-sm-8">
+                                <input id="txtProductCode" name="txtProductCode" tabindex="27" type="text" maxlength="50" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtProductShortDesc" class="col-sm-4 control-label">Remarks</label>
+                            <div class="col-sm-8">
+                                <input id="txtProductShortDesc" name="txtProductShortDesc" type="text" tabindex="28" maxlength="250" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 productsection" style="display:none;">
+                        <div class="form-group col-md-4">
+                            <label for="txtPrice" class="col-sm-4 control-label">Pending Quantity</label>
+                            <div class="col-sm-8">
+                                <input class="form-control input-number right-text" id="txtPendingQuantity" name="txtPendingQuantity" onkeyup="checkDec(this); CalculateTotalCharges();" tabindex="29" placeholder="Pending Quantity" type="text" maxlength="12" />
+                                <input id="hdnPendingQuantity" type="hidden" value="0" />
+                                <input id="hdnTotalRecQuantity" type="hidden" value="0" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="txtUOMName" class="col-sm-4 control-label">Unit</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtUOMName" name="txtUOMName" tabindex="30" placeholder="Unit" type="text" maxlength="50" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="txtQuantity" class="col-sm-4 control-label">Order Quantity<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input id="txtQuantity" name="txtQuantity" tabindex="31" type="text" maxlength="25" placeholder="Quantity" class="form-control  input-number right-text" />
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="col-md-12 productsection" style="display:none;">
+                        <div class="form-group col-md-4">
+                            <label for="txtReceivedQuantity " class="col-sm-4 control-label">Received Quantity <span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control  Quantity right-text" id="txtReceivedQuantity" name="txtReceivedQuantity" tabindex="32" placeholder="Received Quantity" type="text" maxlength="50" onkeyup="CalculateQuantity();" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="txtAcceptQuantity " class="col-sm-4 control-label">Accept Quantity <span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control  Quantity right-text" id="txtAcceptQuantity" name="txtAcceptQuantity" tabindex="33" placeholder="Accept Quantity" type="text" maxlength="50" onkeyup="CalculateQuantity();" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="txtRejectQuantity" class="col-sm-4 control-label">Reject Quantity</label>
+                            <div class="col-sm-8">
+                                <input class="form-control input-number right-text" id="txtRejectQuantity" name="txtRejectQuantity" tabindex="34" placeholder="Reject Quantity" type="text" maxlength="12" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+
+                        </div>
+
+                        <div class="form-group col-md-4" style="display:none;">
+
+                            <input id="txtQuantity" name="txtQuantity right-text" tabindex="35" type="text" onkeyup="checkDec(this);" maxlength="25" class="form-control  input-number" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-12" style="display:none;">
+                        <div class="form-group col-md-3">
+                            <label for="txtDiscountPerc" class="col-sm-4 control-label">Discount(%)</label>
+                            <div class="col-sm-8">
+                                <input class="form-control input-number right-text" id="txtDiscountPerc" name="txtDiscountPerc" onkeyup="checkDec(this); CalculateTotalCharges();" tabindex="39" placeholder="Enter Discount(%)" type="text" maxlength="12" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="txtDiscountAmount" class="col-sm-4 control-label">Discount</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtDiscountAmount" name="txtDiscountAmount" tabindex="40" placeholder="Discount Value" type="text" maxlength="50" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="txtProductTaxName" class="col-sm-4 control-label">Tax</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtProductTaxName" name="txtProductTaxName" tabindex="41" placeholder="Enter Tax Name" type="text" maxlength="100" />
+                                <input id="hdnProductTaxId" type="hidden" value="0" />
+                                <input id="hdnProductTaxPerc" type="hidden" value="0" />
+                                <input id="hdnTaxSequenceNo" type="hidden" value="0" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="txtProductTaxAmount" class="col-sm-4 control-label">Tax Amount</label>
+                            <div class="col-sm-8">
+                                <input id="txtProductTaxAmount" name="txtProductTaxAmount" type="text" tabindex="42" maxlength="12" class="form-control input-number right-text" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12" style="display:none;">
+                        <div class="form-group col-md-4">
+                        </div>
+                        <div class="form-group col-md-4">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtTotalPrice" class="col-sm-4 control-label">Total Price</label>
+                            <div class="col-sm-8">
+                                <input id="txtTotalPrice" name="txtTotalPrice" type="text" tabindex="36" maxlength="12" class="form-control  input-number right-text" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12 productsection" style="display:none;margin-bottom: 6px;">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <center>
+                                <input class="btn btn-success" value="Add Product" alt="Add Product" id="btnAddProduct" tabindex="37" onclick="AddProduct(1)" type="button" border="0">
+                                <input class="btn btn-success" value="Update Product" style="display:none;" tabindex="37" alt="Update Product" id="btnUpdateProduct" onclick="AddProduct(2)" type="button" border="0">
+                                <input class="btn btn-success" type="button" id="btnCancelProduct" tabindex="38" onclick="ShowHideProductPanel(2)" value="Cancel" />
+                            </center>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12">
+                        <div id="divProductList">
+
+                        </div>
+                    </div>
+                    @*</div>*@
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group col-md-4">
+
+                    </div>
+                    <div class="form-group col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-6" style="display:none;">
+                        <h4><label for="txtBasicValue" class="col-sm-4 " style="color:#000;text-align:center;"><b>Sub Total</b></label></h4>
+                        <div class="col-sm-8">
+                            <input id="txtBasicValue" name="txtBasicValue" type="text" tabindex="43" maxlength="12" class="form-control input-number right-text" />
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-12" style="display:none;">
+                    <div class="form-group col-md-4">
+
+                    </div>
+                    <div class="form-group col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-6">
+                        <h4><label for="txtFreightValue" class="col-sm-4 " style="color:#000;text-align:center;">Freight & Cartage</label></h4>
+                        <div class="col-sm-8" style="float:right !important">
+                            <input id="txtFreightValue" name="txtFreightValue" type="text" onkeyup="checkDec(this); CalculateGrossandNetValues();" tabindex="44" maxlength="12" class="form-control input-number right-text" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12" style="display:none">
+                    <div class="form-group col-md-4">
+
+                    </div>
+                    <div class="form-group col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-6">
+                        <h4><label for="txtLoadingValue" class="col-sm-4 " style="color:#000;text-align:center;">Loading</label></h4>
+                        <div class="col-sm-8" style="float:right !important">
+                            <input id="txtLoadingValue" name="txtLoadingValue" type="text" onkeyup="checkDec(this); CalculateGrossandNetValues();" tabindex="45" maxlength="12" class="form-control input-number right-text" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12" style="display:none;">
+                    <div class="form-group col-md-4">
+
+                    </div>
+                    <div class="form-group col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-6">
+                        <h4><label for="txtTotalValue" class="col-sm-4 " style="color:#000;text-align:center;"><b>Net Amount</b></label></h4>
+                        <div class="col-sm-8" style="float:right !important">
+                            <input id="txtTotalValue" name="txtTotalValue" type="text" tabindex="46" maxlength="12" class="form-control input-number right-text" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 " id="accordion">
+                    <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="panel-title expand" style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0; padding:10px;">
+                        <div class="right-arrow pull-right" style="font-weight:bold; color:#fff;">+</div>
+                        <a href="#" style="font-weight:bold; color:#fff;">Document(s) Detail</a>
+                    </h4>
+                    <div id="collapse2" class="panel-collapse collapse">
+
+
+                        <div class="col-md-12  ftop" style="display:none;">
+                            <div class="form-group col-md-4">
+
+                            </div>
+                            <div class="form-group col-md-4" style="background-color:yellow">
+                                <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Document(s) Detail</b></label></h4>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input class="btn btn-success" value="Add New Document" tabindex="47" alt="Add New Document" id="btnAddNewDocument" onclick="ShowHideDocumentPanel(1)" type="button" border="0">
+                            </div>
+                        </div>
+                        <div class="col-md-12 ftop ">
+                            <div class="form-group col-md-6">
+                                <label for="ddlDocumentType" class="col-sm-4 control-label">Document Type Term Desc&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <select id="ddlDocumentType" name="ddlDocumentType" tabindex="48" class="form-control"></select>
+                                    <input id="hdnQualityCheckDocId" type="hidden" value="0" />
+                                    <input id="hdnDocumentSequence" type="hidden" value="0" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="FileUpload1" class="col-sm-4 control-label">Upload Files</label>
+                                <div class="col-sm-8">
+                                    <input type="file" id="FileUpload1" tabindex="49" name="FileUpload1" />
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-12 col-lg-12 col-md-12">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <center>
+                                    <input class="btn btn-success" value="Add Document" alt="Add Document" id="btnAddDocument" tabindex="50" onclick="SaveDocument()" type="button" border="0">
+                                    <input class="btn btn-success" value="Update Document" style="display:none;" tabindex="50" alt="Update Document" id="btnUpdateDocument" onclick="SaveDocument()" type="button" border="0">
+                                    <input class="btn btn-success" type="button" id="btnCancelDocument" tabindex="51" onclick="ShowHideDocumentPanel(2)" value="Cancel" />
+                                </center>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="col-sm-12 col-lg-12 col-md-12">
+                            <div id="divDocumentList">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 ftop">
+                    <div class="form-group col-md-6">
+                        <label for="txtRemarks" class="col-sm-4 control-label">Remarks </label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" id="txtRemarks" name="txtRemarks" tabindex="52" rows="2" cols="30" maxlength="500"> </textarea>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="txtRejectRemark" class="col-sm-4 control-label">Reject Remarks</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" id="txtRejectRemark" name="txtRejectRemark" tabindex="53" rows="2" cols="30" maxlength="500"> </textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+
+
+            <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                <div class="col-md-3">
+                    <label for="ddlApprovalStatus" class="col-sm-6 control-label">Save Mode</label>
+                    <div class="col-sm-6">
+                        <select id="ddlApprovalStatus" name="ddlApprovalStatus" tabindex="54" class="form-control">
+                            <option value="Final">Final</option>
+                            <option selected="selected" value="Draft">Draft</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="55" onclick="SaveData(1)" type="button" border="0">
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="55" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">
+                        <a class="btn btn-success" id="btnReset" tabindex="59" onclick="ResetPage();">Reset</a>
+                        <a class="btn btn-success" id="btnList" tabindex="60" href="@Url.Content("~/QualityCheck/ListQualityCheck")">Search QC</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" tabindex="56" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" tabindex="57" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" tabindex="58" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="SearchInvoiceModel" role="dialog">
+            <div class="modal-dialog  modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Search Gate In</h4>
+                    </div>
+                    <div class="">
+                        <div class="col-md-12 ftop">
+                            <div class="form-group col-md-6">
+                                <label for="txtSearchGateInNO" class="col-sm-4 control-label">Gate In No.</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtSearchGateInNO" name="txtSearchGateInNO" tabindex="5" placeholder="Search with Gate In No." type="text" maxlength="50" />
+                                </div>
+                            </div>
+                            <div class="form-group  col-md-6">
+                                <label for="txtSearchPONO" class="col-sm-4 control-label">PO No</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtSearchPONO" name="txtSearchPONO" tabindex="6" placeholder="Search with PO No." type="text" maxlength="100" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+                                <label for="txtSearchFromDate" class="col-sm-4 control-label">Gate In From Date</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtSearchFromDate" name="txtSearchFromDate" tabindex="7" value="@ViewData["fromDate"]" type="text" maxlength="50" />
+                                    <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["fromDate"]" type="hidden" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtSearchToDate" class="col-sm-4 control-label">To Date</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtSearchToDate" name="txtSearchToDate" tabindex="8" value="@ViewData["toDate"]" type="text" maxlength="50" />
+                                    <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["toDate"]" type="hidden" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row col-sm-12 col-lg-12 col-md-12">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <center>
+                                    <input class="btn btn-success" value="Search" alt="Search" id="btnSearch" tabindex="9" onclick="SearchGate()" type="button" border="0">&nbsp;&nbsp;
+                                </center>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="row col-sm-6 col-lg-12 col-md-12">
+                            <div id="divInvoiceList">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" tabindex="10" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+    </form>
+</section>
+
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/QualityCheck/AddQualityCheck.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/notify.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="btnSearchInvoice"]').tooltip();
+    
+});
+</script>
+<style>
+    .tooltip-inner {
+        max-width: 350px;
+        /* If max-width does not work, try using width instead */
+        width: 100%;
+        height: auto;
+        border-radius: none;
+        min-height: 70px;
+        padding: 10px;
+        background-color: #393a3d;
+        text-align: left;
+        margin-left: 60px;
+    }
+
+    .tooltip.top .tooltip-arrow {
+        bottom: -8px;
+        left: 10%;
+        margin-left: -5px;
+        border-width: 20px 10px 0;
+        border-top-color: #393a3d;
+    }
+
+    .tooltip.top .tooltip-arrow {
+        -webkit-transform: translate(0em) rotate(60deg) rotate(-30deg);
+    }
+</style>

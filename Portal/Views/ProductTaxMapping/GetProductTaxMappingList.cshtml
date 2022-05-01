@@ -1,0 +1,54 @@
+﻿@model List<Portal.Core.ViewModel.ProductSubCategoryStateTaxMappingViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblCityList">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>State Name</th>
+                    <th>Tax</th>
+                    <th>Created By</th>
+                    <th>Status</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.ProductSubGroupName</td>
+                        <td>@item.StateName</td>
+                        <td>@item.TaxName</td>
+                        <td>@item.CreatedByName</td>
+                        <td>@(item.MappingStatus == 1? "Active" : "Inactive")</td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/ProductTaxMapping/AddEditProductTaxMapping?mappingId=@item.MappingId&AccessMode=3"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" href="~/ProductTaxMapping/AddEditProductTaxMapping?mappingId=@item.MappingId&AccessMode=2"></a>
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblCityList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

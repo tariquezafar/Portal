@@ -1,0 +1,66 @@
+﻿@model List<Portal.Core.ViewModel.CustomerPaymentViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblCustomerPaymentList">
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Payment No.</th>
+                    <th>Payment Date</th>
+                    <th>Customer Name</th> 
+                    <th>Invoice No</th> 
+                    <th>Ref. No.</th>
+                    <th>Ref. Date</th> 
+                    <th>Created By User</th>
+                    <th>Created Date</th>
+                    <th>Modified By User</th>
+                    <th>Modified Date</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/CustomerPayment/AddEditCustomerPayment?PaymentTrnId=@item.PaymentTrnId&AccessMode=3"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" href="~/CustomerPayment/AddEditCustomerPayment?PaymentTrnId=@item.PaymentTrnId&AccessMode=2"></a>
+                        </td>
+                        <td>@item.PaymentNo</td>
+                        <td>@item.PaymentDate</td>
+                        <td>@item.CustomerName</td> 
+                        <th>@item.InvoiceNo</th> 
+                        <td>@item.RefNo</td>
+                        <td>@item.RefDate</td> 
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+                        
+
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblCustomerPaymentList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

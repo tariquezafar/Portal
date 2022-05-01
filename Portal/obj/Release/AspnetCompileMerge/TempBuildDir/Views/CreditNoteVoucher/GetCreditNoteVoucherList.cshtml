@@ -1,0 +1,127 @@
+﻿@model List<Portal.Core.ViewModel.VoucherViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+
+    table tr:nth-child(2n+1) {
+        background-color: #dff0d8;
+    }
+
+    table tr:nth-child(2n) {
+        background-color: #dff0d8;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblVoucherList">
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Voucher No.</th>
+                    <th>Voucher Date</th>
+                    <th>Voucher Amount</th>
+                    <th>Voucher Mode</th>
+                    <th>Company Branch</th>
+                    <th>Voucher Status</th>
+                    <th>Created By User</th>
+                    <th>Created Date</th>
+                    <th>Modified By User</th>
+                    <th>Modified Date</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="margin:0px auto;">
+                            <a style="color:white;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/CreditNoteVoucher/AddEditCreditNoteVoucher?voucherId=@item.VoucherId&AccessMode=3"></a>
+
+                            @if (item.VoucherStatus.ToUpper() == "FINAL")
+                            {
+                                <a style="color:white;text-decoration:none" title="Edit" class="fa fa-pencil-square-o" href="~/CreditNoteVoucher/AddEditCreditNoteVoucher?voucherId=@item.VoucherId&AccessMode=2"></a>
+
+                            }
+                        </td>
+
+
+                        <td>@item.VoucherNo</td>
+                        <td>@item.VoucherDate</td>
+                        <td>@item.VoucherAmount</td>
+                        <td>@item.VoucherMode</td>
+                        
+                        <td>@item.CompanyBranchName</td>
+                        <td>@item.ContraVoucherNo</td>
+                        
+                        @if (item.VoucherStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine">
+                                @item.VoucherStatus
+                            </td>
+                        }
+                        @if (item.VoucherStatus.ToUpper() == "APPROVED")
+                        {
+                            <td style="background-color:dodgerblue;color:#fff">
+                                @item.VoucherStatus
+                            </td>
+                        }
+                        @if (item.VoucherStatus.ToUpper() == "CANCEL")
+                        {
+                            <td style="background-color:red;color:#fff">
+                                @item.VoucherStatus
+                            </td>
+                        }
+                        @if (item.VoucherStatus.ToUpper() == "FINAL")
+                        {
+                            <td style="background-color:green;color:#fff">
+                                @item.VoucherStatus
+                            </td>
+
+                        } 
+                        <td>@item.CreatedName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedName</td>
+                        <td>@item.ModifiedDate</td>
+                        
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblVoucherList').paging({
+            limit: 10,  
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

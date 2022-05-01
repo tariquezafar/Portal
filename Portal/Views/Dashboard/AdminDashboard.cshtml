@@ -1,0 +1,170 @@
+﻿@{
+    ViewBag.Title = "AdminDashboard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    .crm-box {
+        width: 31%;
+    }
+
+    .crm-box-1 {
+        margin-left: -14px;
+        width: 33%;
+    }
+.market-update-block.clr-block-1{margin-right:-17px! important;}
+    .crm-box-2 {
+        margin-left: 14px;
+        width: 32%;
+    }
+
+    .inventory-box {
+        background: #fff;
+        width: 34%;
+        padding-right: 0;
+    }
+
+    #DivInOutProductQuantityCount {
+        padding: 0px;
+        width: 65%;
+    }
+    .popular-bran-right{ 
+        background-color:#4a9a79; 
+            margin-top: -18px !important;
+            min-height: 135px !important;
+
+    }
+    .popular-brand{margin-top:19px ! important;}
+    @@media(max-width:760px) {
+        .admin-box-4{background-color:transparent;}
+        .popular-bran-right{margin-top:-100px; background-color:transparent;}
+        .popular-brand{margin-top:-83px!important; margin-left: -21px;width: 100%;}
+        .popular-bran-left{z-index:99999; color:#fff; position:relative; top:95px;}
+        .popular-bran-left a{color:#fff;padding-left:20px;}
+        .admin-box-4{height:auto;}
+       .climate-grids{width:100%!important ; position:static!important;}
+       .market-update-gd{width:100%!important;}
+    }
+</style>
+<link href="~/Content/dashboard.css" rel="stylesheet" />
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div id="wrapper">
+    <div id="page-content-wrapper" style="padding-top:5px !important;">
+        <div class="page-content">
+            <div class="container-fluid">
+               <div class="row top-head">
+                    <div class="col-md-3">
+                    </div>
+                   <div class="col-md-12">
+                       
+                       <div class="col-md-5" style="margin-top: 5px;margin-bottom:5px">
+                           <b><label for="ddlCompanyBranchForComman" class="col-sm-4" style="margin-top: 5px;color:#fff">Company Branch</label></b>
+                           <div class="col-sm-8">
+                               <select id="ddlCompanyBranchForComman" name="ddlCompanyBranchForComman" onchange="commanfunction();"  tabindex="9" class="form-control"></select>
+                               <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                               <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                           </div>
+                       </div>
+                   </div>
+                    <div class="col-md-3">
+                    </div>
+                </div>
+                <div class="container-fluid-md ftop">
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="panel panel-metric panel-metric-sm">
+                                <div class="panel-body panel-body-primary">
+                                    <div class="metric-content metric-icon">
+                                        <div class="icon">
+                                            <i class="fa fa-user"></i>
+                                        </div>
+                                        <header>
+                                            <h3 class="thin">Today Created User(s)</h3>
+                                        </header>
+                                        <div class="value">
+                                            @ViewData["TodayUsersCount"]
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="@Url.Content("~/User/ListUser")" target="_blank">
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="panel panel-metric panel-metric-sm">
+                                <div class="panel-body panel-body-success">
+                                    <div class="metric-content metric-icon">
+                                        <div class="value">
+                                            @ViewData["TotalUsersCount"]
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-users"></i>
+                                        </div>
+                                        <header>
+                                            <h3 class="thin">
+                                                Total Active User(s)
+                                            </h3>
+                                        </header>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> </a>
+                        <a href="@Url.Content("~/Role/ListRole")" target="_blank">
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="panel panel-metric panel-metric-sm">
+                                <div class="panel-body panel-body-inverse">
+                                    <div class="metric-content metric-icon">
+                                        <div class="value">
+                                            @ViewData["TotalRolesCount"]
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-list-alt"></i>
+                                        </div>
+                                        <header>
+                                            <h3 class="thin">Total Active Role(s)</h3>
+                                        </header>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="panel panel-metric panel-metric-sm">
+                                <div class="panel-body panel-body-danger">
+                                    <div class="metric-content metric-icon">
+
+                                        <div class="icon">
+                                            <i class="fa fa-link"></i>
+                                        </div>
+                                        <header>
+                                            <h3 class="thin">
+                                                <p><i aria-hidden="true"></i><a href="@Url.Content("~/User/AddEditUser")" target="_blank" style="font-size:12px;color:white;">Add New Users</a></p>
+                                                <p><i aria-hidden="true"></i><a href="@Url.Content("~/Role/AddEditRole")" target="_blank" style="font-size:12px;color:white;">Add New Roles</a></p>
+                                                <p><i aria-hidden="true"></i><a href="@Url.Content("~/Role/AddEditRoleUIMapping")" target="_blank" style="font-size:12px;color:white;">Add New Map User</a></p>
+                                            </h3>
+                                        </header>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="midcontentofadmindash">
+
+                        <div class="col-md-6" id="DivUsersList">
+
+                        </div>
+                        <div class="col-md-6" id="DivRolesList">
+
+                        </div>
+                    </div>
+
+                </div>
+                    
+        </div>
+        <!--end body content -->
+    </div>
+</div>
+   
+   
+  
+<script src="~/Scripts/Dashboard/AdminDashboard.js"></script>

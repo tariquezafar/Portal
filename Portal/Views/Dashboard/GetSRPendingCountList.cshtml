@@ -1,0 +1,53 @@
+﻿@model List<Portal.Core.ViewModel.StoreRequisitionViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table int-product" id="tblSINPendingCountList" style="margin-top:10px;">
+            <thead style="border-top-left-radius:15px;">
+                <tr style="border:none;">
+                    <th style="background:#4f75c6; color:#fff;" colspan="8">Pending Requisition</th>
+                </tr>
+                <tr style="background:#D0DDEC; border:1px solid #ccc;">
+                    <th style="text-align:center">Requisition No.</th>
+                    <th style="text-align:center">Work Order No.</th>                   
+                    <th style="text-align:center">product Name</th>                    
+                </tr>
+
+            </thead>
+            <tbody style="border:1px solid #ccc;">
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                       
+                        <td align="center">@item.RequisitionNo </td>                       
+                       
+                        <td align="center">@item.WorkOrderNo</td>
+                        <td align="center">@item.ProductName</td>
+
+                    </tr>
+                }
+                <tr>
+                    <td colspan="8" align="center" style="background:#bfdfff;">
+                        <a href="@Url.Content("~/SIN/AddEditSIN")"  target="_blank">View All Pending Store Requisition</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Pending Store Requisition Not Found !!!</h3>
+}
+@*<script>
+        $(document).ready(function () {
+            $('#tblSINPendingCountList').paging({SIN/AddEditSIN
+                limit:5,
+                rowDisplayStyle: 'block',
+                activePage: 0,
+                rows: []
+            });
+
+        });
+    </script>*@

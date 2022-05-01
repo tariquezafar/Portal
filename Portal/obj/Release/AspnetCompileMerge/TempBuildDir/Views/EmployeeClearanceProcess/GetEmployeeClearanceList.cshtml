@@ -1,0 +1,60 @@
+﻿@model List<Portal.Core.ViewModel.EmployeeClearanceProcessViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblClearanceProcess">
+            <thead>
+                <tr>
+                    <th align="center">Action</th>
+                    <th>Employee Clearance No.</th>
+                    <th>Employee Code</th>
+                    <th>Employee Name</th>
+                    <th>Clearance Template</th>
+                    <th>Clearance Status</th>
+                    <th>Last Updated By User</th>
+                    <th>Last Updated Date</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/EmployeeClearanceProcess/AddEditEmployeeClearance?employeeClearanceId=@item.EmployeeClearanceId&AccessMode=3"></a>
+                            @if(item.ClearanceFinalStatus.ToUpper()!="FINAL")
+                            { 
+                            <a style="color:white" class="fa fa-pencil-square-o" href="~/EmployeeClearanceProcess/AddEditEmployeeClearance?employeeClearanceId=@item.EmployeeClearanceId&AccessMode=2"></a>
+                            }
+                        </td> 
+                        <td>@item.EmployeeClaaranceNo</td>
+                        <td>@item.EmployeeCode</td>
+                        <td>@item.EmployeeName</td>
+                        <td>@item.ClearanceTemplateName</td>
+                        <td>@item.ClearanceFinalStatus</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>  
+                        
+            </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblClearanceProcess').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

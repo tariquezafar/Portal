@@ -1,0 +1,112 @@
+22:19:23 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+22:19:23 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:20:06 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSISupportingDocumentList
+Error Line No : 887
+Exception Type : System.ArgumentException
+Details: Column 'DocumentName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+22:20:06 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSISupportingDocumentList
+Error Line No : 1045
+Exception Type : System.ArgumentException
+Details: Column 'DocumentName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+22:24:41 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSISupportingDocumentList
+Error Line No : 887
+Exception Type : System.ArgumentException
+Details: Column 'DocumentName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+22:24:41 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSISupportingDocumentList
+Error Line No : 1045
+Exception Type : System.ArgumentException
+Details: Column 'DocumentName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+22:24:48 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSISupportingDocumentList
+Error Line No : 887
+Exception Type : System.ArgumentException
+Details: Column 'Description' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+22:24:48 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSISupportingDocumentList
+Error Line No : 1045
+Exception Type : System.ArgumentException
+Details: Column 'Description' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+22:28:00 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSISupportingDocumentList
+Error Line No : 887
+Exception Type : System.ArgumentException
+Details: Column 'Description' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+22:28:00 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSISupportingDocumentList
+Error Line No : 1045
+Exception Type : System.ArgumentException
+Details: Column 'Description' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+22:56:33 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:56:33 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:13:36 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:13:36 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

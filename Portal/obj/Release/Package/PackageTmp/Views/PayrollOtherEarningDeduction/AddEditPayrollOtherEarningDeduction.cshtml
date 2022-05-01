@@ -1,0 +1,355 @@
+﻿@{
+    ViewBag.Title = "Add/Edit Payroll Other Earning Deduction";
+    Layout = "~/Views/Shared/_PayrollLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+       
+    /* allow space for check mark */
+</style>
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/PayrollDashboard">Payroll</a> >> Add/Edit Payroll Other Earning Deduction</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditPayrollProcessPeriod" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="ddlMonth" class="col-sm-4 control-label">Payroll Process Period&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlMonth" name="ddlMonth" onchange="GetProcessStartEndDate()" tabindex="1" class="form-control"></select>
+                        <input id="hdnMonthlyInputId" type="hidden" value="@ViewData["monthlyInputId"]" />
+                        <input id="hdnPayrollProcessingPeriodId" type="hidden" value="0" />
+                        <input id="hdnMonthID" type="hidden" value="0" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtPayrollProcessDate" class="col-sm-4 control-label">Payroll Process Date</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtPayrollProcessDate" name="txtPayrollProcessDate" tabindex="2" placeholder="Payroll Process Date" type="text" value="@ViewData["currentDate"]" maxlength="100" />
+                    </div>
+                </div>
+         
+                <div class="form-group col-md-4">
+                    <label for="txtPayrollProcessingStartDate" class="col-sm-4 control-label">Payroll Processing StartDate</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtPayrollProcessingStartDate" name="txtPayrollProcessingStartDate" tabindex="3" placeholder="Payroll Processing Start Date" type="text" value="@ViewData["currentDate"]" maxlength="100" />
+
+                    </div>
+                </div>
+               
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtPayrollProcessingEndDate" class="col-sm-4 control-label">End Date</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtPayrollProcessingEndDate" name="txtPayrollProcessingEndDate" tabindex="4" placeholder="Payroll Processing End Date" type="text" value="@ViewData["currentDate"]" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="ddlPayrollLocked" class="col-sm-4 control-label">Payroll Locked</label>
+                    <div class="col-sm-8">
+                        <select id="ddlPayrollLocked" name="ddlPayrollLocked"  tabindex="5" class="form-control">
+                            <option value="0">Unlocked</option>
+                            <option value="1">Locked</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtPayrollLockDate" class="col-sm-4 control-label">Payroll Lock Date</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtPayrollLockDate" name="txtPayrollLockDate" tabindex="6" placeholder="Payroll Lock Date" type="text" value="@ViewData["currentDate"]" maxlength="100" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="ddlPayrollProcessStatus" class="col-sm-4 control-label">Payroll Status</label>
+                    <div class="col-sm-8">
+                        <select id="ddlPayrollProcessStatus" name="ddlPayrollProcessStatus" tabindex="7" class="form-control">
+                            <option value="PENDING">Pending</option>
+                            <option value="IN PROCESS">In Process</option>
+                            <option value="FINAL">Final</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtEmployee" class="col-sm-4 control-label">Employee&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtEmployee" name="txtEmployee" value="" tabindex="8" placeholder="Enter Employee Name" type="text" maxlength="50" />
+                        <input type="hidden" id="hdnEmployeeId" name="hdnEmployeeId" value="0" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtEmployeeCode" class="col-sm-4 control-label">Employee Code</label>
+
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtEmployeeCode" name="txtEmployeeCode" tabindex="9" placeholder="Enter Employee Code" type="text" maxlength="50" />
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="ddlDepartment" class="col-sm-4 control-label">Department</label>
+                    <div class="col-sm-8">
+                        <select id="ddlDepartment" name="ddlDepartment" onchange="BindDesignationList(0)" tabindex="10" class="form-control"></select>
+                        <input type="hidden" id="hdnDepartment" name="hdnDepartment" value="0" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="ddlDesignation" class="col-sm-4 control-label">Designation</label>
+                    <div class="col-sm-8">
+                        <select id="ddlDesignation" name="ddlDesignation" tabindex="11" class="form-control"></select>
+                        <input type="hidden" id="hdnDesignation" name="hdnDesignation" value="0" />
+                    </div>
+                </div>
+         
+                <div class="form-group col-md-4">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch</label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="12" class="form-control"></select>
+                        <input type="hidden" id="hdnCompanyBranch" name="hdnCompanyBranch" value="0" />
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+
+                    </div>
+                </div>
+               
+
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="ddlTDSApplicable" class="col-sm-4 control-label">TDS Applicable</label>
+                    <div class="col-sm-8">
+                        <select id="ddlTDSApplicable" name="ddlTDSApplicable" onchange="ShowHideIncomeTax();" tabindex="13" class="form-control">
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtIncomeTax" class="col-sm-4 control-label">Income Tax</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtIncomeTax" name="txtIncomeTax" onkeyup="checkDec(this);" tabindex="14" placeholder="Enter Income Tax" type="text" maxlength="50" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtAnnualBonus" class="col-sm-4 control-label">Annual Bonus</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtAnnualBonus" name="txtAnnualBonus" onkeyup="checkDec(this);" tabindex="15" placeholder="Enter Annual Bonus" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtExgretia" class="col-sm-4 control-label">Exgretia</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtExgretia" name="txtExgretia" onkeyup="checkDec(this);" tabindex="16" placeholder="Enter Exgretia" type="text" maxlength="50" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtIncentive" class="col-sm-4 control-label">Incentive</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtIncentive" name="txtIncentive" onkeyup="checkDec(this);" tabindex="17" placeholder="Enter Incentive" type="text" maxlength="50" />
+                    </div>
+                </div>
+          
+                <div class="form-group col-md-4">
+                    <label for="txtLeaveEncashment" class="col-sm-4 control-label">Leave Encashment</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtLeaveEncashment" name="txtLeaveEncashment" onkeyup="checkDec(this)" tabindex="18" placeholder="Enter Leave Encashment" type="text" maxlength="50" />
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtNoticePayPayable" class="col-sm-4 control-label">Notice Pay Payable</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtNoticePayPayable" name="txtNoticePayPayable" onkeyup="checkDec(this);" tabindex="19" placeholder="Enter Notice Pay Payable" type="text" maxlength="50" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtOverTimeAllow" class="col-sm-4 control-label">Over Time Allow</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtOverTimeAllow" name="txtOverTimeAllow" onkeyup="checkDec(this);" tabindex="20" placeholder="Enter Over Time Allow" type="text" maxlength="50" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtVariablePay" class="col-sm-4 control-label">Variable Pay</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtVariablePay" name="txtVariablePay" onkeyup="checkDec(this);" tabindex="21" placeholder="Enter Notice Pay Payable" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtOtherDeduction" class="col-sm-4 control-label">Other Deduction</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtOtherDeduction" name="txtOtherDeduction" onkeyup="checkDec(this);" tabindex="22" placeholder="Enter Other Deduction" type="text" maxlength="50" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtOtherAllowance" class="col-sm-4 control-label">Other Allowance</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtOtherAllowance" name="txtOtherAllowance" onkeyup="checkDec(this);" tabindex="23" placeholder="Enter Other Allowance" type="text" maxlength="50" />
+                    </div>
+                </div>
+        
+                <div class="form-group col-md-4">
+                    <label for="txtLoanPayable" class="col-sm-4 control-label">Loan Payable</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtLoanPayable" name="txtLoanPayable" onkeyup="checkDec(this);" tabindex="24" placeholder="Enter Loan Payable" type="text" maxlength="50" />
+                    </div>
+                </div>
+               
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtLoanRecv" class="col-sm-4 control-label">Loan Recv</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtLoanRecv" name="txtLoanRecv" onkeyup="checkDec(this);" tabindex="25" placeholder="Enter Loan Recv" type="text" maxlength="50" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtAdvancePayable" class="col-sm-4 control-label">Advance Payable</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtAdvancePayable" name="txtAdvancePayable" onkeyup="checkDec(this);" tabindex="26" placeholder="Enter Advance Payable" type="text" maxlength="50" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtAdvanceRecv" class="col-sm-4 control-label">Advance Recv</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtAdvanceRecv" name="txtAdvanceRecv" onkeyup="checkDec(this);" tabindex="27" placeholder="Enter Advance Recv" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12" id="divCreated" style="display:none;">
+                <div class="form-group col-md-4">
+                    <label for="txtCreatedBy" class="col-sm-4 control-label">Created By</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtCreatedBy" name="txtCreatedBy" tabindex="28" placeholder="Created By User Name" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtCreatedDate" class="col-sm-4 control-label">Created Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtCreatedDate" name="txtCreatedDate" tabindex="29" placeholder="Created Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="divModified" style="display:none;">
+                <div class="form-group col-md-4">
+                    <label for="txtModifiedBy" class="col-sm-4 control-label">Modified By</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtModifiedBy" name="txtModifiedBy" tabindex="30" placeholder="Modified By User Name" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtModifiedDate" class="col-sm-4 control-label">Modified Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtModifiedDate" name="txtModifiedDate" tabindex="31" placeholder="Modified Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="32" onclick="SaveData(1);" type="button" border="0">
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="32" alt="Update" id="btnUpdate" onclick="SaveData(2);"type="button" border="0">                       
+                        <a class="btn btn-success" id="btnReset" tabindex="35" href="@Url.Content("~/PayrollOtherEarningDeduction/AddEditPayrollOtherEarningDeduction")">Reset</a>
+                        <a class="btn btn-success" id="btnList" tabindex="36" href="@Url.Content("~/PayrollOtherEarningDeduction/ListPayrollOtherEarningDeduction")">Search Payroll Earning Deduction</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="33" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="34" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="34" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+
+<script src="~/Scripts/PayrollOtherEarningDeduction/AddPayrollOtherEarningDeduction.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>

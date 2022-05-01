@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "List Product Opening Stock";
+    Layout = "~/Views/Shared/_InventoryLayout.cshtml";
+}
+<style>
+    .table {
+        width: 121%;
+        max-width: 121%;
+        margin-bottom: 20px;
+    }
+</style>
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/InventoryDashboard">Inventory</a> >> List Product Opening Stock </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmListProduct" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group">
+                    <label for="ddlcompanybranch" class="col-sm-4 control-label">Company Branch</label>
+                    <div class="col-sm-3">
+                        <select id="ddlcompanybranch" name="ddlcompanybranch" tabindex="3" class="form-control"></select>
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+
+                    </div>
+                </div>
+            </div>
+
+                    <div class="row col-sm-6 col-lg-12 col-md-12">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <center>
+                                <input class="btn btn-success" value="Export" alt="Export" tabindex="2" id="btnSearch" onclick="OpenPrintPopup();" type="button" border="0">
+                                <input class="btn btn-success" type="button" id="btnReset" tabindex="3" onclick="ClearFields()" value="Reset" /> 
+                            </center>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+                <!-- Modal -->
+        <div class="modal fade" id="printModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content" style="width: 500px;">
+                    <div class="modal-header" style="text-align: center;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Product Opening Stock Report</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="ddlPrintOption" class="col-sm-4 control-label">Report Option</label>
+                            <div class="col-sm-5">
+                                <select id="ddlPrintOption" name="ddlPrintOption" onchange="ShowHidePrintOption()" tabindex="1" class="form-control">
+                                    <option selected="selected" value="PDF">PDF</option>
+                                    <option value="Excel">Excel</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="text-align:center;">
+                        <a class="btn btn-success" target="_blank" href="#" id="btnPdf">Print</a>
+                        <a class="btn btn-success" style="display:none;" target="_blank" href="#" id="btnExcel">Print</a>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</form>
+</section>
+<script src="~/Scripts/Product/ListProductOpeningStockReport.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>

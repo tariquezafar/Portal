@@ -1,0 +1,55 @@
+﻿@model List<Portal.Core.ViewModel.GLTransferClosingBalanceViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+      .table th {
+    background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    color:#fff;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div>
+        <table class="table table-bordered table-hover" id="tblCarryForwardList">
+            <thead>
+                <tr>                   
+                    <th><center>From FinYear</center></th>
+                    <th><center>To FinYear</center></th>
+                    <th><center>Branch Name</center></th>                  
+                    <th><center>Created By User</center></th>
+                    <th><center>Created Date</center></th>                                        
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {                   
+                    <tr class="success">
+                        
+                        <td align="center">@item.FromFinYearID</td>
+                        <td align="center">@item.ToFinYearID</td>
+                        <td align="center">@item.BranchName</td>                     
+                        <td>@item.UserName</td>
+                        <td>@item.CreatedDate</td>
+                     
+                    </tr>
+                                     
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblCarryForwardList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

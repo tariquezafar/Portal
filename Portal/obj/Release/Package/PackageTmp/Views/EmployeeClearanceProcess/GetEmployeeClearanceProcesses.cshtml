@@ -1,0 +1,65 @@
+﻿@model List<Portal.Core.ViewModel.EmployeeClearanceProcessDetailViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblClearanceTemplate">
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>Separation Clear List</th>
+                    <th>Clearance By User</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>
+                            @item.TaxSequenceNo
+                        <input type="hidden" id="hdnTaxSequenceNo" value="@item.TaxSequenceNo" />
+                        <input type="hidden" id="hdnEmployeeClearanceDetailId" value="@item.EmployeeClearanceDetailId" />
+                    </td>
+                    <td>
+                        @item.SeparationClearListName
+                    <input type="hidden" id="hdnSeparationClearListId" value="@item.SeparationClearListId" />
+                </td>
+                <td>
+                    @item.ClearanceByUserName
+                <input type="hidden" id="hdnClearanceByUserId" value="@item.ClearanceByUserId" />
+            </td>
+        </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblClearanceTemplate">
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>Separation Clear List</th>
+                    <th>Clearance By User</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            </table>
+        </div>
+    }
+            <script>
+                $(document).ready(function () {
+                    $('#tblClearanceTemplate').paging({
+                        limit: 10,
+                        rowDisplayStyle: 'block',
+                        activePage: 0,
+                        rows: []
+                    });
+
+                });
+            </script>

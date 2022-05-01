@@ -1,0 +1,620 @@
+20:17:59 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+20:17:59 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+20:18:16 PM
+Source : Portal.Controllers.JobCardController
+Method Name : GetJobCardProductList
+Error Line No : 94
+Exception Type : System.MissingMethodException
+Details: Method not found: 'System.Data.DataTable Portal.DAL.SQLDbInterface.GetJobCardProductList(Int64)'.
+---------------------------------------------------------------------------------------------------------------------------
+
+20:19:59 PM
+Source : Portal.Controllers.JobCardController
+Method Name : GetJobCardProductList
+Error Line No : 94
+Exception Type : System.MissingMethodException
+Details: Method not found: 'System.Data.DataTable Portal.DAL.SQLDbInterface.GetJobCardProductList(Int64)'.
+---------------------------------------------------------------------------------------------------------------------------
+
+20:22:23 PM
+Source : Portal.Controllers.JobCardController
+Method Name : GetJobCardProductList
+Error Line No : 94
+Exception Type : System.MissingMethodException
+Details: Method not found: 'System.Data.DataTable Portal.DAL.SQLDbInterface.GetJobCardProductList(Int64)'.
+---------------------------------------------------------------------------------------------------------------------------
+
+20:24:20 PM
+Source : Portal.Controllers.JobCardController
+Method Name : GetJobCardProductList
+Error Line No : 94
+Exception Type : System.MissingMethodException
+Details: Method not found: 'System.Data.DataTable Portal.DAL.SQLDbInterface.GetJobCardProductList(Int64)'.
+---------------------------------------------------------------------------------------------------------------------------
+
+20:24:52 PM
+Source : Portal.Controllers.JobCardController
+Method Name : GetJobCardProductList
+Error Line No : 94
+Exception Type : System.MissingMethodException
+Details: Method not found: 'System.Data.DataTable Portal.DAL.SQLDbInterface.GetJobCardProductList(Int64)'.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:16:56 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:16:56 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:25:21 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobCard
+Error Line No : 0
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:25:21 PM
+Source : Portal.Core.JobCardBL
+Method Name : AddEditJobCard
+Error Line No : 86
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:25:21 PM
+Source : Portal.Controllers.JobCardController
+Method Name : AddEditJobCard
+Error Line No : 66
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:26:38 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobCard
+Error Line No : 0
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:28:57 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:28:57 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:29:03 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:29:03 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:31:21 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobCard
+Error Line No : 0
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:37:00 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:37:00 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:40:52 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:40:52 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:41:52 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobCard
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:41:52 PM
+Source : Portal.Core.JobCardBL
+Method Name : AddEditJobCard
+Error Line No : 86
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:41:52 PM
+Source : Portal.Controllers.JobCardController
+Method Name : AddEditJobCard
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:41:58 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobCard
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:41:58 PM
+Source : Portal.Core.JobCardBL
+Method Name : AddEditJobCard
+Error Line No : 86
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:42:07 PM
+Source : Portal.Controllers.JobCardController
+Method Name : AddEditJobCard
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:44:48 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobCard
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:49:11 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:49:11 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:50:48 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobCard
+Error Line No : 0
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:50:48 PM
+Source : Portal.Core.JobCardBL
+Method Name : AddEditJobCard
+Error Line No : 86
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:50:48 PM
+Source : Portal.Controllers.JobCardController
+Method Name : AddEditJobCard
+Error Line No : 66
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:51:02 PM
+Source : Portal.Controllers.JobCardController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'jobCardId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.JsonResult GetJobCardDetail(Int64)' in 'Portal.Controllers.JobCardController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+21:51:39 PM
+Source : Portal.Controllers.JobCardController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'jobCardId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.JsonResult GetJobCardDetail(Int64)' in 'Portal.Controllers.JobCardController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+21:51:44 PM
+Source : Portal.Controllers.JobCardController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'jobCardId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.JsonResult GetJobCardDetail(Int64)' in 'Portal.Controllers.JobCardController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+21:51:49 PM
+Source : Portal.Controllers.JobCardController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'jobCardId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.JsonResult GetJobCardDetail(Int64)' in 'Portal.Controllers.JobCardController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+21:52:23 PM
+Source : Portal.Core.JobCardBL
+Method Name : GetJobCardDetail
+Error Line No : 110
+Exception Type : System.ArgumentException
+Details: Column 'CreatedBy' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+21:52:23 PM
+Source : Portal.Controllers.JobCardController
+Method Name : GetJobCardDetail
+Error Line No : 113
+Exception Type : System.ArgumentException
+Details: Column 'CreatedBy' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+21:57:34 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:57:34 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:32:00 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:32:00 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:44:27 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:44:27 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:46:43 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobCard
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:46:43 PM
+Source : Portal.Core.JobCardBL
+Method Name : AddEditJobCard
+Error Line No : 86
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:46:43 PM
+Source : Portal.Controllers.JobCardController
+Method Name : AddEditJobCard
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:46:59 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobCard
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:46:59 PM
+Source : Portal.Core.JobCardBL
+Method Name : AddEditJobCard
+Error Line No : 86
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:46:59 PM
+Source : Portal.Controllers.JobCardController
+Method Name : AddEditJobCard
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:47:09 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobCard
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:47:09 PM
+Source : Portal.Core.JobCardBL
+Method Name : AddEditJobCard
+Error Line No : 86
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:47:09 PM
+Source : Portal.Controllers.JobCardController
+Method Name : AddEditJobCard
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:47:14 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobCard
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:47:14 PM
+Source : Portal.Core.JobCardBL
+Method Name : AddEditJobCard
+Error Line No : 86
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:47:14 PM
+Source : Portal.Controllers.JobCardController
+Method Name : AddEditJobCard
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:47:15 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobCard
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:47:15 PM
+Source : Portal.Core.JobCardBL
+Method Name : AddEditJobCard
+Error Line No : 86
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:47:15 PM
+Source : Portal.Controllers.JobCardController
+Method Name : AddEditJobCard
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:47:17 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobCard
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:47:17 PM
+Source : Portal.Core.JobCardBL
+Method Name : AddEditJobCard
+Error Line No : 86
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:47:17 PM
+Source : Portal.Controllers.JobCardController
+Method Name : AddEditJobCard
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:48:24 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobCard
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:48:24 PM
+Source : Portal.Core.JobCardBL
+Method Name : AddEditJobCard
+Error Line No : 86
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:48:24 PM
+Source : Portal.Controllers.JobCardController
+Method Name : AddEditJobCard
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:49:34 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobCard
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:49:34 PM
+Source : Portal.Core.JobCardBL
+Method Name : AddEditJobCard
+Error Line No : 86
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:49:34 PM
+Source : Portal.Controllers.JobCardController
+Method Name : AddEditJobCard
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:50:51 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobCard
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:50:51 PM
+Source : Portal.Core.JobCardBL
+Method Name : AddEditJobCard
+Error Line No : 86
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:50:51 PM
+Source : Portal.Controllers.JobCardController
+Method Name : AddEditJobCard
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:55:28 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:55:28 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:36:08 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:36:08 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

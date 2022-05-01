@@ -1,0 +1,380 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Add New Consignee</title>
+    <style>
+        .Mandatory {
+            color: red;
+            font-weight: bold;
+        }
+
+
+        fieldset.scheduler-border {
+            border: 1px groove #ddd !important;
+            padding: 0 1.4em 1.4em 1.4em !important;
+            margin: 0 0 1.5em 0 !important;
+            -webkit-box-shadow: 0px 0px 0px 0px #000;
+            box-shadow: 0px 0px 0px 0px #000;
+        }
+
+        legend {
+            display: block;
+            width: 37%;
+            padding: 0;
+            margin-bottom: 20px;
+            font-size: 21px;
+            line-height: inherit;
+            color: #333;
+            border: 0;
+            border-bottom: 0px solid #e5e5e5;
+        }
+    </style>
+</head>
+
+<body class="sidebar-condensed" id="body">
+
+    <section>
+        <form action="#" id="frmAddEditConsignee" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+            <div class="">
+                <div id="tabs">
+                    <div id="tabs-1">
+                        <div class="col-md-12 ftop">
+                            <div class="form-group col-md-6">
+                                <label for="txtPopUpConsigneeName" class="col-sm-4 control-label">Consignee Name&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtPopUpConsigneeName" name="txtPopUpConsigneeName" tabindex="24" placeholder="Enter Consignee Name" type="text" maxlength="100" />
+                                    <input id="hdnCustomerMasterType" type="hidden" value="0" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtPopUpConsigneeCode" class="col-sm-4 control-label">Consignee Code&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtPopUpConsigneeCode" name="txtPopUpConsigneeCode" tabindex="25" placeholder="Enter Consignee Code" type="text" maxlength="50" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+                                <label for="txtPopUpConsigneeContactPersonName" class="col-sm-4 control-label">Contact Person Name&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input class="form-control alpha-space-only" id="txtPopUpConsigneeContactPersonName" name="txtPopUpConsigneeContactPersonName" tabindex="26" placeholder="Enter Contact Person Name" type="text" maxlength="100" />
+                                </div>
+                            </div>
+                            <div class="form-group  col-md-6">
+                                <label for="txtPopUpConsigneePrimaryAddress" class="col-sm-4 control-label">Address&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control" id="txtPopUpConsigneePrimaryAddress" name="txtPopUpConsigneePrimaryAddress" tabindex="27" rows="2" cols="50" placeholder="Enter Address" maxlength="250"> </textarea>
+                                    @*<input class="form-control" id="txtPrimaryAddress" name="txtPrimaryAddress" tabindex="9" placeholder="Enter Address" type="text" maxlength="250" />*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+                                <label for="ddlPopUpConsigneeCountry" class="col-sm-4 control-label">Country&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <select id="ddlPopUpConsigneeCountry" name="ddlPopUpConsigneeCountry" onchange="BindConsigneePrimaryStateList(0)" tabindex="28" class="form-control"></select>
+                                </div>
+                            </div>
+                            <div class="form-group  col-md-6">
+                                <label for="ddlPopUpConsigneeState" class="col-sm-4 control-label">State&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <select id="ddlPopUpConsigneeState" name="ddlPopUpConsigneeState" tabindex="29" class="form-control"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group  col-md-6">
+                                <label for="txtPopUpConsigneeCity" class="col-sm-4 control-label">City&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input class="form-control alpha-space-only" id="txtPopUpConsigneeCity" name="txtPopUpConsigneeCity" tabindex="30" placeholder="Enter City" type="text" maxlength="50" />
+                                </div>
+                            </div>
+                            <div class="form-group  col-md-6">
+                                <label for="txtPopUpConsigneeGSTNo" class="col-sm-4 control-label">GST No.</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtPopUpConsigneeGSTNo" name="txtPopUpConsigneeGSTNo" tabindex="31" placeholder="Enter GST No." type="text" maxlength="15" />
+                                </div>
+                            </div>                           
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group  col-md-6">
+                                <label for="ddlPopUpConsigneeType" class="col-sm-4 control-label">Consignee Type&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <select id="ddlPopUpConsigneeType" name="ddlPopUpConsigneeType" tabindex="32" class="form-control"></select>
+                                </div>
+                            </div>
+                            <div class="form-group  col-md-6">
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnPopUpSave" tabindex="33" onclick="SaveConsigneeDataPopUp()" type="button" border="0">
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        </form>
+    </section>
+</body>
+</html>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script>
+    $(".alpha-only").on("input", function () {
+        var regexp = /[^a-zA-Z]/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+    $(".alpha-space-only").on("input", function () {
+        var regexp = /[^a-zA-Z\s]+$/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+    $(".numeric-only").on("input", function () {
+        var regexp = /\D/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+    $(".alpha-numeric-only").on("input", function () {
+        var regexp = /[^a-zA-Z0-9]/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+
+    $(document).ready(function () {
+        BindConsigneeCountryList();
+        BindConsigneeCustomerTypeList();
+    });
+
+    function BindConsigneeCountryList() {
+        $.ajax({
+            type: "GET",
+            url: "../Company/GetCountryList",
+            data: "{}",
+            dataType: "json",
+            asnc: false,
+            success: function (data) {
+                $("#ddlPopUpConsigneeCountry").append($("<option></option>").val(0).html("-Select Country-"));
+                $.each(data, function (i, item) {
+
+                    $("#ddlPopUpConsigneeCountry").append($("<option></option>").val(item.CountryId).html(item.CountryName));
+                });
+            },
+            error: function (Result) {
+                $("#ddlPopUpConsigneeCountry").append($("<option></option>").val(0).html("-Select Country-"));
+            }
+        });
+    }
+
+    function BindConsigneeCustomerTypeList() {
+        $.ajax({
+            type: "GET",
+            url: "../Customer/GetCustomerTypeList",
+            data: "{}",
+            dataType: "json",
+            asnc: false,
+            success: function (data) {
+                $("#ddlPopUpConsigneeType").append($("<option></option>").val(0).html("-Select Customer Type-"));
+                $.each(data, function (i, item) {
+
+                    $("#ddlPopUpConsigneeType").append($("<option></option>").val(item.CustomerTypeId).html(item.CustomerTypeDesc));
+                });
+            },
+            error: function (Result) {
+                $("#ddlPopUpConsigneeType").append($("<option></option>").val(0).html("-Select Customer Type-"));
+            }
+        });
+    }
+
+    function BindConsigneePrimaryStateList(stateId) {
+        var countryId = $("#ddlPopUpConsigneeCountry option:selected").val();
+        $("#ddlPopUpConsigneeState").val(0);
+        $("#ddlPopUpConsigneeState").html("");
+        if (countryId != undefined && countryId != "" && countryId != "0") {
+            var data = { countryId: countryId };
+            $.ajax({
+                type: "GET",
+                url: "../Company/GetStateList",
+                data: data,
+                asnc: false,
+                dataType: "json",
+                success: function (data) {
+                    $("#ddlPopUpConsigneeState").append($("<option></option>").val(0).html("-Select State-"));
+                    $.each(data, function (i, item) {
+                        $("#ddlPopUpConsigneeState").append($("<option></option>").val(item.StateId).html(item.StateName));
+                    });
+                    $("#ddlPopUpConsigneeState").val(stateId);
+                },
+                error: function (Result) {
+                    $("#ddlPopUpConsigneeState").append($("<option></option>").val(0).html("-Select State-"));
+                }
+            });
+        }
+        else {
+
+            $("#ddlPopUpConsigneeState").append($("<option></option>").val(0).html("-Select State-"));
+        }
+
+    }
+
+    function checkDecPopUp(el) {
+        var ex = /^[0-9]+\.?[0-9]*$/;
+        if (ex.test(el.value) == false) {
+            el.value = el.value.substring(0, el.value.length - 1);
+        }
+
+    }
+
+    //Save Customer Data------------
+
+    function SaveConsigneeDataPopUp() {
+        var txtPopUpConsigneeName = $("#txtPopUpConsigneeName");
+        var txtPopUpConsigneeCode = $("#txtPopUpConsigneeCode");
+        var txtPopUpConsigneeContactPersonName = $("#txtPopUpConsigneeContactPersonName");
+        var txtPopUpConsigneePrimaryAddress = $("#txtPopUpConsigneePrimaryAddress");
+        var ddlPopUpConsigneeType = $("#ddlPopUpConsigneeType");
+        var ddlPopUpConsigneeCountry = $("#ddlPopUpConsigneeCountry");
+        var ddlPopUpConsigneeState = $("#ddlPopUpConsigneeState");
+        var txtPopUpConsigneeGSTNo = $("#txtPopUpConsigneeGSTNo");
+        var txtPopUpConsigneeCity = $("#txtPopUpConsigneeCity");
+        //var hdnCustomerMasterType = $("#hdnCustomerMasterType").val();
+
+        if (txtPopUpConsigneeName.val().trim() == "") {
+            alert("Please Enter Consignee Name");
+            txtPopUpConsigneeName.focus();
+            return false;
+        }
+        if (txtPopUpConsigneeCode.val().trim() == "") {
+            alert("Please Enter Consignee Code");
+            txtPopUpConsigneeCode.focus();
+            return false;
+        }
+        if (txtPopUpConsigneeContactPersonName.val().trim() == "") {
+            alert("Please Enter Contact Person name");
+            txtPopUpConsigneeContactPersonName.focus();
+            return false;
+        }
+
+        if (txtPopUpConsigneePrimaryAddress.val().trim() == "") {
+            alert("Please enter address");
+            txtPopUpConsigneePrimaryAddress.focus();
+            return false;
+        }
+
+        if (ddlPopUpConsigneeType.val().trim() == "0" || ddlPopUpConsigneeType.val() == null) {
+            alert("Please select Consignee type");
+            ddlPopUpConsigneeType.focus();
+            return false;
+        }
+        if (ddlPopUpConsigneeCountry.val() == "" || ddlPopUpConsigneeCountry.val() == "0") {
+            alert("Please select Country");
+            ddlPopUpConsigneeCountry.focus();
+            return false;
+        }
+        if (ddlPopUpConsigneeState.val() == "" || ddlPopUpConsigneeState.val() == "0") {
+            alert("Please select State");
+            ddlPopUpConsigneeState.focus();
+            return false;
+        }
+
+        if (txtPopUpConsigneeCity.val().trim() == "") {
+            alert("Please enter city");
+            txtPopUpConsigneeCity.focus();
+            return false;
+        }
+
+        var customerViewModel = {
+            CustomerCode: txtPopUpConsigneeCode.val().trim(),
+            CustomerName: txtPopUpConsigneeName.val().trim(),
+            ContactPersonName: txtPopUpConsigneeContactPersonName.val().trim(),
+            PrimaryAddress: txtPopUpConsigneePrimaryAddress.val().trim(),
+            CustomerTypeId: ddlPopUpConsigneeType.val(),
+            StateId: ddlPopUpConsigneeState.val(),
+            CountryId: ddlPopUpConsigneeCountry.val(),
+            City: txtPopUpConsigneeCity.val().trim(),
+            GSTNo: txtPopUpConsigneeGSTNo.val().trim(),
+            Customer_Status: true
+        };
+        var requestData = { customerViewModel: customerViewModel };
+        $.ajax({
+            url: "../Customer/AddEditCustomerMaster",
+            cache: false,
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify(requestData),
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.status == "SUCCESS") {
+                    alert("Consignee Created Successfully");
+                    GetConsigneeDetailsById(data.trnId);
+                    ClearConsigneeFieldsPopUp();
+                    $("#AddNewConsignee").modal("hide");
+                }
+                else {
+                    alert(data.message);
+                }
+            },
+            error: function (err) {
+                ShowModel("Error", err)
+            }
+        });
+
+    }
+
+    function GetConsigneeDetailsById(ConsigneeId) {
+        if (ConsigneeId != null && ConsigneeId != 0) {
+            var requestData = { customerId: ConsigneeId };
+            $.ajax({
+                url: "../Customer/GetCustomerDetailsById",
+                cache: false,
+                type: "POST",
+                dataType: "json",
+                data: JSON.stringify(requestData),
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data != null) {
+                        $("#hdnConsigneeId").val(data[0].CustomerId);
+                        $("#txtConsigneeName").val(data[0].CustomerName);
+                        $("#txtConsigneeCode").val(data[0].CustomerCode);
+                        GetConsigneeDetail(data[0].CustomerId);
+                    }
+                },
+                error: function (err) {
+                    ShowModel("Error", err)
+                }
+            });
+        }
+    }
+
+    function ShowModelPopUp(headerText, bodyText) {
+        $("#alertModel").modal();
+        $("#modelHeader").html(headerText);
+        $("#modelText").html(bodyText);
+    }
+    function ClearConsigneeFieldsPopUp() {
+        $("#txtPopUpConsigneeName").val("");
+        $("#txtPopUpConsigneeCode").val("");
+        $("#txtPopUpConsigneeContactPersonName").val("");
+        $("#ddlPopUpConsigneeType").val("0");
+        $("#txtPopUpConsigneePrimaryAddress").val("");
+        $("#ddlPopUpConsigneeCountry").val("0");
+        $("#ddlPopUpConsigneeState").val("0");
+        $("#txtPopUpConsigneeGSTNo").val("");
+        $("#txtPopUpConsigneeCity").val("");
+    }
+
+    
+</script>

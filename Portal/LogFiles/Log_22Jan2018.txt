@@ -1,0 +1,261 @@
+15:26:49 PM
+Source : Portal.Core.ProductBL
+Method Name : GetProductList
+Error Line No : 107
+Exception Type : System.ArgumentException
+Details: Column 'ProductShortDesc' does not belong to table .
+--------------------------------------------------------------------------------------------------------------------------------
+
+15:26:49 PM
+Source : Portal.Controllers.ProductController
+Method Name : GetProductList
+Error Line No : 198
+Exception Type : System.ArgumentException
+Details: Column 'ProductShortDesc' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:27:26 PM
+Source : Portal.Core.ProductBL
+Method Name : GetProductList
+Error Line No : 107
+Exception Type : System.ArgumentException
+Details: Column 'ProductShortDesc' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:28:16 PM
+Source : Portal.Controllers.ProductController
+Method Name : GetProductList
+Error Line No : 198
+Exception Type : System.ArgumentException
+Details: Column 'ProductShortDesc' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:28:21 PM
+Source : Portal.Core.ProductBL
+Method Name : GetProductList
+Error Line No : 107
+Exception Type : System.ArgumentException
+Details: Column 'ProductFullDesc' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:28:21 PM
+Source : Portal.Controllers.ProductController
+Method Name : GetProductList
+Error Line No : 198
+Exception Type : System.ArgumentException
+Details: Column 'ProductFullDesc' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:28:29 PM
+Source : Portal.Core.ProductBL
+Method Name : GetProductList
+Error Line No : 107
+Exception Type : System.ArgumentException
+Details: Column 'ProductFullDesc' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:28:51 PM
+Source : Portal.Controllers.ProductController
+Method Name : GetProductList
+Error Line No : 198
+Exception Type : System.ArgumentException
+Details: Column 'ProductFullDesc' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:28:55 PM
+Source : Portal.Core.ProductBL
+Method Name : GetProductList
+Error Line No : 107
+Exception Type : System.ArgumentException
+Details: Column 'ProductTypeId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:29:00 PM
+Source : Portal.Controllers.ProductController
+Method Name : GetProductList
+Error Line No : 198
+Exception Type : System.ArgumentException
+Details: Column 'ProductTypeId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:29:42 PM
+Source : Portal.Core.ProductBL
+Method Name : GetProductList
+Error Line No : 107
+Exception Type : System.ArgumentException
+Details: Column 'ProductMainGroupId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:29:51 PM
+Source : Portal.Controllers.ProductController
+Method Name : GetProductList
+Error Line No : 198
+Exception Type : System.ArgumentException
+Details: Column 'ProductMainGroupId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:30:32 PM
+Source : Portal.Core.ProductBL
+Method Name : GetProductList
+Error Line No : 107
+Exception Type : System.ArgumentException
+Details: Column 'UOMId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:30:32 PM
+Source : Portal.Controllers.ProductController
+Method Name : GetProductList
+Error Line No : 198
+Exception Type : System.ArgumentException
+Details: Column 'UOMId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:30:50 PM
+Source : Portal.Core.ProductBL
+Method Name : GetProductList
+Error Line No : 107
+Exception Type : System.ArgumentException
+Details: Column 'UOMId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:31:25 PM
+Source : Portal.Controllers.ProductController
+Method Name : GetProductList
+Error Line No : 198
+Exception Type : System.ArgumentException
+Details: Column 'UOMId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:32:06 PM
+Source : Portal.Core.ProductBL
+Method Name : GetProductList
+Error Line No : 107
+Exception Type : System.ArgumentException
+Details: Column 'UOMName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:33:17 PM
+Source : Portal.Controllers.ProductController
+Method Name : GetProductList
+Error Line No : 198
+Exception Type : System.ArgumentException
+Details: Column 'UOMName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:18:37 PM
+Source : Portal.Controllers.WorkOrderController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'workOrderId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetWorkOrderProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.WorkOrderProductViewModel], Int64)' in 'Portal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:23:09 PM
+Source : Portal.Controllers.WorkOrderController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'workOrderId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetWorkOrderProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.WorkOrderProductViewModel], Int64)' in 'Portal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:23:38 PM
+Source : Portal.Controllers.WorkOrderController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'workOrderId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetWorkOrderProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.WorkOrderProductViewModel], Int64)' in 'Portal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:24:18 PM
+Source : Portal.Controllers.WorkOrderController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'workOrderId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetWorkOrderProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.WorkOrderProductViewModel], Int64)' in 'Portal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:25:07 PM
+Source : Portal.Controllers.WorkOrderController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'workOrderId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetWorkOrderProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.WorkOrderProductViewModel], Int64)' in 'Portal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:25:42 PM
+Source : Portal.Controllers.WorkOrderController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'workOrderId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetWorkOrderProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.WorkOrderProductViewModel], Int64)' in 'Portal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:46:56 PM
+Source : Portal.Controllers.WorkOrderController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'workOrderId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetWorkOrderProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.WorkOrderProductViewModel], Int64)' in 'Portal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:53:17 PM
+Source : Portal.Controllers.WorkOrderController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'workOrderId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetWorkOrderProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.WorkOrderProductViewModel], Int64)' in 'Portal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:55:48 PM
+Source : Portal.Controllers.WorkOrderController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'workOrderId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetWorkOrderProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.WorkOrderProductViewModel], Int64)' in 'Portal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:56:15 PM
+Source : Portal.Controllers.WorkOrderController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'workOrderId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetWorkOrderProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.WorkOrderProductViewModel], Int64)' in 'Portal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+19:19:08 PM
+Source : Portal.Controllers.WorkOrderController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'workOrderId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetWorkOrderProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.WorkOrderProductViewModel], Int64)' in 'Portal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+20:15:26 PM
+Source : Portal.Controllers.SaleTargetController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'targetId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetTargetDetailList(System.Collections.Generic.List`1[Portal.Core.ViewModel.TargetDetailViewModel], Int64)' in 'Portal.Controllers.SaleTargetController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+20:16:02 PM
+Source : Portal.Controllers.SaleTargetController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'targetId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetTargetDetailList(System.Collections.Generic.List`1[Portal.Core.ViewModel.TargetDetailViewModel], Int64)' in 'Portal.Controllers.SaleTargetController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+

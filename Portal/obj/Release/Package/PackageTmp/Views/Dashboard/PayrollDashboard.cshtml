@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "Payroll Dashboard";
+    Layout = "~/Views/Shared/_PayrollLayout.cshtml";
+}
+<style>
+    .crm-box {
+        width: 31%;
+    }
+
+    .crm-box-1 {
+        margin-left: -14px;
+        width: 33%;
+    }
+
+    .crm-box-2 {
+        margin-left: 14px;
+        width: 32%;
+    }
+
+    .inventory-box {
+        background: #fff;
+        width: 34%;
+        padding-right: 0;
+    }
+
+    #DivInOutProductQuantityCount {
+        padding: 0px;
+        width: 65%;
+    }
+
+    .popular-bran-right {
+        margin-top: -19px;
+        background-color: #4a9a79;
+        min-height: 139px !important;
+    }
+
+    .popular-brand {
+        margin-top: 18px;
+    }
+
+    @@media(max-width:760px) {
+        .admin-box-4 {
+            background-color: transparent;
+        }
+
+        .popular-bran-right {
+            margin-top: -100px;
+            background-color: transparent;
+        }
+
+        .popular-brand {
+            margin-top: -83px !important;
+            margin-left: -21px;
+            width: 100%;
+        }
+
+        .popular-bran-left {
+            z-index: 99999;
+            color: #fff;
+            position: relative;
+            top: 95px;
+        }
+
+            .popular-bran-left a {
+                color: #fff;
+                padding-left: 20px;
+            }
+
+        .admin-box-4 {
+            height: auto;
+        }
+
+        .climate-grids {
+            width: 100% !important;
+            position: static !important;
+        }
+
+        .market-update-gd {
+            width: 100% !important;
+        }
+    }
+</style>
+<link href="~/Content/dashboard.css" rel="stylesheet" />
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div id="wrapper">
+    <div id="page-content-wrapper" style="padding-top:5px !important;">
+        <div class="page-content">
+            <div class="container-fluid">
+                <div class="row top-head">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-6" style="margin-top: 5px;margin-bottom:5px">
+                        <b><label for="ddlFinYear" class="col-sm-4" style="margin-top: 5px;color:#fff">Financial Year</label></b>
+                        <div class="col-sm-8">
+                            <select id="ddlFinYear" name="ddlFinYear" onchange="SetFinancialYearSession()" tabindex="1" class="form-control"></select>
+                            <input type="hidden" id="hdnCurrentFinyearId" value="@ViewData["currentFinyearId"]" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
+                </div>
+
+             
+            </div>
+        </div>
+        <!--end body content -->
+    </div>
+</div>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/Chart.bundle.min.js"></script>
+<script src="~/Scripts/Dashboard/PayrollDashboard.js"></script>
+<script src="~/Scripts/paging.js"></script>

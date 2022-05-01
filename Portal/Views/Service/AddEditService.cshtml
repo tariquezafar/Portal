@@ -1,0 +1,196 @@
+﻿@{
+    ViewBag.Title = "AddEditService";
+    Layout = "~/Views/Shared/_SaleLayout.cshtml";
+}
+
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+    /* allow space for check mark */
+
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+<section>
+    <form action="#" id="frmAddEditPositionType" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlProductType" class="col-sm-4 control-label">Service No.</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtServiceNo" name="txtServiceNo" tabindex="2" placeholder="Aut Generated Service No." type="text" maxlength="100" />
+                        <input id="hdnServiceId" type="hidden" value="@ViewData["serviceId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtServiceDate" class="col-sm-4 control-label">Service Date</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtServiceDate" name="txtServiceDate" value="@ViewData["currentDate"]" tabindex="2"  type="text" maxlength="100" />                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlProductType" class="col-sm-4 control-label">Service</label>
+                    <div class="col-sm-8">
+                        <select id="ddlProductType" name="ddlProductType" tabindex="1" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtProductName" class="col-sm-4 control-label">Product</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtProductName" name="txtProductName" tabindex="2" placeholder="Select Product Name" type="text" maxlength="100" />
+                        <input id="hdnProductId" type="hidden" value="0" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtServiceItem" class="col-sm-4 control-label">Service Item</label>
+                    <div class="col-sm-8">
+                        <input id="txtServiceItem" name="txtServiceItem" tabindex="3" type="text" class="form-control" placeholder="Enter Service Item Name" maxlength="100" />
+                        <input id="hdnServiceItemId" type="hidden" value="0" />
+                        <input id="hdnSequenceNo" type="hidden" value="0" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtNotes" class="col-sm-4 control-label">Notes</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtNotes" name="txtNotes" tabindex="3" placeholder="Enter Notes" type="text" maxlength="100" />
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Add" alt="Add" id="btnAdd" tabindex="4" onclick="AddProduct(1)" type="button" border="0">
+                        @*<input class="btn btn-success" value="Update" style="display:none;" tabindex="4" alt="Update" id="btnUpdate" onclick="AddProduct(2)" type="button" border="0">*@
+
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <div id="divProductList">
+
+                </div>
+            </div>
+
+            <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+
+                <div class="col-md-3">
+                    <label for="ddlApprovalStatus" class="col-sm-6 control-label approvalStatus">Save Mode</label>
+                    <div class="col-sm-6">
+                        <select id="ddlApprovalStatus" name="ddlApprovalStatus" tabindex="108" class="form-control approvalStatus">
+                            <option selected="selected" value="Draft">Draft</option>
+                            <option value="Final">Final</option>
+                        </select>
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+                    <center>
+                        <input class="btnAddEdit btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="109" onclick="SaveData(1)" type="button" border="0">
+                        <input class="btnUpdate btn btn-success" value="Update" style="display:none;" tabindex="109" alt="Update" id="btnUpdateProduct" onclick="SaveData(1)" type="button" border="0">
+                        <a class="btn btn-success" id="btnList" tabindex="113" href="@Url.Content("~/Service/ListService")">Search Service</a>
+                    </center>
+                </div>
+
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/Service/AddService.js"></script>

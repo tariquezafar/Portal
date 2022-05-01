@@ -1,0 +1,179 @@
+﻿@{
+    ViewBag.Title = "Add EmployeeLeaveApplication";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">HR </a> >> Add/Edit Employee Leave Application</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditEmployeeTravelApplication" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="txtApplicationNo" class="col-sm-4 control-label">Application No</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtApplicationNo" name="txtApplicationNo" tabindex="1" placeholder="Auto Application No." type="text" maxlength="100" />
+                        <a style="display:none;color:#fff;" class="btn btn-success" id="btnAddNew" tabindex="2" href="@Url.Content("~/EmployeeLeaveApplication/AddEditEmployeeLeaveApplication?accessMode=1")">New</a>
+                        <input id="hdnApplicationId" type="hidden" value="@ViewData["applicationId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="5" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtApplicationDate" class="col-sm-4 control-label right-text">Application Date&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtApplicationDate" name="txtApplicationDate" tabindex="3" placeholder="Enter Application Date" type="text" maxlength="2" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtEmployee" class="col-sm-4 control-label">Employee Id&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtEmployee" name="txtEmployee" tabindex="4" placeholder="Enter Employee" type="text" maxlength="2" />
+                        <input type="hidden" id="hdnEmployeeId" name="hdnEmployeeId" value="0" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlLeaveType" class="col-sm-4 control-label">Leave Type&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlLeaveType" name="ddlLeaveType" tabindex="5" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group  col-md-6"> 
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group  col-md-6">
+                    <label for="txtFromDate" class="col-sm-4 control-label">From Date&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtFromDate" name="txtFromDate" tabindex="6" placeholder="Enter From Date" type="text" maxlength="2" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtToDate" class="col-sm-4 control-label">To Date&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtToDate" name="txtToDate" tabindex="7" placeholder="Enter To Date" type="text" maxlength="2" />
+                    </div>
+                </div>
+            </div> 
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtNoOfDays" class="col-sm-4 control-label">No. of Days&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtNoOfDays" name="txtNoOfDays" tabindex="8" placeholder="Enter Number of Days" type="text" maxlength="10" />
+                    </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="txtLeaveReason" class="col-sm-4 control-label">Leave Reason&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <textarea rows="5" cols="5" class="form-control" id="txtLeaveReason" name="txtTravelReason" tabindex="9" placeholder="Enter Leave Reason" type="text" maxlength="1000"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+        
+            <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                <div class="col-md-3">
+                    <label for="ddlLeaveStatus" class="col-sm-6 control-label">Approve/Reject</label>
+                    <div class="col-sm-6">
+                        <select id="ddlLeaveStatus" name="ddlLeaveStatus" tabindex="10" class="form-control" onchange="EnableDisableRejectReason()">
+                            <option value="0">-Select-</option>
+                            <option selected="selected" value="Approved">Approved</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="txtRejectedReason" class="col-sm-4 control-label">Rejection Reason</label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control" rows="4" cols="50" id="txtRejectedReason" name="txtRejectedReason" tabindex="11" placeholder="Enter Rejection Reason" value="" type="text" maxlength="1000"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                <div class="col-md-3"> 
+                </div>
+                <div class="col-md-6">
+                    <center> 
+                            <input class="btn btn-success" value="Update" style="display:none;" tabindex="12" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">&nbsp;&nbsp;
+                            <a class="btn btn-success" id="btnList" tabindex="13" href="@Url.Content("~/EmployeeLeaveApplication/ListEmployeeLeaveApplicationApproval")">Back</a>
+                        
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+</section>
+
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/paging.js"></script> 
+<script src="~/Scripts/EmployeeLeaveApplication/ApproveEmployeeLeaveApplication..js"></script>

@@ -1,0 +1,38 @@
+﻿@model List<Portal.Core.ViewModel.LeadFollowUpReminderDueDateCountViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table" id="tblLeadFollowupReminderCountList" style="margin-top:10px;">
+            <thead style="border-top-left-radius:15px;">
+                <tr style="border:none;">
+                    <th style="background:#ccaaff; color:#fff" colspan="2">Today Follow Up Reminder</th>
+                    <th style="background:#ccaaff; color:#fff"><img alt="Reminder" width="35" height="35" src="~/Images/reminderBulb.gif" /> </th>
+                </tr>
+                <tr style="background:#D0DDEC; border:1px solid #ccc;">
+                    <th>Follow-Up Activity</th>
+                    <th>Reminder</th>
+                    <th>Due</th>
+                </tr>
+               
+            </thead>
+            <tbody style="border:1px solid #ccc;">
+                @foreach (var item in Model)
+                {
+                <tr class="success">
+                    <td><a href="#" onclick="OpenLeadFollowUpDetailsPopUp(@item.FollowUpActivityTypeId);">@item.FollowUpActivityTypeName</a></td>
+                    <td>@item.ReminderCount</td>
+                    <td>@item.DueDateCount</td>
+                </tr>
+                }
+            </tbody>
+            <tfoot style="border:1px solid #ccc;">
+                <tr class="active">
+                    <th>Total</th>
+                    <th>@Model.Sum(x => x.ReminderCount)</th>
+                    <th>@Model.Sum(x => x.DueDateCount)</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+}

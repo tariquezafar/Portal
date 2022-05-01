@@ -1,0 +1,204 @@
+15:19:14 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'designation' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetApplicantList(System.String, System.String, System.String, System.String, Int32, Int32, System.String, System.String, System.String)' in 'Portal.Controllers.ApplicantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+--------------------------------------------------------------------------------------------------------------------------------
+
+15:21:45 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'designation' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetApplicantList(System.String, System.String, System.String, System.String, Int32, Int32, System.String, System.String, System.String)' in 'Portal.Controllers.ApplicantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:40 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : GetShortlistApplicantList
+Error Line No : 1312
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'Final'.
+Unclosed quotation mark after the character string ' order by E.ApplicantNo Desc'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:40 PM
+Source : Portal.Core.ApplicantBL
+Method Name : GetShortlistApplicantList
+Error Line No : 385
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'Final'.
+Unclosed quotation mark after the character string ' order by E.ApplicantNo Desc'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:40 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : GetShortlistApplicantList
+Error Line No : 247
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'Final'.
+Unclosed quotation mark after the character string ' order by E.ApplicantNo Desc'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:45 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : GetShortlistApplicantList
+Error Line No : 1312
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'Final'.
+Unclosed quotation mark after the character string ' order by E.ApplicantNo Desc'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:45 PM
+Source : Portal.Core.ApplicantBL
+Method Name : GetShortlistApplicantList
+Error Line No : 385
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'Final'.
+Unclosed quotation mark after the character string ' order by E.ApplicantNo Desc'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:45 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : GetShortlistApplicantList
+Error Line No : 247
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near 'Final'.
+Unclosed quotation mark after the character string ' order by E.ApplicantNo Desc'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:28:38 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:16:24 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'resumeSource' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetShortlistApplicantList(System.String, System.String, System.String, System.String, Int32, Int32, System.String, System.String, System.String)' in 'Portal.Controllers.ApplicantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:26:13 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthorizeUser
+Error Line No : 98
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:26:25 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:06:29 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'designation' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetShortlistApplicantList(System.String, System.String, System.String, System.String, Int32, Int32, System.String, System.String, System.String)' in 'Portal.Controllers.ApplicantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:10:12 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'designation' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetShortlistApplicantList(System.String, System.String, System.String, System.String, Int32, Int32, System.String, System.String, System.String)' in 'Portal.Controllers.ApplicantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:34:57 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'resumeSource' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetShortlistApplicantList(System.String, System.String, System.String, System.String, Int32, Int32, System.String, System.String, System.String)' in 'Portal.Controllers.ApplicantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+18:37:57 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpParseException
+Details: Expected a "{" but found a ")".  Block statements must be enclosed in "{" and "}".  You cannot use single-statement control-flow statements in CSHTML pages. For example, the following is not allowed:
+
+@if(isLoggedIn)
+    <p>Hello, @user</p>
+
+Instead, wrap the contents of the block in "{}":
+
+@if(isLoggedIn) {
+    <p>Hello, @user</p>
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+18:38:01 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpParseException
+Details: Expected a "{" but found a ")".  Block statements must be enclosed in "{" and "}".  You cannot use single-statement control-flow statements in CSHTML pages. For example, the following is not allowed:
+
+@if(isLoggedIn)
+    <p>Hello, @user</p>
+
+Instead, wrap the contents of the block in "{}":
+
+@if(isLoggedIn) {
+    <p>Hello, @user</p>
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+18:38:02 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpParseException
+Details: Expected a "{" but found a ")".  Block statements must be enclosed in "{" and "}".  You cannot use single-statement control-flow statements in CSHTML pages. For example, the following is not allowed:
+
+@if(isLoggedIn)
+    <p>Hello, @user</p>
+
+Instead, wrap the contents of the block in "{}":
+
+@if(isLoggedIn) {
+    <p>Hello, @user</p>
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+18:38:04 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpParseException
+Details: Expected a "{" but found a ")".  Block statements must be enclosed in "{" and "}".  You cannot use single-statement control-flow statements in CSHTML pages. For example, the following is not allowed:
+
+@if(isLoggedIn)
+    <p>Hello, @user</p>
+
+Instead, wrap the contents of the block in "{}":
+
+@if(isLoggedIn) {
+    <p>Hello, @user</p>
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,66 @@
+﻿@model List<Portal.Core.ViewModel.PMS_AppraisalTemplateGoalViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblGoalList">
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Goal Name</th>
+                    <th>Status</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>
+                            @item.TaxSequenceNo
+                        <input type="hidden" id="hdnTaxSequenceNo" value="@item.TaxSequenceNo" />
+                    </td>
+                    <td>
+                        @item.GoalName
+                    <input type="hidden" id="hdnTemplateGoalId" value="@item.TemplateGoalId" />
+                    <input type="hidden" id="hdnGoalId" value="@item.GoalId" />
+                    <input type="hidden" id="hdnGoalName" value="@item.GoalName" /> 
+                </td> 
+                         <td id="tdStatus">
+                            @(item.Goal_Status == true ? "Active" : "Inactive") 
+                            @if (item.Goal_Status == true)
+                            {  <input type="hidden" id="hdnStatus" value="true" />
+
+                            }
+                            else
+                            {  <input type="hidden" id="hdnStatus" value="false" />} 
+                        </td>  
+                <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                    <a style="color:white" class="fa fa-pencil-square-o" onclick="EditAppraisalTemplateGoalRow(this);" href="#"></a>
+                </td>
+                <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                    <a style="color:white" class="fa fa-trash" onclick="RemoveAppraisalTemplateGoalRow(this)" href="#"></a>
+                </td>
+            </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblGoalList">
+            <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Goal Name</th>
+                    <th>Status</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

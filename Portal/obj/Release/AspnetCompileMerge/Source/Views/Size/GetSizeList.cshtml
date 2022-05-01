@@ -1,0 +1,93 @@
+﻿@model List<Portal.Core.ViewModel.SizeViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table {
+    width: 153% !important;
+    max-width: 152% !important;
+    margin-bottom: 20px;
+    margin-right:5px;
+    margin-left:5px
+}
+   .table th {
+    background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    color:#fff;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll;">
+        <table class="table table-bordered table-hover" id="tblUserList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>Size Code</center></th>
+                    <th><center>Size Desc</center></th>
+                    @*<th>Short Desc</th>*@ 
+                    <th><center>Product Main Group</center></th>
+                    <th><center>Product Sub Group</center></th> 
+                    <th><center>Size Status</center></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    if (item.Size_Status == true)
+                    {
+                    <tr class="success">
+                        <td class="teal text" style="width:30px; margin:0px auto;">
+                            <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/Size/AddEditSize?SizeId=@item.SizeId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:darkgreen" class="fa fa-pencil" href="~/Size/AddEditSize?SizeId=@item.SizeId&AccessMode=2"></a>
+                        </td>
+
+                        <td align="center">@item.SizeCode</td>
+                        <td align="center">@item.SizeDesc</td>
+                        @*<td>@item.ProductShortDesc</td>*@ 
+                        <td align="center">@item.ProductMainGroupName</td>
+                        <td align="center">@item.ProductSubGroupName</td> 
+                        <td align="center">@(item.Size_Status == true ? "Active" : "Inactive")</td>
+                        
+                    </tr>
+                    }
+                    else
+                    {
+                        <tr class="danger">
+                            <td class="teal text" style="width:30px; margin:0px auto;">
+                                <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/Size/AddEditSize?SizeId=@item.SizeId&AccessMode=3"></a>
+                            </td>
+                            <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                                <a style="color:darkgreen" class="fa fa-pencil" href="~/Size/AddEditSize?SizeId=@item.SizeId&AccessMode=2"></a>
+                            </td>
+
+                            <td align="center">@item.SizeCode</td>
+                            <td align="center">@item.SizeDesc</td>
+                            @*<td>@item.ProductShortDesc</td>*@
+                            <td align="center">@item.ProductMainGroupName</td>
+                            <td align="center">@item.ProductSubGroupName</td> 
+                            <td align="center">@(item.Size_Status == true ? "Active" : "Inactive")</td>
+
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblUserList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

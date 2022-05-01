@@ -1,0 +1,152 @@
+﻿@model List<Portal.Core.ViewModel.JobCardViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div class="divproductlist" style="padding:10px;">
+        <table class="table" id="tblProductServiceList" style="width:100% !important">
+            <thead>
+                <tr style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                    <th style="width: 5%" colspan="2" class="editonly" align="center">Action</th>
+                    <th >Job Card No.</th>
+                    <th >Job Card Date</th>
+                    <th >Customer Name</th>
+                    <th>Customer Code</th>
+                    <th>Model Name</th>                  
+                    <th>Reg No.</th>
+                    <th>Engine No</th>
+                    <th>Key No</th>
+                    <th>Approval Status</th>
+                    <th>Time In</th>
+                    <th>Delivery Time</th>
+
+                    <th>Fuel Level</th>
+
+                    <th>Mahenic Name</th>
+                    <th>Start Time</th>
+
+                    <th>Closing Time</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="margin:0px auto;">
+                            <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/JobCard/AddEditJobCard?jobCardId=@item.JobCardID&AccessMode=3"></a>
+                        <td class="teal text" style="margin:0px auto;">
+                            @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                            {
+
+                                <a style="color:darkgreen" class="fa fa-pencil" href="~/JobCard/AddEditJobCard?jobCardId=@item.JobCardID&AccessMode=2"></a>
+
+                            }
+
+                        </td>
+
+                        <td>
+                            @item.JobCardNo
+
+                        </td>
+                        <td>
+                            @item.JobCardDate
+
+                        </td>
+                        <td>
+                            @item.CustomerName
+
+                        </td>
+                        <td>
+                            @item.CustomerCode
+
+                        </td>
+                        <td>
+                            @item.ModelName
+
+                        </td>
+                        <td>
+                            @item.RegNo
+
+                        </td>
+                        <td>
+                            @item.EngineNo
+
+                        </td>
+                        <td>
+                            @item.KeyNo
+
+                        </td>
+
+                        @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color: deepskyblue;color: #fff; font-weight: bold;">
+                                @item.ApprovalStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green;color:white">
+                                @item.ApprovalStatus
+                            </td>
+                        }
+                        <td>
+                            @item.TimeIn
+
+                        </td>
+                        <td>
+                            @item.DeliveryTime
+
+                        </td>
+                        <td>
+                            @item.FuelLevel
+
+                        </td>
+                        <td>
+                            @item.MahenicName
+
+                        </td>
+                        <td>
+                            @item.StartTime
+
+                        </td>
+                        <td>
+                            @item.ClosingTime
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="divproductlist" style="padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                    <th style="width: 5%" colspan="2" class="editonly" align="center">Action</th>
+                    <th>Job Card No.</th>
+                    <th>Job Card Date</th>
+                    <th>Customer Name</th>
+                    <th>Customer Code</th>
+                    <th>Model Name</th>
+                    <th>Reg No.</th>
+                    <th>Engine No</th>
+                    <th>Key No</th>
+                    <th>Approval Status</th>
+                    <th>Time In</th>
+                    <th>Delivery Time</th>
+
+                    <th>Fuel Level</th>
+
+                    <th>Mahenic Name</th>
+                    <th>Start Time</th>
+
+                    <th>Closing Time</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

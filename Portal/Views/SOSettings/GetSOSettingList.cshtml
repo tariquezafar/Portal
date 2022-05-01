@@ -1,0 +1,61 @@
+﻿@model List<Portal.Core.ViewModel.SOSettingViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblSOSettingList">
+            <thead>
+                <tr>
+                    <th>Normal Approval Required</th>
+                    <th>Normal Approval By User Name</th>   
+                    <th>Revised Approval Required</th>  
+                    <th>Revised Approval By User Name</th>   
+                    <th>Create By</th>  
+                    <th>Created Date</th> 
+                    <th>Modified By</th>
+                    <th>Modified Date</th> 
+                    <th>Status</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@(item.NormalApprovalRequired == true ? "Yes" : "No")</td> 
+                        <td>@item.NormalApprovalByUserName</td> 
+                        <td>@(item.RevisedApprovalRequired == true ? "Yes" : "No")</td> 
+                        <td>@item.RevisedApprovalByUserName</td>   
+                        <td>@item.CreatedName</td>
+                        <td>@item.CreatedDate</td>  
+                        <td>@item.ModifiedName</td>
+                        <td>@item.ModifiedDate</td> 
+                        <td>@(item.SOSetting_Status == true ? "Active" : "Inactive")</td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/SOSettings/AddEditSOSetting?sosettingId=@item.SOSettingId&AccessMode=3"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" href="~/SOSettings/AddEditSOSetting?sosettingId=@item.SOSettingId&AccessMode=2"></a>
+                        </td> 
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblSOSettingList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

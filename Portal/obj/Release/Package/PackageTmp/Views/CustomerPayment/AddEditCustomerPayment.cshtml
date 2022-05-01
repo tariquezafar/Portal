@@ -1,0 +1,311 @@
+﻿@{
+     ViewBag.Title = "Add/Edit Customer Payment";
+     Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    
+    /* allow space for check mark */
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AccountDashboard">Account </a> >> Add/Edit Customer Payment</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditSO" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="txtPaymentNo" class="col-sm-4 control-label">Payment No.</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtPaymentNo" name="txtPaymentNo" tabindex="1" placeholder="Auto Generated Payment No." type="text" maxlength="100" />
+                        <a style="display:none;" tabindex="12" class="btn btn-success" id="btnAddNew" href="@Url.Content("~/CustomerPayment/AddEditCustomerPayment?accessMode=1")">New</a>
+                        <a style="display:none;" tabindex="13" class="btn btn-success" id="btnPrint" href="@Url.Content("~/CustomerPayment/AddEditCustomerPayment")">Print</a>
+                        <input id="hdnPaymentTrnId" type="hidden" value="@ViewData["paymenttrnId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtPaymentDate" class="col-sm-4 control-label">Payment Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtPaymentDate" name="txtPaymentDate" tabindex="2" placeholder="Enter Payment Date" value="@ViewData["currentDate"]" type="text" maxlength="50" />
+                        <input id="hdnCurrentDate" name="hdnCurrentDate" value="@ViewData["currentDate"]" type="hidden" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="txtInvoiceNo" class="col-sm-4 control-label">Invoice No&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtInvoiceNo" name="txtInvoiceNo" tabindex="3" placeholder="Enter Invoice No" type="text" maxlength="100" />
+                        <input id="hdnInvoiceId" type="hidden" value="0" />
+                    </div>
+                    <a class="fa fa-search col-sm-1" onclick="OpenInvoiceSearchPopup()" tabindex="4" data-toggle="btnSearchInvoice" title="Search Invoice" id="btnSearchInvoice" style="padding-top:5px; position:absolute; float:left !important" href="#"></a>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    
+                    <label for="txtInvoiceDate" class="col-sm-4 control-label">Invoice Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtInvoiceDate" name="txtInvoiceDate" tabindex="14" placeholder="Invoice Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtCustomerName" class="col-sm-4 control-label">Party Name &nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtCustomerName" name="txtCustomerName" tabindex="15" placeholder="Enter Customer Name" type="text" maxlength="100" />
+                        <input id="hdnCustomerId" type="hidden" value="0" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtCustomerCode" class="col-sm-4 control-label">Party Code</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtCustomerCode" name="txtCustomerCode" tabindex="16" placeholder="Party Code" type="text" maxlength="50" />
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtRefNo" class="col-sm-4 control-label">Ref. No.</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtRefNo" name="txtRefNo" tabindex="17" placeholder="Enter Reference No." type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtRefDate" class="col-sm-4 control-label">Ref. Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtRefDate" name="txtRefDate" tabindex="18" placeholder="Enter Reference Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+
+                <div class="form-group  col-md-4">
+                    <label for="ddlPaymentModeName" class="col-sm-4 control-label">Payment Mode &nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlPaymentModeName" name="ddlPaymentModeName" tabindex="19" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="ddlBookType" class="col-sm-4 control-label">Book Type</label>
+                    <div class="col-sm-8 ">
+                        <select id="ddlBookType" name="ddlBookType" tabindex="20" class="form-control"></select>
+                    </div>
+                </div>
+
+           
+                <div class="form-group  col-md-4">
+                    <label for="txtAmount" class="col-sm-4 control-label">Amount</label>
+                    <div class="col-sm-8">
+                        <input class="form-control input-number right-text" id="txtAmount" onkeyup="checkDec(this);" name="txtAmount" tabindex="21" placeholder="Enter Amount" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtValueDate" class="col-sm-4 control-label">Value Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtValueDate" name="txtValueDate" tabindex="22" placeholder="Enter Value Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+             
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtRemarks" class="col-sm-4 control-label">Remarks</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtRemarks" name="txtRemarks" tabindex="23" placeholder="Enter Remarks" type="text" maxlength="100" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4"> 
+                    <label for="chkstatus" class="col-sm-4 control-label">Status&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="24" />
+                    </div>
+                    </div>
+                </div>
+
+
+                    <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <center>
+                                <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="25" onclick="SaveData(1)" type="button" border="0">
+                                <input class="btn btn-success" value="Update" style="display:none;" tabindex="25" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">
+                                @*<input class="btn btn-success" type="button" id="btnReset" tabindex="18" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
+                                <a class="btn btn-success" id="btnReset" tabindex="28" href="@Url.Content("~/CustomerPayment/AddEditCustomerPayment")">Reset</a>
+                                 <a class="btn btn-success" id="btnList" tabindex="29" href="@Url.Content("~/CustomerPayment/ListCustomerPayment")">Search Customer Payment</a>
+                            </center>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" tabindex="26" id="alertModel" role="dialog">
+                    <div class="modal-dialog  modal-sm">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" tabindex="27" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title" id="modelHeader"></h4>
+                            </div>
+                            <div class="modal-body">
+                                <p id="modelText"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" tabindex="27" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="modal fade" id="SearchInvoiceModel" role="dialog">
+                    <div class="modal-dialog  modal-lg">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Search Invoice</h4>
+                            </div>
+                            <div class="">
+                                <div class="col-md-12 ftop">
+                                    <div class="form-group col-md-6">
+                                        <label for="txtSearchInvoiceNo" class="col-sm-4 control-label">Invoice No.</label>
+                                        <div class="col-sm-8 ">
+                                            <input class="form-control" id="txtSearchInvoiceNo" name="txtSearchInvoiceNo" tabindex="5" placeholder="Search with Invoice No." type="text" maxlength="50" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group  col-md-6">
+                                        <label for="txtSearchCustomerName" class="col-sm-4 control-label">Customer Name</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" id="txtSearchCustomerName" name="txtSearchCustomerName" tabindex="6" placeholder="Search with Customer Name" type="text" maxlength="100" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-6">
+                                        <label for="txtSearchRefNo" class="col-sm-4 control-label">Ref No.</label>
+                                        <div class="col-sm-8 ">
+                                            <input class="form-control" id="txtSearchRefNo" name="txtSearchRefNo" tabindex="7" placeholder="Search with Ref. No." type="text" maxlength="50" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group  col-md-6">
+                                        <div class="col-sm-8">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-6">
+                                        <label for="txtSearchFromDate" class="col-sm-4 control-label">Invoice From Date</label>
+                                        <div class="col-sm-8 ">
+                                            <input class="form-control" id="txtSearchFromDate" name="txtSearchFromDate" tabindex="8" value="@ViewData["fromDate"]" type="text" maxlength="50" />
+                                            <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["fromDate"]" type="hidden" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="txtSearchToDate" class="col-sm-4 control-label">To Date</label>
+                                        <div class="col-sm-8 ">
+                                            <input class="form-control" id="txtSearchToDate" name="txtSearchToDate" tabindex="9" value="@ViewData["toDate"]" type="text" maxlength="50" />
+                                            <input id="hdnToDate" name="hdnToDate" value="@ViewData["toDate"]" type="hidden" />
+                                        </div>
+                                    </div>
+                                </div> 
+
+                                <div class="row col-sm-12 col-lg-12 col-md-12">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-6">
+                                        <center>
+                                            <input class="btn btn-success" tabindex="10" value="Search" alt="Search" id="btnSearch" onclick="SearchInvoice()" type="button" border="0">&nbsp;&nbsp;
+                                        </center>
+                                    </div>
+                                    <div class="col-md-3"></div>
+                                </div>
+                                <div class="row col-sm-6 col-lg-12 col-md-12">
+                                    <div id="divInvoiceList">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" tabindex="11" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+         
+</form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/paging.js"></script> 
+<script src="~/Scripts/CustomerPayment/AddCustomerPayment.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/notify.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="btnSearchInvoice"]').tooltip();
+    
+});
+</script>
+<style>
+    .tooltip-inner {
+        max-width: 350px;
+        /* If max-width does not work, try using width instead */
+        width: 100%;
+        height: auto;
+        border-radius: none;
+        min-height: 70px;
+        padding: 10px;
+        background-color: #393a3d;
+        text-align: left;
+        margin-left: 60px;
+    }
+
+    .tooltip.top .tooltip-arrow {
+        bottom: -8px;
+        left: 10%;
+        margin-left: -5px;
+        border-width: 20px 10px 0;
+        border-top-color: #393a3d;
+    }
+
+    .tooltip.top .tooltip-arrow {
+        -webkit-transform: translate(0em) rotate(60deg) rotate(-30deg);
+    }
+</style>

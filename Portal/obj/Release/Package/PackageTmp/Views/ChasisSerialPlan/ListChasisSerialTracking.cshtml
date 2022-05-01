@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Chasis No Tracking Report";
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+<style>
+    .table {
+        width: 150% !important;
+        max-width: 150% !important;
+        margin-bottom: 20px;
+    }
+</style>
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/StoreDashboard">Production </a> >> Chasis No Tracking Report </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmSerailPlan" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+
+                
+
+                <div class="form-group col-md-4">
+                    <label for="txtChasisNo" class="col-sm-4 control-label">Chasis No</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtChasisNo" name="txtChasisNo" tabindex="1" placeholder="Chasis No" type="text" maxlength="50" />
+                    </div>
+                </div>
+              
+            </div>
+
+          
+
+
+
+            <div class="row col-sm-12 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                       
+                        <a class="btn btn-success" alt="Export" tabindex="10" id="btnExport" onclick="OpenPrintPopup();" border="0">Generate Report</a>
+                        <input class="btn btn-success" type="button" id="btnReset" tabindex="11" onclick="ClearFields()" value="Reset" />
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="printModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Chasis No Tracking Report</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="ddlPrintOption" class="col-sm-4 control-label">Report Option</label>
+                            <div class="col-sm-8">
+                                <select id="ddlPrintOption" name="ddlPrintOption" onchange="ShowHidePrintOption()" tabindex="1" class="form-control">
+                                    <option selected="selected" value="PDF">PDF</option>
+                                    <option value="Excel">Excel</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-success" target="_blank" href="#" id="btnPdf">Print</a>
+                        <a class="btn btn-success" style="display:none;" target="_blank" href="#" id="btnExcel">Print</a>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/ChasisSerialPlan/ListChasisNoTrackingDetailed.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/Common.js"></script>

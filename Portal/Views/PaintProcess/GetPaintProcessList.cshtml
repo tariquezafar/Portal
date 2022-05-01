@@ -1,0 +1,111 @@
+﻿@model List<Portal.Core.ViewModel.PaintProcessViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblCountryList">
+            <thead>
+                <tr>
+                    <th style="width:75px !important;"><center>Action</center></th>
+                    <th><center>Paint Process No.</center></th>
+                    <th><center>Paint Process Date</center></th>
+                    <th><center>Work Order No.</center></th>
+                    <th><center>Company Branch</center></th>
+                    <th><center>Status</center></th>
+                    <th><center>Created By User</center></th>
+                    <th><center>Created Date</center></th>
+                    <th><center>Modified By User</center></th>
+                    <th><center>Modified Date</center></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="margin:0px auto;">
+                            <a style="color:darkblue" title="View" class="fa fa-eye" aria-hidden="true" href="~/PaintProcess/AddEditPaintProcess?paintProcessId=@item.PaintProcessId&AccessMode=3"></a>
+                            @if (item.PaintProcessStatus.ToUpper() == "DRAFT")
+                            {
+                                <a style="color:darkgreen" title="Edit" class="fa fa-pencil" href="~/PaintProcess/AddEditPaintProcess?paintProcessId=@item.PaintProcessId&AccessMode=2"></a>
+                            }
+                            @if (item.PaintProcessStatus.ToUpper() == "FINAL")
+                            {
+                                <a style="color:red;" title="cancel" class="fa fa-times" aria-hidden="true" href="~/PaintProcess/CancelPaintProcess?paintProcessId=@item.PaintProcessId&accessmode=4"></a>
+                            }
+                        </td>
+                        <td>@item.PaintProcessNo</td>
+                        <td>@item.PaintProcessDate</td>
+                        <td>@item.WorkOrderNo</td>
+                        <td>@item.CompanyBranchName</td>
+                        @if (item.PaintProcessStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine">
+                                @item.PaintProcessStatus
+                            </td>
+                        }
+                        else if (item.PaintProcessStatus.ToUpper() == "CANCELLED")
+                        {
+                            <td style="background-color:red;color:white">
+                                @item.PaintProcessStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green">
+                                @item.PaintProcessStatus
+                            </td>
+
+                        }
+
+
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblCountryList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

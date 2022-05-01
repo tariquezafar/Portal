@@ -1,0 +1,141 @@
+﻿@model Portal.Core.ViewModel.ProductSerialViewModel
+@using System.Data;
+@{
+    ViewBag.Title = "Add Product Serial";
+    Layout = "~/Views/Shared/_InventoryLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/InventoryDashboard">Inventory</a> >> Add Product Serial </b></p></div>
+</div>
+<section>
+    <form action="ImportProductSerial" id="frmAddEditProductType" class="form-horizontal as" enctype="multipart/form-data" method="post"  accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="txtProductName" class="col-sm-4 control-label">Product Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtProductName" name="txtProductName" tabindex="1" placeholder="Enter Product Name" type="text" maxlength="100" />
+                        <input id="hdnProductSerialId" type="hidden" value="@ViewData["productSerialId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                        @Html.HiddenFor(m=>m.ProductId,new {id= "hdnProductId" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group  col-md-12">
+                    <label for="lnkDownloadSample" class="col-sm-2 control-label">Sample Download</label>
+                    <div class="col-sm-10">
+                        <a class="fa-link" tabindex="2" href="http://software.htssolutions.org/sampledoc/ProductSerial_SGPL.xls" target="_blank">Click here to Download Sample Product Serial Import Sheet</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="FileUpload" class="col-sm-4 control-label">Select File:</label>
+                    <div class="col-sm-8 ">
+                        <input type="file" tabindex="3" id="FileUpload1" name="FileUpload1" />
+                    </div>
+                </div>
+                <div class="form-group  col-md-6">
+                    <div class="col-sm-8">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Submit" alt="Submit" tabindex="4" id="btnSubmit" type="submit" border="0"> 
+                        @*<input class="btn btn-success" value="Update" style="display:none;" tabindex="5" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">*@ 
+                      
+                   
+                    </center>
+                </div>
+
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <div class="row col-sm-12 col-lg-12 col-md-12" style="padding-left:20px;">
+            @if (ViewBag.Error != null)
+            {
+                @MvcHtmlString.Create((ViewBag.Error != null ? ViewBag.Error.ToString() : "").Replace(Environment.NewLine, "<br />"))
+            }
+        </div>
+        <div class="row col-sm-6 col-lg-12 col-md-12">
+            <div id="divList" style="overflow-x:scroll; padding-left:20px;padding-top:20px;">
+                <table class="table" id="tblVendorList">
+                    @if (ViewBag.Data != null)
+                    {
+                        <thead>
+                            <tr>
+                                @foreach (DataColumn column in (ViewBag.Data as System.Data.DataTable).Columns)
+                                {
+                                    <th>@column.ColumnName.ToUpper()</th>
+                                }
+                            </tr>
+                        </thead>
+                        if ((ViewBag.Data as System.Data.DataTable).Rows.Count > 0)
+                        {
+                            foreach (DataRow dr in (ViewBag.Data as System.Data.DataTable).Rows)
+                            {
+                                if (!string.IsNullOrEmpty(Convert.ToString(dr["UploadStatus"])) && Convert.ToBoolean(dr["UploadStatus"]) == true)
+                                {
+                                    <tr style="background-color:greenyellow;">
+                                        @foreach (DataColumn column in (ViewBag.Data as System.Data.DataTable).Columns)
+                                        {
+                                            <td data-title='@column.ColumnName'>
+                                                @dr[column].ToString()
+                                            </td>
+                                        }
+                                    </tr>
+                                }
+                                else
+                                {
+                                    <tr style="background-color:lightcoral;">
+                                        @foreach (DataColumn column in (ViewBag.Data as System.Data.DataTable).Columns)
+                                        {
+                                            <td data-title='@column.ColumnName'>
+                                                @dr[column].ToString()
+                                            </td>
+                                        }
+                                    </tr>
+                                }
+                            }
+                        }
+                        else
+                        {
+                            int count = (ViewBag.Data as System.Data.DataTable).Columns.Count;
+                            <tr>
+                                <td colspan='@count' style="color:red;">
+                                    No Data Found.
+                                </td>
+                            </tr>
+
+                        }
+
+                    }
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        
+    </form>
+</section>
+<script src="~/Scripts/ProductSerial/AddProductSerial.js"></script>
+<script>
+        $( document ).ready(function() {
+            document.getElementById("txtProductName").focus();
+    });
+</script>

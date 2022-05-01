@@ -1,0 +1,223 @@
+﻿@{
+    ViewBag.Title = "List CarryForwardChasis";
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/StoreDashboard">Production</a> >> List Carry Forward Chasis </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditProductSubGroup" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4 ">
+                    <label for="txtCarryForwardNo" class="col-sm-4 control-label">Carry Forward No.</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtCarryForwardNo" name="txtCarryForwardNo" tabindex="1" placeholder="Search By Carry Forward No." type="text" maxlength="100" />                       
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                    </div>
+                </div>
+               
+                    <div class="form-group col-md-4 ">
+                        <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch</label>
+                        <div class="col-sm-8">
+                            <select id="ddlCompanyBranch" name="ddlCompanyBranch" onchange="GetPrintChasisProductList();" tabindex="2" class="form-control"></select>
+                        </div>
+                   
+                </div> 
+        
+                <div class="form-group col-md-4">
+                    <label for="txtFromDate" class="col-sm-4 control-label">Carry Forward From Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtFromDate" name="txtFromDate" tabindex="3" value="@ViewData["fromDate"]" type="text" maxlength="50" />
+                        <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["fromDate"]" type="hidden" />
+                    </div>
+                </div>
+               
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtToDate" class="col-sm-4 control-label">To Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtToDate" name="txtToDate" tabindex="4" value="@ViewData["toDate"]" type="text" maxlength="50" />
+                        <input id="hdnToDate" name="hdnToDate" value="@ViewData["toDate"]" type="hidden" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="PrevddlYear" class="col-sm-4 control-label">Previous Year</label>
+                    <div class="col-sm-8">
+                        <select id="PrevddlYear" name="PrevddlYear" tabindex="5" class="form-control">
+                            <option value="0">--Select Year--</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                            <option value="2031">2031</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="PrevddlMonth" class="col-sm-4 control-label">Previous Month</label>
+                    <div class="col-sm-8 ">
+                        <select id="PrevddlMonth" name="PrevddlMonth" onchange="GetCarryForwardChasisProductList();" tabindex="6" class="form-control">
+                            <option value="0">--Select Month--</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="CarryddlYear" class="col-sm-4 control-label">Carry Forward Year</label>
+                    <div class="col-sm-8">
+                        <select id="CarryddlYear" name="CarryddlYear" tabindex="7" class="form-control">
+                            <option value="0">--Select Year--</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                            <option value="2031">2031</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="CarryddlMonth" class="col-sm-4 control-label">Carry Forward Month</label>
+                    <div class="col-sm-8 ">
+                        <select id="CarryddlMonth" name="CarryddlMonth" tabindex="8" class="form-control">
+                            <option value="0">--Select Month--</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="form-group  col-md-4">
+                    <label for="ddlApprovalStatus" class="col-sm-4 control-label">Approval Status</label>
+                    <div class="col-sm-8">
+                        <select id="ddlApprovalStatus" name="ddlApprovalStatus" tabindex="9" class="form-control">
+                            <option value="0">--Status--</option>
+                            <option value="Final">Final</option>
+                            <option value="Draft">Draft</option>
+                        </select>
+                    </div>
+                </div>      
+            </div>
+           
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Search" alt="Save" id="btnSearch" tabindex="10" onclick="SearchCarryForwardChasis()" type="button" border="0">
+                        <input class="btn btn-success" type="button" id="btnReset" tabindex="11" onclick="ClearFields()" value="Reset" />
+                        <a class="btn btn-success" id="btnList" tabindex="12" href="@Url.Content("~/CarryForwardChasis/AddEditCarryForwardChasis?accessMode=1")">Add More Carry Forward Chasis</a>                        
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div id="divList" style="margin:50px;margin-top:10px">
+
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="printModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Chasis Model Print</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="ddlPrintOption" class="col-sm-4 control-label">Report Option</label>
+                            <div class="col-sm-8">
+                                <select id="ddlPrintOption" name="ddlPrintOption" onchange="ShowHidePrintOption()" tabindex="1" class="form-control">
+                                    <option selected="selected" value="PDF">PDF</option>
+                                    <option value="Excel">Excel</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-success" target="_blank" href="#" id="btnPdf">Print</a>
+                        <a class="btn btn-success" style="display:none;" target="_blank" href="#" id="btnExcel">Print</a>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/CarryForwardChasis/ListCarryForwardChasis.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>

@@ -1,0 +1,120 @@
+10:24:50 AM
+Source : Portal.Core.JobOpeningBL
+Method Name : GetJobOpeningList
+Error Line No : 79
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:24:51 AM
+Source : Portal.Controllers.JobOpeningController
+Method Name : GetJobOpeningList
+Error Line No : 107
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:25:27 AM
+Source : Portal.Core.JobOpeningBL
+Method Name : GetJobOpeningList
+Error Line No : 79
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:25:27 AM
+Source : Portal.Controllers.ApplicantController
+Method Name : GetJobOpeningList
+Error Line No : 147
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:25:49 AM
+Source : Portal.Core.JobOpeningBL
+Method Name : GetJobOpeningList
+Error Line No : 79
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:25:49 AM
+Source : Portal.Controllers.ApplicantController
+Method Name : GetJobOpeningList
+Error Line No : 147
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:33:30 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'resumeSource' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetApplicantList(System.String, System.String, System.String, System.String, Int32, Int32, System.String, System.String, System.String)' in 'Portal.Controllers.ApplicantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+13:33:36 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'resumeSource' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetApplicantList(System.String, System.String, System.String, System.String, Int32, Int32, System.String, System.String, System.String)' in 'Portal.Controllers.ApplicantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+13:38:41 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'resumeSource' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetApplicantList(System.String, System.String, System.String, System.String, Int32, Int32, System.String, System.String, System.String)' in 'Portal.Controllers.ApplicantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:35 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'resumeSource' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetApplicantList(System.String, System.String, System.String, System.String, Int32, Int32, System.String, System.String, System.String)' in 'Portal.Controllers.ApplicantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:57 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'resumeSource' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetApplicantList(System.String, System.String, System.String, System.String, Int32, Int32, System.String, System.String, System.String)' in 'Portal.Controllers.ApplicantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+13:43:03 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'resumeSource' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetApplicantList(System.String, System.String, System.String, System.String, Int32, Int32, System.String, System.String, System.String)' in 'Portal.Controllers.ApplicantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+13:44:23 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'resumeSource' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetApplicantList(System.String, System.String, System.String, System.String, Int32, Int32, System.String, System.String, System.String)' in 'Portal.Controllers.ApplicantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+13:46:19 PM
+Source : Portal.Controllers.ApplicantController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'resumeSource' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.PartialViewResult GetApplicantList(System.String, System.String, System.String, System.String, Int32, Int32, System.String, System.String, System.String)' in 'Portal.Controllers.ApplicantController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+

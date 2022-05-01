@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "List Companies";
+    Layout = "~/Views/Shared/_SuperAdminLayout.cshtml";
+}
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Company/SuperAdminDashboard">Control Panel</a> >> List Company </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditCompany" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div> 
+            <div class="col-md-12 ftop">
+                <div class="form-group  col-md-6">
+                    <label for="txtCompanyName" class="col-sm-4 control-label">Company Name</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" tabindex="1" id="txtCompanyName" name="txtCompanyName" placeholder="Search with Company Name" type="text" maxlength="100" />
+                    </div>
+                    </div>
+                <div class="form-group  col-md-6">
+                    <label for="txtPhone" class="col-sm-4 control-label">Phone</label>
+                    <div class="col-sm-8">
+                        <input id="txtPhone" name="txtPhone" tabindex="2" type="text" placeholder="Search with Company Contact Number" maxlength="20" class="form-control  input-number numeric-only" />
+                    </div>
+                </div>
+                </div>
+
+
+            <div class="col-md-12">
+                <div class="form-group  col-md-6">
+                    <label for="txtCity" class="col-sm-4 control-label">City</label>
+                    <div class="col-sm-8">
+                        <input id="txtCity" name="txtCity" tabindex="3" type="text" placeholder="Search with City Name" maxlength="100" class="form-control alpha-space-only" />
+                    </div>
+                </div>
+                <div class="form-group  col-md-6">
+                    <label for="txtTINNo" class="col-sm-4 control-label">TIN No.</label>
+                    <div class="col-sm-8">
+                        <input id="txtTINNo" type="text" tabindex="4" name="txtTINNo" placeholder="Search with Company TIN No." maxlength="20" class="form-control alpha-numeric-only" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="form-group  col-md-6">
+                    <label for="txtPANNo" class="col-sm-4 control-label">PAN No.</label>
+                    <div class="col-sm-8">
+                        <input id="txtPANNo" name="txtPANNo" tabindex="5" type="text" placeholder="Search with Company PAN No." maxlength="10" class="form-control alpha-numeric-only" />
+                    </div>
+                </div>
+                <div class="form-group  col-md-6">
+
+                </div>
+            </div> 
+                
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Search" alt="Save" tabindex="6" id="btnSearch" onclick="SearchCompany()" type="button" border="0">
+                            <input class="btn btn-success" type="button" tabindex="7" id="btnReset" onclick="ClearFields()" value="Reset" /> 
+                            <a class="btn btn-success" id="btnList" tabindex="8" href="@Url.Content("~/Company/AddEditCompany")">Add More Company</a>
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div id="divList" style="margin:1px;margin-top:10px">
+
+                    </div>
+                </div>
+            </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/Company/ListCompany.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>

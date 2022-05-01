@@ -1,0 +1,57 @@
+﻿@model List<Portal.Core.ViewModel.SOViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblSOList">
+            <thead>
+                <tr>
+                    <th align="center">Select</th>
+                    <th>SO No.</th>
+                    <th>SO Date</th>
+                    <th>Customer Name</th>
+                    <th>Ref. No.</th>
+                    <th>Ref. Date</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-pencil-square-o erp-btn" href="#" onclick="SelectSO('@item.SOId','@item.SONo','@item.SODate','@item.CompanyBranchId')"></a>
+                        </td>
+                        <td>
+                            @item.SONo
+                        <input type="hidden" id="hdnSearchSONo" value="@item.SONo" />
+                    </td>
+                    <td>
+                        @item.SODate
+                    <input type="hidden" id="hdnSearchSODate" value="@item.SODate" />
+                </td>
+                <td>@item.CustomerName</td>
+                        <td>@item.RefNo</td>
+                        <td>@item.RefDate</td>
+                       
+            </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblSOList').paging({
+            limit: 5,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

@@ -1,0 +1,50 @@
+﻿@model List<Portal.Core.ViewModel.PMS_AppraisalTemplateViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblTemplateList">
+            <thead>
+                <tr>
+                    <th align="center">Select</th>
+                    <th>Template Name</th>
+                    <th>Department</th>
+                    <th>Designation</th>
+                    <th>Created By User</th>
+                    <th>Created Date</th> 
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" href="#" onclick="SelectTemplate('@item.TemplateId','@item.TemplateName','@item.DepartmentName','@item.DepartmentId','@item.DesignationName','@item.DesignationId')"></a>
+                        </td>
+                        <td>@item.TemplateName</td>
+                        <td>@item.DepartmentName</td>
+                        <td>@item.DesignationName</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblTemplateList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

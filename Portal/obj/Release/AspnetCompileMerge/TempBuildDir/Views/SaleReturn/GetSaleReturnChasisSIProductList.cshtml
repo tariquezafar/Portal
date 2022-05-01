@@ -1,0 +1,88 @@
+﻿@model List<Portal.Core.ViewModel.SaleInvoiceChasisProductSerialDetailViewModel>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+        color: #fff;
+        width:87px;
+    } 
+    table tr:nth-child(2n+1) {
+        background-color: #dff0d8 !important;
+    }
+    .table {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 20px;
+}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div class="divChasisSerialProductList" style="padding:10px;">
+        <table class="table" id="tblSaleReturnChasisSIProductList">
+            <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Chasis Serial</th>
+                    <th>Action</th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.SequenceNo
+                            
+                        </td>
+                        <td>@item.ProductName</td>
+                        <td>@item.Price</td>
+                        <td>@item.RefSerial1</td>
+                        <td>
+                            @if (item.Status == 1)
+                            {
+                             <input id="chkstatus" name="chkstatus" type="checkbox" class="chkstatus" checked="checked"/>
+                            }
+                            else
+                            {
+                                <input id="chkstatus" name="chkstatus" type="checkbox" class="chkstatus" />
+                            }
+                            <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                            <input type="hidden" id="hdnRefSerial1" value="@item.RefSerial1" /> 
+                            <input type="hidden" id="hdnInvoiceSerialId" value="@item.InvoiceSerialId" />
+                            <input type="hidden" id="hdnPrice" value="@item.Price" />
+                            
+
+                        </td>
+                  </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="divproductlist" style="padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Product</th>
+                    <th>Chasis Serial</th>
+                    <th>Action</th>
+                 
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+<script>
+    $(document).ready(function () {
+        if ($("#hdnAccessMode").val() == "3") {
+            $(".editonly").hide();
+        }
+
+    });
+</script>

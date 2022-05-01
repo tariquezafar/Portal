@@ -1,0 +1,192 @@
+14:40:26 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankReconcilation
+Error Line No : 20812
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+--------------------------------------------------------------------------------------------------------------------------------
+
+14:40:26 PM
+Source : Portal.Core.BankReconcilationBL
+Method Name : AddEditBankReconcilation
+Error Line No : 66
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:26 PM
+Source : Portal.Controllers.BankReconcilationController
+Method Name : AddEditBankReconcilation
+Error Line No : 70
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:42:09 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankReconcilation
+Error Line No : 20812
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:42:09 PM
+Source : Portal.Core.BankReconcilationBL
+Method Name : AddEditBankReconcilation
+Error Line No : 66
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:42:09 PM
+Source : Portal.Controllers.BankReconcilationController
+Method Name : AddEditBankReconcilation
+Error Line No : 70
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:46:28 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankReconcilation
+Error Line No : 20812
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:46:28 PM
+Source : Portal.Core.BankReconcilationBL
+Method Name : AddEditBankReconcilation
+Error Line No : 66
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:46:28 PM
+Source : Portal.Controllers.BankReconcilationController
+Method Name : AddEditBankReconcilation
+Error Line No : 70
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:46:43 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankReconcilation
+Error Line No : 20812
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:46:43 PM
+Source : Portal.Core.BankReconcilationBL
+Method Name : AddEditBankReconcilation
+Error Line No : 66
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:35 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankReconcilation
+Error Line No : 20811
+Exception Type : System.InvalidOperationException
+Details: The ConnectionString property has not been initialized.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:35 PM
+Source : Portal.Core.BankReconcilationBL
+Method Name : AddEditBankReconcilation
+Error Line No : 66
+Exception Type : System.InvalidOperationException
+Details: The ConnectionString property has not been initialized.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:35 PM
+Source : Portal.Controllers.BankReconcilationController
+Method Name : AddEditBankReconcilation
+Error Line No : 70
+Exception Type : System.InvalidOperationException
+Details: The ConnectionString property has not been initialized.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:50:04 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankReconcilation
+Error Line No : 20812
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:50:04 PM
+Source : Portal.Core.BankReconcilationBL
+Method Name : AddEditBankReconcilation
+Error Line No : 66
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:50:04 PM
+Source : Portal.Controllers.BankReconcilationController
+Method Name : AddEditBankReconcilation
+Error Line No : 70
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:53:31 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankReconcilation
+Error Line No : 20812
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:53:31 PM
+Source : Portal.Core.BankReconcilationBL
+Method Name : AddEditBankReconcilation
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:53:31 PM
+Source : Portal.Controllers.BankReconcilationController
+Method Name : AddEditBankReconcilation
+Error Line No : 70
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:53:47 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankReconcilation
+Error Line No : 20812
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:53:47 PM
+Source : Portal.Core.BankReconcilationBL
+Method Name : AddEditBankReconcilation
+Error Line No : 66
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:53:47 PM
+Source : Portal.Controllers.BankReconcilationController
+Method Name : AddEditBankReconcilation
+Error Line No : 70
+Exception Type : System.Data.SqlClient.SqlException
+Details: Error converting data type nvarchar to decimal.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:55:51 PM
+Source : Portal.Controllers.BankReconcilationController
+Method Name : GetBankReconcilationList
+Error Line No : 194
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+

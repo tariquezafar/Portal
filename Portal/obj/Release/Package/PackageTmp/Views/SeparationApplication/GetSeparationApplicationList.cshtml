@@ -1,0 +1,97 @@
+﻿@model List<Portal.Core.ViewModel.SeparationApplicationViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table {
+        width: 140% !important;
+        max-width: 140% !important;
+        margin-bottom: 20px;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblSeparationApplicationList">
+            <thead>
+                <tr>
+                    <th>Application No.</th>
+                    <th>Application Date</th>
+                    <th>Company Branch</th>
+                    <th>Employee </th>
+                    <th>Separation Category</th> 
+                    <th>Reason</th>
+                    <th>Remarks</th>  
+                    <th>Application Status</th> 
+                    <th align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.ApplicationNo</td>
+                        <td>@item.ApplicationDate</td>
+                        <td>@item.CompanyBranchName</td>
+                        <td>@item.EmployeeName</td>  
+                        <td>@item.SeparationCategoryName</td>
+                        <td>@item.Remarks</td>
+                        <td>@item.Reason</td>
+                       
+                      
+                        @if (item.ApplicationStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine;">
+                                @item.ApplicationStatus
+                            </td>
+                        }
+                        else if (item.ApplicationStatus.ToUpper() == "REJECTED")
+                        {
+                            <td style="background-color:red;color:white">
+                                @item.ApplicationStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green;color:white">
+                                @item.ApplicationStatus
+                            </td>
+
+                        } 
+                         <td class="btn btn-success table_btn" style="margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/SeparationApplication/AddEditSeparationApplication?applicationId=@item.ApplicationId&AccessMode=3"></a>
+                            @if (item.ApplicationStatus.ToUpper() == "DRAFT")
+                            {
+                                <a style="color:white" class="fa fa-pencil-square-o" href="~/SeparationApplication/AddEditSeparationApplication?applicationId=@item.ApplicationId&AccessMode=2"></a>
+                            }
+                        </td>
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblSeparationApplicationList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

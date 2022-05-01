@@ -1,0 +1,583 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Product</title>
+    <style>
+        .Mandatory {
+            color: red;
+            font-weight: bold;
+        }
+
+        fieldset.scheduler-border {
+            border: 1px groove #ddd !important;
+            padding: 0 1.4em 1.4em 1.4em !important;
+            margin: 0 0 1.5em 0 !important;
+            -webkit-box-shadow: 0px 0px 0px 0px #000;
+            box-shadow: 0px 0px 0px 0px #000;
+        }
+
+        legend {
+            display: block;
+            width: 37%;
+            padding: 0;
+            margin-bottom: 20px;
+            font-size: 21px;
+            line-height: inherit;
+            color: #333;
+            border: 0;
+            border-bottom: 0px solid #e5e5e5;
+        }
+    </style>
+</head>
+
+<body class="sidebar-condensed" id="body">
+
+    <section>
+        <form action="#" id="frmAddEditLeadSource" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+            <div class="">
+                <div class="message">
+                    <div class="col-md-12 ftop">
+                        <div class="form-group col-md-6">
+                            <label for="txtPopUpProductName" class="col-sm-4 control-label">Product Name&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtPopUpProductName" name="txtPopUpProductName" tabindex="1" placeholder="Enter Product Name" type="text" maxlength="100" />
+                                <input id="hdnPopUpProductId" type="hidden" value="0" />
+                                <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtPopUpProductCode" class="col-sm-4 control-label">Product Code&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input id="txtPopUpProductCode" name="txtPopUpProductCode" tabindex="2" type="text" placeholder="Enter Product Code" maxlength="50" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="txtPopUpProductShortDesc" class="col-sm-4 control-label">Product Desc &nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input id="txtPopUpProductShortDesc" name="txtPopUpProductShortDesc" type="text" tabindex="3" placeholder="Enter Product Description" maxlength="100" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ddlProductType" class="col-sm-4 control-label">Product Type&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlProductType" name="ddlProductType" tabindex="5" class="form-control"></select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="ddlProductMainGroup" class="col-sm-4 control-label">Main Group&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlProductMainGroup" name="ddlProductMainGroup" onchange="BindProductSubGroupList(0)" tabindex="6" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ddlProductSubGroup" class="col-sm-4 control-label">Sub Group&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlProductSubGroup" name="ddlProductSubGroup" tabindex="7" class="form-control"></select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        
+                        <div class="form-group col-md-6">
+                            <label for="ddlAssemblyType" class="col-sm-4 control-label">Assembly Type&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlAssemblyType" name="ddlAssemblyType" tabindex="8" class="form-control">
+                                    <option value="0" selected="selected">-Select Type-</option>
+                                    <option value="MA">Main Assembly</option>
+                                    <option value="SA">Sub Assembly</option>
+                                    <option value="RC">Raw Component</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ddlUOM" class="col-sm-4 control-label">Sale UOM&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlUOM" name="ddlUOM" tabindex="9" class="form-control"></select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="ddlPurchaseUOM" class="col-sm-4 control-label">Purchase UOM&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlPurchaseUOM" name="ddlPurchaseUOM" tabindex="10" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtPopUpHSNCode" class="col-sm-4 control-label">HSN Code</label>
+                            <div class="col-sm-8">
+                                <input id="txtPopUpHSNCode" name="txtPopUpHSNCode" type="text" tabindex="23" placeholder="Enter HSN Code" maxlength="20" class="form-control" />
+                            </div> 
+                        </div>
+
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+
+                            <label for="txtPopUpCGSTPercentage" class="col-sm-4 control-label">CGST (%)&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input id="txtPopUpCGSTPercentage" name="txtPopUpCGSTPercentage" type="text" tabindex="20" placeholder="Enter CGST Percentage" maxlength="20" class="form-control  input-number" onkeyup="checkDec(this)" />
+                            </div>
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtPopUpSGSTPercentage" class="col-sm-4 control-label">SGST (%)&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input id="txtPopUpSGSTPercentage" name="txtPopUpSGSTPercentage" type="text" tabindex="21" placeholder="Enter SGST Percentage" maxlength="20" class="form-control  input-number" onkeyup="checkDec(this)" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="txtPopUpIGSTPercentage" class="col-sm-4 control-label">IGST (%)&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input id="txtPopUpIGSTPercentage" name="txtPopUpIGSTPercentage" type="text" tabindex="22" placeholder="Enter IGST Percentage" maxlength="20" class="form-control  input-number" onkeyup="checkDec(this)" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="chkGSTExempt" class="col-sm-4 control-label">GST Exempt</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" name="chkGSTExempt" id="chkGSTExempt" onclick="BlankPerCentagechkGSTExempt();" class="" />
+                                <label style="font-size: 24px;" tabindex="23" for="chkGSTExempt"></label>
+                            </div> 
+                        </div>
+                    </div>
+                   
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="chkNonGST" class="col-sm-4 control-label">Non GST</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" name="chkNonGST" id="chkNonGST" onclick="BlankPerCentagechkNonGST();" class="" />
+                                <label style="font-size: 24px;" tabindex="23" for="chkNonGST"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="txtPopUpPurchasePrice" class="col-sm-4 control-label">Purchase Price</label>
+                            <div class="col-sm-8">
+                                <input id="txtPopUpPurchasePrice" class="form-control input-number" onkeyup="checkDec(this)" name="txtPurchasePrice" type="text" tabindex="17" placeholder="Enter Purchase Price" maxlength="20" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtPopUpSalePrice" class="col-sm-4 control-label">Sale Price</label>
+                            <div class="col-sm-8">
+                                <input id="txtPopUpSalePrice" name="txtSalePrice" class="form-control  input-number" onkeyup="checkDec(this)" type="text" tabindex="16" placeholder="Enter Sale Price" maxlength="20" />
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+
+                    
+                  </div>
+
+
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnPopupSaveProduct" onclick="SaveDataProductPopUp(1)" type="button" border="0" tabindex="42">
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="alertModel" role="dialog">
+                <div class="modal-dialog  modal-sm">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title" id="modelHeader"></h4>
+                        </div>
+                        <div class="modal-body">
+                            <p id="modelText"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </section>
+</body>
+</html>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script>
+    $(".alpha-only").on("input", function () {
+        var regexp = /[^a-zA-Z]/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+    $(".alpha-space-only").on("input", function () {
+        var regexp = /[^a-zA-Z\s]+$/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+    $(".numeric-only").on("input", function () {
+        var regexp = /\D/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+    $(".alpha-numeric-only").on("input", function () {
+        var regexp = /[^a-zA-Z0-9]/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+    BindProductTypeList();
+    BindProductMainGroupList();
+    BindProductSubGroupList();
+    BindUOMList();
+    BindPurchaseUOMList();
+    function BindProductTypeList() {
+        $.ajax({
+            type: "GET",
+            url: "../Product/GetProductTypeList",
+            data: "{}",
+            dataType: "json",
+            asnc: false,
+            success: function (data) {
+                $("#ddlProductType").append($("<option></option>").val(0).html("-Select Type-"));
+                $.each(data, function (i, item) {
+                    $("#ddlProductType").append($("<option></option>").val(item.ProductTypeId).html(item.ProductTypeName));
+                });
+            },
+            error: function (Result) {
+                $("#ddlProductType").append($("<option></option>").val(0).html("-Select Type-"));
+            }
+        });
+    }
+    function BindProductMainGroupList() {
+        $.ajax({
+            type: "GET",
+            url: "../Product/GetProductMainGroupList",
+            data: "{}",
+            dataType: "json",
+            asnc: false,
+            success: function (data) {
+                $("#ddlProductMainGroup").append($("<option></option>").val(0).html("-Select Main Group-"));
+                $.each(data, function (i, item) {
+                    $("#ddlProductMainGroup").append($("<option></option>").val(item.ProductMainGroupId).html(item.ProductMainGroupName));
+                });
+            },
+            error: function (Result) {
+                $("#ddlProductMainGroup").append($("<option></option>").val(0).html("-Select Main Group-"));
+            }
+        });
+    }
+    function BindProductSubGroupList(productSubGroupId) {
+        var productMainGroupId = $("#ddlProductMainGroup option:selected").val();
+        $("#ddlProductSubGroup").val(0);
+        $("#ddlProductSubGroup").html("");
+        if (productMainGroupId != undefined && productMainGroupId != "" && productMainGroupId != "0") {
+            var data = { productMainGroupId: productMainGroupId };
+            $.ajax({
+                type: "GET",
+                url: "../Product/GetProductSubGroupList",
+                data: data,
+                asnc: false,
+                dataType: "json",
+                success: function (data) {
+                    $("#ddlProductSubGroup").append($("<option></option>").val(0).html("-Select Sub Group-"));
+                    $.each(data, function (i, item) {
+                        $("#ddlProductSubGroup").append($("<option></option>").val(item.ProductSubGroupId).html(item.ProductSubGroupName));
+                    });
+                    $("#ddlProductSubGroup").val(productSubGroupId);
+                },
+                error: function (Result) {
+                    $("#ddlProductSubGroup").append($("<option></option>").val(0).html("-Select Sub Group-"));
+                }
+            });
+        }
+        else {
+
+            $("#ddlProductSubGroup").append($("<option></option>").val(0).html("-Select Sub Group-"));
+        }
+
+    }
+    function BindUOMList() {
+        $.ajax({
+            type: "GET",
+            url: "../Product/GetUOMList",
+            data: "{}",
+            dataType: "json",
+            asnc: false,
+            success: function (data) {
+                $("#ddlUOM").append($("<option></option>").val(0).html("-Select UOM-"));
+                $.each(data, function (i, item) {
+                    $("#ddlUOM").append($("<option></option>").val(item.UOMId).html(item.UOMName));
+                });
+            },
+            error: function (Result) {
+                $("#ddlUOM").append($("<option></option>").val(0).html("-Select UOM-"));
+            }
+        });
+    }
+    function BindPurchaseUOMList() {
+        $.ajax({
+            type: "GET",
+            url: "../Product/GetUOMList",
+            data: "{}",
+            dataType: "json",
+            asnc: false,
+            success: function (data) {
+                $("#ddlPurchaseUOM").append($("<option></option>").val(0).html("-Select Purchase UOM-"));
+                $.each(data, function (i, item) {
+                    $("#ddlPurchaseUOM").append($("<option></option>").val(item.UOMId).html(item.UOMName));
+                });
+            },
+            error: function (Result) {
+                $("#ddlPurchaseUOM").append($("<option></option>").val(0).html("-Select Purchase UOM-"));
+            }
+        });
+    }
+
+    function BlankPerCentagechkNonGST() {
+        if ($("#chkNonGST").is(':checked')) {
+            if (confirm("Are you sure to reset GST Tax Fields ?.")) {
+                $("#txtPopUpCGSTPercentage").val("");
+                $("#txtPopUpSGSTPercentage").val("");
+                $("#txtPopUpIGSTPercentage").val("");
+                $("#chkGSTExempt").attr("checked", false);
+               
+            }
+
+
+        }
+
+    }
+    function BlankPerCentagechkGSTExempt() {
+        if ($("#chkGSTExempt").is(':checked')) {
+            if (confirm("Are you sure to reset GST Tax Fields ?.")) {
+                $("#txtPopUpCGSTPercentage").val("");
+                $("#txtPopUpSGSTPercentage").val("");
+                $("#txtPopUpIGSTPercentage").val("");
+
+                $("#txtPopUpCGSTPercentage").attr('readOnly', true);
+                $("#txtPopUpSGSTPercentage").attr('readOnly', true);
+                $("#txtPopUpIGSTPercentage").attr('readOnly', true);
+                $("#chkNonGST").attr("checked", false);
+            }
+
+
+        }
+
+    }
+
+    function SaveDataProductPopUp() {
+        var hdnProductId = $("#hdnPopUpProductId");
+        var txtProductName = $("#txtPopUpProductName");
+        var txtProductCode = $("#txtPopUpProductCode");
+        var txtProductShortDesc = $("#txtPopUpProductShortDesc");
+        var ddlProductType = $("#ddlProductType");
+        var ddlProductMainGroup = $("#ddlProductMainGroup");
+        var ddlProductSubGroup = $("#ddlProductSubGroup");
+        var ddlAssemblyType = $("#ddlAssemblyType");
+        var ddlUOM = $("#ddlUOM");
+        var ddlPurchaseUOM = $("#ddlPurchaseUOM");
+        var txtPopUpHSNCode = $("#txtPopUpHSNCode");
+        var chkGSTExempt = $("#chkGSTExempt");
+        var chkNonGST = $("#chkNonGST");
+        var reOrderQty = "0";
+        var pressureDesc="";
+        var pressureId = "0";
+        var sizeDesc = "";
+        var sizeId = "0";
+        var rangeDesc = "";
+        var rangeId = "0";
+        var length = "";
+        var brandName ="";
+        var manufacturerId = "0";
+
+        var GSTExempt = false;
+        if (chkGSTExempt.prop("checked") == true)
+        { GSTExempt = true; }
+        else
+        { GSTExempt = false; }
+
+        var NonGST = false;
+        if (chkNonGST.prop("checked") == true)
+        { NonGST = true; }
+        else
+        { NonGST = false; }
+        
+        
+        var txtCGSTPercentage = $("#txtPopUpCGSTPercentage");
+        var txtSGSTPercentage = $("#txtPopUpSGSTPercentage");
+        var txtIGSTPercentage = $("#txtPopUpIGSTPercentage");
+       
+        if (txtProductName.val().trim() == "") {
+            alert("Please enter Product Name")
+            txtProductName.focus();
+            return false;
+        }
+        if (txtProductCode.val().trim() == "") {
+            alert("Please enter Product Code")
+            txtProductCode.focus();
+            return false;
+        }
+        if (txtProductCode.val().length < 2) {
+            alert("Please enter at least 2 character long Product Code")
+            txtProductCode.focus();
+            return false;
+        }
+        if (txtProductShortDesc.val() == "") {
+            alert("Please Enter Product Description");
+            txtProductShortDesc.focus();
+            return false;
+        }
+        if (ddlProductType.val() == "" || ddlProductType.val() == "0") {
+            alert("Please select Product Type")
+            ddlProductType.focus();
+            return false;
+        }
+        if (ddlProductMainGroup.val() == "" || ddlProductMainGroup.val() == "0") {
+            alert("Please select Product Main Group")
+            ddlProductMainGroup.focus();
+            return false;
+        }
+        if (ddlProductSubGroup.val() == "" || ddlProductSubGroup.val() == "0") {
+            alert("Please select Product Sub Group")
+            ddlProductSubGroup.focus();
+            return false;
+        }
+        if (ddlAssemblyType.val() == "" || ddlAssemblyType.val() == "0") {
+            alert("Please select Assembly Type")
+            ddlAssemblyType.focus();
+            return false;
+        }
+        if (ddlUOM.val() == "" || ddlUOM.val() == "0") {
+            alert("Please select Unit of Measurement (UOM)")
+            ddlUOM.focus();
+            return false;
+        }
+        if (ddlPurchaseUOM.val() == "" || ddlPurchaseUOM.val() == "0") {
+            alert("Please select Purchase Unit of Measurement (UOM)")
+            ddlPurchaseUOM.focus();
+            return false;
+        }
+        //if (txtCGSTPercentage.val() == "" || txtCGSTPercentage.val() == "0")
+        //{
+        //    alert("Please Enter CGST Percentage");
+        //    txtCGSTPercentage.focus();
+        //    return false;
+        //}
+
+        //if (txtSGSTPercentage.val() == "" || txtSGSTPercentage.val() == "0") {
+        //    alert("Please Enter SGST Percentage");
+        //    txtSGSTPercentage.focus();
+        //    return false;
+        //}
+
+        //if (txtIGSTPercentage.val() == "" || txtIGSTPercentage.val() == "0") {
+        //    alert("Please Enter IGST Percentage");
+        //    txtIGSTPercentage.focus();
+        //    return false;
+        //}
+
+        var productStatus = true;      
+        var serializedProduct = true;
+        var purchasePrice = "0";
+        var salePrice = "0";
+        var reOrderQty = "0";
+        var minOrderQty = "0";
+
+        var productViewModel = {
+            Productid: hdnProductId.val(),
+            ProductName: txtProductName.val().trim(),
+            ProductCode: txtProductCode.val().trim(),
+            ProductShortDesc: txtProductShortDesc.val().trim(),
+            ProductFullDesc: txtProductShortDesc.val().trim(),
+            ProductTypeId: ddlProductType.val(),
+            ProductMainGroupId: ddlProductMainGroup.val(),
+            ProductSubGroupId: ddlProductSubGroup.val(),
+            AssemblyType: ddlAssemblyType.val().trim(),
+            UOMId: ddlUOM.val().trim(),
+            PurchaseUOMId: ddlPurchaseUOM.val().trim(),
+            PurchasePrice: purchasePrice,
+            SalePrice: salePrice,
+            LocalTaxRate: 0,
+            CentralTaxRate: 0,
+            OtherTaxRate: 0,
+            IsSerializedProduct: serializedProduct,
+            BrandName: brandName,
+            PressureId: pressureId,
+            SizeId: sizeId,
+            RangeId: rangeId,
+            Length: length,
+            ManufacturerId: manufacturerId,
+            ReOrderQty: reOrderQty,
+            MinOrderQty: minOrderQty,
+            Product_Status: productStatus,
+            CGST_Perc: txtCGSTPercentage.val().trim(),
+            SGST_Perc: txtSGSTPercentage.val().trim(),
+            IGST_Perc: txtIGSTPercentage.val().trim(),
+            HSN_Code: txtPopUpHSNCode.val().trim(),
+            GST_Exempt: GSTExempt,
+            IsNonGST: NonGST
+        };
+        var requestData = { productViewModel: productViewModel };
+        $.ajax({
+            url: "../Product/AddEditProduct",
+            cache: false,
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify(requestData),
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.status == "SUCCESS") {
+                    BindProductDetail(data.trnId);
+                    ClearFieldsPopUp();
+                    $(".Book").modal("hide");
+                }
+                else {
+                    ShowModel("Error", data.message)
+                }
+            },
+            error: function (err) {
+                ShowModel("Error", err)
+            }
+        });
+    }
+    function ClearFieldsPopUp() {
+        $("#hdnPopUpProductId").val("0");
+        $("#txtPopUpProductName").val("");
+        $("#txtPopUpProductCode").val("");
+        $("#txtPopUpProductShortDesc").val("");
+        $("#ddlProductType").val("0");
+        $("#ddlProductMainGroup").val("0");
+        $("#ddlProductSubGroup").val("0");
+        $("#ddlAssemblyType").val("0");
+        $("#ddlUOM").val("0");
+        $("#ddlPurchaseUOM").val("0");
+        $("#txtPopUpHSNCode").val("0");
+        $("#txtPopUpCGSTPercentage").val("");
+        $("#txtPopUpSGSTPercentage").val("");
+        $("#txtPopUpIGSTPercentage").val("");
+        $("#chkGSTExempt").attr("checked", false);
+        $("#chkNonGST").attr("checked", false);
+    }
+</script>

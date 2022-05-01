@@ -1,0 +1,97 @@
+﻿@model List<Portal.Core.ViewModel.ResourceRequisitionViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblRequisitionList">
+            <thead>
+                <tr>
+                    <th align="center">Action</th>
+                    <th>Requisition No.</th>
+                    <th>No. Of Resources</th>
+                    <th>Position Level</th>
+                    <th>Priority</th>
+                    <th>Position Type</th>
+                    <th>Department</th>
+                    <th>Designation</th>
+                    <th>Approval Status</th>
+                    <th>Created By</th>
+                    <th>Created Date</th>
+                    <th>Approve/ Reject By</th>
+                    <th>Approve/ Reject Date</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/ResourceRequisition/ApproveResourceRequisition?resourceRequisitionId=@item.RequisitionId&AccessMode=3"></a>
+                            @if (item.ApprovalStatus.ToUpper() == "PENDING")
+                            {
+                                <a style="color:white" class="fa fa-pencil-square-o" href="~/ResourceRequisition/ApproveResourceRequisition?resourceRequisitionId=@item.RequisitionId&AccessMode=2"></a>
+                            }
+                        </td>
+                        <td>@item.RequisitionNo</td>
+                        <td>@item.NumberOfResources</td>
+                        <td>@item.PositionLevelName</td>
+                        <td>@item.PriorityLevel</td>
+                        <td>@item.PositionTypeName</td>
+                        <td>@item.DepartmentName</td>
+                        <td>@item.DesignationName</td>
+                        @if (item.ApprovalStatus.ToUpper() == "PENDING")
+                        {
+                            <td style="background-color:aquamarine;">
+                                @item.ApprovalStatus
+                            </td>
+                        }
+                         else if (item.ApprovalStatus.ToUpper() == "REJECTED")
+                        {
+                            <td style="background-color:red;color:white">
+                                @item.ApprovalStatus
+                            </td>
+                        } 
+                        else
+                        {
+                            <td style="background-color:green;color:white">
+                                @item.ApprovalStatus
+                            </td>
+
+                        }
+                      
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ApprovedByUserName</td>
+                        <td>@item.ApprovedDate</td> 
+
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblRequisitionList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

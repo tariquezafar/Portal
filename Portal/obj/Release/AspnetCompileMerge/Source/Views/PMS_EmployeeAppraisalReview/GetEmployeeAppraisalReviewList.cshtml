@@ -1,0 +1,82 @@
+﻿@model List<Portal.Core.ViewModel.PMS_EmployeeAppraisalReviewViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+     .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+ table tr:nth-child(2n+1) {
+    
+    background-color: #dff0d8;
+    }
+
+     table tr:nth-child(2n) {
+    
+    background-color: #dff0d8;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblTemplateList">
+            <thead>
+                <tr>
+                    <th align="center">Action</th>
+                    <th>Performance Cycle</th>
+                    <th>Year</th>
+                    <th>Employee</th>
+                    <th>Company Branch</th>
+                    <th>Form Submit Status</th>
+                    <th>Review Status</th>
+                    <th>Created By User</th>
+                    <th>Created Date</th> 
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/PMS_EmployeeAppraisalReview/AddEditEmployeeAppraisalReview?pMSReviewId=@item.PMSReviewId&AccessMode=3"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" href="~/PMS_EmployeeAppraisalReview/AddEditEmployeeAppraisalReview?pMSReviewId=@item.PMSReviewId&AccessMode=2"></a>
+                        </td> 
+                        <td>@item.PerformanceCycleName</td>
+                        <td>@item.FinYearDesc</td>
+                        <td>@item.EmployeeName</td>
+                        <td>@item.CompanyBranchName</td>
+                        <td>@item.PMSFormStatus</td>
+                        <td>@item.PMSFinalStatus</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblTemplateList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

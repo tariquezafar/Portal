@@ -1,0 +1,80 @@
+﻿@model List<Portal.Core.ViewModel.FormTypeViewModel>
+
+
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table
+    {
+        background-color:white;
+        margin-left:0px;
+        margin-right:50px
+    }
+      .table th {
+    background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    color:#fff;
+}
+</style>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div>
+        <table class="table table-bordered" id="tblGLMainGroupList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>Form Type Desc</center></th>                                      
+                    <th><center>Status</center></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    if (item.FormType_Status == true)
+                    {
+
+                    <tr class="success">
+                        <td class="teal text" style="width:30px; margin:0px auto;">
+                            <a title="View" style="color:darkblue;text-decoration:none; " class="fa fa-eye" aria-hidden="true" href="~/FormType/AddEditFormType?FormTypeId=@item.FormTypeId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            <a title="Edit" style="color:darkgreen;text-decoration:none;" class="fa fa-pencil" href="~/FormType/AddEditFormType?FormTypeId=@item.FormTypeId&AccessMode=2"></a>
+                        </td>
+                        <td align="center">@item.FormTypeDesc</td>                                              
+                        <td align="center">@(item.FormType_Status == true ? "Active" : "Inactive")</td>                        
+                    </tr>
+                    }
+                    else
+                    {
+                        <tr class="danger">
+                            <td class="teal text" style="width:30px; margin:0px auto;">
+                                <a title="View" style="color:darkblue;text-decoration:none; " class="fa fa-eye" aria-hidden="true" href="~/FormType/AddEditFormType?FormTypeId=@item.FormTypeId&AccessMode=3"></a>
+                            </td>
+                            <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                                <a title="Edit" style="color:darkgreen;text-decoration:none;" class="fa fa-pencil" href="~/FormType/AddEditFormType?FormTypeId=@item.FormTypeId&AccessMode=2"></a>
+                            </td>
+                            <td align="center">@item.FormTypeDesc</td>
+                            <td align="center">@(item.FormType_Status == true ? "Active" : "Inactive")</td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblGLMainGroupList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

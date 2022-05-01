@@ -1,0 +1,375 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Add New Vendor</title>
+    <style>
+        .Mandatory {
+            color: red;
+            font-weight: bold;
+        }
+
+        fieldset.scheduler-border {
+            border: 1px groove #ddd !important;
+            padding: 0 1.4em 1.4em 1.4em !important;
+            margin: 0 0 1.5em 0 !important;
+            -webkit-box-shadow: 0px 0px 0px 0px #000;
+            box-shadow: 0px 0px 0px 0px #000;
+        }
+
+        legend {
+            display: block;
+            width: 37%;
+            padding: 0;
+            margin-bottom: 20px;
+            font-size: 21px;
+            line-height: inherit;
+            color: #333;
+            border: 0;
+            border-bottom: 0px solid #e5e5e5;
+        }
+    </style>
+</head>
+
+<body class="sidebar-condensed" id="body">
+
+
+    <section>
+        <form action="#" id="frmAddEditVendor" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+            <div class="">
+
+                <div id="tabs">
+                    <div id="tabs-1">
+                        <div class="col-md-12 ftop">
+                            <div class="form-group col-md-6">
+                                <label for="txtPopUpVendorName" class="col-sm-4 control-label">Vendor Name&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtPopUpVendorName" name="txtPopUpVendorName" tabindex="25" placeholder="Enter Vendor Name" type="text" maxlength="100" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtPopUpVendorCode" class="col-sm-4 control-label">Vendor Code&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtPopUpVendorCode" name="txtPopUpVendorCode" tabindex="26" placeholder="Enter Vendor Code" type="text" maxlength="50" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+                                <label for="txtPopUpContactPersonName" class="col-sm-4 control-label">Contact Person Name&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input class="form-control alpha-space-only" id="txtPopUpContactPersonName" name="txtPopUpContactPersonName" tabindex="27" placeholder="Enter Contact Person Name" type="text" maxlength="100" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtPopUpMobileNo" class="col-sm-4 control-label">Mobile No.</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control  input-number numeric-only" id="txtPopUpMobileNo" name="txtPopUpMobileNo" tabindex="28" placeholder="Enter Mobile No." type="text" maxlength="10" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6 ">
+                                <label for="ddlPopUpCountry" class="col-sm-4 control-label">Country&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <select id="ddlPopUpCountry" name="ddlPopUpCountry" onchange="BindPrimaryStateList(0)" tabindex="29" class="form-control"></select>
+                                </div>
+                            </div>
+                            <div class="form-group  col-md-6 ">
+                                <label for="ddlState" class="col-sm-4 control-label">State&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <select id="ddlPopUpState" name="ddlPopUpState" tabindex="30" class="form-control"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group  col-md-6">
+                                <label for="txtPopUpCity" class="col-sm-4 control-label">City&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input class="form-control alpha-space-only" id="txtPopUpCity" name="txtPopUpCity" tabindex="31" placeholder="Enter City" type="text" maxlength="50" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtPopUpAddress" class="col-sm-4 control-label">Address&nbsp;<span class="Mandatory">(*)</span></label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtPopUpAddress" name="txtPopUpAddress" tabindex="32" placeholder="Enter Address" type="text" maxlength="250" />
+                                </div>
+                            </div>                           
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group  col-md-6 ">
+                                <label for="txtPopUpGSTNo" class="col-sm-4 control-label">GST No.</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtPopUpGSTNo" name="txtPopUpGSTNo" tabindex="33" placeholder="Enter GST No." type="text" maxlength="20" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6 ">
+                                <label for="chkComposition" class="col-sm-4 control-label">Is Composition</label>
+                                <div class="col-sm-8">
+                                    <input type="checkbox" name="chkComposition" id="chkComposition" class="" />
+                                    <label style="font-size: 24px;" tabindex="34" for="chkComposition"></label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+
+                            <div class="form-group col-md-6">
+                                <label for="chkGSTExempt" class="col-sm-4 control-label">Unregistered Vendor</label>
+                                <div class="col-sm-8">
+                                    <input type="checkbox" name="chkUnregisteredVendor" id="chkUnregisteredVendor" class="" />
+                                    <label style="font-size: 24px;" tabindex="35" for="chkUnregisteredVendor"></label>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-sm-12 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnPopUpSave" tabindex="36" onclick="SaveDataPopUp()" type="button" border="0">
+                            <a class="btn btn-success" id="btnReset" href="@Url.Content("~/Vendor/AddEditVendor")" style="display:none;">Reset</a>
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        </form>
+    </section>
+</body>
+</html>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script>
+    $(".alpha-only").on("input", function () {
+        var regexp = /[^a-zA-Z]/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+    $(".alpha-space-only").on("input", function () {
+        var regexp = /[^a-zA-Z\s]+$/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+    $(".numeric-only").on("input", function () {
+        var regexp = /\D/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+    $(".alpha-numeric-only").on("input", function () {
+        var regexp = /[^a-zA-Z0-9]/g;
+        if ($(this).val().match(regexp)) {
+            $(this).val($(this).val().replace(regexp, ''));
+        }
+    });
+
+    $(document).ready(function () {
+        BindCountryList();
+    });
+
+    function BindCountryList() {
+        $.ajax({
+            type: "GET",
+            url: "../Company/GetCountryList",
+            data: "{}",
+            dataType: "json",
+            asnc: false,
+            success: function (data) {
+                $("#ddlPopUpCountry").append($("<option></option>").val(0).html("-Select Country-"));
+                $.each(data, function (i, item) {
+
+                    $("#ddlPopUpCountry").append($("<option></option>").val(item.CountryId).html(item.CountryName));
+                });
+            },
+            error: function (Result) {
+                $("#ddlPopUpCountry").append($("<option></option>").val(0).html("-Select Country-"));
+            }
+        });
+    }
+
+
+    function BindPrimaryStateList(stateId) {
+        var countryId = $("#ddlPopUpCountry option:selected").val();
+        $("#ddlPopUpState").val(0);
+        $("#ddlPopUpState").html("");
+        if (countryId != undefined && countryId != "" && countryId != "0") {
+            var data = { countryId: countryId };
+            $.ajax({
+                type: "GET",
+                url: "../Company/GetStateList",
+                data: data,
+                asnc: false,
+                dataType: "json",
+                success: function (data) {
+                    $("#ddlPopUpState").append($("<option></option>").val(0).html("-Select State-"));
+                    $.each(data, function (i, item) {
+                        $("#ddlPopUpState").append($("<option></option>").val(item.StateId).html(item.StateName));
+                    });
+                    $("#ddlPopUpState").val(stateId);
+                },
+                error: function (Result) {
+                    $("#ddlPopUpState").append($("<option></option>").val(0).html("-Select State-"));
+                }
+            });
+        }
+        else {
+
+            $("#ddlPopUpState").append($("<option></option>").val(0).html("-Select State-"));
+        }
+
+    }
+
+    function checkDecPopUp(el) {
+        var ex = /^[0-9]+\.?[0-9]*$/;
+        if (ex.test(el.value) == false) {
+            el.value = el.value.substring(0, el.value.length - 1);
+        }
+
+    }
+    function SaveDataPopUp() {
+        var txtPopUpVendorName = $("#txtPopUpVendorName");
+        var txtPopUpVendorCode = $("#txtPopUpVendorCode");
+        var txtPopUpContactPersonName = $("#txtPopUpContactPersonName");
+        var txtPopUpMobileNo = $("#txtPopUpMobileNo");
+        var txtPopUpAddress = $("#txtPopUpAddress");
+        var ddlPopUpCountry = $("#ddlPopUpCountry");
+        var ddlPopUpState = $("#ddlPopUpState");
+        var txtPopUpGSTNo = $("#txtPopUpGSTNo");
+        var txtPopUpCity = $("#txtPopUpCity"); 
+        var chkComposition = $("#chkComposition").is(':checked') ? true : false;
+        var chkUnregisteredVendor = $("#chkUnregisteredVendor").is(':checked') ? true : false;
+
+        if (txtPopUpVendorName.val().trim() == "") {
+            alert("Please Enter Vendor Name");
+            txtPopUpVendorName.focus();
+            return false;
+        }
+        if (txtPopUpVendorCode.val().trim() == "") {
+            alert("Please Enter Vendor Code");
+            txtPopUpVendorCode.focus();
+            return false;
+        }
+        if (txtPopUpContactPersonName.val().trim() == "") {
+            alert("Please Enter Contact Person name");
+            txtPopUpContactPersonName.focus();
+            return false;
+        }
+
+        if (txtPopUpMobileNo.val() != "" && txtPopUpMobileNo.val().trim().length < 10) {
+            alert("Please enter valid Mobile No.");
+            txtPopUpMobileNo.focus();
+            return false;
+        }
+
+        if (txtPopUpAddress.val().trim() == "") {
+            alert("Please enter Address");
+            txtPopUpAddress.focus();
+            return false;
+        }
+        if (ddlPopUpCountry.val() == "" || ddlPopUpCountry.val() == "0") {
+            alert("Please select Country");
+            ddlPopUpCountry.focus();
+            return false;
+        }
+        if (ddlPopUpState.val() == "" || ddlPopUpState.val() == "0") {
+            alert("Please select State");
+            ddlPopUpState.focus();
+            return false;
+        }
+        if (txtPopUpCity.val().trim() == "") {
+            alert("Please enter city");
+            txtPopUpCity.focus();
+            return false;
+        }
+        var vendorViewModel = {
+            VendorCode: txtPopUpVendorCode.val().trim(),
+            VendorName: txtPopUpVendorName.val().trim(),
+            ContactPersonName: txtPopUpContactPersonName.val().trim(),
+            MobileNo: txtPopUpMobileNo.val().trim(),
+            Address: txtPopUpAddress.val().trim(),
+            StateId: ddlPopUpState.val(),
+            CountryId: ddlPopUpCountry.val(),
+            City: txtPopUpCity.val().trim(),
+            GSTNo: txtPopUpGSTNo.val().trim(),
+            IsComposition: chkComposition,
+            GST_Exempt: chkUnregisteredVendor,
+            Vendor_Status: true
+        };
+        var requestData = { vendorViewModel: vendorViewModel };
+        $.ajax({
+            url: "../Vendor/AddEditVendorMaster",
+            cache: false,
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify(requestData),
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.status == "SUCCESS") {
+                    alert(data.message);
+                    GetVendorDetailsById(data.trnId);
+                    ClearFieldsPopUp();
+                    $("#AddNewVendor").modal("hide");
+                }
+                else {
+                    alert(data.message);
+                }
+            },
+            error: function (err) {
+                ShowModel("Error", err)
+            }
+        });
+
+    }
+
+    function ShowModelPopUp(headerText, bodyText) {
+        $("#alertModel").modal();
+        $("#modelHeader").html(headerText);
+        $("#modelText").html(bodyText);
+    }
+    function ClearFieldsPopUp() {
+        $("#txtPopUpVendorName").val("");
+        $("#txtPopUpVendorCode").val("");
+        $("#txtPopUpContactPersonName").val("");
+        $("#txtPopUpMobileNo").val("");
+        $("#txtPopUpAddress").val("");
+        $("#ddlPopUpCountry").val("0");
+        $("#ddlPopUpState").val("0");
+        $("#txtPopUpGSTNo").val("");
+        $("#btnPopUpSave").show();
+        $("#chkComposition").prop("checked", true);
+        $("#chkUnregisteredVendor").prop("checked", true);
+    }
+
+    function GetVendorDetailsById(VendorId) {
+        if (VendorId != null && VendorId != 0) {
+            var requestData = { vendorId: VendorId };
+            $.ajax({
+                url: "../Vendor/GetVendorDetailsById",
+                cache: false,
+                type: "POST",
+                dataType: "json",
+                data: JSON.stringify(requestData),
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data != null) {
+                        $("#hdnVendorId").val(data[0].VendorId);
+                        $("#txtVendorName").val(data[0].VendorName);
+                        $("#txtVendorCode").val(data[0].VendorCode);
+                        $("#txtBAddress").val(data[0].Address);
+                        GetVendorDetail(data[0].VendorId);
+                    }
+                },
+                error: function (err) {
+                    ShowModel("Error", err)
+                }
+            });
+        }
+    }
+</script>

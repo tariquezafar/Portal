@@ -1,0 +1,115 @@
+﻿@model List<Portal.Core.ViewModel.VoucherDetailViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblVoucherEntryList">
+            <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Entry Mode</th>
+                    <th>GL Code</th>
+                    <th>GL Head</th>
+                    <th>SL Code</th>
+                    <th>SL Head</th>
+                    <th>Amount</th>
+                    <th>Narration</th>
+                    <th>Bill No.</th>
+                    <th>Bill Date</th>
+                    <th>Payee/ Payer</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>
+                            @item.SequenceNo
+                            <input type="hidden" id="hdnVoucherDetailId" value="@item.VoucherDetailId" />
+                            <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+
+                        </td>
+                        <td>
+                            @item.EntryMode
+                            <input type="hidden" id="hdnEntryMode" value="@item.EntryMode" />
+                        </td>
+                        <td>
+                            @item.GLCode
+                            <input type="hidden" id="hdnGLId" value="@item.GLId" />
+                            <input type="hidden" id="hdnGLCode" value="@item.GLCode" />
+                        </td>
+                        <td>
+                            @item.GLHead
+                            <input type="hidden" id="hdnGLHead" value="@item.GLHead" />
+                            <input type="hidden" id="hdnSLTypeId" value="@item.SLTypeId" />
+                        </td>
+                        <td>
+                            @item.SLCode
+                            <input type="hidden" id="hdnSLId" value="@item.SLId" />
+                            <input type="hidden" id="hdnSLCode" value="@item.SLCode" />
+                        </td>
+                        <td>
+                            @item.SLHead
+                            <input type="hidden" id="hdnSLHead" value="@item.SLHead" />
+                        </td>
+                        <td>
+                            @item.Amount
+                            <input type="hidden" id="hdnAmount" value="@item.Amount" />
+                        </td>
+                        <td>
+                            @item.Narration
+                            <input type="hidden" id="hdnNarration" value="@item.Narration" />
+                            <input type="hidden" id="hdnPaymentModeId" value="@item.PaymentModeId" />
+                            <input type="hidden" id="hdnChequeRefNo" value="@item.ChequeRefNo" />
+                            <input type="hidden" id="hdnChequeRefDate" value="@item.ChequeRefDate" />
+                            <input type="hidden" id="hdnCostCenterId" value="@item.CostCenterId" />
+                            <input type="hidden" id="hdnValueDate" value="@item.ValueDate" />
+                            <input type="hidden" id="hdnDrawnOnBank" value="@item.DrawnOnBank" />
+                            <input type="hidden" id="hdnPO_SONo" value="@item.PO_SONo" />
+                        </td>
+                        <td>
+                            @item.BillNo
+                            <input type="hidden" id="hdnBillNo" value="@item.BillNo" />
+                        </td>
+                        <td>
+                            @item.BillDate
+                            <input type="hidden" id="hdnBillDate" value="@item.BillDate" />
+                        </td>
+                        <td>
+                            @item.PayeeName
+                            <input type="hidden" id="hdnPayeeId" value="@item.PayeeId" />
+                            <input type="hidden" id="hdnPayeeName" value="@item.PayeeName" />
+                            <input type="hidden" id="hdnAutoEntry" value="@item.AutoEntry" />
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblVoucherEntryList">
+            <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Entry Mode</th>
+                    <th>GL Code</th>
+                    <th>GL Head</th>
+                    <th>SL Code</th>
+                    <th>SL Head</th>
+                    <th>Amount</th>
+                    <th>Narration</th>
+                    <th>Bill No.</th>
+                    <th>Bill Date</th>
+                    <th>Payee/ Payer</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

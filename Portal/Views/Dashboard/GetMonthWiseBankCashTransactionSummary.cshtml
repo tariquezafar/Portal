@@ -1,0 +1,78 @@
+﻿@model List<Portal.Core.ViewModel.MonthWiseCashBankTrnSummaryViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div class="panel" style="overflow: hidden;">
+        <div class="panel-body">
+            <table class="table" style="background-color:#ffffff;">
+                <thead style="border-top-left-radius:15px;">
+                        <tr style="border:none;">
+                            <th>Collection Vs Payment (In Rs.)</th>
+                            <th style="border:none;"></th>
+                            <th style="border:none;"></th>
+                            <th style="border:none;"></th>
+                            <th style="border:none;"></th>
+                        </tr>
+                        <tr style="background:#D0DDEC; border:1px solid #ccc;">
+                            <th>Month(s)</th>
+                            <th>Bank Collection</th>
+                            <th>Bank Payment</th>
+                            <th>Cash Collection</th>
+                            <th>Cash Payment</th>
+                        </tr>
+                    </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                {
+                        <tr >
+                            <td href="javascript:;" class="text-success semi-bold">@item.MonthShortName</td>
+                            <td>@item.BankReceipt</td>
+                            <td>@item.BankPayment</td>
+                            <td>@item.CashReceipt</td>
+                            <td>@item.CashPayment</td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot style="border:1px solid #ccc;">
+                    <tr class="active">
+                        <th>Grand Total</th>
+                        <th>@Model.Sum(x => x.BankReceipt)</th>
+                        <th>@Model.Sum(x => x.BankPayment)</th>
+                        <th>@Model.Sum(x => x.CashReceipt)</th>
+                        <th>@Model.Sum(x => x.CashPayment)</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        </div>
+        }
+        else
+        {
+        <h3 style="color:firebrick;text-align:center">Transaction data not updated</h3>
+        }
+        <script>
+            var monthWiseBankCashTrnChartData =
+                {
+                    labels: [@Html.Raw(ViewBag.MonthList)],
+                    datasets: [{
+                        label: 'Bank Collection',
+                        backgroundColor: "#f990a7",
+                        data: [@ViewBag.BankReceiptList]
+                    },
+                    {
+                        label: 'Bank Payment',
+                        backgroundColor: "#aad2ed",
+                        data: [@ViewBag.BankPaymentList]
+                    },
+                    {
+                        label: 'Cash Collection',
+                        backgroundColor: "#9966FF",
+                        data: [@ViewBag.CashReceiptList]
+                    },
+                    {
+                        label: 'Cash Payment',
+                        backgroundColor: "#99e5e5",
+                        data: [@ViewBag.CashPaymentList]
+                    }]
+                };
+
+        </script>

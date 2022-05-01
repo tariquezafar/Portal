@@ -1,0 +1,112 @@
+﻿@model List<Portal.Core.ViewModel.StockLedgerViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblAssemblyList">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Product Type</th>
+                    <th>Product Short Desc</th>
+                    <th>Main Group</th>
+                    <th>Sub Group</th>                   
+                    <th>Assembly Type</th>
+                    <th>Unit</th>
+                    <th>Opening Qty </th>
+                    <th>Purchase Qty</th>
+                    <th>Sale Qty</th>
+                    <th>Stock-In Qty</th>
+                    <th>Stock-Out Qty</th> 
+                    <th>Closing Qty</th> 
+                    <th colspan="2" align="center"></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.ProductName</td>
+                        <td>@item.ProductCode</td>
+                        <td>@item.ProductTypeName</td>
+                        <td>@item.ProductShortDesc</td>
+                        <td>@item.ProductMainGroupName</td>
+                        <td>@item.ProductSubGroupName</td>
+                        <td>@item.AssemblyType</td>
+                        <td>@item.UOMName</td>
+                        <td>@item.OpeningQty</td>
+                        <td>@item.PurchaseQty</td>
+                        <td>@item.SaleQty</td>
+                        <td>@item.StockInQty</td>
+                        <td>@item.StockOutQty</td>
+                        <td>@item.ClosingQty
+                            <input type="hidden" id="hdnfromdate" value="@ViewData["fromDate"]" />
+                            <input type="hidden" id="hdntodate" value="@ViewData["toDate"]" /></td>                        
+                        <td align="center" class="btn-success btn " style="margin:0px auto;">                           
+                            <a style="color:white"  class="fa fa-list" aria-hidden="true" title="View Stock Ledger" onclick="GetStockLedgerDrilDownList(this)" id="View_@item.ProductId"></a>                        
+                        </td> 
+                        <td align="center" class="btn-success btn" style="margin:0px auto;">
+                            <a style="color:white" class="fa fa-file-text-o" aria-hidden="true" title="Generate Stock Ledger Reports" onclick="OpenPrintPopupStockLedger(this)" id="stock_@item.ProductId" ></a>
+                            <input type="hidden" id="hdnProductID" value="0" />
+                           
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td colspan="14" width="100%" height="auto">
+                            <div style="display:none;" id="divStockLedgerDrilDown_@item.ProductId">
+
+                            </div>
+                        </td>
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+    <div class="modal fade" id="printModel" role="dialog">
+        <div class="modal-dialog  modal-sm">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Stock Ledger Reports</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="ddlPrintOption" class="col-sm-4 control-label">Report Option</label>
+                        <div class="col-sm-8">
+                            <select id="ddlPrintOption2" name="ddlPrintOption2" onchange="ShowHideStockSummaryPrintOption()" tabindex="1" class="form-control">
+                                <option selected="selected" value="PDF">PDF</option>
+                                <option value="Excel">Excel</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-success" target="_blank" href="#" id="btnPdfStock">Print</a>
+                    <a class="btn btn-success" style="display:none;" target="_blank" href="#" id="btnExcelStock">Print</a>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblAssemblyList').paging({
+            limit: 50,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

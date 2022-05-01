@@ -1,0 +1,392 @@
+21:13:49 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+21:13:49 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:19:01 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\Dheeraj\Portal\Portal\Views\SaleInvoice\GetJobCardList.cshtml(27): error CS1061: 'Portal.Core.ViewModel.JobCardViewModel' does not contain a definition for 'SOId' and no extension method 'SOId' accepting a first argument of type 'Portal.Core.ViewModel.JobCardViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+21:19:03 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\Dheeraj\Portal\Portal\Views\SaleInvoice\GetJobCardList.cshtml(27): error CS1061: 'Portal.Core.ViewModel.JobCardViewModel' does not contain a definition for 'SOId' and no extension method 'SOId' accepting a first argument of type 'Portal.Core.ViewModel.JobCardViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+21:26:04 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:26:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:35:53 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:35:53 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:36:52 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetJobCardList
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near '.'.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:36:52 PM
+Source : Portal.Core.JobCardBL
+Method Name : GetJobCardList
+Error Line No : 204
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near '.'.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:36:52 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetJobCardList
+Error Line No : 1680
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near '.'.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:36:59 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetJobCardList
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near '.'.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:36:59 PM
+Source : Portal.Core.JobCardBL
+Method Name : GetJobCardList
+Error Line No : 204
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near '.'.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:36:59 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetJobCardList
+Error Line No : 1680
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near '.'.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:37:13 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetJobCardList
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near '.'.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:37:13 PM
+Source : Portal.Core.JobCardBL
+Method Name : GetJobCardList
+Error Line No : 204
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near '.'.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:37:38 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetJobCardList
+Error Line No : 1680
+Exception Type : System.Data.SqlClient.SqlException
+Details: Incorrect syntax near '.'.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:53:14 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+21:53:14 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:23:27 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+22:23:27 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:24:56 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:24:56 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:25:52 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleInvoiceJobCardProductList
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetSIJobCardProducts' expects parameter '@JobCardID', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:25:52 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceJobCardProductList
+Error Line No : 1411
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetSIJobCardProducts' expects parameter '@JobCardID', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:25:52 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceJobCardProductList
+Error Line No : 1696
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetSIJobCardProducts' expects parameter '@JobCardID', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:25:52 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The partial view 'GetSaleInvoiceJobCardProductList' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/SaleInvoice/GetSaleInvoiceJobCardProductList.aspx
+~/Views/SaleInvoice/GetSaleInvoiceJobCardProductList.ascx
+~/Views/Shared/GetSaleInvoiceJobCardProductList.aspx
+~/Views/Shared/GetSaleInvoiceJobCardProductList.ascx
+~/Views/SaleInvoice/GetSaleInvoiceJobCardProductList.cshtml
+~/Views/SaleInvoice/GetSaleInvoiceJobCardProductList.vbhtml
+~/Views/Shared/GetSaleInvoiceJobCardProductList.cshtml
+~/Views/Shared/GetSaleInvoiceJobCardProductList.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+23:28:44 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:28:44 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:29:35 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleInvoiceJobCardProductList
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetSIJobCardProducts' expects parameter '@JobCardID', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:29:35 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceJobCardProductList
+Error Line No : 1411
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetSIJobCardProducts' expects parameter '@JobCardID', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:29:35 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceJobCardProductList
+Error Line No : 1696
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetSIJobCardProducts' expects parameter '@JobCardID', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:31:54 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:31:54 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:32:39 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleInvoiceJobCardProductList
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetSIJobCardProducts' expects parameter '@JobCardID', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:32:39 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : GetSaleInvoiceJobCardProductList
+Error Line No : 1411
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetSIJobCardProducts' expects parameter '@JobCardID', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:32:39 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : GetSaleInvoiceJobCardProductList
+Error Line No : 1696
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetSIJobCardProducts' expects parameter '@JobCardID', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:32:55 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetSaleInvoiceJobCardProductList
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetSIJobCardProducts' expects parameter '@JobCardID', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:36:42 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:36:42 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:38:08 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:38:08 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:38:35 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:38:35 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:38:35 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 2263
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:38:57 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:38:57 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+23:38:57 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 2263
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+

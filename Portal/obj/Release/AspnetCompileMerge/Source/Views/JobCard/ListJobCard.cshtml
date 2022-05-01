@@ -1,0 +1,152 @@
+﻿@{
+    ViewBag.Title = "List Job Card";
+    Layout = "~/Views/Shared/_SaleLayout.cshtml";
+}
+<style>
+    .table {
+        width: 120% !important;
+        max-width: 120% !important;
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+
+    #tblSaleInvoiceList tr th {
+        text-align: center;
+        border: 1px solid #ccc !important;
+        font-family: Arial;
+        color: #fff;
+    }
+
+    table tr td {
+        border: 1px solid #ccc !important;
+        font-family: Arial;
+    }
+</style>
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/SaleDashboard">Sale </a> >> List Job Card </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditSaleInvoice" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message"> 
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="txtJobCardNo" class="col-sm-4 control-label">Job Card No.</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtJobCardNo" name="txtJobCardNo" tabindex="1" placeholder="Search with Search Job Card No." type="text" maxlength="50" />                       
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtCustomerName" class="col-sm-4 control-label">Customer Name</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtCustomerName" name="txtCustomerName" tabindex="2" placeholder="Search with Search Customer Name" type="text" maxlength="50" />
+                    </div>
+                </div>
+                <div class="form-group  col-md-4">
+                    <label for="ddlApprovalStatus" class="col-sm-4 control-label">SI Status</label>
+                    <div class="col-sm-8">
+                        <select id="ddlApprovalStatus" name="ddlApprovalStatus" tabindex="3" class="form-control">
+                            <option value="0">--Status--</option>
+                            <option value="Final">Final</option>
+                            <option value="Draft">Draft</option>
+                           
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+          
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtModelName" class="col-sm-4 control-label">Model Name</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtModelName" name="txtModelName" tabindex="4" placeholder="Search with Search Model Name" type="text" maxlength="50" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtEngineNo" class="col-sm-4 control-label">Engine No.</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtEngineNo" name="txtEngineNo" tabindex="5" placeholder="Search with Search Engine No." type="text" maxlength="50" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtRegNo" class="col-sm-4 control-label">Reg. No.</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtRegNo" name="txtRegNo" tabindex="6" placeholder="Search with Search Reg No." type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                
+                <div class="form-group col-md-4">
+                    <label for="txtKeyNo" class="col-sm-4 control-label">Key No.</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtKeyNo" name="txtKeyNo" tabindex="7" placeholder="Search with Search Key No." type="text" maxlength="50" />
+                    </div>
+                </div>
+               
+                <div class="form-group col-md-4">
+                    <label for="txtFromDate" class="col-sm-4 control-label">Job Card From Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtFromDate" name="txtFromDate" tabindex="8" value="@ViewData["fromDate"]" type="text" maxlength="50" />
+                        <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["fromDate"]" type="hidden" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtToDate" class="col-sm-4 control-label">To Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtToDate" name="txtToDate" tabindex="9" value="@ViewData["toDate"]" type="text" maxlength="50" />
+                        <input id="hdnToDate" name="hdnToDate" value="@ViewData["toDate"]" type="hidden" />
+                    </div>
+                </div>
+            </div>
+
+            
+
+                <div class="row col-sm-12 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Search" alt="Save" tabindex="10" id="btnSearch" onclick="SearchJobCard();" type="button" border="0">
+                            <input class="btn btn-success" type="button" id="btnReset" tabindex="10" onclick="ClearFields()" value="Reset" />
+                            <a class="btn btn-success" id="btnList" tabindex="11" href="@Url.Content("~/JobCard/AddEditJobCard?accessMode=1")">Add More Job Card</a>
+                            
+                        </center>
+                    </div>
+                    
+                </div>
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div id="divList">
+
+                    </div>
+                </div>
+            </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/JobCard/ListJobCard.js"></script>
+
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/Common.js"></script>

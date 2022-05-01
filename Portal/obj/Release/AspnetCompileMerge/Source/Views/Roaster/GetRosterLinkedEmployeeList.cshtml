@@ -1,0 +1,50 @@
+﻿@model List<Portal.Core.ViewModel.EmployeeViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table mapping-list" id="tblEmployeeList">
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Employee Code</th>
+                    <th>Employee Name</th>
+                    <th>Designation</th>
+                    <th style="text-align:center;">Select<br />
+                        <input type="checkbox" id="chkSelectAll" onclick="CheckSelectAll(this)" />
+                    </th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var rowCounter = 1;
+                    }
+                @foreach (var item in Model)
+                {
+                    
+                    <tr class="success">
+                        <td>@(rowCounter++) </td>
+                        <td>@item.EmployeeCode
+                        <input type="hidden" id="hdnEmployeeId" value="@item.EmployeeId" />
+                        </td>
+                        <td>
+                            @item.FirstName @item.LastName
+                        </td>
+                        <td>
+                            @item.DesignationName
+                        </td>
+                        <td  style="text-align:center;">
+                            <input type="checkbox" class="selectEmployee" id="chkSelect" />
+                        </td>
+                 
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}

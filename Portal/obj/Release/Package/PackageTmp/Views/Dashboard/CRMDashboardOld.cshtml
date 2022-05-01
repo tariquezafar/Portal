@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "CRM Dashboard";
+    Layout = "~/Views/Shared/_CRMLayout.cshtml";
+}
+
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div id="wrapper">
+    <div id="page-content-wrapper">
+        <div class="page-content">
+            <div class="container-fluid">
+                <div class="row" style="margin-top:-50px;">
+                    <div class="col-md-4" id="DivLeadFollowUpReminderCount">
+
+                    </div>
+                </div>
+                <div class="row" >
+                        <div class="col-md-4" id="DivLeadStatusCount">
+
+                        </div>
+                        <div class="col-md-4" id="DivLeadSourceCount">
+
+                        </div>
+                        <div class="col-md-4" id="DivLeadFollowUpCount">
+
+                        </div>
+                        
+                    </div>
+                    <div class="row" style="display:none;">
+                        <div class="col-md-4" id="DivDateWiseLeadConversionCount">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" id="DivDateWiseLeadConversionCount2">
+                            <h2>Date Wise Lead Conversion</h2>
+                        </div>
+                        <div class="col-md-12" id="DivDateWiseLeadConversionCount2">
+                            <canvas id="DateWiseLeadConversionCountbarcanvas" height="100" width="200"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+        <!--end body content -->
+    </div>
+</div>
+<div class="modal fade" id="LeadFollowUpDetails" role="dialog">
+    <div class="modal-dialog  modal-md">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <center><h4 class="modal-title">Lead Follow Up Details</h4></center>
+            </div>
+            <div class="">
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div id="divLeadFollowUpList">
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="~/Scripts/Chart.bundle.min.js"></script>
+<script src="~/Scripts/Dashboard/CRMDashboard.js"></script>

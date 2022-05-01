@@ -1,0 +1,76 @@
+﻿@model List<Portal.Core.ViewModel.HR_EmployeeTravelApplicationViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<script src="~/Scripts/paging.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table" id="tblTravelApplicationList">
+            <thead>
+                <tr>
+                    <th>Application No</th>
+                    <th>Application Date</th>
+                    <th>Travel Type</th>
+                    <th>Travel Destination</th>
+                    <th>Travel Start</th>
+                    <th>Travel End</th>
+                    <th>Travel Reason</th>
+                    <th>Travel Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @if (item.TravelStatus == "Draft")
+                            {
+                               <a href='../EmployeeTravelApp/AddEditEmployeeTravelApp?applicationId=@item.ApplicationId&AccessMode=2&essEmployeeId=@item.EmployeeId&essEmployeeName=@item.EmployeeName' id="lnkLoanApplicationNo" target="_blank">@item.ApplicationNo</a>
+                            }
+                            else
+                            {
+                                <a href='../EmployeeTravelApp/AddEditEmployeeTravelApp?applicationId=@item.ApplicationId&AccessMode=3&essEmployeeId=@item.EmployeeId&essEmployeeName=@item.EmployeeName' id="lnkLoanApplicationNo" target="_blank">@item.ApplicationNo</a>
+                            }
+                        </td>
+                        <td>
+                            @item.ApplicationDate
+                        </td>
+                        <td>
+                            @item.TravelTypeName
+                        </td>
+                        <td>
+                            @item.TravelDestination
+                        </td>
+                        <td>
+                            @item.TravelStartDate
+                        </td>
+                        <td>
+                            @item.TravelEndDate
+                        </td>
+                        <td>
+                            @item.TravelReason
+                        </td>
+                        <td>
+                            <center><span class="label label-success">@item.TravelStatus</span></center> 
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+
+@*<script>
+    $(document).ready(function () {
+        $('#tblAdvanceApplicationList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>*@

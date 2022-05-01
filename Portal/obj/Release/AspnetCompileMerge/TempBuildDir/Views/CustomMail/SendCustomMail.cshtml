@@ -1,0 +1,199 @@
+﻿@{
+    ViewBag.Title = "AddEditSendEmail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<link href="~/Content/editor.css" rel="stylesheet" />
+    <style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+    /* allow space for check mark */
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AdminDashboard">Admin </a> >> Send Mail</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditTermTemplate" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="txtMailTo" class="col-sm-2 control-label">To&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtMailTo" name="txtMailTo" placeholder="Enter To" tabindex="1"  type="text" maxlength="1000" />
+                        <input id="hdnMailId" type="hidden" value="@ViewData["mailId"]" />
+                        <input id="hdnfromMailId" type="hidden" value="@ViewData["fromMailId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtMailCC" class="col-sm-2 control-label">CC</label>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtMailCC" name="txtMailCC" placeholder="Enter CC" tabindex="2" type="text" maxlength="1000" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtMailBCC" class="col-sm-2 control-label">BCC</label>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtMailBCC" name="txtMailBCC" placeholder="Enter BCC" tabindex="2" type="text" maxlength="1000" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="txtMailSubject" class="col-sm-2 control-label">Subject&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtMailSubject" name="txtMailSubject" placeholder="Enter Subject" tabindex="2" type="text" maxlength="1000" />
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+
+                </div>
+                <div class="form-group col-md-4" style="background-color:yellow">
+                    <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Attachment(s) Detail</b></label></h4>
+                </div>
+                <div class="form-group col-md-4">
+                    <input class="btn btn-success" value="Add New Attachment" tabindex="2" alt="Add New Attachment" id="btnAddNewDocument" onclick="ShowHideDocumentPanel(1)" type="button" border="0">
+                </div>
+            </div>
+            <div class="col-md-12 documentsection" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="FileUpload1" class="col-sm-4 control-label">Upload Files</label>
+                    <div class="col-sm-8">
+                        <input type="file" id="FileUpload2" name="FileUpload2" />
+                        <input id="hdnDocumentSequence" type="hidden" value="0" />  
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                   
+                </div>
+
+            </div>
+            <div class="col-sm-12 col-lg-12 col-md-12 documentsection" style="display:none;">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Add Attachment" alt="Add Document" id="btnAddDocument" tabindex="4" onclick="SaveDocument()" type="button" border="0">&nbsp;&nbsp;
+                        <input class="btn btn-success" value="Update Document" style="display:none;" tabindex="4" alt="Update Document" id="btnUpdateDocument" onclick="SaveDocument()" type="button" border="0">&nbsp;&nbsp;
+                        <input class="btn btn-success" type="button" id="btnCancelDocument" tabindex="5" onclick="ShowHideDocumentPanel(2)" value="Cancel" /> &nbsp;&nbsp;
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <div id="divDocumentList">
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-12">
+                    <label for="txtEmailTemplateDesc" class="col-sm-2 control-label" style="margin-top:10px">Email Template Desc&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-10" id="txtEditor" style="background-color:#fff;">
+
+                    </div>
+                </div>
+               
+            </div>
+
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <div id="divTermTemplateList">
+                </div>
+            </div>
+
+
+            <div class="row col-sm-12 col-lg-12 col-md-12" style="margin-top:-15px;">
+                <div class="col-md-10"></div>
+                <div class="col-md-2">
+                    <center>
+                        <input class="btn btn-success" value="Send Mail" alt="Send Mail" id="btnSave" onclick="SendCustomMail()" tabindex="8" type="button" border="0">
+                     
+                    </center>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/editor.js"></script>
+<script>
+			$(document).ready(function() {
+				$("#txtEditor").Editor();
+			});
+			 
+</script>
+
+<script src="~/Scripts/CustomMail/CustomEmail.js"></script>

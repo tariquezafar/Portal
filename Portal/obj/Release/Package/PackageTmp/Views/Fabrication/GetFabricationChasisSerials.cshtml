@@ -1,0 +1,150 @@
+﻿@*Load after Fabrication created*@
+@model List<Portal.Core.ViewModel.FabricationChasisSerialViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+        color: #fff;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div>
+        <table class="table table-bordered table-hover" id="tblPrintChasis" style="width:92%;">
+            <thead>
+                <tr>
+                    <th>
+                        <center>
+                            Checked
+                            <input type="checkbox" name="chkAllPrintChasis" id="chkAllPrintChasis" class="chkAllPrintChasis" />
+                        </center>
+                    </th>
+                    <th  id="thPopUpProductName" class="thPopUpProductName"><center>Product Name</center></th>                
+                    <th><center>Chasis Serial No.</center></th>
+                    <th><center>Motor No.</center></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+                    <tr class="success">
+                        <td>
+                            <center>
+                                @if (item.ProductId != 0)
+                                {
+                                 <input type="checkbox" name="chkPrintChasis" id="chkPrintChasis_@item.PrintDetailID" class="chkChasis" checked="checked" />
+                                }
+                                else
+                                {
+                                 <input type="checkbox" name="chkPrintChasis" id="chkPrintChasis_@item.PrintDetailID" class="chkChasis" />
+                                }
+                            </center>
+                        </td>
+                        @*<td align="center">@item.SequenceNo</td>*@
+                        <td align="center" id="tdPopUpProductName" class="tdPopUpProductName">
+                        <span id="spnPopUpProductName" class="spnPopUpProductName">@item.ProductName</span>
+                        <span id="spnPopUpFabricationProductName" class="spnPopUpFabricationProductName"></span>
+                        </td>
+                        <td align="center">
+                            @item.ChasisSerialNo
+                            <input type="hidden" id="hdnChasisSerialNo" value="@item.ChasisSerialNo.Trim()" />
+                            <input type="hidden" id="hdnPrintChasisSerialId" value="@item.PrintDetailID" />
+                            <input type="hidden" id="hdnPopUpChasisProductId" value="0" class="hdnPopUpChasisProductId" />
+                            <input type="hidden" id="hdnTempProductId" value="0" />
+                            <input type="hidden" id="hdnTempProductName" value="0" />
+                            @if (item.ProductId != 0)
+                            {
+                             <input type="hidden" id="hdnPopUpFabricationProductId" class="hdnPopUpFabricationProductId" value="@item.ProductId" />
+                            }
+                            else
+                            {
+                             <input type="hidden" id="hdnPopUpFabricationProductId" class="hdnPopUpFabricationProductId" value="0" />
+                            }
+                            <input type="hidden" id="hdnPopUpFabricationId" value="@item.FabricationId" />
+                        </td>
+                        <td align="center">
+                            @item.MotorNo
+                            <input type="hidden" id="hdnMotorNo" value="@item.ChasisSerialNo.Trim()" />
+                        </td>
+
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblPrintChasis').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+
+<script>
+
+
+    $(document).ready(function () {
+
+        /* Start When Table header checkbox click this code will be execute*/
+        $("#chkAllPrintChasis").click(function () {
+            if ($(this).is(":checked")) {
+                $('input:checkbox').not(this).prop('checked', this.checked);
+                $(".hdnPopUpChasisProductId").val($("#hdnTempProductId").val());
+                $(".spnPopUpProductName").text($("#hdnTempProductName").val());
+                $(".spnPopUpProductName").text("");
+                $(".spnPopUpFabricationProductName").text("");
+                $(".hdnPopUpFabricationProductId").val($("#hdnTempProductId").val());
+                $(".spnPopUpFabricationProductName").text($("#hdnTempProductName").val());
+                $(".thPopUpProductName").css('display', 'table-cell');
+                $(".tdPopUpProductName").css('display', 'table-cell');
+            }
+            else if (!$(this).is(":checked")) {
+                $('input:checkbox').not(this).prop('checked', false);
+                $(".hdnPopUpChasisProductId").val(0);
+                $(".spnPopUpProductName").text("");
+                $(".hdnPopUpFabricationProductId").val(0);
+                $(".spnPopUpFabricationProductName").text("");
+            }
+        });
+
+        /* End When header checkbox click this code will be execute*/
+
+        /* Start When Table Rows checkbox click this code will be execute*/
+        $(".chkChasis").click(function () {
+            if ($(this).is(":checked")) {
+                var row = $(this).closest("tr");
+                $(row).find(".hdnPopUpChasisProductId").val($("#hdnTempProductId").val());
+                $(row).find(".spnPopUpProductName").text($("#hdnTempProductName").val());
+                $(row).find(".spnPopUpProductName").css('display', 'none');
+                $(row).find("#hdnPopUpFabricationProductId").val($("#hdnTempProductId").val());
+                $(row).find(".spnPopUpFabricationProductName").text($("#hdnTempProductName").val());
+                $(".thPopUpProductName").css('display', 'table-cell');
+                $(".tdPopUpProductName").css('display', 'table-cell');
+            }
+            else if (!$(this).is(":checked")) {
+                var row = $(this).closest("tr");
+                $(row).find(".hdnPopUpChasisProductId").val(0);
+                $(row).find(".spnPopUpProductName").text("");
+                $(row).find(".spnPopUpProductName").css('display', 'table-cell');
+                $(row).find(".spnPopUpFabricationProductName").text("");
+                $(row).find("#hdnPopUpFabricationProductId").val(0);
+            }
+        });
+        /* End When Rows checkbox click this code will be execute*/
+    });
+
+
+</script>

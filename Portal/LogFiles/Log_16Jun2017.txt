@@ -1,0 +1,24 @@
+11:45:01 AM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+--------------------------------------------------------------------------------------------------------------------------------
+
+11:45:02 AM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:45:02 AM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 38
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+

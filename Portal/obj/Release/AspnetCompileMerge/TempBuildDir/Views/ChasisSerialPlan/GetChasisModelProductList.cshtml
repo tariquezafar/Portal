@@ -1,0 +1,132 @@
+﻿@model List<Portal.Core.ViewModel.ChasisSerialPlanProductViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:5px;background-color:#dbe5f7;">
+        <table class="table table-bordered table-hover" id="tblProductList">
+            <thead style="font-size: 11px;">
+                <tr>
+                    <th><center>Product Sub Group</center></th>
+                    <th><center>Chasis Model Code</center></th>
+                    <th><center>Motor Model Code</center></th>
+                    <th><center>Last Incremented No.</center></th>
+                    <th><center>Carry Forward QTY.</center></th>
+                    <th><center>New Plan</center></th>
+                    <th><center>(New Plan - Carry Forward QTY.) QTY.</center></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>
+                            @item.ProductSubGroupName
+                            <input type="hidden" id="hdnChasisModelName" value="@item.ChasisModelName" />
+                            <input type="hidden" id="hdnChasisModelID" value="@item.ChasisModelID" />
+                        </td>
+
+
+                        <td>
+                            @item.ChasisModelCode
+                            <input type="hidden" id="hdnChasisModelCode" value="@item.ChasisModelCode" />
+                        </td>
+
+                        <td>
+                            @item.MotorModelCode
+                            <input type="hidden" id="hdnMotorModelCode" value="@item.MotorModelCode" />
+                        </td>
+                        <td>
+                            @item.LastIncreamentNo
+                            <input type="hidden" id="hdnLastIncreamentNo" value="@item.LastIncreamentNo" />
+                        </td>
+                        <td>
+                            @item.CarryForwardQTY
+                            <input type="hidden" id="hdnCarryForwardQTY" value="@item.CarryForwardQTY" />
+                        </td>
+
+                        @if (item.QtyProduced > 0)
+                        {
+                            <td>
+                                <input class="form-control txtQTYNEW" style="height: 25px;" id="txtQTYNEW" name="txtQTYNEW" onkeyup="checkDec(this); getCalCulateQTY();" value="@(item.CarryForwardQTY+item.QtyProduced)"  maxlength="4" tabindex="3" type="text" />
+                                <input type="hidden" id="hdnCarryForwardQTY" value="@(item.CarryForwardQTY+item.QtyProduced)" />
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                <input class="form-control txtQTYNEW" style="height: 25px;" id="txtQTYNEW" name="txtQTYNEW" onkeyup="checkDec(this); getCalCulateQTY();" tabindex="3" type="text" maxlength="50" />
+                                <input type="hidden" id="hdnCarryForwardQTY" value="0" />
+                            </td>
+                        }
+                        <td>
+                            <input class="form-control txtQTY" style="height: 25px;" id="txtQTY" name="txtQTY" onkeyup="checkDec(this);" tabindex="3" placeholder="Enter Quantity." type="text" maxlength="50" />
+                            <input type="hidden" id="hdnQtyValue" value="@item.QtyProduced" />
+                            <input type="hidden" id="hdnMatchQty" value="0" />
+
+                            <input type="hidden" id="hdnCarryForwardTrueORNot" value="@item.CarryForwardTrueORNot" />
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+@*<script>
+        $(document).ready(function () {
+            $('#tblProductList').paging({
+                limit: 10,
+                rowDisplayStyle: 'block',
+                activePage: 0,
+                rows: []
+            });
+
+        });
+    </script>*@
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        $(".txtQTY").prop('readOnly', true);
+        $(".txtQTY").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                // $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                return false;
+            }
+        });
+        $(".txtQTYNEW").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                // $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                return false;
+            }
+        });
+    });
+</script>

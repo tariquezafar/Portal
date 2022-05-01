@@ -1,0 +1,231 @@
+﻿@model List<Portal.Core.ViewModel.PhysicalStockProductDetailViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+@using System.Data; 
+        @if (!String.IsNullOrEmpty(Convert.ToString(ViewBag.Error)) && ViewBag.Error != " ")
+        {   <div class="message" style="padding-left:20px;color:red;">
+        @MvcHtmlString.Create((ViewBag.Error != null ? ViewBag.Error.ToString() : "").Replace(Environment.NewLine, "<br />"))
+
+        <div class="row col-sm-6 col-lg-12 col-md-12">
+            <div id="divList" style="overflow-x:scroll; padding-left:20px;padding-top:20px;">
+                <table class="table" id="tblBankStatementDetail">
+                    @if (ViewBag.Data != null)
+                    {
+                        <thead>
+                            <tr style="text-align:center;">
+                                @foreach (DataColumn column in (ViewBag.Data as System.Data.DataTable).Columns)
+                                {
+                                    <th>@column.ColumnName.ToUpper()</th>
+                                }
+                            </tr>
+                        </thead>
+                        if ((ViewBag.Data as System.Data.DataTable).Rows.Count > 0)
+                        {
+                            foreach (DataRow dr in (ViewBag.Data as System.Data.DataTable).Rows)
+                            {
+                                if (!string.IsNullOrEmpty(Convert.ToString(dr["UploadStatus"])) && Convert.ToBoolean(dr["UploadStatus"]) == true)
+                                {
+                                    <tr style="background-color:greenyellow;">
+                                        @foreach (DataColumn column in (ViewBag.Data as System.Data.DataTable).Columns)
+                                        {
+
+                                            <td data-title='@column.ColumnName' style="text-align:center;">
+                                                @dr[column].ToString()
+
+                                                <input type="hidden" id="@column.ColumnName" value="@dr[column].ToString()" />
+
+                                            </td>
+                                        }
+                                    </tr>
+                                }
+                                else
+                                {
+                                    <tr style="background-color:lightcoral!important;">
+                                        @foreach (DataColumn column in (ViewBag.Data as System.Data.DataTable).Columns)
+                                        {
+                                            <td data-title='@column.ColumnName' style="text-align:center;">
+                                                @dr[column].ToString()
+                                                <input type="hidden" id="@column.ColumnName" value="@dr[column].ToString()" />
+                                            </td>
+                                        }
+                                    </tr>
+                                }
+                            }
+                        }
+                        else
+                        {
+                            int count = (ViewBag.Data as System.Data.DataTable).Columns.Count;
+                            <tr>
+                                <td colspan='@count' style="color:red;">
+                                    No Data Found.
+                                </td>
+                            </tr>
+
+                        }
+
+                    }
+                </table>
+            </div>
+        </div>
+
+    </div>
+        }
+   
+else if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblPhysicalDetail">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Product Main Group</th>
+                    <th>Product Sub Group</th>
+                    <th>UOM</th>
+                    <th>Physical Stcok</th>
+                    <th>System Stcok</th>
+                    <th>Differenc Stcok</th>
+                    <th>Transfer To</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>
+                            @item.ProductName
+                            <input type="hidden" id="hdnProductid" value="@item.Productid" /> 
+                            <input type="hidden" id="hdnProductName" value="@item.ProductName" />                           
+                            <input type="hidden" id="hdnProductMainGroupId" value="@item.ProductMainGroupId" />
+                            <input type="hidden" id="hdnProductSubGroupId" value="@item.ProductSubGroupId" />
+                            <input type="hidden" id="hdnUOMId" value="@item.UOMId" />   
+                            <input type="hidden" id="hdnProductTypeId" value="@item.ProductTypeId" /> 
+                            <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />                         
+                        </td>
+
+                        <td>
+                            @item.ProductCode
+                        </td>
+                        <td>
+                            @item.ProductMainGroupName
+
+                        </td>
+                        <td>
+                            @item.ProductSubGroupName
+                        </td>
+                        <td>
+                            @item.UOMName
+                        </td>
+                        <td>
+                            @item.PhysicalQTY
+                            <input type="hidden" id="hdnPhysicalQTY" value="@item.PhysicalQTY" />     
+                        </td>
+                        <td>
+                            @item.SystemQTY
+                            <input type="hidden" id="hdnSystemQTY" value="@item.SystemQTY" />     
+                        </td>
+                        <td>
+
+                            @(((item.PhysicalQTY) - item.SystemQTY).ToString("#######0.00"))
+                            <input type="hidden" id="hdnDiffQTY" value="@(((item.PhysicalQTY) - item.SystemQTY).ToString("#######0.00"))" />     
+                            
+                        </td>
+                        <td>
+                            <input class="form-control txtProductName" id="txtProductName" name="txtProductName"  tabindex="1" placeholder="Enter Product Name" type="text" maxlength="100" value="@item.TransferProductName" />
+                            <input class="hdnTransferProductId" id="hdnTransferProductId" type="hidden" value="@item.TransferTo"  />
+                          
+                        </td>
+                    </tr>
+                   
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblPhysicalDetail">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Product Main Group</th>
+                    <th>Product Sub Group</th>
+                    <th>UOM</th>
+                    <th>Physical Stcok</th>
+                    <th>New Stcok</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('[id*=txtProductName]').autocomplete({
+
+            source: function (request, response) {
+                $.ajax({
+                    url: "../Product/GetProductAutoCompleteList",
+                    data: { term: request.term },
+                    dataType: "json",
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+
+
+                        response($.map(data, function (item) {
+                            return { label: item.ProductName, value: item.ProductName, productId:item.Productid };
+                                             }))
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            },
+            select: function (e, ui) {
+                $(this).closest('tr').find('.txtProductName').val(ui.item.label);
+                $(this).closest('tr').find(".hdnTransferProductId").val(ui.item.productId);
+                return false;
+
+            },
+            change: function (event, ui) {
+
+                if (ui.item == null) {
+                    $(this).closest('tr').find('.txtProductName').val("");
+                    $(this).closest('tr').find(".hdnTransferProductId").val("0");
+                    ShowModel("Alert", "Please select Product from List")
+
+                }
+                return false;
+            },
+            minLength: 1
+        });
+    });
+
+
+
+</script>
+
+
+

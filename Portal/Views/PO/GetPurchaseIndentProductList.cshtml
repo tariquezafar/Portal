@@ -1,0 +1,293 @@
+﻿@model List<Portal.Core.ViewModel.PurchaseIndentProductDetailViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+<script type="text/javascript">
+        $(document).ready(function () {
+            
+        });
+        function calculateTotalAmount() {
+            var tbody = document.getElementById("table_values");
+
+            for (var i = 0; i < tbody.rows.length; i++) {
+                var row = tbody.rows[i];
+                var qty = row.cells[4].childNodes[0].value;
+                var price = row.cells[3].childNodes[0].value;
+                var discount = row.cells[3].childNodes[0].value;
+                var totalValue = ((Number(qty) * Number(price)) - Number(discount)).toFixed(2);
+                row.cells[6].childNodes[0].value = totalValue;
+            }
+        }
+</script>
+
+@if (Model != null && Model.Count > 0)
+{
+    @*<div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Unit</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Discount Amount</th>
+                    <th>Total</th>
+                    <th style="text-align:center">CGST(%)</th>
+                    <th style="text-align:center">CGST Amt</th>
+                    <th style="text-align:center">SGST(%)</th>
+                    <th style="text-align:center">SGST Amt</th>
+                    <th style="text-align:center">IGST(%)</th>
+                    <th style="text-align:center">IGST Amt</th>
+                    <th style="text-align:center">Total Price</th>
+                    <th style="text-align:center">HSN Code</th>
+                    <th colspan="2" align="center" class="editonly">Action</th>
+                </tr>
+            </thead>
+            <tbody id="table_values">
+                @foreach (var item in Model)
+                {
+                    if (@item.Quantity > 0)
+                    {
+                    <tr class="success">
+
+                        <td>
+                            @item.ProductName
+                            <input type="hidden" id="hdnQuotationProductDetailId" value="@item.IndentProductDetailId" />
+                            <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                            <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                            <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                        </td>
+                        <td>
+                            @item.ProductCode
+                            <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                        </td>
+                        <td>
+                            @item.UOMName
+                            <input type="hidden" id="hdnUOMName" value="@item.UOMName" />
+                            <input type="hidden" id="hdnProductShortDesc" value="@item.ProductShortDesc" />
+
+                        </td>
+                        <td id="price">
+                           @item.Price
+                        <input type="hidden" id="hdnPrice" value="@item.Price" />
+
+                        </td>
+
+                        <td id="quantity">
+                            @item.Quantity
+                            <input type="hidden" id="hdnQuantity" value="@item.Quantity" />
+
+                        </td>
+                        <td id="discount">
+                            0.00
+                            <input type="hidden" id="hdnDiscountPerc" value="0.00" />
+                            <input type="hidden" id="hdnDiscountAmount" value="0.00" />
+                            <input type="hidden" id="hdnHSN_Code" value="0.00" />
+                        </td>
+                        <td id="total_value">
+                            @Math.Round(((item.Price * item.Quantity)), 2)
+                            <input type="hidden" id="hdnTotalPrice" value="@Math.Round(((item.Price * item.Quantity)), 2)" />
+                        </td>
+                        <td id="tdCGST_Perc">
+                            0.00
+
+                        </td>
+                        <td id="tdCGSTAmount">
+                            0.00
+
+                        </td>
+
+                        <td id="tdSGST_Perc">
+                            0.00
+
+                        </td>
+                        <td id="tdSGSTAmount">
+                           0.00
+
+
+                        </td>
+                        <td id="tdIGST_Perc">
+                            0.00
+
+                        </td>
+                        <td id="tdIGSTAmount">
+                            0.00
+
+
+                        </td>
+                        <td id="tdTotalPrice">
+                            @Math.Round(((item.Price * item.Quantity)), 2)
+
+                        </td>
+                        <td>
+                           
+                            <input type="hidden" id="hdnHSN_Code" value="0" />
+                        </td>
+
+                        <td class="btn btn-success table_btn editonly" style="width:30px; margin:0px 2px auto;text-align:center;">
+                            <a style="color:white" class="fa fa-pencil-square-o" onclick="EditProductRow(this);" href="#"></a>
+                        </td>
+                        <td class="btn btn-success table_btn editonly" style="width:30px; margin:0px 2px auto;text-align:center;">
+                            <a style="color:white" class="fa fa-trash" onclick="RemoveProductRow(this)" href="#"></a>
+                        </td>
+                    </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>*@
+
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Unit</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Discount Amount</th>
+                    <th>Total</th>
+                    <th style="text-align:center">CGST(%)</th>
+                    <th style="text-align:center">CGST Amt</th>
+                    <th style="text-align:center">SGST(%)</th>
+                    <th style="text-align:center">SGST Amt</th>
+                    <th style="text-align:center">IGST(%)</th>
+                    <th style="text-align:center">IGST Amt</th>
+                    <th style="text-align:center">Total Price</th>
+                    <th style="text-align:center">HSN Code</th>
+                    <th colspan="2" align="center" class="editonly">Action</th>
+                </tr>
+            </thead>
+            <tbody id="table_values">
+                @foreach (var item in Model)
+                {
+                    if (@item.Quantity > 0)
+                    {
+                        <tr class="success">
+
+                            <td>
+                                @item.ProductName
+                                <input type="hidden" id="hdnQuotationProductDetailId" value="@item.IndentProductDetailId" />
+                                <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                                <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                                <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                            </td>
+                            <td>
+                                @item.ProductCode
+                                <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                            </td>
+                            <td>
+                                @item.UOMName
+                                <input type="hidden" id="hdnUOMName" value="@item.UOMName" />
+                                <input type="hidden" id="hdnProductShortDesc" value="@item.ProductShortDesc" />
+
+                            </td>
+                            <td id="price" class="prod-price">
+                                @item.Price
+                                <input type="hidden" id="hdnPrice" value="@item.Price" />
+
+                            </td>
+
+                            <td id="quantity" class="prod-quantity">
+                                @item.Quantity
+                                <input type="hidden" id="hdnQuantity" value="@item.Quantity" />
+
+                                <input type="hidden" id="hdnCGSTPerc" value="@item.CGST_Perc" />
+                                <input type="hidden" id="hdnCGSTAmount" value="@item.CGST_Amount" />
+                                <input type="hidden" id="hdnSGSTPerc" value="@item.SGST_Perc" />
+                                <input type="hidden" id="hdnSGSTAmount" value="@item.SGST_Amount" />
+                                <input type="hidden" id="hdnIGSTPerc" value="@item.IGST_Perc" />
+                                <input type="hidden" id="hdnIGSTAmount" value="@item.IGST_Amount" />
+
+                            </td>
+                            <td id="discount">
+                                0.00
+                                <input type="hidden" id="hdnDiscountPerc" value="0.00" />
+                                <input type="hidden" id="hdnDiscountAmount" value="0.00" />
+                                <input type="hidden" id="hdnHSN_Code" value="0.00" />
+                            </td>
+                            <td id="total_value">
+                                @Math.Round(((item.Price * item.Quantity)), 2)
+                                <input type="hidden" id="hdnTotalPrice" value="@Math.Round(((item.Price * item.Quantity)), 2)" />
+                            </td>
+                            <td id="tdCGST_Perc">
+                                @item.CGST_Perc
+                            </td>
+                            <td id="tdCGSTAmount">
+                                @item.CGST_Amount
+
+                            </td>
+
+                            <td id="tdSGST_Perc">
+                                @item.SGST_Perc
+
+                            </td>
+                            <td id="tdSGSTAmount">
+                                @item.SGST_Amount
+
+
+                            </td>
+                            <td id="tdIGST_Perc">
+                                @item.IGST_Perc
+
+                            </td>
+                            <td id="tdIGSTAmount">
+                                @item.IGST_Amount
+                            </td>
+                            <td id="tdTotalPrice">
+                                @Math.Round(((item.Price * item.Quantity)), 2)
+                            </td>
+                            <td>
+
+                                <input type="hidden" id="hdnHSN_Code" value="0" />
+                            </td>
+
+                            <td style="width:30px; margin:0px 2px auto;text-align:center;">
+                                <a class="fa fa-pencil-square-o erp-btn" onclick="EditProductRow(this);" href="#"></a>
+                            </td>
+                            <td style="width:30px; margin:0px 2px auto;text-align:center;">
+                                <a class="fa fa-trash erp-btn" onclick="RemoveProductRow(this)" href="#"></a>
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

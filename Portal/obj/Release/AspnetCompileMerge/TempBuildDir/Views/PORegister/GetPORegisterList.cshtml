@@ -1,0 +1,361 @@
+﻿@model List<Portal.Core.ViewModel.POViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+<style>
+    .table {
+        width: 112% !important;
+        max-width: 112% !important;
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+
+    #tblSaleInvoiceList tr th {
+        text-align: center;
+        border: 1px solid #ccc !important;
+        font-family: Arial;
+        color: #fff;
+    }
+
+    table tr td {
+        border: 1px solid #ccc !important;
+        font-family: Arial;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblPOList">
+            <thead>
+                <tr>
+                    <th>PO No.</th>
+                    <th>PO Date</th>
+                    <th>Indent No.</th>
+                    <th>Quotation No.</th>
+                    <th>Vendor Name</th>
+                    <th>Vendor Code</th>  
+                    <th>Billing Address</th>                    
+                    <th>City</th>
+                    <th>State</th>
+                    <th>PinCode</th>
+                    <th>CST No.</th>
+                    <th>TIN No.</th>
+                    <th>Currency</th>
+                    <th>Consignee Name</th>
+                    <th>Consignee Code</th>
+                    <th>Shipping Address</th>
+                    <th>Shipping City</th>
+                    <th>Shipping PinCode</th>
+                    <th>Consignee GSTNo</th>
+                    <th>Shipping State Name</th>
+                    <th>Shipping Country Name</th>
+                    <th>Ref. No.</th>
+                    <th>Ref. Date</th>
+                    <th>Reverse Charge Amount</th>
+                    <th>Total Quantity</th>
+                    <th>Net Amount</th>
+                    <th>CGST Amount</th>
+                    <th>SGST Amount</th>
+                    <th>IGST Amount</th>
+                    <th>Freight Value</th>
+                    <th>Loading Value</th>
+                    <th>Insurance Value</th>                    
+                    <th>FreightCGST Amount</th>
+                    <th>FreightSGST Amount</th>
+                    <th>FreightIGST Amount</th>
+                    <th>LoadingCGST Amount</th>
+                    <th>LoadingSGST Amount</th>
+                    <th>LoadingIGST Amount</th>
+                    <th>InsuranceCGST Amount</th>
+                    <th>InsuranceSGST Amount</th>
+                    <th>InsuranceIGST Amount</th>
+                    <th>Gross Amount</th> 
+                    <th>Remarks1</th>
+                    <th>Remarks2</th> 
+                    <th>Approval Status</th>
+                    <th>Approved By User</th>
+                    <th>Approved Date</th>
+                    <th>Rejection Status</th>
+                    <th>Rejected By User</th>
+                    <th>Rejected Date</th>
+                    <th>Created By User</th>
+                    <th>Created Date</th>
+                    <th>Modified By User</th>
+                    <th>Modified Date</th> 
+                    <th>Company Branch</th> 
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="margin:0px 2px auto;">
+                            <a  target="_blank" style="color:dodgerblue"  href="~/PO/AddEditPO?POId=@item.POId&AccessMode=2">@item.PONo</a>
+                        </td> 
+                        <td>@item.PODate</td>
+                        <td>@item.IndentNo</td>
+                        <td>@item.QuotationNo</td>                      
+                        <td>@item.VendorName</td>
+                        <td>@item.VendorCode</td>
+                        <td>@item.BillingAddress</td>                       
+                        <td>@item.City</td>
+                        <td>@item.StateName</td>
+                        <td>@item.PinCode</td>
+                        <td>@item.CSTNo</td>
+                        <td>@item.TINNo</td> 
+                        <td>@item.CurrencyCode</td>
+                        <td>@item.ConsigneeName</td>
+                        <td>@item.ConsigneeCode</td>
+                        <td>@item.ShippingAddress</td>
+                        <td>@item.ShippingCity</td>
+                        <td>@item.ShippingPinCode</td>
+                        <td>@item.ConsigneeGSTNo</td>
+                        <td>@item.ShippingStateName</td>
+                        <td>@item.ShippingCountryName</td>
+                        <td>@item.RefNo</td>
+                        <td>@item.RefDate</td>
+                        <td>@item.ReverseChargeAmount</td>
+                        <td class="TotalQuantity">@item.TotalQuantity</td>
+                        <td class="BasicValue">@item.BasicValue</td>
+                        <td class="CGST_Amount">@item.CGST_Amount</td>
+                        <td class="SGST_Amount">@item.SGST_Amount</td>
+                        <td class="IGST_Amount">@item.IGST_Amount</td>
+                        <td class="FreightValue">@item.FreightValue</td>
+                        <td class="LoadingValue">@item.LoadingValue</td>
+                        <td class="InsuranceValue">@item.InsuranceValue</td>
+                        <td class="FreightCGST_Amt">@item.FreightCGST_Amt</td>
+                        <td class="FreightSGST_Amt">@item.FreightSGST_Amt</td>
+                        <td class="FreightIGST_Amt">@item.FreightIGST_Amt</td>
+                        <td class="LoadingCGST_Amt">@item.LoadingCGST_Amt</td>
+                        <td class="LoadingSGST_Amt">@item.LoadingSGST_Amt</td>
+                        <td class="LoadingIGST_Amt">@item.LoadingIGST_Amt</td>
+                        <td class="InsuranceCGST_Amt">@item.InsuranceCGST_Amt</td>
+                        <td class="InsuranceSGST_Amt">@item.InsuranceSGST_Amt</td>
+                        <td class="InsuranceIGST_Amt">@item.InsuranceIGST_Amt</td>
+                        <td class="GrossAmt">@item.TotalValue</td>
+                        @*<td>@item.TotalQuantity</td>
+                        <td>@item.BasicValue</td>
+                        <td>@item.CGST_Amount</td>
+                        <td>@item.SGST_Amount</td>
+                        <td>@item.IGST_Amount</td>
+                        <td>@item.FreightValue</td>
+                        <td>@item.LoadingValue</td>
+                        <td>@item.InsuranceValue</td>
+                      
+                        <td>@item.FreightCGST_Amt</td>
+                        <td>@item.FreightSGST_Amt</td>
+                        <td>@item.FreightIGST_Amt</td>
+                        <td>@item.LoadingCGST_Amt</td>
+                        <td>@item.LoadingSGST_Amt</td>
+                        <td>@item.LoadingIGST_Amt</td>
+                        <td>@item.InsuranceCGST_Amt</td>
+                        <td>@item.InsuranceSGST_Amt</td>
+                        <td>@item.InsuranceIGST_Amt</td>
+                        <td>@item.TotalValue</td>*@ 
+                        <td>@item.Remarks1</td>
+                        <td>@item.Remarks2</td>
+                        <td>@item.ApprovalStatus</td>
+                        <td>@item.ApprovedByName</td>
+                        <td>@item.ApprovedDate</td>
+                        <td>@item.RejectionStatus</td>
+                        <td>@item.RejectedByUserName</td>
+                        <td>@item.RejectedDate</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+                        <td>@item.CompanyBranch</td>
+                     
+
+                    </tr>
+                }
+                <tr>                    
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td>Total : </td>
+                    <td><span id="TotalQuantity"></span> </td>
+                    <td><span id="BasicValue"></span> </td>
+                    <td><span id="CGST_Amount"></span></td>
+                    <td><span id="SGST_Amount"></span> </td>
+                    <td><span id="IGST_Amount"></span> </td>
+                    <td><span id="FreightValue"></span> </td>
+                    <td><span id="LoadingValue"></span> </td>
+                    <td><span id="InsuranceValue"></span> </td>
+                    <td><span id="FreightCGST_Amt"></span> </td>
+                    <td><span id="FreightSGST_Amt"></span> </td>
+                    <td><span id="FreightIGST_Amt"></span> </td>
+                    <td><span id="LoadingCGST_Amt"></span> </td>
+                    <td><span id="LoadingSGST_Amt"></span> </td>
+                    <td><span id="LoadingIGST_Amt"></span> </td>
+                    <td><span id="InsuranceCGST_Amt"></span> </td>
+                    <td><span id="InsuranceSGST_Amt"></span> </td>
+                    <td><span id="InsuranceIGST_Amt"></span> </td>
+                    <td><span id="spnTotalGrossAmt"></span></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblPOList').paging({
+            limit: 100,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        calc_total();
+    });
+    function calc_total() {
+        var sum = 0;
+        var TotalQuantity = 0;
+        var BasicValue = 0;
+        var CGST_Amount = 0;
+        var SGST_Amount = 0;
+        var IGST_Amount = 0;
+        var FreightValue = 0;
+        var LoadingValue = 0;
+        var InsuranceValue = 0;
+        var FreightCGST_Amt = 0;
+        var FreightSGST_Amt = 0;
+        var FreightIGST_Amt = 0;
+        var LoadingCGST_Amt = 0;
+        var LoadingSGST_Amt = 0;
+        var LoadingIGST_Amt = 0;
+        var InsuranceCGST_Amt = 0;
+        var InsuranceSGST_Amt = 0;
+        var InsuranceIGST_Amt = 0;
+
+        $(".GrossAmt").each(function () {
+            sum += parseFloat($(this).text());
+        });
+        $(".TotalQuantity").each(function () {
+            TotalQuantity += parseFloat($(this).text());
+        });
+
+        $(".BasicValue").each(function () {
+            BasicValue += parseFloat($(this).text());
+        });
+
+        $(".CGST_Amount").each(function () {
+            CGST_Amount += parseFloat($(this).text());
+        });
+
+        $(".SGST_Amount").each(function () {
+            SGST_Amount += parseFloat($(this).text());
+        });
+        $(".IGST_Amount").each(function () {
+            IGST_Amount += parseFloat($(this).text());
+        });
+        $(".FreightValue").each(function () {
+            FreightValue += parseFloat($(this).text());
+        });
+        $(".LoadingValue").each(function () {
+            LoadingValue += parseFloat($(this).text());
+        });
+        $(".InsuranceValue").each(function () {
+            InsuranceValue += parseFloat($(this).text());
+        });
+        $(".FreightCGST_Amt").each(function () {
+            FreightCGST_Amt += parseFloat($(this).text());
+        });
+        $(".FreightSGST_Amt").each(function () {
+            FreightSGST_Amt += parseFloat($(this).text());
+        });
+        $(".FreightIGST_Amt").each(function () {
+            FreightIGST_Amt += parseFloat($(this).text());
+        });
+        $(".LoadingCGST_Amt").each(function () {
+            LoadingCGST_Amt += parseFloat($(this).text());
+        });
+        $(".LoadingSGST_Amt").each(function () {
+            LoadingSGST_Amt += parseFloat($(this).text());
+        });
+        $(".LoadingIGST_Amt").each(function () {
+            LoadingIGST_Amt += parseFloat($(this).text());
+        });
+        $(".InsuranceCGST_Amt").each(function () {
+            InsuranceCGST_Amt += parseFloat($(this).text());
+        });
+        $(".InsuranceSGST_Amt").each(function () {
+            InsuranceSGST_Amt += parseFloat($(this).text());
+        });
+        $(".InsuranceIGST_Amt").each(function () {
+            InsuranceIGST_Amt += parseFloat($(this).text());
+        });
+
+        $('#spnTotalGrossAmt').html(sum);
+        $('#TotalQuantity').html(TotalQuantity);
+        $('#BasicValue').html(BasicValue);
+        $('#CGST_Amount').html(CGST_Amount);
+        $('#SGST_Amount').html(SGST_Amount);
+        $('#IGST_Amount').html(IGST_Amount);
+        $('#FreightValue').html(FreightValue);
+        $('#LoadingValue').html(LoadingValue);
+        $('#InsuranceValue').html(InsuranceValue);
+        $('#FreightCGST_Amt').html(FreightCGST_Amt);
+        $('#FreightSGST_Amt').html(FreightSGST_Amt);
+        $('#FreightIGST_Amt').html(FreightIGST_Amt);
+        $('#LoadingCGST_Amt').html(LoadingCGST_Amt);
+        $('#LoadingSGST_Amt').html(LoadingSGST_Amt);
+        $('#LoadingIGST_Amt').html(LoadingIGST_Amt);
+        $('#InsuranceCGST_Amt').html(InsuranceCGST_Amt);
+        $('#InsuranceSGST_Amt').html(InsuranceSGST_Amt);
+        $('#InsuranceIGST_Amt').html(InsuranceIGST_Amt);
+    }
+</script>

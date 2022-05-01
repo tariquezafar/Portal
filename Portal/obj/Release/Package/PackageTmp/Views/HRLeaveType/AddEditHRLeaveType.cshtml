@@ -1,0 +1,156 @@
+﻿@{
+    ViewBag.Title = "AddEditProductTaxMapping";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+       
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+          
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+         
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+    /* allow space for check mark */
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">Admin</a> >> Add Edit LeaveType</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditLeaveType" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="ddlLeaveTypeName" class="col-sm-4 control-label">Leave Type Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="txtleavetypename" name="txtleavegtypename" type="text" class="form-control" />                      
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="ddlLeaveTypeCode" class="col-sm-4 control-label">Leave Type Code&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="txtleavetypecode" name="txtleavegtypecode" type="text" class="form-control" />
+                    </div>
+                </div>       
+        </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlLeavePeriod" class="col-sm-4 control-label">Leave Period&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="txtleaveperiod" name="txtleaveperiod" type="text" class="form-control" /></select>
+                    </div>
+                </div> 
+
+                <div class="form-group col-md-6">
+                    <label for="txtPayPeriod" class="col-sm-4 control-label">Pay Period&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtpayperiod" name="txtpayperiod" tabindex="4" placeholder="Enter Tax Name" type="text" maxlength="100" />
+                        
+                </div>
+                 
+            </div>
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="ddlWorkPeriod" class="col-sm-4 control-label">Work Period&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="txtWorkperiod" name="txtWorkperiod" type="text" class="form-control" /></select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-md-6">
+                            <label for="chkstatus" class="col-sm-4 control-label">Status&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="5" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                        </div>
+                    </div>
+
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="6" onclick="SaveData(1)" type="button" border="0"> 
+                            <input class="btn btn-success" value="Update" style="display:none;" tabindex="6" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                            <input class="btn btn-success" type="button" id="btnReset" tabindex="7" onclick="ClearFields()" value="Reset" />  
+                             <a class="btn btn-success" id="btnList" tabindex="8" href="@Url.Content("~/ProductTaxMapping/ListProductTaxMapping")">Search Product State Tax</a>
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/ProductTaxMapping/AddProductTaxMapping.js"></script>

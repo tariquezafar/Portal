@@ -1,0 +1,74 @@
+﻿@model List<Portal.Core.ViewModel.PMSGoalViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+   <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblCountryList">
+            <thead>
+                <tr>
+                    <th>Goal Name</th>
+                    <th>Company Branch</th>
+                    <th>Section Name</th>
+                    <th>Goal Category Name</th>
+                    <th>PerformanceCycle Name</th> 
+                    <th>Weightage(%)</th>  
+                    <th>Start Date</th>
+                    <th>Due Date</th>   
+                    <th>Created By User</th>
+                    <th>Created Date</th>
+                    <th>Status</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.GoalName</td>
+                        <td>@item.CompanyBranchName</td>
+                        <td>@item.SectionName</td>
+                        <td>@item.GoalCategoryName</td>
+                        <td>@item.PerformanceCycleName</td>
+                        <td>@item.Weight</td> 
+                        <td>@item.StartDate</td>
+                        <td>@item.DueDate</td> 
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@(item.GoalStatus==true?"Active":"Inactive")</td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px auto;">
+                            <a style="color:white;text-decoration:none" title="View"  class="fa fa-eye" aria-hidden="true" href="~/PMSGoal/AddEditGoal?GoalId=@item.GoalId&AccessMode=3"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white;text-decoration:none" title="Edit" class="fa fa-pencil-square-o" href="~/PMSGoal/AddEditGoal?GoalId=@item.GoalId&AccessMode=2"></a>
+                        </td>
+
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblGoalList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

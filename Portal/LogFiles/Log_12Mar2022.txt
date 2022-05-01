@@ -1,0 +1,360 @@
+15:29:52 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+15:29:52 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:13:15 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:13:16 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:16:08 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:16:08 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:18:11 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditSaleInvoice
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSaleInvoice' expects parameter '@SaleInvoiceType', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:18:11 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : AddEditSaleInvoice
+Error Line No : 273
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSaleInvoice' expects parameter '@SaleInvoiceType', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:18:11 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : AddEditSaleInvoice
+Error Line No : 75
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSaleInvoice' expects parameter '@SaleInvoiceType', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:21:58 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditSaleInvoice
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSaleInvoice' expects parameter '@SaleInvoiceType', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:21:58 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : AddEditSaleInvoice
+Error Line No : 273
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSaleInvoice' expects parameter '@SaleInvoiceType', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:22:10 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : AddEditSaleInvoice
+Error Line No : 75
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSaleInvoice' expects parameter '@SaleInvoiceType', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:24:19 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:24:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:10 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : AddEditSaleInvoice
+Error Line No : 75
+Exception Type : System.MissingMethodException
+Details: Method not found: 'Void Portal.DAL.SaleInvoice.set_SaleInvoiceType(System.String)'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:31:12 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:31:12 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:47:57 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:47:57 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:50:09 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : AddEditSaleInvoice
+Error Line No : 75
+Exception Type : System.MissingMethodException
+Details: Method not found: 'Void Portal.DAL.SaleInvoice.set_SaleInvoiceType(System.String)'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:52:46 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:52:46 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:05:03 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:05:04 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:21:46 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : AddEditSaleInvoice
+Error Line No : 75
+Exception Type : System.MissingMethodException
+Details: Method not found: 'Void Portal.DAL.SaleInvoice.set_SaleInvoiceType(System.String)'.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:38:16 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:38:16 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:39:23 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : AddEditSaleInvoice
+Error Line No : 75
+Exception Type : System.MissingMethodException
+Details: Method not found: 'Void Portal.DAL.SaleInvoice.set_SaleInvoiceType(System.String)'.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:40:56 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:40:56 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:43:11 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditSaleInvoice
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSaleInvoice' expects parameter '@SaleInvoiceType', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:43:11 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : AddEditSaleInvoice
+Error Line No : 274
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSaleInvoice' expects parameter '@SaleInvoiceType', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:43:11 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : AddEditSaleInvoice
+Error Line No : 75
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSaleInvoice' expects parameter '@SaleInvoiceType', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:53:44 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:53:44 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+20:04:32 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+20:04:32 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+20:06:27 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : AddEditSaleInvoice
+Error Line No : 75
+Exception Type : System.MissingMethodException
+Details: Method not found: 'Void Portal.DAL.SaleInvoice.set_SaleInvoiceType(System.String)'.
+---------------------------------------------------------------------------------------------------------------------------
+
+20:09:50 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+20:09:50 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+20:12:34 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditSaleInvoice
+Error Line No : 0
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSaleInvoice' expects parameter '@SaleInvoiceType', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+20:12:34 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : AddEditSaleInvoice
+Error Line No : 274
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSaleInvoice' expects parameter '@SaleInvoiceType', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+20:12:34 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : AddEditSaleInvoice
+Error Line No : 75
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditSaleInvoice' expects parameter '@SaleInvoiceType', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+20:28:43 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+20:28:43 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

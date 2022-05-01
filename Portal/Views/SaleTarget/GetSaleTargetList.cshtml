@@ -1,0 +1,119 @@
+﻿@model List<Portal.Core.ViewModel.TargetViewModel>
+
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;background-color:white;">
+        <table class="table table-bordered table-hover" id="tblTargetList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>Target No.</center></th>
+                    <th><center>Target Date</center></th>
+                    <th><center>Target From</center></th>
+                    <th><center>Target To</center></th>
+                      <th><center>Branch Name</center></th>
+                    <th><center>Status</center></th>
+                    <th><center>Created By</center></th>
+                    <th><center>Created Date</center></th>
+                    <th><center>Modified By</center></th>
+                    <th><center>Modified Date</center></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="margin:0px auto;">
+                            <a style="color:darkblue" title="View" class="fa fa-eye" aria-hidden="true" href="~/SaleTarget/AddEditSaleTarget?saleTargetId=@item.TargetId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="margin:0px auto;">
+                            @if (item.TargetStatus.ToUpper() == "DRAFT")
+                            {
+                                <a style="color:darkgreen" title="Edit" class="fa fa-pencil" href="~/SaleTarget/AddEditSaleTarget?saleTargetId=@item.TargetId&AccessMode=2"></a>
+                            }
+                            @*@if (item.TargetStatus.ToUpper() == "FINAL")
+                            {
+                                <a style="color:red" title="Cancel" class="fa fa-times" aria-hidden="true" href="~/SaleTarget/CancelTarget?saleTargetId=@item.TargetId&AccessMode=3"></a>
+                            }*@
+                        </td>
+                      
+                        <td>@item.TargetNo</td>
+                        <td>@item.TargetDate</td>
+                        <td>@item.TargetFromDate</td>
+                        <td>@item.TargetToDate</td>
+                   
+                        <td>@item.CompanyBranchName</td>
+                        @if (item.TargetStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine">
+                                @item.TargetStatus
+                            </td>
+                        }
+                        else if (item.TargetStatus.ToUpper() == "CANCELLED")
+                        {
+                            <td style="background-color:red;color:white">
+                                @item.TargetStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green">
+                                @item.TargetStatus
+                            </td>
+
+                        }
+
+
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblTargetList').paging({
+            limit: 25,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

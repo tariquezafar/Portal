@@ -1,0 +1,50 @@
+﻿@model List<Portal.Core.ViewModel.SINProductQuantityCountViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table int-product" id="tblReorderProductCountList" style="margin-top:10px;">
+            <thead style="border-top-left-radius:15px;">
+                <tr style="border:none;">
+                    <th style="background:#4f75c6; color:#fff;" colspan="8">Most Consume Product MTD</th> 
+                </tr>
+                <tr style="background:#D0DDEC; border:1px solid #ccc;">
+                    <th style="text-align:center">Product Name</th>                 
+                    <th style="text-align:center">Quantity</th> 
+                    
+                </tr>
+               
+            </thead>
+            <tbody style="border:1px solid #ccc;">
+                @foreach (var item in Model)
+                {
+                <tr class="success">
+                    <td align="center">@item.ProductName</td>
+                    <td align="center">@item.Qty</td>
+                   
+                </tr>
+                }
+                <tr>
+        <td colspan="8" align="center" style="background:#bfdfff;">
+            <a href="@Url.Content("~/SIN/ListSIN")">View All Most Consume Product</a>
+        </td>
+    </tr>
+            </tbody>
+        </table>
+    </div>
+
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Most Consume Product Not Found !!!</h3>
+}
+@*<script>
+    $(document).ready(function () {
+        $('#tblReorderProductCountList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>*@

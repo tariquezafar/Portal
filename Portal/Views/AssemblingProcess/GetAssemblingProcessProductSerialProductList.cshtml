@@ -1,0 +1,146 @@
+﻿
+@model List<Portal.Core.ViewModel.AssemblingProcessChasisSerialViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+        color: #fff;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div>
+        <table class="table table-bordered table-hover" id="tblPrintChasis" style="width:92%;">
+            <thead>
+                <tr>                    
+                    <th>
+                        <center>
+                            Checked                           
+                        </center>
+                    </th>            
+                    <th  id="thPopUpProductName" class="thPopUpProductName"><center>Product Name</center></th>                   
+                    <th><center>Chasis Serial No.</center></th>
+                    <th><center>Motor No.</center></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+                    <tr class="success">
+                      
+                        <td class="">
+                            <center>
+                                <input type="checkbox" name="chkPrintChasis"  id="chkPrintChasis"  class="chkChasis" />
+                                <input type="hidden" id="hdnChked" value="@item.AssembledFlag" />
+                            </center>
+                        </td>                                                                       
+                        <td align="center" id="DivProductName" class="DivProductName">
+                                               
+                        <span id="spnProductName" class="spnProductName">@item.ProductName  
+                        </span>
+                            <input type="hidden" id="hdnProductID" class="hdnProductID" value="@item.ProductId" /> 
+                            <input type="hidden" id="hdnMatchProductID" class="hdnMatchProductID" value="@item.MatchProductId" /> 
+                            <input type="hidden" id="hdnProductSelectdCount" class="hdnProductSelectdCount" value="0" />  
+                        </td>
+                        <td align="center">
+                            @item.ChasisSerialNo
+                            <input type="hidden" id="hdnChasisSerialNo" value="@item.ChasisSerialNo.Trim()" />                                                                         
+                        </td>
+                        <td align="center">
+                            @item.MotorNo
+                            <input type="hidden" id="hdnMotorNo" value="@item.MotorNo.Trim()" />
+                        </td>
+
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
+        <div>
+            <input type="hidden" id="hdnTempProductID" value="0" />
+            <input type="hidden" id="hdnTempProductName" value="0" />
+            <input type="hidden" id="hdnTempQuantity" value="0" />     
+        </div>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblPrintChasis').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+
+<script>
+    
+                    var tempQuantity = $("#hdnTempQuantity").val();    
+                    var hdnTempProductID=0
+                    var count = 0;
+                    $(document).ready(function () {       
+                    $(".chkChasis").click(function () {
+                        debugger;      
+                        hdnTempProductID = $("#hdnTempProductID").val();
+                        var maxCount = 0;
+                        var productid = 0;
+                        $('#tblPrintChasis tr:not(:has(th))').each(function (i, row) {
+                            var $row = $(row);
+                            var hdnProductID = $row.find("#hdnProductID").val();
+                            var hdnProductSelectdCount = $row.find("#hdnProductSelectdCount").val();                        
+                           
+                            if (hdnTempProductID == hdnProductID) {
+                                    maxCount = maxCount + 1;
+                                    productid = hdnProductID;
+                                }                           
+                                else if (hdnProductSelectdCount == 0) {
+                                    count = 0;
+                                }            
+                        });
+                        if (productid == hdnTempProductID)
+                        {
+                            count = maxCount;
+                        }
+                        if (parseFloat(count) < parseFloat($("#hdnTempQuantity").val()))
+                        {                     
+                            if ($(this).is(":checked")) {
+                                count = count + 1;
+                                var row = $(this).closest("tr");
+                                $(row).find(".hdnProductID").val($("#hdnTempProductID").val());
+                                $(row).find(".spnProductName").text($("#hdnTempProductName").val());
+                                $(row).find(".hdnProductSelectdCount").val(count);              
+                            }
+                            else if (!$(this).is(":checked")) {
+                                count = count - 1;
+                                var row = $(this).closest("tr");
+                                $(row).find(".hdnProductID").val(0);
+                                $(row).find(".spnProductName").text("");
+                                $(row).find(".hdnProductSelectdCount").val(0);               
+                            }
+                        }
+                       else if (!$(this).is(":checked")) {
+                           count = count - 1;
+                           maxCount = maxCount - 1;
+                            var row = $(this).closest("tr");
+                            $(row).find(".hdnProductID").val(0);
+                            $(row).find(".spnProductName").text("");
+                            $(row).find(".hdnProductSelectdCount").val(0);
+                        }
+                        else {            
+                            alert("Cannot select more than the given quantity.")
+                            return false;
+           
+                       }
+       
+                    });
+                    });
+</script>

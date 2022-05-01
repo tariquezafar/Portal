@@ -1,0 +1,129 @@
+﻿@model List<Portal.Core.ViewModel.JobWorkProductDetailViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>HSN Code</th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                    <th>Total Value</th>
+                    <th>Nature Of Processing</th>
+                    <th>Identification Marks</th>
+                    <th colspan="2" align="center" class="editonly">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>
+                            @item.ProductName
+                        <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                        <input type="hidden" id="hdnJobWorkProductDetailId" value="@item.JobWorkProductDetailId" />
+                        <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                        <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                        <input type="hidden" id="hdnScrapPerc" value="@item.ScrapPerc" />
+                        <input type="hidden" id="hdnProductHSNCode" value="@item.ProductHSNCode" />
+                        <input type="hidden" id="hdnProductShortDesc" value="@item.ProductShortDesc" />
+                    </td>
+                    
+                        <td>
+                        @item.ProductCode
+                    <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                </td>
+
+                        <td>
+                        @item.ProductHSNCode
+                        
+                        </td>
+                     <td>
+                    @item.UOMName
+                <input type="hidden" id="hdnUOMName" value="@item.UOMName" />
+
+
+            </td>
+
+                     <td>
+                @item.Quantity
+                <input type="hidden" id="hdnQuantity" value="@item.Quantity" />
+            </td>
+
+
+                        <td>
+                            @item.TotalValue
+                            <input type="hidden" id="hdnTotalValue" value="@item.TotalValue" />
+                        </td>
+
+
+
+                        <td>
+                            @item.NatureOfProcessing
+                            <input type="hidden" id="hdnNatureOfProcessing" value="@item.NatureOfProcessing" />
+                        </td>
+
+                        <td>
+                            @item.IdentificationMarks
+                            <input type="hidden" id="hdnIdentificationMarks" value="@item.IdentificationMarks" />
+                        </td>
+
+            <td class="editonly" style="width:30px; margin:0px 2px auto;">
+                <a class="fa fa-pencil-square-o erp-btn" onclick="EditProductRow(this);" href="javascript:void(0);"></a>
+            </td>
+            <td class="editonly" style="width:30px; margin:0px 2px auto;">
+                <a class="fa fa-trash erp-btn" onclick="RemoveProductRow(this)" href="javascript:void(0);"></a>
+            </td>
+        </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>HSN Code</th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                    <th>Total Value</th>
+                    <th>Nature Of Processing</th>
+                    <th>Identification Marks</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+<script>
+    $(document).ready(function () {
+        if ($("#hdnAccessMode").val() == "3") {
+            $(".editonly").hide();
+        }
+
+    });
+</script>

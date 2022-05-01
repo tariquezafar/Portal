@@ -1,0 +1,164 @@
+﻿@model List<Portal.Core.ViewModel.SaleSummaryRegisterViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+<style>
+    .table {
+        width: 112% !important;
+        max-width: 112% !important;
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+
+    #tblSaleInvoiceList tr th {
+        text-align: center;
+        border: 1px solid #ccc !important;
+        font-family: Arial;
+        color: #fff;
+    }
+
+    table tr td {
+        border: 1px solid #ccc !important;
+        font-family: Arial;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblSaleInvoiceList">
+            <thead>
+                <tr>
+                    <th>Invoice No.</th>
+                    <th>Invoice Date</th>
+                    <th>Invoice Type</th>
+                    <th>Company Branch</th>
+                    <th>Customer Name</th>
+                    <th>State</th>
+                    <th>Basic Value</th>
+                    <th>Net Amount</th>
+                    <th>Freight Value</th>
+                    <th>Loading Value</th>
+                    <th>Gross Amount</th>
+                    <th>Amount Paid</th>
+                    <th>Amount Pending</th>
+                    <th>Created By User</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td></td>
+                    <td>Total : </td>
+                    <td><span id="BasicAmt"></span> </td>
+                    <td><span id="BasicValue"></span> </td>
+                    <td><span id="FreightValue"></span></td>
+                    <td><span id="LoadingValue"></span> </td>
+                    <td><span id="TotalValue"></span> </td>
+                    <td><span id="AmountPaid"></span> </td>
+                    <td><span id="AmountPending"></span> </td>
+                    <td></td>
+                </tr>
+                @foreach (var item in Model)
+                {
+
+
+                    <tr class="success">
+                        <td style="margin:0px 2px auto;">
+                            <a target="_blank" style="color:dodgerblue" href="~/SaleInvoice/AddEditSaleInvoice?siId=@item.InvoiceId&AccessMode=2">@item.InvoiceNo</a>
+                        </td>
+                        <td>@item.InvoiceDate</td>
+                        <td>@item.InvoiceType</td>
+                        <td>@item.CompanyBranchName</td>
+                        <td>@item.CustomerName</td>
+                        <td>@item.StateName</td>
+                        <td class="BasicAmt">@item.BasicAmt</td>
+                        <td class="BasicValue">@item.BasicValue</td>
+                        <td class="FreightValue">@item.FreightValue</td>
+                        <td class="LoadingValue">@item.LoadingValue</td>
+                        <td class="TotalValue">@item.TotalValue</td>
+                        <td class="AmountPaid">@item.AmountPaid</td>
+                        <td class="AmountPending">@item.AmountPending</td>
+                        <td>@item.CreatedByUserName</td>
+
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblSaleInvoiceList').paging({
+            limit: 100,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        calc_total();
+    });
+    function calc_total() {
+        var BasicAmt = 0;
+        var BasicValue = 0;
+        var FreightValue = 0;
+        var LoadingValue = 0;
+        var TotalValue = 0;
+        var AmountPaid = 0;
+        var AmountPending = 0;
+        $(".BasicAmt").each(function () {
+            BasicAmt += parseFloat($(this).text());
+        });
+        $(".BasicValue").each(function () {
+            BasicValue += parseFloat($(this).text());
+        });
+        $(".FreightValue").each(function () {
+            FreightValue += parseFloat($(this).text());
+        });
+        $(".LoadingValue").each(function () {
+            LoadingValue += parseFloat($(this).text());
+        });
+        $(".TotalValue").each(function () {
+            TotalValue += parseFloat($(this).text());
+        });
+        $(".AmountPaid").each(function () {
+            AmountPaid += parseFloat($(this).text());
+        });
+        $(".AmountPending").each(function () {
+            AmountPending += parseFloat($(this).text());
+        });
+        $('#BasicAmt').html(BasicAmt.toFixed(2));
+        $('#BasicValue').html(BasicValue.toFixed(2));
+        $('#FreightValue').html(FreightValue.toFixed(2));
+        $('#LoadingValue').html(LoadingValue.toFixed(2));
+        $('#TotalValue').html(TotalValue.toFixed(2));
+        $('#AmountPaid').html(AmountPaid.toFixed(2));
+        $('#AmountPending').html(AmountPending.toFixed(2));
+
+    }
+</script>

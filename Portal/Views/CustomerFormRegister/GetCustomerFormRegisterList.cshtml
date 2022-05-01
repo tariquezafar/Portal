@@ -1,0 +1,77 @@
+﻿@model List<Portal.Core.ViewModel.CustomerFormViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table {
+    width: 275% !important;
+    max-width: 275%  !important;
+    margin-bottom: 20px;
+}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblSOList">
+            <thead>
+                <tr>
+                    <td style="margin:0px 2px auto;">
+                       Sr. No.
+                    </td> 
+                    <th>Customer Name</th>
+                    <th>Customer Code</th>
+                    <th>Form Status</th>
+                    <th>Form Type Desc</th>
+                    <th>Invoice No</th>
+                    <th>Invoice Date</th>
+                    <th>Amount</th>
+                    <th>Remarks</th>
+                    <th>Ref. No</th> 
+                    <th>Ref. Date</th>
+                    <th>Created By User</th>
+                    <th>Created Date</th>
+                    <th>Modified By User</th>
+                    <th>Modified Date</th> 
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="margin:0px 2px auto;">
+                            <a style="color:dodgerblue" href="~/CustomerForm/AddEditCustomerForm?CustomerFormTrnId=@item.CustomerFormTrnId&AccessMode=2">@item.CustomerFormTrnId</a>
+                        </td> 
+                        <td>@item.CustomerName</td>
+                        <td>@item.CustomerCode</td>
+                        <td>@item.FormStatus</td>
+                        <td>@item.FormTypeDesc</td>
+                        <td>@item.InvoiceNo</td>
+                        <td>@item.InvoiceDate</td>
+                        <td>@item.Amount</td>
+                        <td>@item.Remarks</td>
+                        <td>@item.RefNo</td>
+                        <td>@item.RefDate</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td> 
+                        </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblSOList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

@@ -1,0 +1,91 @@
+﻿@model List<Portal.Core.ViewModel.CarryForwardChasissViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+      .table th {
+    background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    color:#fff;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div>
+        <table class="table table-bordered table-hover" id="tblCarryForwardList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>Carry Forward No.</center></th>
+                    <th><center>Carry Forward Date</center></th>
+                    <th><center>Branch Name</center></th>
+                    <th><center>Previous Year</center></th>    
+                    <th><center>Previous Month</center></th>    
+                    <th><center>Carry Forward Year</center></th>    
+                    <th><center>Carry Forward Month</center></th>                       
+                    <th><center>Approval Status</center></th>
+                    <th><center>Created By User</center></th>
+                    <th><center>Created Date</center></th>
+                    <th><center>Modified By User</center></th>
+                    <th><center>Modified Date</center></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {                   
+                    <tr class="success">
+                        <td class="teal text" style="margin:0px auto;">
+                            <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/CarryForwardChasis/AddEditCarryForwardChasis?carryForwardID=@item.CarryForwardID&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="margin:0px auto;">
+                            @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                            {
+                                <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/CarryForwardChasis/AddEditCarryForwardChasis?carryForwardID=@item.CarryForwardID&AccessMode=2"></a>
+                            }
+
+                        </td>
+                        <td align="center">@item.CarryForwardNo</td>
+                        <td align="center">@item.CarryForwardDate</td>
+                        <td align="center">@item.CompanyBranchName</td>
+                        <td align="center">@item.PrevChasisYear</td>
+                        <td align="center">@item.ChasisMonth</td>
+                        <td align="center">@item.CarryForwardYear</td>
+                        <td align="center">@item.CarryMonth</td>
+                        @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine">
+                                @item.ApprovalStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green">
+                                @item.ApprovalStatus
+                            </td>
+
+                        }
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+                    </tr>
+                                     
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblCarryForwardList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

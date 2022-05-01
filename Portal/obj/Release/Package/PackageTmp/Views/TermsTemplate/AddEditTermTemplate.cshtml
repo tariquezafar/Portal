@@ -1,0 +1,193 @@
+﻿@{
+    ViewBag.Title = "Add/Edit Term Template";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+    /* allow space for check mark */
+
+     .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AdminDashboard">Admin </a> >> Add/Edit Term Template</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditTermTemplate" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message"> 
+            </div> 
+                <div class="col-md-12 ftop">
+                        <div class="form-group col-md-4">
+                            <label for="txtTermTemplateName" class="col-sm-4 control-label">Term Template Name&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtTermTemplateName" name="txtTermTemplateName" tabindex="1" placeholder="Enter Term Template Name" type="text" maxlength="100" />
+                                <input id="hdnTermTemplateId" type="hidden" value="@ViewData["termtemplateId"]" />
+                                <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                                <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                                <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                            </div>
+                        </div>
+                    <div class="form-group col-md-4">
+                        <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="2" class="form-control"></select>
+                        </div>
+                    </div>
+                        <div class="form-group col-md-4">
+                            <label for="chkStatus" class="col-sm-4 control-label">Active Status</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" name="chkStatus" id="chkStatus" checked="checked"  class="" />
+                                <label style="font-size: 24px;" tabindex="3"  for="chkStatus"></label>
+                            </div>  
+                        </div>
+                    </div>
+      
+            <div class="col-md-12  ftop">
+                <div class="form-group col-md-4"> 
+                </div>
+                <div class="form-group col-md-4" style="background-color:yellow">
+                    <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Term Template Detail</b></label></h4>
+                </div>
+                <div class="form-group col-md-4">
+                    <input class="btn btn-success editonly" value="Add New Term Template Desc" tabindex="3" alt="Add New Term Template Desc" id="btnAddTermTemplateDesc" onclick="$('#showTermTemplate').toggle();"  type="button" border="0">
+                </div> 
+            </div> 
+
+
+            <div class="col-md-12 ftop"  id="showTermTemplate" style="display:none"> 
+                <div class="form-group col-md-6">
+                    <label for="txtTermTemplateDesc" class="col-sm-3 control-label">Term Template Desc</label>
+                    <div class="col-sm-9">
+                        <textarea class="form-control" id="txtTermTemplateDesc" name="txtTermTemplateDesc" tabindex="4" rows="4" cols="50" maxlength="500"> </textarea>
+                        <input id="hdnTrnId" type="hidden" value="0" />
+                        <input id="hdnTermTemplateId" type="hidden" value="0" />
+                        <input id="hdnSequenceNo" type="hidden" value="0" />
+                    </div>
+                </div> 
+                <div class="form-group  col-md-6">
+                    <label for="chkStatusDesc" class="col-sm-4 control-label">Active Status</label>
+                    <div class="col-sm-8">
+                        <input type="checkbox" name="chkStatusDesc" id="chkStatusDesc" checked="checked"  class="" />
+                        <label style="font-size: 24px; " tabindex="5" for="chkStatusDesc"></label>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-12 col-md-12 productsection">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Add Term Termplate Desc" tabindex="6" alt="Add Term Termplate Desc" id="btnAddTermTemplateDetail" onclick="AddTermTemplate(1)" type="button" border="0">
+                            <input class="btn btn-success" value="Update Term Termplate" tabindex="6" style="display:none;" alt="Update Term Termplate" id="btnUpdateTermTemplateDetail" onclick="AddTermTemplate(2)" type="button" border="0">
+                            <input class="btn btn-success" type="button" id="btnCancelProduct" tabindex="7" onclick="HideTermTemplateFields()" value="Cancel" />
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                </div>  
+                 
+
+       
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <div id="divTermTemplateList"> 
+                </div>
+            </div>
+             
+             
+                <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnSave" onclick="SaveData(1)" tabindex="8" type="button" border="0">
+                            <input class="btn btn-success" value="Update" style="display:none;" alt="Update" id="btnUpdate" tabindex="8" onclick="SaveData(2)" type="button" border="0">
+                            <a class="btn btn-success" id="btnReset" href="@Url.Content("~/TermsTemplate/AddEditTermTemplate")" tabindex="11">Reset</a>
+                            <a class="btn btn-success" id="btnList" href="@Url.Content("~/TermsTemplate/ListTermTemplate")"  tabindex="12">Search Term Template</a>
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="9" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="10" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="10" data-dismiss="modal">Close</button>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </form>
+</section>
+
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/TermTemplate/AddTermTemplate.js"></script>
+

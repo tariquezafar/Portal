@@ -1,0 +1,57 @@
+﻿@model List<Portal.Core.ViewModel.ResourceRequisitionSkillViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblSkillList">
+            <thead>
+                <tr> 
+                    <th>S. No.</th>
+                    <th>Skill Name</th>
+                    <th>Skill Code</th> 
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success"> 
+                        <td>
+                            @item.SkillSequenceNo
+                            <input type="hidden" id="hdnSkillSequenceNo" value="@item.SkillSequenceNo" />
+                            <input type="hidden" id="hdnRequisitionSkillId" value="@item.RequisitionSkillId" />
+                        </td>
+                        <td>@item.SkillName 
+                            <input type="hidden" id="hdnSkillId" value="@item.SkillId" />
+                            <input type="hidden" id="hdnSkillName" value="@item.SkillName" />
+                        </td>
+                        <td>@item.SkillCode
+                        <input type="hidden" id="hdnSkillCode" value="@item.SkillCode" /> 
+                        </td> 
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" onclick="EditSkillRow(this);" href="#"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-trash"  onclick="RemoveSkillRow(this)" href="#"></a>
+                        </td>
+                    </tr>
+                } 
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblSkillList">
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>Skill Name</th>
+                    <th>Skill Code</th> 
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

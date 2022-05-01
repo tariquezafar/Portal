@@ -1,0 +1,16 @@
+16:37:43 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetReorderPointProductCountList
+Error Line No : 33
+Exception Type : System.OverflowException
+Details: Value was either too large or too small for an Int16.
+--------------------------------------------------------------------------------------------------------------------------------
+
+16:37:43 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetReorderPointProductCountList
+Error Line No : 367
+Exception Type : System.OverflowException
+Details: Value was either too large or too small for an Int16.
+---------------------------------------------------------------------------------------------------------------------------
+

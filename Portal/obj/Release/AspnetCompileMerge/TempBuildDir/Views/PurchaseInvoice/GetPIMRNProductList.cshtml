@@ -1,0 +1,103 @@
+﻿@model List<Portal.Core.ViewModel.PurchaseInvoiceProductDetailViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Unit</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>ReceivedQuantity</th>
+                    <th>AcceptQuantity</th>
+                    <th>RejectQuantity</th>
+                    <th>Total Price</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>
+                            @item.SequenceNo
+                            <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                        </td>
+                        <td>@item.ProductName
+                        <input type="hidden" id="hdnPIProductDetailId" value="@item.InvoiceProductDetailId" />
+                        <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                            <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                        </td>
+                        <td>@item.ProductCode
+                        <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                        </td>
+                        <td>@item.UOMName
+                            <input type="hidden" id="hdnUOMName" value="@item.UOMName" />
+                            <input type="hidden" id="hdnProductShortDesc" value="@item.ProductShortDesc" />
+
+                        </td>
+                        <td>
+                            @item.Price
+                        <input type="hidden" id="hdnPrice" value="@item.Price" />
+                        </td>
+                        <td>
+                            @item.Quantity
+                            <input type="hidden" id="hdnQuantity" value="@item.Quantity" />
+                        </td>
+                        <td>
+                            @item.ReceivedQuantity
+                            <input type="hidden" id="hdnReceivedQuantity" value="@item.ReceivedQuantity" />
+                        </td>
+                        <td>
+                            @item.AcceptQuantity
+                            <input type="hidden" id="hdnAcceptQuantity" value="@item.AcceptQuantity" />
+                        </td>
+                        
+                        <td>
+                            @item.RejectQuantity
+                            <input type="hidden" id="hdnAcceptQuantity" value="@item.RejectQuantity" />
+                        </td>
+
+                        <td>
+                            @item.TotalPrice
+                            <input type="hidden" id="hdnTotalPrice" value="@item.TotalPrice" />
+                        </td>
+                        <td style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-pencil-square-o erp-btn" onclick="EditProductRow(this);" href="#"></a>
+                        </td>
+                        <td style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-trash erp-btn"  onclick="RemoveProductRow(this)" href="#"></a>
+                        </td>
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Unit</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>ReceivedQuantity</th>
+                    <th>AcceptQuantity</th>
+                    <th>RejectQuantity</th>
+                    <th>Total Price</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

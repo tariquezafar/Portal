@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "List Appraiser Assessment";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+
+    table tr:nth-child(2n+1) {
+        background-color: #dbe5f7;
+    }
+
+    table tr:nth-child(2n) {
+        background-color: #dbe5f7;
+    }
+</style>
+
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">HR </a> >> List Appraiser Assessment</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditQuotation" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="txtTemplateName" class="col-sm-4 control-label">Template Name</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtTemplateName" name="txtTemplateName" tabindex="1" placeholder="Search with Template Name" type="text" maxlength="100" />
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                    </div>
+                </div>
+                <div class="form-group  col-md-6">
+                    <label for="txtEmployeeName" class="col-sm-4 control-label">Employee Name</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtEmployeeName" name="txtEmployeeName" tabindex="2" placeholder="Search with Employe Name" type="text" maxlength="100" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;</label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="5" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+
+                <div class="row col-sm-12 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Search" alt="Search" id="btnSearch" tabindex="7" onclick="SearchEmployeeAppraisalTemplateMapping()" type="button" border="0">&nbsp;&nbsp;
+                            <input class="btn btn-success" type="button" id="btnReset" tabindex="8" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;
+                        </center>
+                    </div>
+
+                    <div class="col-md-3" style="text-align:right">
+
+                    </div>
+                </div>
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div id="divList">
+
+                    </div>
+                </div>
+            </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/PMS_Assessment/ListAppraiserAssessment.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/Common.js"></script>

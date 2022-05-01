@@ -1,0 +1,570 @@
+﻿@{
+    ViewBag.Title = "Add/Edit Payroll Monthly Adjustment";
+    Layout = "~/Views/Shared/_PayrollLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+       
+    /* allow space for check mark */
+</style>
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/PayrollDashboard">Payroll</a> >> Add/Edit Payroll Monthly Adjustment</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditPayrollProcessPeriod" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="ddlMonth" class="col-sm-4 control-label">Payroll Process Period&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlMonth" name="ddlMonth" onchange="GetProcessStartEndDate()" tabindex="1" class="form-control"></select>
+                        <input id="hdnPayrollAdjustmentId" type="hidden" value="@ViewData["payrollAdjustmentId"]" />                      
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                        <input id="hdnhdnMonthID" type="hidden" value="0" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtPayrollProcessDate" class="col-sm-4 control-label">Payroll Process Date</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtPayrollProcessDate" name="txtPayrollProcessDate" tabindex="2" placeholder="Payroll Process Date" type="text" value="@ViewData["currentDate"]" maxlength="100" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 ">
+                <div class="form-group col-md-6">
+                    <label for="txtPayrollProcessingStartDate" class="col-sm-4 control-label">Payroll Processing StartDate</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtPayrollProcessingStartDate" name="txtPayrollProcessingStartDate" tabindex="3" placeholder="Payroll Processing Start Date" type="text" value="@ViewData["currentDate"]" maxlength="100" />
+
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtPayrollProcessingEndDate" class="col-sm-4 control-label">End Date</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtPayrollProcessingEndDate" name="txtPayrollProcessingEndDate" tabindex="4" placeholder="Payroll Processing End Date" type="text" value="@ViewData["currentDate"]" maxlength="100" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlPayrollLocked" class="col-sm-4 control-label">Payroll Locked</label>
+                    <div class="col-sm-8">
+                        <select id="ddlPayrollLocked" name="ddlPayrollLocked"  tabindex="5" class="form-control">
+                            <option value="0">Unlocked</option>
+                            <option value="1">Locked</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtPayrollLockDate" class="col-sm-4 control-label">Payroll Lock Date</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtPayrollLockDate" name="txtPayrollLockDate" tabindex="6" placeholder="Payroll Lock Date" type="text" value="@ViewData["currentDate"]" maxlength="100" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlPayrollProcessStatus" class="col-sm-4 control-label">Payroll Status</label>
+                    <div class="col-sm-8">
+                        <select id="ddlPayrollProcessStatus" name="ddlPayrollProcessStatus" tabindex="7" class="form-control">
+                            <option value="PENDING">Pending</option>
+                            <option value="IN PROCESS">In Process</option>
+                            <option value="FINAL">Final</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtEmployee" class="col-sm-4 control-label">Employee&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtEmployee" name="txtEmployee" value="" tabindex="8" placeholder="Enter Employee Name" type="text" maxlength="50" />
+                        <input type="hidden" id="hdnEmployeeId" name="hdnEmployeeId" value="0" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtEmployeeCode" class="col-sm-4 control-label">Employee Code</label>
+
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtEmployeeCode" name="txtEmployeeCode" tabindex="9" placeholder="Enter Employee Code" type="text" maxlength="50" />
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlDepartment" class="col-sm-4 control-label">Department</label>
+                    <div class="col-sm-8">
+                        <select id="ddlDepartment" name="ddlDepartment" onchange="BindDesignationList(0)" tabindex="10" class="form-control"></select>
+                        <input type="hidden" id="hdnDepartment" name="hdnDepartment" value="0" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="ddlDesignation" class="col-sm-4 control-label">Designaion</label>
+                    <div class="col-sm-8">
+                        <select id="ddlDesignation" name="ddlDesignation" tabindex="11" class="form-control"></select>
+                        <input type="hidden" id="hdnDesignation" name="hdnDesignation" value="0" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch</label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="12" class="form-control"></select>
+                        <input type="hidden" id="hdnCompanyBranch" name="hdnCompanyBranch" value="0" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">                   
+                    <div class="col-sm-8">                      
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtBasicPay" class="col-sm-4 control-label">Basic Pay</label>
+                    <div class="col-sm-2">
+                        <select id="ddlBasicPay" name="ddlBasicPay" tabindex="13" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                        <div class="col-sm-6">
+                            <input class="form-control" id="txtBasicPay" name="txtBasicPay" onkeyup="checkDec(this);" tabindex="14" placeholder="Enter Basic Pay" type="text" maxlength="50" />
+                        </div>
+
+                   
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtAnnualBonus" class="col-sm-4 control-label">Conveyance Allow</label>
+                    <div class="col-sm-2">
+                        <select id="ddlConveyanceAllow" name="ddlConveyanceAllow" tabindex="15" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtConveyanceAllow" name="txtConveyanceAllow" onkeyup="checkDec(this);" tabindex="16" placeholder="Enter Conveyance Allow" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtBasicPay" class="col-sm-4 control-label">Special Allow</label>
+                    <div class="col-sm-2">
+                        <select id="ddlSpecialAllow" name="ddlSpecialAllow" tabindex="17" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtSpecialAllow" name="txtSpecialAllow" onkeyup="checkDec(this);" tabindex="18" placeholder="Enter Special Allow" type="text" maxlength="50" />
+                    </div>
+
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtAnnualBonus" class="col-sm-4 control-label">Other Allow</label>
+                    <div class="col-sm-2">
+                        <select id="ddlOtherAllow" name="ddlOtherAllow" tabindex="19" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtOtherAllow" name="txtOtherAllow" onkeyup="checkDec(this);" tabindex="20" placeholder="Enter Other Allow" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtBasicPay" class="col-sm-4 control-label">Medical Allow</label>
+                    <div class="col-sm-2">
+                        <select id="ddlMedicalAllow" name="ddlMedicalAllow" tabindex="21" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtMedicalAllow" name="txtMedicalAllow" onkeyup="checkDec(this);" tabindex="22" placeholder="Enter Medical Allow" type="text" maxlength="50" />
+                    </div>
+
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtChildEduAllow" class="col-sm-4 control-label">Child Edu Allow</label>
+                    <div class="col-sm-2">
+                        <select id="ddlChildEduAllow" name="ddlChildEduAllow" tabindex="23" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtChildEduAllow" name="txtChildEduAllow" onkeyup="checkDec(this);" tabindex="24" placeholder="Enter Child Education Allow" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtLTA" class="col-sm-4 control-label">LTA</label>
+                    <div class="col-sm-2">
+                        <select id="ddlLTA" name="ddlLTA" tabindex="25" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtLTA" name="txtLTA" onkeyup="checkDec(this);" tabindex="26" placeholder="Enter LTA" type="text" maxlength="50" />
+                    </div>
+
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtEmployeePF" class="col-sm-4 control-label">Employee PF</label>
+                    <div class="col-sm-2">
+                        <select id="ddlEmployeePF" name="ddlEmployeePF" tabindex="27" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtEmployeePF" name="txtEmployeePF" onkeyup="checkDec(this);" tabindex="28" placeholder="Enter Employee PF" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtEmployeeESI" class="col-sm-4 control-label">Employee ESI</label>
+                    <div class="col-sm-2">
+                        <select id="ddlEmployeeESI" name="ddlEmployeeESI" tabindex="29" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtEmployeeESI" name="txtEmployeeESI" onkeyup="checkDec(this);" tabindex="30" placeholder="Enter Employee ESI" type="text" maxlength="50" />
+                    </div>
+
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtOtherDeduction" class="col-sm-4 control-label">Other Deduction</label>
+                    <div class="col-sm-2">
+                        <select id="ddlOtherDeduction" name="ddlOtherDeduction" tabindex="31" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtOtherDeduction" name="txtOtherDeduction" onkeyup="checkDec(this);" tabindex="32" placeholder="Enter Other Deduction" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtProfessionalTax" class="col-sm-4 control-label">Professional Tax</label>
+                    <div class="col-sm-2">
+                        <select id="ddlProfessionalTax" name="ddlProfessionalTax" tabindex="33" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtProfessionalTax" name="txtProfessionalTax" onkeyup="checkDec(this);" tabindex="34" placeholder="Enter Professional Tax" type="text" maxlength="50" />
+                    </div>
+
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtAdhocAllowance" class="col-sm-4 control-label">Adhoc Allowance</label>
+                    <div class="col-sm-2">
+                        <select id="ddlAdhocAllowance" name="ddlAdhocAllowance" tabindex="35" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtAdhocAllowance" name="txtAdhocAllowance" onkeyup="checkDec(this);" tabindex="36" placeholder="Enter Adhoc Allowance" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+       
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtAnnualBonus" class="col-sm-4 control-label">Annual Bonus</label>
+                    <div class="col-sm-2">
+                        <select id="ddlAnnualBonus" name="ddlAnnualBonus" tabindex="37" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtAnnualBonus" name="txtAnnualBonus" onkeyup="checkDec(this);" tabindex="38" placeholder="Enter Annual Bonus" type="text" maxlength="50" />
+                    </div>
+
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtExgratia" class="col-sm-4 control-label">Exgratia</label>
+                    <div class="col-sm-2">
+                        <select id="ddlExgratia" name="ddlExgratia" tabindex="39" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtExgratia" name="txtExgratia" onkeyup="checkDec(this);" tabindex="40" placeholder="Enter Exgratia" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtLeaveEncashment" class="col-sm-4 control-label">Leave Encashment</label>
+                    <div class="col-sm-2">
+                        <select id="ddlLeaveEncashment" name="ddlLeaveEncashment" tabindex="41" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtLeaveEncashment" name="txtLeaveEncashment" onkeyup="checkDec(this);" tabindex="42" placeholder="Enter Leave Encashment" type="text" maxlength="50" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtSalaryAdvancePayable" class="col-sm-4 control-label">Salary Advance Payable</label>
+                    <div class="col-sm-2">
+                        <select id="ddlSalaryAdvancePayable" name="ddlSalaryAdvancePayable" tabindex="43" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtSalaryAdvancePayable" name="txtSalaryAdvancePayable" onkeyup="checkDec(this);" tabindex="44" placeholder="Enter Salary Advance Payable" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtNoticePayPayable" class="col-sm-4 control-label">Notice Pay Payable</label>
+                    <div class="col-sm-2">
+                        <select id="ddlNoticePayPayable" name="ddlNoticePayPayable" tabindex="45" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtNoticePayPayable" name="txtNoticePayPayable" onkeyup="checkDec(this);" tabindex="46" placeholder="Enter Notice Pay Payable" type="text" maxlength="50" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtSalaryAdvanceRecv" class="col-sm-4 control-label">Salary Advance Recv</label>
+                    <div class="col-sm-2">
+                        <select id="ddlSalaryAdvanceRecv" name="ddlSalaryAdvanceRecv" tabindex="47" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtSalaryAdvanceRecv" name="txtSalaryAdvanceRecv" onkeyup="checkDec(this);" tabindex="48" placeholder="Enter Salary Advance Recv" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtNoticePayRecv" class="col-sm-4 control-label">Notice Pay Recv</label>
+                    <div class="col-sm-2">
+                        <select id="ddlNoticePayRecv" name="ddlNoticePayRecv" tabindex="49" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtNoticePayRecv" name="txtNoticePayRecv" onkeyup="checkDec(this);" tabindex="50" placeholder="Enter Notice Pay Recv" type="text" maxlength="50" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtLoanPayable" class="col-sm-4 control-label">Loan Payable</label>
+                    <div class="col-sm-2">
+                        <select id="ddlLoanPayable" name="ddlLoanPayable" tabindex="51" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtLoanPayable" name="txtLoanPayable" onkeyup="checkDec(this);" tabindex="52" placeholder="Enter Loan Payable" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtLoanRecv" class="col-sm-4 control-label">Loan Recv</label>
+                    <div class="col-sm-2">
+                        <select id="ddlLoanRecv" name="ddlLoanRecv" tabindex="53" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtLoanRecv" name="txtLoanRecv" onkeyup="checkDec(this);" tabindex="54" placeholder="Enter Loan Recv" type="text" maxlength="50" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtIncomeTax" class="col-sm-4 control-label">Income Tax</label>
+                    <div class="col-sm-2">
+                        <select id="ddlIncomeTax" name="ddlIncomeTax" tabindex="55" class="form-control">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-control" id="txtIncomeTax" name="txtIncomeTax" onkeyup="checkDec(this);" tabindex="56" placeholder="Enter Income Tax" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12" style="display:none">
+                <div class="form-group col-md-6">
+                    <label for="txtstatus" class="col-sm-4 control-label">Status&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="57" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                  
+                    <div class="col-sm-8">
+                      
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="divCreated" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="txtCreatedBy" class="col-sm-4 control-label">Created By</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtCreatedBy" name="txtCreatedBy" tabindex="58" placeholder="Created By User Name" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtCreatedDate" class="col-sm-4 control-label">Created Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtCreatedDate" name="txtCreatedDate" tabindex="59" placeholder="Created Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="divModified" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="txtModifiedBy" class="col-sm-4 control-label">Modified By</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtModifiedBy" name="txtModifiedBy" tabindex="60" placeholder="Modified By User Name" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtModifiedDate" class="col-sm-4 control-label">Modified Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtModifiedDate" name="txtModifiedDate" tabindex="61" placeholder="Modified Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="62" onclick="SaveData(1);" type="button" border="0">
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="62" alt="Update" id="btnUpdate" onclick="SaveData(2);"type="button" border="0">                       
+                        <a class="btn btn-success" id="btnReset" tabindex="65" href="@Url.Content("~/PayrollMonthlyAdjustment/AddEditPayrollMonthlyAdjustment")">Reset</a>
+                        <a class="btn btn-success" id="btnList" tabindex="66" href="@Url.Content("~/PayrollMonthlyAdjustment/ListPayrollMonthlyAdjustment")">Search Payroll Monthly Adjustment</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="63" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="64" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="64" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+
+<script src="~/Scripts/PayrollMonthlyAdjustment/AddPayrollMonthlyAdjustment.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>

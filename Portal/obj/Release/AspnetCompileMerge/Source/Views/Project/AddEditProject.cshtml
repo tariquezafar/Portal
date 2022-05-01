@@ -1,0 +1,104 @@
+﻿ @{
+     ViewBag.Title = "AddEdit Project";
+     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AdminDashboard">ADMIN</a> >> Add/Edit Project </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditProject" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="txtProjectName" class="col-sm-4 control-label">Project Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtProjectName" name="txtProjectName" tabindex="1" placeholder="Enter Project Name" type="text" maxlength="250" />
+                        <input id="hdnProjectID" type="hidden" value="@ViewData["projectId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtProjectCode" class="col-sm-4 control-label">Project Code&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtProjectCode" name="txtProjectCode" tabindex="2" placeholder="Enter Project Code" type="text" maxlength="50" />              
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtCustomerName" class="col-sm-4 control-label">Customer&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtCustomerName" name="txtCustomerName" tabindex="3" placeholder="Enter Customer Name" type="text" />
+                        <input id="hdnCustomerId" type="hidden" value="" />
+                    </div>
+                </div>
+
+                   </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="ddlCustomerBranch" class="col-sm-4 control-label">Customer Branch</label>
+                    <div class="col-sm-8">
+                        <select id="ddlCustomerBranch" name="ddlCustomerBranch" tabindex="4" class="form-control"></select>
+                    </div>
+                 
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="5" class="form-control"></select>
+                    </div>
+                </div>
+              <div class="form-group col-md-4">
+                    <label for="txtstatus" class="col-sm-4 control-label">Status&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="5" />
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="6" onclick="SaveData(1)" type="button" border="0">
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="6" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">
+                        <a class="btn btn-success" id="btnReset" tabindex="9" href="@Url.Content("~/Project/AddEditProject")">Reset</a>
+                        @*<input class="btn btn-success" type="button" id="btnReset" tabindex="5" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
+                        @*<input class="btn btn-success" type="button" id="btnList" value="Search Company" />*@
+                        <a class="btn btn-success" id="btnList" tabindex="10" href="@Url.Content("~/Project/ListProject")">Search Project</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="7" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="8" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="8" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/Project/AddProject.js"></script>

@@ -1,0 +1,1426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRMS" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="HR_ActivityCalender">
+    <Key>
+      <PropertyRef Name="ActivityCalenderId" />
+    </Key>
+    <Property Name="ActivityCalenderId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CalenderId" Type="Int32" />
+    <Property Name="ActivityDate" Type="DateTime" Precision="0" />
+    <Property Name="ActivityDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="HRMSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="HR_ActivityCalender" EntityType="Self.HR_ActivityCalender" />
+    <EntitySet Name="HR_AdvanceType" EntityType="HRMS.HR_AdvanceType" />
+    <EntitySet Name="HR_Applicant" EntityType="HRMS.HR_Applicant" />
+    <EntitySet Name="HR_ApplicantEducation" EntityType="HRMS.HR_ApplicantEducation" />
+    <EntitySet Name="HR_ApplicantExtraActivity" EntityType="HRMS.HR_ApplicantExtraActivity" />
+    <EntitySet Name="HR_ApplicantPrevEmployer" EntityType="HRMS.HR_ApplicantPrevEmployer" />
+    <EntitySet Name="HR_ApplicantProject" EntityType="HRMS.HR_ApplicantProject" />
+    <EntitySet Name="HR_ApplicantVerification" EntityType="HRMS.HR_ApplicantVerification" />
+    <EntitySet Name="HR_Appointment" EntityType="HRMS.HR_Appointment" />
+    <EntitySet Name="HR_AppointmentCTC" EntityType="HRMS.HR_AppointmentCTC" />
+    <EntitySet Name="HR_AssetType" EntityType="HRMS.HR_AssetType" />
+    <EntitySet Name="HR_Calender" EntityType="HRMS.HR_Calender" />
+    <EntitySet Name="HR_ClaimType" EntityType="HRMS.HR_ClaimType" />
+    <EntitySet Name="HR_ClearanceTemplate" EntityType="HRMS.HR_ClearanceTemplate" />
+    <EntitySet Name="HR_ClearanceTemplateDetail" EntityType="HRMS.HR_ClearanceTemplateDetail" />
+    <EntitySet Name="HR_CTC" EntityType="HRMS.HR_CTC" />
+    <EntitySet Name="HR_Education" EntityType="HRMS.HR_Education" />
+    <EntitySet Name="HR_EmployeeAdvanceApplication" EntityType="HRMS.HR_EmployeeAdvanceApplication" />
+    <EntitySet Name="HR_EmployeeAssetApplication" EntityType="HRMS.HR_EmployeeAssetApplication" />
+    <EntitySet Name="HR_EmployeeAttendance" EntityType="HRMS.HR_EmployeeAttendance" />
+    <EntitySet Name="HR_EmployeeClearanceProcess" EntityType="HRMS.HR_EmployeeClearanceProcess" />
+    <EntitySet Name="HR_EmployeeClearanceProcessDetail" EntityType="HRMS.HR_EmployeeClearanceProcessDetail" />
+    <EntitySet Name="HR_EmployeeLeaveApplication" EntityType="HRMS.HR_EmployeeLeaveApplication" />
+    <EntitySet Name="HR_EmployeeLeaveDetail" EntityType="HRMS.HR_EmployeeLeaveDetail" />
+    <EntitySet Name="HR_EmployeeLoanApplication" EntityType="HRMS.HR_EmployeeLoanApplication" />
+    <EntitySet Name="HR_EmployeeTravelApplication" EntityType="HRMS.HR_EmployeeTravelApplication" />
+    <EntitySet Name="HR_ExitInterview" EntityType="HRMS.HR_ExitInterview" />
+    <EntitySet Name="HR_HolidayCalender" EntityType="HRMS.HR_HolidayCalender" />
+    <EntitySet Name="HR_HolidayType" EntityType="HRMS.HR_HolidayType" />
+    <EntitySet Name="HR_Interview" EntityType="HRMS.HR_Interview" />
+    <EntitySet Name="HR_InterviewType" EntityType="HRMS.HR_InterviewType" />
+    <EntitySet Name="HR_JobOpening" EntityType="HRMS.HR_JobOpening" />
+    <EntitySet Name="HR_EmployeeClaimApplication" EntityType="HRMS.HR_EmployeeClaimApplication" />
+    <EntitySet Name="HR_Language" EntityType="HRMS.HR_Language" />
+    <EntitySet Name="HR_LeaveType" EntityType="HRMS.HR_LeaveType" />
+    <EntitySet Name="HR_LoanType" EntityType="HRMS.HR_LoanType" />
+    <EntitySet Name="HR_PMS_AppraisalTemplate" EntityType="HRMS.HR_PMS_AppraisalTemplate" />
+    <EntitySet Name="HR_PMS_AppraisalTemplateGoal" EntityType="HRMS.HR_PMS_AppraisalTemplateGoal" />
+    <EntitySet Name="HR_PMS_EmployeeAppraisalReview" EntityType="HRMS.HR_PMS_EmployeeAppraisalReview" />
+    <EntitySet Name="HR_PMS_EmployeeAppraisalTemplateMapping" EntityType="HRMS.HR_PMS_EmployeeAppraisalTemplateMapping" />
+    <EntitySet Name="HR_PMS_Goal" EntityType="HRMS.HR_PMS_Goal" />
+    <EntitySet Name="HR_PMS_GoalCategory" EntityType="HRMS.HR_PMS_GoalCategory" />
+    <EntitySet Name="HR_PMS_PerformanceCycle" EntityType="HRMS.HR_PMS_PerformanceCycle" />
+    <EntitySet Name="HR_PMS_Section" EntityType="HRMS.HR_PMS_Section" />
+    <EntitySet Name="HR_PositionLevel" EntityType="HRMS.HR_PositionLevel" />
+    <EntitySet Name="HR_PositionType" EntityType="HRMS.HR_PositionType" />
+    <EntitySet Name="HR_Religion" EntityType="HRMS.HR_Religion" />
+    <EntitySet Name="HR_ResourceRequisition" EntityType="HRMS.HR_ResourceRequisition" />
+    <EntitySet Name="HR_ResourceRequisitionInterviewStage" EntityType="HRMS.HR_ResourceRequisitionInterviewStage" />
+    <EntitySet Name="HR_ResourceRequisitionSkill" EntityType="HRMS.HR_ResourceRequisitionSkill" />
+    <EntitySet Name="HR_ResumeSource" EntityType="HRMS.HR_ResumeSource" />
+    <EntitySet Name="HR_Roaster" EntityType="HRMS.HR_Roaster" />
+    <EntitySet Name="HR_RoasterWeek" EntityType="HRMS.HR_RoasterWeek" />
+    <EntitySet Name="HR_SeparationApplication" EntityType="HRMS.HR_SeparationApplication" />
+    <EntitySet Name="HR_SeparationCategory" EntityType="HRMS.HR_SeparationCategory" />
+    <EntitySet Name="HR_SeparationClearList" EntityType="HRMS.HR_SeparationClearList" />
+    <EntitySet Name="HR_SeparationOrder" EntityType="HRMS.HR_SeparationOrder" />
+    <EntitySet Name="HR_Shift" EntityType="HRMS.HR_Shift" />
+    <EntitySet Name="HR_ShiftType" EntityType="HRMS.HR_ShiftType" />
+    <EntitySet Name="HR_Skills" EntityType="HRMS.HR_Skills" />
+    <EntitySet Name="HR_TravelType" EntityType="HRMS.HR_TravelType" />
+    <EntitySet Name="HR_VerificationAgency" EntityType="HRMS.HR_VerificationAgency" />
+    <EntitySet Name="HR_EmployeeRoster" EntityType="HRMS.HR_EmployeeRoster" />
+    <EntitySet Name="PR_PayrollMonth" EntityType="HRMS.PR_PayrollMonth" />
+    <EntitySet Name="PR_PayrollProcessPeriod" EntityType="HRMS.PR_PayrollProcessPeriod" />
+    <EntitySet Name="PR_PayrollTransaction" EntityType="HRMS.PR_PayrollTransaction" />
+    <EntitySet Name="HR_PMS_EmployeeGoals" EntityType="HRMS.HR_PMS_EmployeeGoals" />
+    <EntitySet Name="PR_PayrollMonthlyAdjustment" EntityType="HRMS.PR_PayrollMonthlyAdjustment" />
+    <EntitySet Name="PR_PayrollOtherEarningDeduction" EntityType="HRMS.PR_PayrollOtherEarningDeduction" />
+    <EntitySet Name="PR_PayHeadGLMapping" EntityType="HRMS.PR_PayHeadGLMapping" />
+    <EntitySet Name="PR_PayrollTdsSlab" EntityType="HRMS.PR_PayrollTdsSlab" />
+    <EntitySet Name="PR_PayrollTransactionFullYear" EntityType="HRMS.PR_PayrollTransactionFullYear" />
+  </EntityContainer>
+  <EntityType Name="HR_AdvanceType">
+    <Key>
+      <PropertyRef Name="AdvanceTypeId" />
+    </Key>
+    <Property Name="AdvanceTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdvanceTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_Applicant">
+    <Key>
+      <PropertyRef Name="ApplicantId" />
+    </Key>
+    <Property Name="ApplicantId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicantNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicationDate" Type="DateTime" Precision="0" />
+    <Property Name="JobOpeningId" Type="Int64" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+    <Property Name="ProjectNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FatherSpouseName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DOB" Type="DateTime" Precision="0" />
+    <Property Name="BloodGroup" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MaritalStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicantAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="PinCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ResumeSourceId" Type="Int32" />
+    <Property Name="PositionAppliedId" Type="Int32" />
+    <Property Name="TotalExperience" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ReleventExperience" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="NoticePeriod" Type="Int32" />
+    <Property Name="CurrentCTC" Type="Int32" />
+    <Property Name="ExpectedCTC" Type="Int32" />
+    <Property Name="PreferredLocation" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ResumeText" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="ApplicantStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicantStortlistStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HR_ApplicantEducation">
+    <Key>
+      <PropertyRef Name="ApplicantEducationId" />
+    </Key>
+    <Property Name="ApplicantEducationId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicantId" Type="Int64" />
+    <Property Name="EducationId" Type="Int32" />
+    <Property Name="RegularDistant" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BoardUniversityName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PercentageObtained" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployeeId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_ApplicantExtraActivity">
+    <Key>
+      <PropertyRef Name="ApplicantExtraId" />
+    </Key>
+    <Property Name="ApplicantExtraId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicantId" Type="Int64" />
+    <Property Name="Strength1" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Strength2" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Strength3" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Weakness1" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Weakness2" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Weakness3" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Hobbies" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HR_ApplicantPrevEmployer">
+    <Key>
+      <PropertyRef Name="ApplicantPrevEmployerId" />
+    </Key>
+    <Property Name="ApplicantPrevEmployerId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicantId" Type="Int64" />
+    <Property Name="CurrentEmployer" Type="Boolean" />
+    <Property Name="EmployerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="LastCTC" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ReasonOfLeaving" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="LastDesignationId" Type="Int32" />
+    <Property Name="EmploymentStatusId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_ApplicantProject">
+    <Key>
+      <PropertyRef Name="ApplicantProjectId" />
+    </Key>
+    <Property Name="ApplicantProjectId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicantId" Type="Int32" />
+    <Property Name="ProjectName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ClientName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RoleDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="TeamSize" Type="Int32" />
+    <Property Name="ProjectDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="TechnologiesUsed" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HR_ApplicantVerification">
+    <Key>
+      <PropertyRef Name="ApplicantVerificationId" />
+    </Key>
+    <Property Name="ApplicantVerificationId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicantId" Type="Int64" />
+    <Property Name="VerificationAgencyId" Type="Int32" />
+    <Property Name="VerificationDate" Type="DateTime" Precision="0" />
+    <Property Name="VerificationCharges" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VerificationStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HR_Appointment">
+    <Key>
+      <PropertyRef Name="AppointLetterId" />
+    </Key>
+    <Property Name="AppointLetterId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppointLetterNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AppointDate" Type="DateTime" Precision="0" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="InterviewId" Type="Int64" />
+    <Property Name="JoiningDate" Type="DateTime" Precision="0" />
+    <Property Name="AppointmentLetterDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="AppointStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_AppointmentCTC">
+    <Key>
+      <PropertyRef Name="AppointCTCId" />
+    </Key>
+    <Property Name="AppointCTCId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppointLetterId" Type="Int64" />
+    <Property Name="Basic" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="HRAAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Conveyance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Medical" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ChildEduAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LTA" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SpecialAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OtherAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="GrossSalary" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployeePF" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployeeESI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ProfessionalTax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="NetSalary" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployerPF" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployerESI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MonthlyCTC" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="YearlyCTC" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="HR_AssetType">
+    <Key>
+      <PropertyRef Name="AssetTypeId" />
+    </Key>
+    <Property Name="AssetTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AssetTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_Calender">
+    <Key>
+      <PropertyRef Name="CalenderId" />
+    </Key>
+    <Property Name="CalenderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CalenderName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CalenderYear" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_ClaimType">
+    <Key>
+      <PropertyRef Name="ClaimTypeId" />
+    </Key>
+    <Property Name="ClaimTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClaimTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimNature" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_ClearanceTemplate">
+    <Key>
+      <PropertyRef Name="ClearanceTemplateId" />
+    </Key>
+    <Property Name="ClearanceTemplateId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClearanceTemplateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="DepartmentId" Type="Int32" />
+    <Property Name="Designationid" Type="Int32" />
+    <Property Name="SeparationCategoryId" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_ClearanceTemplateDetail">
+    <Key>
+      <PropertyRef Name="ClearanceTemplateDetailId" />
+    </Key>
+    <Property Name="ClearanceTemplateDetailId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClearanceTemplateId" Type="Int64" />
+    <Property Name="SeparationClearListId" Type="Int32" />
+    <Property Name="ClearanceByUserId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_CTC">
+    <Key>
+      <PropertyRef Name="CTCId" />
+    </Key>
+    <Property Name="CTCId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="DesignationId" Type="Int32" />
+    <Property Name="Basic" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="HRAPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="HRAAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Conveyance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Medical" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ChildEduAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LTA" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SpecialAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OtherAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="GrossSalary" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployeePF" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployeeESI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ProfessionalTax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="NetSalary" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployerPF" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployerESI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MonthlyCTC" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="YearlyCTC" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_Education">
+    <Key>
+      <PropertyRef Name="EducationId" />
+    </Key>
+    <Property Name="EducationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EducationName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_EmployeeAdvanceApplication">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicationDate" Type="DateTime" Precision="0" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="AdvanceTypeId" Type="Int32" />
+    <Property Name="AdvanceAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdvanceStartDate" Type="DateTime" Precision="0" />
+    <Property Name="AdvanceEndDate" Type="DateTime" Precision="0" />
+    <Property Name="AdvanceInstallmentAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdvanceReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="AdvanceStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApproveBy" Type="Int32" />
+    <Property Name="ApproveDate" Type="DateTime" Precision="0" />
+    <Property Name="RejectBy" Type="Int32" />
+    <Property Name="RejectDate" Type="DateTime" Precision="0" />
+    <Property Name="RejectReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_EmployeeAssetApplication">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicationDate" Type="DateTime" Precision="0" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="AssetTypeId" Type="Int32" />
+    <Property Name="AssetReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="AssetStatus" Type="Boolean" />
+    <Property Name="ApplicationStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApproveBy" Type="Int32" />
+    <Property Name="ApproveDate" Type="DateTime" Precision="0" />
+    <Property Name="RejectBy" Type="Int32" />
+    <Property Name="RejectDate" Type="DateTime" Precision="0" />
+    <Property Name="RejectReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_EmployeeAttendance">
+    <Key>
+      <PropertyRef Name="EmployeeAttendanceId" />
+    </Key>
+    <Property Name="EmployeeAttendanceId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="AttendanceDate" Type="DateTime" Precision="0" />
+    <Property Name="PresentAbsent" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TrnDateTime" Type="DateTime" Precision="3" />
+    <Property Name="AttendanceStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttendanceApprovedBy" Type="Int32" />
+    <Property Name="AttendanceApproveDate" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="InOut" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_EmployeeClearanceProcess">
+    <Key>
+      <PropertyRef Name="EmployeeClearanceId" />
+    </Key>
+    <Property Name="EmployeeClearanceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeClaaranceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="ClearanceTemplateId" Type="Int64" />
+    <Property Name="ClearanceFinalStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="HR_EmployeeClearanceProcessDetail">
+    <Key>
+      <PropertyRef Name="EmployeeClearanceDetailId" />
+    </Key>
+    <Property Name="EmployeeClearanceDetailId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeClearanceId" Type="Int64" />
+    <Property Name="SeparationClearListId" Type="Int32" />
+    <Property Name="ClearanceByUserId" Type="Int32" />
+    <Property Name="ClearanceStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClearanceRemarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HR_EmployeeLeaveApplication">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicationDate" Type="DateTime" Precision="0" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="FromDate" Type="DateTime" Precision="3" />
+    <Property Name="ToDate" Type="DateTime" Precision="3" />
+    <Property Name="NoofDays" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="LeaveTypeId" Type="Int32" />
+    <Property Name="LeaveReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApproveBy" Type="Int32" />
+    <Property Name="ApproveDate" Type="DateTime" Precision="0" />
+    <Property Name="RejectBy" Type="Int32" />
+    <Property Name="RejectDate" Type="DateTime" Precision="0" />
+    <Property Name="RejectReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_EmployeeLeaveDetail">
+    <Key>
+      <PropertyRef Name="EmployeeLeaveId" />
+    </Key>
+    <Property Name="EmployeeLeaveId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="LeaveTypeId" Type="Int32" />
+    <Property Name="LeaveCount" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="LeaveDate" Type="DateTime" Precision="0" />
+    <Property Name="FinYearId" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_EmployeeLoanApplication">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicationDate" Type="DateTime" Precision="0" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="LoanTypeId" Type="Int32" />
+    <Property Name="LoanInterestRate" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="InterestCalcOn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LoanAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LoanStartDate" Type="DateTime" Precision="0" />
+    <Property Name="LoanEndDate" Type="DateTime" Precision="0" />
+    <Property Name="LoanInstallmentAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LoanReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="LoanStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApproveBy" Type="Int32" />
+    <Property Name="ApproveDate" Type="DateTime" Precision="0" />
+    <Property Name="RejectBy" Type="Int32" />
+    <Property Name="RejectDate" Type="DateTime" Precision="0" />
+    <Property Name="RejectReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HR_EmployeeTravelApplication">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicationDate" Type="DateTime" Precision="0" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="TravelTypeId" Type="Int32" />
+    <Property Name="TravelDestination" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TravelStartDate" Type="DateTime" Precision="0" />
+    <Property Name="TravelEndDate" Type="DateTime" Precision="0" />
+    <Property Name="TravelReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="TravelStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApproveBy" Type="Int32" />
+    <Property Name="ApproveDate" Type="DateTime" Precision="0" />
+    <Property Name="RejectBy" Type="Int32" />
+    <Property Name="RejectDate" Type="DateTime" Precision="0" />
+    <Property Name="RejectReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HR_ExitInterview">
+    <Key>
+      <PropertyRef Name="ExitInterviewId" />
+    </Key>
+    <Property Name="ExitInterviewId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ExitInterviewNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExitInterviewDate" Type="DateTime" Precision="0" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="ApplicationId" Type="Int64" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="InterviewDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="InterviewStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InterviewByUserId" Type="Int32" />
+    <Property Name="InterviewRemarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="HR_HolidayCalender">
+    <Key>
+      <PropertyRef Name="HolidayCalenderId" />
+    </Key>
+    <Property Name="HolidayCalenderId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CalenderId" Type="Int32" />
+    <Property Name="HolidayDate" Type="DateTime" Precision="0" />
+    <Property Name="HolidayTypeId" Type="Int32" />
+    <Property Name="HolidayDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_HolidayType">
+    <Key>
+      <PropertyRef Name="HolidayTypeId" />
+    </Key>
+    <Property Name="HolidayTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HolidayTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_Interview">
+    <Key>
+      <PropertyRef Name="InterviewId" />
+    </Key>
+    <Property Name="InterviewId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InterviewNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicantId" Type="Int64" />
+    <Property Name="AptitudeTestStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AptitudeTestRemarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="AptitudeTestTotalMarks" Type="Int32" />
+    <Property Name="AptitudeTestMarkObtained" Type="Int32" />
+    <Property Name="TechnicalRound1_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TechnicalRound1_Remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="TechnicalRound1_TotalMarks" Type="Int32" />
+    <Property Name="TechnicalRound1_MarkObtained" Type="Int32" />
+    <Property Name="TechnicalRound2_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TechnicalRound2_Remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="TechnicalRound2_TotalMarks" Type="Int32" />
+    <Property Name="TechnicalRound2_MarkObtained" Type="Int32" />
+    <Property Name="TechnicalRound3_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TechnicalRound3_Remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="TechnicalRound3_TotalMarks" Type="Int32" />
+    <Property Name="TechnicalRound3_MarkObtained" Type="Int32" />
+    <Property Name="MachineRound_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MachineRound_Remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="MachineRound_TotalMarks" Type="Int32" />
+    <Property Name="MachineRound_MarkObtained" Type="Int32" />
+    <Property Name="HRRound_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HRRound_Remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="HRRound_TotalMarks" Type="Int32" />
+    <Property Name="HRRound_MarkObtained" Type="Int32" />
+    <Property Name="FinalRemarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="InterviewFinalStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_InterviewType">
+    <Key>
+      <PropertyRef Name="InterviewTypeId" />
+    </Key>
+    <Property Name="InterviewTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InterviewTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_JobOpening">
+    <Key>
+      <PropertyRef Name="JobOpeningId" />
+    </Key>
+    <Property Name="JobOpeningId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobOpeningNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="JobOpeningDate" Type="DateTime" Precision="0" />
+    <Property Name="JobTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="JobPortalRefNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NoOfOpening" Type="Int32" />
+    <Property Name="MinExp" Type="Int32" />
+    <Property Name="MaxExp" Type="Int32" />
+    <Property Name="MinSalary" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MaxSalary" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="KeySkills" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="JobDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="JobStartDate" Type="DateTime" Precision="0" />
+    <Property Name="JobExpiryDate" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="JobStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RequisitionId" Type="Int32" />
+    <Property Name="EducationId" Type="Int32" />
+    <Property Name="OtherQualification" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CurrencyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_EmployeeClaimApplication">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicationDate" Type="DateTime" Precision="0" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="ClaimTypeId" Type="Int32" />
+    <Property Name="ClaimAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ClaimReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApproveBy" Type="Int32" />
+    <Property Name="ApproveDate" Type="DateTime" Precision="0" />
+    <Property Name="RejectBy" Type="Int32" />
+    <Property Name="RejectDate" Type="DateTime" Precision="0" />
+    <Property Name="RejectReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_Language">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="LanguageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_LeaveType">
+    <Key>
+      <PropertyRef Name="LeaveTypeId" />
+    </Key>
+    <Property Name="LeaveTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeaveTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveTypeCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LeavePeriod" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="PayPeriod" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="WorkPeriod" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_LoanType">
+    <Key>
+      <PropertyRef Name="LoanTypeId" />
+    </Key>
+    <Property Name="LoanTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LoanTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LoanInterestRate" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="InterestCalcOn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_PMS_AppraisalTemplate">
+    <Key>
+      <PropertyRef Name="TemplateId" />
+    </Key>
+    <Property Name="TemplateId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TemplateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="DepartmentId" Type="Int32" />
+    <Property Name="DesignationId" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_PMS_AppraisalTemplateGoal">
+    <Key>
+      <PropertyRef Name="TemplateGoalId" />
+    </Key>
+    <Property Name="TemplateGoalId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TemplateId" Type="Int32" />
+    <Property Name="GoalId" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_PMS_EmployeeAppraisalReview">
+    <Key>
+      <PropertyRef Name="PMSReviewId" />
+    </Key>
+    <Property Name="PMSReviewId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PerformanceCycleId" Type="Int32" />
+    <Property Name="FinYearId" Type="Int32" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="EmpAppraisalTemplateMappingId" Type="Int64" />
+    <Property Name="PMSFormStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PMSFormSubmitDate" Type="DateTime" Precision="0" />
+    <Property Name="PMSReviewStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PMSReviewDate" Type="DateTime" Precision="0" />
+    <Property Name="PMSReviewRemarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="PMSFinalStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PMSReviewBy" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_PMS_EmployeeAppraisalTemplateMapping">
+    <Key>
+      <PropertyRef Name="EmpAppraisalTemplateMappingId" />
+    </Key>
+    <Property Name="EmpAppraisalTemplateMappingId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="TemplateId" Type="Int64" />
+    <Property Name="PerformanceCycleId" Type="Int32" />
+    <Property Name="FinYearId" Type="Int32" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_PMS_Goal">
+    <Key>
+      <PropertyRef Name="GoalId" />
+    </Key>
+    <Property Name="GoalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GoalName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GoalDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="SectionId" Type="Int32" />
+    <Property Name="GoalCategoryId" Type="Int32" />
+    <Property Name="PerformanceCycleId" Type="Int32" />
+    <Property Name="FinYearId" Type="Int32" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="DueDate" Type="DateTime" Precision="0" />
+    <Property Name="Weight" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_PMS_GoalCategory">
+    <Key>
+      <PropertyRef Name="GoalCategoryId" />
+    </Key>
+    <Property Name="GoalCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GoalCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="Weight" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_PMS_PerformanceCycle">
+    <Key>
+      <PropertyRef Name="PerformanceCycleId" />
+    </Key>
+    <Property Name="PerformanceCycleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PerformanceCycleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_PMS_Section">
+    <Key>
+      <PropertyRef Name="SectionId" />
+    </Key>
+    <Property Name="SectionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SectionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_PositionLevel">
+    <Key>
+      <PropertyRef Name="PositionLevelId" />
+    </Key>
+    <Property Name="PositionLevelId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PositionLevelName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PositionLevelCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_PositionType">
+    <Key>
+      <PropertyRef Name="PositionTypeId" />
+    </Key>
+    <Property Name="PositionTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PositionTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PositionTypeCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_Religion">
+    <Key>
+      <PropertyRef Name="ReligionId" />
+    </Key>
+    <Property Name="ReligionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReligionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_ResourceRequisition">
+    <Key>
+      <PropertyRef Name="RequisitionId" />
+    </Key>
+    <Property Name="RequisitionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RequisitionNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="NumberOfResources" Type="Int32" />
+    <Property Name="PositionLevelId" Type="Int32" />
+    <Property Name="PriorityLevel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PositionTypeId" Type="Int32" />
+    <Property Name="DepartmentId" Type="Int32" />
+    <Property Name="DesignationId" Type="Int32" />
+    <Property Name="EducationId" Type="Int32" />
+    <Property Name="JobDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="OtherQualification" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="MinExp" Type="Int32" />
+    <Property Name="MaxExp" Type="Int32" />
+    <Property Name="MinSalary" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MaxSalary" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CurrencyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="JustificationNotes" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="InterviewStartDate" Type="DateTime" Precision="0" />
+    <Property Name="HireByDate" Type="DateTime" Precision="0" />
+    <Property Name="ContractPeriod" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="RequisitionStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovalStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="Int32" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="0" />
+    <Property Name="RejectionStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RejectedBy" Type="Int32" />
+    <Property Name="RejectedDate" Type="DateTime" Precision="0" />
+    <Property Name="RejectedReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_ResourceRequisitionInterviewStage">
+    <Key>
+      <PropertyRef Name="RequisitionInterviewStagesId" />
+    </Key>
+    <Property Name="RequisitionInterviewStagesId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RequisitionId" Type="Int32" />
+    <Property Name="InterviewTypeId" Type="Int32" />
+    <Property Name="InterviewDescription" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="InterviewAssignToUserId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_ResourceRequisitionSkill">
+    <Key>
+      <PropertyRef Name="RequisitionSkillId" />
+    </Key>
+    <Property Name="RequisitionSkillId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RequisitionId" Type="Int32" />
+    <Property Name="SkillId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_ResumeSource">
+    <Key>
+      <PropertyRef Name="ResumeSourceId" />
+    </Key>
+    <Property Name="ResumeSourceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ResumeSourceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_Roaster">
+    <Key>
+      <PropertyRef Name="RoasterId" />
+    </Key>
+    <Property Name="RoasterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoasterName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RoasterDesc" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="RoasterStartDate" Type="DateTime" Precision="0" />
+    <Property Name="RoasterType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentId" Type="Int32" />
+    <Property Name="NoOfWeeks" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_RoasterWeek">
+    <Key>
+      <PropertyRef Name="RoasterWeekId" />
+    </Key>
+    <Property Name="RoasterWeekId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoasterId" Type="Int32" />
+    <Property Name="WeekNo" Type="Int32" />
+    <Property Name="Mon_ShiftId" Type="Int32" />
+    <Property Name="Tue_ShiftId" Type="Int32" />
+    <Property Name="Wed_ShiftId" Type="Int32" />
+    <Property Name="Thu_ShiftId" Type="Int32" />
+    <Property Name="Fri_ShiftId" Type="Int32" />
+    <Property Name="Sat_ShiftId" Type="Int32" />
+    <Property Name="Sun_ShiftId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_SeparationApplication">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicationDate" Type="DateTime" Precision="0" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="SeparationCategoryId" Type="Int32" />
+    <Property Name="Reason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicationStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApproveBy" Type="Int32" />
+    <Property Name="ApproveDate" Type="DateTime" Precision="0" />
+    <Property Name="RejectBy" Type="Int32" />
+    <Property Name="RejectDate" Type="DateTime" Precision="0" />
+    <Property Name="RejectReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_SeparationCategory">
+    <Key>
+      <PropertyRef Name="SeparationCategoryId" />
+    </Key>
+    <Property Name="SeparationCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SeparationCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_SeparationClearList">
+    <Key>
+      <PropertyRef Name="SeparationClearListId" />
+    </Key>
+    <Property Name="SeparationClearListId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SeparationClearListName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SeparationClearListDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_SeparationOrder">
+    <Key>
+      <PropertyRef Name="SeparationOrderId" />
+    </Key>
+    <Property Name="SeparationOrderId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SeparationOrderNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SeparationOrderDate" Type="DateTime" Precision="0" />
+    <Property Name="ExitInterviewId" Type="Int64" />
+    <Property Name="EmployeeClearanceId" Type="Int64" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="ExperienceLetter" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="SepartionRemarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="SeparationStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="HR_Shift">
+    <Key>
+      <PropertyRef Name="ShiftId" />
+    </Key>
+    <Property Name="ShiftId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShiftName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ShiftDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="ShiftTypeId" Type="Int32" />
+    <Property Name="NormalPaidHours" Type="Int32" />
+    <Property Name="Allowance" Type="Int32" />
+    <Property Name="ShiftStartTime" Type="Time" Precision="7" />
+    <Property Name="ShiftEndTime" Type="Time" Precision="7" />
+    <Property Name="LateArrivalLimit" Type="Time" Precision="7" />
+    <Property Name="EarlyGoLimit" Type="Time" Precision="7" />
+    <Property Name="OvertimeStartTime" Type="Time" Precision="7" />
+    <Property Name="ValidTill" Type="DateTime" Precision="0" />
+    <Property Name="FullDayWorkHour" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="HalfDayWorkHour" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HR_ShiftType">
+    <Key>
+      <PropertyRef Name="ShiftTypeId" />
+    </Key>
+    <Property Name="ShiftTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShiftTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_Skills">
+    <Key>
+      <PropertyRef Name="SkillId" />
+    </Key>
+    <Property Name="SkillId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SkillName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SkillCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_TravelType">
+    <Key>
+      <PropertyRef Name="TravelTypeId" />
+    </Key>
+    <Property Name="TravelTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TravelTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_VerificationAgency">
+    <Key>
+      <PropertyRef Name="VerificationAgencyId" />
+    </Key>
+    <Property Name="VerificationAgencyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VerificationAgencyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HR_EmployeeRoster">
+    <Key>
+      <PropertyRef Name="EmployeeRoasterId" />
+    </Key>
+    <Property Name="EmployeeRoasterId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <Property Name="RoasterId" Type="Int32" />
+    <Property Name="DepartmentId" Type="Int32" />
+    <Property Name="WeekNo" Type="Int32" />
+    <Property Name="RosterDate" Type="DateTime" Precision="0" />
+    <Property Name="ShiftId" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PR_PayrollMonth">
+    <Key>
+      <PropertyRef Name="MonthId" />
+    </Key>
+    <Property Name="MonthId" Type="Int32" Nullable="false" />
+    <Property Name="MonthName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MonthShortName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MonthNo" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PR_PayrollProcessPeriod">
+    <Key>
+      <PropertyRef Name="PayrollProcessingPeriodId" />
+    </Key>
+    <Property Name="PayrollProcessingPeriodId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PayrollProcessingStartDate" Type="DateTime" Precision="0" />
+    <Property Name="PayrollProcessingEndDate" Type="DateTime" Precision="0" />
+    <Property Name="MonthId" Type="Int32" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="FinYearId" Type="Int32" />
+    <Property Name="PayrollProcessStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayrollProcessDate" Type="DateTime" Precision="0" />
+    <Property Name="PayrollLocked" Type="Boolean" />
+    <Property Name="PayrollLockDate" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PR_PayrollTransaction">
+    <Key>
+      <PropertyRef Name="PayrollTrnId" />
+    </Key>
+    <Property Name="PayrollTrnId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PayrollTrnDate" Type="DateTime" Precision="0" />
+    <Property Name="PayrollProcessingPeriodId" Type="Int32" />
+    <Property Name="PayrollProcessingStartDate" Type="DateTime" Precision="0" />
+    <Property Name="PayrollProcessingEndDate" Type="DateTime" Precision="0" />
+    <Property Name="MonthId" Type="Int32" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+    <Property Name="DepartmentId" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="OrgBasicPay" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgHRA" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgConveyanceAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgSpecialAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgOtherAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgMedicalAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgChildEduAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgLTA" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgEmployeePF" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgEmployeeESI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgOtherDeduction" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgEmployerPF" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgEmployerESI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgProfessionalTax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EarnBasicPay" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EarnHRA" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EarnConveyanceAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EarnSpecialAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EarnOtherAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EarnMedicalAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EarnChildEduAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EarnLTA" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DedEmployeePF" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DedEmployeeESI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DedOtherDeduction" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DedEmployerPF" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DedEmployerESI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DedProfessionalTax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjBasicPay" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjConveyanceAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjSpecialAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjOtherAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjMedicalAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjChildEduAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjLTA" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjEmployeePF" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjEmployeeESI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjOtherDeduction" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjProfessionalTax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjAdhocAllowance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjAnnualBonus" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjExgratia" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjLeaveEncashment" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjSalaryAdvancePayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjNoticePayPayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjSalaryAdvanceRecv" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjNoticePayRecv" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjLoanPayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjLoanRecv" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjIncomeTax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IncomeTax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AnnualBonus" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Exgretia" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Incentive" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LeaveEncashment" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="NoticePayPayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VariablePay" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="WorkingDays" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="PresentDays" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="PaidDays" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="OTRate" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OTPay" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OTHours" Type="Int32" />
+    <Property Name="OTMinutes" Type="Int32" />
+    <Property Name="OverTimeAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OtherDeduction" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OtherAllowance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LoanPayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LoanRecv" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdvancePayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdvanceRecv" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SalaryPayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TotalCTC" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="HRAPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SpecialAllowPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LTAPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OtherAllowPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployeePFPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployeeESIPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployerPFPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployerESIPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployerEPSPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgEmployerEPS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EarnEmployerEPS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ReasonCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HR_PMS_EmployeeGoals">
+    <Key>
+      <PropertyRef Name="EmployeeGoalId" />
+    </Key>
+    <Property Name="EmployeeGoalId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpAppraisalTemplateMappingId" Type="Int64" />
+    <Property Name="GoalId" Type="Int32" />
+    <Property Name="GoalName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GoalDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="SectionId" Type="Int32" />
+    <Property Name="GoalCategoryId" Type="Int32" />
+    <Property Name="EvalutionCriteria" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="DueDate" Type="DateTime" Precision="0" />
+    <Property Name="Weight" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SelfScore" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SelfRemarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="AppraiserScore" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="AppraiserRemarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ReviewScore" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ReviewRemarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="FixedDyanmic" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PR_PayrollMonthlyAdjustment">
+    <Key>
+      <PropertyRef Name="PayrollAdjustmentId" />
+    </Key>
+    <Property Name="PayrollAdjustmentId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PayrollProcessingPeriodId" Type="Int32" />
+    <Property Name="PayrollProcessingStartDate" Type="DateTime" Precision="0" />
+    <Property Name="PayrollProcessingEndDate" Type="DateTime" Precision="0" />
+    <Property Name="MonthId" Type="Int32" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+    <Property Name="DepartmentId" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="BasicPay" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ConveyanceAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SpecialAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OtherAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MedicalAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ChildEduAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LTA" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployeePF" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployeeESI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OtherDeduction" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ProfessionalTax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdhocAllowance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AnnualBonus" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Exgratia" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LeaveEncashment" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SalaryAdvancePayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="NoticePayPayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SalaryAdvanceRecv" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="NoticePayRecv" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LoanPayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LoanRecv" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IncomeTax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PR_PayrollOtherEarningDeduction">
+    <Key>
+      <PropertyRef Name="MonthlyInputId" />
+    </Key>
+    <Property Name="MonthlyInputId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PayrollProcessingPeriodId" Type="Int32" />
+    <Property Name="PayrollProcessingStartDate" Type="DateTime" Precision="0" />
+    <Property Name="PayrollProcessingEndDate" Type="DateTime" Precision="0" />
+    <Property Name="MonthId" Type="Int32" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+    <Property Name="DepartmentId" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="TDSApplicable" Type="Boolean" />
+    <Property Name="IncomeTax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AnnualBonus" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Exgretia" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Incentive" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LeaveEncashment" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="NoticePayPayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OverTimeAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VariablePay" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OtherDeduction" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OtherAllowance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LoanPayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LoanRecv" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdvancePayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdvanceRecv" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="PR_PayHeadGLMapping">
+    <Key>
+      <PropertyRef Name="PayHeadMappingId" />
+    </Key>
+    <Property Name="PayHeadMappingId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PayHeadName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GLId" Type="Int32" />
+    <Property Name="GLCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SLId" Type="Int64" />
+    <Property Name="SLCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PR_PayrollTdsSlab">
+    <Key>
+      <PropertyRef Name="TdsSlaBid" />
+    </Key>
+    <Property Name="TdsSlaBid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Companyid" Type="Int32" />
+    <Property Name="CompanyBranchid" Type="Int32" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Precision="0" />
+    <Property Name="FromAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ToAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Category" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="TDSPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CessPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SurcharegePerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SurchargePerc2" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SurchargePerc3" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="YearlyDiscount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MonthlyDiscount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="PR_PayrollTransactionFullYear">
+    <Key>
+      <PropertyRef Name="PayrollTrnId" />
+    </Key>
+    <Property Name="PayrollTrnId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PayrollTrnDate" Type="DateTime" Precision="0" />
+    <Property Name="PayrollProcessingPeriodId" Type="Int32" />
+    <Property Name="PayrollProcessingStartDate" Type="DateTime" Precision="0" />
+    <Property Name="PayrollProcessingEndDate" Type="DateTime" Precision="0" />
+    <Property Name="MonthId" Type="Int32" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+    <Property Name="DepartmentId" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="OrgBasicPay" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgHRA" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgConveyanceAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgSpecialAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgOtherAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgMedicalAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgChildEduAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgLTA" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgEmployeePF" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgEmployeeESI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgOtherDeduction" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgEmployerPF" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgEmployerESI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgProfessionalTax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EarnBasicPay" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EarnHRA" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EarnConveyanceAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EarnSpecialAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EarnOtherAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EarnMedicalAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EarnChildEduAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EarnLTA" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DedEmployeePF" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DedEmployeeESI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DedOtherDeduction" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DedEmployerPF" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DedEmployerESI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DedProfessionalTax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjBasicPay" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjConveyanceAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjSpecialAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjOtherAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjMedicalAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjChildEduAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjLTA" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjEmployeePF" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjEmployeeESI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjOtherDeduction" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjProfessionalTax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjAdhocAllowance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjAnnualBonus" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjExgratia" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjLeaveEncashment" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjSalaryAdvancePayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjNoticePayPayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjSalaryAdvanceRecv" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjNoticePayRecv" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjLoanPayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjLoanRecv" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdjIncomeTax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IncomeTax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AnnualBonus" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Exgretia" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Incentive" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LeaveEncashment" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="NoticePayPayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VariablePay" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="WorkingDays" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="PresentDays" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="PaidDays" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="OTRate" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OTPay" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OTHours" Type="Int32" />
+    <Property Name="OTMinutes" Type="Int32" />
+    <Property Name="OverTimeAllow" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OtherDeduction" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OtherAllowance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LoanPayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LoanRecv" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdvancePayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdvanceRecv" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SalaryPayable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TotalCTC" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="HRAPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SpecialAllowPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LTAPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OtherAllowPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployeePFPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployeeESIPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployerPFPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployerESIPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EmployerEPSPerc" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrgEmployerEPS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EarnEmployerEPS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ReasonCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SalaryJVPrepared" Type="Boolean" />
+    <Property Name="SalaryJVId" Type="Int64" />
+    <Property Name="SalaryJVNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SalaryJVDate" Type="DateTime" Precision="0" />
+    <Property Name="SalaryJVCreatedBy" Type="Int32" />
+    <Property Name="SalaryJVCreatedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+</Schema>

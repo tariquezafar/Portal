@@ -1,0 +1,59 @@
+﻿@model List<Portal.Core.ViewModel.VendorProductViewModel>
+   
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblVendorProductList">
+            <thead>
+                <tr>
+                    <th style="text-align:center">Product Name</th>
+                    <th style="text-align:center">Product Code</th>
+                    <th style="text-align:center">Product Short Desc</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        
+                        <td>@item.ProductName
+                        <input type="hidden" id="hdnMappingId" value="@item.MappingId" />
+                        <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                            <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                        </td>
+                        <td>@item.ProductCode
+                        <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                        </td>
+                        <td>@item.ProductShortDesc
+                            <input type="hidden" id="hdnProductShortDesc" value="@item.ProductShortDesc" />
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" onclick="EditProductRow(this);" href="#"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-trash"  onclick="RemoveProductRow(this)" href="#"></a>
+                        </td>
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblVendorProductList">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Product Short Desc</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

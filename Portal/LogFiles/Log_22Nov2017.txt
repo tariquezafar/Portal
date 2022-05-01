@@ -1,0 +1,88 @@
+10:39:32 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetJobWorkDetail
+Error Line No : 20023
+Exception Type : System.Data.SqlClient.SqlException
+Details: A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:39:32 AM
+Source : Portal.Core.JobWorkBL
+Method Name : GetJobWorkDataTable
+Error Line No : 311
+Exception Type : System.Data.SqlClient.SqlException
+Details: A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:56 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobWork
+Error Line No : 20262
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:57 PM
+Source : Portal.Core.JobWorkBL
+Method Name : AddEditJobWork
+Error Line No : 78
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:57 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : AddEditJobWork
+Error Line No : 69
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:12 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobWork
+Error Line No : 20262
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:12 PM
+Source : Portal.Core.JobWorkBL
+Method Name : AddEditJobWork
+Error Line No : 78
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:42:10 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobWork
+Error Line No : 20262
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:25:51 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobWork
+Error Line No : 20262
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:25:51 PM
+Source : Portal.Core.JobWorkBL
+Method Name : AddEditJobWork
+Error Line No : 78
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:25:51 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : AddEditJobWork
+Error Line No : 69
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,50 @@
+﻿@model List<Portal.Core.ViewModel.QuatationCountViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table" id="tblBookBalanceList" style="margin-top:10px">
+            <thead style="border-top-left-radius:15px;">
+                <tr style="border:1px solid #ccc;">
+                    <th style="background:#FC8213; color:#fff;width:100%;" colspan="3">Quotation Transaction Summary</th> 
+                </tr>
+                <tr style="border:1px solid #fff;     background-color: #fff;">
+                    <th>Particulars</th>
+                    <th>Quotation Created</th>
+                </tr>
+            </thead>
+            <tbody style="border:1px solid #ccc;">
+                @foreach (var item in Model)
+                {
+                <tr class="success">
+                    <td>@item.Count_Head</td>
+                    <td>@item.TotalCount</td>
+                </tr>
+                }
+            </tbody>           
+        </table>
+    </div>
+
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Quotation Count not updated</h3>
+}
+ <script>
+     var barChartData =
+         {
+             labels: [@Html.Raw(ViewBag.QuatationList)],
+             datasets: [{
+                 label: 'Quotation Transaction Summary',
+                 backgroundColor: [
+                     "#f990a7",
+                     "#aad2ed",
+                     "#9966FF",
+                     "#99e5e5",
+                     "#f7bd83",
+                 ],
+                 borderWidth: 2,
+                 data: [@ViewBag.CountList]
+             }]
+         };
+
+</script> 

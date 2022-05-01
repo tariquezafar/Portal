@@ -1,0 +1,96 @@
+18:04:33 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.Int64' of the member 'VendorId' in the conceptual side type 'ERPModel.JobWork' does not match with the type 'System.Int32' of the member 'VendorId' on the object side type 'Portal.DAL.JobWork'.
+--------------------------------------------------------------------------------------------------------------------------------
+
+18:04:33 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.Int64' of the member 'VendorId' in the conceptual side type 'ERPModel.JobWork' does not match with the type 'System.Int32' of the member 'VendorId' on the object side type 'Portal.DAL.JobWork'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:04:33 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.Int64' of the member 'VendorId' in the conceptual side type 'ERPModel.JobWork' does not match with the type 'System.Int32' of the member 'VendorId' on the object side type 'Portal.DAL.JobWork'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:04:38 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.Int64' of the member 'VendorId' in the conceptual side type 'ERPModel.JobWork' does not match with the type 'System.Int32' of the member 'VendorId' on the object side type 'Portal.DAL.JobWork'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:04:38 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.Int64' of the member 'VendorId' in the conceptual side type 'ERPModel.JobWork' does not match with the type 'System.Int32' of the member 'VendorId' on the object side type 'Portal.DAL.JobWork'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:04:39 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.Int64' of the member 'VendorId' in the conceptual side type 'ERPModel.JobWork' does not match with the type 'System.Int32' of the member 'VendorId' on the object side type 'Portal.DAL.JobWork'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:04:45 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.Int64' of the member 'VendorId' in the conceptual side type 'ERPModel.JobWork' does not match with the type 'System.Int32' of the member 'VendorId' on the object side type 'Portal.DAL.JobWork'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:04:45 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.Int64' of the member 'VendorId' in the conceptual side type 'ERPModel.JobWork' does not match with the type 'System.Int32' of the member 'VendorId' on the object side type 'Portal.DAL.JobWork'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:04:45 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.Int64' of the member 'VendorId' in the conceptual side type 'ERPModel.JobWork' does not match with the type 'System.Int32' of the member 'VendorId' on the object side type 'Portal.DAL.JobWork'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:06:10 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.Int64' of the member 'VendorId' in the conceptual side type 'ERPModel.JobWork' does not match with the type 'System.Int32' of the member 'VendorId' on the object side type 'Portal.DAL.JobWork'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:06:10 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.Int64' of the member 'VendorId' in the conceptual side type 'ERPModel.JobWork' does not match with the type 'System.Int32' of the member 'VendorId' on the object side type 'Portal.DAL.JobWork'.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:07:15 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.Int64' of the member 'VendorId' in the conceptual side type 'ERPModel.JobWork' does not match with the type 'System.Int32' of the member 'VendorId' on the object side type 'Portal.DAL.JobWork'.
+---------------------------------------------------------------------------------------------------------------------------
+

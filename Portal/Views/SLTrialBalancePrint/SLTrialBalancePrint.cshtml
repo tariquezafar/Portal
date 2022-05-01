@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "SL Trial Balance Print";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AccountDashboard">Account </a> >> SL Trial Balance Print </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmBankBookPrint" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch</label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="9" class="form-control"></select>
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="ddlSLType" class="col-sm-4 control-label">Sl Type</label>
+                    <div class="col-sm-8">
+                        <select id="ddlSLType" onchange="EnableDisableGLSL(this)" class="form-control" name="ddlSLType" tabindex="1"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtGLHead" class="col-sm-4 control-label">GL Head</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtGLHead" name="txtGLHead" tabindex="2" placeholder="Enter GL" value="All" type="text" maxlength="100" />
+                        <input id="hdnGLId" type="hidden" value="0" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtAsOnDate" class="col-sm-4 control-label">As On Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtAsOnDate" name="txtAsOnDate" tabindex="3" value="@ViewData["fromDate"]" type="text" maxlength="50" />
+                        <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["fromDate"]" type="hidden" />
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col-md-12 ">
+              
+                <div class="form-group col-md-6">
+                    <div class="col-sm-8 ">
+                        <input id="hdnToDate" name="hdnToDate" value="@ViewData["toDate"]" type="hidden" />
+                    </div>
+                </div>
+            </div>
+
+           
+
+            <div class="row col-sm-12 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <a class="btn btn-success" tabindex="3" onclick="SearchBankVoucher();" href="#" id="lnkExport">Generate Trial Balance</a> &nbsp;&nbsp;
+                        <input class="btn btn-success" tabindex="8" type="button" id="btnReset" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div id="divList">
+
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="printModel" role="dialog">
+            <div class="modal-dialog  modal-md">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" tabindex="4" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Print Trial Balance</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="ddlPrintOption" class="col-sm-4 control-label">Print Option</label>
+                            <div class="col-sm-8">
+                                <a class="btn btn-success" tabindex="5" target="_blank" href="#" id="btnPrintExcel">Print Excel</a>&nbsp;
+                                <a class="btn btn-success" tabindex="6" target="_blank" href="#" id="btnPrintPDF">Print PDF</a> 
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" tabindex="7" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/SLTrialBalancePrint/SLTrialBalancePrint.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>

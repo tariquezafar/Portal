@@ -1,0 +1,2386 @@
+10:07:24 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:07:24 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:21:21 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:21:21 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:21:43 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14741
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:21:43 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:21:43 AM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:21:46 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26701
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:21:46 AM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:21:46 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:03 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:03 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:22:04 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:26:29 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:26:29 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:26:29 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:26:31 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:26:31 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:26:31 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:27:20 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:27:20 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:27:20 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:28:45 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:28:45 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:28:45 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:28:57 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:28:57 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:28:57 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:29:29 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:29:29 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:29:29 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:30:13 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:30:13 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:30:13 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:30:22 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:30:22 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:30:22 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:30:58 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:30:58 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:30:58 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:31:25 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:31:25 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:31:25 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:31:29 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:31:29 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:31:29 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:32:24 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:32:24 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:32:24 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:32:28 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:32:28 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:32:28 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:35:05 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:35:05 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:35:05 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:15 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:15 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:38:15 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:39:25 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:39:25 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:39:25 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:41:16 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:41:16 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:41:16 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:42:51 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:42:51 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:42:51 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:45:43 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:45:43 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:45:43 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:50:00 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:50:00 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:50:00 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:50:04 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:50:04 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:50:04 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:50:16 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:50:16 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:50:16 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:54:19 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:54:20 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:54:20 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:55:02 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:55:02 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:55:02 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:44 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:44 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:57:44 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:59:11 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:59:11 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:59:11 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:00:17 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:00:17 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:00:17 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:00:48 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:00:48 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:00:48 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:08:04 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:08:04 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:08:04 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:08:07 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:08:07 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:08:07 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:08:38 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:08:38 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:08:38 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:22 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:22 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:22 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:30 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:30 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:10:30 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:11:00 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:11:00 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:11:00 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:13:40 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:13:40 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:13:40 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:15:18 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:15:18 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:15:18 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:16:59 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:16:59 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:16:59 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:26:11 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:26:11 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:26:12 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:26:23 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:26:23 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:26:23 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:28:03 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20651
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:28:03 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 314
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:28:03 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:02 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:02 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:06 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:06 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:16 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14741
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:16 AM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:16 AM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:17 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:17 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:17 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26703
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:17 AM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:17 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:32 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:32 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:47:32 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:49:58 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:49:58 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:49:58 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:51:09 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:51:09 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:51:09 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:53:06 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:53:06 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:53:06 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:55:53 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:55:53 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:55:53 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:31 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:31 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:57:31 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:58:28 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:58:28 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:58:28 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:59:59 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:59:59 AM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:59:59 AM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:01:18 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:01:18 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:01:18 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:01:21 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:01:21 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:01:21 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:06:49 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:06:49 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:06:52 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:06:52 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:06:58 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14741
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:06:58 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:06:58 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:06:58 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26703
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:06:58 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:06:58 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:07:18 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:07:18 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:07:18 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:10:21 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:10:21 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:10:21 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:11:52 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14741
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:11:52 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:11:52 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:11:52 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26703
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:11:52 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:11:52 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:11:53 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:11:53 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:12:03 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:12:03 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:12:03 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:14:00 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:14:01 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:14:01 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:14:16 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:14:16 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:14:16 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:15:37 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:15:37 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:15:37 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:16:38 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:16:38 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:16:38 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:19:42 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:19:42 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:19:42 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:22:55 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:22:55 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:22:55 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:24:56 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:24:56 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:24:56 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:25:17 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:25:17 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:25:17 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:57 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:57 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:57 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:59 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:59 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:27:59 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:14 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:14 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:28:14 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:29:51 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:29:51 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:29:51 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:30:56 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:30:56 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:30:56 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:31:28 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:31:28 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:31:28 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:32:03 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:32:03 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:32:03 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:49 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:49 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:49 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14741
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:50 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:50 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:50 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26703
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:50 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:36:50 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:37:02 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:37:02 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:37:02 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:37:37 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:37:37 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:37:37 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:39:42 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 20653
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:39:42 PM
+Source : Portal.Core.PaintProcessBL
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 315
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:39:42 PM
+Source : Portal.Controllers.PaintProcessController
+Method Name : GetPaintProcessProducedQuantityAgainstWorkOrder
+Error Line No : 261
+Exception Type : System.FormatException
+Details: Input string was not in a correct format.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:45:43 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:45:43 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:45:49 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14741
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:45:49 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:45:49 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:45:53 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetDashboard_WOPending
+Error Line No : 26703
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:45:53 PM
+Source : Portal.Core.ProductionDashboardBL
+Method Name : GetWOPendingList
+Error Line No : 126
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:45:53 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetWOPendingCountList
+Error Line No : 1497
+Exception Type : System.Data.SqlClient.SqlException
+Details: An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+An insufficient number of arguments were supplied for the procedure or function dbo.udf_GetTotalFinishedQuantity.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:10:43 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:10:43 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:26:49 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:26:49 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:27:06 PM
+Source : Portal.Controllers.TBDrillDownController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: e:\VINOD\HTSNewWorkArea\Portal\Portal\Views\TBDrillDown\MainGroupWiseTBDrillDown.cshtml(112): error CS1061: 'Portal.Core.ViewModel.TBDrillDown_MainGroupViewModel' does not contain a definition for 'GLSubGroupId' and no extension method 'GLSubGroupId' accepting a first argument of type 'Portal.Core.ViewModel.TBDrillDown_MainGroupViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+14:30:07 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:30:07 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:43:35 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:43:35 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:46:22 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:46:22 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:03:26 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:03:26 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:05:14 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:05:14 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:38:06 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:38:06 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:38:09 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 14741
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:38:09 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetTotalmostConsumeProductMTDCount
+Error Line No : 540
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:38:09 PM
+Source : Portal.Controllers.DashboardController
+Method Name : StoreDashboard
+Error Line No : 969
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_dashboardMostConsumeProductMTDCount' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:38:20 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:38:20 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:50:48 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:50:48 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

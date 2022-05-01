@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "List City";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">Control Panel</a> >>  List Leave Type Name</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditLeaveType" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="ddlLeaveTypeCode" class="col-sm-4 control-label">Leave type Code</label>
+                    <div class="col-sm-8">
+                        <select id="ddlLeaveTypeCode" name="ddlLeaveTypeCode" onchange="BindLeaveTypeCodeList(0)" tabindex="1" class="form-control"></select>
+                        <input id="hdnMappingId" type="hidden" value="@ViewData["mappingId"]" />
+                        <input id="hdnCompanyId" type="hidden" value="@ViewData["CompanyId"]" />
+                        <input id="hdnCreatedBy" type="hidden" value="@ViewData["CreatedBy"]" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="ddlStatus" class="col-sm-4 control-label">Status</label>
+                    <div class="col-sm-8">
+                        <select name="ddlStatus" class="form-control" tabindex="3" id="ddlStatus">
+                            <option value="">All</option>
+                            <option value="1">Active</option>
+                            <option value="0">InActive</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlState" class="col-sm-4 control-label">State</label>
+                    <div class="col-sm-8">
+                        <select id="ddlState" name="ddlState" tabindex="3" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtTaxName" class="col-sm-4 control-label">Tax</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtTaxName" name="txtTaxName" tabindex="4" placeholder="Enter Tax Name" type="text" maxlength="100" />
+                        <input id="hdnTaxId" type="hidden" value="0" />
+                        <input id="hdnPITaxDetailId" type="hidden" value="0" />
+                    </div>
+                </div>
+
+              
+            </div>
+
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Search" alt="Save" id="btnSearch"  tabindex="5" onclick="SearchProductTaxMapping()" type="button" border="0">&nbsp;&nbsp;
+                        <input class="btn btn-success" type="button" id="btnReset" tabindex="6" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;
+                        <a class="btn btn-success" id="btnList" tabindex="7" href="@Url.Content("~/ProductTaxMapping/AddEditProductTaxMapping")">Add More Product Tax</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div id="divList">
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/ProductTaxMapping/ListProductTaxMapping.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>

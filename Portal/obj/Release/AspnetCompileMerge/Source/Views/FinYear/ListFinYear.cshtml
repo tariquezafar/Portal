@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "List Financial Year";
+    Layout = "~/Views/Shared/_SuperAdminLayout.cshtml";
+}
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Company/SuperAdminDashboard">Control Panel</a> >> List Financial Year </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmListYear" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6"> 
+                    <div class="col-sm-8">
+                    
+                    </div>
+                </div> 
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                
+                    <div class="col-sm-8"> 
+                    </div>
+                </div>
+                
+
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Search" alt="Search" id="btnSearch" tabindex="1" onclick="SearchFinYear()" type="button" border="0">
+                        <a class="btn btn-success" id="btnList" tabindex="2" href="@Url.Content("~/FinYear/AddEditFinYear")">Add More Fin. Year</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div id="divList" style="margin:50px;margin-top:10px"> 
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/FinYear/ListFinYear.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>

@@ -1,0 +1,284 @@
+14:37:02 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+--------------------------------------------------------------------------------------------------------------------------------
+
+14:37:37 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:33 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:42:02 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:45:16 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:46:59 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.NullReferenceException
+Details: Object reference not set to an instance of an object.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:28:57 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobWork
+Error Line No : 19862
+Exception Type : System.ArgumentException
+Details: Column 'Weight' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:28:57 PM
+Source : Portal.Core.JobWorkBL
+Method Name : AddEditJobWork
+Error Line No : 77
+Exception Type : System.ArgumentException
+Details: Column 'Weight' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:28:57 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : AddEditJobWork
+Error Line No : 68
+Exception Type : System.ArgumentException
+Details: Column 'Weight' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:29:51 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobWork
+Error Line No : 19862
+Exception Type : System.ArgumentException
+Details: Column 'Weight' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:30:59 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditJobWork
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Column 'Weight' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:30:59 PM
+Source : Portal.Core.JobWorkBL
+Method Name : AddEditJobWork
+Error Line No : 77
+Exception Type : System.ArgumentException
+Details: Column 'Weight' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:30:59 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : AddEditJobWork
+Error Line No : 68
+Exception Type : System.ArgumentException
+Details: Column 'Weight' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:27:02 PM
+Source : Portal.Core.JobWorkBL
+Method Name : GetJobWorkList
+Error Line No : 251
+Exception Type : System.ArgumentException
+Details: Column 'WorkOrderId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:27:02 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : GetJobWorkList
+Error Line No : 150
+Exception Type : System.ArgumentException
+Details: Column 'WorkOrderId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:27:04 PM
+Source : Portal.Core.JobWorkBL
+Method Name : GetJobWorkList
+Error Line No : 251
+Exception Type : System.ArgumentException
+Details: Column 'WorkOrderId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:27:04 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : GetJobWorkList
+Error Line No : 150
+Exception Type : System.ArgumentException
+Details: Column 'WorkOrderId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:27:17 PM
+Source : Portal.Core.JobWorkBL
+Method Name : GetJobWorkList
+Error Line No : 251
+Exception Type : System.ArgumentException
+Details: Column 'WorkOrderId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:28:09 PM
+Source : Portal.Core.JobWorkBL
+Method Name : GetJobWorkProductInList
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:28:09 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : GetJobWorkProductInList
+Error Line No : 116
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:28:12 PM
+Source : Portal.Controllers.WorkOrderController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'workOrderId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.JsonResult GetWorkOrderDetail(Int64)' in 'Portal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:30:20 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentOutOfRangeException
+Details: Index and length must refer to a location within the string.
+Parameter name: length
+---------------------------------------------------------------------------------------------------------------------------
+
+16:31:23 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentOutOfRangeException
+Details: Index and length must refer to a location within the string.
+Parameter name: length
+---------------------------------------------------------------------------------------------------------------------------
+
+16:35:21 PM
+Source : Portal.Core.JobWorkBL
+Method Name : GetJobWorkProductInList
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:35:21 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : GetJobWorkProductInList
+Error Line No : 116
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:35:23 PM
+Source : Portal.Controllers.WorkOrderController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'workOrderId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.JsonResult GetWorkOrderDetail(Int64)' in 'Portal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+17:16:30 PM
+Source : Portal.Core.JobWorkBL
+Method Name : GetJobWorkProductInList
+Error Line No : 221
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:16:30 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : GetJobWorkProductInList
+Error Line No : 116
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:33:52 PM
+Source : Portal.Core.JobWorkBL
+Method Name : GetJobWorkProductInList
+Error Line No : 221
+Exception Type : System.ArgumentException
+Details: Column 'JobWorkProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:04:20 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\HTSNewWorkArea\Portal\Portal\Views\JobWork\GetJobWorkProductList.cshtml(45): error CS1061: 'Portal.Core.ViewModel.JobWorkProductDetailViewModel' does not contain a definition for 'ProductHSNCode' and no extension method 'ProductHSNCode' accepting a first argument of type 'Portal.Core.ViewModel.JobWorkProductDetailViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+18:04:45 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\HTSNewWorkArea\Portal\Portal\Views\JobWork\GetJobWorkProductList.cshtml(45): error CS1061: 'Portal.Core.ViewModel.JobWorkProductDetailViewModel' does not contain a definition for 'ProductHSNCode' and no extension method 'ProductHSNCode' accepting a first argument of type 'Portal.Core.ViewModel.JobWorkProductDetailViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+18:05:29 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\HTSNewWorkArea\Portal\Portal\Views\JobWork\GetJobWorkProductList.cshtml(45): error CS1061: 'Portal.Core.ViewModel.JobWorkProductDetailViewModel' does not contain a definition for 'ProductHSNCode' and no extension method 'ProductHSNCode' accepting a first argument of type 'Portal.Core.ViewModel.JobWorkProductDetailViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+18:05:59 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\HTSNewWorkArea\Portal\Portal\Views\JobWork\GetJobWorkProductList.cshtml(45): error CS1061: 'Portal.Core.ViewModel.JobWorkProductDetailViewModel' does not contain a definition for 'ProductHSNCode' and no extension method 'ProductHSNCode' accepting a first argument of type 'Portal.Core.ViewModel.JobWorkProductDetailViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+18:06:26 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\HTSNewWorkArea\Portal\Portal\Views\JobWork\GetJobWorkProductList.cshtml(45): error CS1061: 'Portal.Core.ViewModel.JobWorkProductDetailViewModel' does not contain a definition for 'ProductHSNCode' and no extension method 'ProductHSNCode' accepting a first argument of type 'Portal.Core.ViewModel.JobWorkProductDetailViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+19:23:24 PM
+Source : Portal.Controllers.JobWorkController
+Method Name : OnException
+Error Line No : 0
+Exception Type : Microsoft.Reporting.WebForms.LocalProcessingException
+Details: An error occurred during local report processing.
+---------------------------------------------------------------------------------------------------------------------------
+

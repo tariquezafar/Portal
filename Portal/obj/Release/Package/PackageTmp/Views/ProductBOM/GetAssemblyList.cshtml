@@ -1,0 +1,73 @@
+﻿@model List<Portal.Core.ViewModel.ProductBOMViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblAssemblyList">
+            <thead>
+                <tr>
+                    <th style="text-align:center">Assembly Name</th>
+                    <th style="text-align:center">Assembly Code</th>
+                    <th style="text-align:center">Short Desc</th>
+                    <th style="text-align:center">Assembly Type</th>
+                    @*<th  style="text-align:center">Created By User</th>
+                    <th  style="text-align:center">Created Date</th>
+                    <th  style="text-align:center">Modified By User</th>
+                    <th  style="text-align:center">Modified Date</th>*@
+                    <th colspan="3" align="center">Action</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.AssemblyName</td>
+                        <td>@item.AssemblyCode</td>
+                        <td>@item.AssemblyShortDesc</td>
+                        <td>@item.AssemblyType</td>
+                        @*<td>@item.CreatedByName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByName</td>
+                        <td>@item.ModifiedDate</td>*@
+                        <td align="center" class="btn-success btn " style="margin:0px auto;">
+                            <a style="color:white"  class="fa fa-list" aria-hidden="true" title="View Assembly BOM List" onclick="GetAssemblyBOMList(this)" id="View_@item.AssemblyId"></a>
+                        </td> &nbsp;&nbsp;
+                        <td align="center" class="btn-success btn" style="margin:0px auto;">
+                            <a style="color:white" class="fa fa-files-o" aria-hidden="true" title="Copy Assembly BOM List" onclick="CopyAssemblyBOMList(this)" id="Copy_@item.AssemblyId"></a>
+                        </td>&nbsp;&nbsp;
+                        @*<td align="center" class="btn-success btn" style="margin:0px auto;">
+                            <a style="color:white" class="fa fa-times" aria-hidden="true" title="Cancel Assembly BOM List" onclick="CopyAssemblyBOMList(this)" id="Copy_@item.AssemblyId"></a>
+                        </td>*@
+                        <td align="center" class="btn-success btn" style="margin:0px auto;">
+                             <a style="color:white" class="fa fa-print" aria-hidden="true" title="Print Assembly BOM List" id="Copy_@item.AssemblyId" href="../ProductBOM/Report?assemblyId=@item.AssemblyId&assemblyType=0&companyBranchId=0&reportType=PDF" target="_blank"></a>
+                         </td>
+                    </tr>
+                    <tr>
+                            <td colspan="6" width="100%" height="auto">
+                            <div style="display:none;" id="divAssemblyBOM_@item.AssemblyId">
+
+                            </div>
+                        </td>
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblAssemblyList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

@@ -1,0 +1,66 @@
+﻿@model List<Portal.Core.ViewModel.EmployeeStateMappingViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table mapping-list" id="tblStateList">
+            <thead>
+                <tr >
+                    <th>State Name</th>
+                    <th>State Code</th>
+                    @*<th>Country Name</th>*@ 
+                    <th style="text-align:center;">Select 
+                    <br />
+                    <input type="checkbox" id="chkAddAccessAll" onclick="CheckAllAddAccess(this)" /></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+
+                        <td>
+                        <input type="hidden" id="hdnEmployeeStateMappingId" value="@item.EmployeeStateMappingId" />
+                        <input type="hidden" id="hdnStateId" value="@item.StateId" /> @item.StateName</td>
+                        <td>@item.StateCode
+                        </td>
+                        @if (item.SelectState)
+                        {
+                            <td style="text-align:center;"> <input type="checkbox" id="chkstate" name="chkstate" class="AddAccess" checked /></td>
+                        }
+                        else
+                        {
+                            <td style="text-align:center;">   <input type="checkbox" id="chkstate" name="chkstate" class="AddAccess" /></td>
+                        }
+
+
+                        @*<td class="btn btn-success table_btn" style="width:30px; margin:0px auto;">
+                            <a style="color:white"  class="fa fa-eye" aria-hidden="true" href="~/State/AddEditState?StateId=@item.StateId&AccessMode=3"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" href="~/State/AddEditState?StateId=@item.StateId&AccessMode=2"></a>
+                        </td>*@
+
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    //$(document).ready(function () {
+    //    $('#tblStateList').paging({
+    //        limit: 10,
+    //        rowDisplayStyle: 'block',
+    //        activePage: 0,
+    //        rows: []
+    //    });
+
+    //});
+</script>

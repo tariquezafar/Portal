@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "Add/Edit Financial Year";
+    Layout = "~/Views/Shared/_SuperAdminLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+    /* allow space for check mark */
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Company/SuperAdminDashboard">Control Panel</a> >> Add/Edit Financial Year </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditFinYear" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="txtStartDate" class="col-sm-4 control-label">Start Period&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtStartDate" name="txtStartDate" tabindex="1" placeholder="Select Start Period" type="text" maxlength="100" />
+                        <input id="hdnFinYearID" type="hidden" value="@ViewData["finYearId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    </div>
+                </div>
+               <div class="form-group col-md-6">
+                    <label for="chkStatus" class="col-sm-4 control-label">Active Status</label>
+                    <div class="col-sm-8">
+                        <input type="checkbox" name="chkStatus" id="chkStatus"  class="" checked="checked" />
+                        <label style="font-size: 24px; " tabindex="2" for="chkStatus"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtEndDate" class="col-sm-4 control-label">End Period&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtEndDate" name="txtEndDate" tabindex="3" placeholder="Select End Period" type="text" maxlength="100" />
+                    </div>
+                </div>
+                
+         
+
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="4" onclick="SaveData(1)" type="button" border="0"> 
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="4" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                        <input class="btn btn-success" type="button" id="btnReset" tabindex="5" onclick="ClearFields()" value="Reset" />  
+                       <a class="btn btn-success" id="btnList" tabindex="6" href="@Url.Content("~/FinYear/ListFinYear")">Search Fin. Year</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/FinYear/AddFinYear.js"></script>

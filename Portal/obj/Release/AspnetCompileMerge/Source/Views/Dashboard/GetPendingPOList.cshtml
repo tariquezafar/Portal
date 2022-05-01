@@ -1,0 +1,38 @@
+﻿@model List<Portal.Core.ViewModel.POCountViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table" id="tblBookBalanceList" style="margin-top:10px;">
+            <thead style="border-top-left-radius:15px;">
+                <tr style="border:none;">
+                    <td  style="background:#357ebd; color:#fff;width:100%;" colspan="3">Pending PO</td>                
+                </tr>
+                <tr style="background:#357ebd; border:1px solid #ccc;">
+                    <td style="text-align:center;color:#fff;">PO No.</td>
+                    <td style="text-align:center;color:#fff;">Status</td>
+                </tr>
+            </thead>
+            <tbody style="border:1px solid #ccc;">
+                @foreach (var item in Model)
+                {
+                <tr style="background:#357ebd;color:#fff;">
+                    <td>@item.PONO
+                    <input type="hidden" id="hdnPOId"name="hdnPOId" value="@item.POID" /></td>
+                    <td>@item.Status</td>
+                </tr>
+                }
+                <tr>
+                   @* <td colspan="2" align="center" style="background:#FC8213;">
+        <a href="@Url.Content("~/PO/ListPO")" style="color:#fff;"> View All PO </a>
+    </td>*@
+                </tr>
+            </tbody>           
+        </table>
+    </div>
+
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">No PO For Pending !!!</h3>
+}
+  

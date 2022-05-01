@@ -1,0 +1,1272 @@
+10:00:53 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:00:53 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:37:37 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:37:38 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:39:40 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:39:40 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:21:46 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:21:46 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:34:34 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:34:34 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:40:54 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:40:55 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:56 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditLeadTypeMaster
+Error Line No : 1699
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'PR_LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:56 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : AddEditLeadTypeMaster
+Error Line No : 34
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'PR_LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:43:56 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : AddEditLeadMaster
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'PR_LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:16 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditLeadTypeMaster
+Error Line No : 1699
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'PR_LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:16 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : AddEditLeadTypeMaster
+Error Line No : 34
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'PR_LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:44:16 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : AddEditLeadMaster
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'PR_LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:47:25 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditLeadTypeMaster
+Error Line No : 1699
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'PR_LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:47:25 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : AddEditLeadTypeMaster
+Error Line No : 34
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'PR_LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:47:25 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : AddEditLeadMaster
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'PR_LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:49:33 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditLeadTypeMaster
+Error Line No : 1699
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'PR_LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:49:33 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : AddEditLeadTypeMaster
+Error Line No : 34
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'PR_LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:49:33 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : AddEditLeadMaster
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'PR_LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:36 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditLeadTypeMaster
+Error Line No : 1699
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'PR_LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:36 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : AddEditLeadTypeMaster
+Error Line No : 34
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'PR_LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:50:36 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : AddEditLeadMaster
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'PR_LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:53:02 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:53:02 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:53:57 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditLeadTypeMaster
+Error Line No : 1699
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'PR_LeadMasterAddEdit' expects parameter '@LeadIdout', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:53:57 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : AddEditLeadTypeMaster
+Error Line No : 35
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'PR_LeadMasterAddEdit' expects parameter '@LeadIdout', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:53:57 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : AddEditLeadMaster
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'PR_LeadMasterAddEdit' expects parameter '@LeadIdout', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:54:36 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:54:36 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:25:05 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:25:05 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:25:19 PM
+Source : Portal.Controllers.PayrollTdsSlabController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[Portal.Core.ViewModel.PayRollTdsViewModel]', but this dictionary requires a model item of type 'System.Collections.Generic.List`1[Portal.Core.ViewModel.LeadTypeMasterViewModel]'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:26:29 PM
+Source : Portal.Controllers.PayrollTdsSlabController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[Portal.Core.ViewModel.PayRollTdsViewModel]', but this dictionary requires a model item of type 'System.Collections.Generic.List`1[Portal.Core.ViewModel.LeadTypeMasterViewModel]'.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:32:24 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetLeadMasterList
+Error Line No : 703
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'GetLeadMasterList' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:32:24 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : GetAllLeadList
+Error Line No : 103
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'GetLeadMasterList' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:32:24 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : GetAllLeads
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'GetLeadMasterList' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:32:24 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The partial view 'GetAllLeads' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/LeadMaster/GetAllLeads.aspx
+~/Views/LeadMaster/GetAllLeads.ascx
+~/Views/Shared/GetAllLeads.aspx
+~/Views/Shared/GetAllLeads.ascx
+~/Views/LeadMaster/GetAllLeads.cshtml
+~/Views/LeadMaster/GetAllLeads.vbhtml
+~/Views/Shared/GetAllLeads.cshtml
+~/Views/Shared/GetAllLeads.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+14:39:57 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:39:57 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:30 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : GetAllLeadList
+Error Line No : 105
+Exception Type : System.ArgumentException
+Details: Column 'FromDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:30 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : GetAllLeads
+Error Line No : 104
+Exception Type : System.ArgumentException
+Details: Column 'FromDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:30 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The partial view 'GetAllLeads' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/LeadMaster/GetAllLeads.aspx
+~/Views/LeadMaster/GetAllLeads.ascx
+~/Views/Shared/GetAllLeads.aspx
+~/Views/Shared/GetAllLeads.ascx
+~/Views/LeadMaster/GetAllLeads.cshtml
+~/Views/LeadMaster/GetAllLeads.vbhtml
+~/Views/Shared/GetAllLeads.cshtml
+~/Views/Shared/GetAllLeads.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+14:44:51 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : GetAllLeadList
+Error Line No : 105
+Exception Type : System.ArgumentException
+Details: Column 'FromDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:44:51 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : GetAllLeads
+Error Line No : 104
+Exception Type : System.ArgumentException
+Details: Column 'FromDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+14:44:51 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The partial view 'GetAllLeads' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/LeadMaster/GetAllLeads.aspx
+~/Views/LeadMaster/GetAllLeads.ascx
+~/Views/Shared/GetAllLeads.aspx
+~/Views/Shared/GetAllLeads.ascx
+~/Views/LeadMaster/GetAllLeads.cshtml
+~/Views/LeadMaster/GetAllLeads.vbhtml
+~/Views/Shared/GetAllLeads.cshtml
+~/Views/Shared/GetAllLeads.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+14:48:58 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The partial view 'GetAllLeads' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/LeadMaster/GetAllLeads.aspx
+~/Views/LeadMaster/GetAllLeads.ascx
+~/Views/Shared/GetAllLeads.aspx
+~/Views/Shared/GetAllLeads.ascx
+~/Views/LeadMaster/GetAllLeads.cshtml
+~/Views/LeadMaster/GetAllLeads.vbhtml
+~/Views/Shared/GetAllLeads.cshtml
+~/Views/Shared/GetAllLeads.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:00 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:00 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:59:10 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:59:11 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:05:23 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:05:23 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:33:58 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:33:58 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:05:42 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:05:42 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:13 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetLeadMasterList
+Error Line No : 726
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'GetLeadMasterList' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:13 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : GetAllLeadList
+Error Line No : 100
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'GetLeadMasterList' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:13 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : GetDetailLeadMaster
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'GetLeadMasterList' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:29 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetLeadMasterList
+Error Line No : 726
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'GetLeadMasterList' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:29 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : GetAllLeadList
+Error Line No : 100
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'GetLeadMasterList' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:54 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetLeadMasterList
+Error Line No : 726
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'GetLeadMasterList' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:56 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : GetAllLeadList
+Error Line No : 100
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'GetLeadMasterList' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:56 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : GetDetailLeadMaster
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'GetLeadMasterList' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:32 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetLeadMasterList
+Error Line No : 726
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'GetLeadMasterList' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:32 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : GetAllLeadList
+Error Line No : 100
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'GetLeadMasterList' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:32 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : GetDetailLeadMaster
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'GetLeadMasterList' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:34 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:34 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:48 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetLeadMasterList
+Error Line No : 726
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'GetLeadMasterList' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:09:55 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : GetAllLeadList
+Error Line No : 100
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'GetLeadMasterList' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:10:04 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : GetDetailLeadMaster
+Error Line No : 104
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'GetLeadMasterList' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:14:41 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:14:41 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:45:18 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.DateTime' of the member 'CreatedDate' in the conceptual side type 'ERPModel.LeadMaster' does not match with the type 'System.String' of the member 'CreatedDate' on the object side type 'Portal.DAL.LeadMaster'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:45:18 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.DateTime' of the member 'CreatedDate' in the conceptual side type 'ERPModel.LeadMaster' does not match with the type 'System.String' of the member 'CreatedDate' on the object side type 'Portal.DAL.LeadMaster'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:45:18 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.DateTime' of the member 'CreatedDate' in the conceptual side type 'ERPModel.LeadMaster' does not match with the type 'System.String' of the member 'CreatedDate' on the object side type 'Portal.DAL.LeadMaster'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:45:31 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.DateTime' of the member 'CreatedDate' in the conceptual side type 'ERPModel.LeadMaster' does not match with the type 'System.String' of the member 'CreatedDate' on the object side type 'Portal.DAL.LeadMaster'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:45:31 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.DateTime' of the member 'CreatedDate' in the conceptual side type 'ERPModel.LeadMaster' does not match with the type 'System.String' of the member 'CreatedDate' on the object side type 'Portal.DAL.LeadMaster'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:45:31 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.DateTime' of the member 'CreatedDate' in the conceptual side type 'ERPModel.LeadMaster' does not match with the type 'System.String' of the member 'CreatedDate' on the object side type 'Portal.DAL.LeadMaster'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:24 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.DateTime' of the member 'CreatedDate' in the conceptual side type 'ERPModel.LeadMaster' does not match with the type 'System.String' of the member 'CreatedDate' on the object side type 'Portal.DAL.LeadMaster'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:24 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.DateTime' of the member 'CreatedDate' in the conceptual side type 'ERPModel.LeadMaster' does not match with the type 'System.String' of the member 'CreatedDate' on the object side type 'Portal.DAL.LeadMaster'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:24 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.DateTime' of the member 'CreatedDate' in the conceptual side type 'ERPModel.LeadMaster' does not match with the type 'System.String' of the member 'CreatedDate' on the object side type 'Portal.DAL.LeadMaster'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:58 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.DateTime' of the member 'CreatedDate' in the conceptual side type 'ERPModel.LeadMaster' does not match with the type 'System.String' of the member 'CreatedDate' on the object side type 'Portal.DAL.LeadMaster'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:58 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.DateTime' of the member 'CreatedDate' in the conceptual side type 'ERPModel.LeadMaster' does not match with the type 'System.String' of the member 'CreatedDate' on the object side type 'Portal.DAL.LeadMaster'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:46:58 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.DateTime' of the member 'CreatedDate' in the conceptual side type 'ERPModel.LeadMaster' does not match with the type 'System.String' of the member 'CreatedDate' on the object side type 'Portal.DAL.LeadMaster'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:47:05 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.DateTime' of the member 'CreatedDate' in the conceptual side type 'ERPModel.LeadMaster' does not match with the type 'System.String' of the member 'CreatedDate' on the object side type 'Portal.DAL.LeadMaster'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:47:05 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 79
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.DateTime' of the member 'CreatedDate' in the conceptual side type 'ERPModel.LeadMaster' does not match with the type 'System.String' of the member 'CreatedDate' on the object side type 'Portal.DAL.LeadMaster'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:47:05 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 42
+Exception Type : System.Data.Entity.Core.MappingException
+Details: The type 'Edm.DateTime' of the member 'CreatedDate' in the conceptual side type 'ERPModel.LeadMaster' does not match with the type 'System.String' of the member 'CreatedDate' on the object side type 'Portal.DAL.LeadMaster'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:54:29 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:54:29 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:55:02 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:55:02 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:55:55 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditLeadTypeMaster
+Error Line No : 1699
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'PR_LeadMasterAddEdit'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:55:55 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : AddEditLeadTypeMaster
+Error Line No : 35
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'PR_LeadMasterAddEdit'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:55:55 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : AddEditLeadMaster
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Could not find stored procedure 'PR_LeadMasterAddEdit'.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:59:37 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:59:37 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:02:13 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditLeadTypeMaster
+Error Line No : 1700
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:02:13 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : AddEditLeadTypeMaster
+Error Line No : 35
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:02:13 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : AddEditLeadMaster
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:05:02 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:05:02 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:06:41 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditLeadTypeMaster
+Error Line No : 1700
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:06:41 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : AddEditLeadTypeMaster
+Error Line No : 35
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:06:41 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : AddEditLeadMaster
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:08:41 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:08:41 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:09:13 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditLeadTypeMaster
+Error Line No : 1700
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:09:56 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : AddEditLeadTypeMaster
+Error Line No : 35
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:09:56 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : AddEditLeadMaster
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:10:21 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditLeadTypeMaster
+Error Line No : 1700
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:10:21 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : AddEditLeadTypeMaster
+Error Line No : 35
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:10:21 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : AddEditLeadMaster
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:12:31 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditLeadTypeMaster
+Error Line No : 1700
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:12:31 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : AddEditLeadTypeMaster
+Error Line No : 35
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:12:31 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : AddEditLeadMaster
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:12:41 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditLeadTypeMaster
+Error Line No : 1700
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:12:41 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : AddEditLeadTypeMaster
+Error Line No : 35
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:12:41 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : AddEditLeadMaster
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:13:20 PM
+Source : Portal.DAL.HRSQLDBInterface
+Method Name : AddEditLeadTypeMaster
+Error Line No : 1700
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:13:20 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : AddEditLeadTypeMaster
+Error Line No : 35
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:13:20 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : AddEditLeadMaster
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'LeadMasterAddEdit' expects parameter '@LeadName', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:14:33 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : GetAllLeadList
+Error Line No : 108
+Exception Type : System.ArgumentException
+Details: Column 'LeadName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:14:33 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : GetDetailLeadMaster
+Error Line No : 104
+Exception Type : System.ArgumentException
+Details: Column 'LeadName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:14:34 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: e:\VINOD\HTSNewWorkArea\Portal\Portal\Views\LeadMaster\GetDetailLeadMaster.cshtml(46): error CS1061: 'Portal.Core.ViewModel.LeadTypeMasterViewModel' does not contain a definition for 'LeadId' and no extension method 'LeadId' accepting a first argument of type 'Portal.Core.ViewModel.LeadTypeMasterViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+18:14:38 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : GetAllLeadList
+Error Line No : 108
+Exception Type : System.ArgumentException
+Details: Column 'LeadName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:14:38 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : GetDetailLeadMaster
+Error Line No : 104
+Exception Type : System.ArgumentException
+Details: Column 'LeadName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:14:38 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: e:\VINOD\HTSNewWorkArea\Portal\Portal\Views\LeadMaster\GetDetailLeadMaster.cshtml(46): error CS1061: 'Portal.Core.ViewModel.LeadTypeMasterViewModel' does not contain a definition for 'LeadId' and no extension method 'LeadId' accepting a first argument of type 'Portal.Core.ViewModel.LeadTypeMasterViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+18:17:51 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : GetAllLeadList
+Error Line No : 108
+Exception Type : System.ArgumentException
+Details: Column 'LeadName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:17:51 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : GetDetailLeadMaster
+Error Line No : 104
+Exception Type : System.ArgumentException
+Details: Column 'LeadName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:17:52 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: e:\VINOD\HTSNewWorkArea\Portal\Portal\Views\LeadMaster\GetDetailLeadMaster.cshtml(46): error CS1061: 'Portal.Core.ViewModel.LeadTypeMasterViewModel' does not contain a definition for 'LeadId' and no extension method 'LeadId' accepting a first argument of type 'Portal.Core.ViewModel.LeadTypeMasterViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+18:24:29 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:24:29 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:57 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:27:57 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:31:16 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:31:16 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:32:56 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : GetLeadTypeDetails
+Error Line No : 140
+Exception Type : System.ArgumentException
+Details: Column 'LeadName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:32:56 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : GetLeadMasterDetails
+Error Line No : 120
+Exception Type : System.ArgumentException
+Details: Column 'LeadName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:50 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : GetLeadTypeDetails
+Error Line No : 140
+Exception Type : System.ArgumentException
+Details: Column 'LeadName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:50 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : GetLeadMasterDetails
+Error Line No : 120
+Exception Type : System.ArgumentException
+Details: Column 'LeadName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:55 PM
+Source : Portal.Core.LeadType.LeadTypeMasterBL
+Method Name : GetLeadTypeDetails
+Error Line No : 140
+Exception Type : System.ArgumentException
+Details: Column 'LeadName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:33:55 PM
+Source : Portal.Controllers.LeadMasterController
+Method Name : GetLeadMasterDetails
+Error Line No : 120
+Exception Type : System.ArgumentException
+Details: Column 'LeadName' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:35:55 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:35:55 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:39:19 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+18:39:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:23:19 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:23:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 803
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+

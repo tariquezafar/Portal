@@ -1,0 +1,57 @@
+﻿@model List<Portal.Core.ViewModel.BookBalanceViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div class="panel" style="overflow: hidden;">
+        <div class="panel-body">
+            <h4 class="thin no-margin-top">Book(s) Balances as at @DateTime.Now.ToString("dd-MMM-yyyy")</h4>
+            <table class="table" style="background-color:#ffffff;">
+                @*<thead >                   
+                    <tr style="background:#D0DDEC; border:1px solid #ccc;">
+                        <th>Book Name</th>
+                        <th>Balance (In Rs.)</th>
+                    </tr>
+                </thead>*@
+                <tbody>
+                    @foreach (var item in Model)
+                {
+                        <tr>
+                            <td href="javascript:;" class="text-success semi-bold">@item.BookName</td>
+                            <td>@item.BookBalance</td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot style="border:1px solid #ccc;">
+                    <tr class="active">
+                        <th href="javascript:;" class="text-success semi-bold">Total Balance</th>
+                        <th>@Model.Sum(x => x.BookBalance)</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        </div>
+
+        }
+        else
+        {
+        <h3 style="color:firebrick;text-align:center">Book Balance(s) not updated</h3>
+        }
+        <script>
+            var barChartData =
+                {
+                    labels: [@Html.Raw(ViewBag.BookList)],
+                    //labels: ['HDFC BANK LTD','Indusind Bank','allav Agarwal','Cash in Hand'],
+                    datasets: [{
+                        label: 'Book(s) Balances',
+                        backgroundColor: [
+                            "#f990a7",
+                            "#aad2ed",
+                            "#9966FF",
+                            "#99e5e5",
+                            "#f7bd83",
+                        ],
+                        borderWidth: 2,
+                        data: [@ViewBag.BalanceList]
+                    }]
+                };
+
+        </script>

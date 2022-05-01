@@ -1,0 +1,175 @@
+﻿
+@model List<Portal.Core.ViewModel.POProductViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th style="display:none">S. No.</th>
+                    <th style="text-align:center">Product Name</th>
+                    <th style="text-align:center">Product Code</th>
+                    <th style="text-align:center">Unit</th>
+                    <th style="text-align:center">Price</th>
+                    <th style="text-align:center">Quantity</th>
+                    <th style="text-align:center">Discount Amount</th>
+                    <th style="text-align:center">Total</th>
+                    <th style="text-align:center">CGST(%)</th>
+                    <th style="text-align:center">CGST Amt</th>
+                    <th style="text-align:center">SGST(%)</th>
+                    <th style="text-align:center">SGST Amt</th>
+                    <th style="text-align:center">IGST(%)</th>
+                    <th style="text-align:center">IGST Amt</th>
+                    <th style="text-align:center">Total Price</th>
+                    <th style="text-align:center">HSN Code</th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="display:none">
+                            @item.SequenceNo
+                            <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                        </td>
+                        <td>
+                            @item.ProductName
+                        <input type="hidden" id="hdnPOProductDetailId" value="@item.POProductDetailId" />
+                        <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                        <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                    </td>
+                    <td>
+                        @item.ProductCode
+                    <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                </td>
+                <td>
+                    @item.UOMName
+                <input type="hidden" id="hdnUOMName" value="@item.UOMName" />
+                <input type="hidden" id="hdnProductShortDesc" value="@item.ProductShortDesc" />
+
+            </td>
+            <td>
+                @item.Price
+                <input type="hidden" id="hdnPrice" value="@item.Price" />
+            </td>
+            <td>
+                @item.Quantity
+                <input type="hidden" id="hdnQuantity" value="@item.Quantity" />
+                <input type="hidden" id="hdnCGSTPerc" value="@item.CGST_Perc" />
+                <input type="hidden" id="hdnCGSTAmount" value="@item.CGST_Amount" />
+                <input type="hidden" id="hdnSGSTPerc" value="@item.SGST_Perc" />
+                <input type="hidden" id="hdnSGSTAmount" value="@item.SGST_Amount" />
+                <input type="hidden" id="hdnIGSTPerc" value="@item.IGST_Perc" />
+                <input type="hidden" id="hdnIGSTAmount" value="@item.IGST_Amount" />
+                <input type="hidden" id="hdnTotalPrice" value="@item.TotalPrice" />
+
+                <input type="hidden" id="hdnProductTaxId" value="@item.TaxId" />
+                <input type="hidden" id="hdnProductTaxPerc" value="@item.TaxPercentage" />
+                <input type="hidden" id="hdnProductTaxAmount" value="@item.TaxAmount" />
+                <input type="hidden" id="hdnProductTaxName" value="@item.TaxName" />
+
+                <input type="hidden" id="hdnProductSurchargeName_1" value="@item.SurchargeName_1" />
+                <input type="hidden" id="hdnProductSurchargePercentage_1" value="@item.SurchargePercentage_1" />
+                <input type="hidden" id="hdnProductSurchargeAmount_1" value="@item.SurchargeAmount_1" />
+
+                <input type="hidden" id="hdnProductSurchargeName_2" value="@item.SurchargeName_2" />
+                <input type="hidden" id="hdnProductSurchargePercentage_2" value="@item.SurchargePercentage_2" />
+                <input type="hidden" id="hdnProductSurchargeAmount_2" value="@item.SurchargeAmount_2" />
+
+                <input type="hidden" id="hdnProductSurchargeName_3" value="@item.SurchargeName_3" />
+                <input type="hidden" id="hdnProductSurchargePercentage_3" value="@item.SurchargePercentage_3" />
+                <input type="hidden" id="hdnProductSurchargeAmount_3" value="@item.SurchargeAmount_3" />
+                <input type="hidden" id="hdnHSN_Code" value="@item.HSN_Code" />
+            </td>
+            <td>
+                @item.DiscountAmount
+                <input type="hidden" id="hdnDiscountPerc" value="@item.DiscountPercentage" />
+                <input type="hidden" id="hdnDiscountAmount" value="@item.DiscountAmount" />
+            </td>
+
+            <td>
+                @((item.Price * item.Quantity) - item.DiscountAmount)
+            </td>
+            <td id="tdCGST_Perc">
+                @item.CGST_Perc
+
+            </td>
+            <td id="tdCGSTAmount">
+                @item.CGST_Amount
+
+            </td>
+
+            <td id="tdSGST_Perc">
+                @item.SGST_Perc
+
+            </td>
+            <td id="tdSGSTAmount">
+                @item.SGST_Amount
+
+
+            </td>
+            <td id="tdIGST_Perc">
+                @item.IGST_Perc
+
+            </td>
+            <td id="tdIGSTAmount">
+                @item.IGST_Amount
+
+
+            </td>
+            <td id="tdTotalPrice">
+                @item.TotalPrice
+
+            </td>
+            <td>
+                @item.HSN_Code
+                <input type="hidden" id="hdnHSN_Code" value="@item.HSN_Code" />
+            </td>
+        
+        </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th style="display:none">S. No.</th>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Unit</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Discount Amount</th>
+                    <th>Total</th>
+                    <th>CGST(%)</th>
+                    <th>CGST Amt</th>
+                    <th>SGST(%)</th>
+                    <th>SGST Amt</th>
+                    <th>IGST(%)</th>
+                    <th>IGST Amt</th>
+                    <th>Total Price</th>
+                    <th>HSN Code</th>
+                   
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+
+<script>
+    $(document).ready(function () {
+        var hdnAccessMode = $("#hdnAccessMode");
+        $(".editonly").hide();
+        if (hdnAccessMode.val() == "3") {
+            $(".editonly").hide();
+        }
+
+    });
+</script>

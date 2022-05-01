@@ -1,0 +1,83 @@
+﻿@model List<Portal.Core.ViewModel.VendorPaymentViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table {
+    width: 225% !important;
+    max-width: 225%  !important;
+    margin-bottom: 20px;
+}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblVendorList">
+            <thead>
+                <tr>
+                    @*<td style="margin:0px 2px auto;"> Payment TrnId </td>*@ 
+                    <th>Payment No</th>
+                    <th>Vendor Name</th>
+                    <th>Vendor Code</th>
+                    <th>Payment Mode</th>
+                    <th>Amount</th>
+                    <th>Payment Date</th>
+                    <th>Invoice No</th>
+                    <th>Invoice Date</th> 
+                    <th>Book Name</th> 
+                    <th>Bank Branch</th>
+                    <th>Bank IFSC</th> 
+                    <th>Remarks</th>
+                    <th>Ref. No</th> 
+                    <th>Ref. Date</th>
+                    <th>Created By User</th>
+                    <th>Created Date</th>
+                    <th>Modified By User</th>
+                    <th>Modified Date</th> 
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        @*<td style="margin:0px 2px auto;">
+                            <a style="color:dodgerblue" href="~/CustomerForm/AddEditCustomerForm?CustomerFormTrnId=@item.CustomerFormTrnId&AccessMode=2">@item.CustomerFormTrnId</a>
+                        </td>*@ 
+                        <td>@item.PaymentNo</td>
+                        <td>@item.VendorName</td>
+                        <td>@item.VendorCode</td>
+                        <td>@item.PaymentModeName</td>
+                        <td>@item.Amount</td>
+                        <td>@item.PaymentDate</td>
+                        <td>@item.InvoiceNo</td>
+                        <td>@item.InvoiceDate</td>  
+                        <td>@item.BookName</td>
+                        <td>@item.BankBranch<td>
+                        <td>@item.BankIFSCCode</td>
+                        <td>@item.Remarks</td>
+                        <td>@item.RefNo</td>
+                        <td>@item.RefDate</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td> 
+                        </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblVendorList').paging({
+            limit: 100,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

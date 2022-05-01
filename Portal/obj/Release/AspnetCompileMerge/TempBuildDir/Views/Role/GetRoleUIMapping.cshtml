@@ -1,0 +1,213 @@
+﻿@model List<Portal.Core.ViewModel.RoleUIMappingViewModel>
+    <style>
+.table th {
+    background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    color:#fff;
+}
+    </style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table mapping-list" id="tblRoleList">
+            <thead>
+                <tr>
+                    <th style="text-align:center">Parent Node Name</th>
+                    <th style="text-align:center">Interface Name</th>
+                    <th style="text-align:center;">Add Access<br />
+                        <input type="checkbox" id="chkAddAccessAll" onclick="CheckAllAddAccess(this)" />
+                    </th>
+                    <th style="text-align:center;">Edit Access<br />
+                        <input type="checkbox" id="chkEditAccessAll" onclick="CheckAllEditAccess(this)" />
+                    </th>
+                    <th style="text-align:center;">View Access<br />
+                        <input type="checkbox" id="chkViewAccessAll" onclick="CheckAllViewAccess(this)" /></th>
+                    <th style="text-align:center;">Cancel Access<br />
+                        <input type="checkbox" id="chkViewAccessAll" onclick="CheckAllCancelAccess(this)" />
+                    </th>
+                    <th style="text-align:center;">
+                        Revise Access<br />
+                        @*<input type="checkbox" id="chkReviseAccessAll" onclick="CheckAllReviseAccess(this)" />*@
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+                    <tr class="success">
+                        <td id="tdParentName">@item.ParentName
+                            </td>
+                       <td id="tdInterfaceName">@item.InterfaceName
+                        <input type="hidden" id="hdnInterfaceId" value="@item.InterfaceId" />
+                        </td>
+                        <td  style="text-align:center;">
+                            @if (item.AddAccess)
+                            {
+                                <input type="checkbox" class="AddAccess" id="chkAddAccess" checked="checked" />
+                            }
+                            else
+                            {
+                                <input type="checkbox" class="AddAccess" id="chkAddAccess" />
+                            }
+                        </td>
+                        <td style="text-align:center;">
+                            @if (item.EditAccess)
+                            {
+                                <input type="checkbox" class="EditAccess" id="chkEditAccess" checked="checked" />
+                            }
+                            else
+                            {
+                                <input type="checkbox" class="EditAccess" id="chkEditAccess" />
+                            }
+                        </td>
+                        <td style="text-align:center;">
+                            @if (item.ViewAccess)
+                            {
+                                <input type="checkbox" class="ViewAccess" id="chkViewAccess" checked="checked" />
+                            }
+                            else
+                            {
+                                <input type="checkbox" class="ViewAccess" id="chkViewAccess"/>
+                            }
+                        </td>
+                        <td style="text-align:center;">
+                            @if (item.CancelAccess)
+                            {
+                                <input type="checkbox" class="CancelAccess" id="chkCancelAccess" checked="checked" />
+                            }
+                            else
+                            {
+                                <input type="checkbox" class="CancelAccess" id="chkCancelAccess" />
+                            }
+                        </td>
+
+                        <td style="text-align:center;">
+                            @if (item.ReviseAccess)
+                            {
+                                <input type="checkbox" class="ReviseAccess" id="chkReviseAccess" checked="checked"  />
+                            }
+                            else
+                            {
+                                <input type="checkbox" class="ReviseAccess" id="chkReviseAccess" style="display:none;"/>
+                            }
+                        </td>
+
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+
+    $(document).ready(function () {
+        debugger;
+        $('body').on('change', '.AddAccess', function () {
+            $('#tblRoleList tr:not(:has(th))').each(function (i, row) {
+                var $row = $(row);
+                var checkAddValue = $(row).find(".AddAccess").is(":checked");
+                var checkEditValue = $(row).find(".EditAccess").is(":checked");
+                var checkViewValue = $(row).find(".ViewAccess").is(":checked");
+               // var checkCancelValue = $(row).find(".CancelAccess").is(":checked");
+                //var checkAddValue = $(this).prop(":checked");
+                if (checkAddValue == true || checkEditValue==true) {
+                    $(row).find(".ViewAccess").prop('checked', true);
+                    $(row).find(".ViewAccess").attr("disabled", true);
+                }
+                else if (checkAddValue == false) {
+                    $(row).find(".ViewAccess").attr("disabled", false);
+                }
+                else {
+                    if (checkEditValue == true) {
+                        $(row).find(".ViewAccess").prop('checked', true);
+                        $(row).find(".ViewAccess").attr("disabled", true);
+                    }
+                    else if (checkEditValue == false) {
+                        $(row).find(".ViewAccess").attr("disabled", false);
+                    }
+                    else if (checkViewValue == true) {
+                        $(row).find(".ViewAccess").prop('checked', true);
+                    }
+                    else {
+                        $(row).find(".ViewAccess").prop('checked', false);
+                    }
+                }
+                }
+                
+              
+                
+            );
+        });
+
+        $('body').on('change', '.EditAccess', function () {
+            debugger;
+            $('#tblRoleList tr:not(:has(th))').each(function (i, row) {
+                var $row = $(row);
+                var checkAddValue = $(row).find(".AddAccess").is(":checked");
+                var checkEditValue = $(row).find(".EditAccess").is(":checked");
+                var checkViewValue = $(row).find(".ViewAccess").is(":checked");
+                if (checkEditValue == true || checkAddValue == true)
+                {
+                    $(row).find(".ViewAccess").prop('checked', true);
+                    $(row).find(".ViewAccess").attr("disabled", true);
+                }
+                else if (checkEditValue == false && checkAddValue != true) {
+                    $(row).find(".ViewAccess").attr("disabled", false);
+                }
+                else 
+                {
+                    if (checkViewValue == true) {
+                        $(row).find(".ViewAccess").prop('checked', true);
+                    }
+                    else
+                    {
+                        $(row).find(".ViewAccess").prop('checked', false);
+                    }
+                }
+            });
+        });
+
+        //////////////Revise checkbox Show Hide //////
+
+       
+        $('#tblRoleList tr:not(:has(th))').each(function (i, row) {
+            debugger;
+                var $row = $(row);
+                var InterfaceName = $(row).find("#tdInterfaceName");
+                var chkReviseAccess = $(row).find("#chkReviseAccess");
+                if (InterfaceName.text().trim() == 'PO' || InterfaceName.text().trim() =='Quotation')
+                {
+                    chkReviseAccess.show();
+                }
+                
+            });
+
+
+        //End Revise checkbox Show Hide//
+         });
+
+    //$('body').on('blur', '.txtInTime', function () {
+    //    $('#hdnInTime').val($('.txtInTime').val());
+    //});
+
+    //$('body').on('change', '.ddlAbsentPresent', function () {
+    //    $('#tblEmployeeAttendanceList tr:not(:has(th))').each(function (i, row) {
+    //        var $row = $(row);
+    //        var presentAbsent = $(row).find(".ddlAbsentPresent").val();
+    //        if (presentAbsent == "L" || presentAbsent == "A") {
+
+    //        }
+    //        else if (presentAbsent == "P") {
+
+    //        }
+    //        else {
+
+    //        }
+    //    });
+    //});
+</script>

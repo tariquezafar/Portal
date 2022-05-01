@@ -1,0 +1,16 @@
+12:32:00 PM
+Source : Portal.Controllers.SalaryReportController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The view 'SalarySummaryReport' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/SalaryReport/SalarySummaryReport.aspx
+~/Views/SalaryReport/SalarySummaryReport.ascx
+~/Views/Shared/SalarySummaryReport.aspx
+~/Views/Shared/SalarySummaryReport.ascx
+~/Views/SalaryReport/SalarySummaryReport.cshtml
+~/Views/SalaryReport/SalarySummaryReport.vbhtml
+~/Views/Shared/SalarySummaryReport.cshtml
+~/Views/Shared/SalarySummaryReport.vbhtml
+--------------------------------------------------------------------------------------------------------------------------------
+

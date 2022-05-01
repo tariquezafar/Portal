@@ -1,0 +1,309 @@
+﻿@{
+    ViewBag.Title = "Sale Dashboard";
+    Layout = "~/Views/Shared/_SaleLayout.cshtml";
+}
+
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div id="wrapper">
+    <div id="page-content-wrapper" style="padding-top:5px !important;">
+        <div class="page-content">
+            <div class="container-fluid">
+                <div class="row top-head">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-5" style="margin-top: 5px;margin-bottom:5px">
+                            <b><label for="ddlFinYear" class="col-sm-4" style="margin-top: 5px;color:#fff">Financial Year</label></b>
+                            <div class="col-sm-8">
+                                <select id="ddlFinYear" name="ddlFinYear" onchange="SetFinancialYearSession()" tabindex="1" class="form-control"></select>
+                                <input type="hidden" id="hdnCurrentFinyearId" value="@ViewData["currentFinyearId"]" />
+                            </div>
+                        </div>
+                        <div class="col-md-5" style="margin-top: 5px;margin-bottom:5px">
+                            <b><label for="ddlCompanyBranchForComman" class="col-sm-4" style="margin-top: 5px;color:#fff">Company Branch</label></b>
+                            <div class="col-sm-8">
+                                <select id="ddlCompanyBranchForComman" name="ddlCompanyBranchForComman" onchange="CommanMethod();" tabindex="9" class="form-control"></select>
+                                <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                                <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="container-fluid-md">
+                    <div class="row ftop">
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="panel panel-metric panel-metric-sm">
+                                <div class="panel-body panel-body-primary">
+                                    <div class="metric-content metric-icon">
+                                        <div class="value">
+                                           @ViewData["Box1ItemValue"]
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-trophy"></i>
+                                        </div>
+                                        <header>
+                                            <h3 class="thin">@ViewData["Box1ItemKey"]</h3>
+                                           @* <a href="~/Customer/ListCustomer?listStatus=today" target="_blank" style="text-decoration:none;color:white;font-weight:bold;font-size: 26px">
+
+                                            </a>*@
+                                          
+                                        </header>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="panel panel-metric panel-metric-sm">
+                                <div class="panel-body panel-body-success">
+                                    <div class="metric-content metric-icon">
+                                        <div class="value">
+                                          @ViewData["Box2ItemValue"]
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-users"></i>
+                                        </div>
+                                        <header>
+                                            <a href="~/Customer/ListCustomer?listStatus=true" target="_blank" style="text-decoration:none;color:white;font-weight:bold;font-size: 26px">
+                                                <h3 class="thin">@ViewData["Box2ItemKey"]</h3>
+                                            </a>
+                                        </header>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="panel panel-metric panel-metric-sm">
+                                <div class="panel-body panel-body-inverse">
+                                    <div class="metric-content metric-icon">
+                                        <div class="value" >
+                                            <span class="fa fa-inr" style="color:white;font-weight:bold;font-size: 26px" id="todaysaleamt">&nbsp;@ViewData["Box3ItemValue"]</span>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-chain-broken"></i>
+                                        </div>
+                                        <header>
+                                            <a href="~/SaleInvoice/ListSaleInvoice?todayList=true" target="_blank" style="text-decoration:none;color:white;font-weight:bold;font-size: 26px">
+                                                <h3 class="thin">@ViewData["Box3ItemKey"] </h3>
+                                                </a>
+                                            </header>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="panel panel-metric panel-metric-sm">
+                                <div class="panel-body panel-body-danger">
+                                    <div class="metric-content metric-icon">
+                                        <div class="value" id="totalInvoicePackingCount">
+                                          @ViewData["Box4ItemValue"] 
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-tags"></i>
+                                        </div>
+                                        <header>
+                                            <a href="~/InvoicePackingList/ListInvoicePackingList?totalPackingList=true" target="_blank" style="text-decoration:none;color:white;font-weight:bold;font-size: 26px">
+                                                <h3 class="thin">@ViewData["Box4ItemKey"]</h3>
+                                            </a>
+                                        </header>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                        <div class="row"> 
+                            <div class="col-md-3">
+                                <div class="panel panel-metric panel-metric-sm">
+                                    <div class="panel-body panel-body-warning">
+                                        <div class="metric-content metric-icon" style="background-color:#d95043;">
+                                            <div class="value">
+                                              <span class="fa fa-inr" style="color:white;font-weight:bold;font-size: 26px" id="totalSaleReturn">&nbsp;@ViewData["Box5ItemValue"]</span>
+                                            </div>
+                                            <div id="metric-sales" class="chart"></div>
+                                            <header>
+                                                <a href="~/SaleReturn/ListSaleReturn?totalSaleReturnList=true" target="_blank" style="text-decoration:none;color:white;font-weight:bold;font-size: 26px">
+                                                    <h3 class="thin">@ViewData["Box5ItemKey"]</h3>
+                                                </a>
+                                            </header>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="panel panel-metric panel-metric-sm">
+                                    <div class="panel-body panel-body-info">
+                                        <div class="metric-content metric-icon" style="background-color:#1c2a3c;">
+                                            <div class="value" id="totalSaleTarget">
+                                                <span style="color:white;font-weight:bold;font-size: 26px" id="totalSaleTarget">&nbsp;&nbsp;@ViewData["Box6ItemValue"]</span>
+                                            </div>
+
+                                            <div id="metric-orders" class="chart"></div>
+                                            <header>
+                                                <a href="~/SaleTarget/ListSaleTarget?totalSaleTargetList=true" target="_blank" style="text-decoration:none;color:white;font-weight:bold;font-size: 26px">
+                                                    <h3 class="thin">@ViewData["Box6ItemKey"] </h3>
+                                                    </a>
+</header>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="panel panel-metric panel-metric-sm">
+                                    <div class="panel-body panel-body-info">
+                                        <div class="metric-content metric-icon" style="background-color:#26c281;">
+                                            <div class="value">
+                                                <span style="color:white;font-weight:bold;font-size: 26px" id="pendingInvoiceCount">&nbsp;</span>
+                                            </div>
+                                            <div class="value">
+                                                <span class="fa fa-inr" style="color:white;font-weight:bold;font-size: 26px;padding-left:120px;" id="salePendingInvoiceAmount">&nbsp;@ViewData["Box7ItemValue"] </span>
+                                            </div>
+                                            <div id="metric-orders" class="chart"></div>
+                                            <header>
+                                                <a href="~/SaleInvoiceSummary/ListSaleInvoiceSummary?totalUnpaidInvoice=true" target="_blank" style="text-decoration:none;color:white;font-weight:bold;font-size: 26px">
+                                                    <h3 class="thin">@ViewData["Box7ItemKey"]</h3>
+                                                 </a>
+                                            </header>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="panel panel-metric panel-metric-sm">
+                                    <div class="panel-body panel-body-info">
+                                        <div class="metric-content metric-icon" style="background-color:#357ebd;">
+                                            <div class="value" style="top:-16px;">
+                                                <span style="color:white;font-weight:bold;font-size: 18px;" id="totalInvoiceAmount" class="fa fa-inr">@ViewData["Box7ItemValue"]</span>
+                                            </div>
+                                            <div class="icon">
+                                                <i class="fa fa-arrow-up"></i>
+                                            </div>
+                                            <div id="metric-orders" class="chart"></div>
+                                            <header>
+                                                <h3 class="thin">@ViewData["Box8ItemKey"] </h3>
+                                            </header>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                        <div class="col-md-6">
+                            <div class="panel" style="overflow: hidden">
+                                <div class="row no-margin">
+                                    <div class="col-sm-4 col-md-4 no-padding" style="background-color: #357ebd !important; min-height:231px;">
+                                        <div id="divContainer9" class="panel-body bg-gray-dark" style="height: inherit;background-color: #357ebd !important;padding: 10px">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col-md-4 no-padding" style="background-color: #d95043 !important;">
+                                        <div id="divContainer10" class="panel-body bg-gray-dark" style="height: inherit;background-color: #d95043 !important;">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col-md-4 no-padding" style="background-color: #357ebd !important; min-height:231px;">
+                                        <div id="divContainer11" class="panel-body bg-gray-dark" style="height: inherit;background-color: #357ebd !important;padding: 10px">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="panel" style="overflow: hidden;">
+                                <div class="panel-body" style="padding:28px;">
+                                    <h4 class="thin no-margin-top" style="color:#0094ff!important;"><strong>Quick Links</strong></h4>
+                                    <table class="table">
+                                        <tbody>
+                                            <tr style="background-color:#0094ff!important;">
+                                                <td align="center"><a href="@Url.Content("~/Customer/AddEditCustomer?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Customer</a></td>
+                                                <td align="center"><a href="@Url.Content("~/PackingList/AddEditPackingList?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Packing List</a></td>
+                                                <td align="center"><a href="@Url.Content("~/Return/AddEditReturn?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Replacement</a></td>
+                                            </tr>
+
+                                            <tr style="background-color:#0094ff!important;">
+                                                <td align="center"><a href="@Url.Content("~/Quotation/AddEditQuotation?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Quotation</a></td>
+                                                <td align="center"><a href="@Url.Content("~/SO/AddEditSO?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Sale Order</a></td>
+                                                <td align="center"><a href="@Url.Content("~/SaleInvoice/AddEditSaleInvoice?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Sale Invoice</a></td>
+                                            </tr>
+                                            <tr style="background-color:#0094ff!important;">
+                                                <td align="center"><a href="@Url.Content("~/DeliveryChallan/AddEditDeliveryChallan?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Delivery Challan</a></td>
+                                                <td align="center"><a href="@Url.Content("~/SaleReturn/AddEditSaleReturn?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Sale Return </a></td>
+                                                <td align="center"><a href="@Url.Content("~/InvoicePackingList/AddEditInvoicePackingList?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Invoice Packing List</a></td>
+                                            </tr>
+
+                                            <tr style="background-color:#0094ff!important;">
+                                                <td align="center"><a href="@Url.Content("~/QuotationRegister/ListQuotationRegister")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">Quotation Register</a></td>
+                                                <td align="center"><a href="@Url.Content("~/SORegister/ListSORegister")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">SO Register</a></td>
+                                                <td align="center"><a href="@Url.Content("~/SaleInvoiceRegister/ListSaleInvoiceRegister")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">SI Register</a></td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="server-load" class="chart"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="row">
+
+                            <div id="tabs">
+                                <ul>
+                                    <li><a href="#tabs-2">Graphical Representation</a></li>
+                                    <li style="display:none;"><a href="#tabs-1">Sale Summary</a></li>
+
+                                </ul>
+                                <div id="tabs-1">
+
+                                    <div class="row">
+                                        <div class="col-md-4" id="DivQuatationCount">
+
+                                        </div>
+                                        <div class="col-md-4" id="DivSOCount">
+
+                                        </div>
+                                        <div class="col-md-4" id="DivSICount">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tabs-2">
+                                    <div class="row">
+                                        <div class="col-md-4" style="padding:10px" id="divQuatationCountChart">
+                                            <canvas id="barcanvasQuatation" height="200" width="200"></canvas>
+                                        </div>
+                                        <div class="col-md-4" style="padding:10px" id="divSOCountChart">
+                                            <canvas id="barcanvasSaleOrder" height="200" width="200"></canvas>
+                                        </div>
+                                        <div class="col-md-4" style="padding:10px" id="divSICountChart">
+                                            <canvas id="barcanvasSI" height="200" width="200"></canvas>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+              
+                <!--end body content -->
+            </div>
+</div>
+        </div>
+    </div>
+
+
+
+
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/Chart.bundle.min.js"></script>
+<script src="~/Scripts/Dashboard/SaleDashboard.js"></script>
+<script src="~/Scripts/paging.js"></script>
+

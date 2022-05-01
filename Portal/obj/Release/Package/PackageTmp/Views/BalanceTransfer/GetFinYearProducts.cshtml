@@ -1,0 +1,76 @@
+﻿@model List<Portal.Core.ViewModel.BalanceTransferViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+        color: #fff;
+    }
+
+    .achr {
+        text-decoration: none;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblFinYearProductList">
+            <thead>
+                <tr aling="center"  style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">                   
+                    <th>Product Name</th>
+                    <th>Main Group</th>
+                    <th>Sub Group</th>                   
+                    <th>Closing QTY.</th>
+                                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                       
+                        <td>
+                            @item.ProductName
+                            <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                            <input type="hidden" id="hdnProductMainGroupId" value="@item.ProductMainGroupId" />
+                            <input type="hidden" id="hdnProductMainGroupId" value="@item.ProductMainGroupId" />
+                            <input type="hidden" id="hdnClosingQty" value="@item.ClosingQty" />
+                        </td>
+                        <td>
+                            @item.ProductMainGroupName
+                           
+                        </td>
+                        <td>
+                            @item.ProductSubGroupName
+                            
+                        </td>
+                        
+
+                        <td>
+                            @item.ClosingQty
+                            
+                        </td>
+                       
+                      
+                                                                  
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblFinYearProductList').paging({
+            limit: 50,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

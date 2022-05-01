@@ -1,0 +1,93 @@
+﻿@model List<Portal.Core.ViewModel.QuotationViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+ <style>
+    .table {
+    width: 170% !important;
+    max-width: 170% !important;
+    margin-bottom: 20px !important;
+}
+ </style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblQuotationRegisterList">
+            <thead>
+                <tr>
+                    <th>Quotation No.</th>
+                    <th>Quotation Date</th>
+                    <th>Company Branch</th>
+                    <th>Customer Name</th>
+                    <th>Customer Code</th>
+                    <th>Contact Person</th>
+                    <th>Billing Address</th>
+                    <th>City</th>
+                    <th>State Name</th>
+                    <th>Pin Code</th>
+                    <th>TIN NO.</th> 
+                    <th>Ref. No.</th>
+                    <th>Ref. Date</th>
+                    <th>Basic Value</th> 
+                    <th>Total Value</th>
+                    <th>Revised Status</th>
+                    <th>Created By</th>
+                    <th>Created Date</th>
+                    <th>Modified By</th>
+                    <th>Modified Date</th> 
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="margin:0px 2px auto;">
+                            <a target="_blank" style="color: dodgerblue" href="~/Quotation/AddEditQuotation?QuotationId=@item.QuotationId&AccessMode=3">
+                         @item.QuotationNo</a>
+                        </td>
+                        <td>@item.QuotationDate</td>
+                        <td>@item.CompanyBranchName</td>
+                        <td>@item.CustomerName</td> 
+                        <td>@item.CustomerCode</td> 
+                        <td>@item.ContactPersonName</td> 
+                        <td>@item.BillingAddress</td> 
+                        <td>@item.City</td> 
+                        <td>@item.StateName</td> 
+                        <td>@item.PinCode</td> 
+                        <td>@item.TINNo</td> 
+                        <td>@item.RefNo</td>
+                        <td>@item.RefDate</td> 
+                        <td>@item.BasicValue</td>
+                        <td>@item.TotalValue</td>
+                        <td>@(item.QuotationRevisedStatus == true ? "Active" : "Inactive")</td> 
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+                        <!-- <td class="btn btn-success table_btn" style="width:30px; margin:0px auto;">
+                             <a style="color:white"  class="fa fa-eye" aria-hidden="true" href="~/Quotation/AddEditQuotation?QuotationId=@item.QuotationId&AccessMode=3"></a>
+                         </td>
+
+                        <!-- <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-plus-square-o" href="~/Quotation/AddRevisedQuotation?QuotationId=@item.QuotationId&AccessMode=1"></a>
+                        </td>-->
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblQuotationRegisterList').paging({
+            limit: 100,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

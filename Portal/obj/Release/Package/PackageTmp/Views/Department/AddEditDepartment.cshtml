@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "Add/Edit Department";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">HR</a> >> Add/Edit HR</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditDepartment" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="txtDepartmentName" class="col-sm-4 control-label">Department Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtDepartmentName" name="txtDepartmentName" tabindex="1" placeholder="Enter Department Name" type="text" maxlength="100" />
+                        <input id="hdnDepartmentId" type="hidden" value="@ViewData["departmentId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                    </div>
+                </div> 
+                <div class="form-group col-md-6"> 
+                    <label for="txtDepartmentCode" class="col-sm-4 control-label">Department Code&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="txtDepartmentCode" name="txtDepartmentCode" type="text" tabindex="2" placeholder="Enter Department Code" maxlength="10" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12"> 
+                <div class="form-group col-md-6" style="display:none;">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="5" class="form-control"></select>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="chkStatus" class="col-sm-4 control-label">Active Status</label>
+                    <div class="col-sm-8">
+                        <input type="checkbox" name="chkStatus" id="chkStatus" tabindex="3" class="" checked="checked" />
+                        <label style="font-size: 24px; " for="chkStatus"></label>
+                    </div> 
+                </div> 
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" tabindex="4" id="btnSave" onclick="SaveData(1)" type="button" border="0"> 
+                        <input class="btn btn-success" value="Update"  tabindex="4" style="display:none;" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">
+                        <a class="btn btn-success" id="btnReset" tabindex="5" href="@Url.Content("~/Department/AddEditDepartment")">Reset</a>
+                        @*<input class="btn btn-success" type="button"  tabindex="5" id="btnReset" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
+                        @*<input class="btn btn-success" type="button" id="btnList" value="Search Company" />*@
+                        <a class="btn btn-success" id="btnList"  tabindex="6" href="@Url.Content("~/Department/ListDepartment")">Search Department</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/Department/AddDepartment.js"></script>

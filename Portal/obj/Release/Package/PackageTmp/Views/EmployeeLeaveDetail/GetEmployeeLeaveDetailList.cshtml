@@ -1,0 +1,62 @@
+﻿@model List<Portal.Core.EmployeeLeaveDetailViewmodel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblActivityList">
+            <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Leave Type</th>
+                    <th>Leave Count</th>
+                    <th>Leave Date</th>
+                    <th>Create Date</th>
+                    <th>Create By</th>
+                    <th>Modified Date</th>
+                    <th>Modified By</th>
+                    <th>Leave Status</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.EmployeeName</td>
+                        <td>@item.LeaveTypeName</td>
+                        <td>@item.LeaveCount</td>
+                        <td>@item.LeaveDate</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.CreatedByName</td>
+                        <td>@item.ModifiedDate</td>
+                        <td>@item.ModifiedByName</td>
+                        <td>@(item.EmployeeLeaveDetailStatus == true ? "Active" : "Inactive")</td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px auto;">
+                            <a style="color:white" class="fa fa-eye" aria-hidden="true" href="~/EmployeeLeaveDetail/AddEditEmployeeLeaveDetail?employeeLeaveId=@item.EmployeeLeaveId&AccessMode=3"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" href="~/EmployeeLeaveDetail/AddEditEmployeeLeaveDetail?employeeLeaveId=@item.EmployeeLeaveId&AccessMode=2"></a>
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblActivityList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

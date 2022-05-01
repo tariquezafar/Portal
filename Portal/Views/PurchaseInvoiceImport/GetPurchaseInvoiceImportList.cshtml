@@ -1,0 +1,145 @@
+﻿@model List<Portal.Core.ViewModel.PurchaseInvoiceImportViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+
+    .table {
+        width: 112% !important;
+        max-width: 112% !important;
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+
+    #tblSaleInvoiceList tr th {
+        text-align: center;
+        border: 1px solid #ccc !important;
+        font-family: Arial;
+        color: #fff;
+    }
+
+    table tr td {
+        border: 1px solid #ccc !important;
+        font-family: Arial;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblPIList">
+            <thead>
+                <tr aling="center" style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                    <th rowspan="2" style="color:white; text-align:center;">Action</th>
+                    <th style="color:white; text-align:center;">Invoice No</th>
+                    <th style="color:white; text-align:center;">Invoice Date</th>
+                    <th style="color:white; text-align:center;">Custom Stn</th>
+
+                    <th style="color:white; text-align:center;">BENo</th>
+                    <th style="color:white; text-align:center;">BEDate</th>
+                    <th style="color:white; text-align:center;">CC</th>
+
+                    <th style="color:white; text-align:center;">Type</th>
+                    <th style="color:white; text-align:center;">Local IGM No</th>
+                    <th style="color:white; text-align:center;">Local IGM Date</th>
+
+                    <th style="color:white; text-align:center;">Gateway IGMNo</th>
+                    <th style="color:white; text-align:center;">Gateway Date</th>
+                    
+                    <th style="color:white; text-align:center;">PortOfLoading</th>
+                    <th style="color:white; text-align:center;">PortOfReporing</th>
+                    <th style="color:white; text-align:center;">PI Status</th>
+
+                    <th style="color:white; text-align:center;">Gross Amt</th>
+                    <th style="color:white; text-align:center;">Net Amt</th>
+               
+                    
+                    <th style="color:white; text-align:center;">Created By</th>
+                    <th style="color:white; text-align:center;">Created Date</th>
+                    <th style="color:white; text-align:center;">Modified By</th>
+                    <th style="color:white; text-align:center;">Modified Date</th>
+                    <th style="color:white; text-align:center;">Company Branch</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="margin:0px auto;">
+                            <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/PurchaseInvoiceImport/AddEditPurchaseInvoiceImport?invoiceId=@item.InvoiceId&AccessMode=3"></a>
+                            @if (item.InvoiceStatus.ToUpper() == "DRAFT")
+                            {
+                                <a style="color:darkgreen" class="fa fa-pencil" href="~/PurchaseInvoiceImport/AddEditPurchaseInvoiceImport?invoiceId=@item.InvoiceId&AccessMode=2"></a>
+                            }
+                          
+                        </td>
+                        <td>@item.InvoiceNo</td>
+                        <td>@item.InvoiceDate</td>
+                        <td>@item.CustomStn</td>
+                        <td>@item.BENo</td>
+                        <td>@item.BEDate</td>
+                        <td>@item.CC</td>
+                        <td>@item.Type</td>
+                        <td>@item.LocalIGMNo</td>
+                        <td>@item.LocalIGMDate</td>
+                        <td>@item.GatewayIGMNo</td>
+                        <td>@item.GatewayIGMDate</td>
+                        <td>@item.PortOfLoading</td>
+                        <td>@item.PortOfReporing</td>
+                       
+                        @if (item.InvoiceStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color:aquamarine">@item.InvoiceStatus</td>
+                        }
+                        else
+                        {
+                            <td style="background-color:green;color:white;">@item.InvoiceStatus</td>
+                        }
+                        <td>@item.TotalValue</td>
+                        <td>@item.GrossValue</td>
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>
+                        <td>@item.CompanyBranchName</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblPIList').paging({
+            limit: 25,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

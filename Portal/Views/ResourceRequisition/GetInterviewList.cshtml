@@ -1,0 +1,64 @@
+﻿@model List<Portal.Core.ViewModel.HR_ResourceRequisitionInterviewStageViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblInterviewList">
+            <thead>
+                <tr> 
+                    <th>S.No.</th>
+                    <th>Interview Type</th>
+                    <th>Interview Description</th>
+                    <th>Interview Assign To User</th>  
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success"> 
+                        <td>
+                            @item.InterviewSequenceNo
+                            <input type="hidden" id="hdnInterviewSequenceNo" value="@item.InterviewSequenceNo" />
+                        </td>
+                        <td>@item.InterviewTypeName 
+                        <input type="hidden" id="hdnRequisitionInterviewStagesId" value="@item.RequisitionInterviewStagesId" />
+                            <input type="hidden" id="hdnInterviewTypeId" value="@item.InterviewTypeId" />
+                            <input type="hidden" id="hdnInterviewTypeName" value="@item.InterviewTypeName" />
+                        </td>
+                        <td>@item.InterviewDescription
+                        <input type="hidden" id="hdnInterviewDescription" value="@item.InterviewDescription" /> 
+                        </td> 
+                        <td>
+                            @item.InterviewAssignToUserName
+                            <input type="hidden" id="hdnInterviewAssignToUserId" value="@item.InterviewAssignToUserId" /> 
+                            <input type="hidden" id="hdnInterviewAssignToUserName" value="@item.InterviewAssignToUserName" /> 
+                    </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" onclick="EditInterviewRow(this);" href="#"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-trash"  onclick="RemoveInterviewRow(this)" href="#"></a>
+                        </td>
+                    </tr>
+                } 
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblInterviewList">
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>Interview Type</th>
+                    <th>Interview Description</th>
+                    <th>Interview Assign To User</th>  
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

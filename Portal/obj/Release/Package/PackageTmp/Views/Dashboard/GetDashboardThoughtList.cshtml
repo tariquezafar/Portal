@@ -1,0 +1,103 @@
+﻿@model List<Portal.Core.ViewModel.ThoughtViewModel>
+@*<script src="~/Scripts/jquery.tablesorter.js"></script>*@
+@if (Model != null && Model.Count > 0)
+{
+    int i = 1;
+    <div class="carousel-inner">
+
+        @foreach (var items in Model)
+        {
+            if (i == 1)
+            {
+            <div class="item active">
+                <div class="row">
+                    <div class="col-xs-12" style="margin-top: -25px;">
+                        <div class="thumbnail adjust1">
+                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                @*<img class="media-object img-rounded img-responsive" style="height:60px;width:70px;" src="~/Images/erpcrm.png">*@
+                            </div>
+
+                            <div class="col-md-10 col-sm-10 col-xs-12" style="margin-left: -30px;">
+
+                                <div class="caption" style="text-align:justify;">
+                                    <p class="text-info lead adjust2" style="font-weight:bold; margin-bottom: 2px;">@items.ThoughtType</p>
+                                    <p style="padding-right:20px; font-weight:normal !important;">@items.ThoughtMessage</p>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+                i++;
+            }
+            else
+            {
+                <div class="item">
+                    <div class="row">
+                        <div class="col-xs-12" style="margin-top: -25px;">
+                            <div class="thumbnail adjust1">
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    @*<img class="media-object img-rounded img-responsive" style="height:60px;width:70px;" src="~/Images/erpcrm.png">*@
+                                </div>
+
+                                <div class="col-md-10 col-sm-10 col-xs-12" style="margin-left: -30px;">
+
+                                    <div class="caption" style="text-align:justify;">
+                                        <p class="text-info lead adjust2" style="font-weight:bold;  margin-bottom: 2px;">@items.ThoughtType</p>
+                                        <p style="padding-right:20px; font-weight:normal !important;">@items.ThoughtMessage</p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            }
+        }
+        </div>
+        <!-- Controls --> <a class="left carousel-control" style="top: 85px;" href="#carousel-example-generic" data-slide="prev"> <span class="fa fa-arrow-left fa-1"></span> </a> <a class="right carousel-control" style="top: 85px;" href="#carousel-example-generic" data-slide="next"> <span class="fa fa-arrow-right fa-1"></span> </a>
+        @*<div class="item-active">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="thumbnail adjust1">
+                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                <img class="media-object img-rounded img-responsive" style="height:60px;width:70px;" src="~/Images/erpcrm.png">
+                            </div> <div class="col-md-10 col-sm-10 col-xs-12">
+                                <div class="caption">
+                                    @foreach (var item in Model)
+                                    {
+                                        <ul>
+                                            <li>
+                                                <p class="text-info lead adjust2">@item.ThoughtType</p>
+                                            </li>
+                                            <li>
+                                                <p style="padding-right:20px;">@item.ThoughtMessage</p>
+                                            </li>
+                                        </ul>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+        }
+
+        <script>
+            //$(document).ready(function () {
+            //    $('#tblThoughtList').paging({
+            //        limit: 10,
+            //        rowDisplayStyle: 'block',
+            //        activePage: 0,
+            //        rows: []
+            //    });
+
+            //});
+        </script>

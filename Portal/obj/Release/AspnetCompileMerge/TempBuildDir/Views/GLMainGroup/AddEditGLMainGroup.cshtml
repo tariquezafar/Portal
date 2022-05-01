@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "Add GLMainGroup";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AccountDashboard">Account</a> >> Add/Edit GL Main Group </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditGLMainGroup" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div> 
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4"> 
+                        <label for="txtGLMainGroupName" class="col-sm-4 control-label">GL Main Group Name&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtGLMainGroupName" name="txtGLMainGroupName" tabindex="1" placeholder="Enter GL Main Group Name" type="text" maxlength="100" />
+                            <input id="hdnGLMainGroupId" type="hidden" value="@ViewData["glmaingroupId"]" />
+                            <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                        </div> 
+                </div>
+                <div class="form-group col-md-4"> 
+                        <label for="ddlGLType" class="col-sm-4 control-label">GL Type&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlGLType" name="ddlGLType"  tabindex="2" style="width: 100%;height: 35px;">
+                                <option value="0">Select GL Type</option>
+                                <option value="A">Assets </option>
+                                <option value="L">Liabilities </option>
+                                <option value="I">Income</option>
+                                <option value="E">Expenses</option>
+                            </select>
+                        </div> 
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtSequenceNo" class="col-sm-4 control-label">Sequence No.</label>
+                    <div class="col-sm-8">
+                        <input class="form-control numeric-only" tabindex="3" id="txtSequenceNo" name="txtSequenceNo" placeholder="Enter Sequence No" type="text" maxlength="100" />
+                    </div>
+                </div>
+            </div>
+             
+            <div class="col-md-12">
+                
+                <div class="form-group col-md-4"> 
+                        <label for="chkstatus" class="col-sm-4 control-label">Status&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="4" />
+                        </div> 
+                </div>
+            </div> 
+           
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" tabindex="5" id="btnSave" onclick="SaveData(1)" type="button" border="0"> 
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="5" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                        <a class="btn btn-success" id="btnReset" tabindex="8" href="@Url.Content("~/GLMainGroup/AddEditGLMainGroup")">Reset</a>
+                         @*<input class="btn btn-success" type="button" tabindex="6" id="btnReset" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
+                        @*<input class="btn btn-success" type="button" id="btnList" value="Search Company" />*@
+                        <a class="btn btn-success" id="btnList" tabindex="9" href="@Url.Content("~/GLMainGroup/ListGLMainGroup")">Search GL Main Group</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="6" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="7" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="7" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/GLMainGroup/AddGLMainGroup.js"></script>

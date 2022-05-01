@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "Add Calender";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">HR</a> >> Add/Edit Calender</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditCalender" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="txtCalenderName" class="col-sm-4 control-label">Calender Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtCalenderName" name="txtCalenderName" tabindex="1" placeholder="Enter Calender Name" type="text" maxlength="100" />
+                        <input id="hdnCalenderID" type="hidden" value="@ViewData["calenderId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="ddlCalenderYear" class="col-sm-4 control-label">Calender Year&nbsp;<span class="Mandatory">(*)</span></label>  
+                            <div class="col-sm-8">
+                                <select name="ddlCalenderYear" class="form-control" tabindex="3" id="ddlCalenderYear" placeholder="Enter Calender Year">
+                                    <option value="0">--Select Year--</option>
+                                    <option value="1">2017</option>
+                                    <option value="2">2018</option>
+                                    <option value="3">2019</option>
+                                    <option value="4">2020</option>
+                                    <option value="5">2021</option>
+                                    <option value="6">2022</option>
+                                    <option value="7">2023</option>
+                                    <option value="8">2024</option>
+                                    <option value="9">2025</option>
+                                    <option value="10">2026</option>
+                                    <option value="11">2027</option>
+                                    <option value="12">2028</option>
+                                    <option value="13">2029</option>
+                                    <option value="14">2030</option>
+                                    <option value="15">2031</option>
+                                    <option value="16">2032</option>
+                                    <option value="17">2033</option>
+                                    <option value="18">2034</option>
+                                    <option value="19">2035</option>
+                                    <option value="20">2036</option>
+                                    <option value="21">2037</option>
+                                    <option value="22">2038</option>
+                                    <option value="23">2039</option>
+                                    <option value="24">2040</option>
+                                    <option value="25">2041</option>
+                                    <option value="26">2042</option>
+                                    <option value="27">2043</option>
+                                    <option value="28">2044</option>
+                                    <option value="29">2045</option>
+                                    <option value="30">2046</option>
+                                    <option value="31">2047</option>
+                                    <option value="32">2048</option>
+                                    <option value="33">2049</option>
+                                    <option value="34">2050</option>
+                                </select>
+                            </div> 
+                       
+                   
+                </div> 
+
+              
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtstatus" class="col-sm-4 control-label">Status&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="3" />
+                    </div>
+                </div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="4" onclick="SaveData(1)" type="button" border="0"> 
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="4" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                        <a class="btn btn-success" id="btnReset" tabindex="5" href="@Url.Content("~/Calender/AddEditCalender")">Reset</a>
+                            @*<input class="btn btn-success" type="button" id="btnReset" tabindex="5" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
+                        @*<input class="btn btn-success" type="button" id="btnList" value="Search Company" />*@
+                        <a class="btn btn-success" id="btnList" tabindex="6" href="@Url.Content("~/Calender/ListCalender")">Search Calender</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/Calender/AddCalender.js"></script>
+ 

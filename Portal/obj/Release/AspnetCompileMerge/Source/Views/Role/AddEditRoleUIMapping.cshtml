@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "Add/Edit Role UI Mapping";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AdminDashboard">Admin</a> >> Add/Edit Role UI Mapping </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditRoleUIMPapping" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            
+            <div class="col-md-12 ftop">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="ddlRole" class="col-sm-4 control-label">Role&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlRole" name="ddlRole" tabindex="1" class="form-control"></select>
+                            <input id="hdnRoleUIMappingId" type="hidden" value="@ViewData["roleUIMappingId"]" />
+                            <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                            <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                            <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="ddlModule" class="col-sm-4 control-label">Module&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlModule" name="ddlModule" tabindex="2" class="form-control">
+                                <option value="0">-Select Module-</option>
+                                <option value="ADMIN">ADMIN</option>
+                                <option value="ACCOUNT">ACCOUNT</option>
+                                <option value="CRM">CRM</option>
+                                <option value="ESS">ESS</option>
+                                <option value="HR">HR</option>
+                                <option value="INVENTORY">INVENTORY</option>
+                                <option value="PAYROLL">PAYROLL</option>
+                                <option value="PRODUCTION">PRODUCTION</option>
+                                <option value="PURCHASE">PURCHASE</option>
+                                <option value="SALE">SALE</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="ddlTrnType" class="col-sm-4 control-label">Transaction Type&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlTrnType" name="ddlTrnType" tabindex="3" class="form-control">
+                                <option value="0">-Select Type-</option>
+                                <option value="MASTER">Master UI</option>
+                                <option value="TRANSACTION">Transaction UI</option>
+                                <option value="REPORT">Reports</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">                
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="4" class="form-control"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Get UI Detail" alt="Get UI Detail" tabindex="5" id="btnSearch" onclick="GetRoleMappingDetail()" type="button" border="0">
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="8" onclick="SaveData(1)" type="button" border="0">
+                            <a class="btn btn-success" style="color:#fff" id="btnReset" tabindex="9" onclick="refreshPage();" href="@Url.Content("~/Role/AddEditRoleUIMapping")">Reset</a>
+                            @*<input class="btn btn-success" type="button" id="btnReset" tabindex="6" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                <div class="row col-sm-12 col-lg-12 col-md-12">
+                    <div id="divList">
+
+                    </div>
+                </div>
+            </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" tabindex="6" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="7" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" tabindex="7" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/Role/AddRoleUIMapping.js"></script>

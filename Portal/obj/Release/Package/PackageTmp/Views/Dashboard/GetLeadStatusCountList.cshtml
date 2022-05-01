@@ -1,0 +1,47 @@
+﻿@model List<Portal.Core.ViewModel.LeadStatusCountViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table" id="tblLeadStatusCountList" style="margin-top:10px;">
+            <thead style="border-top-left-radius:15px;">
+                <tr style="border:none;">
+                    <th style="background:#FC8213; color:#fff;width:100%;" colspan="5">Lead Status Summary</th> 
+                </tr>
+                <tr style="background:#D0DDEC; border:1px solid #ccc;">
+                    <th>Lead Status</th>
+                    <th>Today</th>
+                    <th>MTD</th>
+                    <th>YTD</th>
+                    <th>Total</th>
+                </tr>
+               
+            </thead>
+            <tbody style="border:1px solid #ccc;">
+                @foreach (var item in Model)
+                {
+                <tr class="success">
+                    <td>@item.LeadStatusName</td>
+                    <td>@item.TodayCount</td>
+                    <td>@item.MTDCount</td>
+                    <td>@item.YTDCount</td>
+                    <td>@item.TotalLeadCount</td>
+                </tr>
+                }
+            </tbody>
+            <tfoot style="border:1px solid #ccc;">
+                <tr class="active">
+                    <th>Total Lead</th>
+                    <th>@Model.Sum(x => x.TodayCount)</th>
+                    <th>@Model.Sum(x => x.MTDCount)</th>
+                    <th>@Model.Sum(x => x.YTDCount)</th>
+                    <th>@Model.Sum(x => x.TotalLeadCount)</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Lead Status Data not updated</h3>
+}

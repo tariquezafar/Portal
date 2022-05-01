@@ -1,0 +1,268 @@
+﻿@model List<Portal.Core.ViewModel.HR_EmployeeAttendanceViewModel>
+@*<script src="~/Scripts/jquery.tablesorter.js"></script>*@
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<link href="~/Content/jquery.datetimepicker.min.css" rel="stylesheet" />
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.txtInTime').datetimepicker({
+            debug:true,
+            format: 'd-M-Y h:i a',
+            formatTime: 'h:i a',
+            time24h: true,
+            autoclose: true,
+
+        });
+
+        $('.txtOutTime').datetimepicker({
+            format: 'd-M-Y h:i a',
+            formatTime: 'h:i a',
+            time24h: true
+
+        });
+    });
+
+</script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table table-bordered table-hover" id="tblEmployeeAttendanceList">
+            <thead>
+                <tr>
+                    <th>Employee</th>
+                    <th>Attendance Date</th>
+                    <th>Leave/Present/Absent</th>
+                    <th>InTime</th>
+                    <th>OutTime</th>
+                    <th style="text-align:center;">
+                        @*Action*@
+                        <center>
+                            <select id="ddlAllApproveReject" style="width:158px;" @*onchange="SelectAllApproveReject(this);"*@ name="ddlAllApproveReject" tabindex="7" class="form-control">
+                                <option value="0">--Select Action--</option>
+                                <option value="Approved">Approved</option>
+                                <option value="Rejected">Rejected</option>
+                            </select>
+                        </center>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>
+                            @item.EmployeeName
+                            <input type="hidden" id="hdnEmployeeId" value="@item.EmployeeId" />
+                        </td>
+                        <td>
+                            @item.AttendanceDate
+                            <input type="hidden" id="hdnAttendanceDate" value="@item.AttendanceDate" />
+                        </td>
+                        <td>
+
+                            @if (@item.PresentAbsent == "P")
+                            {
+                                <center>
+                                    <select id="ddlAbsentPresent" style="width:158px;" name="ddlAbsentPresent" tabindex="7" class="form-control ddlAbsentPresent">
+                                        <option value="0">--Select Action--</option>
+                                        <option value="P" selected="selected">Present</option>
+                                        <option value="A">Absent</option>
+                                        <option value="L">Leave</option>
+                                    </select>
+                                </center>
+                            }
+                            else if (@item.PresentAbsent == "A")
+                            {
+                                <center>
+                                    <select id="ddlAbsentPresent" style="width:158px;" name="ddlAbsentPresent" tabindex="7" class="form-control ddlAbsentPresent">
+                                        <option value="0">--Select Action--</option>
+                                        <option value="P">Present</option>
+                                        <option value="A" selected="selected">Absent</option>
+                                        <option value="L">Leave</option>
+                                    </select>
+                                </center>
+                            }
+                            else if (@item.PresentAbsent == "L" || @item.LeaveStatus == "AL")
+                            {
+                                <center>
+                                    <select id="ddlAbsentPresent" style="width:158px;" name="ddlAbsentPresent" tabindex="7" class="form-control ddlAbsentPresent">
+                                        <option value="0">--Select Action--</option>
+                                        <option value="P">Present</option>
+                                        <option value="A">Absent</option>
+                                        <option value="L" selected="selected">Leave</option>
+                                    </select>
+                                </center>
+                            }
+                            else
+                            {
+                                <center>
+                                    <select id="ddlAbsentPresent" style="width:158px;" name="ddlAbsentPresent" tabindex="7" class="form-control ddlAbsentPresent">
+                                        <option value="0">--Select Action--</option>
+                                        <option value="P">Present</option>
+                                        <option value="A">Absent</option>
+                                        <option value="L">Leave</option>
+                                    </select>
+                                </center>
+                            }
+                        </td>
+                        <td>
+                            <input class="form-control txtInTime" id="txtInTime" onkeyup="javascript: this.value =''" name="txtInTime" value="@(item.InTime==""?"":item.InTime)" tabindex="3" placeholder="dd-MMM-yyyy hh:mm am/pm" type="text" />
+                            <input type="hidden" class="hdnInTime" id="hdnInTime" value="@item.InTime" />
+                        </td>
+                        <td>
+                            <input class="form-control txtOutTime" id="txtOutTime" onkeyup="javascript: this.value =''" name="txtOutTime" value="@(item.OutTime == ""?"":item.OutTime)" tabindex="3" placeholder="dd-MMM-yyyy hh:mm am/pm" type="text" />
+                            <input type="hidden" class="hdnOutTime" id="hdnOutTime" value="@item.OutTime" />
+                        </td>
+                        @if (@item.AttendanceStatus == "Approved")
+                        {
+                            <td>
+                                <center>
+                                    <select id="ddlApproveReject" style="width:158px;" name="ddlApproveReject" tabindex="7" class="form-control dropApproveReject">
+                                        <option value="0">--Select Action--</option>
+                                        <option value="Approved" selected="selected">Approved</option>
+                                        <option value="Rejected">Rejected</option>
+                                    </select>
+                                </center>
+                            </td>
+                        }
+                        @if (@item.AttendanceStatus == "Rejected")
+                        {
+                            <td>
+                                <center>
+                                    <select id="ddlApproveReject" style="width:158px;" name="ddlApproveReject" tabindex="7" class="form-control dropApproveReject">
+                                        <option value="0">--Select Action--</option>
+                                        <option value="Approved">Approved</option>
+                                        <option value="Rejected" selected="selected">Rejected</option>
+                                    </select>
+                                </center>
+                            </td>
+                        }
+                        @if (@item.AttendanceStatus == "Pending" || @item.AttendanceStatus == "")
+                        {
+                            <td>
+                                <center>
+                                    <select id="ddlApproveReject" style="width:158px;" name="ddlApproveReject" tabindex="7" class="form-control dropApproveReject">
+                                        <option value="0">--Select Action--</option>
+                                        <option value="Approved">Approved</option>
+                                        <option value="Rejected">Rejected</option>
+                                    </select>
+                                </center>
+                            </td>
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+        <center><input class="btn btn-success" value="Save" alt="Save" tabindex="3" id="btnSearch" onclick="SaveData()" type="button" border="0"></center>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblEmployeeAttendanceList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+    $(document).ready(function () {
+        $('body').on('change', '.ddlAbsentPresent', function () {
+            $('#tblEmployeeAttendanceList tr:not(:has(th))').each(function (i, row) {
+                var $row = $(row);
+                var presentAbsent = $(row).find(".ddlAbsentPresent").val();
+                if (presentAbsent == "L" || presentAbsent == "A") {
+                    $(row).find(".dropApproveReject").val("Approved");
+                    $(row).find(".txtInTime").attr("disabled", true);
+                    $(row).find(".txtOutTime").attr("disabled", true);
+                    $(row).find(".dropApproveReject").attr("disabled", true);
+                    $(row).find(".ddlAbsentPresent").attr("disabled", false);
+                    //$(row).find(".dropApproveReject").val("0");
+                    //$(row).find(".txtInTime").attr("disabled", true);
+                    //$(row).find(".txtOutTime").attr("disabled", true);
+                    //$(row).find(".dropApproveReject").attr("disabled", true);
+                }
+                else if (presentAbsent == "P")
+                {
+                    $(row).find(".dropApproveReject").val("Approved");
+                    $(row).find(".txtInTime").attr("disabled", false);
+                    $(row).find(".txtOutTime").attr("disabled", false);
+                    $(row).find(".dropApproveReject").attr("disabled", false);
+                }
+                else {
+                    $(row).find(".dropApproveReject").val("0");
+                    $(row).find(".txtInTime").attr("disabled", false);
+                    $(row).find(".txtOutTime").attr("disabled", false);
+                    $(row).find(".dropApproveReject").attr("disabled", false);
+                }
+            });
+        });
+
+        disableEnableByPresentAbsentOrLeave();
+    });
+
+    function disableEnableByPresentAbsentOrLeave() {
+        $('#tblEmployeeAttendanceList tr:not(:has(th))').each(function (i, row) {
+            var $row = $(row);
+            var presentAbsent = $(row).find(".ddlAbsentPresent").val();
+            if (presentAbsent == "L" || presentAbsent == "A") {
+                if (presentAbsent == "L") {
+                    $(row).find(".dropApproveReject").val("Approved");
+                    $(row).find(".txtInTime").attr("disabled", true);
+                    $(row).find(".txtOutTime").attr("disabled", true);
+                    $(row).find(".dropApproveReject").attr("disabled", true);
+                    $(row).find(".ddlAbsentPresent").attr("disabled", true);
+                }
+                else {
+                    $(row).find(".dropApproveReject").val("Approved");
+                    $(row).find(".txtInTime").attr("disabled", true);
+                    $(row).find(".txtOutTime").attr("disabled", true);
+                    $(row).find(".dropApproveReject").attr("disabled", true);
+                    $(row).find(".ddlAbsentPresent").attr("disabled", false);
+                }
+            }
+            else if (presentAbsent == "P") {
+                //$(row).find(".dropApproveReject").val("Approved");
+                $(row).find(".txtInTime").attr("disabled", false);
+                $(row).find(".txtOutTime").attr("disabled", false);
+                $(row).find(".dropApproveReject").attr("disabled", false);
+            }
+            else {
+                $(row).find(".ddlAbsentPresent").attr("disabled", false);
+                $(row).find(".dropApproveReject").val("0");
+                $(row).find(".txtInTime").attr("disabled", false);
+                $(row).find(".txtOutTime").attr("disabled", false);
+                $(row).find(".dropApproveReject").attr("disabled", false);
+            }
+        });
+    }
+    //$('body').on('blur', '.txtInTime', function () {
+    //    $('#hdnInTime').val($('.txtInTime').val());
+    //});
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

@@ -1,0 +1,38 @@
+﻿@model List<Portal.Core.ViewModel.UserViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    
+        <table class="tbl" id="tblUserList">
+            
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Created Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="text-align:left!important;">@item.FullName</td>
+                        <td>@item.MobileNo</td>
+                        <td>@item.Email</td>
+                        <td>@item.RoleName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@(item.UserStatus==true?"Active":"Inactive")</td>
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+  
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}

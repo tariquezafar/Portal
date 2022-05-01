@@ -1,0 +1,124 @@
+﻿@model List<Portal.Core.ViewModel.AssemblingProcessProductViewModel >
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>                    
+                    <th style="text-align:center;">Product Name</th>
+                    <th style="text-align:center;">Product Code</th>
+                    <th style="text-align:center;">Product Description</th>
+                    <th style="text-align:center;">Unit</th>
+                    <th style="text-align:center;">Paint Quantity</th>
+                    <th>Total Assembled QTY.</th>
+                    <th>Pending QTY.</th>
+                    <th>Recived QTY.</th>  
+                    <th colspan="2" align="center" class="">Action</th>
+                    <th colspan="2" align="center" class=""></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        @*<td>@item.SequenceNo
+                       
+                        </td>*@
+                        <td>@item.ProductName
+                        <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                        <input type="hidden" id="hdnAssemblingProcessDetailId" value="@item.AssemblingProcessDetailId" />
+                        <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                        <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                        <input type="hidden" id="hdnIsThirdPartyProduct" value="@item.IsThirdPartyProduct" />
+                         
+                        </td>
+                        <td>@item.ProductCode
+                        <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                        </td>
+                        <td>
+                            @item.ProductShortDesc
+                            <input type="hidden" id="hdnProductShortDesc" value="@item.ProductShortDesc" />
+                        </td>
+                        <td>@item.UOMName
+                            <input type="hidden" id="hdnUOMName" value="@item.UOMName" />
+                            
+
+                        </td>
+                        <td>
+                            @item.TotalPaintQuantity
+                            <input type="hidden" id="hdnTotalPaintQuantity" value="@item.TotalPaintQuantity" />
+                        </td>
+                        <td>
+                            @item.TotalRecivedAssembledQuantity
+                            <input type="hidden" id="hdnTotalRecivedAssembledQuantity" value="@item.TotalRecivedAssembledQuantity" />
+                        </td>
+                        <td>
+                            @item.PendingQuantity
+                            <input type="hidden" id="hdnPendingQunatity" value="@item.PendingQuantity" />
+                        </td>
+                        <td>
+                            @item.RecivedQuantity
+                            <input type="hidden" id="hdnRecivedQuantity" value="@item.RecivedQuantity" />
+                            <input type="hidden" id="hdnQuantity" value="@item.Quantity" />
+                        </td>
+                        <td style="width:30px; margin:0px 2px auto;">
+                            <a class="glyphicon glyphicon-search erp-btn" onclick="OpenPrintPopup('@item.ProductId', '@item.ProductName','@item.RecivedQuantity');" href="#"></a>
+                        </td>
+                        <td class="editonly" style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-pencil-square-o erp-btn" onclick="EditProductRow(this);" href="#"></a>
+                        </td>
+                        <td class="editonly" style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-trash erp-btn"  onclick="RemoveProductRow(this)" href="#"></a>
+                        </td>
+                        
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>                 
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Product Description</th>
+                    <th>Unit</th>
+                    <th style="text-align:center;">Paint Quantity</th>
+                    <th>Total Assembled QTY.</th>
+                    <th>Pending QTY.</th>
+                    <th>Recived QTY.</th>     
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+<script>
+    $(document).ready(function () {
+        if ($("#hdnAccessMode").val() == "3") {
+            $(".editonly").hide();
+        }
+
+    });
+</script>

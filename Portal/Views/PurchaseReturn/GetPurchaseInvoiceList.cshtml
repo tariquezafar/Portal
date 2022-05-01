@@ -1,0 +1,84 @@
+﻿@model List<Portal.Core.ViewModel.PurchaseInvoiceViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+
+    table tr:nth-child(2n+1) {
+        background-color: #dbe5f7;
+    }
+
+    table tr:nth-child(2n) {
+        background-color: #dbe5f7;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblSearchInvoiceList">
+            <thead>
+                <tr>
+                    <th align="center">Select</th>
+                    <th>Invoice No.</th>
+                    <th>Invoice Date</th>
+                    <th>Vendor Name</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Ref. No.</th>
+                    <th>Ref. Date</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-pencil-square-o erp-btn" href="#" onclick="SelectInvoice('@item.InvoiceId','@item.InvoiceNo','@item.InvoiceDate','@item.VendorId','@item.VendorCode','@item.VendorName')"></a>
+                        </td>
+                        <td>
+                            @item.InvoiceNo
+                            <input type="hidden" id="hdnSearchInvoiceNo" value="@item.InvoiceNo" />
+                        </td>
+                        <td>
+                            @item.InvoiceDate
+                            <input type="hidden" id="hdnSearchInvoiceDate" value="@item.InvoiceNo" />
+                        </td>
+                        <td>@item.VendorName</td>
+                        <td>@item.City</td>
+                        <td>@item.StateName</td>
+                        <td>@item.RefNo</td>
+                        <td>@item.RefDate</td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblSearchInvoiceList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

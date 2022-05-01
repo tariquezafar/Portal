@@ -1,0 +1,193 @@
+﻿@{
+    ViewBag.Title = "Add Company";
+    Layout = "~/Views/Shared/_SuperAdminLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    } 
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a  style="color:#fff;" href="~/Company/SuperAdminDashboard">Control Panel</a> >> Add/Edit Company </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditCompany" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6"> 
+                            <label for="txtCompanyName" class="col-sm-4 control-label">Company Name&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtCompanyName" name="txtCompanyName" tabindex="1" placeholder="Enter Your Company Name" type="text" maxlength="100" />
+                                <input id="hdnCompanyID" type="hidden" value="@ViewData["companyId"]" />
+                                <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                            </div>
+                        </div>
+                <div class="form-group col-md-6">
+                    <label for="txtCompanyCode" class="col-sm-4 control-label">Company Short Code&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="txtCompanyCode" name="txtCompanyCode" tabindex="2" type="text" placeholder="Enter Company Short Code" maxlength="10" class="form-control" />
+                    </div> 
+                </div>
+                </div>
+
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtContactPersonName" class="col-sm-4 control-label">Contact Person&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="txtContactPersonName" name="txtContactPersonName" tabindex="3" type="text" placeholder="Enter Contact Person Name" maxlength="100" class="form-control alpha-space-only" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtPhone" class="col-sm-4 control-label">Phone&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="txtPhone" name="txtPhone" type="text" tabindex="4" placeholder="Enter Company Contact Number" maxlength="10" class="form-control  input-number " onkeyup="checkPhone(this)" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtEmail" class="col-sm-4 control-label">Email&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="txtEmail" name="txtEmail" type="text" tabindex="5" placeholder="Enter Email Address" maxlength="80" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtFax" class="col-sm-4 control-label">Fax</label>
+                    <div class="col-sm-8">
+                        <input id="txtFax" name="txtFax" type="text" tabindex="6" placeholder="Enter Company Fax Number" maxlength="20" class="form-control input-number " onkeyup="checkPhone(this)" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtWebSite" class="col-sm-4 control-label">WebSite</label>
+                    <div class="col-sm-8">
+                        <input id="txtWebSite" name="txtWebSite" type="text" tabindex="7" placeholder="Enter Company WebSite" maxlength="100" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtAddress" class="col-sm-4 control-label">Address</label>
+                    <div class="col-sm-8">
+                        <textarea id="txtAddress" name="txtAddress" tabindex="8" placeholder="Enter Address" maxlength="150" class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtCity" class="col-sm-4 control-label">City&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="txtCity" name="txtCity" type="text" tabindex="9" placeholder="Enter City Name" maxlength="100" class="form-control alpha-space-only" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="ddlCountry" class="col-sm-4 control-label">Country&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCountry" name="ddlCountry" tabindex="10" onchange="BindStateList(0)" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+ 
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlState" class="col-sm-4 control-label">State&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlState" name="ddlState" tabindex="11" placeholder="Select State Name" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtPinCode" class="col-sm-4 control-label">Pin Code</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="txtPinCode" name="txtPinCode" tabindex="12" placeholder="Enter Pin Code" maxlength="20" class="form-control  input-number numeric-only" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtCompanyDesc" class="col-sm-4 control-label">Company Description</label>
+                    <div class="col-sm-8">
+                        <textarea id="txtCompanyDesc" name="txtCompanyDesc" tabindex="13" placeholder="Enter Company Description" maxlength="100" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtTINNo" class="col-sm-4 control-label">TIN No.</label>
+                    <div class="col-sm-8">
+                        <input id="txtTINNo" type="text" name="txtTINNo" tabindex="14" placeholder="Enter TIN No." maxlength="20" class="form-control alpha-numeric-only" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtGSTNo" class="col-sm-4 control-label">GST No.</label>
+                    <div class="col-sm-8">
+                        <input id="txtGSTNo" name="txtGSTNo" type="text" tabindex="15" placeholder="Enter Company GST No." maxlength="20" class="form-control alpha-numeric-only" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtPANNo" class="col-sm-4 control-label">PAN No.</label>
+                    <div class="col-sm-8">
+                        <input id="txtPANNo" name="txtPANNo" type="text" tabindex="15" placeholder="Enter Company PAN No." maxlength="20" class="form-control alpha-numeric-only" />
+                    </div>
+                </div> 
+            </div>  
+
+            <div class="col-md-12"> 
+                <div class="form-group col-md-6">
+                    <label for="txtServiceTaxNo" class="col-sm-4 control-label">Service Tax No.</label>
+                    <div class="col-sm-8">
+                        <input id="txtServiceTaxNo" name="txtServiceTaxNo" tabindex="16" type="text" placeholder="Enter Company Service Tax No." maxlength="20" class="form-control alpha-numeric-only" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtAnnualTurnOver" class="col-sm-4 control-label">Annual TurnOver</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtAnnualTurnOver" name="txtAnnualTurnOver" tabindex="22" placeholder="Enter Annual TurnOver" type="text" maxlength="100" />
+                    </div>
+                </div>
+            </div> 
+
+              
+                    <div class="row col-sm-6 col-lg-12 col-md-12 ftop">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <center>
+                                <input class="btn btn-success" value="Save" tabindex="17" alt="Save" id="btnSave" onclick="SaveData(1)" type="button" border="0"> 
+                                <input class="btn btn-success" value="Update" tabindex="17"  style="display:none;" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
+                                <a class="btn btn-success" id="btnReset" tabindex="19" href="@Url.Content("~/Company/AddEditCompany")">Reset</a>
+                                @*<input class="btn btn-success" type="button" tabindex="18" id="btnReset" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
+                                <a class="btn btn-success" id="btnList" tabindex="19" href="@Url.Content("~/Company/ListCompany")">Search Company</a>
+                            </center>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+      <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/Company/AddCompany.js"></script>

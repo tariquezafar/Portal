@@ -1,0 +1,78 @@
+﻿@model List<Portal.Core.ViewModel.CustomerTypeViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table
+    {
+        background-color:white;
+        margin-left:1px;
+        margin-right:30px
+
+    }
+      .table th {
+    background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    color:#fff;
+}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div>
+        <table class="table table-bordered" id="tblCustomerTypeList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>Customer Type Desc</center></th>
+                    <th><center>Company Branch</center></th>
+                    <th><center>Status</center></th> 
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {     if (item.CustomerType_Status == true)
+                    {
+                    <tr class="success">
+                        <td class="teal text" style="width:30px; margin:0px auto;">
+                            <a title="View" style="color:darkblue;text-decoration:none;" class="fa fa-eye" aria-hidden="true" href="~/CustomerType/AddEditCustomerType?CustomerTypeId=@item.CustomerTypeId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            <a title="Edit" style="color:darkgreen;text-decoration:none;" class="fa fa-pencil-square-o" href="~/CustomerType/AddEditCustomerType?CustomerTypeId=@item.CustomerTypeId&AccessMode=2"></a>
+                        </td>
+                        <td align="center">@item.CustomerTypeDesc</td>
+                        <td align="center">@item.CompanyBranchName</td>
+                        <td align="center">@(item.CustomerType_Status == true ? "Active" : "Inactive")</td>                      
+                    </tr>
+                    }
+                    else
+                    {
+                        <tr class="danger">
+                            <td class="teal text" style="width:30px; margin:0px auto;">
+                                <a title="View" style="color:darkblue;text-decoration:none;" class="fa fa-eye" aria-hidden="true" href="~/CustomerType/AddEditCustomerType?CustomerTypeId=@item.CustomerTypeId&AccessMode=3"></a>
+                            </td>
+                            <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                                <a title="Edit" style="color:darkgreen;text-decoration:none;" class="fa fa-pencil-square-o" href="~/CustomerType/AddEditCustomerType?CustomerTypeId=@item.CustomerTypeId&AccessMode=2"></a>
+                            </td>
+                            <td>@item.CustomerTypeDesc</td>
+                            <td align="center">@item.CompanyBranchName</td>
+                            <td>@(item.CustomerType_Status == true ? "Active" : "Inactive")</td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblCustomerTypeList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

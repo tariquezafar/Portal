@@ -1,0 +1,487 @@
+﻿@{
+    ViewBag.Title = "AddEditBankReconcilation";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend {
+        display: block;
+        width: 37%;
+        padding: 0;
+        margin-bottom: 20px;
+        font-size: 21px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    textarea {
+    overflow: hidden;
+}
+</style>
+
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AccountDashboard">Account</a> >> Add/Edit Bank Reconcilation</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditLeadSource" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+                <div class="col-md-12 ftop">
+                    <div class="form-group col-md-4">
+                        <label for="txtBankReconcilationNo" class="col-sm-4 control-label">Bank Reconcilation No.</label>
+
+                        <div class="col-sm-8">
+                            <input id="txtBankReconcilationNo" name="txtBankReconcilationNo" tabindex="1" placeholder="Auto Generated Bank Reconcilation No" type="text" class="form-control" maxlength="50" />
+                            <a style="display:none;color:#fff;" tabindex="4" class="btn btn-success" id="btnAddNew" href="@Url.Content("~/BankReconcilation/AddEditBankReconcilation")">New</a>
+                            <a style="display:none;color:#fff;" tabindex="5" class="btn btn-success" target="_blank" href="@Url.Action("Report",new {bankRecoId=ViewData["bankRecoId"], reportType="PDF" })" id="btnPrint">Print</a>
+                            <input id="hdnbankRecoID" type="hidden" value="@ViewData["bankRecoID"]" />
+                            <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                        </div>
+
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="txtBankRecoDate" class="col-sm-4 control-label">Bank Reconcilation Date</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtBankReconcilationDate" name="txtBankReconcilationtDate" tabindex="2" placeholder="Select Bank Reconcilation Date" value="@ViewData["currentDate"]" type="text" maxlength="50" />
+                            <input id="hdnCurrentDate" name="hdnCurrentDate" value="@ViewData["currentDate"]" type="hidden" />
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="txtBankBookName" class="col-sm-4 control-label">Bank Name&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtBankBookName" name="txtBankBookName" tabindex="3" placeholder="Enter Bank Name" type="text" maxlength="150" />
+                            <input id="hdnBankBookId" type="hidden" value="0" />
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group col-md-4">
+                        <label for="txtBookBranch" class="col-sm-4 control-label">Bank Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtBankBranch" name="txtBankBranch" tabindex="6" placeholder="Enter Bank Branch" type="text" maxlength="150" />
+                        </div>
+                    </div>
+               
+                    <div class="form-group col-md-4">
+                        <label for="txtBankReconcilationFromDate" class="col-sm-4 control-label">Bank Reconcilation FromDate&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtBankReconcilationFromDate" name="txtBankReconcilationFromDate" tabindex="7" placeholder="Bank Reconcilation From Date" type="text" value="@ViewData["monthStartDate"]" maxlength="80" />
+                            <input id="hdnBankReconcilationFromDate" name="hdnBankReconcilationFromDate" value="@ViewData["monthStartDate"]" type="hidden" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="txtBankReconcilationToDate" class="col-sm-4 control-label">Bank Reconcilation ToDate&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtBankReconcilationToDate" name="txtBankReconcilationToDate" tabindex="8" placeholder="Bank Statement To Date" type="text" value="@ViewData["monthEndDate"]" maxlength="80" />
+                            <input id="hdnBankReconcilationToDate" name="hdnBankReconcilationToDate" value="@ViewData["monthEndDate"]" type="hidden" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group col-md-4 ">
+                        <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="9" class="form-control"></select>
+                            <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                            <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="txtRemarks" class="col-sm-4 control-label">Remarks</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" id="txtRemarks" name="txtRemarks" tabindex="10" rows="1" cols="50" maxlength="500"> </textarea>
+                        </div>
+                    </div>
+                </div>
+
+                @*<div class="col-md-12">
+                    <div class="form-group col-md-8">
+                        <label for="txtBookClosingBalance" class="col-sm-6 control-label">Closing Bal. As Per Book&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-6">
+                            <input class="form-control input-number right-text" id="txtBookClosingBalance" name="txtBookClosingBalance" tabindex="9" placeholder="Book Closing Balance" type="text"  maxlength="80" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <div class="col-sm-8">
+                            <select id="ddlBookClosingBalance" name="ddlBookClosingBalance" tabindex="10" class="form-control">
+                                <option value="dr">Debit</option>
+                                <option value="cr">Credit</option>
+                            </select>
+                            </div>
+                        <div class="col-sm-4">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            
+                            
+                        </div>
+
+                    </div>*@
+
+
+                
+
+                <div class="col-md-12" id="divCreated" style="display:none;">
+                    <div class="form-group col-md-6">
+                        <label for="txtCreatedBy" class="col-sm-4 control-label">Created By</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtCreatedBy" name="txtCreatedBy" tabindex="11" placeholder="Created By User Name" type="text" maxlength="100" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="txtCreatedDate" class="col-sm-4 control-label">Created Date</label>
+                        <div class="col-sm-8 ">
+                            <input class="form-control" id="txtCreatedDate" name="txtCreatedDate" tabindex="12" placeholder="Created Date" type="text" maxlength="50" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12" id="divModified" style="display:none;">
+                    <div class="form-group col-md-6">
+                        <label for="txtModifiedBy" class="col-sm-4 control-label">Modified By</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtModifiedBy" name="txtModifiedBy" tabindex="13" placeholder="Modified By User Name" type="text" maxlength="100" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="txtModifiedDate" class="col-sm-4 control-label">Modified Date</label>
+                        <div class="col-sm-8 ">
+                            <input class="form-control" id="txtModifiedDate" name="txtModifiedDate" tabindex="14" placeholder="Modified Date" type="text" maxlength="50" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group col-md-3">
+
+                    </div>
+                   
+
+                    <div class="form-group col-md-6">
+                        <center>
+                            <input class="btn btn-success editonly" value="Search Bank Statement" tabindex="16" alt="Search Bank Statement" id="btnSearchBankStatement" type="button" border="0" onclick="GetBankStatementList()">
+                        </center>
+                    </div>
+                    <div class="form-group col-md-3">
+                       
+                    </div>
+                </div>
+                
+                <div class="col-sm-12 col-lg-12 col-md-12">
+                    <div id="divBankStatementList1">
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 totalSeciotn1" style="display:none;">
+                    <div class="form-group col-md-4">
+
+                    </div>
+                    <div class="form-group col-md-4">
+
+                    </div>
+                    <div class="form-group col-md-4">
+                        <h4><label for="txtBankStatementListTotal1" class="col-sm-4 " style="color:#000;text-align:center;"><b>Total</b></label></h4>
+                        <div class="col-sm-8">
+                            <input id="txtBankStatementListTotal1" name="txtBankStatementList1" type="text" tabindex="15" maxlength="12" class="form-control input-number right-text" />
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12 col-lg-12 col-md-12">
+                    <div id="divBankStatementList2">
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 totalSeciotn2" style="display:none;">
+                    <div class="form-group col-md-4">
+
+                    </div>
+                    <div class="form-group col-md-4">
+
+                    </div>
+                    <div class="form-group col-md-4">
+                        <h4><label for="txtBankStatementListTotal2" class="col-sm-4 " style="color:#000;text-align:center;"><b>Total</b></label></h4>
+                        <div class="col-sm-8">
+                            <input id="txtBankStatementListTotal2" name="txtBankStatementListTotal2" type="text" tabindex="17" maxlength="12" class="form-control input-number right-text" />
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12 col-lg-12 col-md-12">
+                    <div id="divBankStatementList3">
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 totalSeciotn3" style="display:none;" >
+                    <div class="form-group col-md-4">
+
+                    </div>
+                    <div class="form-group col-md-4">
+
+                    </div>
+                    <div class="form-group col-md-4">
+                        <h4><label for="txtBankStatementListTotal3" class="col-sm-4 " style="color:#000;text-align:center;"><b>Total</b></label></h4>
+                        <div class="col-sm-8">
+                            <input id="txtBankStatementListTotal3" name="txtBankStatementListTotal3" type="text" tabindex="18" maxlength="12" class="form-control input-number right-text" />
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12 col-lg-12 col-md-12">
+                    <div id="divBankStatementList4">
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 totalSeciotn4" style="display:none;">
+                    <div class="form-group col-md-4">
+
+                    </div>
+                    <div class="form-group col-md-4">
+
+                    </div>
+                    <div class="form-group col-md-4">
+                        <h4><label for="txtBankStatementListTotal4" class="col-sm-4 " style="color:#000;text-align:center;"><b>Total</b></label></h4>
+                        <div class="col-sm-8">
+                            <input id="txtBankStatementListTotal4" name="txtBankStatementListTotal4" type="text" tabindex="19" maxlength="12" class="form-control input-number right-text" />
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group col-md-8">
+                        <label for="txtStatementClosingBalance" class="col-sm-6 control-label">Closing Bal. As Per Bank Statement&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-6">
+                            <input class="form-control input-number right-text" id="txtStatementClosingBalance" name="txtStatementClosingBalance" tabindex="20" placeholder="Statement Closing Balance" type="text" maxlength="80" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <div class="col-sm-8">
+                            <select id="ddlStatementClosingBalance" name="ddlStatementClosingBalance" tabindex="21" class="form-control">
+                                <option value="dr">Debit</option>
+                                <option value="cr">Credit</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-2">
+
+                    </div>
+            </div>
+
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        </div>
+                        <div class="col-md-6">
+                            <fieldset class="scheduler-border">
+                                <legend class="scheduler-border">Summary</legend>
+                                    
+                                    <div class="form-group">
+                                        <table style="text-align:left;padding:10px;line-height:30px;width:100%;">
+                                            <tr>
+                                                <td colspan="2" style="width:100%;">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-md-6">A. Closing Bal. As Per Book As On Date <br /> 
+                                                        <span id="spnOnDate"></span>
+                                                        
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <input class="form-control input-number right-text" onkeyup="CalculateSummary();" id="txtBookClosingBalance" name="txtBookClosingBalance" tabindex="21" placeholder="Book Closing Balance" type="text" maxlength="80" />
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <select  id="ddlBookClosingBalance" name="ddlBookClosingBalance" tabindex="22" class="form-control">
+                                                                <option value="dr">Dr</option>
+                                                                <option value="cr" selected>Cr</option>
+                                                            </select>
+                                                            </div>
+                                                        </div>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            B. Cheqeus issued but not presented in Bank <br />
+                                                        </div>
+                                                        <div class="col-md-4" style="text-align:right;">
+                                                            <span id="spnCheqeusIssuedTotal"></span>
+                                                            <input type="hidden" id="hdnCheqeusIssuedTotal" value="0" />
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            C. Cheques Received but not in Bank <br />
+                                                        </div>
+                                                        <div class="col-md-4" style="text-align:right;">
+                                                            <span id="spnCheqeusReceivedTotal"></span>
+                                                            <input type="hidden" id="hdnCheqeusReceivedTotal" value="0" />
+                                                        </div>
+                                                        <div class="col-md-2">
+
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                              
+                                              
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            D. Cheque Received in bank but not in Books <br />
+                                                        </div>
+                                                        <div class="col-md-4" style="text-align:right;">
+                                                            <span id="spnCheqeusReceivedBankTotal"></span>
+                                                            <input type="hidden" id="hdnCheqeusReceivedBankTotal" value="0" />
+                                                        </div>
+                                                        <div class="col-md-2">
+
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            E. Cheque debited (Paid) by Bank but not in Book
+                                                        </div>
+                                                        <div class="col-md-4" style="text-align:right;">
+                                                            <span id="spnCheqeusDebitedBankTotal"></span>
+                                                            <input type="hidden" id="hdnCheqeusDebitedBankTotal" value="0" />
+                                                        </div>
+                                                        <div class="col-md-2" >
+                                                            
+                                                        </div>
+                                                    </div>
+
+                                               </td>
+                                             
+                                            </tr>
+                                            <tr>
+
+                                                <td colspan="2">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                           Closing Balance as per Bank Statement <br />(A + B - C + D - E )
+                                                        </div>
+                                                        <div class="col-md-4" style="text-align:right;">
+                                                            <span id="spnSummaryTotal"></span>
+                                                           
+                                                            <input type="hidden" id="hdnSummaryTotal" value="0" />
+                                                        </div>
+                                                        <div class="col-md-2">
+
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+
+                                            </tr>
+                                        </table>
+
+                                    </div>
+
+
+
+
+</fieldset>
+                        </div>
+                    <div class="col-md-3">
+                    </div>
+                    </div>
+
+                
+                    
+
+            <div class="row col-sm-12 col-lg-12 col-md-12 ftop ">
+                <div class="col-md-3">
+                    <label for="ddlBankRecoStatus" class="col-sm-4 control-label">Save Mode</label>
+                    <div class="col-sm-8">
+                        <select id="ddlBankRecoStatus" name="ddlBankRecoStatus" tabindex="23" class="form-control">
+                            <option selected="selected" value="Draft">Draft</option>
+                            <option value="Final">Final</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="24" onclick="SaveData();" type="button" border="0">
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="24" alt="Update" id="btnUpdate" onclick="SaveData()" type="button" border="0">
+                        @*<input class="btn btn-success" type="button" id="btnReset" tabindex="26" onclick="ClearFields()" value="Reset" />*@
+                        <a class="btn btn-success" id="btnReset" tabindex="27" href="@Url.Content("~/BankReconcilation/AddEditBankReconcilation")">Reset</a>
+                        <a class="btn btn-success" id="btnList" tabindex="28" href="@Url.Content("~/BankReconcilation/ListBankReconcilation")">Search Bank Reconcilation</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+
+
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" tabindex="25" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" tabindex="26" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" tabindex="26" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+            </div>
+    </form>
+</section>
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/BankReconcilation/AddBankReconcilation.js"></script>

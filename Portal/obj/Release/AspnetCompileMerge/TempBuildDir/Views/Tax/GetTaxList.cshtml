@@ -1,0 +1,65 @@
+﻿@model List<Portal.Core.ViewModel.TaxViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblTaxList">
+            <thead>
+                <tr aling="center"  style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                    <th colspan="2">Action</th>
+                    <th>Tax Name</th>
+                    <th>Tax Type</th>   
+                    <th>Tax Sub Type</th>  
+                    <th>Tax Percentage</th>   
+                    <th>Form Type Desc</th>   
+                    <th>Create By</th>  
+                    <th>Created Date</th> 
+                    <th>Modified By</th>
+                    <th>Modified Date</th> 
+                    <th>Tax Status</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="width:30px; margin:0px auto;">
+                            <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/Tax/AddEditTax?TaxId=@item.TaxId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/Tax/AddEditTax?TaxId=@item.TaxId&AccessMode=2"></a>
+                        </td> 
+                        <td>@item.TaxName</td>
+                        <td>@item.TaxType</td>  
+                        <td>@item.TaxSubType</td>  
+                        <td>@item.TaxPercentage</td>   
+                        <td>@item.FormTypeDesc</td>   
+                        <td>@item.CreatedName</td>
+                        <td>@item.CreatedDate</td>  
+                        <td>@item.ModifiedName</td>
+                        <td>@item.ModifiedDate</td> 
+                        <td>@(item.Tax_Status == true ? "Active" : "Inactive")</td>
+                        
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblTaxList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

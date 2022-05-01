@@ -1,0 +1,72 @@
+﻿@model List<Portal.Core.ViewModel.ProductMainGroupViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+        color:#fff;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div>
+        <table class="table table-bordered table-hover" id="tblProductMainGroupList">
+            <thead>
+                <tr>
+                    <th colspan="2"><center>Action</center></th>
+                    <th><center>Product Main Group</center></th>
+                    <th><center>Product Main Group Code</center></th>
+                    <th><center>Status</center></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    if (item.ProductMainGroup_Status ==true)
+                    {
+                    <tr class="success">
+                        <td class="teal text" style="width:30px; margin:0px auto;">
+                            <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/ProductMainGroup/AddEditProductMainGroup?ProductMainGroupId=@item.ProductMainGroupId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:darkgreen" class="fa fa-pencil" href="~/ProductMainGroup/AddEditProductMainGroup?ProductMainGroupId=@item.ProductMainGroupId&AccessMode=2"></a>
+                        </td>
+                        <td align="center">@item.ProductMainGroupName</td>
+                        <td align="center">@item.ProductMainGroupCode</td>
+                        <td align="center">@(item.ProductMainGroup_Status == true ? "Active" : "Inactive")</td>
+                       </tr>
+                    }
+                    else
+                    {
+                        <tr class="success">
+                            <td class="teal text" style="width:30px; margin:0px auto;">
+                                <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/ProductMainGroup/AddEditProductMainGroup?ProductMainGroupId=@item.ProductMainGroupId&AccessMode=3"></a>
+                            </td>
+                            <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                                <a style="color:darkgreen" class="fa fa-pencil" href="~/ProductMainGroup/AddEditProductMainGroup?ProductMainGroupId=@item.ProductMainGroupId&AccessMode=2"></a>
+                            </td>
+                            <td align="center">@item.ProductMainGroupName</td>
+                            <td align="center">@item.ProductMainGroupCode</td>
+                            <td align="center">@(item.ProductMainGroup_Status == true ? "Active" : "Inactive")</td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblProductMainGroupList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

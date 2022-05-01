@@ -1,0 +1,74 @@
+﻿@model List<Portal.Core.ViewModel.ServicViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div class="divproductlist" style="padding:10px;">
+        <table class="table" id="tblProductServiceList" style="width:100% !important">
+            <thead>
+                <tr>
+                    <th style="width: 5%" colspan="2" class="editonly" align="center">Action</th>
+                    <th >Service No.</th>
+                    <th >Service Date</th>
+                    <th >Approval Status</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="margin:0px auto;">
+                            <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/Service/AddEditService?serviceId=@item.ServiceId&AccessMode=3"></a>
+                        <td class="teal text" style="margin:0px auto;">
+                            @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                            {
+
+                                <a style="color:darkgreen" class="fa fa-pencil" href="~/Service/AddEditService?serviceId=@item.ServiceId&AccessMode=2"></a>
+
+                            }
+
+                        </td>
+
+                        <td>
+                            @item.ServiceNo
+
+                        </td>
+                        <td>
+                            @item.ServiceDate
+
+                        </td>
+
+                        @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                        {
+                            <td style="background-color: deepskyblue;color: #fff; font-weight: bold;">
+                                @item.ApprovalStatus
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="background-color:red;color:white">
+                                @item.ApprovalStatus
+                            </td>
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="divproductlist" style="padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Service Item</th>
+                    <th>Notes</th>
+                    <th colspan="2" class="editonly" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

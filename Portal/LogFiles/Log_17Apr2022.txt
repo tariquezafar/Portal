@@ -1,0 +1,40 @@
+19:46:08 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+19:46:08 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1794
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:48:54 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditSaleInvoice
+Error Line No : 6317
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditSaleInvoice has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:50:23 PM
+Source : Portal.Core.SaleInvoiceBL
+Method Name : AddEditSaleInvoice
+Error Line No : 274
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditSaleInvoice has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+19:50:23 PM
+Source : Portal.Controllers.SaleInvoiceController
+Method Name : AddEditSaleInvoice
+Error Line No : 75
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_AddEditSaleInvoice has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+

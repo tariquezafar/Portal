@@ -1,0 +1,48 @@
+10:21:44 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditRoaster
+Error Line No : 13310
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditRoster' expects parameter '@RoasterDesc', which was not supplied.
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:21:44 AM
+Source : Portal.Core.RoasterBL
+Method Name : AddEditRoaster
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditRoster' expects parameter '@RoasterDesc', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:21:44 AM
+Source : Portal.Controllers.RoasterController
+Method Name : AddEditRoaster
+Error Line No : 54
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditRoster' expects parameter '@RoasterDesc', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:23:26 AM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditRoaster
+Error Line No : 13310
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditRoster' expects parameter '@RoasterDesc', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:23:26 AM
+Source : Portal.Core.RoasterBL
+Method Name : AddEditRoaster
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditRoster' expects parameter '@RoasterDesc', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:23:26 AM
+Source : Portal.Controllers.RoasterController
+Method Name : AddEditRoaster
+Error Line No : 54
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditRoster' expects parameter '@RoasterDesc', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+

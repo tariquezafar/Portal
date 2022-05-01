@@ -1,0 +1,125 @@
+﻿@{
+    ViewBag.Title = "List Clearance Template";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<style>
+ .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+table tr:nth-child(2n+1) {
+    
+    background-color: #dbe5f7;
+    }
+
+     table tr:nth-child(2n) {
+    
+    background-color: #dbe5f7;
+    }
+
+</style>
+
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">HR </a> >> List Clearance Template </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditQuotation" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="txtClearanceTemplateName" class="col-sm-4 control-label">Clearance Template Name</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtClearanceTemplateName" name="txtClearanceTemplateName" tabindex="1" placeholder="Search with Clearance Template Name" type="text" maxlength="100" />
+                      
+                    </div>
+                </div>
+                <div class="form-group  col-md-4">  
+                        <label for="ddlSeparationCategory" class="col-sm-4 control-label">Separation Category</label>
+                        <div class="col-sm-8">
+                            <select id="ddlSeparationCategory" name="ddlSeparationCategory" tabindex="2" class="form-control"></select>
+                        </div> 
+                </div>
+                <div class="form-group  col-md-4">
+                    <label for="ddlDepartment" class="col-sm-4 control-label">Department</label>
+                    <div class="col-sm-8">
+                        <select id="ddlDepartment" name="ddlDepartment" onchange="BindDesignationList(0)" tabindex="3" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="col-md-12">
+                <div class="form-group  col-md-4">
+                    <label for="ddlDesignation" class="col-sm-4 control-label">Designation</label>
+                    <div class="col-sm-8">
+                        <select id="ddlDesignation" name="ddlDesignation" tabindex="4" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="selstatus" class="col-sm-4 control-label">Status</label>
+                    <div class="col-sm-8">
+                        <select name="ddlStatus" tabindex="5" class="form-control" id="ddlStatus">
+                            <option value="">All</option>
+                            <option value="1">Active</option>
+                            <option value="0">InActive</option>
+                        </select>
+                    </div>
+                </div> 
+            </div>
+           
+            <div class="row col-sm-12 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Search" alt="Save" id="btnSearch" tabindex="6" onclick="SearchClearanceTemplate()" type="button" border="0">&nbsp;&nbsp;
+                        <input class="btn btn-success" type="button" id="btnReset" tabindex="7" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;
+                        <a class="btn btn-success" id="btnList" tabindex="8" href="@Url.Content("~/ClearanceTemplate/AddEditClearanceTemplate?accessMode=1")">Add More Clearance Template</a>
+                    </center>
+                </div>
+
+                <div class="col-md-3" style="text-align:right">
+                    <input class="btn btn-success" value="Export" alt="Export" id="btnExport" tabindex="9" onclick="Export()" type="button" border="0">
+                </div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div id="divList">
+
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/ClearanceTemplate/ListClearanceTemplate.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/Common.js"></script>

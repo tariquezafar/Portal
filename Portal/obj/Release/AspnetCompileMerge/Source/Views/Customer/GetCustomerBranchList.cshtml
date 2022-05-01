@@ -1,0 +1,106 @@
+﻿@model List<Portal.Core.ViewModel.CustomerBranchViewModel>
+<style> 
+.table th {
+background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+color: #fff;
+}
+
+table tr:nth-child(2n+1) {
+background-color: #dff0d8 !important;
+}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblCustomerBranchList">
+            <thead>
+                <tr>
+                    
+                    <th style="text-align:center">Branch Name</th>
+                    <th style="text-align:center">Address</th>
+                    <th style="text-align:center">City</th>
+                    <th style="text-align:center">State</th>
+                    <th style="text-align:center">Contact Person</th>
+                    <th style="text-align:center">Email</th>
+                    <th style="text-align:center">Mobile No.</th>
+                    <th style="text-align:center">Annual TurnOver.</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success"> 
+                        <td>@item.BranchName
+                        <input type="hidden" id="hdnCustomerBranchId" value="@item.CustomerBranchId" />
+                        <input type="hidden" id="hdnBranchName" value="@item.BranchName" />
+                        <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                        </td>
+                        <td>@item.PrimaryAddress
+                        <input type="hidden" id="hdnBAddress" value="@item.PrimaryAddress" />
+                        </td>
+                        <td>@item.City
+                            <input type="hidden" id="hdnBCity" value="@item.City" />
+                        </td>
+                        <td>@item.StateName
+                            <input type="hidden" id="hdnBStateId" value="@item.StateId" />
+                            <input type="hidden" id="hdnBStateName" value="@item.StateName" />
+                            <input type="hidden" id="hdnBCountryId" value="@item.CountryId" />
+                            <input type="hidden" id="hdnBPinCode" value="@item.PinCode" />
+                            <input type="hidden" id="hdnBCSTNo" value="@item.CSTNo" />
+                            <input type="hidden" id="hdnBTINNo" value="@item.TINNo" />
+                            <input type="hidden" id="hdnBPANNo" value="@item.PANNo" />
+                            <input type="hidden" id="hdnBGSTNo" value="@item.GSTNo" />
+                        </td>
+                        <td>@item.ContactPersonName
+                            <input type="hidden" id="hdnBContactPersonName" value="@item.ContactPersonName" />
+                            <input type="hidden" id="hdnBDesignation" value="@item.Designation" />
+                        </td>
+                        <td>@item.Email
+                            <input type="hidden" id="hdnBEmail" value="@item.Email" />
+                        </td>
+                        <td>@item.MobileNo
+                            <input type="hidden" id="hdnBMobileNo" value="@item.MobileNo" />
+                            <input type="hidden" id="hdnBContactNo" value="@item.ContactNo" />
+                            <input type="hidden" id="hdnBFax" value="@item.Fax" />
+                        </td>
+                        <td>
+                            @item.AnnualTurnover
+                        <input type="hidden" id="hdnAnnualTurnover" value="@item.AnnualTurnover" />
+                    </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" onclick="EditRow(this);" href="#"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-trash"  onclick="RemoveRow(this)" href="#"></a>
+                        </td>
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblCustomerBranchList">
+            <thead>
+                <tr>
+                    <th>Branch Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Contact Person</th>
+                    <th>Email</th>
+                    <th>Mobile No.</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+
+            </tbody>
+        </table>
+    </div>
+}

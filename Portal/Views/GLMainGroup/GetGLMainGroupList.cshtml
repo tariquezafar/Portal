@@ -1,0 +1,58 @@
+﻿@model List<Portal.Core.ViewModel.GLMainGroupViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblGLMainGroupList">
+            <thead>
+                <tr aling="center"  style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                    <th colspan="2">Action</th>
+                    <th>GL Main Group Name</th>
+                    <th>GL Type</th>
+                    <th>Sequence No</th> 
+                    <th>Created By User</th>
+                    <th>Created Date</th>
+                    <th>Status</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="teal text" style="width:30px; margin:0px auto;">
+                            <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/GLMainGroup/AddEditGLMainGroup?GLMainGroupId=@item.GLMainGroupId&AccessMode=3"></a>
+                        </td>
+                        <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/GLMainGroup/AddEditGLMainGroup?GLMainGroupId=@item.GLMainGroupId&AccessMode=2"></a>
+                        </td>
+                        <td>@item.GLMainGroupName</td>
+                        <td>@item.GLType</td>
+                        <td>@item.SequenceNo</td>
+                        <td>@item.CreatedName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@(item.GLMainGroup_Status == true ? "Active" : "Inactive")</td>
+                        
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblGLMainGroupList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

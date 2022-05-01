@@ -1,0 +1,881 @@
+10:07:32 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+--------------------------------------------------------------------------------------------------------------------------------
+
+10:07:32 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:09:54 AM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The view 'SLWiseBSDrillDown' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/BalanceSheetDrillDown/SLWiseBSDrillDown.aspx
+~/Views/BalanceSheetDrillDown/SLWiseBSDrillDown.ascx
+~/Views/Shared/SLWiseBSDrillDown.aspx
+~/Views/Shared/SLWiseBSDrillDown.ascx
+~/Views/BalanceSheetDrillDown/SLWiseBSDrillDown.cshtml
+~/Views/BalanceSheetDrillDown/SLWiseBSDrillDown.vbhtml
+~/Views/Shared/SLWiseBSDrillDown.cshtml
+~/Views/Shared/SLWiseBSDrillDown.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+10:45:45 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:45:45 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+10:48:09 AM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The view 'SLWiseBSDrillDown' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/BalanceSheetDrillDown/SLWiseBSDrillDown.aspx
+~/Views/BalanceSheetDrillDown/SLWiseBSDrillDown.ascx
+~/Views/Shared/SLWiseBSDrillDown.aspx
+~/Views/Shared/SLWiseBSDrillDown.ascx
+~/Views/BalanceSheetDrillDown/SLWiseBSDrillDown.cshtml
+~/Views/BalanceSheetDrillDown/SLWiseBSDrillDown.vbhtml
+~/Views/Shared/SLWiseBSDrillDown.cshtml
+~/Views/Shared/SLWiseBSDrillDown.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+10:49:52 AM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The view 'SLWiseBSDrillDown' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/BalanceSheetDrillDown/SLWiseBSDrillDown.aspx
+~/Views/BalanceSheetDrillDown/SLWiseBSDrillDown.ascx
+~/Views/Shared/SLWiseBSDrillDown.aspx
+~/Views/Shared/SLWiseBSDrillDown.ascx
+~/Views/BalanceSheetDrillDown/SLWiseBSDrillDown.cshtml
+~/Views/BalanceSheetDrillDown/SLWiseBSDrillDown.vbhtml
+~/Views/Shared/SLWiseBSDrillDown.cshtml
+~/Views/Shared/SLWiseBSDrillDown.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:06 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:24:06 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:25:14 AM
+Source : Portal.Core.BalanceSheetDrillDownBL
+Method Name : GetTBDrillDown_SLWiseList
+Error Line No : 185
+Exception Type : System.ArgumentException
+Details: Column 'DEBIT' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:25:14 AM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : SLWiseBSDrillDown
+Error Line No : 151
+Exception Type : System.ArgumentException
+Details: Column 'DEBIT' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:25:14 AM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The view 'SLWiseBSDrillDown' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/BalanceSheetDrillDown/SLWiseBSDrillDown.aspx
+~/Views/BalanceSheetDrillDown/SLWiseBSDrillDown.ascx
+~/Views/Shared/SLWiseBSDrillDown.aspx
+~/Views/Shared/SLWiseBSDrillDown.ascx
+~/Views/BalanceSheetDrillDown/SLWiseBSDrillDown.cshtml
+~/Views/BalanceSheetDrillDown/SLWiseBSDrillDown.vbhtml
+~/Views/Shared/SLWiseBSDrillDown.cshtml
+~/Views/Shared/SLWiseBSDrillDown.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+11:27:53 AM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:27:53 AM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+11:29:28 AM
+Source : Portal.Core.BalanceSheetDrillDownBL
+Method Name : GetTBDrillDown_SLWiseList
+Error Line No : 185
+Exception Type : System.ArgumentException
+Details: Column 'DEBIT' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:29:28 AM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : SLWiseBSDrillDown
+Error Line No : 151
+Exception Type : System.ArgumentException
+Details: Column 'DEBIT' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:32:52 AM
+Source : Portal.Core.BalanceSheetDrillDownBL
+Method Name : GetTBDrillDown_SLWiseList
+Error Line No : 185
+Exception Type : System.ArgumentException
+Details: Column 'DEBIT' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:32:52 AM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : SLWiseBSDrillDown
+Error Line No : 151
+Exception Type : System.ArgumentException
+Details: Column 'DEBIT' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:45:14 AM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : GLLedgerDrillDown
+Error Line No : 179
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:26:20 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:26:20 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:26:32 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GenerateBalanceSheetDrillDown
+Error Line No : 28082
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_BalanceSheetDrillDown has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:26:32 PM
+Source : Portal.Core.BalanceSheetDrillDownBL
+Method Name : GenerateTrialBalanceDrillDown
+Error Line No : 28
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_BalanceSheetDrillDown has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:26:32 PM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : BalanceSheetDrillDownGenerate
+Error Line No : 49
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_BalanceSheetDrillDown has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:26:35 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GenerateBalanceSheetDrillDown
+Error Line No : 28082
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_BalanceSheetDrillDown has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:26:35 PM
+Source : Portal.Core.BalanceSheetDrillDownBL
+Method Name : GenerateTrialBalanceDrillDown
+Error Line No : 28
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_BalanceSheetDrillDown has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:26:35 PM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : BalanceSheetDrillDownGenerate
+Error Line No : 49
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_BalanceSheetDrillDown has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:26:52 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GenerateBalanceSheetDrillDown
+Error Line No : 28082
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_BalanceSheetDrillDown has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:26:52 PM
+Source : Portal.Core.BalanceSheetDrillDownBL
+Method Name : GenerateTrialBalanceDrillDown
+Error Line No : 28
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_BalanceSheetDrillDown has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:26:52 PM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : BalanceSheetDrillDownGenerate
+Error Line No : 49
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_BalanceSheetDrillDown has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:29:58 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GenerateBalanceSheetDrillDown
+Error Line No : 28082
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_BalanceSheetDrillDown has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:29:58 PM
+Source : Portal.Core.BalanceSheetDrillDownBL
+Method Name : GenerateTrialBalanceDrillDown
+Error Line No : 28
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_BalanceSheetDrillDown has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:29:58 PM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : BalanceSheetDrillDownGenerate
+Error Line No : 49
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function proc_BalanceSheetDrillDown has too many arguments specified.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:59:41 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+12:59:41 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:00:04 PM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : SLLedgerDrillDown
+Error Line No : 209
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:43:58 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:43:58 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:50:19 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:50:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:32 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:32 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:36 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:36 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:57:52 PM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : SLLedgerDrillDown
+Error Line No : 212
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:58:08 PM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : SLLedgerDrillDown
+Error Line No : 212
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:19 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:23 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:00:23 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:13:31 PM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : SLLedgerDrillDown
+Error Line No : 212
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:14:53 PM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : SLLedgerDrillDown
+Error Line No : 212
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:21:44 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:21:44 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:21:52 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:21:52 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:28:10 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:28:10 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:53 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:53 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:53 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:35:53 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:31 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:31 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:42:33 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:42:33 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:42:36 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:42:36 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:45:25 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:45:25 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:59:12 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:59:13 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:10:42 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GenerateGLLedgerDrillDown
+Error Line No : 13523
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:10:42 PM
+Source : Portal.Core.TBDrillDownBL
+Method Name : GenerateGLLedgerDrillDown
+Error Line No : 237
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:10:42 PM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : GLLedgerDrillDown
+Error Line No : 182
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:10:59 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GenerateGLLedgerDrillDown
+Error Line No : 13523
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:10:59 PM
+Source : Portal.Core.TBDrillDownBL
+Method Name : GenerateGLLedgerDrillDown
+Error Line No : 237
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:10:59 PM
+Source : Portal.Controllers.BalanceSheetDrillDownController
+Method Name : GLLedgerDrillDown
+Error Line No : 182
+Exception Type : System.Data.SqlTypes.SqlTypeException
+Details: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:11:09 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:11:09 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:11:14 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:11:14 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:14:08 PM
+Source : Portal.Controllers.TBDrillDownController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'companyBranchId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult TrialBalanceDrillDownGenerate(System.String, System.String, Int32)' in 'Portal.Controllers.TBDrillDownController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:14:57 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:14:57 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:27:05 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:27:05 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:59:14 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:59:14 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:12 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:08:12 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:48:21 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:48:21 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:48:27 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 26773
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:48:27 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:48:27 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1549
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:49:41 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:49:41 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:49:42 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 26773
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:49:42 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:49:42 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1549
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:58:18 PM
+Source : Portal.Core.StickyNotesBL
+Method Name : GetStickyNotesDetail
+Error Line No : 56
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:58:18 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetStickyNotesDetails
+Error Line No : 1080
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:58:19 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetPendingJobWorkMRNListCount
+Error Line No : 26773
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:58:19 PM
+Source : Portal.Core.InventoryDashboardBL
+Method Name : GetJobMRNPending
+Error Line No : 218
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+17:58:19 PM
+Source : Portal.Controllers.DashboardController
+Method Name : GetJobMRNPendingCountList
+Error Line No : 1549
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_GetPendingJobWorkMRN' expects parameter '@CompanyBranchId', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+

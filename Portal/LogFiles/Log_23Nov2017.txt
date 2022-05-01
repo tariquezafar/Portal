@@ -1,0 +1,64 @@
+16:00:37 PM
+Source : Portal.Controllers.BankReconciliationController
+Method Name : SaveBankStatementDetail
+Error Line No : 124
+Exception Type : System.Data.DuplicateNameException
+Details: A column named 'TransactionDate' already belongs to this DataTable.
+--------------------------------------------------------------------------------------------------------------------------------
+
+16:01:33 PM
+Source : Portal.Controllers.BankReconciliationController
+Method Name : SaveBankStatementDetail
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Column 'UploadStatus' does not belong to table Table.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:03:27 PM
+Source : Portal.Controllers.BankReconciliationController
+Method Name : SaveBankStatementDetail
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Column 'RefSerial1' does not belong to table Table.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:05:22 PM
+Source : Portal.Controllers.BankReconciliationController
+Method Name : SaveBankStatementDetail
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: Column 'UploadStatus' does not belong to table Table.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:57:55 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The partial view 'GetBankReconciliationDetailList' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/BankStatement/GetBankReconciliationDetailList.aspx
+~/Views/BankStatement/GetBankReconciliationDetailList.ascx
+~/Views/Shared/GetBankReconciliationDetailList.aspx
+~/Views/Shared/GetBankReconciliationDetailList.ascx
+~/Views/BankStatement/GetBankReconciliationDetailList.cshtml
+~/Views/BankStatement/GetBankReconciliationDetailList.vbhtml
+~/Views/Shared/GetBankReconciliationDetailList.cshtml
+~/Views/Shared/GetBankReconciliationDetailList.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+
+16:58:37 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.InvalidOperationException
+Details: The partial view 'GetBankReconciliationDetailList' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/BankStatement/GetBankReconciliationDetailList.aspx
+~/Views/BankStatement/GetBankReconciliationDetailList.ascx
+~/Views/Shared/GetBankReconciliationDetailList.aspx
+~/Views/Shared/GetBankReconciliationDetailList.ascx
+~/Views/BankStatement/GetBankReconciliationDetailList.cshtml
+~/Views/BankStatement/GetBankReconciliationDetailList.vbhtml
+~/Views/Shared/GetBankReconciliationDetailList.cshtml
+~/Views/Shared/GetBankReconciliationDetailList.vbhtml
+---------------------------------------------------------------------------------------------------------------------------
+

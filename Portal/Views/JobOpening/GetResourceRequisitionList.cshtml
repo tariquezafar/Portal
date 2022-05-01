@@ -1,0 +1,70 @@
+﻿@model List<Portal.Core.ViewModel.ResourceRequisitionViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblJobOpeningList">
+            <thead>
+                <tr>
+                    <th align="center">Select</th>
+                    <th>Requisition No.</th>
+                    <th>No. Of Resources</th>
+                    <th>Position Level</th>
+                    <th>Priority</th>
+                    <th>Position Type</th>
+                    <th>Department</th>
+                    <th>Designation</th>
+                    
+                   
+                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o" href="#" onclick="SelectRequisition('@item.RequisitionNo','@item.RequisitionId')"></a>
+                        </td> 
+                        <td>@item.RequisitionNo</td>
+                        <td>@item.NumberOfResources</td>
+                        <td>@item.PositionLevelName</td>
+                        <td>@item.PriorityLevel</td>
+                        <td>@item.PositionTypeName</td>
+                        <td>@item.DepartmentName</td>
+                        <td>@item.DesignationName</td>
+
+                       
+                        
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblJobOpeningList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>
+<style>
+    .btn-success a {
+        background-color: #446abc !important;
+        border-color: #233e79 !important;
+        display: -webkit-inline-box;
+        padding: 5px;
+    }
+</style>

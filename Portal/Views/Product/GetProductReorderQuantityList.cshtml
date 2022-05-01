@@ -1,0 +1,86 @@
+﻿@model List<Portal.Core.ViewModel.ReorderPointProductCountViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+        color: #fff;
+    }
+
+    
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div  style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr >
+                    <th style="text-align:center;">Product</th>
+                    <th style="text-align:center;">ProductCode</th>
+                    <th style="text-align:center;">ProductShortDesc</th>
+                    <th style="text-align:center;">ProductFullDesc</th>
+                    <th style="text-align:center;">Reorder Qty</th>
+                    <th style="text-align:center;">Available Stock</th>
+                    <th style="text-align:center;">
+                        Raise Indent
+                        <br />
+                        <input type="checkbox" name="chkAllIndent" id="chkAllIndent" class="" />
+                    </th>
+                </tr>
+
+            </thead>
+            <tbody style="border:1px solid #ccc;">
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>@item.ProductName
+                            <input type="hidden" id="hdnIndentProductDetailId" value="0" />
+                            <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                            <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                            <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                            <input type="hidden" id="hdnProductShortDesc" value="@item.ProductShortDesc" />
+                            <input type="hidden" id="hdnBalanceQuantity" value="@item.ReorderQty" /></td>
+                        <td>@item.ProductCode</td>
+                        <td>@item.ProductShortDesc</td>
+                        <td>@item.ProductFullDesc</td>
+                        <td>@item.ReorderQty</td>
+                        <td>@item.AvailableStock</td>
+                        <td><input type="checkbox" name="chkIndent" id="chkIndent" class="chkIndent" /></td>
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Product Reorder not pending</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblProductList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+
+    $(document).ready(function () {
+        $("#chkAllIndent").click(function () {
+            $('input:checkbox').not(this).prop('checked', this.checked);
+        });
+
+        $(".chkIndent").click(function () {
+            if ($(".chkIndent").length == $(".chkIndent:checked").length) {
+                $("#chkAllIndent").attr("checked", "checked");
+            }
+            else {
+                $("#chkAllIndent").removeAttr("checked");
+            }
+        });
+    });
+
+</script>

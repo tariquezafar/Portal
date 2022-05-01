@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ProductBOMDataSet" targetNamespace="http://tempuri.org/ProductBOMDataSet.xsd" xmlns:mstns="http://tempuri.org/ProductBOMDataSet.xsd" xmlns="http://tempuri.org/ProductBOMDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ProductBOMDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ProductBOMDataSet" msprop:Generator_UserDSName="ProductBOMDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ProductBOMDataSet" msprop:Generator_TableClassName="ProductBOMDataSetDataTable" msprop:Generator_TableVarName="tableProductBOMDataSet" msprop:Generator_RowChangedName="ProductBOMDataSetRowChanged" msprop:Generator_TablePropName="_ProductBOMDataSet" msprop:Generator_RowDeletingName="ProductBOMDataSetRowDeleting" msprop:Generator_RowChangingName="ProductBOMDataSetRowChanging" msprop:Generator_RowEvHandlerName="ProductBOMDataSetRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductBOMDataSetRowDeleted" msprop:Generator_RowClassName="ProductBOMDataSetRow" msprop:Generator_UserTableName="ProductBOMDataSet" msprop:Generator_RowEvArgName="ProductBOMDataSetRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BOMId" msprop:Generator_ColumnVarNameInTable="columnBOMId" msprop:Generator_ColumnPropNameInRow="BOMId" msprop:Generator_ColumnPropNameInTable="BOMIdColumn" msprop:Generator_UserColumnName="BOMId" type="xs:long" minOccurs="0" />
+              <xs:element name="AssemblyId" msprop:Generator_ColumnVarNameInTable="columnAssemblyId" msprop:Generator_ColumnPropNameInRow="AssemblyId" msprop:Generator_ColumnPropNameInTable="AssemblyIdColumn" msprop:Generator_UserColumnName="AssemblyId" type="xs:long" minOccurs="0" />
+              <xs:element name="AssemblyName" msprop:Generator_ColumnVarNameInTable="columnAssemblyName" msprop:Generator_ColumnPropNameInRow="AssemblyName" msprop:Generator_ColumnPropNameInTable="AssemblyNameColumn" msprop:Generator_UserColumnName="AssemblyName" type="xs:string" minOccurs="0" />
+              <xs:element name="AssemblyCode" msprop:Generator_ColumnVarNameInTable="columnAssemblyCode" msprop:Generator_ColumnPropNameInRow="AssemblyCode" msprop:Generator_ColumnPropNameInTable="AssemblyCodeColumn" msprop:Generator_UserColumnName="AssemblyCode" type="xs:string" minOccurs="0" />
+              <xs:element name="AssemblyShortDesc" msprop:Generator_ColumnVarNameInTable="columnAssemblyShortDesc" msprop:Generator_ColumnPropNameInRow="AssemblyShortDesc" msprop:Generator_ColumnPropNameInTable="AssemblyShortDescColumn" msprop:Generator_UserColumnName="AssemblyShortDesc" type="xs:string" minOccurs="0" />
+              <xs:element name="MainAssemblyType" msprop:Generator_ColumnVarNameInTable="columnMainAssemblyType" msprop:Generator_ColumnPropNameInRow="MainAssemblyType" msprop:Generator_ColumnPropNameInTable="MainAssemblyTypeColumn" msprop:Generator_UserColumnName="MainAssemblyType" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductId" msprop:Generator_ColumnVarNameInTable="columnProductId" msprop:Generator_ColumnPropNameInRow="ProductId" msprop:Generator_ColumnPropNameInTable="ProductIdColumn" msprop:Generator_UserColumnName="ProductId" type="xs:long" minOccurs="0" />
+              <xs:element name="ProductName" msprop:Generator_ColumnVarNameInTable="columnProductName" msprop:Generator_ColumnPropNameInRow="ProductName" msprop:Generator_ColumnPropNameInTable="ProductNameColumn" msprop:Generator_UserColumnName="ProductName" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductCode" msprop:Generator_ColumnVarNameInTable="columnProductCode" msprop:Generator_ColumnPropNameInRow="ProductCode" msprop:Generator_ColumnPropNameInTable="ProductCodeColumn" msprop:Generator_UserColumnName="ProductCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductShortDesc" msprop:Generator_ColumnVarNameInTable="columnProductShortDesc" msprop:Generator_ColumnPropNameInRow="ProductShortDesc" msprop:Generator_ColumnPropNameInTable="ProductShortDescColumn" msprop:Generator_UserColumnName="ProductShortDesc" type="xs:string" minOccurs="0" />
+              <xs:element name="AssemblyType" msprop:Generator_ColumnVarNameInTable="columnAssemblyType" msprop:Generator_ColumnPropNameInRow="AssemblyType" msprop:Generator_ColumnPropNameInTable="AssemblyTypeColumn" msprop:Generator_UserColumnName="AssemblyType" type="xs:string" minOccurs="0" />
+              <xs:element name="UOMName" msprop:Generator_ColumnVarNameInTable="columnUOMName" msprop:Generator_ColumnPropNameInRow="UOMName" msprop:Generator_ColumnPropNameInTable="UOMNameColumn" msprop:Generator_UserColumnName="UOMName" type="xs:string" minOccurs="0" />
+              <xs:element name="BOMQty" msprop:Generator_ColumnVarNameInTable="columnBOMQty" msprop:Generator_ColumnPropNameInRow="BOMQty" msprop:Generator_ColumnPropNameInTable="BOMQtyColumn" msprop:Generator_UserColumnName="BOMQty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ScrapPercentage" msprop:Generator_ColumnVarNameInTable="columnScrapPercentage" msprop:Generator_ColumnPropNameInRow="ScrapPercentage" msprop:Generator_ColumnPropNameInTable="ScrapPercentageColumn" msprop:Generator_UserColumnName="ScrapPercentage" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AssembyUOMName" msprop:Generator_ColumnVarNameInTable="columnAssembyUOMName" msprop:Generator_ColumnPropNameInRow="AssembyUOMName" msprop:Generator_ColumnPropNameInTable="AssembyUOMNameColumn" msprop:Generator_UserColumnName="AssembyUOMName" type="xs:string" minOccurs="0" />
+              <xs:element name="PurchasePrice" msprop:Generator_ColumnVarNameInTable="columnPurchasePrice" msprop:Generator_ColumnPropNameInRow="PurchasePrice" msprop:Generator_ColumnPropNameInTable="PurchasePriceColumn" msprop:Generator_UserColumnName="PurchasePrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalPrice" msprop:Generator_ColumnVarNameInTable="columnTotalPrice" msprop:Generator_ColumnPropNameInRow="TotalPrice" msprop:Generator_ColumnPropNameInTable="TotalPriceColumn" msprop:Generator_UserColumnName="TotalPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:string" minOccurs="0" />
+              <xs:element name="SGST_Amt" msprop:Generator_ColumnVarNameInTable="columnSGST_Amt" msprop:Generator_ColumnPropNameInRow="SGST_Amt" msprop:Generator_ColumnPropNameInTable="SGST_AmtColumn" msprop:Generator_UserColumnName="SGST_Amt" type="xs:string" minOccurs="0" />
+              <xs:element name="CGST_Amt" msprop:Generator_ColumnVarNameInTable="columnCGST_Amt" msprop:Generator_ColumnPropNameInRow="CGST_Amt" msprop:Generator_ColumnPropNameInTable="CGST_AmtColumn" msprop:Generator_UserColumnName="CGST_Amt" type="xs:string" minOccurs="0" />
+              <xs:element name="IGST_Amt" msprop:Generator_ColumnVarNameInTable="columnIGST_Amt" msprop:Generator_ColumnPropNameInRow="IGST_Amt" msprop:Generator_ColumnPropNameInTable="IGST_AmtColumn" msprop:Generator_UserColumnName="IGST_Amt" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,119 @@
+﻿@model List<Portal.Core.ViewModel.STNViewModel>
+  
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+
+    table tr:nth-child(2n+1) {
+        background-color: #dff0d8;
+    }
+
+    table tr:nth-child(2n) {
+        background-color: #dff0d8;
+    }
+</style>
+
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+   .table {
+    width: 248% !important;
+    max-width: 248% !important;
+    margin-bottom: 20px;
+}
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblSTNList">
+            <thead>
+                <tr>
+                    <th>STN No.</th>
+                    <th>STN Date</th>
+                    <th>GR No</th>
+                    <th>From Company Branch</th>
+                    <th>From Primary Address</th>
+                    <th>From City</th>
+                    <th>From Pin Code</th>
+                    <th>From CST No</th>
+                    <th>From TIN No</th>
+                    <th>To Company Branch</th>
+                    <th>To Primary Address</th>
+                    <th>To City</th>
+                    <th>To Pin Code</th>
+                    <th>To CST No</th>
+                    <th>To TIN No</th>
+                    <th>Basic Value</th> 
+                    <th>Freight Value</th>
+                    <th>Loading Value</th>
+                    <th>Total Value</th>
+                    <th>Remarks1</th>
+                    <th>Remarks2</th> 
+                    <th>Created By User</th>
+                    <th>Created Date</th>
+                    <th>Modified By User</th>
+                    <th>Modified Date</th> 
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="margin:0px 2px auto;">
+                            <a  target="_blank" style="color:dodgerblue"  href="~/STN/AddEditSTN?stnId=@item.STNId&AccessMode=3">@item.STNNo</a>
+                        </td>  
+                        <td>@item.STNDate</td>
+                        <td>@item.GRNo</td>
+                        <td>@item.FormLocationName</td>
+                        <td>@item.FormPrimaryAddress</td>
+                        <td>@item.FormCity</td>
+                        <td>@item.FormPinCode</td>
+                        <td>@item.FormCSTNo</td>
+                        <td>@item.FormTINNo</td>
+                        <td>@item.ToLocationName</td>
+                        <td>@item.ToPrimaryAddress</td>
+                        <td>@item.ToCity</td>
+                        <td>@item.ToPinCode</td>
+                        <td>@item.ToCSTNo</td>
+                        <td>@item.ToTINNo</td>
+                        <td>@item.BasicValue</td> 
+                        <td>@item.FreightValue</td>
+                        <td>@item.LoadingValue</td>
+                        <td>@item.TotalValue</td>
+                        <td>@item.Remarks1</td>
+                        <td>@item.Remarks2</td> 
+                        <td>@item.CreatedByUserName</td>
+                        <td>@item.CreatedDate</td>
+                        <td>@item.ModifiedByUserName</td>
+                        <td>@item.ModifiedDate</td>  
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblSTNList').paging({
+            limit: 100,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

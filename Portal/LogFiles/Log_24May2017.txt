@@ -1,0 +1,24 @@
+16:55:58 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetBookBalance
+Error Line No : 1589
+Exception Type : System.Data.SqlClient.SqlException
+Details: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+--------------------------------------------------------------------------------------------------------------------------------
+
+16:55:58 PM
+Source : Portal.Core.BookBL
+Method Name : GetBookBalance
+Error Line No : 316
+Exception Type : System.Data.SqlClient.SqlException
+Details: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:55:58 PM
+Source : Portal.Controllers.VoucherController
+Method Name : GetBookBalance
+Error Line No : 445
+Exception Type : System.Data.SqlClient.SqlException
+Details: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+---------------------------------------------------------------------------------------------------------------------------
+

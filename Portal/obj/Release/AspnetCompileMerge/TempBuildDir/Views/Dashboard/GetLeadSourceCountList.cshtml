@@ -1,0 +1,47 @@
+﻿@model List<Portal.Core.ViewModel.LeadSourceCountViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table" id="tblLeadSourceCountList" style="margin-top:10px;">
+            <thead style="border-top-left-radius:15px;">
+                <tr style="border:none;">
+                    <th style="background:#0094ff; color:#fff;width:100%;" colspan="5">Lead Source Analysis</th> 
+                </tr>
+                <tr style="background:#D0DDEC; border:1px solid #ccc;">
+                    <th>Lead Source</th>
+                    <th>Today</th>
+                    <th>MTD</th>
+                    <th>YTD</th>
+                    <th>Total</th>
+                </tr>
+              
+            </thead>
+            <tbody style="border:1px solid #ccc;">
+                @foreach (var item in Model)
+                {
+                <tr class="success">
+                    <td>@item.LeadSourceName</td>
+                    <td>@item.TodayCount</td>
+                    <td>@item.MTDCount</td>
+                    <td>@item.YTDCount</td>
+                    <td>@item.TotalLeadCount</td>
+                </tr>
+                }
+            </tbody>
+            <tfoot style="border:1px solid #ccc;">
+                <tr class="active">
+                    <th>Total Lead</th>
+                    <th>@Model.Sum(x => x.TodayCount)</th>
+                    <th>@Model.Sum(x => x.MTDCount)</th>
+                    <th>@Model.Sum(x => x.YTDCount)</th>
+                    <th>@Model.Sum(x => x.TotalLeadCount)</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Lead Source Data not updated</h3>
+}

@@ -1,0 +1,89 @@
+
+                 $('#ContentPlaceHolder1_txtBillDate').datepicker({
+                     changeMonth: true,
+                     dateFormat: 'dd/M/yy',
+                     changeYear: true,
+                     onSelect: function (Selected) {
+                         var d = Selected.split('/')[0];
+                         var m = MonthValue(Selected.split('/')[1]);
+                         var y = Selected.split('/')[2];                        
+                         var dt = new Date(parseInt(y), parseInt(m) - 1, parseInt(d));
+                         var dt1 = new Date(dt);
+                         dt.setDate(dt.getDate() + 5);
+                         var yy = dt.getFullYear();
+                         var mm = dt.getMonth() + 1;
+                         var dd = dt.getDate();
+                         var toDate = new Date(yy, dt.getMonth(), dd);
+                         var someFormattedDate = padLeft(dd) + '/' + ValueToMonth(mm) + '/' + yy;
+
+
+                         $('#ContentPlaceHolder1_txtMaterialRecordDate').datepicker('option', 'minDate', dt1);
+                         $('#ContentPlaceHolder1_txtMaterialRecordDate').datepicker({ dateFormat: 'dd/M/yy' });
+
+                         $('#ContentPlaceHolder1_txtMaterialRecordDate').val(someFormattedDate);
+                         $('#ContentPlaceHolder1_txtLRDate').datepicker('option', 'minDate', dt1);
+                         $('#ContentPlaceHolder1_txtLRDate').datepicker({ dateFormat: 'dd/M/yy' });
+                         $('#ContentPlaceHolder1_txtLRDate').val(Selected);
+
+
+                     }
+                 });
+                 $('#ContentPlaceHolder1_txtMaterialRecordDate').datepicker({
+                     changeMonth: true,
+                     changeYear: true,
+                     dateFormat: 'dd/M/yy'
+                 });
+                 $('#ContentPlaceHolder1_txtLRDate').datepicker({
+                     changeMonth: true,
+                     changeYear: true,
+                     dateFormat: 'dd/M/yy'
+                 });
+         });
+        function padLeft(str)
+        {
+            if (parseInt(str)<10)
+            {
+                return '0' + str;
+            }
+            else
+            { return  str; }
+        }
+        function MonthValue(str) {
+            switch(str)
+            {
+                case "Jan": return 1;
+                case "Feb": return 2;
+                case "Mar": return 3;
+                case "Apr": return 4;
+                case "May": return 5;
+                case "Jun": return 6;
+                case "Jul": return 7;
+                case "Aug": return 8;
+                case "Sep": return 9;
+                case "Oct": return 10;
+                case "Nov": return 11;
+                case "Dec": return 12;
+                default: return 1;
+
+            }
+            
+        }
+        function ValueToMonth(value) {
+            switch (value) {
+                case 1: return "Jan";
+                case 2: return "Feb";
+                case 3: return "Mar";
+                case 4: return "Apr";
+                case 5: return "May";
+                case 6: return "Jun";
+                case 7: return "Jul";
+                case 8: return "Aug";
+                case 9: return "Sep";
+                case 10: return "Oct";
+                case 11: return "Nov";
+                case 12: return "Dec";
+                default: return "Jan";
+
+            }
+
+        }

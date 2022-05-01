@@ -1,0 +1,596 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Admin</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/SuperAdminStyles.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @{
+        var parentMenuList = Session["RoleWiseUIMatrix"] as List<Portal.Core.ViewModel.ParentMenu>;
+    }
+  
+</head>
+<body>
+    <!--/.nav-collapse -->
+    <nav class="navbar navbar-default navbar-fixed-top menu-top"  style="z-index: 99999;">
+
+        <ul class="nav navbar-nav navbar-right block">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img alt="Profile Pic" height="10" style="border-radius:50%;" width="10" src="~/Images/UserImages/@(Convert.ToString(Session["UserPicName"])==""?"ProfilePic.png":Session["UserPicName"])" />
+                    <strong>@(Session["UserFullName"] != null ? Session["UserFullName"] : "") </strong>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <div class="navbar-login">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <p class="text-center">
+                                        <img alt="Profile Pic" height="50" style="border-radius:50%;" width="50" src="~/Images/UserImages/@(Convert.ToString(Session["UserPicName"])==""?"ProfilePic.png":Session["UserPicName"])" />
+                                    </p>
+                                </div>
+                                <div class="col-lg-8">
+                                    <p class="text-left" style="color:#000;"><strong>@(Session["UserFullName"] != null ? Session["UserFullName"] : "")</strong></p>
+                                    <p class="text-left small" style="color:#000;">Admin User</p>
+                                    <p class="text-left"><a href="#" class="btn btn-primary btn-block btn-sm">Profile</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="divider navbar-login-session-bg"></li>
+                    <li><a href="@Url.Content("~/Home/ChangePassword")">Change Password</a></li>
+                    <li class="divider"></li>
+                    <li><a href="@Url.Content("~/Home/SignOut")">Sign Out </a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="row">
+            <div class="navbar-header none">
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="~/Images/CompanyLogo/victory-logo.png" style="float: left; width: 116px;" />
+                
+
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav none">
+                    <li class="dropdown" style="display:none;">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right uder-dash">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <img alt="Profile Pic" height="10" style="border-radius:50%;" width="10" src="~/Images/UserImages/@(Convert.ToString(Session["UserPicName"])==""?"ProfilePic.png":Session["UserPicName"])" />
+                            <strong>@(Session["UserFullName"] != null ? Session["UserFullName"] : "") </strong>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="navbar-login">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <p class="text-center">
+                                                <img alt="Profile Pic" height="50" style="border-radius:50%;" width="50" src="~/Images/UserImages/@(Convert.ToString(Session["UserPicName"])==""?"ProfilePic.png":Session["UserPicName"])" />
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <p class="text-left" style="color:#000;"><strong>@(Session["UserFullName"] != null ? Session["UserFullName"] : "")</strong></p>
+                                            <p class="text-left small" style="color:#000;">Admin User</p>
+                                            <p class="text-left"><a href="#" class="btn btn-primary btn-block btn-sm">Profile</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider navbar-login-session-bg"></li>
+                            <li><a href="@Url.Content("~/Home/ChangePassword")">Change Password</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Content("~/Home/SignOut")">Sign Out </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--/.nav-collapse -->
+    <!--nav sidebar -->
+    <div id="wrapper">
+        <!--nav sidebar start-->
+        <aside>
+            <nav class="navbar sidebar-lefts navbar-fixed-top" id="left-menu" role="navigation" onclick="show()">
+                <input type="hidden" id="hdnSidebar" value="0" />
+                <div class="nav-side-menu" id="left-side-menu">
+                    <div class="brand">&nbsp;</div>
+                    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+                    <div class="menu-list">
+                        <ul id="menu-content" class="menu-content collapse out">
+                            <li>
+                                <a href="@Url.Content("~/Dashboard/ModuleDashboard")"><i class="fa fa-dashboard fa-lg"></i> Module</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Content("~/Dashboard/AdminDashboard")"><i class="fa fa-dashboard fa-lg"></i> Dashboard</a>
+                            </li>
+                            <li data-toggle="collapse" data-target="#Master" class="Menu_Header1" aria-expanded="true">
+                                <a href="#"><i class="fa fa-globe fa-lg"></i>Master<span class="arrow"></span></a>
+                            </li>
+                            @if (parentMenuList != null)
+                            {
+                                <li>
+                                    <ul class="sub-menu collapse" id="Master" aria-expanded="true" style="">
+                                        @foreach (var mainItem in parentMenuList.Where(x => x.InterfaceType == "ADMIN" && x.InterfaceSubType == "MASTER").ToList())
+                                        {
+                                            if (string.IsNullOrEmpty(mainItem.InterfaceURL))
+                                            {
+                                                <li data-toggle="collapse" data-target="#Master-@mainItem.InterfaceId" class="collapsed  in-li" aria-expanded="true" style="background:#333;">
+                                                    @mainItem.InterfaceName<span class="arrow"></span>
+                                                    <ul class="sub-menu collapse" id="Master-@mainItem.InterfaceId" aria-expanded="true">
+                                                        @if (mainItem.childMenuList != null)
+                                                        {
+                                                            foreach(var childItem in mainItem.childMenuList)
+                                                            {
+                                                            <li class="in-li1"><a href="@Url.Content(childItem.InterfaceURL)">@childItem.InterfaceName</a></li>
+                                                            }
+                                                        }
+                                                    </ul>
+                                                </li>
+                                            }
+                                            else
+                                            {
+                                                <li><a href="@Url.Content(mainItem.InterfaceURL)">@mainItem.InterfaceName</a></li>
+                                            }
+                                        }
+                                    </ul>
+                                </li>
+                            }
+                            <li data-toggle="collapse" data-target="#Transaction" class="Menu_Header1" aria-expanded="true">
+                                <a href="#"><i class="fa fa-globe fa-lg"></i>Transaction<span class="arrow"></span></a>
+                            </li>
+
+                            @if (parentMenuList != null)
+                            {
+                                <li>
+                                    <ul class="sub-menu collapse" id="Transaction" aria-expanded="true" style="">
+                                        @foreach (var mainItem in parentMenuList.Where(x => x.InterfaceType == "ADMIN" && x.InterfaceSubType == "TRANSACTION").ToList())
+                                        {
+                                            if (string.IsNullOrEmpty(mainItem.InterfaceURL))
+                                            {
+                                                <li data-toggle="collapse" data-target="#Transaction-@mainItem.InterfaceId" class="collapsed  in-li" aria-expanded="true" style="background:#333;">
+                                                    @mainItem.InterfaceName<span class="arrow"></span>
+                                                    <ul class="sub-menu collapse" id="Transaction-@mainItem.InterfaceId" aria-expanded="true">
+                                                        @if (mainItem.childMenuList != null)
+                                                        {
+                                                            foreach (var childItem in mainItem.childMenuList)
+                                                            {
+                                                                <li class="in-li1"><a href="@Url.Content(childItem.InterfaceURL)">@childItem.InterfaceName</a></li>
+                                                            }
+                                                        }
+                                                    </ul>
+                                                </li>
+                                            }
+                                            else
+                                            {
+                                                <li><a href="@Url.Content(mainItem.InterfaceURL)">@mainItem.InterfaceName</a></li>
+                                            }
+                                        }
+                                    </ul>
+                                </li>
+                            }
+                            <li data-toggle="collapse" data-target="#Report" class="Menu_Header1" aria-expanded="true">
+                                <a href="#"><i class="fa fa-globe fa-lg"></i>Report<span class="arrow"></span></a>
+                            </li>
+                            @if (parentMenuList != null)
+                            {
+                                <li>
+                                    <ul class="sub-menu collapse" id="Report" aria-expanded="true" style="">
+                                        @foreach (var mainItem in parentMenuList.Where(x => x.InterfaceType == "ADMIN" && x.InterfaceSubType == "REPORT").ToList())
+                                        {
+                                            if (string.IsNullOrEmpty(mainItem.InterfaceURL))
+                                            {
+                                                <li data-toggle="collapse" data-target="#Report-@mainItem.InterfaceId" class="collapsed  in-li" aria-expanded="true" style="background:#333;">
+                                                    @mainItem.InterfaceName<span class="arrow"></span>
+                                                    <ul class="sub-menu collapse" id="Report-@mainItem.InterfaceId" aria-expanded="true">
+                                                        @if (mainItem.childMenuList != null)
+                                                        {
+                                                            foreach (var childItem in mainItem.childMenuList)
+                                                            {
+                                                                <li class="in-li1"><a href="@Url.Content(childItem.InterfaceURL)">@childItem.InterfaceName</a></li>
+                                                            }
+                                                        }
+                                                    </ul>
+                                                </li>
+                                            }
+                                            else
+                                            {
+                                                <li><a href="@Url.Content(mainItem.InterfaceURL)">@mainItem.InterfaceName</a></li>
+                                            }
+                                        }
+                                    </ul>
+                                </li>
+                            }
+
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        <!--end nav sidebar -->
+        <!--start body content -->
+        <div id="page-content-wrapper">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="col-md-12 col-sm-12 rhtdash">
+                                    @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end body content -->
+    </div>
+
+    <div class="copy" style="width:100%; text-align:center; clear:both; padding-top:1px;">
+        <span style="font-size: 11px; font-weight: bold; color: rgb(68, 68, 68);">Copyright &copy; HTSERP 2017 All Rights Reserved. </span>
+
+    </div>
+    <div class="clearfix"> </div>
+    <script>
+	    function htmlbodyHeightUpdate(){
+		var height3 = $( window ).height()
+		var height1 = $('.nav').height()+50
+		height2 = $('.main').height()
+		if(height2 > height3){
+			$('html').height(Math.max(height1,height3,height2)+10);
+			$('body').height(Math.max(height1,height3,height2)+10);
+		}
+		else
+		{
+			$('html').height(Math.max(height1,height3,height2));
+			$('body').height(Math.max(height1,height3,height2));
+		}
+
+	}
+	$(document).ready(function () {
+		htmlbodyHeightUpdate()
+		$( window ).resize(function() {
+			htmlbodyHeightUpdate()
+		});
+		$( window ).scroll(function() {
+			height2 = $('.main').height()
+  			htmlbodyHeightUpdate()
+		});
+	});
+    </script>
+    <script>
+        function show() {
+            var sidebarid = document.getElementById("hdnSidebar").value;
+            if (sidebarid == 0) {
+                document.getElementById("left-menu").className = "wrapper-sidebar";
+                document.getElementById("page-content-wrapper").className = "wrapper-padding";
+                document.getElementById("left-menu").className = "sidebar-lefts";
+                document.getElementById("left-menu").className = "sidebars-margin";
+                document.getElementById("hdnSidebar").value = 1;
+            }
+            else
+            {
+                document.getElementById("left-menu").remove("wrapper-sidebar");
+                document.getElementById("left-menu").classList.remove("wrapper-sidebar");
+                document.getElementById("page-content-wrapper").classList.remove("wrapper-padding");
+                document.getElementById("left-menu").classList.remove("sidebar-lefts");
+                document.getElementById("left-menu").classList.remove("sidebars-margin");
+                document.getElementById("hdnSidebar").value = 0;
+            }
+        }
+        //document.getElementById("left-menu").className = "wrapper-sidebar";
+        //document.getElementById("page-content-wrapper").className = "wrapper-padding";
+        //document.getElementById("left-menu").className = "sidebar-lefts";
+        //document.getElementById("left-menu").className = "sidebars-margin";
+       // $('#left-side-menu').click(function () {
+            
+       //     // $('#wrapper').addClass('wrapper-padding');
+       //     $("#left-menu").toggleClass("wrapper-sidebar");
+       //     $("#page-content-wrapper").toggleClass("wrapper-padding");
+       //     $("#left-menu").toggleClass("sidebar-lefts");
+       //     $("#left-menu").toggleClass("sidebars-margin");
+
+       // });
+
+       // $(document).ready(function () {
+
+            
+
+            
+
+       ////$(document).ready(function () {
+       ////         $('#left-side-menu').mouseout(function () {
+       ////             $('#wrapper').removeClass('wrapper-padding');
+       ////         });
+       ////     });
+       // });
+    </script>
+    @RenderSection("scripts", required: false)
+    <script>
+  function ajaxindicatorstart(text) {
+            if ($('body').find('#resultLoading').attr('id') != 'resultLoading') {
+               // $('body').append('<div id="resultLoading" style="display:none"><div><img src="../Content/Home/images/ajax-loader2.gif"><div>' + text + '</div></div><div class="bg"></div></div>');
+                $('body').append('<div id="resultLoading" style="display:none"><div><div id="cssload-loader"><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div><div class="cssload-dot"></div></div><div>' + text + '</div></div><div class="bg"></div></div>');
+            }
+
+            $('#resultLoading').css({
+                'width': '100%',
+                'height': '100%',
+                'position': 'fixed',
+                'z-index': '10000000',
+                'top': '0',
+                'left': '0',
+                'right': '0',
+                'bottom': '0',
+                'margin': 'auto'
+            });
+
+            $('#resultLoading .bg').css({
+                'background': '#000000',
+                'opacity': '0.7',
+                'width': '100%',
+                'height': '100%',
+                'position': 'absolute',
+                'top': '0'
+            });
+
+            $('#resultLoading>div:first').css({
+                'width': '250px',
+                'height': '75px',
+                'text-align': 'center',
+                'position': 'fixed',
+                'top': '0',
+                'left': '0',
+                'right': '0',
+                'bottom': '0',
+                'margin': 'auto',
+                'font-size': '16px',
+                'z-index': '10',
+                'color': '#ffffff'
+
+            });
+
+            $('#resultLoading .bg').height('100%');
+            $('#resultLoading').fadeIn(300);
+            $('body').css('cursor', 'wait');
+        }
+
+        function ajaxindicatorstop() {
+            $('#resultLoading .bg').height('100%');
+            $('#resultLoading').fadeOut(300);
+            $('body').css('cursor', 'default');
+        }
+
+        $(document).ajaxStart(function () {
+            //show ajax indicator
+            ajaxindicatorstart('Processing.. please wait..');
+        }).ajaxStop(function () {
+            //hide ajax indicator
+            ajaxindicatorstop();
+        });
+    </script>
+    <style>
+        #cssload-loader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 171px;
+            height: 171px;
+            margin: auto;
+        }
+
+            #cssload-loader .cssload-dot {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 85.5px;
+                height: 100%;
+                margin: auto;
+            }
+
+                #cssload-loader .cssload-dot:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    width: 85.5px;
+                    height: 85.5px;
+                    border-radius: 100%;
+                    transform: scale(0);
+                    -o-transform: scale(0);
+                    -ms-transform: scale(0);
+                    -webkit-transform: scale(0);
+                    -moz-transform: scale(0);
+                }
+
+                #cssload-loader .cssload-dot:nth-child(7n+1) {
+                    transform: rotate(45deg);
+                    -o-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
+                    -moz-transform: rotate(45deg);
+                }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+1):before {
+                        background: rgb(0,255,128);
+                        animation: cssload-load 0.92s linear 0.12s infinite;
+                        -o-animation: cssload-load 0.92s linear 0.12s infinite;
+                        -ms-animation: cssload-load 0.92s linear 0.12s infinite;
+                        -webkit-animation: cssload-load 0.92s linear 0.12s infinite;
+                        -moz-animation: cssload-load 0.92s linear 0.12s infinite;
+                    }
+
+                #cssload-loader .cssload-dot:nth-child(7n+2) {
+                    transform: rotate(90deg);
+                    -o-transform: rotate(90deg);
+                    -ms-transform: rotate(90deg);
+                    -webkit-transform: rotate(90deg);
+                    -moz-transform: rotate(90deg);
+                }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+2):before {
+                        background: rgb(0,255,234);
+                        animation: cssload-load 0.92s linear 0.23s infinite;
+                        -o-animation: cssload-load 0.92s linear 0.23s infinite;
+                        -ms-animation: cssload-load 0.92s linear 0.23s infinite;
+                        -webkit-animation: cssload-load 0.92s linear 0.23s infinite;
+                        -moz-animation: cssload-load 0.92s linear 0.23s infinite;
+                    }
+
+                #cssload-loader .cssload-dot:nth-child(7n+3) {
+                    transform: rotate(135deg);
+                    -o-transform: rotate(135deg);
+                    -ms-transform: rotate(135deg);
+                    -webkit-transform: rotate(135deg);
+                    -moz-transform: rotate(135deg);
+                }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+3):before {
+                        background: rgb(0,170,255);
+                        animation: cssload-load 0.92s linear 0.35s infinite;
+                        -o-animation: cssload-load 0.92s linear 0.35s infinite;
+                        -ms-animation: cssload-load 0.92s linear 0.35s infinite;
+                        -webkit-animation: cssload-load 0.92s linear 0.35s infinite;
+                        -moz-animation: cssload-load 0.92s linear 0.35s infinite;
+                    }
+
+                #cssload-loader .cssload-dot:nth-child(7n+4) {
+                    transform: rotate(180deg);
+                    -o-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
+                    -webkit-transform: rotate(180deg);
+                    -moz-transform: rotate(180deg);
+                }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+4):before {
+                        background: rgb(0,64,255);
+                        animation: cssload-load 0.92s linear 0.46s infinite;
+                        -o-animation: cssload-load 0.92s linear 0.46s infinite;
+                        -ms-animation: cssload-load 0.92s linear 0.46s infinite;
+                        -webkit-animation: cssload-load 0.92s linear 0.46s infinite;
+                        -moz-animation: cssload-load 0.92s linear 0.46s infinite;
+                    }
+
+                #cssload-loader .cssload-dot:nth-child(7n+5) {
+                    transform: rotate(225deg);
+                    -o-transform: rotate(225deg);
+                    -ms-transform: rotate(225deg);
+                    -webkit-transform: rotate(225deg);
+                    -moz-transform: rotate(225deg);
+                }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+5):before {
+                        background: rgb(42,0,255);
+                        animation: cssload-load 0.92s linear 0.58s infinite;
+                        -o-animation: cssload-load 0.92s linear 0.58s infinite;
+                        -ms-animation: cssload-load 0.92s linear 0.58s infinite;
+                        -webkit-animation: cssload-load 0.92s linear 0.58s infinite;
+                        -moz-animation: cssload-load 0.92s linear 0.58s infinite;
+                    }
+
+                #cssload-loader .cssload-dot:nth-child(7n+6) {
+                    transform: rotate(270deg);
+                    -o-transform: rotate(270deg);
+                    -ms-transform: rotate(270deg);
+                    -webkit-transform: rotate(270deg);
+                    -moz-transform: rotate(270deg);
+                }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+6):before {
+                        background: rgb(149,0,255);
+                        animation: cssload-load 0.92s linear 0.69s infinite;
+                        -o-animation: cssload-load 0.92s linear 0.69s infinite;
+                        -ms-animation: cssload-load 0.92s linear 0.69s infinite;
+                        -webkit-animation: cssload-load 0.92s linear 0.69s infinite;
+                        -moz-animation: cssload-load 0.92s linear 0.69s infinite;
+                    }
+
+                #cssload-loader .cssload-dot:nth-child(7n+7) {
+                    transform: rotate(315deg);
+                }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+7):before {
+                        background: magenta;
+                        animation: cssload-load 0.92s linear 0.81s infinite;
+                        -o-animation: cssload-load 0.92s linear 0.81s infinite;
+                        -ms-animation: cssload-load 0.92s linear 0.81s infinite;
+                        -webkit-animation: cssload-load 0.92s linear 0.81s infinite;
+                        -moz-animation: cssload-load 0.92s linear 0.81s infinite;
+                    }
+
+                #cssload-loader .cssload-dot:nth-child(7n+8) {
+                    transform: rotate(360deg);
+                    -o-transform: rotate(360deg);
+                    -ms-transform: rotate(360deg);
+                    -webkit-transform: rotate(360deg);
+                    -moz-transform: rotate(360deg);
+                }
+
+                    #cssload-loader .cssload-dot:nth-child(7n+8):before {
+                        background: rgb(255,0,149);
+                        animation: cssload-load 0.92s linear 0.92s infinite;
+                        -o-animation: cssload-load 0.92s linear 0.92s infinite;
+                        -ms-animation: cssload-load 0.92s linear 0.92s infinite;
+                        -webkit-animation: cssload-load 0.92s linear 0.92s infinite;
+                        -moz-animation: cssload-load 0.92s linear 0.92s infinite;
+                    }
+
+
+
+        @@keyframes cssload-load {
+            100% {
+                opacity: 0;
+                transform: scale(1);
+            }
+        }
+
+        @@-o-keyframes cssload-load {
+            100% {
+                opacity: 0;
+                -o-transform: scale(1);
+            }
+        }
+
+        @@-ms-keyframes cssload-load {
+            100% {
+                opacity: 0;
+                -ms-transform: scale(1);
+            }
+        }
+
+        @@-webkit-keyframes cssload-load {
+            100% {
+                opacity: 0;
+                -webkit-transform: scale(1);
+            }
+        }
+
+        @@-moz-keyframes cssload-load {
+            100% {
+                opacity: 0;
+                -moz-transform: scale(1);
+            }
+        }
+    </style>
+</body>
+</html>

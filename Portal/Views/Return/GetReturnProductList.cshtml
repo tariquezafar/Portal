@@ -1,0 +1,140 @@
+﻿@model List<Portal.Core.ViewModel.ReturnedProductDetailViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Quantity</th>
+                    <th>Replace QTY.</th>
+                    <th>Returned QTY.</th>
+                    <th>Warranty In Month</th>
+                    <th>Warranty Start Date</th>
+                    <th>Warranty End Date</th>
+                    <th>Status</th>
+                    <th>Remarks</th>
+
+                    <th colspan="2" align="center" class="editonly">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>
+                            @item.ProductName
+                            <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                            <input type="hidden" id="hdnReturnedDetailID" value="@item.ReturnedDetailID" />
+                            <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                            <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                        </td>
+
+                        <td>
+                            @item.ProductCode
+                            <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                        </td>
+
+                        <td>
+                            @item.Quantity
+                            <input type="hidden" id="hdnQuantity" value="@item.Quantity" />
+                        </td>
+
+                        <td>
+                            @item.ReplacedQTY
+                            <input type="hidden" id="hdnReplacedQTY" value="@item.ReplacedQTY" />
+                        </td>
+                        <td>
+                            @item.ReturnedQty
+                            <input type="hidden" id="hdnReturnedQTY" value="@item.ReturnedQty" />
+                        </td>
+                        <td>
+                            @item.WarrantyPeriodMonth
+                            <input type="hidden" id="hdnWarrantyPeriodMonth" value="@item.WarrantyPeriodMonth" />
+
+
+                        </td>
+
+                        <td>
+                            @item.WarrantyStartDate
+                            <input type="hidden" id="hdnWarrantyStartDate" value="@item.WarrantyStartDate" />
+                        </td>
+
+
+                        <td>
+                            @item.WarrantyEndDate
+                            <input type="hidden" id="hdnWarrantyEndDate" value="@item.WarrantyEndDate" />
+                        </td>
+
+                        <td>
+                            @item.Status
+                            <input type="hidden" id="hdnStatus" value="@item.Status" />
+                        </td>
+                        <td>
+                            @item.Remarks
+                            <input type="hidden" id="hdnRemarks" value="@item.Remarks" />
+                        </td>
+
+
+
+
+
+                        <td class="editonly" style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-pencil-square-o erp-btn" onclick="EditProductRow(this);" href="javascript:void(0);"></a>
+                        </td>
+                        <td class="editonly" style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-trash erp-btn" onclick="RemoveProductRow(this)" href="javascript:void(0);"></a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Quantity</th>
+                    <th>Rep QTY.</th>
+                    <th>Warranty In Month</th>
+                    <th>Warranty Start Date</th>
+                    <th>Warranty End Date</th>
+                    <th>Status</th>
+                    <th>Remarks</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+<script>
+    $(document).ready(function () {
+        if ($("#hdnAccessMode").val() == "3") {
+            $(".editonly").hide();
+        }
+
+    });
+</script>

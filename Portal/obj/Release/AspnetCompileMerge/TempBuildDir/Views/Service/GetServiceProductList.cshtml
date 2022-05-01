@@ -1,0 +1,69 @@
+﻿@model List<Portal.Core.ViewModel.ServiceViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div class="divproductlist" style="padding:10px;">
+        <table class="table" id="tblProductServiceList">
+            <thead>
+                <tr>                   
+                    <th style="width: 35%">Product</th>
+                    <th style="width: 30%">Service Item</th>
+                    <th style="width: 30%">Notes</th>                   
+                    <th style="width: 5%" colspan="1" class="editonly" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        
+                        <td>
+                         @item.ProductName
+                        <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                        <input type="hidden" id="hdnServiceItemId" value="@item.ServiceItemId" />
+                        <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                        <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                        <input type="hidden" id="hdnServiceItemName" value="@item.ServiceItemName" />
+                        <input type="hidden" id="hdnNotes" value="@item.Notes" />
+                         <input type="hidden" id="ddlProductType" value="@item.ProductTypeID" />
+                        
+                    </td>
+                    <td>
+                        @item.ServiceItemName
+                  
+                </td>
+                <td>
+                    @item.Notes
+                
+               
+
+            </td>
+          
+            @*<td  style="width:30px; margin:0px 2px auto;">
+                <a style="color:white" class="fa fa-pencil-square-o btn btn-success table_btn editonly selectpo"  onclick="EditProductRow(this);" href="#"></a>
+            </td>*@
+            <td class="" style="width:30px; margin:0px 2px auto;">
+                <a style="color:white" class="fa fa-trash btn btn-success table_btn editonly selectpo" onclick="RemoveProductRow(this)" href="#"></a>
+            </td>
+        </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="divproductlist" style="padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Service Item</th>
+                    <th>Notes</th>
+                    <th colspan="2" class="editonly" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}

@@ -1,0 +1,73 @@
+﻿@model List<Portal.Core.ViewModel.TargetTypeViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+<style>
+    .table{
+        margin-left:0px;
+        margin-right:20px
+    }
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+ table tr:nth-child(2n+1) {
+    
+    background-color: #dbe5f7;
+    }
+
+     table tr:nth-child(2n) {
+    
+    background-color: #dbe5f7;
+    }
+</style>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table table-bordered table-hover" id="tblCountryList">
+            <thead>
+                <tr>
+                    <th colspan="2">Action</th>
+                    <th><center>Target Type Name</center></th>
+                    <th><center>Target Type Desc</center></th>
+                    <th><center>Company Branch</center></th>
+                    <th><center>Create Date</center></th>
+                    <th><center>Create By User</center></th>
+                    <th><center>Modify Date</center></th>
+                    <th><center>Modify By User</center></th>
+               </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="info">
+                        <td style="width:30px; margin:0px auto;">
+                            <div class="teal text "><a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/TargetType/AddEditTargetType?targetTypeId=@item.TargetTypeId&AccessMode=3"></a></div>
+                        </td>
+                        <td style="width:30px; margin:0px 2px auto;">
+                            <div class="teal text">  <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/TargetType/AddEditTargetType?targetTypeId=@item.TargetTypeId&AccessMode=2"></a></div>
+                        </td>
+                        <td align="center">@item.TargetName</td>
+                        <td align="center">@item.TargetDesc</td>
+                        <td align="center">@item.CompanyBranchName</td>
+                        <td align="center">@(item.CreatedDate)</td>
+                        <td align="center">@(item.CreatedByUser)</td>
+                        <td align="center">@(item.ModifiedDate)</td>
+                        <td align="center">@(item.ModifyByUser)</td>
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}

@@ -1,0 +1,254 @@
+11:16:20 AM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\HTSNewWorkArea\Portal\Portal\Views\StoreRequisition\GetStoreRequisitionProductApprovalList.cshtml(49): error CS1061: 'Portal.Core.ViewModel.StoreRequisitionProductDetailViewModel' does not contain a definition for 'Price' and no extension method 'Price' accepting a first argument of type 'Portal.Core.ViewModel.StoreRequisitionProductDetailViewModel' could be found (are you missing a using directive or an assembly reference?)
+--------------------------------------------------------------------------------------------------------------------------------
+
+11:18:26 AM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\HTSNewWorkArea\Portal\Portal\Views\StoreRequisition\GetStoreRequisitionProductApprovalList.cshtml(49): error CS1061: 'Portal.Core.ViewModel.StoreRequisitionProductDetailViewModel' does not contain a definition for 'Price' and no extension method 'Price' accepting a first argument of type 'Portal.Core.ViewModel.StoreRequisitionProductDetailViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+11:19:07 AM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Web.HttpCompileException
+Details: d:\HTSNewWorkArea\Portal\Portal\Views\StoreRequisition\GetStoreRequisitionProductApprovalList.cshtml(49): error CS1061: 'Portal.Core.ViewModel.StoreRequisitionProductDetailViewModel' does not contain a definition for 'Price' and no extension method 'Price' accepting a first argument of type 'Portal.Core.ViewModel.StoreRequisitionProductDetailViewModel' could be found (are you missing a using directive or an assembly reference?)
+---------------------------------------------------------------------------------------------------------------------------
+
+11:27:14 AM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetStoreRequisitionProductList
+Error Line No : 88
+Exception Type : System.ArgumentException
+Details: Column 'SalePrice' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:27:14 AM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetStoreRequisitionProductApprovalList
+Error Line No : 269
+Exception Type : System.ArgumentException
+Details: Column 'SalePrice' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:27:37 AM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetStoreRequisitionProductList
+Error Line No : 88
+Exception Type : System.ArgumentException
+Details: Column 'SalePrice' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:27:37 AM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetStoreRequisitionProductApprovalList
+Error Line No : 269
+Exception Type : System.ArgumentException
+Details: Column 'SalePrice' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:28:19 AM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetStoreRequisitionProductList
+Error Line No : 88
+Exception Type : System.ArgumentException
+Details: Column 'SalePrice' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:29:39 AM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetStoreRequisitionProductList
+Error Line No : 88
+Exception Type : System.ArgumentException
+Details: Column 'SalePrice' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:29:39 AM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetStoreRequisitionProductApprovalList
+Error Line No : 269
+Exception Type : System.ArgumentException
+Details: Column 'SalePrice' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:29:45 AM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetStoreRequisitionProductList
+Error Line No : 88
+Exception Type : System.ArgumentException
+Details: Column 'SalePrice' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+11:29:52 AM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetStoreRequisitionProductApprovalList
+Error Line No : 269
+Exception Type : System.ArgumentException
+Details: Column 'SalePrice' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:18:23 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'requisitionId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetWorkOrderBOMProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.StoreRequisitionProductDetailViewModel], Int64)' in 'Portal.Controllers.StoreRequisitionController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:18:29 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'requisitionId' of non-nullable type 'System.Int64' for method 'System.Web.Mvc.PartialViewResult GetWorkOrderBOMProductList(System.Collections.Generic.List`1[Portal.Core.ViewModel.StoreRequisitionProductDetailViewModel], Int64)' in 'Portal.Controllers.StoreRequisitionController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:02 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetWorkOrderBOMProductList
+Error Line No : 251
+Exception Type : System.ArgumentException
+Details: Column 'RequisitionProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:02 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetWorkOrderBOMProductList
+Error Line No : 180
+Exception Type : System.ArgumentException
+Details: Column 'RequisitionProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:23:23 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetWorkOrderBOMProductList
+Error Line No : 251
+Exception Type : System.ArgumentException
+Details: Column 'RequisitionProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:25:08 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetWorkOrderBOMProductList
+Error Line No : 251
+Exception Type : System.ArgumentException
+Details: Column 'RequisitionProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:25:08 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetWorkOrderBOMProductList
+Error Line No : 180
+Exception Type : System.ArgumentException
+Details: Column 'RequisitionProductDetailId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:25:55 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetWorkOrderBOMProductList
+Error Line No : 251
+Exception Type : System.ArgumentException
+Details: Column 'ProductCode' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:26:03 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetWorkOrderBOMProductList
+Error Line No : 251
+Exception Type : System.ArgumentException
+Details: Column 'ProductCode' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:26:33 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetWorkOrderBOMProductList
+Error Line No : 251
+Exception Type : System.ArgumentException
+Details: Column 'ProductCode' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:26:33 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetWorkOrderBOMProductList
+Error Line No : 180
+Exception Type : System.ArgumentException
+Details: Column 'ProductCode' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:26:51 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetWorkOrderBOMProductList
+Error Line No : 251
+Exception Type : System.ArgumentException
+Details: Column 'ProductCode' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:26:51 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetWorkOrderBOMProductList
+Error Line No : 180
+Exception Type : System.ArgumentException
+Details: Column 'ProductCode' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:27:07 PM
+Source : Portal.Core.StoreRequisitionBL
+Method Name : GetWorkOrderBOMProductList
+Error Line No : 251
+Exception Type : System.ArgumentException
+Details: Column 'ProductCode' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+15:27:16 PM
+Source : Portal.Controllers.StoreRequisitionController
+Method Name : GetWorkOrderBOMProductList
+Error Line No : 180
+Exception Type : System.ArgumentException
+Details: Column 'ProductCode' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:47:28 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:47:38 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:49:39 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+
+16:50:16 PM
+Source : Portal.Controllers.SOController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.ArgumentException
+Details: The parameters dictionary contains a null entry for parameter 'customerId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetCustomerBranchList(Int32)' in 'Portal.Controllers.SOController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+---------------------------------------------------------------------------------------------------------------------------
+

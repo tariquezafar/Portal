@@ -1,0 +1,81 @@
+﻿@model List<Portal.Core.QualityCheckViewModel>
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblSearchInvoiceList">
+            <thead>
+                <tr>
+                    <th align="center">Select</th>
+                    <th>QC No.</th>
+                    <th>QC Date</th>
+                    <th>Gate In No.</th>                   
+                    <th>PO No.</th>
+                    <th>PO Date</th>
+                    <th>Company Branch</th>
+                    <th>Approval Status</th>                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td style="width:30px; margin:0px 2px auto;">
+                            <a class="fa fa-pencil-square-o erp-btn" href="#" onclick="SelectQC('@item.QualityCheckId','@item.QualityCheckNo','@item.QualityCheckDate','@item.VendorId','@item.CompanyBranchId')"></a>
+                        </td>
+
+                        <td>
+                            @item.QualityCheckNo
+                            <input type="hidden" id="hdnSearchQualityCheckNo" value="@item.QualityCheckNo" />
+                        </td>
+                        <td>
+                            @item.QualityCheckDate
+                            <input type="hidden" id="hdnSearchQualityCheckDate" value="@item.QualityCheckDate" />
+                        </td>
+                        <td>
+                            @item.GateInNo
+                            <input type="hidden" id="hdnSearchGateInNo" value="@item.GateInNo" />
+                        </td>
+                        
+
+                        <td>
+                            @item.PONo
+                            <input type="hidden" id="hdnSearchInvoiceNo" value="@item.PONo" />
+                        </td>
+                        <td>
+                            @item.PODate
+                            <input type="hidden" id="hdnSearchInvoiceDate" value="@item.PODate" />
+                        </td>
+                        <td>
+                            @item.CompanyBranchName
+                            <input type="hidden" id="hdnSearchCompanyBranchName" value="@item.CompanyBranchName" />
+                        </td>
+                        <td>
+                            @item.ApprovalStatus
+                            <input type="hidden" id="hdnSearchApprovalStatus" value="@item.ApprovalStatus" />
+                        </td>
+                       
+                      
+                      
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+}
+<script>
+    $(document).ready(function () {
+        $('#tblSearchInvoiceList').paging({
+            limit: 10,
+            rowDisplayStyle: 'block',
+            activePage: 0,
+            rows: []
+        });
+
+    });
+</script>

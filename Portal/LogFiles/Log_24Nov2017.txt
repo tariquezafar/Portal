@@ -1,0 +1,572 @@
+13:40:50 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankStatement
+Error Line No : 20653
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+--------------------------------------------------------------------------------------------------------------------------------
+
+13:40:50 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 58
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:40:50 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : AddEditBankStatement
+Error Line No : 65
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:58 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankStatement
+Error Line No : 20653
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:58 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 58
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:41:58 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : AddEditBankStatement
+Error Line No : 65
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:22:49 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankStatement
+Error Line No : 20653
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:22:49 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 58
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:22:49 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : AddEditBankStatement
+Error Line No : 65
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:23:02 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankStatement
+Error Line No : 20653
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:23:03 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 58
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:23:12 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankStatement
+Error Line No : 20653
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:23:12 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 58
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:23:33 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankStatement
+Error Line No : 20653
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:59 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankStatement
+Error Line No : 20653
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankBranch', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:59 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 59
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankBranch', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:36:59 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : AddEditBankStatement
+Error Line No : 65
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankBranch', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:37:07 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankStatement
+Error Line No : 20653
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankBranch', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:37:07 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 59
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankBranch', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:38:07 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : AddEditBankStatement
+Error Line No : 65
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankBranch', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:45:35 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 47
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:45:35 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : AddEditBankStatement
+Error Line No : 65
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:46:16 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 47
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:47:52 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 47
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:47:52 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : AddEditBankStatement
+Error Line No : 65
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:48:34 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 47
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:48:34 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : AddEditBankStatement
+Error Line No : 65
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:48:50 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 47
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:48:50 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : AddEditBankStatement
+Error Line No : 65
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:04 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 47
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:49:04 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : AddEditBankStatement
+Error Line No : 65
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:50:01 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 47
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:50:01 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : AddEditBankStatement
+Error Line No : 65
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:04:06 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 47
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:07:38 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 47
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:07:38 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : AddEditBankStatement
+Error Line No : 65
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:07:52 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 47
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:07:52 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : AddEditBankStatement
+Error Line No : 65
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:08:08 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 47
+Exception Type : System.FormatException
+Details: String was not recognized as a valid DateTime.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:33:20 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankStatement
+Error Line No : 20654
+Exception Type : System.Data.SqlClient.SqlException
+Details: Conversion failed when converting date and/or time from character string.
+The data for table-valued parameter "@BankStatementDetail" doesn't conform to the table type of the parameter. SQL Server error is: 241, state: 1
+The statement has been terminated.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:33:20 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Conversion failed when converting date and/or time from character string.
+The data for table-valued parameter "@BankStatementDetail" doesn't conform to the table type of the parameter. SQL Server error is: 241, state: 1
+The statement has been terminated.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:33:20 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : AddEditBankStatement
+Error Line No : 65
+Exception Type : System.Data.SqlClient.SqlException
+Details: Conversion failed when converting date and/or time from character string.
+The data for table-valued parameter "@BankStatementDetail" doesn't conform to the table type of the parameter. SQL Server error is: 241, state: 1
+The statement has been terminated.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:37:30 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankStatement
+Error Line No : 20654
+Exception Type : System.Data.SqlClient.SqlException
+Details: Conversion failed when converting date and/or time from character string.
+The data for table-valued parameter "@BankStatementDetail" doesn't conform to the table type of the parameter. SQL Server error is: 241, state: 1
+The statement has been terminated.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:37:30 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 62
+Exception Type : System.Data.SqlClient.SqlException
+Details: Conversion failed when converting date and/or time from character string.
+The data for table-valued parameter "@BankStatementDetail" doesn't conform to the table type of the parameter. SQL Server error is: 241, state: 1
+The statement has been terminated.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:37:30 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : AddEditBankStatement
+Error Line No : 65
+Exception Type : System.Data.SqlClient.SqlException
+Details: Conversion failed when converting date and/or time from character string.
+The data for table-valued parameter "@BankStatementDetail" doesn't conform to the table type of the parameter. SQL Server error is: 241, state: 1
+The statement has been terminated.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:19:25 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankStatement
+Error Line No : 20654
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:19:25 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 63
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:19:25 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : AddEditBankStatement
+Error Line No : 65
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:19:37 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankStatement
+Error Line No : 20654
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:19:37 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 63
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:19:37 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : AddEditBankStatement
+Error Line No : 65
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:20:01 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : AddEditBankStatement
+Error Line No : 20654
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:20:01 PM
+Source : Portal.Core.BankStatementBL
+Method Name : AddEditBankStatement
+Error Line No : 63
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:20:09 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : AddEditBankStatement
+Error Line No : 65
+Exception Type : System.Data.SqlClient.SqlException
+Details: Procedure or function 'proc_AddEditBankStatement' expects parameter '@BankStatementStatus', which was not supplied.
+---------------------------------------------------------------------------------------------------------------------------
+
+16:21:02 PM
+Source : Portal.Core.BankStatementBL
+Method Name : GetBankStatementDetail
+Error Line No : 121
+Exception Type : System.ArgumentException
+Details: Column 'BankBookId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:21:02 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : GetBankStatementDetail
+Error Line No : 289
+Exception Type : System.ArgumentException
+Details: Column 'BankBookId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:21:29 PM
+Source : Portal.Core.BankStatementBL
+Method Name : GetBankStatementDetail
+Error Line No : 121
+Exception Type : System.ArgumentException
+Details: Column 'BankBookId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+16:23:12 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : GetBankStatementDetail
+Error Line No : 289
+Exception Type : System.ArgumentException
+Details: Column 'BankBookId' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:55:05 PM
+Source : Portal.Core.BankStatementBL
+Method Name : GetBankStatementList
+Error Line No : 163
+Exception Type : System.ArgumentException
+Details: Column 'BankStatementFromDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:55:05 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : GetBankStatementList
+Error Line No : 323
+Exception Type : System.ArgumentException
+Details: Column 'BankStatementFromDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:55:45 PM
+Source : Portal.Core.BankStatementBL
+Method Name : GetBankStatementList
+Error Line No : 163
+Exception Type : System.ArgumentException
+Details: Column 'BankStatementFromDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:55:45 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : GetBankStatementList
+Error Line No : 323
+Exception Type : System.ArgumentException
+Details: Column 'BankStatementFromDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:58:48 PM
+Source : Portal.Core.BankStatementBL
+Method Name : GetBankStatementList
+Error Line No : 163
+Exception Type : System.ArgumentException
+Details: Column 'BankStatementFromDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:58:48 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : GetBankStatementList
+Error Line No : 323
+Exception Type : System.ArgumentException
+Details: Column 'BankStatementFromDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:59:01 PM
+Source : Portal.Core.BankStatementBL
+Method Name : GetBankStatementList
+Error Line No : 163
+Exception Type : System.ArgumentException
+Details: Column 'BankStatementFromDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:59:15 PM
+Source : Portal.Core.BankStatementBL
+Method Name : GetBankStatementList
+Error Line No : 163
+Exception Type : System.ArgumentException
+Details: Column 'BankStatementFromDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+17:59:15 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : GetBankStatementList
+Error Line No : 323
+Exception Type : System.ArgumentException
+Details: Column 'BankStatementFromDate' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:58:53 PM
+Source : Portal.Core.BankStatementBL
+Method Name : GetBankStatementList
+Error Line No : 163
+Exception Type : System.ArgumentException
+Details: Column 'Remarks' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:58:53 PM
+Source : Portal.Controllers.BankStatementController
+Method Name : GetBankStatementList
+Error Line No : 323
+Exception Type : System.ArgumentException
+Details: Column 'Remarks' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+
+18:59:13 PM
+Source : Portal.Core.BankStatementBL
+Method Name : GetBankStatementList
+Error Line No : 163
+Exception Type : System.ArgumentException
+Details: Column 'Remarks' does not belong to table .
+---------------------------------------------------------------------------------------------------------------------------
+

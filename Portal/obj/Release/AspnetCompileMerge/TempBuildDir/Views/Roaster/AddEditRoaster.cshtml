@@ -1,0 +1,339 @@
+﻿@{
+    ViewBag.Title = "Add Roster";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/HRDashboard">HR</a> >> Add/Edit Roster</b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditRoaster" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-6">
+                    <label for="txtRoasterName" class="col-sm-4 control-label">Roster Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtRoasterName" name="txtRoasterName" tabindex="1" placeholder="Enter Roaster Name" type="text" maxlength="100" />
+                        <input id="hdnRoasterID" type="hidden" value="@ViewData["roasterId"]" />
+                        <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtRoasterDesc" class="col-sm-4 control-label">Roster Desc</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtRoasterDesc" name="txtRoasterDesc" tabindex="2" placeholder="Enter Roaster Desc" type="text" maxlength="100" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="txtRoasterStartDate" class="col-sm-4 control-label">Roster Start Date&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="txtRoasterStartDate" name="txtRoasterStartDate" tabindex="3" placeholder="Select Roaster Start Date" type="text" maxlength="100" />
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtRoasterType" class="col-sm-4 control-label">Roster Type&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <!-- <input class="form-control" id="txtRoasterType" name="txtRoasterType" tabindex="4" placeholder="Enter Roaster Type" type="text" maxlength="100" />-->
+                        <select id="txtRoasterType" name="txtRoasterType" tabindex="4" class="form-control">
+                            <option value="0">-Select Roster Type-</option>
+                            <option value="Cyclic">Cyclic</option>
+                            <option value="Non-Cyclic">Non-Cyclic</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-6">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="46" onchange="GetBranchStateId()" class="form-control"></select>
+                        <input id="hdnBillingStateId" type="hidden" value="0" />
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="col-md-12">
+                    <div class="form-group col-md-6">
+                        <label for="txtRoasterRemark" class="col-sm-4 control-label">Remarks</label>
+                        <div class="col-sm-8">
+                            <textarea rows="5" cols="5" class="form-control" id="txtRoasterRemark" name="txtRoasterRemark" tabindex="5" placeholder="Select Roaster Remark" type="text" maxlength="100"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group  col-md-6">
+                        <label for="ddlDepartment" class="col-sm-4 control-label">Department&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlDepartment" name="ddlDepartment" tabindex="6" class="form-control"></select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="form-group col-md-6">
+                        <label for="txtNoOfWeek" class="col-sm-4 control-label">No of Week&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="txtNoOfWeek" name="txtNoOfWeek" tabindex="7" class="form-control">
+                                <option value="0">-Select No of Week-</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                                <option value="46">46</option>
+                                <option value="47">47</option>
+                                <option value="48">48</option>
+                                <option value="49">49</option>
+                                <option value="50">50</option>
+                                <option value="51">51</option>
+                                <option value="52">52</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="txtstatus" class="col-sm-4 control-label">Status&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input id="chkstatus" name="chkstatus" type="checkbox" checked="checked" tabindex="8" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 ftop">
+                    <div class="form-group col-md-4">
+                    </div>
+                    <div class="form-group col-md-4" style="background-color:yellow">
+                        <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Roster Week(s)</b></label></h4>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input class="btn btn-success" value="Add New Week" tabindex="9" alt="Add New Week" id="btnAddNewWeek" onclick="ShowHideWeekPanel(1)" type="button" border="0">
+                    </div>
+                </div>
+                <div class="col-md-12 weeksection" style="display:none;">
+                    <div class="form-group col-md-6">
+                        <label for="ddlWeekNo" class="col-sm-4 control-label">Week No.&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlWeekNo" name="ddlWeekNo" tabindex="10" class="form-control">
+                                <option value="0">-Select Week-</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                                <option value="46">46</option>
+                                <option value="47">47</option>
+                                <option value="48">48</option>
+                                <option value="49">49</option>
+                                <option value="50">50</option>
+                                <option value="51">51</option>
+                                <option value="52">52</option>
+                            </select>
+                            <input id="hdnRoasterWeekId" type="hidden" value="0" />
+                            <input id="hdnWeekSequenceNo" type="hidden" value="0" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="ddlShift_Mon" class="col-sm-4 control-label">Monday Shift</label>
+                        <div class="col-sm-8">
+                            <select id="ddlShift_Mon" name="ddlShift_Mon" tabindex="11" class="form-control shiftDDl"></select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-12 weeksection" style="display:none;">
+                    <div class="form-group col-md-6">
+                        <label for="ddlShift_Tue" class="col-sm-4 control-label">Tuesday Shift</label>
+                        <div class="col-sm-8">
+                            <select id="ddlShift_Tue" name="ddlShift_Tue" tabindex="12" class="form-control shiftDDl"></select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="ddlShift_Wed" class="col-sm-4 control-label">Wednesday Shift</label>
+                        <div class="col-sm-8">
+                            <select id="ddlShift_Wed" name="ddlShift_Wed" tabindex="13" class="form-control shiftDDl"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 weeksection" style="display:none;">
+                    <div class="form-group col-md-6">
+                        <label for="ddlShift_Thu" class="col-sm-4 control-label">Thursday Shift</label>
+                        <div class="col-sm-8">
+                            <select id="ddlShift_Thu" name="ddlShift_Thu" tabindex="14" class="form-control shiftDDl"></select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="ddlShift_Fri" class="col-sm-4 control-label">Friday Shift</label>
+                        <div class="col-sm-8">
+                            <select id="ddlShift_Fri" name="ddlShift_Fri" tabindex="15" class="form-control shiftDDl"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 weeksection" style="display:none;">
+                    <div class="form-group col-md-6">
+                        <label for="ddlShift_Sat" class="col-sm-4 control-label">Saturday Shift</label>
+                        <div class="col-sm-8">
+                            <select id="ddlShift_Sat" name="ddlShift_Sat" tabindex="16" class="form-control shiftDDl"></select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="ddlShift_Sun" class="col-sm-4 control-label">Sunday Shift</label>
+                        <div class="col-sm-8">
+                            <select id="ddlShift_Sun" name="ddlShift_Sun" tabindex="17" class="form-control shiftDDl"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-12 col-md-12 weeksection" style="display:none;">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Add Week" alt="Add Week" tabindex="18" id="btnAddWeek" onclick="AddWeek(1)" type="button" border="0">&nbsp;&nbsp;
+                            <input class="btn btn-success" value="Update Week" style="display:none;" tabindex="18" alt="Update Week" id="btnUpdateWeek" onclick="AddWeek(2)" type="button" border="0">&nbsp;&nbsp;
+                            <input class="btn btn-success" type="button" id="btnCancelWeek" tabindex="19" onclick="ShowHideWeekPanel(2)" value="Cancel" /> &nbsp;&nbsp;
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                <div class="col-sm-12 col-lg-12 col-md-12">
+                    <div id="divWeekList">
+                    </div>
+                </div>
+                <div class="row col-sm-6 col-lg-12 col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="20" onclick="SaveData(1)" type="button" border="0">
+                            <input class="btn btn-success" value="Update" style="display:none;" tabindex="20" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">
+                            <a class="btn btn-success" id="btnReset" tabindex="21" href="@Url.Content("~/Roaster/AddEditRoaster")">Reset</a>
+                            @*<input class="btn btn-success" type="button" id="btnReset" tabindex="13" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
+                            <a class="btn btn-success" id="btnList" tabindex="22" href="@Url.Content("~/Roaster/ListRoaster")">Search Roster</a>
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/Roaster/AddRoaster.js"></script>

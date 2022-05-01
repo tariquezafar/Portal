@@ -1,0 +1,192 @@
+﻿@{
+    ViewBag.Title = "SLBalanceTransfer";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+    input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+        input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+    /* allow space for check mark */
+
+    .table th {
+        background: rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;
+    }
+
+    .table th {
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .table tr {
+        text-align: center;
+    }
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AccountDashboard">Account</a> >> SL Closing Balance Transfer </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditAssetType" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+            <div class="col-md-12 ftop">
+
+                <div class="form-group col-md-5" style="background-color:yellow;margin-left:1%;">
+                    <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>From Financial Year (Previous Financial Year)</b></label></h4>
+                </div>
+                <div class="form-group col-md-2">
+
+                </div>
+                <div class="form-group col-md-5" style="background-color:yellow">
+                    <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>To Financial Year (Current Financial Year)</b></label></h4>
+                </div>
+            </div>
+            <div class="col-md-12 ">
+
+                <div class="form-group col-md-5" style="margin-left:1%;">  
+                    <input class="form-control" id="txtPreviousFinYearCode" name="txtPreviousFinYearCode" style="text-align:center;border:none;font-size: 20px"  type="text" maxlength="100" />           
+                    <input id="hdnStartDate" name="hdnStartDate" value="0" type="hidden" /> 
+                    <input id="hdnEndDate" name="hdnEndDate" value="0" type="hidden" />    
+                    <input id="hdnPreviousFinYearId" name="hdnPreviousFinYearId" value="0" type="hidden" /> 
+                    <input id="hdnCurrentFinYearID" name="hdnCurrentFinYearID" value="0" type="hidden" />
+                    <input id="hdnSLTransferId" name="hdnGLTransferId" value="0" type="hidden" />
+                </div>
+                <div class="form-group col-md-2">
+                </div>
+                <div class="form-group col-md-5" >     
+                    <input class="form-control" id="txtCurrentFinYearCode" name="txtCurrentFinYearCode" style="text-align:center;border:none;font-size: 20px"  tabindex="1"  type="text" maxlength="100" />             
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group col-md-5">
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="10" class="form-control"></select>
+                        <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                        <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                        
+                    </div>
+                </div>
+            </div>                
+        <div class="row col-sm-6 col-lg-12 col-md-12">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <center>
+                    <input class="btn btn-success" value="Show SL Closing Balance" alt="Save" tabindex="4" id="btnSearch" onclick="GetSLBalanceTransfer();" type="button" border="0">&nbsp;&nbsp;
+                    <input class="btn btn-success" style="display:none;" type="button" tabindex="5" id="btnSave" onclick="SaveData();" value="Add Tranf SL closing Bal" /> &nbsp;&nbsp;
+                    <a class="btn btn-success" id="btnList" tabindex="24" href="@Url.Content("~/SLBalanceTransfer/ListSLBalanceTransfer")">Search SL</a>
+                </center>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="row col-sm-6 col-lg-12 col-md-12">
+            <div id="divList">
+
+            </div>
+        </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="alertModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modelHeader"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modelText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="printModel" role="dialog">
+            <div class="modal-dialog  modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Transfer Balance</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="ddlPrintOption" class="col-sm-4 control-label">Report Option</label>
+                            <div class="col-sm-8">
+                                <select id="ddlPrintOption" name="ddlPrintOption" onchange="ShowHidePrintOption()" tabindex="1" class="form-control">
+                                    <option selected="selected" value="PDF">PDF</option>
+                                    <option value="Excel">Excel</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-success" target="_blank" href="#" id="btnPdf">Print</a>
+                        <a class="btn btn-success" style="display:none;" target="_blank" href="#" id="btnExcel">Print</a>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+<script src="~/Scripts/SLBalanceTransfer/AddSLBalanceTransfer.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>

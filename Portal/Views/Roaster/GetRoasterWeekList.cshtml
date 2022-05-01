@@ -1,0 +1,112 @@
+﻿@model List<Portal.Core.ViewModel.HR_RoasterWeekViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblWeekList">
+            <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Week No.</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                    <th>Sunday</th>
+                    <th colspan="3" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td>
+                            @item.WeekSequenceNo
+                            <input type="hidden" id="hdnWeekSequenceNo" value="@item.WeekSequenceNo" />
+                            <input type="hidden" id="hdnRoasterWeekId" value="@item.RoasterWeekId" />
+                        </td>
+                        <td>
+                            @item.WeekNo
+                        <input type="hidden" id="hdnWeekNo" value="@item.WeekNo" />
+                    </td>
+                    <td>
+                        @item.Mon_ShiftName
+                    <input type="hidden" id="hdnMon_ShiftName" value="@item.Mon_ShiftName" />
+                    <input type="hidden" id="hdnMon_ShiftId" value="@item.Mon_ShiftId" />
+                </td>
+                <td>
+                    @item.Tue_ShiftName
+                    <input type="hidden" id="hdnTue_ShiftName" value="@item.Tue_ShiftName" />
+                    <input type="hidden" id="hdnTue_ShiftId" value="@item.Tue_ShiftId" />
+                </td>
+                <td>
+                    @item.Wed_ShiftName
+                    <input type="hidden" id="hdnWed_ShiftName" value="@item.Wed_ShiftName" />
+                    <input type="hidden" id="hdnWed_ShiftId" value="@item.Wed_ShiftId" />
+                </td>
+                <td>
+                    @item.Thu_ShiftName
+                    <input type="hidden" id="hdnThu_ShiftName" value="@item.Thu_ShiftName" />
+                    <input type="hidden" id="hdnThu_ShiftId" value="@item.Thu_ShiftId" />
+                </td>
+                <td>
+                    @item.Fri_ShiftName
+                    <input type="hidden" id="hdnFri_ShiftName" value="@item.Fri_ShiftName" />
+                    <input type="hidden" id="hdnFri_ShiftId" value="@item.Fri_ShiftId" />
+                </td>
+                <td>
+                    @item.Sat_ShiftName
+                    <input type="hidden" id="hdnSat_ShiftName" value="@item.Sat_ShiftName" />
+                    <input type="hidden" id="hdnSat_ShiftId" value="@item.Sat_ShiftId" />
+                </td>
+                <td>
+                    @item.Sun_ShiftName
+                    <input type="hidden" id="hdnSun_ShiftName" value="@item.Sun_ShiftName" />
+                    <input type="hidden" id="hdnSun_ShiftId" value="@item.Sun_ShiftId" />
+                </td>
+                <td style="width:30px; margin:0px 2px auto;">
+                    <a  class="fa fa-pencil-square-o erp-btn" onclick="EditWeekRow(this);" href="#"></a>
+                </td>
+                <td  style="width:30px; margin:0px 2px auto;">
+                    <a  class="fa fa-trash erp-btn" onclick="RemoveWeekRow(this)" href="#"></a>
+                </td>
+                        <td  style="width:30px; margin:0px 2px auto;">
+                            <a  class="fa fa-copy erp-btn" onclick="CopyWeekRow(this)" href="#"></a>
+                        </td>
+            </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblWeekList">
+            <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Week No.</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                    <th>Sunday</th>
+                    <th colspan="3" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+
+
+<script>
+    $(document).ready(function () {
+       
+    });
+   
+</script>

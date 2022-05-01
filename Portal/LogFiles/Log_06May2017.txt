@@ -1,0 +1,216 @@
+13:12:41 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+--------------------------------------------------------------------------------------------------------------------------------
+
+13:12:41 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 57
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:12:42 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 38
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:13:01 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:13:01 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 57
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:13:01 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 38
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:55:28 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 43
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:55:29 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 57
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:55:29 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 38
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:56:16 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthenticateUser
+Error Line No : 41
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:56:17 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 57
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+13:56:17 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 38
+Exception Type : System.Data.Entity.Core.EntityException
+Details: The underlying provider failed on Open.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:39:17 PM
+Source : Portal.DAL.DBInterface
+Method Name : GetCurrentFinYear
+Error Line No : 610
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:39:17 PM
+Source : Portal.Core.FinYearBL
+Method Name : GetCurrentFinancialYear
+Error Line No : 107
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:39:17 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 111
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:39:17 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 38
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:30 PM
+Source : Portal.DAL.DBInterface
+Method Name : GetRoleWiseParentUI
+Error Line No : 58
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:30 PM
+Source : Portal.Core.UserBL
+Method Name : AuthenticateUser
+Error Line No : 119
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:40:30 PM
+Source : Portal.Controllers.HomeController
+Method Name : Login
+Error Line No : 38
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:44:06 PM
+Source : Portal.DAL.DBInterface
+Method Name : AuthorizeUser
+Error Line No : 106
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+14:44:14 PM
+Source : Portal.Controllers.TBDrillDownController
+Method Name : OnException
+Error Line No : 0
+Exception Type : System.Data.Entity.Core.EntityCommandExecutionException
+Details: An error occurred while executing the command definition. See the inner exception for details.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:20:16 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTBDrillDown_MainGroupList
+Error Line No : 8456
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'GLMainGruop'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:20:16 PM
+Source : Portal.Core.TBDrillDownBL
+Method Name : GetTBDrillDown_MainGroupList
+Error Line No : 95
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'GLMainGruop'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:20:16 PM
+Source : Portal.Controllers.TBDrillDownController
+Method Name : MainGroupWiseTBDrillDown
+Error Line No : 65
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'GLMainGruop'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:20:50 PM
+Source : Portal.DAL.SQLDbInterface
+Method Name : GetTBDrillDown_MainGroupList
+Error Line No : 8456
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'GLMainGruop'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:20:50 PM
+Source : Portal.Core.TBDrillDownBL
+Method Name : GetTBDrillDown_MainGroupList
+Error Line No : 95
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'GLMainGruop'.
+---------------------------------------------------------------------------------------------------------------------------
+
+15:20:55 PM
+Source : Portal.Controllers.TBDrillDownController
+Method Name : MainGroupWiseTBDrillDown
+Error Line No : 65
+Exception Type : System.Data.SqlClient.SqlException
+Details: Invalid object name 'GLMainGruop'.
+---------------------------------------------------------------------------------------------------------------------------
+

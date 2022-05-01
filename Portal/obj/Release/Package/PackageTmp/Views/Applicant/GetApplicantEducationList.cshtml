@@ -1,0 +1,63 @@
+﻿@model List<Portal.Core.ViewModel.ApplicantEducationViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblEducationList">
+            <thead>
+                <tr> 
+                    <th>S. No.</th>
+                    <th>Education</th>
+                    <th>Regular/ Distant</th> 
+                    <th>Board/ University</th> 
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success"> 
+                        <td>
+                            @item.EducationSequenceNo
+                            <input type="hidden" id="hdnEducationSequenceNo" value="@item.EducationSequenceNo" />
+                            <input type="hidden" id="hdnApplicantEducationId" value="@item.ApplicantEducationId" />
+                        </td>
+                        <td>@item.EducationName
+                            <input type="hidden" id="hdnEducationId" value="@item.EducationId" />
+                            <input type="hidden" id="hdnEducationName" value="@item.EducationName" />
+                        </td>
+                        <td>@item.RegularDistant
+                        <input type="hidden" id="hdnRegularDistant" value="@item.RegularDistant" /> 
+                        </td> 
+                        <td>@item.BoardUniversityName
+                            <input type="hidden" id="hdnBoardUniversityName" value="@item.BoardUniversityName" />
+                            <input type="hidden" id="hdnPercentageObtained" value="@item.PercentageObtained" />
+                        </td> 
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white;text-decoration:none" title="Edit" class="fa fa-pencil-square-o" onclick="EditEducationRow(this);" href="#"></a>
+                        </td>
+                        <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white;text-decoration:none" title="Del" class="fa fa-trash"  onclick="RemoveEducationRow(this)" href="#"></a>
+                        </td>
+                    </tr>
+                } 
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblEducationList">
+            <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Education</th>
+                    <th>Regular/ Distant</th>
+                    <th>Board/ University</th>
+                    <th colspan="2" align="center">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
