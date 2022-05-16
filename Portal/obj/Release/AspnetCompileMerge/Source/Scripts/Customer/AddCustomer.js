@@ -306,7 +306,7 @@ function BindCustomerTypeList() {
             $("#ddlCustomerType").append($("<option></option>").val(0).html("-Select Customer Type-"));
             $.each(data, function (i, item) {
 
-                $("#ddlCustomerType").append($("<option></option>").val(item.CustomerTypeId).html(item.CustomerTypeDesc));
+                $("#ddlCustomerType").append($("<option></option>").val(item.CustomerTypeId).html(item.CustomerTypeDesc + "(" + item.CustomerTypeCode+")"));
             });
         },
         error: function (Result) {
@@ -527,8 +527,8 @@ function AddBranch(action) {
                     TINNo: bTINNo,
                     PANNo: bPANNo,
                     GSTNo: bGSTNo,
-                    AnnualTurnOver: annualTurnOverBranch
-
+                    AnnualTurnOver: annualTurnOverBranch,
+                  
                 };
                 customerBranchList.push(customerBranch);
                 taxEntrySequence = parseInt(taxEntrySequence) + 1;
@@ -822,7 +822,7 @@ function BindPrimaryStateList(stateId) {
             success: function (data) {
                 $("#ddlState").append($("<option></option>").val(0).html("-Select State-"));
                 $.each(data, function (i, item) {
-                    $("#ddlState").append($("<option></option>").val(item.StateId).html(item.StateName));
+                    $("#ddlState").append($("<option></option>").val(item.StateId).html(item.StateName + "(" + item.StateCode+")"));
                 });
                 $("#ddlState").val(stateId);
             },
@@ -992,11 +992,11 @@ function SaveData() {
         txtCustomerName.focus();
         return false;
     }
-    if (txtCustomerCode.val().trim() == "") {
-        ShowModel("Alert", "Please Enter Customer Code")
-        txtCustomerCode.focus();
-        return false;
-    }
+    //if (txtCustomerCode.val().trim() == "") {
+    //    ShowModel("Alert", "Please Enter Customer Code")
+    //    txtCustomerCode.focus();
+    //    return false;
+    //}
     if (txtContactPersonName.val().trim() == "") {
         ShowModel("Alert", "Please Enter Contact Person name")
         txtContactPersonName.focus();
@@ -1102,8 +1102,9 @@ function SaveData() {
         IsUIN:UIN,
         UINNo: txtUINNo.val(),
         CompanyBranchId: 0,
-        SaleEmpId: hdnSaleEmployeeId.val()
-
+        SaleEmpId: hdnSaleEmployeeId.val(),
+          CustomerTypeCode: $('#ddlCustomerType option:selected').text().substring($('#ddlCustomerType option:selected').text().indexOf('(') + 1, $('#ddlCustomerType option:selected').text().indexOf(')')),
+        StateCode: $('#ddlState option:selected').text().substring($('#ddlState option:selected').text().indexOf('(') + 1, $('#ddlState option:selected').text().indexOf(')')),
     };
 
     var customerBranchList = [];

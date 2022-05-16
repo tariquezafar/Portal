@@ -59,6 +59,11 @@ namespace Portal.Core.ViewModel
         public int SaleEmpId { get; set; }
         public string SaleEmployeeName { get; set; }
 
+        public string CustomerTypeCode { get; set; }
+
+        public string StateCode { get; set; }
+
+
     }
     public class CustomerBranchViewModel
     {

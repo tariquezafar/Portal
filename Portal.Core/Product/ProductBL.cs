@@ -29,7 +29,7 @@ namespace Portal.Core
                 {
                     Productid = productViewModel.Productid,
                     ProductName = productViewModel.ProductName,
-                    ProductCode = productViewModel.ProductCode,
+                    ProductCode =string.IsNullOrEmpty( productViewModel.ProductCode)? this.RetunProductCode(productViewModel.ManufacturerId,productViewModel.ManufactureCode,productViewModel.ProductMainGroupId,productViewModel.ProductMainGroupCode,productViewModel.ProductSubGroupId, productViewModel.ProductSubGroupCode,productViewModel.ColourCode):productViewModel.ProductCode,
                     ProductShortDesc = productViewModel.ProductShortDesc,
                     ProductFullDesc = productViewModel.ProductFullDesc,
                     ProductTypeId = productViewModel.ProductTypeId,
@@ -88,6 +88,37 @@ namespace Portal.Core
                 throw ex;
             }
             return responseOut;
+        }
+
+        public string RetunProductCode(int ManufacurerId, string ManuactureCode, int MainGroupId, string MainGroupCode, int SubGroupId, string SubGroupCode, string ColorCode )
+        {
+            string strProductCode = string.Empty;
+            // dbInterface.get
+            // 
+
+            try
+            {
+
+                List<Product> objList = dbInterface.GetProduct(ManufacurerId, MainGroupId, SubGroupId);
+                if (objList != null && objList.Any())
+                {
+                    int MaxSeqNo =Convert.ToInt32(  objList.Max(x => x.Productid).ToString());
+                    strProductCode = ManuactureCode.ToUpper() + MainGroupCode + SubGroupCode +ColorCode+ (MaxSeqNo+1).ToString().PadLeft(4, '0');
+
+
+                }
+                else
+                {
+                    strProductCode = ManuactureCode.ToUpper() + MainGroupCode + SubGroupCode + ColorCode + "0001";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return strProductCode;
         }
         public ResponseOut UpdateProductPic(ProductViewModel productViewModel)
         {

@@ -29,7 +29,7 @@ namespace Portal.Core
                 {
                     foreach (CustomerType customerType in customerTypeList)
                     {
-                        customerTypes.Add(new CustomerTypeViewModel { CustomerTypeId = customerType.CustomerTypeId, CustomerTypeDesc = customerType.CustomerTypeDesc });
+                        customerTypes.Add(new CustomerTypeViewModel { CustomerTypeId = customerType.CustomerTypeId, CustomerTypeDesc = customerType.CustomerTypeDesc,CustomerTypeCode=customerType.CustomerTypeCode });
                     }
                 }
             }

@@ -467,6 +467,10 @@ namespace Portal.Core
             }
             return productId;
         }
+
+       
+
+
         public long GetProductIdByProductName(string productName)
         {
             long productId = 0;

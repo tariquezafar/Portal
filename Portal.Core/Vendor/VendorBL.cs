@@ -31,7 +31,7 @@ namespace Portal.Core
                     Vendor vendor = new Vendor
                     {
                         VendorId = vendorViewModel.VendorId,
-                        VendorCode = vendorViewModel.VendorCode,
+                        VendorCode=string.IsNullOrEmpty( vendorViewModel.VendorCode) ? this.GenerateVendorCode(vendorViewModel.StateId,vendorViewModel.StateCode):vendorViewModel.VendorCode,
                         VendorName = vendorViewModel.VendorName,
                         ContactPersonName = vendorViewModel.ContactPersonName,
                         Email = vendorViewModel.Email,
@@ -122,7 +122,30 @@ namespace Portal.Core
 
 
 
+        public string GenerateVendorCode(int StateId,string StateCode)
+        {
+            string VendorCode = string.Empty;
+            try
+            {
 
+                List<Vendor> vendorlist = dbInterface.GetVendorByFilter(StateId);
+                if (vendorlist != null && vendorlist.Any())
+                {
+                    int MaxSequence = vendorlist.Max(x => x.VendorId);
+                    VendorCode = "GEMPLV" + StateCode + (MaxSequence + 1).ToString().PadLeft(4, '0');
+                }
+                else
+                {
+                    VendorCode = "GEMPLV" + StateCode + "0001" ;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return VendorCode;
+        }
 
 
         public List<VendorProductViewModel> GetVendorProductList(int vendorId)

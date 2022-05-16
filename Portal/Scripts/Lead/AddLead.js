@@ -919,13 +919,13 @@ function SaveData() {
         txtEmail.focus();
         return false;
     }
-    if (txtAlternateEmail.val().trim() !== "") {
-        if (!ValidEmailCheck(txtAlternateEmail.val().trim())) {
-            ShowModel("Alert", "Please Enter Valid Alternate Email")
-            txtAlternateEmail.focus();
-            return false;
-        } 
-    } 
+    //if (txtAlternateEmail.val().trim() !== "") {
+    //    if (!ValidEmailCheck(txtAlternateEmail.val().trim())) {
+    //        ShowModel("Alert", "Please Enter Valid Alternate Email")
+    //        txtAlternateEmail.focus();
+    //        return false;
+    //    } 
+    //} 
     if (txtContactPersoName.val() == 0) {
         ShowModel("Alert", "Please Enter Contact Person Name")
         txtContactPersoName.focus();

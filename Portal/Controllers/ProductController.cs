@@ -290,6 +290,7 @@ namespace Portal.Controllers
             try
             {
                 productMainGroupList = productMainGroupBL.GetProductMainGroupList();
+            
             }
             catch (Exception ex)
             {

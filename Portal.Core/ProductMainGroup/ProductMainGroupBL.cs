@@ -107,7 +107,7 @@ namespace Portal.Core
                 {
                     foreach (ProductMainGroup productMainGroup in productMainGroupList)
                     {
-                        productMainGroups.Add(new ProductMainGroupViewModel { ProductMainGroupId = productMainGroup.ProductMainGroupId, ProductMainGroupName = productMainGroup.ProductMainGroupName });
+                        productMainGroups.Add(new ProductMainGroupViewModel { ProductMainGroupId = productMainGroup.ProductMainGroupId, ProductMainGroupName = productMainGroup.ProductMainGroupName,ProductMainGroupCode=productMainGroup.ProductMainGroupCode });
                     }
                 }
             }

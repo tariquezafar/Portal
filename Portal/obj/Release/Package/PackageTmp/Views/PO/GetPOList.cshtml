@@ -33,6 +33,8 @@
                     <th>Created Date</th>
                     <th>Modified By User</th>
                     <th>Modified Date</th>
+                    <th>Approved By</th>
+                    <th>Approved Date</th>
                     <th>Company Branch</th>
 
                 </tr>
@@ -40,74 +42,76 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr class="success">
-                        <td class="teal text" style="margin:0px auto;">
-                            <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/PO/AddEditPO?POId=@item.POId&AccessMode=3"></a>
-                                @if (item.PORevisedStatus == false && item.POStatus.ToUpper() == "DRAFT")
-                                {
-                                    <a style="color:darkgreen" class="fa fa-pencil" title="Modify PO" href="~/PO/AddEditPO?POId=@item.POId&AccessMode=2"></a>
-                                }
-                                @if (item.PORevisedStatus == false && item.POStatus.ToUpper() == "FINAL")
-                                {
-                                    <a style="color:darkgreen" class="fa fa-repeat" title="Revise PO" href="~/PO/AddRevisedPO?POId=@item.POId&AccessMode=5"></a>
-                                }
+                <tr class="success">
+                    <td class="teal text" style="margin:0px auto;">
+                        <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/PO/AddEditPO?POId=@item.POId&AccessMode=3"></a>
+                        @if (item.PORevisedStatus == false && item.POStatus.ToUpper() == "DRAFT")
+                        {
+                            <a style="color:darkgreen" class="fa fa-pencil" title="Modify PO" href="~/PO/AddEditPO?POId=@item.POId&AccessMode=2"></a>
+                        }
+                        @if (item.PORevisedStatus == false && item.POStatus.ToUpper() == "FINAL")
+                        {
+                            <a style="color:darkgreen" class="fa fa-repeat" title="Revise PO" href="~/PO/AddRevisedPO?POId=@item.POId&AccessMode=5"></a>
+                        }
 
-                            @if (item.POStatus.ToUpper() == "DRAFT" || item.POStatus.ToUpper() == "FINAL")
-                            {
-                                <a style="color:red" title="Cancel" class="fa fa-times" aria-hidden="true" href="~/PO/CancelPO?POId=@item.POId&AccessMode=4"></a>
-                            }
+                        @if (item.POStatus.ToUpper() == "DRAFT" || item.POStatus.ToUpper() == "FINAL")
+                        {
+                            <a style="color:red" title="Cancel" class="fa fa-times" aria-hidden="true" href="~/PO/CancelPO?POId=@item.POId&AccessMode=4"></a>
+                        }
 
 
-                            @*@if (item.PORevisedStatus == false && item.ApprovalStatus.ToUpper() == "DRAFT")
-                            {
-                                <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/PO/AddEditPO?POId=@item.POId&AccessMode=2"></a>
-                            }
-                            @if (item.PORevisedStatus == false && item.ApprovalStatus.ToUpper() == "FINAL")
-                            {
-                                <a style="color:darkgreen;text-decoration:none" title="Plus" class="fa fa-plus" href="~/PO/AddRevisedPO?POId=@item.POId&AccessMode=1"></a>
-                            }*@
+                        @*@if (item.PORevisedStatus == false && item.ApprovalStatus.ToUpper() == "DRAFT")
+            {
+                <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/PO/AddEditPO?POId=@item.POId&AccessMode=2"></a>
+            }
+            @if (item.PORevisedStatus == false && item.ApprovalStatus.ToUpper() == "FINAL")
+            {
+                <a style="color:darkgreen;text-decoration:none" title="Plus" class="fa fa-plus" href="~/PO/AddRevisedPO?POId=@item.POId&AccessMode=1"></a>
+            }*@
 
+                    </td>
+                    <td>@item.PONo</td>
+                    <td>@item.PODate</td>
+                    <td>@item.VendorName</td>
+                    <td>@item.City</td>
+                    <td>@item.StateName</td>
+                    <td>@item.RefNo</td>
+                    <td>@item.RefDate</td>
+                    <td>@item.BasicValue</td>
+                    <td>@item.TotalValue</td>
+                    <td>@(item.PORevisedStatus == true ? "Revised" : "")</td>
+                    @if (item.POStatus.ToUpper() == "DRAFT")
+                    {
+                        <td style="background-color:aquamarine">
+                            @item.POStatus
                         </td>
-                        <td>@item.PONo</td>
-                        <td>@item.PODate</td>
-                        <td>@item.VendorName</td>
-                        <td>@item.City</td>
-                        <td>@item.StateName</td>
-                        <td>@item.RefNo</td>
-                        <td>@item.RefDate</td>
-                        <td>@item.BasicValue</td>
-                        <td>@item.TotalValue</td>
-                        <td>@(item.PORevisedStatus == true ? "Revised" : "")</td>
-                        @if (item.POStatus.ToUpper() == "DRAFT")
-                        {
-                            <td style="background-color:aquamarine">
-                                @item.POStatus
-                            </td>
-                        }
+                    }
 
 
-                        else if (item.POStatus.ToUpper() == "CANCELLED")
-                        {
-                            <td style="background-color:red;color:white;">
-                                @item.POStatus
-                            </td>
-                        }                       
-                        else
-                        {
-                            <td style="background-color:green">
-                                @item.POStatus
-                            </td>
+                    else if (item.POStatus.ToUpper() == "CANCELLED")
+                    {
+                        <td style="background-color:red;color:white;">
+                            @item.POStatus
+                        </td>
+                    }
+                    else
+                    {
+                        <td style="background-color:green">
+                            @item.POStatus
+                        </td>
 
-                        }
-                        <td>@item.POType</td>
-                        <td>@item.CreatedByUserName</td>
-                        <td>@item.CreatedDate</td>
-                        <td>@item.ModifiedByUserName</td>
-                        <td>@item.ModifiedDate</td>
-                        <td>@item.CompanyBranch</td>
+                    }
+                    <td>@item.POType</td>
+                    <td>@item.CreatedByUserName</td>
+                    <td>@item.CreatedDate</td>
+                    <td>@item.ModifiedByUserName</td>
+                    <td>@item.ModifiedDate</td>
+                    <td>@item.ApprovedByName</td>
+                    <td>@item.ApprovedDate</td>
+                    <td>@item.CompanyBranch</td>
 
 
-                    </tr>
+                </tr>
                 }
 
             </tbody>

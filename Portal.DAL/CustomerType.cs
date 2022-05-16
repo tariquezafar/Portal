@@ -18,5 +18,6 @@ namespace Portal.DAL
         public string CustomerTypeDesc { get; set; }
         public Nullable<bool> Status { get; set; }
         public Nullable<int> CompanyBranchId { get; set; }
+        public string CustomerTypeCode { get; set; }
     }
 }

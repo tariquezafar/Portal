@@ -646,6 +646,7 @@
     <Property Name="CustomerTypeDesc" Type="varchar" MaxLength="100" />
     <Property Name="Status" Type="bit" />
     <Property Name="CompanyBranchId" Type="int" />
+    <Property Name="CustomerTypeCode" Type="varchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="DashboardContainer">
     <Key>

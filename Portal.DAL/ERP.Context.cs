@@ -64,7 +64,6 @@ namespace Portal.DAL
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<CustomerBranch> CustomerBranches { get; set; }
         public virtual DbSet<CustomerProductMapping> CustomerProductMappings { get; set; }
-        public virtual DbSet<CustomerType> CustomerTypes { get; set; }
         public virtual DbSet<Vendor> Vendors { get; set; }
         public virtual DbSet<GLMainGroup> GLMainGroups { get; set; }
         public virtual DbSet<GLSubGroup> GLSubGroups { get; set; }
@@ -253,6 +252,7 @@ namespace Portal.DAL
         public virtual DbSet<HSNCode> HSNCodes { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<SaleInvoice> SaleInvoices { get; set; }
+        public virtual DbSet<CustomerType> CustomerTypes { get; set; }
     
         public virtual ObjectResult<proc_GetRoleWiseChildUI_Result> proc_GetRoleWiseChildUI(Nullable<int> parentUIId, Nullable<int> roleId)
         {

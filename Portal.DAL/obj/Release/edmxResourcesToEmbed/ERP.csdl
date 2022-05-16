@@ -120,7 +120,6 @@
     <EntitySet Name="Customers" EntityType="ERPModel.Customer" />
     <EntitySet Name="CustomerBranches" EntityType="ERPModel.CustomerBranch" />
     <EntitySet Name="CustomerProductMappings" EntityType="ERPModel.CustomerProductMapping" />
-    <EntitySet Name="CustomerTypes" EntityType="ERPModel.CustomerType" />
     <EntitySet Name="Vendors" EntityType="ERPModel.Vendor" />
     <EntitySet Name="GLMainGroups" EntityType="ERPModel.GLMainGroup" />
     <EntitySet Name="GLSubGroups" EntityType="ERPModel.GLSubGroup" />
@@ -321,6 +320,7 @@
     <EntitySet Name="HSNCodes" EntityType="ERPModel.HSNCode" />
     <EntitySet Name="Products" EntityType="ERPModel.Product" />
     <EntitySet Name="SaleInvoices" EntityType="ERPModel.SaleInvoice" />
+    <EntitySet Name="CustomerTypes" EntityType="ERPModel.CustomerType" />
   </EntityContainer>
   <EntityType Name="RoleUIActionMapping">
     <Key>
@@ -904,15 +904,6 @@
     <Property Name="CustomerId" Type="Int32" />
     <Property Name="ProductId" Type="Int64" />
     <Property Name="Status" Type="Boolean" />
-  </EntityType>
-  <EntityType Name="CustomerType">
-    <Key>
-      <PropertyRef Name="CustomerTypeId" />
-    </Key>
-    <Property Name="CustomerTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CustomerTypeDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="Status" Type="Boolean" />
-    <Property Name="CompanyBranchId" Type="Int32" />
   </EntityType>
   <EntityType Name="Vendor">
     <Key>
@@ -4873,5 +4864,15 @@
     <Property Name="EwayBillNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="SaleEmpId" Type="Int64" />
     <Property Name="SaleInvoiceType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CustomerType">
+    <Key>
+      <PropertyRef Name="CustomerTypeId" />
+    </Key>
+    <Property Name="CustomerTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerTypeDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CompanyBranchId" Type="Int32" />
+    <Property Name="CustomerTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

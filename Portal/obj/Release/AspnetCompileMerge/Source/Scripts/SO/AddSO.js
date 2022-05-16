@@ -4405,3 +4405,45 @@ function GetQuotationTermList(quotationTerms, quotationId) {
         }
     });
 }
+
+
+//open master Customer pop up----------
+function OpenCustomerMasterPopup() {
+    CheckMasterPermission($("#hdnRoleId").val(), 32, 'AddNewCustomer');
+}
+
+//open master Consignee pop up----------
+function OpenConsigneeMasterPopup() {
+
+    CheckMasterPermission($("#hdnRoleId").val(), 32, 'AddNewConsignee');
+}
+
+//Check Pop Up Master Permissions by User Role, Master Id
+function CheckMasterPermission(RoleId, InterfaceId, ModalId) {
+    var IsAuthorized = false;
+    var AccessMode = 1;
+    $.ajax({
+        type: "GET",
+        url: "../Role/CheckMasterPermission",
+        data: { roleId: RoleId, interfaceId: InterfaceId, accessMode: AccessMode },
+        dataType: "json",
+        asnc: true,
+        success: function (data) {
+            if (data != null) {
+                if (data == true) {
+                    IsAuthorized = true;
+                    if (IsAuthorized == true) {
+                        $("#" + ModalId).modal();
+                    }
+                }
+                else {
+                    ShowModel('Alert', 'You are not authorized for this action.');
+                }
+            }
+        },
+        error: function (Result) {
+            ShowModel('Alert', 'Problem in Request');
+        }
+    });
+
+}

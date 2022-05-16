@@ -32,7 +32,7 @@ namespace Portal.Core
                     Customer customer = new Customer
                     {
                         CustomerId = customerViewModel.CustomerId,
-                        CustomerCode = customerViewModel.CustomerCode,
+                        CustomerCode =string.IsNullOrEmpty( customerViewModel.CustomerCode) ? this.GenerateCustomerCode(customerViewModel.StateId,customerViewModel.StateCode,customerViewModel.CustomerTypeId,customerViewModel.CustomerTypeCode):customerViewModel.CustomerCode,
                         CustomerName = customerViewModel.CustomerName,
                         ContactPersonName = customerViewModel.ContactPersonName,
                         Designation = customerViewModel.Designation,
@@ -179,6 +179,34 @@ namespace Portal.Core
                 }
             }
             return responseOut;
+        }
+
+        public string GenerateCustomerCode(int StateId, string StateCode, int CustomerTypeId, string CustomerTypeCode)
+        {
+            string CustomerCode = string.Empty;
+            try
+            {
+                List<Customer> objLstCustomer = dbInterface.GetCustomerByFilter(StateId,CustomerTypeId);
+                if (objLstCustomer != null && objLstCustomer.Any())
+                {
+                    int MaxSequence = objLstCustomer.Max(x => x.CustomerId);
+                    CustomerCode = "GEMPL" + CustomerTypeCode + StateCode + (MaxSequence+1).ToString().PadLeft(4, '0');
+                }
+                else
+                {
+                    CustomerCode = "GEMPL" + CustomerTypeCode + StateCode + "0001";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+              
+            }
+            return CustomerCode;
+            
         }
         public ResponseOut RemoveCustomerBranch(long customerBranchId)
         {

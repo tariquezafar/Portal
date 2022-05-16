@@ -719,6 +719,8 @@ namespace Portal.Common
         public const String DuplicateChasisSerialNo = "Chasis Serial No. already exist";
         public const String DuplicateMotorNo = "Motor No already exist";
         public const String DuplicateControllerNo = "Controller No already exist";
+        public const String DuplicateBatterySerialNo = "Battery Serial No already exist";
+        public const String DuplicateChargerSerialNo = "Charger No already exist";
         #endregion
 
 

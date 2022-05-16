@@ -216,7 +216,7 @@ function BindPrimaryStateList(stateId) {
             success: function (data) {
                 $("#ddlState").append($("<option></option>").val(0).html("-Select State-"));
                 $.each(data, function (i, item) {
-                    $("#ddlState").append($("<option></option>").val(item.StateId).html(item.StateName));
+                    $("#ddlState").append($("<option></option>").val(item.StateId).html(item.StateName + "(" + item.StateCode+")"));
                 });
                 $("#ddlState").val(stateId);
             },
@@ -325,11 +325,11 @@ function SaveData() {
         txtVendorName.focus();
         return false;
     }
-    if (txtVendorCode.val().trim() == "") {
-        ShowModel("Alert", "Please Enter Vendor Code")
-        txtVendorCode.focus();
-        return false;
-    }
+    //if (txtVendorCode.val().trim() == "") {
+    //    ShowModel("Alert", "Please Enter Vendor Code")
+    //    txtVendorCode.focus();
+    //    return false;
+    //}
     if (txtContactPersonName.val().trim() == "") {
         ShowModel("Alert", "Please Enter Contact Person name")
         txtContactPersonName.focus();
@@ -413,7 +413,8 @@ function SaveData() {
         AnnualTurnOver: txtAnnualTurnOver.val(),
         GST_Exempt: GSTExempt,
         IsComposition: chkComposition,
-        CompanyBranchId:0
+        CompanyBranchId: 0,
+        StateCode: $('#ddlState option:selected').text().substring($('#ddlState option:selected').text().indexOf('(') + 1, $('#ddlState option:selected').text().indexOf(')')),
     };
 
     var vendorProductList = [];

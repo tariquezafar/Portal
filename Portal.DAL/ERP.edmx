@@ -651,6 +651,7 @@
           <Property Name="CustomerTypeDesc" Type="varchar" MaxLength="100" />
           <Property Name="Status" Type="bit" />
           <Property Name="CompanyBranchId" Type="int" />
+          <Property Name="CustomerTypeCode" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="DashboardContainer">
           <Key>
@@ -4990,7 +4991,6 @@
           <EntitySet Name="Customers" EntityType="ERPModel.Customer" />
           <EntitySet Name="CustomerBranches" EntityType="ERPModel.CustomerBranch" />
           <EntitySet Name="CustomerProductMappings" EntityType="ERPModel.CustomerProductMapping" />
-          <EntitySet Name="CustomerTypes" EntityType="ERPModel.CustomerType" />
           <EntitySet Name="Vendors" EntityType="ERPModel.Vendor" />
           <EntitySet Name="GLMainGroups" EntityType="ERPModel.GLMainGroup" />
           <EntitySet Name="GLSubGroups" EntityType="ERPModel.GLSubGroup" />
@@ -5191,6 +5191,7 @@
           <EntitySet Name="HSNCodes" EntityType="ERPModel.HSNCode" />
           <EntitySet Name="Products" EntityType="ERPModel.Product" />
           <EntitySet Name="SaleInvoices" EntityType="ERPModel.SaleInvoice" />
+          <EntitySet Name="CustomerTypes" EntityType="ERPModel.CustomerType" />
           
         </EntityContainer>
         <EntityType Name="RoleUIActionMapping">
@@ -5775,15 +5776,6 @@
           <Property Name="CustomerId" Type="Int32" />
           <Property Name="ProductId" Type="Int64" />
           <Property Name="Status" Type="Boolean" />
-        </EntityType>
-        <EntityType Name="CustomerType">
-          <Key>
-            <PropertyRef Name="CustomerTypeId" />
-          </Key>
-          <Property Name="CustomerTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CustomerTypeDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Status" Type="Boolean" />
-          <Property Name="CompanyBranchId" Type="Int32" />
         </EntityType>
         <EntityType Name="Vendor">
           <Key>
@@ -9747,6 +9739,16 @@
           <Property Name="SaleEmpId" Type="Int64" />
           <Property Name="SaleInvoiceType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="CustomerType">
+          <Key>
+            <PropertyRef Name="CustomerTypeId" />
+          </Key>
+          <Property Name="CustomerTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerTypeDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="CompanyBranchId" Type="Int32" />
+          <Property Name="CustomerTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
         
       </Schema>
     </edmx:ConceptualModels>
@@ -10444,16 +10446,6 @@
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
                 <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
                 <ScalarProperty Name="MappingId" ColumnName="MappingId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CustomerTypes">
-            <EntityTypeMapping TypeName="ERPModel.CustomerType">
-              <MappingFragment StoreEntitySet="CustomerType">
-                <ScalarProperty Name="CompanyBranchId" ColumnName="CompanyBranchId" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="CustomerTypeDesc" ColumnName="CustomerTypeDesc" />
-                <ScalarProperty Name="CustomerTypeId" ColumnName="CustomerTypeId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -14603,6 +14595,17 @@
                 <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
                 <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
                 <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerTypes">
+            <EntityTypeMapping TypeName="ERPModel.CustomerType">
+              <MappingFragment StoreEntitySet="CustomerType">
+                <ScalarProperty Name="CustomerTypeCode" ColumnName="CustomerTypeCode" />
+                <ScalarProperty Name="CompanyBranchId" ColumnName="CompanyBranchId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CustomerTypeDesc" ColumnName="CustomerTypeDesc" />
+                <ScalarProperty Name="CustomerTypeId" ColumnName="CustomerTypeId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -45,6 +45,8 @@ namespace Portal.Core.ViewModel
         public Int64 CompanyBranchId { get; set; }
         public string CompanyBranchName { get; set; }
 
+        public string StateCode { get; set; }
+
 
     }
 

@@ -1532,13 +1532,14 @@ namespace Portal.DAL
                 var productMainGroups = entities.ProductMainGroups.Where(x => x.Status == true).Select(s => new
                 {
                     ProductMainGroupId = s.ProductMainGroupId,
-                    ProductMainGroupName = s.ProductMainGroupName
+                    ProductMainGroupName = s.ProductMainGroupName,
+                    ProductMainGroupCode = s.ProductMainGroupCode
                 }).ToList();
                 if (productMainGroups != null && productMainGroups.Count > 0)
                 {
                     foreach (var item in productMainGroups)
                     {
-                        productMainGroupList.Add(new ProductMainGroup { ProductMainGroupId = item.ProductMainGroupId, ProductMainGroupName = item.ProductMainGroupName });
+                        productMainGroupList.Add(new ProductMainGroup { ProductMainGroupId = item.ProductMainGroupId, ProductMainGroupName = item.ProductMainGroupName,ProductMainGroupCode=item.ProductMainGroupCode });
                     }
                 }
             }
@@ -1610,13 +1611,14 @@ namespace Portal.DAL
                 var productSubGroups = entities.ProductSubGroups.Where(x => x.Status == true && x.ProductMainGroupId == productMainGroupId).Select(s => new
                 {
                     ProductSubGroupId = s.ProductSubGroupId,
-                    ProductSubGroupName = s.ProductSubGroupName
+                    ProductSubGroupName = s.ProductSubGroupName,
+                    ProductSubGroupCode = s.ProductSubGroupCode
                 }).ToList();
                 if (productSubGroups != null && productSubGroups.Count > 0)
                 {
                     foreach (var item in productSubGroups)
                     {
-                        productSubGroupList.Add(new ProductSubGroup { ProductSubGroupId = item.ProductSubGroupId, ProductSubGroupName = item.ProductSubGroupName });
+                        productSubGroupList.Add(new ProductSubGroup { ProductSubGroupId = item.ProductSubGroupId, ProductSubGroupName = item.ProductSubGroupName,ProductSubGroupCode=item.ProductSubGroupCode });
                     }
                 }
             }
@@ -1961,6 +1963,45 @@ namespace Portal.DAL
                         });
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return productList;
+        }
+
+        public List<Product> GetProduct(int ManufacturerId, int MainGroupId, int SubGroupId)
+        {
+            List<Product> productList = new List<Product>();
+            try
+            {
+                var products = (from p in entities.Products
+                                where (p.ManufacturerId == ManufacturerId && p.ProductMainGroupId == MainGroupId && p.ProductSubGroupId == SubGroupId)
+                                select new
+                                {
+                                    ProductId = p.Productid,
+                                    ProductName = p.ProductName,
+                                    ProductCode = p.ProductCode,
+
+
+                                }).ToList();
+
+                if (products != null && products.Count > 0)
+                {
+                    foreach (var item in products)
+                    {
+                        productList.Add(new Product
+                        {
+                            Productid = !string.IsNullOrEmpty(item.ProductCode) ? Convert.ToInt32(item.ProductCode.Substring(item.ProductCode.Length - 4)) : 0,
+                            ProductName = item.ProductName,
+                            ProductCode = item.ProductCode,
+
+                        });
+                    }
+                }
+
             }
             catch (Exception ex)
             {
@@ -4304,7 +4345,44 @@ namespace Portal.DAL
             return responseOut;
         }
 
+        public List<Customer> GetCustomerByFilter(int StateId, int CustomerTypeId)
+        {
+            List<Customer> objLstCust = new List<Customer>();
+            try
+            {
+                var customers = (from cust in entities.Customers
+                                 where (cust.StateId==StateId  && cust.CustomerTypeId == CustomerTypeId)
+                                 select new
+                                 {
+                                     CustomerId = cust.CustomerId,
+                                     CustomerName = cust.CustomerName,
+                                     CustomerCode = cust.CustomerCode,
+                                     
+                                 }).ToList();
+                if (customers != null && customers.Count > 0)
+                {
+                    foreach (var item in customers)
+                    {
 
+                        objLstCust.Add(new Customer
+                        {
+                            CustomerId = !string.IsNullOrEmpty(item.CustomerCode) ? Convert.ToInt32(item.CustomerCode.Substring(item.CustomerCode.Length - 4)) : 0,
+                            CustomerName = item.CustomerName,
+                            CustomerCode = item.CustomerCode,
+
+
+                        }) ;
+
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return objLstCust;
+        }
 
         public ResponseOut AddEditCustomerProduct(CustomerProductMapping customerProduct)
         {
@@ -4831,13 +4909,14 @@ namespace Portal.DAL
                 var customerTypes = entities.CustomerTypes.Where(x => x.Status == true).Select(s => new
                 {
                     CustomerTypeId = s.CustomerTypeId,
-                    CustomerTypeDesc = s.CustomerTypeDesc
+                    CustomerTypeDesc = s.CustomerTypeDesc,
+                    CustomerTypeCode=s.CustomerTypeCode
                 }).ToList();
                 if (customerTypes != null && customerTypes.Count > 0)
                 {
                     foreach (var item in customerTypes)
                     {
-                        customerTypeList.Add(new CustomerType { CustomerTypeId = item.CustomerTypeId, CustomerTypeDesc = item.CustomerTypeDesc });
+                        customerTypeList.Add(new CustomerType { CustomerTypeId = item.CustomerTypeId, CustomerTypeDesc = item.CustomerTypeDesc,CustomerTypeCode=item.CustomerTypeCode });
                     }
                 }
             }
@@ -5458,6 +5537,43 @@ namespace Portal.DAL
             return responseOut;
         }
 
+        public List<Vendor> GetVendorByFilter(int StateId)
+        {
+            List<Vendor> objLstVendor = new List<Vendor>();
+            try
+            {
+                var vendors = (from p in entities.Vendors
+                                where (p.StateId == StateId )
+                                select new
+                                {
+                                    VendorId = p.VendorId,
+                                    VendorName = p.VendorName,
+                                    VendorCode = p.VendorCode,
+
+
+                                }).ToList();
+
+                if (vendors != null && vendors.Any())
+                {
+                    foreach (var item in vendors)
+                    {
+                        objLstVendor.Add(new Vendor
+                        {
+                            VendorId = !string.IsNullOrEmpty(item.VendorCode) ? Convert.ToInt32(item.VendorCode.Substring(item.VendorCode.Length - 4)) : 0,
+                            VendorName = item.VendorName,
+                            VendorCode = item.VendorCode,
+
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return objLstVendor;
+        }
         public ResponseOut AddEditVendorMaster(Vendor vendor)
         {
             ResponseOut responseOut = new ResponseOut();
@@ -7952,7 +8068,8 @@ namespace Portal.DAL
             long productId = 0;
             try
             {
-                productId = entities.Products.Where(s => s.ProductName.Trim().ToUpper() == productName.Trim().ToUpper() && (s.AssemblyType.Trim().ToUpper() == "MA")).Select(x => x.Productid).FirstOrDefault();
+                productId = entities.Products.Where(s => s.ProductName.Trim().ToUpper() == productName.Trim().ToUpper() && (s.AssemblyType.Trim().ToUpper() == "MA")
+                && s.IsSerializedProduct==true ).Select(x => x.Productid).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -7961,6 +8078,8 @@ namespace Portal.DAL
             }
             return productId;
         }
+
+       
 
         public long GetProductIdByProductName(string productName)
         {
@@ -8195,6 +8314,16 @@ namespace Portal.DAL
                     responseOut.status = ActionStatus.Fail;
                     responseOut.message = ActionMessage.DuplicateControllerNo;
                 }
+                else if ((chasisSerialMapping.BatterySerialNo1 != "") && (entities.ChasisSerialMappings.Any(x => x.BatterySerialNo1 == chasisSerialMapping.BatterySerialNo1 && x.MappingId != chasisSerialMapping.MappingId)))
+                {
+                    responseOut.status = ActionStatus.Fail;
+                    responseOut.message = ActionMessage.DuplicateBatterySerialNo;
+                }
+                else if ((chasisSerialMapping.BatterySerialNo2 != "") && (entities.ChasisSerialMappings.Any(x => x.BatterySerialNo2 == chasisSerialMapping.BatterySerialNo2 && x.MappingId != chasisSerialMapping.MappingId)))
+                {
+                    responseOut.status = ActionStatus.Fail;
+                    responseOut.message = ActionMessage.DuplicateChargerSerialNo;
+                }
                 else
                 {
                     if (chasisSerialMapping.MappingId == 0)
@@ -8251,6 +8380,8 @@ namespace Portal.DAL
             }
             return responseOut;
         }
+
+        
         #endregion ChasisSerialMapping
 
         #region EmployeeProfile

@@ -87,7 +87,10 @@ namespace Portal.Core.ViewModel
         public long CompanyBranchId { get; set; }
         public string CompanyBranchName { get; set; }
 
+        public string ProductMainGroupCode { get; set; }
+        public string ProductSubGroupCode { get; set; }
 
+        public string ManufactureCode { get; set; }
     }
 
     public class ProductConsumeCountViewModel

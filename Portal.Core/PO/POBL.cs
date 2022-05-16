@@ -420,6 +420,8 @@ namespace Portal.Core
                             ModifiedDate = Convert.ToString(dr["ModifiedDate"]),
                             CompanyBranch = Convert.ToString(dr["BranchName"]),
                             POType = Convert.ToString(dr["POType"]),
+                            ApprovedByName = Convert.ToString(dr["ApprovedByName"]),
+                            ApprovedDate= Convert.ToString(dr["ApprovedDate"])
                         });
                     }
                 }

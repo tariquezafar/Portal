@@ -694,16 +694,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CustomerTypes">
-      <EntityTypeMapping TypeName="ERPModel.CustomerType">
-        <MappingFragment StoreEntitySet="CustomerType">
-          <ScalarProperty Name="CompanyBranchId" ColumnName="CompanyBranchId" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="CustomerTypeDesc" ColumnName="CustomerTypeDesc" />
-          <ScalarProperty Name="CustomerTypeId" ColumnName="CustomerTypeId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Vendors">
       <EntityTypeMapping TypeName="ERPModel.Vendor">
         <MappingFragment StoreEntitySet="Vendor">
@@ -4850,6 +4840,17 @@
           <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
           <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
           <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerTypes">
+      <EntityTypeMapping TypeName="ERPModel.CustomerType">
+        <MappingFragment StoreEntitySet="CustomerType">
+          <ScalarProperty Name="CustomerTypeCode" ColumnName="CustomerTypeCode" />
+          <ScalarProperty Name="CompanyBranchId" ColumnName="CompanyBranchId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CustomerTypeDesc" ColumnName="CustomerTypeDesc" />
+          <ScalarProperty Name="CustomerTypeId" ColumnName="CustomerTypeId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -59,7 +59,7 @@
                 <div class="form-group col-md-4">
                     <label for="txtProductCode" class="col-sm-4 control-label">Product Code</label>
                     <div class="col-sm-8">
-                        <input id="txtProductCode" name="txtProductCode" tabindex="2" type="text" placeholder="Enter Product Code" maxlength="50" class="form-control" />
+                        <input id="txtProductCode" name="txtProductCode" tabindex="2" type="text" placeholder="Enter Product Code" maxlength="50" class="form-control" readonly="readonly" />
                     </div>
                 </div>
                
@@ -265,9 +265,30 @@
 
             <div class="col-md-12">
                 <div class="form-group col-md-4">
-                    <label for="txtColourCode" class="col-sm-4 control-label">Colour Code</label>
+                    <label for="txtColourCode" class="col-sm-4 control-label">Colour Code &nbsp;<span class="Mandatory">(*)</span></label>
                     <div class="col-sm-8">
-                        <input id="txtColourCode" name="txtColourCode" type="text" tabindex="22" placeholder="Enter Colour Code" maxlength="21" class="form-control input-number"  />
+                        <select id="ddlColourCode" name="ddlColourCode" tabindex="5" class="form-control">
+                            <option value="0">--Select Colour Code--</option>
+                            <option value="RD">RED(RD)</option>
+                            <option value="BL">BLUE(BL)</option>
+                            <option value="Bk">BLACK(BK)</option>
+                            <option value="GY">GREY(GY)</option>
+                            <option value="GL">GOLDEN(GL)</option>
+                            <option value="WH">WHITE(WH)</option>
+                            <option value="DG">DARK GREY(DG)</option>
+                            <option value="ZZ">RY TYRE BLASTER(ZZ)</option>
+                            <option value="SL">SILVER(SL)</option>
+                            <option value="ER">FIERY RED(ER)</option>
+                            <option value="EN">ELECTRIC NEON(EN)</option>
+                            <option value="DI">DEEP INDIGO(DI)</option>
+                            <option value="FO">FIREBALL ORANGE(FO)</option>
+                            <option value="BC">BURNT CHARCOAL(BC)</option>
+                            <option value="MR">MIDNIGHT RED(MR)</option>
+                            <option value="RB">RED/BLACK(RB)</option>
+                            <option value="GW">GLOSSARY WHITE(GW)</option>
+                            <option value="MW">FRONT FENDER MIDNIGHT WHITE(MW)</option>
+                        </select>
+                        @*<input id="txtColourCode" name="txtColourCode" type="text" tabindex="22" placeholder="Enter Colour Code" maxlength="21" class="form-control input-number"  />*@
                     </div>
                 </div>
                 <div class="form-group col-md-4">
@@ -431,6 +452,7 @@
         </div>
     </form>
 </section>
+<input  type="hidden" id="hdnManufacturerCode" value=""/>
 <script src="~/Scripts/jquery.tablesorter.min.js"></script>
 <script src="~/Scripts/lightbox.js"></script>
 <script src="~/Scripts/jquery-ui.js"></script>
