@@ -4416,6 +4416,7 @@
           <Property Name="AnnualTurnover" Type="decimal" Precision="18" Scale="2" />
           <Property Name="IsComposition" Type="bit" />
           <Property Name="CompanyBranchId" Type="bigint" />
+          <Property Name="IsTCS" Type="bit" />
         </EntityType>
         <EntityType Name="VendorForm">
           <Key>
@@ -5811,6 +5812,7 @@
           <Property Name="AnnualTurnover" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="IsComposition" Type="Boolean" />
           <Property Name="CompanyBranchId" Type="Int64" />
+          <Property Name="IsTCS" Type="Boolean" />
         </EntityType>
         <EntityType Name="GLMainGroup">
           <Key>
@@ -10452,6 +10454,7 @@
           <EntitySetMapping Name="Vendors">
             <EntityTypeMapping TypeName="ERPModel.Vendor">
               <MappingFragment StoreEntitySet="Vendor">
+                <ScalarProperty Name="IsTCS" ColumnName="IsTCS" />
                 <ScalarProperty Name="CompanyBranchId" ColumnName="CompanyBranchId" />
                 <ScalarProperty Name="IsComposition" ColumnName="IsComposition" />
                 <ScalarProperty Name="AnnualTurnover" ColumnName="AnnualTurnover" />

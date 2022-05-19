@@ -47,6 +47,8 @@ namespace Portal.Core.ViewModel
 
         public string StateCode { get; set; }
 
+        public bool IsTCS { get; set; }
+
 
     }
 

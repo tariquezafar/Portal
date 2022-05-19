@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿$(document).ready(function ()
+{
     $("#tabs").tabs({
         collapsible: true
     });
@@ -110,58 +111,60 @@
   .autocomplete("instance")._renderItem = function (ul, item) {
       return $("<li>")
         .append("<div><b>" + item.label + " || " + item.code + "</b><br>" + item.Address + "</div>")
-        .appendTo(ul);
+          .appendTo(ul);
+
+
   };
 
-    $("#txtConsigneeName").autocomplete({
-        minLength: 0,
-        source: function (request, response) {
-            $.ajax({
-                url: "../SaleInvoice/GetCustomerAutoCompleteList",
-                type: "GET",
-                dataType: "json",
-                data: { term: request.term },
-                success: function (data) {
-                    response($.map(data, function (item) {
-                        return { label: item.CustomerName, value: item.CustomerId, primaryAddress: item.PrimaryAddress, code: item.CustomerCode };
-                    }))
-                }
-            })
-        },
-        focus: function (event, ui) {
-            $("#txtConsigneeName").val(ui.item.label);
-            return false;
-        },
-        select: function (event, ui) {
-            $("#txtConsigneeName").val(ui.item.label);
-            $("#hdnConsigneeId").val(ui.item.value);
-            $("#txtConsigneeCode").val(ui.item.code);
-            GetConsigneeDetail(ui.item.value);
+//    $("#txtConsigneeName").autocomplete({
+//        minLength: 0,
+//        source: function (request, response) {
+//            $.ajax({
+//                url: "../SaleInvoice/GetCustomerAutoCompleteList",
+//                type: "GET",
+//                dataType: "json",
+//                data: { term: request.term },
+//                success: function (data) {
+//                    response($.map(data, function (item) {
+//                        return { label: item.CustomerName, value: item.CustomerId, primaryAddress: item.PrimaryAddress, code: item.CustomerCode };
+//                    }))
+//                }
+//            })
+//        },
+//        focus: function (event, ui) {
+//            $("#txtConsigneeName").val(ui.item.label);
+//            return false;
+//        },
+//        select: function (event, ui) {
+//            $("#txtConsigneeName").val(ui.item.label);
+//            $("#hdnConsigneeId").val(ui.item.value);
+//            $("#txtConsigneeCode").val(ui.item.code);
+//            GetConsigneeDetail(ui.item.value);
 
-            setTimeout(
-                     function () {
-                         ReCalculateNetValues();
-                     }, 1000);
+//            setTimeout(
+//                     function () {
+//                         ReCalculateNetValues();
+//                     }, 1000);
 
-            return false;
-        },
-        change: function (event, ui) {
-            if (ui.item == null) {
-                $("#txtConsigneeName").val("");
-                $("#hdnConsigneeId").val("0");
-                $("#txtConsigneeCode").val("");
-                ShowModel("Alert", "Please select Consignee from List")
+//            return false;
+//        },
+//        change: function (event, ui) {
+//            if (ui.item == null) {
+//                $("#txtConsigneeName").val("");
+//                $("#hdnConsigneeId").val("0");
+//                $("#txtConsigneeCode").val("");
+//                ShowModel("Alert", "Please select Consignee from List")
 
-            }
-            return false;
-        }
+//            }
+//            return false;
+//        }
 
-    })
-.autocomplete("instance")._renderItem = function (ul, item) {
-    return $("<li>")
-      .append("<div><b>" + item.label + " || " + item.code + "</b><br>" + item.primaryAddress + "</div>")
-      .appendTo(ul);
-};
+//    })
+//.autocomplete("instance")._renderItem = function (ul, item) {
+//    return $("<li>")
+//      .append("<div><b>" + item.label + " || " + item.code + "</b><br>" + item.primaryAddress + "</div>")
+//      .appendTo(ul);
+//};
 
 
     $("#txtProductName").autocomplete({
@@ -550,7 +553,10 @@
     var poDocuments = [];
     GetPODocumentList(poDocuments);
     
-  
+    $("#txtConsigneeName").val("GOREEN E-MOBILITY")
+    $("#txtConsigneeCode").val("GEMPLV090001");
+    $("#hdnConsigneeId").val(1);
+    GetConsigneeDetail(1);
 });
  
 

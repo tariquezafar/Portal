@@ -401,7 +401,9 @@ namespace Portal.Core
                             ChasisSerialNo = chasisSerialMapping.ChasisSerialNo,
                             MotorNo = chasisSerialMapping.MotorNo,
                             ControllerNo = chasisSerialMapping.ControllerNo,
-                            CompanyBranchId = Convert.ToInt32(chasisSerialMapping.CompanyBranchId)
+                            CompanyBranchId = Convert.ToInt32(chasisSerialMapping.CompanyBranchId),
+                            BatterySerialNo1= chasisSerialMapping.BatterySerialNo1,
+                            BatterySerialNo2=chasisSerialMapping.BatterySerialNo2
                         });
                     }
                 }

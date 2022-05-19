@@ -282,6 +282,13 @@ function GetVendorDetail(vendorId) {
             else {
                 $("#chkStatus").attr("checked", false);
             }
+
+            if (data.IsTCS) {
+                $("#chkIsTCS").attr("checked", true);
+            }
+            else {
+                $("#chkIsTCS").attr("checked", false);
+            }
         },
         error: function (Result) {
             ShowModel("Alert", "Problem in Request");
@@ -415,6 +422,7 @@ function SaveData() {
         IsComposition: chkComposition,
         CompanyBranchId: 0,
         StateCode: $('#ddlState option:selected').text().substring($('#ddlState option:selected').text().indexOf('(') + 1, $('#ddlState option:selected').text().indexOf(')')),
+        IsTCS: $("#chkIsTCS").is(':checked') ? true : false
     };
 
     var vendorProductList = [];

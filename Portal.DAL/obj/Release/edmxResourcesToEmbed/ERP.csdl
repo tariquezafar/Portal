@@ -939,6 +939,7 @@
     <Property Name="AnnualTurnover" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="IsComposition" Type="Boolean" />
     <Property Name="CompanyBranchId" Type="Int64" />
+    <Property Name="IsTCS" Type="Boolean" />
   </EntityType>
   <EntityType Name="GLMainGroup">
     <Key>

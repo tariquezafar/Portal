@@ -125,7 +125,7 @@
                 data: { term: request.term, companyBranchId: $("#ddlCompanyBranch").val() },
                 success: function (data) {
                     response($.map(data, function (item) {
-                        return { label: item.ChasisSerialNo, value: item.ProductId, motorNo: item.MotorNo, controllerNo: item.ControllerNo };
+                        return { label: item.ChasisSerialNo, value: item.ProductId, motorNo: item.MotorNo, controllerNo: item.ControllerNo, BatterySerialNo: item.BatterySerialNo1, ChargeNo: item.BatterySerialNo2 };
                     }))
                 }
             })
@@ -135,10 +135,43 @@
             return false;
         },
         select: function (event, ui) {
+            var ProductIdList = [];
+            var ChassisList = [];
+            $('#tblProductList tbody tr').each(function (i, row) {
+                var $row = $(row)
+                if (ProductIdList != null && ProductIdList.filter(x => x.ProductId == parseInt($row.find("#hdnProductId").val())).length == 0)
+                    ProductIdList.push({ ProductId: $row.find("#hdnProductId").val(), Quantity: parseFloat($row.find("#hdnQuantity").val()).toFixed(2) });
+            });
+            $('#tblProductSerialDetail tbody tr').each(function (i, row) {
+                var $row = $(row);
+                //var invoiceTermDetailId = $row.find("#hdnSITermDetailId").val();
+                ChassisList.push({
+                    ProductId: $row.find("#hdnProductId").val(), ChassisNo: $row.find("#hdnChassisSerialNo").val()
+                }) ;
+            });
+            if (ProductIdList != null && ProductIdList.filter(x => x.ProductId == parseInt(ui.item.value)).length == 0) {
+                ShowModel("Alert", "Please select chassis No of Added Product .")
+                $("#txtChasisSerial").val('');
+                return false;
+            }
+
+            var productQuantity = ProductIdList.filter(x => x.ProductId == parseInt(parseInt(ui.item.value))).length == 0 ? 0 : ProductIdList.filter(x => x.ProductId == parseInt(parseInt(ui.item.value)))[0].Quantity;
+            if (ProductIdList != null && ChassisList != null && ChassisList.filter(x => x.ProductId == parseInt(ui.item.value)).length >= productQuantity ) {
+                ShowModel("Alert", "You are not allowed to add product chassis serail no more than product Quantity added. .")
+                $("#txtChasisSerial").val('');
+                return false;
+            }
+            else {
             $("#txtChasisSerial").val(ui.item.label);
             $("#hdnProductId").val(ui.item.value);
-            GetProductChasisSerialDetail(ui.item.value);
-            return false;
+            $("#hdnMotorNo").val(ui.item.motorNo);
+            $("#hdnControllerNo").val(ui.item.controllerNo);
+            $("#hdnBatterySerailNo").val(ui.item.BatterySerialNo);
+            $("#hdnChargerNo").val(ui.item.ChargeNo);
+           
+                GetProductChasisSerialDetail(ui.item.value);
+                return false;
+            }
         },
         change: function (event, ui) {
             if (ui.item == null && $("#ddlCompanyBranch").val() != "0" && $("#ddlCompanyBranch").val() != "") {
@@ -3423,10 +3456,10 @@ function SaveData() {
         var $row = $(row);
         //var invoiceTermDetailId = $row.find("#hdnSITermDetailId").val();
         var hdnProductId = $row.find("#hdnProductId").val();
-        var refSerial1 = $row.find("#hdnRefSerial1").val();
-        var refSerial2 = $row.find("#hdnRefSerial2").val();
-        var refSerial3 = $row.find("#hdnRefSerial3").val();
-        var refSerial4 = $row.find("#hdnRefSerial4").val();
+        var refSerial1 = $row.find("#hdnChassisSerialNo").val();
+        var refSerial2 = $row.find("#hdnMotorNo").val();
+        var refSerial3 = $row.find("#hdnControllerNo").val();
+        var refSerial4 = $row.find("#hdnBatterySerialNo").val();
         var hdnPackingListTypeId = $row.find("#hdnPackingListTypeId").val();
 
         if (hdnPackingListTypeId != undefined) {
@@ -5368,6 +5401,11 @@ function AddProductChasisSerialDetail(action) {
         txtChasisSerial.focus();
         return false;
     }
+    if ($("#txtChasisProductName").val().trim() == "") {
+        ShowModel("Alert", "Please enter Chasis Product Name")
+        txtChasisSerial.focus();
+        return false;
+    }
     if (ddlPackingListType.val() == "0") {
         ShowModel("Alert", "Please Select Packing List Type")
         ddlPackingListType.focus();
@@ -5387,13 +5425,14 @@ function AddProductChasisSerialDetail(action) {
         var hdnProductName = $row.find("#hdnProductName").val();
         var hdnPackingListTypeId = $row.find("#hdnPackingListTypeId").val();
         var hdnPackingListTypeName = $row.find("#hdnPackingListTypeName").val();
-        var hdnRefSerial1 = $row.find("#hdnRefSerial1").val();
-        var hdnRefSerial2 = $row.find("#hdnRefSerial2").val();
-        var hdnRefSerial3 = $row.find("#hdnRefSerial3").val();
-        var hdnRefSerial4 = $row.find("#hdnRefSerial4").val();
+        var hdnChassisSerialNo = $row.find("#hdnChassisSerialNo").val();
+        var hdnMotorNo = $row.find("#hdnMotorNo").val();
+        var hdnControllerNo = $row.find("#hdnControllerNo").val();
+        var hdnBatterySerialNo = $row.find("#hdnBatterySerialNo").val();
+       var hdnChargerNo = $row.find("#hdnChargerNo").val();
         if (hdnProductId != undefined) {
             if (action == 1) {
-                if (hdnRefSerial1 == txtChasisSerial.val()) {
+                if (hdnChassisSerialNo == txtChasisSerial.val()) {
                     ShowModel("Alert", "Chasis Serial already added")
                     return false;
                 }
@@ -5401,10 +5440,11 @@ function AddProductChasisSerialDetail(action) {
                     InvoiceId: 0,
                     ProductId: hdnProductId,
                     ProductName: hdnProductName,
-                    RefSerial1: hdnRefSerial1,
-                    RefSerial2: hdnRefSerial2,
-                    RefSerial3: hdnRefSerial3,
-                    RefSerial4: hdnRefSerial4,
+                    RefSerial1: hdnChassisSerialNo,
+                    MotorNo: hdnMotorNo,
+                    ControllerNo: hdnControllerNo,
+                    BatterySerialNo: hdnBatterySerialNo,
+                    ChargerNo: hdnChargerNo,
                     PackingListTypeID: hdnPackingListTypeId,
                     PackingListTypeName: hdnPackingListTypeName
                 };
@@ -5419,9 +5459,10 @@ function AddProductChasisSerialDetail(action) {
         ProductId: hdnProductId.val(),
         ProductName: txtChasisProductName.val(),
         RefSerial1: txtChasisSerial.val(),
-        RefSerial2: "",
-        RefSerial3: "",
-        RefSerial4: "",
+        MotorNo: $("#hdnMotorNo").val(),
+        ControllerNo: $("#hdnControllerNo").val(),
+        BatterySerialNo: $("#hdnBatterySerailNo").val(),
+        ChargerNo: $("#hdnChargerNo").val(),
         PackingListTypeID: ddlPackingListType.val(),
         PackingListTypeName: $("#ddlPackingListType option:selected").text()
     };

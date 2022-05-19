@@ -2301,7 +2301,9 @@ namespace Portal.DAL
                                          ChasisSerialNo = c.ChasisSerialNo,
                                          MotorNo = c.MotorNo,
                                          ControllerNo = c.ControllerNo,
-                                         ComapnyBranch = c.CompanyBranchId
+                                         ComapnyBranch = c.CompanyBranchId,
+                                         BatterySerialNo1=c.BatterySerialNo1,
+                                         BatterySerialNo2=c.BatterySerialNo2
                                      }).ToList();
 
 
@@ -2315,7 +2317,9 @@ namespace Portal.DAL
                             ChasisSerialNo = item.ChasisSerialNo,
                             MotorNo = item.MotorNo,
                             ControllerNo = item.ControllerNo,
-                            CompanyBranchId = item.ComapnyBranch
+                            CompanyBranchId = item.ComapnyBranch,
+                            BatterySerialNo1=item.BatterySerialNo1,
+                            BatterySerialNo2=item.BatterySerialNo2
                         });
                     }
                 }
@@ -5412,6 +5416,7 @@ namespace Portal.DAL
                             a.GST_Exempt = vendor.GST_Exempt;
                             a.IsComposition = vendor.IsComposition;
                             a.CompanyBranchId = vendor.CompanyBranchId;
+                            a.IsTCS = vendor.IsTCS;
 
                         });
                         responseOut.message = ActionMessage.VendorUpdatedSuccess;

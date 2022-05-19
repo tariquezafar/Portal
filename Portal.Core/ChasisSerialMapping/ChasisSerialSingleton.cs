@@ -61,7 +61,9 @@ namespace Portal.Core
                                     ProductId = Convert.ToInt64(chasis.ProductId),
                                     ChasisSerialNo = chasis.ChasisSerialNo,
                                     MotorNo = chasis.MotorNo,
-                                    ControllerNo = chasis.ControllerNo
+                                    ControllerNo = chasis.ControllerNo,
+                                    BatterySerialNo1=chasis.BatterySerialNo1,
+                                    BatterySerialNo2=chasis.BatterySerialNo2
                                 });
                         }
                     }

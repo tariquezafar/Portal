@@ -4411,6 +4411,7 @@
     <Property Name="AnnualTurnover" Type="decimal" Precision="18" Scale="2" />
     <Property Name="IsComposition" Type="bit" />
     <Property Name="CompanyBranchId" Type="bigint" />
+    <Property Name="IsTCS" Type="bit" />
   </EntityType>
   <EntityType Name="VendorForm">
     <Key>

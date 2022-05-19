@@ -285,6 +285,11 @@ namespace Portal.Core.ViewModel
         public string RefSerial4 { get; set; }
         public string PackingListTypeName { get; set; }
 
+        public string MotorNo { get; set; }
+        public string ControllerNo { get; set; }
+        public string BatterySerialNo { get; set; }
+        public string ChargerNo { get; set; }
+
     }
 
     public class SISupportingDocumentViewModel

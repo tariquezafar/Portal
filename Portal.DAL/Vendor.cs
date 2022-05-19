@@ -44,5 +44,6 @@ namespace Portal.DAL
         public Nullable<decimal> AnnualTurnover { get; set; }
         public Nullable<bool> IsComposition { get; set; }
         public Nullable<long> CompanyBranchId { get; set; }
+        public Nullable<bool> IsTCS { get; set; }
     }
 }

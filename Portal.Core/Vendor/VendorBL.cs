@@ -56,7 +56,8 @@ namespace Portal.Core
                         AnnualTurnover = vendorViewModel.AnnualTurnover,
                         GST_Exempt = vendorViewModel.GST_Exempt,
                         IsComposition = vendorViewModel.IsComposition,
-                        CompanyBranchId= vendorViewModel.CompanyBranchId
+                        CompanyBranchId= vendorViewModel.CompanyBranchId,
+                        IsTCS=vendorViewModel.IsTCS
                     };
 
 
@@ -259,7 +260,8 @@ namespace Portal.Core
                             GST_Exempt = Convert.ToBoolean(dr["GST_Exempt"]),
                             AnnualTurnover = Convert.ToDecimal(dr["AnnualTurnover"]),
                             IsComposition = Convert.ToBoolean(dr["IsComposition"]),
-                            CompanyBranchId= Convert.ToInt64(dr["CompanyBranchId"])
+                            CompanyBranchId= Convert.ToInt64(dr["CompanyBranchId"]),
+                            IsTCS = Convert.ToBoolean(dr["IsTCS"]),
                         };
                     }
                 }

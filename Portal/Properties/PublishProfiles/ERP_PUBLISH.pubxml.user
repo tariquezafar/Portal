@@ -6,18 +6,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\Service Portal\publish\DMS_16052022</_PublishTargetUrl>
-    <History>True|2022-03-21T20:45:06.9893015Z;False|2022-03-22T02:10:36.1405540+05:30;</History>
+    <_PublishTargetUrl>D:\Service Portal\publish\DMS_19052022</_PublishTargetUrl>
+    <History>True|2022-05-17T15:18:03.7086935Z;True|2022-03-22T02:15:06.9893015+05:30;False|2022-03-22T02:10:36.1405540+05:30;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>02/13/2022 23:35:59</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>05/16/2022 22:39:51</publishTime>
+      <publishTime>05/19/2022 13:55:53</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>05/16/2022 22:39:51</publishTime>
+      <publishTime>05/19/2022 13:55:53</publishTime>
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.Design.resources.dll">
       <publishTime>02/13/2022 23:35:53</publishTime>
@@ -176,28 +176,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/16/2022 20:31:12</publishTime>
     </File>
     <File Include="bin/Portal.Core.dll">
-      <publishTime>05/16/2022 20:31:27</publishTime>
+      <publishTime>05/19/2022 13:55:29</publishTime>
     </File>
     <File Include="bin/Portal.Core.pdb">
-      <publishTime>05/16/2022 20:31:27</publishTime>
+      <publishTime>05/19/2022 13:55:29</publishTime>
     </File>
     <File Include="bin/Portal.DAL.dll">
-      <publishTime>05/16/2022 20:31:23</publishTime>
+      <publishTime>05/19/2022 13:55:24</publishTime>
     </File>
     <File Include="bin/Portal.DAL.dll.config">
       <publishTime>03/12/2022 18:40:37</publishTime>
     </File>
     <File Include="bin/Portal.DAL.pdb">
-      <publishTime>05/16/2022 20:31:23</publishTime>
+      <publishTime>05/19/2022 13:55:24</publishTime>
     </File>
     <File Include="bin/Portal.dll">
-      <publishTime>05/16/2022 22:39:41</publishTime>
+      <publishTime>05/19/2022 13:55:40</publishTime>
     </File>
     <File Include="bin/Portal.dll.config">
       <publishTime>11/08/2017 12:24:01</publishTime>
     </File>
     <File Include="bin/Portal.pdb">
-      <publishTime>05/16/2022 22:39:41</publishTime>
+      <publishTime>05/19/2022 13:55:40</publishTime>
     </File>
     <File Include="bin/pt/Microsoft.ReportViewer.Design.resources.dll">
       <publishTime>02/13/2022 23:35:55</publishTime>
@@ -1202,7 +1202,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/13/2022 23:36:31</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>05/16/2022 22:39:44</publishTime>
+      <publishTime>05/19/2022 13:55:44</publishTime>
     </File>
     <File Include="RDLC/ApprovedIndentReport.rdlc">
       <publishTime>02/13/2022 23:41:29</publishTime>
@@ -3230,7 +3230,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/13/2022 23:42:08</publishTime>
     </File>
     <File Include="Scripts/PO/AddPO.js">
-      <publishTime>02/13/2022 23:42:08</publishTime>
+      <publishTime>05/18/2022 13:08:49</publishTime>
     </File>
     <File Include="Scripts/PO/AddRevisedPO.js">
       <publishTime>02/13/2022 23:42:08</publishTime>
@@ -3470,7 +3470,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/13/2022 23:42:12</publishTime>
     </File>
     <File Include="Scripts/SaleInvoice/AddSaleInvoice.js">
-      <publishTime>05/15/2022 23:01:59</publishTime>
+      <publishTime>05/18/2022 22:14:36</publishTime>
     </File>
     <File Include="Scripts/SaleInvoice/AddServiceInvoice.js">
       <publishTime>03/12/2022 17:13:13</publishTime>
@@ -3776,7 +3776,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/13/2022 23:42:16</publishTime>
     </File>
     <File Include="Scripts/Vendor/AddVendor.js">
-      <publishTime>05/08/2022 15:41:59</publishTime>
+      <publishTime>05/17/2022 20:33:20</publishTime>
     </File>
     <File Include="Scripts/Vendor/ListVendor.js">
       <publishTime>02/13/2022 23:42:16</publishTime>
@@ -5738,7 +5738,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/13/2022 23:42:47</publishTime>
     </File>
     <File Include="Views/PO/AddEditPO.cshtml">
-      <publishTime>02/13/2022 23:42:47</publishTime>
+      <publishTime>05/17/2022 20:06:33</publishTime>
     </File>
     <File Include="Views/PO/AddRevisedPO.cshtml">
       <publishTime>02/13/2022 23:42:47</publishTime>
@@ -6251,7 +6251,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/13/2022 23:42:54</publishTime>
     </File>
     <File Include="Views/SaleInvoice/AddEditSaleInvoice.cshtml">
-      <publishTime>05/15/2022 23:03:13</publishTime>
+      <publishTime>05/17/2022 23:03:56</publishTime>
     </File>
     <File Include="Views/SaleInvoice/CancelSaleInvoice.cshtml">
       <publishTime>02/13/2022 23:42:54</publishTime>
@@ -6272,7 +6272,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/13/2022 23:42:54</publishTime>
     </File>
     <File Include="Views/SaleInvoice/GetSaleInvoiceProductSerialDetailList.cshtml">
-      <publishTime>02/13/2022 23:42:54</publishTime>
+      <publishTime>05/18/2022 14:22:50</publishTime>
     </File>
     <File Include="Views/SaleInvoice/GetSaleInvoiceTaxList.cshtml">
       <publishTime>02/13/2022 23:42:54</publishTime>
@@ -7010,7 +7010,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/13/2022 23:43:03</publishTime>
     </File>
     <File Include="Views/Vendor/AddEditVendor.cshtml">
-      <publishTime>05/08/2022 15:42:09</publishTime>
+      <publishTime>05/17/2022 20:13:50</publishTime>
     </File>
     <File Include="Views/Vendor/GetVendorList.cshtml">
       <publishTime>02/13/2022 23:43:03</publishTime>

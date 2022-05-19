@@ -697,6 +697,7 @@
     <EntitySetMapping Name="Vendors">
       <EntityTypeMapping TypeName="ERPModel.Vendor">
         <MappingFragment StoreEntitySet="Vendor">
+          <ScalarProperty Name="IsTCS" ColumnName="IsTCS" />
           <ScalarProperty Name="CompanyBranchId" ColumnName="CompanyBranchId" />
           <ScalarProperty Name="IsComposition" ColumnName="IsComposition" />
           <ScalarProperty Name="AnnualTurnover" ColumnName="AnnualTurnover" />

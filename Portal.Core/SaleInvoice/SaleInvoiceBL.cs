@@ -368,7 +368,12 @@ namespace Portal.Core
                             RefSerial3 = Convert.ToString(dr["RefSerial3"]),
                             RefSerial4 = Convert.ToString(dr["RefSerial4"]),
                             PackingListTypeID = Convert.ToInt32(dr["PackingListTypeID"]),
-                            PackingListTypeName= Convert.ToString(dr["PackingListTypeName"])
+                            PackingListTypeName= Convert.ToString(dr["PackingListTypeName"]),
+                            MotorNo= Convert.ToString(dr["MotorNo"]),
+                            ControllerNo= Convert.ToString(dr["ControllerNo"]),
+                            BatterySerialNo= Convert.ToString(dr["BatterySerialNo1"]),
+                            ChargerNo = Convert.ToString(dr["BatterySerialNo2"]),
+
                         });
                     }
 

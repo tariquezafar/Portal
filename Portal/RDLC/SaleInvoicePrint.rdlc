@@ -1011,8 +1011,7 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <!--<ReportSections>
-    <ReportSection>-->
+
       <Body>
         <ReportItems>
           <Tablix Name="Tablix3">
@@ -16294,10 +16293,10 @@
                   <Width>0.73697in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.75593in</Width>
+                  <Width>1.31843in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.7521in</Width>
+                  <Width>0.92107in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.72905in</Width>
@@ -16551,7 +16550,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Battery Serial 1</Value>
+                                  <Value>Controller No</Value>
                                   <Style>
                                     <FontFamily>arial</FontFamily>
                                     <FontSize>7pt</FontSize>
@@ -16570,24 +16569,13 @@
                               <Style>None</Style>
                             </Border>
                             <TopBorder>
-                              <Color>Black</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>Black</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
-                              <Style>None</Style>
-                              <Width>1pt</Width>
-                            </LeftBorder>
                             <RightBorder>
-                              <Color>Black</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -16606,7 +16594,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Battery Serial 2</Value>
+                                  <Value>Battery Serial No</Value>
                                   <Style>
                                     <FontFamily>arial</FontFamily>
                                     <FontSize>7pt</FontSize>
@@ -16625,24 +16613,13 @@
                               <Style>None</Style>
                             </Border>
                             <TopBorder>
-                              <Color>Black</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>Black</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
-                              <Style>None</Style>
-                              <Width>1pt</Width>
-                            </LeftBorder>
                             <RightBorder>
-                              <Color>Black</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -16661,7 +16638,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Battery Serial 3</Value>
+                                  <Value>Charger No</Value>
                                   <Style>
                                     <FontFamily>arial</FontFamily>
                                     <FontSize>7pt</FontSize>
@@ -16680,24 +16657,13 @@
                               <Style>None</Style>
                             </Border>
                             <TopBorder>
-                              <Color>Black</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>Black</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
-                              <Style>None</Style>
-                              <Width>1pt</Width>
-                            </LeftBorder>
                             <RightBorder>
-                              <Color>Black</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -16730,29 +16696,21 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox36</rd:DefaultName>
+                          <Visibility>
+                            <Hidden>true</Hidden>
+                          </Visibility>
                           <Style>
                             <Border>
                               <Style>None</Style>
                             </Border>
                             <TopBorder>
-                              <Color>Black</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </TopBorder>
                             <BottomBorder>
-                              <Color>Black</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
-                              <Style>None</Style>
-                              <Width>1pt</Width>
-                            </LeftBorder>
                             <RightBorder>
-                              <Color>Black</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -17044,7 +17002,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!BatterySerialNo2.Value</Value>
+                                  <Value>=Fields!BatterySerialNo1.Value</Value>
                                   <Style>
                                     <FontFamily>arial</FontFamily>
                                     <FontSize>7pt</FontSize>
@@ -17098,7 +17056,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!BatterySerialNo3.Value</Value>
+                                  <Value>=Fields!BatterySerialNo2.Value</Value>
                                   <Style>
                                     <FontFamily>arial</FontFamily>
                                     <FontSize>7pt</FontSize>
@@ -21125,7 +21083,11 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
-                <TablixMember />
+                <TablixMember>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                </TablixMember>
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -21196,7 +21158,7 @@
             <DataSetName>DataSetSaleInvoiceProductSerialList</DataSetName>
             <Top>4.74082in</Top>
             <Height>2.04801in</Height>
-            <Width>8.28044in</Width>
+            <Width>9.01191in</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
@@ -21476,7 +21438,7 @@ iif((Parameters!approvalstatus.Value="Cancelled"),"CancelledWater","")</Value>
           </BackgroundImage>
         </Style>
       </Body>
-      <Width>8.29086in</Width>
+      <Width>9.01191in</Width>
       <Page>
         <PageHeader>
           <Height>1.05593in</Height>
@@ -21732,8 +21694,7 @@ iif((Parameters!approvalstatus.Value="Cancelled"),"CancelledWater","")</Value>
         <BottomMargin>1in</BottomMargin>
         <Style />
       </Page>
-    <!--</ReportSection>
-  </ReportSections>-->
+ 
   <ReportParameters>
     <ReportParameter Name="AmountInWords">
       <DataType>String</DataType>
@@ -21748,29 +21709,7 @@ iif((Parameters!approvalstatus.Value="Cancelled"),"CancelledWater","")</Value>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
-  <!--<ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>2</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-      <CellDefinitions>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>AmountInWords</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>ReportOption</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>approvalstatus</ParameterName>
-        </CellDefinition>
-      </CellDefinitions>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>-->
+  
   <EmbeddedImages>
     <EmbeddedImage Name="arkc">
       <MIMEType>image/png</MIMEType>

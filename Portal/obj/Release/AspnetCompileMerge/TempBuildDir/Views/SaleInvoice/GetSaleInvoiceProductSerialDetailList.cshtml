@@ -8,66 +8,75 @@
                 <tr align="center">
                     <th>Vahaan Detail</th>
                     <th>Product Name</th>
-                    <th>RefSerial1</th>
+                    <th>Chassis No</th>
                     <th>Packing List Type</th>
-                    <th>RefSerial2</th>
-                    <th>RefSerial3</th>
-                    <th>RefSerial3</th>
+                    <th>Motor No</th>
+                    <th>Controller No</th>
+                    <th>Battery Serial No</th>
+                    <th>Charger No</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr class="success">
-                        @{string FileName = Server.MapPath("../Content/VahaanLogFiles/" + item.RefSerial1 + ".txt"); }
-                        @if (File.Exists(FileName))
-                        {
-                            <td style="text-align:left">
-                                <a href=@string.Concat("../Content/VahaanLogFiles/", item.RefSerial1, ".txt") id="btnPrintTxt" target="_blank">
-                                    @item.RefSerial1
-                                </a>
-                                <input type="hidden" id="hdnFileName" value="@item.RefSerial1" />
-                            </td>
-                       }
-                        else
-                        {
-                            <td style="text-align:left">
-                                 @item.RefSerial1
-                                <input type="hidden" id="hdnFileName" value="@item.RefSerial1" />
-
-                            </td>
-                        }
+                <tr class="success">
+                    @{string FileName = Server.MapPath("../Content/VahaanLogFiles/" + item.RefSerial1 + ".txt"); }
+                    @if (File.Exists(FileName))
+                    {
                         <td style="text-align:left">
-                            @item.ProductName
+                            <a href=@string.Concat("../Content/VahaanLogFiles/", item.RefSerial1, ".txt") id="btnPrintTxt" target="_blank">
+                                @item.RefSerial1
+                            </a>
+                            <input type="hidden" id="hdnFileName" value="@item.RefSerial1" />
+                        </td>
+                    }
+                    else
+                    {
+                        <td style="text-align:left">
+                            @item.RefSerial1
+                            <input type="hidden" id="hdnFileName" value="@item.RefSerial1" />
+
+                        </td>
+                    }
+                    <td style="text-align:left">
+                        @item.ProductName
                         <input type="hidden" id="hdnProductId" value="@item.ProductId" />
                         <input type="hidden" id="hdnProductName" value="@item.ProductName" />
 
-                            <input type="hidden" id="hdnPackingListTypeId" value="@item.PackingListTypeID" />
-                
+                        <input type="hidden" id="hdnPackingListTypeId" value="@item.PackingListTypeID" />
+
                     </td>
-                      
-                    <td style="text-align:left"> @item.RefSerial1
-                        <input type="hidden" id="hdnRefSerial1" value="@item.RefSerial1" />
-                        </td>
+
+                    <td style="text-align:left">
+                        @item.RefSerial1
+                        <input type="hidden" id="hdnChassisSerialNo" value="@item.RefSerial1" />
+                    </td>
                     <td style="text-align:left">
                         @item.PackingListTypeName
                         <input type="hidden" id="hdnPackingListTypeName" value="@item.PackingListTypeName" />
-                          @*   <select id="ddlPackingListType" onload="BindPackingListType(@item.PackingListTypeID);" name="ddlPackingListType" class="form-control ddlPackingListType"></select>*@
+                        @*   <select id="ddlPackingListType" onload="BindPackingListType(@item.PackingListTypeID);" name="ddlPackingListType" class="form-control ddlPackingListType"></select>*@
                     </td>
-                    <td style="text-align:left"> @item.RefSerial2
-                        <input type="hidden" id="hdnRefSerial2" value="@item.RefSerial2" />
-                        </td>
-                    <td style="text-align:left"> @item.RefSerial3
-                        <input type="hidden" id="hdnRefSerial3" value="@item.RefSerial3" />
-                        </td>
-                    <td style="text-align:left"> @item.RefSerial4
-                        <input type="hidden" id="hdnRefSerial4" value="@item.RefSerial4" />
-                        </td>
-                        <td class="btn btn-success table_btn editonly selectpo" style="width:30px; margin:0px 2px auto;text-align:center">
-                            <a style="color:white" class="fa fa-trash" onclick="RemoveProductSerialRow(this)" href="#"></a>
-                        </td>
-                    </tr>
+                    <td style="text-align:left">
+                        @item.MotorNo
+                        <input type="hidden" id="hdnMotorNo" value="@item.MotorNo" />
+                    </td>
+                    <td style="text-align:left">
+                        @item.ControllerNo
+                        <input type="hidden" id="hdnControllerNo" value="@item.ControllerNo" />
+                    </td>
+                    <td style="text-align:left">
+                        @item.BatterySerialNo
+                        <input type="hidden" id="hdnBatterySerialNo" value="@item.BatterySerialNo" />
+                    </td>
+                    <td style="text-align:left">
+                        @item.ChargerNo
+                        <input type="hidden" id="hdnChargerNo" value="@item.ChargerNo" />
+                    </td>
+                    <td class="btn btn-success table_btn editonly selectpo" style="width:30px; margin:0px 2px auto;text-align:center">
+                        <a style="color:white" class="fa fa-trash" onclick="RemoveProductSerialRow(this)" href="#"></a>
+                    </td>
+                </tr>
                 }
 
             </tbody>
