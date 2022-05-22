@@ -720,11 +720,11 @@ function SaveData() {
         txtDateOfBirth.focus();
         return false;
     }
-    if (ddlMaritalStatus.val() == "" || ddlMaritalStatus.val() == "0") {
-        ShowModel("Alert", "Please select Marital Status")
-        ddlMaritalStatus.focus();
-        return false;
-    }
+    //if (ddlMaritalStatus.val() == "" || ddlMaritalStatus.val() == "0") {
+    //    ShowModel("Alert", "Please select Marital Status")
+    //    ddlMaritalStatus.focus();
+    //    return false;
+    //}
     if (txtMobileNo.val().trim() == "") {
         ShowModel("Alert", "Please enter Mobile No.")
         txtMobileNo.focus();
@@ -735,12 +735,12 @@ function SaveData() {
         txtMobileNo.focus();
         return false;
     }
-    if (txtEmail.val().trim() == "") {
-        ShowModel("Alert", "Please enter Email ID")
-        txtEmail.focus();
-        return false;
-    }
-    if (!ValidEmailCheck(txtEmail.val().trim())) {
+    //if (txtEmail.val().trim() == "") {
+    //    ShowModel("Alert", "Please enter Email ID")
+    //    txtEmail.focus();
+    //    return false;
+    //}
+    if (txtEmail.val().trim() != "" && !ValidEmailCheck(txtEmail.val().trim())) {
         ShowModel("Alert", "Please enter Valid Email Id")
         txtEmail.focus();
         return false;
@@ -822,11 +822,11 @@ function SaveData() {
         ddlCurrentStatus.focus();
         return false;
     }
-    if (ddlDivision.val() == "" || ddlDivision.val() == "0") {
-        ShowModel("Alert", "Please select Employee Division")
-        ddlDivision.focus();
-        return false;
-    }
+    //if (ddlDivision.val() == "" || ddlDivision.val() == "0") {
+    //    ShowModel("Alert", "Please select Employee Division")
+    //    ddlDivision.focus();
+    //    return false;
+    //}
     if (ddlEmploymentType.val() == "" || ddlEmploymentType.val() == "0") {
         ShowModel("Alert", "Please select Employee Type")
         ddlEmploymentType.focus();
