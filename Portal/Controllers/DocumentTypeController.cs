@@ -89,13 +89,13 @@ namespace Portal.Controllers
             return View();
         }
         [HttpGet]
-        public PartialViewResult GetDocumentTypeList(string documenttypeDesc = "", string status = "",int companyBranchId=0)
+        public PartialViewResult GetDocumentTypeList(string documenttypeDesc = "", string status = "",int companyBranchId=0, string moduleType = "")
         {
             List<DocumentTypeViewModel> documenttypes = new List<DocumentTypeViewModel>();
             DocumentTypeBL documenttypeBL = new DocumentTypeBL();
             try
             {
-               documenttypes = documenttypeBL.GetDocumentTypeList(documenttypeDesc, ContextUser.CompanyId, status, companyBranchId);
+               documenttypes = documenttypeBL.GetDocumentTypeList(documenttypeDesc, ContextUser.CompanyId, status, companyBranchId, moduleType);
             }
             catch (Exception ex)
             {

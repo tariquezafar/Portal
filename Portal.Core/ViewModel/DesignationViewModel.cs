@@ -23,5 +23,13 @@ namespace Portal.Core.ViewModel
         public string status { get; set; }
      
     }
-   
+
+    public class EmployeeDesignationModel
+    {
+        public int EmployeeId { get; set; }
+        public string EmployeeName { get; set; }
+
+
+    }
+
 }

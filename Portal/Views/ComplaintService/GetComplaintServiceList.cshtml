@@ -13,14 +13,13 @@
     .table tr {
         text-align: center;
     }
- table tr:nth-child(2n+1) {
-    
-    background-color: #dbe5f7;
+
+    table tr:nth-child(2n+1) {
+        background-color: #dbe5f7;
     }
 
-     table tr:nth-child(2n) {
-    
-    background-color: #dbe5f7;
+    table tr:nth-child(2n) {
+        background-color: #dbe5f7;
     }
 </style>
 @if (Model != null && Model.Count > 0)
@@ -31,12 +30,14 @@
                 <tr>
                     <th colspan="2"><center>Action</center></th>
                     <th><center>Complaint No.</center></th>
-                    <th><center>EnquiryType</center></th>
+                    <th><center>Enquiry Type</center></th>
                     <th><center>Company Branch</center></th>
                     <th><center>ComplaintMode</center></th>
                     <th><center>Customer Mobile</center></th>
                     <th><center>Customer Name</center></th>
-                    <th><center>Status</center></th>         
+                    <th><center>Service Engineer</center></th>
+                    <th><center>Dealer</center></th>
+                    <th><center>Status</center></th>
 
                 </tr>
             </thead>
@@ -47,9 +48,9 @@
                     {
                         <tr class="success">
                             @*<td class="teal text" style="margin:0px auto;" colspan="2">
-                                <a style="color:darkblue" title="View" class="fa fa-eye" aria-hidden="true" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=3"></a>
-                            </td>*@
-                            
+                                    <a style="color:darkblue" title="View" class="fa fa-eye" aria-hidden="true" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=3"></a>
+                                </td>*@
+
                             <td class="teal text" style="margin:0px auto;">
                                 <a style="color:darkblue" title="View" class="fa fa-eye" aria-hidden="true" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=3"></a>
                             </td>
@@ -58,13 +59,15 @@
                                 <a style="color:darkgreen" title="Edit" class="fa fa-pencil" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=2"></a>
 
                             </td>
-                            
+
                             <td>@item.ComplaintNo</td>
                             <td>@item.EnquiryType</td>
                             <td>@item.CompanyBranchName</td>
                             <td>@item.ComplaintMode</td>
                             <td>@item.CustomerMobile</td>
                             <td>@item.CustomerName</td>
+                            <td>@item.EmployeeName</td>
+                            <td>@item.DealerName</td>
                             <td>@(item.ComplaintService_Status == true ? "Active" : "Inactive")</td>
 
                         </tr>
@@ -83,6 +86,8 @@
                             <td>@item.ComplaintMode</td>
                             <td>@item.CustomerMobile</td>
                             <td>@item.CustomerName</td>
+                            <td>@item.EmployeeName</td>
+                            <td>@item.DealerName</td>
                             <td>@(item.ComplaintService_Status == true ? "Active" : "Inactive")</td>
 
 

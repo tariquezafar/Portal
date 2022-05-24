@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Portal.DAL.Infrastructure;
 using System.Data.Entity.SqlServer;
+using Portal.Common.ViewModel;
 
 namespace Portal.DAL
 {
@@ -9855,7 +9856,31 @@ namespace Portal.DAL
             return hSNList;
         }
 
-       
+
+        #endregion
+
+        #region Bind Master Drop Down Data
+
+        /// <summary>
+        /// This method is used to get customer Type List.
+        /// Author By : Dheeraj kumar on 21 May, 2022
+        /// </summary>
+        /// <param name="customerTypeId">primary key of the table</param>
+        /// <returns>
+        /// This method retruns list of customer based on parameters.
+        /// </returns>
+        public List<SelectListModel> GetCustomerTypeList(int customerTypeId)
+        {
+            List<SelectListModel> selectListModels = (from b in entities.CustomerTypes
+                                                      join be in entities.Customers on b.CustomerTypeId equals be.CustomerTypeId
+                                                      where b.CustomerTypeId == customerTypeId
+                                                      select new SelectListModel
+                                                      {
+                                                          ValueInt = be.CustomerId,
+                                                          Text = be.CustomerName
+                                                      }).ToList();
+            return selectListModels;
+        }
         #endregion
 
     }

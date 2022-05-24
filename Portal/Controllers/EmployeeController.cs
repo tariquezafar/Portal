@@ -276,8 +276,31 @@ namespace Portal.Controllers
             }
             return Json(responseOut, JsonRequestBehavior.AllowGet);
         }
-         
 
+
+        /// <summary>
+        /// This method is used to get employee list based on department.
+        /// Author by : Dheeraj on 14 May,2022
+        /// </summary>     
+        /// <returns>
+        /// This method retruns list of the object.
+        /// </returns>
+        [HttpGet]
+        public JsonResult GetDesignationByDepartmentID()
+        {
+            List<EmployeeDesignationModel> lstEmployeeDesignations = new List<EmployeeDesignationModel>();
+            DesignationBL designationBL = new DesignationBL();
+            try
+            {
+
+                lstEmployeeDesignations = designationBL.GetDesignationByDepartmentID(3);
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+            }
+            return Json(lstEmployeeDesignations, JsonRequestBehavior.AllowGet);
+        }
         #endregion
 
         #region EmployeeProfile

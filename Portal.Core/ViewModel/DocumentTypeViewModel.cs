@@ -16,5 +16,6 @@ namespace Portal.Core.ViewModel
         public string status { get; set; }
         public int CompanyBranchId { get; set; }
         public string CompanyBranchName { get; set; }
+        public string ModuleType { get; set; }
     }
 }

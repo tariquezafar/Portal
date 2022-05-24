@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {
-
+    BindServiceEngineerList();
+    BindSDealerList();
     $("#txtCustomerName").attr('readOnly', true);
     $("#txtCustomerEmail").attr('readOnly', true);
     $("#txtCustomerAddress").attr('readOnly', true);
@@ -45,11 +46,11 @@
         }
 
     })
-    .autocomplete("instance")._renderItem = function (ul, item) {
-        return $("<li>")
-          .append("<div><b>" + item.label + " </div>")
-          .appendTo(ul);
-    };
+        .autocomplete("instance")._renderItem = function (ul, item) {
+            return $("<li>")
+                .append("<div><b>" + item.label + " </div>")
+                .appendTo(ul);
+        };
 
     $("#txtProductName").autocomplete({
         minLength: 0,
@@ -94,11 +95,11 @@
         }
 
     })
-   .autocomplete("instance")._renderItem = function (ul, item) {
-       return $("<li>")
-         .append("<div><b>" + item.label + "</div>")
-         .appendTo(ul);
-   };
+        .autocomplete("instance")._renderItem = function (ul, item) {
+            return $("<li>")
+                .append("<div><b>" + item.label + "</div>")
+                .appendTo(ul);
+        };
 
     $("#txtComplaintDate").datepicker({
         changeMonth: true,
@@ -120,15 +121,16 @@
     });
 
     BindCompanyBranchList()
-    BindComplaintTypeList();   
+    BindComplaintTypeList();
+
 
     var hdnAccessMode = $("#hdnAccessMode");
     var hdncomplaintServiceId = $("#hdncomplaintServiceId");
     if (hdncomplaintServiceId.val() != "" && hdncomplaintServiceId.val() != "0" && hdnAccessMode.val() != "" && hdnAccessMode.val() != "0") {
         setTimeout(
-        function () {
-            GetComplaintServiceDetail(hdncomplaintServiceId.val());
-        }, 2000);
+            function () {
+                GetComplaintServiceDetail(hdncomplaintServiceId.val());
+            }, 3000);
 
         if (hdnAccessMode.val() == "3") {
             $("#btnSave").hide();
@@ -153,30 +155,68 @@
     var complaintProductList = [];
     GetComplaintServiceProductList(complaintProductList);
 
-   
+
 });
 
-   
-    function BindComplaintTypeList() {
-        $.ajax({
-            type: "GET",
-            url: "../Product/GetProductTypeList",
-            data: "{}",
-            dataType: "json",
-            asnc: false,
-            success: function (data) {
-                $("#ddlProductType").append($("<option></option>").val(0).html("-Select Type-"));
-                $.each(data, function (i, item) {
-                    $("#ddlProductType").append($("<option></option>").val(item.ProductTypeId).html(item.ProductTypeName));
-                });
-            },
-            error: function (Result) {
-                $("#ddlProductType").append($("<option></option>").val(0).html("-Select Type-"));
-            }
-        });
-    }
 
- 
+function BindComplaintTypeList() {
+    $.ajax({
+        type: "GET",
+        url: "../Product/GetProductTypeList",
+        data: "{}",
+        dataType: "json",
+        asnc: false,
+        success: function (data) {
+            $("#ddlProductType").append($("<option></option>").val(0).html("-Select Type-"));
+            $.each(data, function (i, item) {
+                $("#ddlProductType").append($("<option></option>").val(item.ProductTypeId).html(item.ProductTypeName));
+            });
+        },
+        error: function (Result) {
+            $("#ddlProductType").append($("<option></option>").val(0).html("-Select Type-"));
+        }
+    });
+}
+
+function BindServiceEngineerList() {
+    $.ajax({
+        type: "GET",
+        url: "../Employee/GetDesignationByDepartmentID",
+        data: "{}",
+        dataType: "json",
+        asnc: false,
+        success: function (data) {
+            $("#ddlServiceEngineer").append($("<option></option>").val(0).html("Select Service Engineer"));
+            $.each(data, function (i, item) {
+                $("#ddlServiceEngineer").append($("<option></option>").val(item.EmployeeId).html(item.EmployeeName));
+            });
+        },
+        error: function (Result) {
+            $("#ddlServiceEngineer").append($("<option></option>").val(0).html("Select Service Engineer"));
+        }
+    });
+}
+
+function BindSDealerList() {
+    $.ajax({
+        type: "GET",
+        url: "../ComplaintService/GetCustomerTypeList",
+        data: "{}",
+        dataType: "json",
+        asnc: false,
+        success: function (data) {
+            $("#ddlDealer").append($("<option></option>").val(0).html("Select Dealer"));
+            $.each(data, function (i, item) {
+                $("#ddlDealer").append($("<option></option>").val(item.ValueInt).html(item.Text));
+            });
+        },
+        error: function (Result) {
+            $("#ddlDealer").append($("<option></option>").val(0).html("Select Service Engineer"));
+        }
+    });
+}
+
+
 function GetCustomerDetailByMobile(customerId) {
     $.ajax({
         type: "GET",
@@ -238,7 +278,7 @@ function SelectInvoice(invoiceId, saleinvoiceNo, invoiceDate, customerId, custom
     //GetConsigneeDetail(consigneeId);
     //GetSaleInvoiceDetail(invoiceId);
     var complaintServiceProducts = [];
-    GetComplaintServiceSIProductList(complaintServiceProducts,invoiceId);
+    GetComplaintServiceSIProductList(complaintServiceProducts, invoiceId);
     //var saleinvoiceTaxes = [];
     //GetSaleInvoiceTaxList(saleinvoiceTaxes, invoiceId);
     //var saleinvoiceTerms = [];
@@ -371,31 +411,31 @@ function AddProduct(action) {
                 }
 
                 var complaintProduct = {
-                    ComplaintProductDetailID:complaintProductDetailID,                
+                    ComplaintProductDetailID: complaintProductDetailID,
                     SequenceNo: sequenceNo,
                     ProductId: productId,
-                    MappingId:mappingId,
+                    MappingId: mappingId,
                     ProductName: productName,
                     ProductCode: productCode,
                     WarrantyStartDate: productstartdate,
-                    WarrantyEndDate:productenddate,
-                   Remarks:remarks
+                    WarrantyEndDate: productenddate,
+                    Remarks: remarks
                 };
                 complaintProductList.push(complaintProduct);
                 productEntrySequence = parseInt(productEntrySequence) + 1;
             }
             else if (hdnSequenceNo.val() == sequenceNo) {
                 var complaintProduct = {
-                    ComplaintProductDetailID :hdnComplaintProductDetailId.val(),
+                    ComplaintProductDetailID: hdnComplaintProductDetailId.val(),
                     MappingId: hdnMappingId.val(),
                     SequenceNo: hdnSequenceNo.val(),
                     ProductId: hdnProductId.val(),
                     ProductName: txtProductName.val().trim(),
                     ProductCode: txtProductCode.val().trim(),
                     WarrantyStartDate: txtProductWarrantyStartDate.val(),
-                    WarrantyEndDate:txtWarrantyEndDate.val(),
-                    Remarks:txtProductRemarks.val().trim(),
-                   
+                    WarrantyEndDate: txtWarrantyEndDate.val(),
+                    Remarks: txtProductRemarks.val().trim(),
+
 
                 };
                 complaintProductList.push(complaintProduct);
@@ -418,7 +458,7 @@ function AddProduct(action) {
             WarrantyStartDate: txtProductWarrantyStartDate.val(),
             WarrantyEndDate: txtWarrantyEndDate.val(),
             Remarks: txtProductRemarks.val().trim(),
-    
+
         };
 
         complaintProductList.push(complaintProductAddEdit);
@@ -427,55 +467,55 @@ function AddProduct(action) {
     if (flag == true) {
         GetComplaintServiceProductList(complaintProductList);
     }
-        
+
 
 }
 function EditProductRow(obj) {
-  
-        var row = $(obj).closest("tr");
-        var complaintProductDetailId = $(row).find("#hdnComplaintProductDetailId").val();
-        var sequenceNo = $(row).find("#hdnSequenceNo").val();
-        var mappingId = $(row).find("#hdnMappingId").val();
-        var productId = $(row).find("#hdnProductId").val();
-        var productName = $(row).find("#hdnProductName").val();
-        var productCode = $(row).find("#hdnProductCode").val();
-        var remarks = $(row).find("#hdnRemarks").val();
+
+    var row = $(obj).closest("tr");
+    var complaintProductDetailId = $(row).find("#hdnComplaintProductDetailId").val();
+    var sequenceNo = $(row).find("#hdnSequenceNo").val();
+    var mappingId = $(row).find("#hdnMappingId").val();
+    var productId = $(row).find("#hdnProductId").val();
+    var productName = $(row).find("#hdnProductName").val();
+    var productCode = $(row).find("#hdnProductCode").val();
+    var remarks = $(row).find("#hdnRemarks").val();
 
 
-        $("#txtProductName").val(productName);
-        $("#hdnComplaintProductDetailId").val(complaintProductDetailId);
-        $("#hdnSequenceNo").val(sequenceNo);
-        $("#hdnMappingId").val(mappingId);
-        $("#hdnProductId").val(productId);
-        $("#txtProductCode").val(productCode);
-        $("#txtProductRemarks").val(remarks);
-        $("#btnAddProduct").hide();
-        $("#btnUpdateProduct").show();
-        ShowHideProductPanel(1);
-    
+    $("#txtProductName").val(productName);
+    $("#hdnComplaintProductDetailId").val(complaintProductDetailId);
+    $("#hdnSequenceNo").val(sequenceNo);
+    $("#hdnMappingId").val(mappingId);
+    $("#hdnProductId").val(productId);
+    $("#txtProductCode").val(productCode);
+    $("#txtProductRemarks").val(remarks);
+    $("#btnAddProduct").hide();
+    $("#btnUpdateProduct").show();
+    ShowHideProductPanel(1);
+
 }
 
 function RemoveProductRow(obj) {
 
-        var hdnAccessMode = $("#hdnAccessMode");
-        if (hdnAccessMode.val() == "3") {
-            ShowModel("Alert", "You can't modify in view mode.")
-            return false;
+    var hdnAccessMode = $("#hdnAccessMode");
+    if (hdnAccessMode.val() == "3") {
+        ShowModel("Alert", "You can't modify in view mode.")
+        return false;
+    }
+    else {
+
+
+        if (confirm("Do you want to remove selected Product?")) {
+            var row = $(obj).closest("tr");
+            var SequenceNo = $(row).find("#hdnSequenceNo").val();
+            var hdnProductId = $(row).find("#hdnProductId").val();
+            var mappingId = $(row).find("#hdnMappingId").val();
+            ShowModel("Alert", "Product Removed from List.");
+            row.remove();
+
         }
-        else {
 
-
-            if (confirm("Do you want to remove selected Product?")) {
-                var row = $(obj).closest("tr");
-                var SequenceNo = $(row).find("#hdnSequenceNo").val();
-                var hdnProductId = $(row).find("#hdnProductId").val();
-                var mappingId = $(row).find("#hdnMappingId").val();
-                ShowModel("Alert", "Product Removed from List.");
-                row.remove();
-
-            }
-  
-        }
+    }
 }
 
 function GetComplaintServiceProductList(complaintProduct) {
@@ -507,7 +547,7 @@ function ShowHideProductPanel(action) {
     else {
         $(".productsection").hide();
         $("#txtProductName").val("");
-        $("#hdnProductId").val("0");    
+        $("#hdnProductId").val("0");
         $("#txtProductCode").val("");
         $("#txtProductRemarks").val("");
         $("#btnAddProduct").show();
@@ -522,7 +562,7 @@ function ShowModel(headerText, bodyText) {
 
 }
 
-function SaveData() {    
+function SaveData() {
     var hdncomplaintServiceId = $("#hdncomplaintServiceId");
     var txtComplaintNo = $("#txtComplaintNo");
     var txtComplaintDate = $("#txtComplaintDate");
@@ -530,12 +570,14 @@ function SaveData() {
     var ddlComplaintMode = $("#ddlComplaintMode");
     var txtCustomerMobile = $("#txtCustomerMobile");
     var txtCustomerName = $("#txtCustomerName");
-    var txtCustomerEmail = $("#txtCustomerEmail"); 
+    var txtCustomerEmail = $("#txtCustomerEmail");
     var txtCustomerAddress = $("#txtCustomerAddress");
     var txtInvoiceNo = $("#txtInvoiceNo");
     var txtComplaintDescription = $("#txtComplaintDescription");
     var chkStatus = $("#chkStatus");
     var ddlCompanyBranch = $("#ddlCompanyBranch");
+    var ddlServiceEngineer = $("#ddlServiceEngineer");
+    var ddlDealer = $("#ddlDealer");
 
     if (ddlEnquiryType.val() == "" || ddlEnquiryType.val() == "0") {
         ShowModel("Alert", "Please Select Enquiry Type")
@@ -560,35 +602,43 @@ function SaveData() {
         txtComplaintDescription.focus();
         return false;
     }
-    
-    if (txtInvoiceNo.val().trim() == "") {
-        ShowModel("Alert", "Please Select Invoice No")
-        txtInvoiceNo.focus();
-        return false; 
-    }
+
+
     if (ddlCompanyBranch.val() == "" || ddlCompanyBranch.val() == "0") {
         ShowModel("Alert", "Please Select Company Branch")
         ddlCompanyBranch.focus();
-        return false; 
+        return false;
     }
-    
+
+    if (ddlServiceEngineer.val() == "" || ddlServiceEngineer.val() == "0") {
+        ShowModel("Alert", "Please select service engineer")
+        ddlServiceEngineer.focus();
+        return false;
+    }
+
+    if (ddlDealer.val() == "" || ddlDealer.val() == "0") {
+        ShowModel("Alert", "Please select dealer")
+        ddlDealer.focus();
+        return false;
+    }
+
+
+
     var accessMode = 1;//Add Mode
     if (hdncomplaintServiceId.val() != null && hdncomplaintServiceId.val() != 0) {
         accessMode = 2;//Edit Mode
     }
-   
+
 
     var Status = true;
-    if (chkStatus.prop("checked") == true)
-    { productStatus = true; }
-    else
-    { productStatus = false; }
+    if (chkStatus.prop("checked") == true) { productStatus = true; }
+    else { productStatus = false; }
 
 
     var complaintServiceViewModel = {
-        ComplaintId:hdncomplaintServiceId.val(),
+        ComplaintId: hdncomplaintServiceId.val(),
         ComplaintDate: txtComplaintDate.val().trim(),
-        InvoiceNo:txtInvoiceNo.val(),
+        InvoiceNo: txtInvoiceNo.val(),
         EnquiryType: ddlEnquiryType.val(),
         ComplaintMode: ddlComplaintMode.val(),
         CustomerMobile: txtCustomerMobile.val().trim(),
@@ -598,6 +648,8 @@ function SaveData() {
         ComplaintDescription: txtComplaintDescription.val().trim(),
         ComplaintService_Status: Status,
         BranchID: ddlCompanyBranch.val(),
+        EmployeeID: ddlServiceEngineer.val(),
+        DealerID: ddlDealer.val(),
     };
 
     var complaintProductList = [];
@@ -611,47 +663,47 @@ function SaveData() {
         var productCode = $row.find("#hdnProductCode").val();
         var remarks = $row.find("#hdnRemarks").val();
 
-        if (productId != undefined) {          
-                var complaintProduct = {
-                    ComplaintProductDetailID:complaintProductDetailID,                
-                    SequenceNo: sequenceNo,
-                    ProductId: productId,
-                    MappingId:mappingId,
-                    ProductName: productName,
-                    ProductCode: productCode,
-                    Remarks:remarks
-                };
-                complaintProductList.push(complaintProduct);
-            }
-        });
+        if (productId != undefined) {
+            var complaintProduct = {
+                ComplaintProductDetailID: complaintProductDetailID,
+                SequenceNo: sequenceNo,
+                ProductId: productId,
+                MappingId: mappingId,
+                ProductName: productName,
+                ProductCode: productCode,
+                Remarks: remarks
+            };
+            complaintProductList.push(complaintProduct);
+        }
+    });
 
-        var requestData = { complaintServiceViewModel: complaintServiceViewModel,complaintProducts: complaintProductList };
-        $.ajax({
-            url: "../ComplaintService/AddEditComplaintService?accessMode=" + accessMode + "",
-            cache: false,
-            type: "POST",
-            dataType: "json",
-            data: JSON.stringify(requestData),
-            contentType: 'application/json',
-            success: function (data) {
-                if (data.status == "SUCCESS") {
-                     ShowModel("Alert", data.message);
-                    ClearFields();
-                    setTimeout(
-                      function () {
-                          window.location.href = "../ComplaintService/ListComplaintService";
-                      }, 2000);
-                    $("#btnSave").show();
-                    $("#btnUpdate").hide();
-                }
-                else {
-                    ShowModel("Error", data.message)
-                }
-            },
-            error: function (err) {
-                ShowModel("Error", err)
+    var requestData = { complaintServiceViewModel: complaintServiceViewModel, complaintProducts: complaintProductList };
+    $.ajax({
+        url: "../ComplaintService/AddEditComplaintService?accessMode=" + accessMode + "",
+        cache: false,
+        type: "POST",
+        dataType: "json",
+        data: JSON.stringify(requestData),
+        contentType: 'application/json',
+        success: function (data) {
+            if (data.status == "SUCCESS") {
+                ShowModel("Alert", data.message);
+                ClearFields();
+                setTimeout(
+                    function () {
+                        window.location.href = "../ComplaintService/ListComplaintService";
+                    }, 2000);
+                $("#btnSave").show();
+                $("#btnUpdate").hide();
             }
-        });
+            else {
+                ShowModel("Error", data.message)
+            }
+        },
+        error: function (err) {
+            ShowModel("Error", err)
+        }
+    });
 
 }
 
@@ -660,6 +712,8 @@ function ClearFields() {
     $("#txtComplaintNo").val("");
     $("#txtComplaintDate").val("");
     $("#ddlEnquiryType").val("0");
+    $("#ddlDealer").val("0");
+    $("#ddlServiceEngineer").val("0");
     $("#ddlComplaintMode").val("0");
     $("#ddlCompanyBranch").val("0");
     $("#txtCustomerMobile").val("0");
@@ -670,10 +724,10 @@ function ClearFields() {
     $("#txtInvoiceNo").val("");
     $("#txtProductName").val("");
     $("#txtProductCode").val("");
-    $("#txtProductRemarks").val(""); 
+    $("#txtProductRemarks").val("");
     $("#txtInvoiceNo").val("");
     $("#chkStatus").attr("checked", true);
-    
+
 }
 
 function BindCompanyBranchList() {
@@ -703,7 +757,7 @@ function BindCompanyBranchList() {
     });
 }
 
-function GetComplaintServiceDetail(ComplaintId) {    
+function GetComplaintServiceDetail(ComplaintId) {
     $.ajax({
         type: "GET",
         asnc: false,
@@ -711,6 +765,7 @@ function GetComplaintServiceDetail(ComplaintId) {
         data: { ComplaintId: ComplaintId },
         dataType: "json",
         success: function (data) {
+            debugger;
             $("#txtComplaintNo").val(data.ComplaintNo);
             $("#txtComplaintDate").val(data.ComplaintDate);
             $("#txtInvoiceNo").val(data.InvoiceNo);
@@ -722,6 +777,8 @@ function GetComplaintServiceDetail(ComplaintId) {
             $("#txtCustomerAddress").val(data.CustomerAddress);
             $("#txtComplaintDescription").val(data.ComplaintDescription);
             $("#ddlCompanyBranch").val(data.BranchID);
+            $("#ddlServiceEngineer").val(data.EmployeeID);
+            $("#ddlDealer").val(data.DealerID);
             $("#chkStatus").val(data.status);
 
             if (data.status == "Final") {
@@ -751,11 +808,47 @@ function GetComplaintServiceDetail(ComplaintId) {
     });
 }
 
+
 function ExecuteSave() {
 
     setTimeout(
-function () {
-    SaveData();
-}, 2000);
+        function () {
+            SaveData();
+        }, 2000);
     SetGSTPercentageInProduct();
+}
+
+//open master Customer pop up----------
+function OpenCustomerMasterPopup() {
+    CheckMasterPermission($("#hdnRoleId").val(), 32, 'AddNewCustomer');
+}
+
+//Check Pop Up Master Permissions by User Role, Master Id
+function CheckMasterPermission(RoleId, InterfaceId, ModalId) {
+    var IsAuthorized = false;
+    var AccessMode = 1;
+    $.ajax({
+        type: "GET",
+        url: "../Role/CheckMasterPermission",
+        data: { roleId: RoleId, interfaceId: InterfaceId, accessMode: AccessMode },
+        dataType: "json",
+        asnc: true,
+        success: function (data) {
+            if (data != null) {
+                if (data == true) {
+                    IsAuthorized = true;
+                    if (IsAuthorized == true) {
+                        $("#" + ModalId).modal();
+                    }
+                }
+                else {
+                    ShowModel('Alert', 'You are not authorized for this action.');
+                }
+            }
+        },
+        error: function (Result) {
+            ShowModel('Alert', 'Problem in Request');
+        }
+    });
+
 }

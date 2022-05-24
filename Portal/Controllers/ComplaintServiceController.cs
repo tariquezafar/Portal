@@ -10,6 +10,7 @@ using System.Reflection;
 using Microsoft.Reporting.WebForms;
 using Microsoft.ReportingServices;
 using System.IO;
+using Portal.Common.ViewModel;
 
 namespace Portal.Controllers
 {
@@ -164,14 +165,14 @@ namespace Portal.Controllers
         }
 
         [HttpGet]
-        public PartialViewResult GetComplaintServiceList(string complaintNo = "", string enquiryType = "", string complaintMode = "", string customerMobile = "", string customerName = "", string approvalStatus="",int companyBranchId=0)
+        public PartialViewResult GetComplaintServiceList(string complaintNo = "", string enquiryType = "", string complaintMode = "", string customerMobile = "", string customerName = "", string approvalStatus="",int companyBranchId=0, int serviceEngineerId = 0, int dealerId = 0)
         {
             List<ComplaintServiceViewModel> complaints = new List<ComplaintServiceViewModel>();
             ComplaintServiceBL complaintServiceBL = new ComplaintServiceBL();
 
             try
             {
-                complaints = complaintServiceBL.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName,approvalStatus, companyBranchId);
+                complaints = complaintServiceBL.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName,approvalStatus, companyBranchId, serviceEngineerId, dealerId);
             }
             catch (Exception ex)
             {
@@ -213,6 +214,30 @@ namespace Portal.Controllers
                 Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
             }
             return PartialView(saleinvoiceProducts);
+        }
+
+        /// <summary>
+        /// This method is used to get customer Type List.
+        /// Author By : Dheeraj kumar on 21 May, 2022
+        /// </summary>
+        /// <param name="customerTypeId">primary key of the table</param>
+        /// <returns>
+        /// This method retruns list of customer based on parameters.
+        /// </returns>
+        [HttpGet]
+        public JsonResult GetCustomerTypeList()
+        {
+            List<SelectListModel> lstSelectListModel = new List<SelectListModel>();
+            ComplaintServiceBL complaintServiceBL = new ComplaintServiceBL();
+            try
+            {
+                lstSelectListModel = complaintServiceBL.GetCustomerTypeList(6);
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+            }
+            return Json(lstSelectListModel, JsonRequestBehavior.AllowGet);
         }
 
     }

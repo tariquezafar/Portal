@@ -1,7 +1,5 @@
-﻿@{
-    ViewBag.Title = "AddEditComplaintService";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
+﻿@{ ViewBag.Title = "AddEditComplaintService";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
 <link href="~/Content/jquery-ui.css" rel="stylesheet" />
 <style>
     .Mandatory {
@@ -78,7 +76,7 @@
 
                         <input id="hdncomplaintServiceId" type="hidden" value="@ViewData["complaintServiceId"]" />
                         <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
-                      
+                        <input id="hdnRoleId" type="hidden" value="@ViewData["RoleId"]" />
 
                     </div>
                 </div>
@@ -94,7 +92,7 @@
                     <div class="col-sm-8">
 
                         <select id="ddlEnquiryType" name="ddlEnquiryType" tabindex="3" class="form-control">
-                            <option selected="selected" value="0">-Select Enquiry Type-</option>
+                            <option selected="selected" value="0">Select Enquiry Type</option>
                             <option value="Complaint">Complaint</option>
                             <option value="Suggestion">Suggestion</option>
                             <option value="Feedback">Feedback</option>
@@ -110,7 +108,7 @@
                     <label for="ddlComplaintMode" class="col-sm-4 control-label">Complaint Mode&nbsp;<span class="Mandatory">(*)</span></label>
                     <div class="col-sm-8">
                         <select id="ddlComplaintMode" name="ddlComplaintMode" tabindex="5" class="form-control">
-                            <option selected="selected" value="0">-Select Complaint Mode-</option>
+                            <option selected="selected" value="0">Select Complaint Mode</option>
                             <option value="Telephonic">Telephonic</option>
                             <option value="Email">Email</option>
                         </select>
@@ -120,32 +118,33 @@
                     <label for="txtCustomerMobile" class="col-sm-4 control-label">Customer Mobile&nbsp;<span class="Mandatory">(*)</span></label>
                     <div class="col-sm-8">
                         <input class="form-control input-number numeric-only" id="txtCustomerMobile" name="txtCustomerMobile" tabindex="6" placeholder="Enter Customer Mobile" type="text" maxlength="10" />
-                        <input id="hdnCustomerId" type="hidden" value="@ViewData["customerId"]" />
+
                     </div>
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="txtCustomerName" class="col-sm-4 control-label">Customer Name&nbsp;<span class="Mandatory">(*)</span></label>
+                    <a class="fa fa-plus-circle col-sm-1 editonly" data-toggle="btnAddNewCustomer" onclick="OpenCustomerMasterPopup()" id="btnAddNewCustomer" tabindex="17" title="Add Party" style="padding-top:10px; float:left !important;color: #337ab7;" href="#"></a>
+                    <label for="txtCustomerName" class="col-sm-3 control-label">Customer Name&nbsp;<span class="Mandatory">(*)</span></label>
                     <div class="col-sm-8">
-                        <input class="form-control" id="txtCustomerName" name="txtCustomerName"  tabindex="7" placeholder="Enter Customer Name" type="text" maxlength="100" />
+                        <input class="form-control" id="txtCustomerName" name="txtCustomerName" tabindex="7" placeholder="Enter Customer Name" type="text" maxlength="100" />
                         <input id="hdnCustomerId" type="hidden" value="@ViewData["customerId"]" />
-                        
+
                     </div>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form-group col-md-4">
-                    <label for="txtCustomerEmail" class="col-sm-4 control-label">Customer Email&nbsp;<span class="Mandatory">(*)</span></label>
+                    <label for="txtCustomerEmail" class="col-sm-4 control-label">Customer Email</label>
                     <div class="col-sm-8">
                         <input class="form-control" id="txtCustomerEmail" name="txtCustomerEmail" tabindex="8" placeholder="Enter Customer Email" type="text" maxlength="100" />
                         <input id="hdnCustomerId" type="hidden" value="@ViewData["customerId"]" />
-                     </div>
+                    </div>
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="txtCustomerAddress" class="col-sm-4 control-label">Customer Address&nbsp;<span class="Mandatory">(*)</span></label>
+                    <label for="txtCustomerAddress" class="col-sm-4 control-label">Customer Address</label>
                     <div class="col-sm-8">
                         <input class="form-control" id="txtCustomerAddress" name="txtCustomerAddress" tabindex="9" placeholder="Enter Customer Address" type="text" maxlength="500" />
                         <input id="hdnCustomerId" type="hidden" value="@ViewData["customerId"]" />
-                     </div>
+                    </div>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="txtComplaintDescription" class="col-sm-4 control-label">Complaint Description&nbsp;<span class="Mandatory">(*)</span></label>
@@ -156,16 +155,15 @@
             </div>
             <div class="col-md-12">
                 <div class="form-group col-md-4">
-                    <label for="txtInvoiceNo" class="col-sm-4 control-label">Invoice No&nbsp;<span class="Mandatory">(*)</span></label>
+                    <label for="txtInvoiceNo" class="col-sm-4 control-label">Invoice No</label>
                     <div class="col-sm-8">
                         <input class="form-control" id="txtInvoiceNo" name="txtInvoiceNo" tabindex="11" placeholder="Invoice No" type="text" maxlength="100" />
-                        @*<input id="hdnInvoiceId" type="hidden" value="0" />*@
                     </div>
-                    
+
                 </div>
                 <div class="form-group col-md-4">
-                    <a class="fa fa-search col-sm-1" tabindex="12" onclick="OpenInvoiceSearchPopup()" id="btnSearchInvoice" style="padding-top:5px;float:left !important" href="#"></a>
-                    <label for="ddlCompanyBranch" class="col-sm-3 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+
+                    <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
                     <div class="col-sm-8">
                         <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="21" class="form-control"></select>
                         <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
@@ -173,26 +171,43 @@
                     </div>
                 </div>
                 <div class="form-group col-md-4">
+                    <label for="ddlServiceEngineer" class="col-sm-4 control-label">Service Engineer&nbsp;<span class="Mandatory">(*)</span> </label>
+                    <div class="col-sm-8">
+                        <select id="ddlServiceEngineer" name="ddlServiceEngineer" tabindex="4" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+
+                <div class="form-group col-md-4">
+                    <label for="ddlDealer" class="col-sm-4 control-label">Dealer&nbsp;<span class="Mandatory">(*)</span> </label>
+                    <div class="col-sm-8">
+                        <select id="ddlDealer" name="ddlDealer" tabindex="4" class="form-control"></select>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
                     <label for="chkStatus" class="col-sm-4 control-label">Active Status</label>
                     <div class="col-sm-8">
-                        <input type="checkbox" name="chkStatus"  id="chkStatus" checked="checked" class="" />
+                        <input type="checkbox" name="chkStatus" id="chkStatus" checked="checked" class="" />
                         <label style="font-size: 24px;" tabindex="22" for="chkStatus"></label>
                     </div>
                 </div>
-                </div>
+            </div>
 
-                <div class="col-md-12" id="divAddProduct">
-                    <div class="form-group col-md-4">
-
-                    </div>
-                    <div class="form-group col-md-4" style="background-color:yellow">
-                        <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Product Detail</b></label></h4>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <input class="btn btn-success editonly" value="Add Product" tabindex="23" alt="Add Product" onclick="ShowHideProductPanel(1)" id="btnAddNewProduct" type="button" border="0">
-                    </div>
+            <div class="col-md-12" id="divAddProduct">
+                <div class="form-group col-md-4">
 
                 </div>
+                <div class="form-group col-md-4" style="background-color:yellow">
+                    <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Product Detail</b></label></h4>
+                </div>
+                <div class="form-group col-md-4">
+                    <input class="btn btn-success editonly" value="Add Product" tabindex="23" alt="Add Product" onclick="ShowHideProductPanel(1)" id="btnAddNewProduct" type="button" border="0">
+                </div>
+
+            </div>
             <div class="col-md-12 productsection" style="display:none;">
                 <div class="form-group col-md-4">
                     <label for="txtProductName" class="col-sm-4 control-label">Product Name&nbsp;<span class="Mandatory">(*)</span></label>
@@ -224,49 +239,49 @@
                         <input id="txtWarrantyEndDate" name="txtWarrantyEndDate" readonly tabindex="27" type="text" maxlength="50" class="form-control" />
                     </div>
                 </div>
-           
-                    <div class="form-group col-md-4">
-                        <label for="txtProductRemarks" class="col-sm-4 control-label">Remarks</label>
-                        <div class="col-sm-8">
-                            <textarea id="txtProductRemarks" name="txtProductRemarks" tabindex="28" rows="2" type="text" maxlength="250" class="form-control"></textarea>
-                        </div>
+
+                <div class="form-group col-md-4">
+                    <label for="txtProductRemarks" class="col-sm-4 control-label">Remarks</label>
+                    <div class="col-sm-8">
+                        <textarea id="txtProductRemarks" name="txtProductRemarks" tabindex="28" rows="2" type="text" maxlength="250" class="form-control"></textarea>
                     </div>
                 </div>
+            </div>
 
 
-                <div class="col-sm-12 col-lg-12 col-md-12 productsection" style="display:none;">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6">
-                        <center>
-                            <input class="btn btn-success" value="Add Product" alt="Add Product" id="btnAddProduct" tabindex="29" onclick="AddProduct(1)" type="button" border="0">
-                            <input class="btn btn-success" value="Update Product" style="display:none;" alt="Update Product" tabindex="29" id="btnUpdateProduct" onclick="AddProduct(2)" type="button" border="0">
-                            <input class="btn btn-success" type="button" id="btnCancelProduct" tabindex="30" onclick="ShowHideProductPanel(2)" value="Cancel" />
-                        </center>
-                    </div>
-                    <div class="col-md-3"></div>
+            <div class="col-sm-12 col-lg-12 col-md-12 productsection" style="display:none;">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Add Product" alt="Add Product" id="btnAddProduct" tabindex="29" onclick="AddProduct(1)" type="button" border="0">
+                        <input class="btn btn-success" value="Update Product" style="display:none;" alt="Update Product" tabindex="29" id="btnUpdateProduct" onclick="AddProduct(2)" type="button" border="0">
+                        <input class="btn btn-success" type="button" id="btnCancelProduct" tabindex="30" onclick="ShowHideProductPanel(2)" value="Cancel" />
+                    </center>
                 </div>
-                <div class="col-sm-12 col-lg-12 col-md-12">
-                    <div id="divProductList">
+                <div class="col-md-3"></div>
+            </div>
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <div id="divProductList">
 
-                    </div>
                 </div>
-                <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6">
-                        <center>
-                            <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="31" onclick="SaveData(1)" type="button" border="0">
-                            <input class="btn btn-success" value="Update" style="display:none;" tabindex="31" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">
-                            <a class="btn btn-success" id="btnReset" tabindex="34" href="@Url.Content("~/ComplaintService/AddEditComplaintService")">Reset</a>
+            </div>
+            <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="31" onclick="SaveData(1)" type="button" border="0">
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="31" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">
+                        <a class="btn btn-success" id="btnReset" tabindex="34" href="@Url.Content("~/ComplaintService/AddEditComplaintService")">Reset</a>
 
-                            <a class="btn btn-success" id="btnList" tabindex="35" href="@Url.Content("~/ComplaintService/ListComplaintService")">Search Complaint Service</a>
+                        <a class="btn btn-success" id="btnList" tabindex="35" href="@Url.Content("~/ComplaintService/ListComplaintService")">Search Complaint Service</a>
 
-                        </center>
-                    </div>
-                    <div class="col-md-3"></div>
+                    </center>
                 </div>
+                <div class="col-md-3"></div>
+            </div>
 
 
-            </div>  
+        </div>
 
         <!-- Modal -->
         <div class="modal fade" id="alertModel" tabindex="32" role="dialog">
@@ -321,7 +336,7 @@
                                 <label for="txtSearchRefNo" class="col-sm-4 control-label">Product Serial No.</label>
                                 <div class="col-sm-8 ">
                                     <input class="form-control" id="txtSearchRefNo" name="txtSearchRefNo" tabindex="16" placeholder="Search with Product Serial No." type="text" maxlength="50" />
-                                </div> 
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -359,6 +374,29 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" tabindex="20" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--Master Pop Up For Customer-->
+        <div class="modal fade Book" id="AddNewCustomer" role="dialog">
+
+            <div class="modal-dialog  modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add New Customer</h4>
+                    </div>
+                    <div class="">
+
+                        @{Html.RenderPartial("_CustomerPartial");}
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
 

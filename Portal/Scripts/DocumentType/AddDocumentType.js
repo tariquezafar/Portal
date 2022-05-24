@@ -1,9 +1,10 @@
 ﻿$(document).ready(function () {
     BindCompanyBranchList();
 
-    var hdnAccessMode = $("#hdnAccessMode"); 
+    var hdnAccessMode = $("#hdnAccessMode");
     var hdnDocumentTypeId = $("#hdnDocumentTypeId");
     if (hdnDocumentTypeId.val() != "" && hdnDocumentTypeId.val() != "0" && hdnAccessMode.val() != "" && hdnAccessMode.val() != "0") {
+        debugger;
         GetDocumentTypeDetail(hdnDocumentTypeId.val());
         if (hdnAccessMode.val() == "3") {
             $("#btnSave").hide();
@@ -73,6 +74,7 @@ $(".alpha-numeric-only").on("input", function () {
 
 
 function GetDocumentTypeDetail(documenttypeId) {
+    debugger;
     $.ajax({
         type: "GET",
         asnc: false,
@@ -80,8 +82,10 @@ function GetDocumentTypeDetail(documenttypeId) {
         data: { documenttypeId: documenttypeId },
         dataType: "json",
         success: function (data) {
+            debugger;
             $("#txtDocumentTypeDesc").val(data.DocumentTypeDesc);
             $("#ddlCompanyBranch").val(data.CompanyBranchId);
+            $("#ddlModuleType").val(data.ModuleType);
             if (data.DocumentType_Status == true) {
                 $("#chkstatus").attr("checked", true);
             }
@@ -96,9 +100,11 @@ function GetDocumentTypeDetail(documenttypeId) {
 }
 
 function SaveData() {
+    debugger;
     var txtDocumentTypeDesc = $("#txtDocumentTypeDesc");
     var hdnDocumentTypeId = $("#hdnDocumentTypeId");
     var ddlCompanyBranch = $("#ddlCompanyBranch");
+    var ddlModuleType = $("#ddlModuleType");
 
     var chkstatus = $("#chkstatus").is(':checked') ? true : false;
 
@@ -113,14 +119,20 @@ function SaveData() {
         return false;
     }
 
+    if (ddlModuleType.val() == "" || ddlModuleType.val() == "0") {
+        ShowModel("Alert", "Please select module type")
+        return false;
+    }
+
     var documenttypeViewModel = {
         DocumentTypeId: hdnDocumentTypeId.val(),
         DocumentTypeDesc: txtDocumentTypeDesc.val().trim(),
         DocumentType_Status: chkstatus,
         CompanyBranchId: ddlCompanyBranch.val(),
+        ModuleType: ddlModuleType.val()
     };
 
-    
+
     var accessMode = 1;//Add Mode
     if (hdnDocumentTypeId.val() != null && hdnDocumentTypeId.val() != 0) {
         accessMode = 2;//Edit Mode
@@ -139,9 +151,9 @@ function SaveData() {
                 ShowModel("Alert", data.message);
                 ClearFields();
                 setTimeout(
-               function () {
-                   window.location.href = "../DocumentType/ListDocumentType";
-               }, 2000);
+                    function () {
+                        window.location.href = "../DocumentType/ListDocumentType";
+                    }, 2000);
                 $("#btnSave").show();
                 $("#btnUpdate").hide();
             }

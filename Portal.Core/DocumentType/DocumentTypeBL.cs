@@ -52,7 +52,8 @@ namespace Portal.Core
                     DocumentTypeDesc = documenttypeViewModel.DocumentTypeDesc,
                     CompanyId = documenttypeViewModel.CompanyId,
                     Status = documenttypeViewModel.DocumentType_Status,
-                    CompanyBranchId=documenttypeViewModel.CompanyBranchId
+                    CompanyBranchId=documenttypeViewModel.CompanyBranchId,
+                    ModuleType = documenttypeViewModel.ModuleType
 
                 };
                 responseOut = dbInterface.AddEditDocumentType(documenttype);
@@ -68,13 +69,13 @@ namespace Portal.Core
         }
 
 
-        public List<DocumentTypeViewModel> GetDocumentTypeList(string documenttypeDesc = "", int companyId = 0, string Status = "",int companyBranchId=0)
+        public List<DocumentTypeViewModel> GetDocumentTypeList(string documenttypeDesc = "", int companyId = 0, string Status = "", int companyBranchId = 0, string moduleType = "")
         {
             List<DocumentTypeViewModel> documenttypes = new List<DocumentTypeViewModel>();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
             try
             {
-                DataTable dtDocumentTypes = sqlDbInterface.GetDocumentTypeList(documenttypeDesc, companyId, Status, companyBranchId);
+                DataTable dtDocumentTypes = sqlDbInterface.GetDocumentTypeList(documenttypeDesc, companyId, Status, companyBranchId, moduleType);
                 if (dtDocumentTypes != null && dtDocumentTypes.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dtDocumentTypes.Rows)
@@ -85,7 +86,8 @@ namespace Portal.Core
                             CompanyId = Convert.ToInt32(dr["CompanyId"]),
                             DocumentTypeDesc = Convert.ToString(dr["DocumentTypeDesc"]),
                             DocumentType_Status = Convert.ToBoolean(dr["Status"]),
-                            CompanyBranchName= Convert.ToString(dr["CompanyBranchName"]),
+                            CompanyBranchName = Convert.ToString(dr["CompanyBranchName"]),
+                            ModuleType = Convert.ToString(dr["ModuleType"]),
 
                         });
                     }
@@ -116,6 +118,7 @@ namespace Portal.Core
                             DocumentTypeDesc = Convert.ToString(dr["DocumentTypeDesc"]),
                             DocumentType_Status = Convert.ToBoolean(dr["Status"]),
                             CompanyBranchId= Convert.ToInt32(dr["CompanyBranchId"]),
+                            ModuleType = Convert.ToString(dr["ModuleType"]),
                         };
                     }
                 }

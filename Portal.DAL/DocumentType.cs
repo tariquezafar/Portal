@@ -19,5 +19,6 @@ namespace Portal.DAL
         public Nullable<int> CompanyId { get; set; }
         public Nullable<bool> Status { get; set; }
         public Nullable<int> CompanyBranchId { get; set; }
+        public string ModuleType { get; set; }
     }
 }

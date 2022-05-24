@@ -1,5 +1,7 @@
 ﻿
 $(document).ready(function () {
+    BindServiceEngineerList();
+    BindSDealerList();
     $("#txtFromDate").attr('readOnly', true);
     $("#txtToDate").attr('readOnly', true);
     $("#txtFromDate,#txtToDate").datepicker({
@@ -12,7 +14,7 @@ $(document).ready(function () {
         }
     });
     BindCompanyBranchList();
-    
+
 });
 
 $(".alpha-only").on("input", function () {
@@ -52,17 +54,29 @@ function ClearFields() {
 
 }
 
-    function SearchComplaintservice() {
+function SearchComplaintservice() {
     var txtComplaintNo = $("#txtComplaintNo");
     var ddlComplaintType = $("#ddlComplaintType");
     var ddlComplaintMode = $("#ddlComplaintMode");
     var txtCustomerMobile = $("#txtCustomerMobile");
-    var txtCustomerName = $("#txtCustomerName");    
-    var txtComplaintSubject = $("#txtComplaintSubject"); 
+    var txtCustomerName = $("#txtCustomerName");
+    var txtComplaintSubject = $("#txtComplaintSubject");
     var ddlStatus = $("#ddlStatus");
     var ddlCompanyBranch = $("#ddlCompanyBranch");
+    var ddlServiceEngineer = $("#ddlServiceEngineer");
+    var ddlDealer = $("#ddlDealer");
 
-    var requestData = { complaintNo: txtComplaintNo.val().trim(), enquiryType: ddlComplaintType.val(), complaintMode: ddlComplaintMode.val().trim(), customerMobile: txtCustomerMobile.val(), customerName: txtCustomerName.val(), approvalStatus: ddlStatus.val(), companyBranchId: ddlCompanyBranch.val() };
+    var requestData = {
+        complaintNo: txtComplaintNo.val().trim(),
+        enquiryType: ddlComplaintType.val(),
+        complaintMode: ddlComplaintMode.val().trim(),
+        customerMobile: txtCustomerMobile.val(),
+        customerName: txtCustomerName.val(),
+        approvalStatus: ddlStatus.val(),
+        companyBranchId: ddlCompanyBranch.val(),
+        serviceEngineerId: ddlServiceEngineer.val(),
+        dealerId: ddlDealer.val()
+    };
     $.ajax({
         url: "../ComplaintService/GetComplaintServiceList",
         data: requestData,
@@ -106,6 +120,44 @@ function BindCompanyBranchList() {
         },
         error: function (Result) {
             $("#ddlCompanyBranch").append($("<option></option>").val(0).html("-Select Company Branch-"));
+        }
+    });
+}
+
+function BindServiceEngineerList() {
+    $.ajax({
+        type: "GET",
+        url: "../Employee/GetDesignationByDepartmentID",
+        data: "{}",
+        dataType: "json",
+        asnc: false,
+        success: function (data) {
+            $("#ddlServiceEngineer").append($("<option></option>").val(0).html("Select Service Engineer"));
+            $.each(data, function (i, item) {
+                $("#ddlServiceEngineer").append($("<option></option>").val(item.EmployeeId).html(item.EmployeeName));
+            });
+        },
+        error: function (Result) {
+            $("#ddlServiceEngineer").append($("<option></option>").val(0).html("Select Service Engineer"));
+        }
+    });
+}
+
+function BindSDealerList() {
+    $.ajax({
+        type: "GET",
+        url: "../ComplaintService/GetCustomerTypeList",
+        data: "{}",
+        dataType: "json",
+        asnc: false,
+        success: function (data) {
+            $("#ddlDealer").append($("<option></option>").val(0).html("Select Dealer"));
+            $.each(data, function (i, item) {
+                $("#ddlDealer").append($("<option></option>").val(item.ValueInt).html(item.Text));
+            });
+        },
+        error: function (Result) {
+            $("#ddlDealer").append($("<option></option>").val(0).html("Select Service Engineer"));
         }
     });
 }

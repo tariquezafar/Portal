@@ -112,6 +112,7 @@
     <Compile Include="SendMail.cs" />
     <Compile Include="SessionKey.cs" />
     <Compile Include="UserInterfaceHelper.cs" />
+    <Compile Include="ViewModel\SelectListModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

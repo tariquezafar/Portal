@@ -9,6 +9,7 @@ using Portal.Common;
 using System.Reflection;
 using System.Data;
 using System.Transactions;
+using Portal.Common.ViewModel;
 
 namespace Portal.Core
 {
@@ -19,30 +20,32 @@ namespace Portal.Core
         {
             dbInterface = new DBInterface();
         }
-        
+
         public ResponseOut AddEditComplaintService(ComplaintServiceViewModel complaintServiceViewModel, List<ComplaintServiceProductDetailViewModel> complaintProduct)
         {
             ResponseOut responseOut = new ResponseOut();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
             try
+            {
+                ComplaintService complaintService = new ComplaintService
                 {
-                    ComplaintService complaintService = new ComplaintService
-                    {
-                        ComplaintId = complaintServiceViewModel.ComplaintId,
-                        EnquiryType= complaintServiceViewModel.EnquiryType,
-                        ComplaintMode = complaintServiceViewModel.ComplaintMode,                       
-                        ComplaintDescription = complaintServiceViewModel.ComplaintDescription,
-                        CustomerName = complaintServiceViewModel.CustomerName,
-                        CustomerMobile = complaintServiceViewModel.CustomerMobile,
-                        CustomerEmail = complaintServiceViewModel.CustomerEmail,
-                        CustomerAddress = complaintServiceViewModel.CustomerAddress,
-                        Status = complaintServiceViewModel.ComplaintService_Status,
-                        BranchID=complaintServiceViewModel.BranchID,
-                       ComplaintDate= Convert.ToDateTime(complaintServiceViewModel.ComplaintDate),
-                       InvoiceNo=complaintServiceViewModel.InvoiceNo,
+                    ComplaintId = complaintServiceViewModel.ComplaintId,
+                    EnquiryType = complaintServiceViewModel.EnquiryType,
+                    ComplaintMode = complaintServiceViewModel.ComplaintMode,
+                    ComplaintDescription = complaintServiceViewModel.ComplaintDescription,
+                    CustomerName = complaintServiceViewModel.CustomerName,
+                    CustomerMobile = complaintServiceViewModel.CustomerMobile,
+                    CustomerEmail = complaintServiceViewModel.CustomerEmail,
+                    CustomerAddress = complaintServiceViewModel.CustomerAddress,
+                    Status = complaintServiceViewModel.ComplaintService_Status,
+                    BranchID = complaintServiceViewModel.BranchID,
+                    ComplaintDate = Convert.ToDateTime(complaintServiceViewModel.ComplaintDate),
+                    InvoiceNo = complaintServiceViewModel.InvoiceNo,
+                    EmployeeID = complaintServiceViewModel.EmployeeID,
+                    DealerID = complaintServiceViewModel.DealerID
 
 
-                    };
+                };
                 List<ComplaintServiceProductDetail> complaintProductList = new List<ComplaintServiceProductDetail>();
                 if (complaintProduct != null && complaintProduct.Count > 0)
                 {
@@ -51,9 +54,9 @@ namespace Portal.Core
                         complaintProductList.Add(new ComplaintServiceProductDetail
                         {
                             ComplaintProductDetailID = item.ComplaintProductDetailID,
-                            ComplaintId=item.ComplaintId,
-                           ProductId=item.ProductId,
-                          Remarks =item.Remarks
+                            ComplaintId = item.ComplaintId,
+                            ProductId = item.ProductId,
+                            Remarks = item.Remarks
                         });
                     }
                 }
@@ -68,7 +71,7 @@ namespace Portal.Core
                 throw ex;
             }
             return responseOut;
-           
+
         }
 
         public ComplaintServiceViewModel GetComplaintServiceDetail(int ComplaintId = 0)
@@ -97,6 +100,8 @@ namespace Portal.Core
                             ComplaintService_Status = Convert.ToBoolean(dr["Status"]),
                             ComplaintDescription=Convert.ToString(dr["ComplaintDescription"]),
                             BranchID= Convert.ToInt32(dr["BranchID"]),
+                            EmployeeID = Convert.ToInt32(dr["EmployeeID"]),
+                            DealerID = Convert.ToInt32(dr["DealerID"]),
 
                         };
                     }
@@ -143,13 +148,13 @@ namespace Portal.Core
             return complaintProducts;
         }
 
-        public List<ComplaintServiceViewModel> GetComplaintServiceList(string complaintNo, string enquiryType, string complaintMode, string customerMobile, string customerName, string approvalStatus,int companyBranchId)
+        public List<ComplaintServiceViewModel> GetComplaintServiceList(string complaintNo, string enquiryType, string complaintMode, string customerMobile, string customerName, string approvalStatus, int companyBranchId, int serviceEngineerId, int dealerId)
         {
             List<ComplaintServiceViewModel> complaints = new List<ComplaintServiceViewModel>();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
             try
             {
-                DataTable dtComplaints = sqlDbInterface.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName, approvalStatus, companyBranchId);
+                DataTable dtComplaints = sqlDbInterface.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName, approvalStatus, companyBranchId, serviceEngineerId, dealerId);
                 if (dtComplaints != null && dtComplaints.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dtComplaints.Rows)
@@ -160,10 +165,12 @@ namespace Portal.Core
                             ComplaintNo = Convert.ToString(dr["ComplaintNo"]),
                             EnquiryType = Convert.ToString(dr["EnquiryType"]),
                             ComplaintMode = Convert.ToString(dr["ComplaintMode"]),
-                            CustomerMobile= Convert.ToString(dr["CustomerMobile"]),
+                            CustomerMobile = Convert.ToString(dr["CustomerMobile"]),
                             CustomerName = Convert.ToString(dr["CustomerName"]),
-                            ComplaintService_Status =Convert.ToBoolean(dr["Status"]),
-                            CompanyBranchName= Convert.ToString(dr["CompanyBranchName"]),
+                            ComplaintService_Status = Convert.ToBoolean(dr["Status"]),
+                            CompanyBranchName = Convert.ToString(dr["CompanyBranchName"]),
+                            DealerName = Convert.ToString(dr["DealerName"]),
+                            EmployeeName = Convert.ToString(dr["EmployeeName"]),
                         });
                     }
                 }
@@ -207,6 +214,30 @@ namespace Portal.Core
                 throw ex;
             }
             return saleinvoiceProducts;
+        }
+
+        /// <summary>
+        /// This method is used to get customer Type List.
+        /// Author By : Dheeraj kumar on 21 May, 2022
+        /// </summary>
+        /// <param name="customerTypeId">primary key of the table</param>
+        /// <returns>
+        /// This method retruns list of customer based on parameters.
+        /// </returns>
+        public List<SelectListModel> GetCustomerTypeList(int customerTypeId)
+        {
+            List<SelectListModel> lstSelectListModel = new List<SelectListModel>();
+            try
+            {
+                lstSelectListModel = dbInterface.GetCustomerTypeList(customerTypeId);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return lstSelectListModel;
         }
     }
 }

@@ -34,5 +34,7 @@ namespace Portal.DAL
         public Nullable<int> ComplaintSequence { get; set; }
         public Nullable<System.DateTime> ComplaintDate { get; set; }
         public string InvoiceNo { get; set; }
+        public Nullable<int> EmployeeID { get; set; }
+        public Nullable<int> DealerID { get; set; }
     }
 }

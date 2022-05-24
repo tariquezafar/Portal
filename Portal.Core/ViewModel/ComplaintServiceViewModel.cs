@@ -28,7 +28,14 @@ namespace Portal.Core.ViewModel
         public int CompanyId { get; set; }
         public string ComplaintDate { get; set; }
         public string InvoiceNo { get; set; }
-     
+        public int? EmployeeID { get; set; }
+
+        public int? DealerID { get; set; }
+
+
+        public string DealerName { get; set; }
+        public string EmployeeName { get; set; }
+
     }
 
     

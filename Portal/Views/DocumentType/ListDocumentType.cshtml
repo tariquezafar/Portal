@@ -1,7 +1,5 @@
-﻿@{
-    ViewBag.Title = "List DocumentType";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
+﻿@{ ViewBag.Title = "List DocumentType";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
 
 <div class="row top-head">
     <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AdminDashboard">Admin</a> >> List Document Type</b></p></div>
@@ -9,7 +7,7 @@
 <section>
     <form action="#" id="frmAddEditDocumentType" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
         <div class="row inner">
-            <div class="message"> 
+            <div class="message">
             </div>
             <div class="col-md-12 ftop">
                 <div class="form-group col-md-4">
@@ -30,34 +28,58 @@
                     </div>
                 </div>
 
-                <div class="form-group col-md-4"> 
-                        <label for="selstatus" class="col-sm-4 control-label">Status</label>
-                        <div class="col-sm-8">
-                            <select name="ddlStatus" id="ddlStatus" class="form-control" tabindex="2">
-                                <option value="">All</option>
-                                <option value="1">Active</option>
-                                <option value="0">InActive</option>
-                            </select>
-                        </div> 
-                </div>
-                </div>
-                <div class="row col-sm-6 col-lg-12 col-md-12">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6">
-                        <center>
-                            <input class="btn btn-success" value="Search" alt="Save" tabindex="3" id="btnSearch" onclick="SearchDocumentType()" type="button" border="0">
-                            <input class="btn btn-success" type="button" tabindex="4" id="btnReset" onclick="ClearFields()" value="Reset" /> 
-                            <a class="btn btn-success" id="btnList" tabindex="5" href="@Url.Content("~/DocumentType/AddEditDocumentType?accessMode=1")">Add More Document Type</a>
-                        </center>
-                    </div>
-                    <div class="col-md-3"></div>
-                </div>
-                <div class="row col-sm-6 col-lg-12 col-md-12">
-                    <div id="divList" style="margin: 85px;margin-top: 28px;">
+                <div class="form-group col-md-4">
+                    <label for="ddlModuleType" class="col-sm-4 control-label">Module Type</label>
+                    <div class="col-sm-8">
 
+                        <select id="ddlModuleType" name="ddlModuleType" tabindex="3" class="form-control">
+                            <option selected="selected" value="0">Select Module Type</option>
+                            <option value="Admin">Admin</option>
+                            <option value="CRM">CRM</option>
+                            <option value="Payroll">Payroll</option>
+                            <option value="HR">HR</option>
+                            <option value="Sales">Sales</option>
+                            <option value="Purchase">Purchase</option>
+                            <option value="Production">Production</option>
+                            <option value="Accounts">Accounts</option>
+                            <option value="ESS">ESS</option>
+                            <option value="Inventory">Inventory</option>
+                        </select>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="selstatus" class="col-sm-4 control-label">Status</label>
+                    <div class="col-sm-8">
+                        <select name="ddlStatus" id="ddlStatus" class="form-control" tabindex="2">
+                            <option value="">All</option>
+                            <option value="1">Active</option>
+                            <option value="0">InActive</option>
+                        </select>
                     </div>
                 </div>
             </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Search" alt="Save" tabindex="3" id="btnSearch" onclick="SearchDocumentType()" type="button" border="0">
+                        <input class="btn btn-success" type="button" tabindex="4" id="btnReset" onclick="ClearFields()" value="Reset" />
+                        <a class="btn btn-success" id="btnList" tabindex="5" href="@Url.Content("~/DocumentType/AddEditDocumentType?accessMode=1")">Add More Document Type</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row col-sm-6 col-lg-12 col-md-12">
+                <div id="divList" style="margin: 85px;margin-top: 28px;">
+
+                </div>
+            </div>
+        </div>
         <!-- Modal -->
         <div class="modal fade" id="alertModel" role="dialog">
             <div class="modal-dialog  modal-sm">

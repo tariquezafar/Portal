@@ -460,6 +460,8 @@
           <Property Name="ComplaintNo" Type="varchar" MaxLength="50" />
           <Property Name="ComplaintSequence" Type="int" />
           <Property Name="InvoiceNo" Type="varchar" MaxLength="50" />
+          <Property Name="EmployeeID" Type="int" />
+          <Property Name="DealerID" Type="int" />
         </EntityType>
         <EntityType Name="ComplaintServiceProductDetail">
           <Key>
@@ -825,6 +827,7 @@
           <Property Name="CompanyId" Type="int" />
           <Property Name="Status" Type="bit" />
           <Property Name="CompanyBranchId" Type="int" />
+          <Property Name="ModuleType" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="EmailTemplate">
           <Key>
@@ -5854,6 +5857,7 @@
           <Property Name="CompanyId" Type="Int32" />
           <Property Name="Status" Type="Boolean" />
           <Property Name="CompanyBranchId" Type="Int32" />
+          <Property Name="ModuleType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Quotation">
           <Key>
@@ -9084,6 +9088,8 @@
           <Property Name="ComplaintSequence" Type="Int32" />
           <Property Name="ComplaintDate" Type="DateTime" Precision="0" />
           <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeID" Type="Int32" />
+          <Property Name="DealerID" Type="Int32" />
         </EntityType>
         <EntityType Name="ComplaintServiceProductDetail">
           <Key>
@@ -10524,6 +10530,7 @@
           <EntitySetMapping Name="DocumentTypes">
             <EntityTypeMapping TypeName="ERPModel.DocumentType">
               <MappingFragment StoreEntitySet="DocumentType">
+                <ScalarProperty Name="ModuleType" ColumnName="ModuleType" />
                 <ScalarProperty Name="CompanyBranchId" ColumnName="CompanyBranchId" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
@@ -13894,6 +13901,8 @@
           <EntitySetMapping Name="ComplaintServices">
             <EntityTypeMapping TypeName="ERPModel.ComplaintService">
               <MappingFragment StoreEntitySet="ComplaintService">
+                <ScalarProperty Name="DealerID" ColumnName="DealerID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
                 <ScalarProperty Name="ComplaintDate" ColumnName="ComplaintDate" />
                 <ScalarProperty Name="ComplaintSequence" ColumnName="ComplaintSequence" />

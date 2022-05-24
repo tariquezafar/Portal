@@ -202,5 +202,40 @@ namespace Portal.Core
             }
             return responseOut;
         }
+
+        /// <summary>
+        /// This method is used to get employee list based on department.
+        /// Author by : Dheeraj on 14 May,2022
+        /// </summary>
+        /// <param name="departmentID">Primary key of the table.</param>
+        /// <returns>
+        /// This method retruns list of the object.
+        /// </returns>
+        public List<EmployeeDesignationModel> GetDesignationByDepartmentID(int departmentID)
+        {
+            List<EmployeeDesignationModel> employeeDesignationModel = new List<EmployeeDesignationModel>();
+            SQLDbInterface sqlDbInterface = new SQLDbInterface();
+            try
+            {
+                DataTable dtDesignations = sqlDbInterface.GetDesignationByDepartmentID(departmentID);
+                if (dtDesignations != null && dtDesignations.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dtDesignations.Rows)
+                    {
+                        employeeDesignationModel.Add(new EmployeeDesignationModel
+                        {
+                            EmployeeId = Convert.ToInt32(dr["EmployeeId"]),
+                            EmployeeName = Convert.ToString(dr["EmployeeName"])
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return employeeDesignationModel;
+        }
     }
 }

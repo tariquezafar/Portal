@@ -2147,6 +2147,37 @@ namespace Portal.DAL
             }
             return dt;
         }
+
+        /// <summary>
+        /// This method is used to get employee list based on department.
+        /// Author by : Dheeraj on 14 May,2022
+        /// </summary>
+        /// <param name="departmentID">Primary key of the table.</param>
+        /// <returns>
+        /// This method retruns list of the object.
+        /// </returns>
+        public DataTable GetDesignationByDepartmentID(int departmentID)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    da = new SqlDataAdapter("usp_GetEmployeeList", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@DepartmentId", departmentID);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return dt;
+
+        }
         #endregion 
 
         #region PaymentMode 
@@ -5374,7 +5405,7 @@ namespace Portal.DAL
 
 
         #region DocumentType
-        public DataTable GetDocumentTypeList(string documenttypeDesc, int companyId, string Status, int companyBranchId)
+        public DataTable GetDocumentTypeList(string documenttypeDesc, int companyId, string Status, int companyBranchId, string moduleType)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -5388,6 +5419,7 @@ namespace Portal.DAL
                     da.SelectCommand.Parameters.AddWithValue("@CompanyId", companyId);
                     da.SelectCommand.Parameters.AddWithValue("@Status", Status);
                     da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
+                    da.SelectCommand.Parameters.AddWithValue("@ModuleType", moduleType);
                     da.Fill(dt);
                 }
             }
@@ -27663,16 +27695,20 @@ namespace Portal.DAL
                         sqlCommand.CommandType = CommandType.StoredProcedure;
                         sqlCommand.Parameters.AddWithValue("@ComplaintId", complaintService.ComplaintId);
                         sqlCommand.Parameters.AddWithValue("@ComplaintDate", complaintService.ComplaintDate);
-                        sqlCommand.Parameters.AddWithValue("@InvoiceNo", complaintService.InvoiceNo);
                         sqlCommand.Parameters.AddWithValue("@EnquiryType", complaintService.EnquiryType);
+                        sqlCommand.Parameters.AddWithValue("@InvoiceNo", complaintService.InvoiceNo);
                         sqlCommand.Parameters.AddWithValue("@ComplaintMode", complaintService.ComplaintMode);
                         sqlCommand.Parameters.AddWithValue("@ComplaintDescription", complaintService.ComplaintDescription);
                         sqlCommand.Parameters.AddWithValue("@CustomerName", complaintService.CustomerName);
                         sqlCommand.Parameters.AddWithValue("@CustomerMobile", complaintService.CustomerMobile);
-                        sqlCommand.Parameters.AddWithValue("@CustomerEmail", complaintService.CustomerEmail);
                         sqlCommand.Parameters.AddWithValue("@CustomerAddress", complaintService.CustomerAddress);
                         sqlCommand.Parameters.AddWithValue("@CompanyBranchId", complaintService.BranchID);
                         sqlCommand.Parameters.AddWithValue("@ActiveStatus", complaintService.Status);
+                        sqlCommand.Parameters.AddWithValue("@EmployeeID", complaintService.EmployeeID);
+                        sqlCommand.Parameters.AddWithValue("@CustomerEmail", complaintService.CustomerEmail);
+                        sqlCommand.Parameters.AddWithValue("@DealerID", complaintService.DealerID);
+
+
                         sqlCommand.Parameters.AddWithValue("@ComplaintServiceProductDetail", dtComplaintServceProduct);
                         sqlCommand.Parameters.Add("@status", SqlDbType.VarChar, 50).Direction = ParameterDirection.Output;
                         sqlCommand.Parameters.Add("@message", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -27745,7 +27781,7 @@ namespace Portal.DAL
 
         }
 
-        public DataTable GetComplaintServiceList(string complaintNo, string enquiryType, string complaintMode, string customerMobile, string customerName, string approvalStatus, int companyBranchId)
+        public DataTable GetComplaintServiceList(string complaintNo, string enquiryType, string complaintMode, string customerMobile, string customerName, string approvalStatus, int companyBranchId, int serviceEngineerId, int dealerId)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -27762,6 +27798,8 @@ namespace Portal.DAL
                     da.SelectCommand.Parameters.AddWithValue("@CustomerName", customerName);
                     da.SelectCommand.Parameters.AddWithValue("@Status", approvalStatus);
                     da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
+                    da.SelectCommand.Parameters.AddWithValue("@ServiceEngineerId", serviceEngineerId);
+                    da.SelectCommand.Parameters.AddWithValue("@DealerId", dealerId);
                     da.Fill(dt);
                 }
             }

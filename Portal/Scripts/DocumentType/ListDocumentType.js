@@ -41,10 +41,12 @@ function SearchDocumentType() {
     var txtDocumentTypeDesc = $("#txtDocumentTypeDesc");
     var ddlStatus = $("#ddlStatus");
     var ddlCompanyBranch = $("#ddlCompanyBranch");
+    var ddlModuleType = $("#ddlModuleType");
     var requestData = {
         documenttypeDesc: txtDocumentTypeDesc.val().trim(),
         status: ddlStatus.val(),
-        companyBranchId: ddlCompanyBranch.val()
+        companyBranchId: ddlCompanyBranch.val(),
+        moduleType: ddlModuleType.val()
     };
 
     $.ajax({
@@ -58,7 +60,7 @@ function SearchDocumentType() {
         },
         success: function (data) {
             $("#divList").html("");
-            $("#divList").html(data); 
+            $("#divList").html(data);
         }
     });
 }
