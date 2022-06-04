@@ -102,13 +102,13 @@ namespace Portal.Controllers
         }
 
         [HttpGet]
-        public PartialViewResult GetMRNQCList(string mrnNo = "",string qCNO="", string vendorName = "", string dispatchrefNo = "", string fromDate = "", string toDate = "", string approvalStatus = "",string companyBranch="")
+        public PartialViewResult GetMRNQCList(string mrnNo = "",string qCNO="", string vendorName = "", string dispatchrefNo = "", string fromDate = "", string toDate = "", string approvalStatus = "",string companyBranch="",int locationID = 0)
         {
             List<MRNViewModel> mrns = new List<MRNViewModel>();
             MRNQCBL mRNQCBL = new MRNQCBL();
             try
             {
-                mrns = mRNQCBL.GetMRNQCList(mrnNo, qCNO, vendorName, dispatchrefNo, fromDate, toDate, ContextUser.CompanyId, approvalStatus, companyBranch);
+                mrns = mRNQCBL.GetMRNQCList(mrnNo, qCNO, vendorName, dispatchrefNo, fromDate, toDate, ContextUser.CompanyId, approvalStatus, companyBranch, locationID);
             }
             catch (Exception ex)
             {

@@ -26479,7 +26479,7 @@ namespace Portal.DAL
                         sqlCommand.Parameters.AddWithValue("@VendorId", mrn.VendorId);
                         sqlCommand.Parameters.AddWithValue("@VendorName", mrn.VendorName);
                         sqlCommand.Parameters.AddWithValue("@ContactPerson", mrn.ContactPerson);
-
+                        sqlCommand.Parameters.AddWithValue("@LocationID", mrn.LocationID);
                         sqlCommand.Parameters.AddWithValue("@ShippingContactPerson", mrn.ShippingContactPerson);
                         sqlCommand.Parameters.AddWithValue("@ShippingBillingAddress", mrn.ShippingBillingAddress);
                         sqlCommand.Parameters.AddWithValue("@ShippingCity", mrn.ShippingCity);
@@ -26601,7 +26601,7 @@ namespace Portal.DAL
             return dt;
         }
 
-        public DataTable GetMRNQCList(string mrnNo, string qCNO, string vendorName, string dispatchrefNo, DateTime fromDate, DateTime toDate, int companyId, string approvalStatus = "", string companyBranch = "")
+        public DataTable GetMRNQCList(string mrnNo, string qCNO, string vendorName, string dispatchrefNo, DateTime fromDate, DateTime toDate, int companyId, string approvalStatus = "", string companyBranch = "", int locationID = 0)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -26620,7 +26620,8 @@ namespace Portal.DAL
                     da.SelectCommand.Parameters.AddWithValue("@CompanyId", companyId);
                     da.SelectCommand.Parameters.AddWithValue("@ApprovalStatus", approvalStatus);
                     da.SelectCommand.Parameters.AddWithValue("@companyBranch", companyBranch);
-
+                    da.SelectCommand.Parameters.AddWithValue("@LocationID", locationID);
+                    
                     da.Fill(dt);
                 }
             }
@@ -27671,6 +27672,7 @@ namespace Portal.DAL
                 dtComplaintServceProduct.Columns.Add("ComplaintId", typeof(Int64));
                 dtComplaintServceProduct.Columns.Add("ProductId", typeof(Int64));
                 dtComplaintServceProduct.Columns.Add("Remarks", typeof(string));
+                dtComplaintServceProduct.Columns.Add("Quantity", typeof(decimal));
 
 
 
@@ -27683,6 +27685,7 @@ namespace Portal.DAL
                         dtrow["ComplaintId"] = 0;
                         dtrow["ProductId"] = item.ProductId;
                         dtrow["Remarks"] = item.Remarks;
+                        dtrow["Quantity"] = item.Quantity;
                         dtComplaintServceProduct.Rows.Add(dtrow);
                     }
                     dtComplaintServceProduct.AcceptChanges();
@@ -27707,6 +27710,7 @@ namespace Portal.DAL
                         sqlCommand.Parameters.AddWithValue("@EmployeeID", complaintService.EmployeeID);
                         sqlCommand.Parameters.AddWithValue("@CustomerEmail", complaintService.CustomerEmail);
                         sqlCommand.Parameters.AddWithValue("@DealerID", complaintService.DealerID);
+                        sqlCommand.Parameters.AddWithValue("@InvoiceDate", complaintService.InvoiceDate);
 
 
                         sqlCommand.Parameters.AddWithValue("@ComplaintServiceProductDetail", dtComplaintServceProduct);

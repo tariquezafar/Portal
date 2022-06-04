@@ -13,7 +13,7 @@ $(document).ready(function () {
     });
 
     BindCompanyBranchList();
-   // SearchMRN();
+    BindLocationList();
 });
 
 
@@ -71,12 +71,6 @@ $(".alpha-numeric-only").on("input", function () {
 });
 
 function ClearFields() {
-    //$("#txtMRNNo").val("");
-    //$("#txtVendorName").val("");
-    //$("#txtDispatchRefNo").val("");
-    //$("#txtQualityCheckNo").val("");
-    //$("#txtFromDate").val($("#hdnFromDate").val());
-    //$("#txtToDate").val($("#hdnToDate").val());
     window.location.href = "../MRNQC/ListMRNQC";
     
 }
@@ -88,9 +82,19 @@ function SearchMRN() {
     var txtFromDate = $("#txtFromDate");
     var txtToDate = $("#txtToDate");
     var txtQualityCheckNo = $("#txtQualityCheckNo");
-    var ddlCompanyBranch=$("#ddlCompanyBranch");
+    var ddlCompanyBranch = $("#ddlCompanyBranch");
+    var ddlLocation = $("#ddlLocation");
     
-    var requestData = { mrnNo: txtMRNNo.val().trim(), qCNO: txtQualityCheckNo.val().trim(), vendorName: txtVendorName.val().trim(), dispatchrefNo: txtDispatchRefNo.val().trim(), fromDate: txtFromDate.val(), toDate: txtToDate.val(), approvalStatus: ddlApprovalStatus.val(),companyBranch: ddlCompanyBranch.val() };
+    var requestData = {
+        mrnNo: txtMRNNo.val().trim(),
+        qCNO: txtQualityCheckNo.val().trim(),
+        vendorName: txtVendorName.val().trim(),
+        dispatchrefNo: txtDispatchRefNo.val().trim(),
+        fromDate: txtFromDate.val(), toDate: txtToDate.val(), approvalStatus: ddlApprovalStatus.val(),
+        companyBranch: ddlCompanyBranch.val(),
+        locationID: ddlLocation.val(),
+
+    };
     $.ajax({
         url: "../MRNQC/GetMRNQCList",
         data: requestData,
@@ -103,6 +107,26 @@ function SearchMRN() {
         success: function (data) {
             $("#divList").html("");
             $("#divList").html(data);
+        }
+    });
+}
+
+
+function BindLocationList() {
+    $.ajax({
+        type: "GET",
+        url: "../Location/GetReceivedAtLocationList",
+        data: "{}",
+        dataType: "json",
+        asnc: false,
+        success: function (data) {
+            $("#ddlLocation").append($("<option></option>").val(0).html("Select Location"));
+            $.each(data, function (i, item) {
+                $("#ddlLocation").append($("<option></option>").val(item.ValueInt).html(item.Text));
+            });
+        },
+        error: function (Result) {
+            $("#ddlLocation").append($("<option></option>").val(0).html("Select location"));
         }
     });
 }

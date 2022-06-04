@@ -12,6 +12,8 @@ using Microsoft.ReportingServices;
 using System.IO;
 using System.Data;
 using System.Text;
+using Portal.Common.ViewModel;
+
 namespace Portal.Controllers
 {
     [CheckSessionBeforeControllerExecuteAttribute(Order = 1)]
@@ -128,6 +130,30 @@ namespace Portal.Controllers
             return Json(locations, JsonRequestBehavior.AllowGet);
         }
 
+
+        /// <summary>
+        /// This method is used to Get Location List
+        /// Author By : Dheeraj Kumar
+        /// </summary>
+        /// <returns>
+        /// This Method is retruns list of the Object.
+        /// </returns>
+
+        [HttpGet]
+        public JsonResult GetReceivedAtLocationList()
+        {
+            List<SelectListModel> lstSelectListModel = new List<SelectListModel>();
+            LocationBL locationBL = new LocationBL();
+            try
+            {
+                lstSelectListModel = locationBL.GetLocationList();
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+            }
+            return Json(lstSelectListModel, JsonRequestBehavior.AllowGet);
+        }
 
         #endregion
 

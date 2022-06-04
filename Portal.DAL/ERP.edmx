@@ -462,6 +462,7 @@
           <Property Name="InvoiceNo" Type="varchar" MaxLength="50" />
           <Property Name="EmployeeID" Type="int" />
           <Property Name="DealerID" Type="int" />
+          <Property Name="InvoiceDate" Type="date" />
         </EntityType>
         <EntityType Name="ComplaintServiceProductDetail">
           <Key>
@@ -471,6 +472,7 @@
           <Property Name="ComplaintId" Type="bigint" Nullable="false" />
           <Property Name="ProductId" Type="bigint" />
           <Property Name="Remarks" Type="varchar" MaxLength="500" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="CostCenter">
           <Key>
@@ -1768,6 +1770,7 @@
           <Property Name="RejectedDate" Type="date" />
           <Property Name="RejectedReason" Type="varchar" MaxLength="1000" />
           <Property Name="MRNSequence" Type="int" />
+          <Property Name="LocationID" Type="int" />
         </EntityType>
         <EntityType Name="MRNProductDetail">
           <Key>
@@ -6867,6 +6870,7 @@
           <Property Name="QualityCheckId" Type="Int64" />
           <Property Name="QualityCheckNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="QualityCheckDate" Type="DateTime" Precision="0" />
+          <Property Name="LocationID" Type="Int32" />
         </EntityType>
         <EntityType Name="MRNProductDetail">
           <Key>
@@ -9090,6 +9094,7 @@
           <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="EmployeeID" Type="Int32" />
           <Property Name="DealerID" Type="Int32" />
+          <Property Name="InvoiceDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="ComplaintServiceProductDetail">
           <Key>
@@ -9099,6 +9104,7 @@
           <Property Name="ComplaintId" Type="Int64" Nullable="false" />
           <Property Name="ProductId" Type="Int64" />
           <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="ReturnedProductDetail">
           <Key>
@@ -11577,6 +11583,7 @@
           <EntitySetMapping Name="MRNs">
             <EntityTypeMapping TypeName="ERPModel.MRN">
               <MappingFragment StoreEntitySet="MRN">
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
                 <ScalarProperty Name="QualityCheckDate" ColumnName="QualityCheckDate" />
                 <ScalarProperty Name="QualityCheckNo" ColumnName="QualityCheckNo" />
                 <ScalarProperty Name="QualityCheckId" ColumnName="QualityCheckId" />
@@ -13901,6 +13908,7 @@
           <EntitySetMapping Name="ComplaintServices">
             <EntityTypeMapping TypeName="ERPModel.ComplaintService">
               <MappingFragment StoreEntitySet="ComplaintService">
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
                 <ScalarProperty Name="DealerID" ColumnName="DealerID" />
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
@@ -13929,6 +13937,7 @@
           <EntitySetMapping Name="ComplaintServiceProductDetails">
             <EntityTypeMapping TypeName="ERPModel.ComplaintServiceProductDetail">
               <MappingFragment StoreEntitySet="ComplaintServiceProductDetail">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="Remarks" ColumnName="Remarks" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
                 <ScalarProperty Name="ComplaintId" ColumnName="ComplaintId" />
@@ -14635,7 +14644,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

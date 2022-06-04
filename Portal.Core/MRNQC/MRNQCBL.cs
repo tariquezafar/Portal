@@ -64,10 +64,10 @@ namespace Portal.Core
             {
                 MRN mrn = new MRN
                 {
-                    MRNId= mrnViewModel.MRNId,
-                    MRNDate=Convert.ToDateTime(mrnViewModel.MRNDate),
-                    GRNo=mrnViewModel.GRNo,
-                    GRDate=Convert.ToDateTime(mrnViewModel.GRDate),
+                    MRNId = mrnViewModel.MRNId,
+                    MRNDate = Convert.ToDateTime(mrnViewModel.MRNDate),
+                    GRNo = mrnViewModel.GRNo,
+                    GRDate = Convert.ToDateTime(mrnViewModel.GRDate),
                     QualityCheckNo = mrnViewModel.QCNo,
                     QualityCheckId = mrnViewModel.QCId,
                     QualityCheckDate = Convert.ToDateTime(mrnViewModel.QCDate),
@@ -85,7 +85,7 @@ namespace Portal.Core
                     ShippingMobileNo = mrnViewModel.ShippingMobileNo,
                     ShippingContactNo = mrnViewModel.ShippingContactNo,
                     ShippingFax = mrnViewModel.ShippingFax,
-                    CompanyBranchId=mrnViewModel.CompanyBranchId,
+                    CompanyBranchId = mrnViewModel.CompanyBranchId,
                     DispatchRefNo = mrnViewModel.DispatchRefNo,
                     DispatchRefDate = string.IsNullOrEmpty(mrnViewModel.DispatchRefDate) ? Convert.ToDateTime("01-01-1900") : Convert.ToDateTime(mrnViewModel.DispatchRefDate),
                     LRNo = mrnViewModel.LRNo,
@@ -97,7 +97,8 @@ namespace Portal.Core
                     FinYearId = mrnViewModel.FinYearId,
                     CompanyId = mrnViewModel.CompanyId,
                     CreatedBy = mrnViewModel.CreatedBy,
-                    ApprovalStatus=mrnViewModel.ApprovalStatus
+                    ApprovalStatus = mrnViewModel.ApprovalStatus,
+                    LocationID = mrnViewModel.LocationID
 
                 };
                 List<MRNProductDetail> mrnProductList = new List<MRNProductDetail>();
@@ -111,7 +112,7 @@ namespace Portal.Core
                             ProductShortDesc = item.ProductShortDesc,
                             Price = item.Price,
                             Quantity = item.Quantity,
-                            ReceivedQuantity=item.ReceivedQuantity,
+                            ReceivedQuantity = item.ReceivedQuantity,
                             AcceptQuantity = item.AcceptQuantity,
                             RejectQuantity = item.RejectQuantity
                         });
@@ -146,13 +147,13 @@ namespace Portal.Core
 
             return responseOut;
         }
-        public List<MRNViewModel> GetMRNQCList(string mrnNo, string qCNo, string vendorName, string dispatchrefNo, string fromDate, string toDate, int companyId,string approvalStatus="",string companyBranch="")
+        public List<MRNViewModel> GetMRNQCList(string mrnNo, string qCNo, string vendorName, string dispatchrefNo, string fromDate, string toDate, int companyId,string approvalStatus="",string companyBranch="", int  locationID = 0)
         {
             List<MRNViewModel> mrns = new List<MRNViewModel>();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
             try
             {
-                DataTable dtMRNs = sqlDbInterface.GetMRNQCList(mrnNo, qCNo, vendorName, dispatchrefNo, Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), companyId, approvalStatus, companyBranch);
+                DataTable dtMRNs = sqlDbInterface.GetMRNQCList(mrnNo, qCNo, vendorName, dispatchrefNo, Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), companyId, approvalStatus, companyBranch, locationID);
                 if (dtMRNs != null && dtMRNs.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dtMRNs.Rows)
@@ -177,7 +178,8 @@ namespace Portal.Core
                             CreatedDate = Convert.ToString(dr["CreatedDate"]),
                             ModifiedByUserName = Convert.ToString(dr["ModifiedByName"]),
                             ModifiedDate = Convert.ToString(dr["ModifiedDate"]),
-                            CompanyBranchName = Convert.ToString(dr["BranchName"])
+                            CompanyBranchName = Convert.ToString(dr["BranchName"]),
+                            LocationName = Convert.ToString(dr["LocationName"])
                         });
                     }
                 }
@@ -248,7 +250,8 @@ namespace Portal.Core
                             CreatedByUserName = Convert.ToString(dr["CreatedByName"]),
                             CreatedDate = Convert.ToString(dr["CreatedDate"]),
                             ModifiedByUserName = Convert.ToString(dr["ModifiedByName"]),
-                            ModifiedDate = Convert.ToString(dr["ModifiedDate"])
+                            ModifiedDate = Convert.ToString(dr["ModifiedDate"]),
+                            LocationID = Convert.ToInt32(dr["LocationID"])
                         };
                     }
                 }

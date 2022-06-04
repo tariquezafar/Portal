@@ -9881,6 +9881,26 @@ namespace Portal.DAL
                                                       }).ToList();
             return selectListModels;
         }
+
+        /// <summary>
+        /// This method is used to Get Location List
+        /// Author By : Dheeraj Kumar
+        /// </summary>
+        /// <returns>
+        /// This Method is retruns list of the Object.
+        /// </returns>
+
+        public List<SelectListModel> GetLocationList()
+        {
+            List<SelectListModel> selectListModels = (from b in entities.Locations                                                   
+                                                      where b.Status == true
+                                                      select new SelectListModel
+                                                      {
+                                                          ValueInt = b.LocationId,
+                                                          Text = b.LocationName
+                                                      }).ToList();
+            return selectListModels;
+        }
         #endregion
 
     }

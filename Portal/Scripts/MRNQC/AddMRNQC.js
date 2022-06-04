@@ -1,8 +1,9 @@
 ﻿$(document).ready(function () {
+    BindLocationList();
     $("#tabs").tabs({
         collapsible: true
     });
-    
+
     $("#txtQCQuantity").attr('readOnly', true);
     $("#txtPendingQuantity").attr('readOnly', true);
     $("#txtMRNNo").attr('readOnly', true);
@@ -59,6 +60,7 @@
             return false;
         },
         select: function (event, ui) {
+            debugger;
             $("#txtVendorName").val(ui.item.label);
             $("#hdnVendorId").val(ui.item.value);
             $("#txtVendorCode").val(ui.item.code);
@@ -835,6 +837,7 @@ function SaveData() {
     var txtNoOfPackets = $("#txtNoOfPackets") == "" ? "0" : $("#txtNoOfPackets");
     var txtRemarks1 = $("#txtRemarks1") == "" ? "" : $("#txtRemarks1");
     var txtRemarks2 = $("#txtRemarks2") == "" ? "" : $("#txtRemarks2");
+    var ddlLocation = $("#ddlLocation");
 
     
 
@@ -907,8 +910,8 @@ function SaveData() {
         NoOfPackets: txtNoOfPackets.val(),
         Remarks1: txtRemarks1.val(),
         Remarks2: txtRemarks2.val(),
-
-        ApprovalStatus: ddlApprovalStatus.val()
+        ApprovalStatus: ddlApprovalStatus.val(),
+        LocationID: ddlLocation.val()
     };
 
     var mrnProductList = [];    
@@ -1248,6 +1251,7 @@ function GetMRNDetail(mrnId) {
         
             $("#btnAddNew").show();
             $("#btnPrint").show();
+            $("#ddlLocation").val(data.LocationID);
 
 
         },
@@ -1334,4 +1338,23 @@ function GetPODetail(poId) {
         }
     });
 
+}
+
+function BindLocationList() {
+    $.ajax({
+        type: "GET",
+        url: "../Location/GetReceivedAtLocationList",
+        data: "{}",
+        dataType: "json",
+        asnc: false,
+        success: function (data) {
+            $("#ddlLocation").append($("<option></option>").val(0).html("Select Location"));
+            $.each(data, function (i, item) {
+                $("#ddlLocation").append($("<option></option>").val(item.ValueInt).html(item.Text));
+            });
+        },
+        error: function (Result) {
+            $("#ddlLocation").append($("<option></option>").val(0).html("Select Location"));
+        }
+    });
 }

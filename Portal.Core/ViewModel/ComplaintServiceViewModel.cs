@@ -27,6 +27,8 @@ namespace Portal.Core.ViewModel
         public string CompanyBranchName { get; set; }
         public int CompanyId { get; set; }
         public string ComplaintDate { get; set; }
+
+        public string InvoiceDate { get; set; }
         public string InvoiceNo { get; set; }
         public int? EmployeeID { get; set; }
 
@@ -55,6 +57,8 @@ namespace Portal.Core.ViewModel
         public string Remarks { get; set; }
         public string WarrantyStartDate { get; set; }
         public string WarrantyEndDate { get; set; }
+
+        public int Quantity { get; set; }
 
     }
   

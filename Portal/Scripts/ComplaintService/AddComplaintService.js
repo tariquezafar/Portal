@@ -4,7 +4,8 @@
     $("#txtCustomerName").attr('readOnly', true);
     $("#txtCustomerEmail").attr('readOnly', true);
     $("#txtCustomerAddress").attr('readOnly', true);
-
+    $("#txtInvoiceDate").attr('readOnly', true);
+    
     $("#txtCustomerMobile").autocomplete({
         minLength: 0,
         source: function (request, response) {
@@ -78,7 +79,6 @@
             $("#txtProductCode").val(ui.item.code);
             $("#txtProductWarrantyStartDate").val(ui.item.warrantyStartDate);
             $("#txtWarrantyEndDate").val(ui.item.WarrantyEndDate);
-            //GetProductDetail(ui.item.value);
             return false;
         },
         change: function (event, ui) {
@@ -102,6 +102,16 @@
         };
 
     $("#txtComplaintDate").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'dd-M-yy',
+        yearRange: '-10:+100',
+        onSelect: function (selected) {
+
+        }
+    });
+
+    $("#txtInvoiceDate").datepicker({
         changeMonth: true,
         changeYear: true,
         dateFormat: 'dd-M-yy',
@@ -156,8 +166,14 @@
     GetComplaintServiceProductList(complaintProductList);
 
 
-});
 
+});
+$(".numeric-only").on("input", function () {
+    var regexp = /\D/g;
+    if ($(this).val().match(regexp)) {
+        $(this).val($(this).val().replace(regexp, ''));
+    }
+});
 
 function BindComplaintTypeList() {
     $.ajax({
@@ -374,6 +390,8 @@ function AddProduct(action) {
     var txtProductWarrantyStartDate = $("#txtProductWarrantyStartDate");
     var txtWarrantyEndDate = $("#txtWarrantyEndDate");
     var txtProductRemarks = $("#txtProductRemarks");
+    var txtQuantity = $("#txtQuantity");
+
     if (txtProductName.val().trim() == "") {
         ShowModel("Alert", "Please Enter Product Name")
         txtProductName.focus();
@@ -385,6 +403,13 @@ function AddProduct(action) {
         hdnProductId.focus();
         return false;
     }
+
+    if (txtQuantity.val().trim() == "" || txtQuantity.val().trim() == "0" ||  txtQuantity.val() <= 0) {
+        ShowModel("Alert", "Please enter the quantity")
+        txtQuantity.focus();
+        return false;
+    }
+
     if (action == 1 && (hdnSequenceNo.val() == "" || hdnSequenceNo.val() == "0")) {
         productEntrySequence = 1;
     }
@@ -400,6 +425,7 @@ function AddProduct(action) {
         var productstartdate = $row.find("#hdnProductWarrantyStartDate").val();
         var productenddate = $row.find("#hdnProductWarrantyEndDate").val();
         var remarks = $row.find("#hdnRemarks").val();
+        var quantity = $row.find("#hdnQuantity").val();
 
         if (productId != undefined) {
             if (action == 1 || (hdnSequenceNo.val() != sequenceNo)) {
@@ -419,7 +445,8 @@ function AddProduct(action) {
                     ProductCode: productCode,
                     WarrantyStartDate: productstartdate,
                     WarrantyEndDate: productenddate,
-                    Remarks: remarks
+                    Remarks: remarks,
+                    Quantity: quantity
                 };
                 complaintProductList.push(complaintProduct);
                 productEntrySequence = parseInt(productEntrySequence) + 1;
@@ -435,7 +462,7 @@ function AddProduct(action) {
                     WarrantyStartDate: txtProductWarrantyStartDate.val(),
                     WarrantyEndDate: txtWarrantyEndDate.val(),
                     Remarks: txtProductRemarks.val().trim(),
-
+                    Quantity: txtQuantity.val(),
 
                 };
                 complaintProductList.push(complaintProduct);
@@ -458,6 +485,7 @@ function AddProduct(action) {
             WarrantyStartDate: txtProductWarrantyStartDate.val(),
             WarrantyEndDate: txtWarrantyEndDate.val(),
             Remarks: txtProductRemarks.val().trim(),
+            Quantity: txtQuantity.val(),
 
         };
 
@@ -480,6 +508,7 @@ function EditProductRow(obj) {
     var productName = $(row).find("#hdnProductName").val();
     var productCode = $(row).find("#hdnProductCode").val();
     var remarks = $(row).find("#hdnRemarks").val();
+    var quantity = $(row).find("#hdnQuantity").val();
 
 
     $("#txtProductName").val(productName);
@@ -489,6 +518,7 @@ function EditProductRow(obj) {
     $("#hdnProductId").val(productId);
     $("#txtProductCode").val(productCode);
     $("#txtProductRemarks").val(remarks);
+    $("#txtQuantity").val(quantity);
     $("#btnAddProduct").hide();
     $("#btnUpdateProduct").show();
     ShowHideProductPanel(1);
@@ -550,6 +580,7 @@ function ShowHideProductPanel(action) {
         $("#hdnProductId").val("0");
         $("#txtProductCode").val("");
         $("#txtProductRemarks").val("");
+        $("#txtQuantity").val("");
         $("#btnAddProduct").show();
         $("#btnUpdateProduct").hide();
     }
@@ -578,6 +609,7 @@ function SaveData() {
     var ddlCompanyBranch = $("#ddlCompanyBranch");
     var ddlServiceEngineer = $("#ddlServiceEngineer");
     var ddlDealer = $("#ddlDealer");
+    var txtInvoiceDate = $("#txtInvoiceDate");
 
     if (ddlEnquiryType.val() == "" || ddlEnquiryType.val() == "0") {
         ShowModel("Alert", "Please Select Enquiry Type")
@@ -650,6 +682,7 @@ function SaveData() {
         BranchID: ddlCompanyBranch.val(),
         EmployeeID: ddlServiceEngineer.val(),
         DealerID: ddlDealer.val(),
+        InvoiceDate: txtInvoiceDate.val()
     };
 
     var complaintProductList = [];
@@ -662,6 +695,7 @@ function SaveData() {
         var productName = $row.find("#hdnProductName").val();
         var productCode = $row.find("#hdnProductCode").val();
         var remarks = $row.find("#hdnRemarks").val();
+        var quantity = $row.find("#hdnQuantity").val();
 
         if (productId != undefined) {
             var complaintProduct = {
@@ -671,7 +705,8 @@ function SaveData() {
                 MappingId: mappingId,
                 ProductName: productName,
                 ProductCode: productCode,
-                Remarks: remarks
+                Remarks: remarks,
+                Quantity: quantity
             };
             complaintProductList.push(complaintProduct);
         }
@@ -727,7 +762,8 @@ function ClearFields() {
     $("#txtProductRemarks").val("");
     $("#txtInvoiceNo").val("");
     $("#chkStatus").attr("checked", true);
-
+    $("#txtInvoiceDate").val("");
+    
 }
 
 function BindCompanyBranchList() {
@@ -765,7 +801,6 @@ function GetComplaintServiceDetail(ComplaintId) {
         data: { ComplaintId: ComplaintId },
         dataType: "json",
         success: function (data) {
-            debugger;
             $("#txtComplaintNo").val(data.ComplaintNo);
             $("#txtComplaintDate").val(data.ComplaintDate);
             $("#txtInvoiceNo").val(data.InvoiceNo);
@@ -780,6 +815,7 @@ function GetComplaintServiceDetail(ComplaintId) {
             $("#ddlServiceEngineer").val(data.EmployeeID);
             $("#ddlDealer").val(data.DealerID);
             $("#chkStatus").val(data.status);
+            $("#txtInvoiceDate").val(data.InvoiceDate);
 
             if (data.status == "Final") {
                 $(".editonly").hide();
@@ -852,3 +888,42 @@ function CheckMasterPermission(RoleId, InterfaceId, ModalId) {
     });
 
 }
+
+
+('.Quantity').keypress(function (event) {
+    var $this = $(this);
+    if ((event.which != 46 || $this.val().indexOf('.') != -1) &&
+        ((event.which < 48 || event.which > 57) &&
+            (event.which != 0 && event.which != 8))) {
+        event.preventDefault();
+    }
+
+    var text = $(this).val();
+    if ((event.which == 46) && (text.indexOf('.') == -1)) {
+        setTimeout(function () {
+            if ($this.val().substring($this.val().indexOf('.')).length > 3) {
+                $this.val($this.val().substring(0, $this.val().indexOf('.') + 3));
+            }
+        }, 1);
+    }
+
+    if ((text.indexOf('.') != -1) &&
+        (text.substring(text.indexOf('.')).length > 2) &&
+        (event.which != 0 && event.which != 8) &&
+        ($(this)[0].selectionStart >= text.length - 2)) {
+        event.preventDefault();
+    }
+});
+
+$('.Quantity').bind("paste", function (e) {
+    var text = e.originalEvent.clipboardData.getData('Text');
+    if ($.isNumeric(text)) {
+        if ((text.substring(text.indexOf('.')).length > 3) && (text.indexOf('.') > -1)) {
+            e.preventDefault();
+            $(this).val(text.substring(0, text.indexOf('.') + 3));
+        }
+    }
+    else {
+        e.preventDefault();
+    }
+});

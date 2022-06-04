@@ -1,5 +1,6 @@
 ﻿
 $(document).ready(function () {
+    BindLocationList();
     $("#txtFromDate").attr('readOnly', true);
     $("#txtToDate").attr('readOnly', true);
     $("#txtFromDate,#txtToDate").datepicker({
@@ -11,6 +12,8 @@ $(document).ready(function () {
             GenerateReportParameters();
         }
     }); 
+
+ 
     BindProductTypeList();
     BindProductMainGroupList();
     BindCompanyBranchList();
@@ -67,6 +70,25 @@ $(document).ready(function () {
     var urlSummary = "../StockLedger/SummaryReport?productTypeId=0&assemblyType=0&productMainGroupId=0&productSubGroupId=0&productId=0&customerBranchId=" + $("#ddlCompanyBranch").val() + "&fromDate=" + $("#txtFromDate").val() + "&toDate=" + $("#txtToDate").val() + "&reportType=PDF";
     $('#lnkExportSummary').attr('href', urlSummary);
 });
+
+function BindLocationList() {
+    $.ajax({
+        type: "GET",
+        url: "../Location/GetReceivedAtLocationList",
+        data: "{}",
+        dataType: "json",
+        asnc: false,
+        success: function (data) {
+            $("#ddlLocation").append($("<option></option>").val(0).html("Select Location"));
+            $.each(data, function (i, item) {
+                $("#ddlLocation").append($("<option></option>").val(item.ValueInt).html(item.Text));
+            });
+        },
+        error: function (Result) {
+            $("#ddlLocation").append($("<option></option>").val(0).html("Select location"));
+        }
+    });
+}
 
 function BindCompanyBranchList() {
     $("#ddlCompanyBranch").val(0);
@@ -442,3 +464,5 @@ function ClearFields1() {
     $('#lnkExportSummary').attr('href', urlSummary);
 
 }
+
+

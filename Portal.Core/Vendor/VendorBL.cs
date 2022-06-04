@@ -260,8 +260,8 @@ namespace Portal.Core
                             GST_Exempt = Convert.ToBoolean(dr["GST_Exempt"]),
                             AnnualTurnover = Convert.ToDecimal(dr["AnnualTurnover"]),
                             IsComposition = Convert.ToBoolean(dr["IsComposition"]),
-                            CompanyBranchId= Convert.ToInt64(dr["CompanyBranchId"]),
-                            IsTCS = Convert.ToBoolean(dr["IsTCS"]),
+                            CompanyBranchId= Convert.ToInt64(dr["CompanyBranchId"])
+                           // IsTCS = Convert.ToBoolean(dr["IsTCS"]),
                         };
                     }
                 }

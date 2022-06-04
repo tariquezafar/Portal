@@ -161,24 +161,34 @@
                     </div>
 
                 </div>
+
+                <div class="form-group col-md-4">
+                    <label for="txtInvoiceDate" class="col-sm-4 control-label">Invoice Date</label>
+                    <div class="col-sm-8 ">
+                        <input class="form-control" id="txtInvoiceDate" name="txtInvoiceDate" tabindex="12" placeholder="Enter Invoice Date" type="text" maxlength="50" />
+                    </div>
+                </div>
+
                 <div class="form-group col-md-4">
 
                     <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
                     <div class="col-sm-8">
-                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="21" class="form-control"></select>
+                        <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="13" class="form-control"></select>
                         <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
                         <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
                     </div>
                 </div>
-                <div class="form-group col-md-4">
-                    <label for="ddlServiceEngineer" class="col-sm-4 control-label">Service Engineer&nbsp;<span class="Mandatory">(*)</span> </label>
-                    <div class="col-sm-8">
-                        <select id="ddlServiceEngineer" name="ddlServiceEngineer" tabindex="4" class="form-control"></select>
-                    </div>
-                </div>
+
             </div>
 
             <div class="col-md-12">
+
+                <div class="form-group col-md-4">
+                    <label for="ddlServiceEngineer" class="col-sm-4 control-label">Service Engineer&nbsp;<span class="Mandatory">(*)</span> </label>
+                    <div class="col-sm-8">
+                        <select id="ddlServiceEngineer" name="ddlServiceEngineer" tabindex="14" class="form-control"></select>
+                    </div>
+                </div>
 
                 <div class="form-group col-md-4">
                     <label for="ddlDealer" class="col-sm-4 control-label">Dealer&nbsp;<span class="Mandatory">(*)</span> </label>
@@ -237,6 +247,12 @@
                     <label for="txtWarrantyEndDate" class="col-sm-4 control-label">Warranty End Date</label>
                     <div class="col-sm-8">
                         <input id="txtWarrantyEndDate" name="txtWarrantyEndDate" readonly tabindex="27" type="text" maxlength="50" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtQuantity" class="col-sm-4 control-label">Quantity<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="txtQuantity" name="txtQuantity" tabindex="40" type="text" maxlength="25" placeholder="Quantity" class="form-control  numeric-only" />
                     </div>
                 </div>
 
@@ -408,3 +424,5 @@
 <script src="~/Scripts/jquery-ui.js"></script>
 <script src="~/Scripts/paging.js"></script>
 <script src="~/Scripts/ComplaintService/AddComplaintService.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/notify.min.js"></script>

@@ -9,6 +9,8 @@ using Portal.Common;
 using System.Reflection;
 using System.Data;
 using Portal.DAL.Infrastructure;
+using Portal.Common.ViewModel;
+
 namespace Portal.Core
 {
     public class LocationBL
@@ -142,6 +144,29 @@ namespace Portal.Core
                 throw ex;
             }
             return locationViewModel;
+        }
+
+        /// <summary>
+        /// This method is used to Get Location List
+        /// Author By : Dheeraj Kumar
+        /// </summary>
+        /// <returns>
+        /// This Method is retruns list of the Object.
+        /// </returns>
+        public List<SelectListModel> GetLocationList()
+        {
+            List<SelectListModel> lstSelectListModel = new List<SelectListModel>();
+            try
+            {
+                lstSelectListModel = dbInterface.GetLocationList();
+
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return lstSelectListModel;
         }
     }
 }

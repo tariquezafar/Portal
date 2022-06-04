@@ -75,6 +75,9 @@ public class MRNViewModel
         public string ModifiedByUserName { get; set; }
 
         public string CancelDate { get; set; }
+
+        public int ? LocationID { get; set; }
+        public string LocationName { get; set; }
     }
     public class MRNProductDetailViewModel
     {

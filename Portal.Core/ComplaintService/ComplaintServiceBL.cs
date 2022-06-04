@@ -42,7 +42,8 @@ namespace Portal.Core
                     ComplaintDate = Convert.ToDateTime(complaintServiceViewModel.ComplaintDate),
                     InvoiceNo = complaintServiceViewModel.InvoiceNo,
                     EmployeeID = complaintServiceViewModel.EmployeeID,
-                    DealerID = complaintServiceViewModel.DealerID
+                    DealerID = complaintServiceViewModel.DealerID,
+                    InvoiceDate = string.IsNullOrEmpty(complaintServiceViewModel.InvoiceDate) ? Convert.ToDateTime("01-01-1900") : Convert.ToDateTime(complaintServiceViewModel.InvoiceDate),
 
 
                 };
@@ -56,7 +57,8 @@ namespace Portal.Core
                             ComplaintProductDetailID = item.ComplaintProductDetailID,
                             ComplaintId = item.ComplaintId,
                             ProductId = item.ProductId,
-                            Remarks = item.Remarks
+                            Remarks = item.Remarks,
+                            Quantity = item.Quantity
                         });
                     }
                 }
@@ -102,6 +104,7 @@ namespace Portal.Core
                             BranchID= Convert.ToInt32(dr["BranchID"]),
                             EmployeeID = Convert.ToInt32(dr["EmployeeID"]),
                             DealerID = Convert.ToInt32(dr["DealerID"]),
+                            InvoiceDate = Convert.ToString(dr["InvoiceDate"]),
 
                         };
                     }
@@ -135,8 +138,10 @@ namespace Portal.Core
                             ProductId = Convert.ToInt32(dr["ProductId"]),
                             ProductName = Convert.ToString(dr["ProductName"]),
                             ProductCode = Convert.ToString(dr["ProductCode"]),
-                            
-                         });
+                            Remarks = Convert.ToString(dr["Remarks"]),
+                            Quantity = Convert.ToInt32(dr["Quantity"]),
+
+                        });
                     }
                 }
             }

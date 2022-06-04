@@ -67,5 +67,6 @@ namespace Portal.DAL
         public Nullable<long> QualityCheckId { get; set; }
         public string QualityCheckNo { get; set; }
         public Nullable<System.DateTime> QualityCheckDate { get; set; }
+        public Nullable<int> LocationID { get; set; }
     }
 }

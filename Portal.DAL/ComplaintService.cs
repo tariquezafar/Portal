@@ -36,5 +36,6 @@ namespace Portal.DAL
         public string InvoiceNo { get; set; }
         public Nullable<int> EmployeeID { get; set; }
         public Nullable<int> DealerID { get; set; }
+        public Nullable<System.DateTime> InvoiceDate { get; set; }
     }
 }
