@@ -53,7 +53,7 @@
                             <div class="form-group col-md-6">
                                 <label for="txtPopUpConsigneeCode" class="col-sm-4 control-label">Consignee Code&nbsp;<span class="Mandatory">(*)</span></label>
                                 <div class="col-sm-8 ">
-                                    <input class="form-control" id="txtPopUpConsigneeCode" name="txtPopUpConsigneeCode" tabindex="25" placeholder="Enter Consignee Code" type="text" maxlength="50" />
+                                    <input class="form-control" id="txtPopUpConsigneeCode" readonly="readonly" name="txtPopUpConsigneeCode" tabindex="25" placeholder="Enter Consignee Code" type="text" maxlength="50" />
                                 </div>
                             </div>
                         </div>
@@ -190,8 +190,8 @@
                 $("#ddlPopUpConsigneeType").append($("<option></option>").val(0).html("-Select Customer Type-"));
                 $.each(data, function (i, item) {
 
-                    $("#ddlPopUpConsigneeType").append($("<option></option>").val(item.CustomerTypeId).html(item.CustomerTypeDesc));
-                });
+                    $("#ddlPopUpConsigneeType").append($("<option></option>").val(item.CustomerTypeId).html(item.CustomerTypeDesc + "(" + item.CustomerTypeCode+")"));
+                }); 
             },
             error: function (Result) {
                 $("#ddlPopUpConsigneeType").append($("<option></option>").val(0).html("-Select Customer Type-"));
@@ -214,7 +214,7 @@
                 success: function (data) {
                     $("#ddlPopUpConsigneeState").append($("<option></option>").val(0).html("-Select State-"));
                     $.each(data, function (i, item) {
-                        $("#ddlPopUpConsigneeState").append($("<option></option>").val(item.StateId).html(item.StateName));
+                        $("#ddlPopUpConsigneeState").append($("<option></option>").val(item.StateId).html(item.StateName+"("+item.StateCode+")"));
                     });
                     $("#ddlPopUpConsigneeState").val(stateId);
                 },
@@ -257,11 +257,11 @@
             txtPopUpConsigneeName.focus();
             return false;
         }
-        if (txtPopUpConsigneeCode.val().trim() == "") {
-            alert("Please Enter Consignee Code");
-            txtPopUpConsigneeCode.focus();
-            return false;
-        }
+        //if (txtPopUpConsigneeCode.val().trim() == "") {
+        //    alert("Please Enter Consignee Code");
+        //    txtPopUpConsigneeCode.focus();
+        //    return false;
+        //}
         if (txtPopUpConsigneeContactPersonName.val().trim() == "") {
             alert("Please Enter Contact Person name");
             txtPopUpConsigneeContactPersonName.focus();
@@ -306,7 +306,9 @@
             CountryId: ddlPopUpConsigneeCountry.val(),
             City: txtPopUpConsigneeCity.val().trim(),
             GSTNo: txtPopUpConsigneeGSTNo.val().trim(),
-            Customer_Status: true
+            Customer_Status: true,
+            CustomerTypeCode: $('#ddlPopUpConsigneeType option:selected').text().substring($('#ddlPopUpConsigneeType option:selected').text().indexOf('(') + 1, $('#ddlPopUpConsigneeType option:selected').text().indexOf(')')),
+            StateCode: $('#ddlPopUpConsigneeState option:selected').text().substring($('#ddlPopUpConsigneeState option:selected').text().indexOf('(') + 1, $('#ddlPopUpConsigneeState option:selected').text().indexOf(')')),
         };
         var requestData = { customerViewModel: customerViewModel };
         $.ajax({

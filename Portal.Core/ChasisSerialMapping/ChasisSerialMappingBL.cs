@@ -215,7 +215,8 @@ namespace Portal.Core
                     RearShockerAvailable = chasisSerialMappingViewModel.RearShockerAvailable,
                     ChargerAvailable = chasisSerialMappingViewModel.ChargerAvailable,
                     CreatedBy = chasisSerialMappingViewModel.CreatedBy,
-                    Status = chasisSerialMappingViewModel.ChasisSerialMapping_Status
+                    Status = chasisSerialMappingViewModel.ChasisSerialMapping_Status,
+                    CompanyBranchId=chasisSerialMappingViewModel.CompanyBranchId
 
                 };
                 responseOut = dbInterface.AddEditChasisSerialMappingForUploadUtility(chasisSerialMapping);
