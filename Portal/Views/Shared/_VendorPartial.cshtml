@@ -53,7 +53,7 @@
                             <div class="form-group col-md-6">
                                 <label for="txtPopUpVendorCode" class="col-sm-4 control-label">Vendor Code&nbsp;<span class="Mandatory">(*)</span></label>
                                 <div class="col-sm-8 ">
-                                    <input class="form-control" id="txtPopUpVendorCode" name="txtPopUpVendorCode" tabindex="26" placeholder="Enter Vendor Code" type="text" maxlength="50" />
+                                    <input class="form-control" id="txtPopUpVendorCode" readonly="readonly" name="txtPopUpVendorCode" tabindex="26" placeholder="Enter Vendor Code" type="text" maxlength="50" />
                                 </div>
                             </div>
                         </div>
@@ -124,7 +124,15 @@
                                     <label style="font-size: 24px;" tabindex="35" for="chkUnregisteredVendor"></label>
                                 </div>
                             </div>
-                          
+
+                            <div class="form-group col-md-6">
+                                <label for="chkIsTCS" class="col-sm-4 control-label">Is TCS</label>
+                                <div class="col-sm-8">
+                                    <input type="checkbox" name="chkIsTCS" id="chkIsTCS" class="" />
+                                    <label style="font-size: 24px;" tabindex="35" for="chkIsTCS"></label>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -210,7 +218,7 @@
                 success: function (data) {
                     $("#ddlPopUpState").append($("<option></option>").val(0).html("-Select State-"));
                     $.each(data, function (i, item) {
-                        $("#ddlPopUpState").append($("<option></option>").val(item.StateId).html(item.StateName));
+                        $("#ddlPopUpState").append($("<option></option>").val(item.StateId).html(item.StateName+"("+item.StateCode+")"));
                     });
                     $("#ddlPopUpState").val(stateId);
                 },
@@ -251,11 +259,11 @@
             txtPopUpVendorName.focus();
             return false;
         }
-        if (txtPopUpVendorCode.val().trim() == "") {
-            alert("Please Enter Vendor Code");
-            txtPopUpVendorCode.focus();
-            return false;
-        }
+        //if (txtPopUpVendorCode.val().trim() == "") {
+        //    alert("Please Enter Vendor Code");
+        //    txtPopUpVendorCode.focus();
+        //    return false;
+        //}
         if (txtPopUpContactPersonName.val().trim() == "") {
             alert("Please Enter Contact Person name");
             txtPopUpContactPersonName.focus();
@@ -300,7 +308,9 @@
             GSTNo: txtPopUpGSTNo.val().trim(),
             IsComposition: chkComposition,
             GST_Exempt: chkUnregisteredVendor,
-            Vendor_Status: true
+            Vendor_Status: true,
+            StateCode: $('#ddlPopUpState option:selected').text().substring($('#ddlPopUpState option:selected').text().indexOf('(') + 1, $('#ddlPopUpState option:selected').text().indexOf(')')),
+            IsTCS: $("#chkIsTCS").is(':checked') ? true : false
         };
         var requestData = { vendorViewModel: vendorViewModel };
         $.ajax({

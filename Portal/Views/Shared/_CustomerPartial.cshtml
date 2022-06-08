@@ -45,9 +45,9 @@
                     <div id="tabs-1">
                         <div class="col-md-12 ftop">
                             <div class="form-group col-md-6">
-                                <label for="txtPopUpCustomerCode" class="col-sm-4 control-label">Mobile no.&nbsp;<span class="Mandatory">(*)</span></label>
+                                <label for="txtPopUpCustomerMobileNo" class="col-sm-4 control-label">Mobile no.&nbsp;<span class="Mandatory">(*)</span></label>
                                 <div class="col-sm-8 ">
-                                    <input class="form-control" id="txtPopUpCustomerCode" name="txtPopUpCustomerCode" tabindex="11" placeholder="Enter Customer Mobile no" type="text" maxlength="50" />
+                                    <input class="form-control" id="txtPopUpCustomerMobileNo" name="txtPopUpCustomerMobileNo"  tabindex="11" placeholder="Enter Customer Mobile no" type="text" maxlength="50" />
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
@@ -95,15 +95,16 @@
                                     <input class="form-control alpha-space-only" id="txtPopUpCity" name="txtPopUpCity" tabindex="16" placeholder="Enter City" type="text" maxlength="50" />
                                 </div>
                             </div>
-
-                        </div>
-                        <div class="col-md-12" style="display:none;">
                             <div class="form-group  col-md-6">
                                 <label for="ddlPopUpCustomerType" class="col-sm-4 control-label">Customer Type&nbsp;<span class="Mandatory">(*)</span></label>
                                 <div class="col-sm-8">
                                     <select id="ddlPopUpCustomerType" name="ddlPopUpCustomerType" tabindex="18" class="form-control"></select>
                                 </div>
                             </div>
+
+                        </div>
+                        <div class="col-md-12" >
+                            
                             <div class="form-group  col-md-6">
                                 <label for="txtPopUpGSTNo" class="col-sm-4 control-label">GST No.</label>
                                 <div class="col-sm-8">
@@ -191,7 +192,7 @@
                 $("#ddlPopUpCustomerType").append($("<option></option>").val(0).html("-Select Customer Type-"));
                 $.each(data, function (i, item) {
 
-                    $("#ddlPopUpCustomerType").append($("<option></option>").val(item.CustomerTypeId).html(item.CustomerTypeDesc));
+                    $("#ddlPopUpCustomerType").append($("<option></option>").val(item.CustomerTypeId).html(item.CustomerTypeDesc+"("+item.CustomerTypeCode+")"));
                 });
             },
             error: function (Result) {
@@ -215,7 +216,7 @@
                 success: function (data) {
                     $("#ddlPopUpState").append($("<option></option>").val(0).html("-Select State-"));
                     $.each(data, function (i, item) {
-                        $("#ddlPopUpState").append($("<option></option>").val(item.StateId).html(item.StateName));
+                        $("#ddlPopUpState").append($("<option></option>").val(item.StateId).html(item.StateName + "(" + item.StateCode+")"));
                     });
                     $("#ddlPopUpState").val(stateId);
                 },
@@ -243,7 +244,7 @@
 
     function SaveDataPopUp() {
         var txtPopUpCustomerName = $("#txtPopUpCustomerName");
-        var txtPopUpCustomerCode = $("#txtPopUpCustomerCode");
+        var txtPopUpCustomerMobileNo = $("#txtPopUpCustomerMobileNo");
         var txtPopUpContactPersonName = $("#txtPopUpContactPersonName");
         var txtPopUpPrimaryAddress = $("#txtPopUpPrimaryAddress");
         var ddlPopUpCustomerType = $("#ddlPopUpCustomerType");
@@ -253,9 +254,9 @@
         var txtPopUpCity = $("#txtPopUpCity");
         var hdnCustomerMasterType = $("#hdnCustomerMasterType").val();
 
-        if (txtPopUpCustomerCode.val().trim() == "") {
+        if (txtPopUpCustomerMobileNo.val().trim() == "") {
             alert("Please Enter Mobile No.");
-            txtPopUpCustomerCode.focus();
+            txtPopUpCustomerMobileNo.focus();
             return false;
         }
         if (txtPopUpCustomerName.val().trim() == "") {
@@ -276,11 +277,7 @@
         //    return false;
         //}
 
-        //if (ddlPopUpCustomerType.val().trim() == "0"|| ddlPopUpCustomerType.val() == null) {
-        //    alert("Please select customer type");
-        //    ddlPopUpCustomerType.focus();
-        //    return false;
-        //}
+     
         if (ddlPopUpCountry.val() == "" || ddlPopUpCountry.val() == "0") {
             alert("Please select Country");
             ddlPopUpCountry.focus();
@@ -291,7 +288,11 @@
             ddlPopUpState.focus();
             return false;
         }
-
+        if (ddlPopUpCustomerType.val().trim() == "0" || ddlPopUpCustomerType.val() == null) {
+            alert("Please select customer type");
+            ddlPopUpCustomerType.focus();
+            return false;
+        }
         //if (txtPopUpCity.val().trim() == "") {
         //    alert("Please enter city");
         //    txtPopUpCity.focus();
@@ -307,7 +308,7 @@
         //    else
         //    {
         //        var customerViewModel = {
-        //            CustomerCode: txtPopUpCustomerCode.val().trim(),
+        //            CustomerCode: txtPopUpCustomerMobileNo.val().trim(),
         //            CustomerName: txtPopUpCustomerName.val().trim(),
         //            ContactPersonName: txtPopUpContactPersonName.val().trim(),
         //            PrimaryAddress: txtPopUpPrimaryAddress.val().trim(),
@@ -350,7 +351,7 @@
         //}
 
         var customerViewModel = {
-            CustomerCode: txtPopUpCustomerCode.val().trim(),
+            MobileNo: txtPopUpCustomerMobileNo.val().trim(),
             CustomerName: txtPopUpCustomerName.val().trim(),
             ContactPersonName: txtPopUpContactPersonName.val().trim(),
             PrimaryAddress: txtPopUpPrimaryAddress.val().trim(),
@@ -359,7 +360,9 @@
             CountryId: ddlPopUpCountry.val(),
             City: txtPopUpCity.val().trim(),
             GSTNo: txtPopUpGSTNo.val().trim(),
-            Customer_Status: true
+            Customer_Status: true,
+            CustomerTypeCode: $('#ddlPopUpCustomerType option:selected').text().substring($('#ddlPopUpCustomerType option:selected').text().indexOf('(') + 1, $('#ddlPopUpCustomerType option:selected').text().indexOf(')')),
+            StateCode: $('#ddlPopUpState option:selected').text().substring($('#ddlPopUpState option:selected').text().indexOf('(') + 1, $('#ddlPopUpState option:selected').text().indexOf(')')),
         };
         var requestData = { customerViewModel: customerViewModel };
         $.ajax({
@@ -401,7 +404,8 @@
                     if (data != null) {
                         $("#hdnCustomerId").val(data[0].CustomerId);
                         $("#txtCustomerName").val(data[0].CustomerName);
-                        $("#txtCustomerCode").val(data[0].CustomerCode);
+                        $("#txtCustomerCode").val(data[0].MobileNo);
+                        $("#txtCustomerMobile").val(data[0].MobileNo);
                         
                     }
                 },
@@ -444,7 +448,7 @@
     }
     function ClearFieldsPopUp() {
         $("#txtPopUpCustomerName").val("");
-        $("#txtPopUpCustomerCode").val("");
+        $("#txtPopUpCustomerMobileNo").val("");
         $("#txtPopUpContactPersonName").val("");
         $("#ddlPopUpCustomerType").val("0");
         $("#txtPopUpPrimaryAddress").val("");
