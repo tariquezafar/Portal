@@ -160,7 +160,7 @@ namespace Portal.Controllers
 
 
         #region Import Chessis Serial Mapping
-        [ValidateRequest(true, UserInterfaceHelper.ImportChessisSerialMapping, (int)AccessMode.AddAccess, (int)RequestMode.GetPost)]
+        [ValidateRequest(true, UserInterfaceHelper.Product_ImportChessisSerialMapping, (int)AccessMode.AddAccess, (int)RequestMode.GetPost)]
         [HttpGet]
         public ActionResult ImportChessisSerialMapping()
         {
@@ -175,7 +175,7 @@ namespace Portal.Controllers
             return View();
         }
 
-        [ValidateRequest(true, UserInterfaceHelper.ImportChessisSerialMapping, (int)AccessMode.AddAccess, (int)RequestMode.GetPost)]
+        [ValidateRequest(true, UserInterfaceHelper.Product_ImportChessisSerialMapping, (int)AccessMode.AddAccess, (int)RequestMode.GetPost)]
         [ActionName("ImportChessisSerialMapping")]
         [HttpPost]
         public ActionResult ImportChessisSerialMappingData()

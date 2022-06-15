@@ -14,6 +14,12 @@ namespace Portal.DAL
     
     public partial class Location
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Location()
+        {
+            this.ProductOpeningStock = new HashSet<ProductOpeningStock>();
+        }
+    
         public int LocationId { get; set; }
         public string LocationCode { get; set; }
         public string LocationName { get; set; }
@@ -25,5 +31,8 @@ namespace Portal.DAL
         public Nullable<int> Modifiedby { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public Nullable<bool> Status { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductOpeningStock> ProductOpeningStock { get; set; }
     }
 }

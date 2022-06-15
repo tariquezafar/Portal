@@ -81,7 +81,6 @@
         <EntityTypeShape EntityType="ERPModel.ChallanTaxDetail" Width="1.5" PointX="27.375" PointY="27.75" />
         <EntityTypeShape EntityType="ERPModel.ChallanTermsDetail" Width="1.5" PointX="9.375" PointY="28.75" />
         <EntityTypeShape EntityType="ERPModel.DeliveryChallan" Width="1.5" PointX="11.375" PointY="28.75" />
-        <EntityTypeShape EntityType="ERPModel.MRN" Width="1.5" PointX="22.375" PointY="28.75" />
         <EntityTypeShape EntityType="ERPModel.MRNProductDetail" Width="1.5" PointX="28.375" PointY="15.75" />
         <EntityTypeShape EntityType="ERPModel.ChallanProductDetail" Width="1.5" PointX="24.375" PointY="28.75" />
         <EntityTypeShape EntityType="ERPModel.ProductTrnStock" Width="1.5" PointX="28.375" PointY="18.75" />
@@ -201,8 +200,6 @@
         <EntityTypeShape EntityType="ERPModel.Return" Width="1.5" PointX="28.375" PointY="45.75" />
         <EntityTypeShape EntityType="ERPModel.ProductInternalStock" Width="1.5" PointX="19.375" PointY="46.75" />
         <EntityTypeShape EntityType="ERPModel.TargetDetail" Width="1.5" PointX="21.375" PointY="46.75" />
-        <EntityTypeShape EntityType="ERPModel.ComplaintService" Width="1.5" PointX="40.375" PointY="45.75" />
-        <EntityTypeShape EntityType="ERPModel.ComplaintServiceProductDetail" Width="1.5" PointX="46.375" PointY="27.75" />
         <EntityTypeShape EntityType="ERPModel.ReturnedProductDetail" Width="1.5" PointX="23.375" PointY="46.75" />
         <EntityTypeShape EntityType="ERPModel.TransferClosingBalance" Width="1.5" PointX="46.375" PointY="30.75" />
         <EntityTypeShape EntityType="ERPModel.GLTransferClosingBalance" Width="1.5" PointX="30.375" PointY="46.75" />
@@ -231,6 +228,10 @@
         <EntityTypeShape EntityType="ERPModel.Product" Width="1.5" PointX="48.375" PointY="38.75" />
         <EntityTypeShape EntityType="ERPModel.SaleInvoice" Width="1.5" PointX="34.375" PointY="49.75" />
         <EntityTypeShape EntityType="ERPModel.CustomerType" Width="1.5" PointX="14.375" PointY="30.75" />
+        <AssociationConnector Association="ERPModel.FK_ProductOpeningStock_LocationId" />
+        <EntityTypeShape EntityType="ERPModel.ComplaintService" Width="1.5" PointX="20.375" PointY="32.75" />
+        <EntityTypeShape EntityType="ERPModel.ComplaintServiceProductDetail" Width="1.5" PointX="13.375" PointY="33.75" />
+        <EntityTypeShape EntityType="ERPModel.MRN" Width="1.5" PointX="40.375" PointY="46.75" />
         </Diagram>
       <Diagram DiagramId="c9375e52311f45a98fc7e70a6f59ccca" Name="Diagram2" />
     </edmx:Diagrams>

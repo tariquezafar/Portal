@@ -416,18 +416,18 @@ function AddLeadFollowUp(action) {
         return false;
     }
 
-    if (txtReminderDate.val().trim() == "") {
-        ShowModel("Alert", "Please select reminder date")
-        txtReminderDate.focus();
-        return false;
-    }
+    //if (txtReminderDate.val().trim() == "") {
+    //    ShowModel("Alert", "Please select reminder date")
+    //    txtReminderDate.focus();
+    //    return false;
+    //}
 
     var reminderDate = txtReminderDate.val().trim();
     var dueDate = txtdueDate.val().trim();
     var Reminder = new Date(Date.parse(reminderDate));
     var Due = new Date(Date.parse(dueDate));   
 
-    if (Reminder > Due) {
+    if (txtdueDate.val().trim() != "" && txtReminderDate.val().trim() != ""  && Reminder > Due) {
         ShowModel("Alert", "Due Date Should be Greater then Reminder Date")
         txtReminderDate.focus();
         return false;
@@ -451,11 +451,11 @@ function AddLeadFollowUp(action) {
             ddlPriority.focus();
             return false;
         }
-        if (txtAssignlead.val() == "" || txtAssignlead.val() == "0") {
-            ShowModel("Alert", "Please Select Assign Lead")
-            txtAssignlead.focus();
-            return false;
-        }
+        //if (txtAssignlead.val() == "" || txtAssignlead.val() == "0") {
+        //    ShowModel("Alert", "Please Select Assign Lead")
+        //    txtAssignlead.focus();
+        //    return false;
+        //}
     }
     if (txtRemarks.val() == "") {
         ShowModel("Alert", "Please Enter Remarks")
@@ -463,11 +463,11 @@ function AddLeadFollowUp(action) {
         return false;
     }
     
-    if (txtLeadStatusReason.val() == "") {
-        ShowModel("Alert", "Please Enter Lead Status Reason")
-        txtLeadStatusReason.focus();
-        return false;
-    }
+    //if (txtLeadStatusReason.val() == "") {
+    //    ShowModel("Alert", "Please Enter Lead Status Reason")
+    //    txtLeadStatusReason.focus();
+    //    return false;
+    //}
 
 
    
@@ -673,6 +673,7 @@ function EditRow(obj) {
 }
 
 function ClearFollowUpFields() {
+    $(".nofollowup").show();
     $("#hdnLeadFollowUpId").val("0");
     $("#ddlActivityType").val("0");
     $("#txtdueDate").val("");
@@ -903,11 +904,11 @@ function SaveData() {
    
     var chkstatus = $("#chkstatus").is(':checked') ? true : false;
 
-    if (txtCompanyName.val().trim() == "") {
-        ShowModel("Alert", "Please Enter Company Name")
-        txtCompanyName.focus();
-        return false;
-    }
+    //if (txtCompanyName.val().trim() == "") {
+    //    ShowModel("Alert", "Please Enter Company Name")
+    //    txtCompanyName.focus();
+    //    return false;
+    //}
     //if (txtEmail.val().trim() == "") {
     //    ShowModel("Alert", "Please Enter Email")
     //    txtEmail.focus();
@@ -936,11 +937,23 @@ function SaveData() {
         txtContactNo.focus();
         return false;
     }
-    if (txtDesignation.val().trim() == 0) {
-        ShowModel("Alert", "Please Enter Designation")
-        txtDesignation.focus();
+
+    if (ddlCountry.val() == 0) {
+        ShowModel("Alert", "Please Select Country")
+        ddlCountry.focus();
         return false;
     }
+    if (ddlState.val() == 0) {
+        ShowModel("Alert", "Please Select State")
+        ddlState.focus();
+        return false;
+    }
+   
+    //if (txtDesignation.val().trim() == 0) {
+    //    ShowModel("Alert", "Please Enter Designation")
+    //    txtDesignation.focus();
+    //    return false;
+    //}
     /*if (txtAddress.val().trim() == 0) {
         ShowModel("Alert", "Please Enter Address")
         txtAddress.focus();
@@ -977,12 +990,12 @@ function SaveData() {
     }
     
 
-    if (ddlCompanyBranch.val() == 0) {
-        ShowModel("Alert", "Please Select Company Branch")
-        ddlCompanyBranch.focus();
-        return false;
+    //if (ddlCompanyBranch.val() == 0) {
+    //    ShowModel("Alert", "Please Select Company Branch")
+    //    ddlCompanyBranch.focus();
+    //    return false;
 
-    }
+    //}
 
     var accessMode = 1;//Add Mode
     if (hdnLeadId.val() != null && hdnLeadId.val() != 0) {
@@ -1120,7 +1133,8 @@ function ClearFields() {
         $("#txtPinCode").val("");
         $("#ddlLeadStatus").val("0"); 
         $("#chkstatus").prop("checked", true);
-        $("#divLeadList").html("");
+    $("#divLeadList").html("");
+    
 
     }
 function EnableDisableFollowupActivityControls()

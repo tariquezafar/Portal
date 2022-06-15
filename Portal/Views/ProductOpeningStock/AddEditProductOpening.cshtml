@@ -72,59 +72,67 @@
                     </div>
                 </div>
                 <div class="form-group col-md-4">
-                    
-                        <label for="txtProductCode" class="col-sm-4 control-label">Product Code</label>
-                        <div class="col-sm-8">
-                            <input id="txtProductCode" name="txtProductCode" type="text" style="background-color:transparent;border:none;" maxlength="50" class="form-control" />
-                        </div>
-                    
+
+                    <label for="txtProductCode" class="col-sm-4 control-label">Product Code</label>
+                    <div class="col-sm-8">
+                        <input id="txtProductCode" name="txtProductCode" type="text" style="background-color:transparent;border:none;" maxlength="50" class="form-control" />
+                    </div>
+
                 </div>
                 <div class="form-group col-md-4">
-                    
-                        <label for="txtProductShortDesc" class="col-sm-4 control-label">Product Short Desc</label>
-                        <div class="col-sm-8">
-                            <input id="txtProductShortDesc" name="txtProductShortDesc" type="text" style="background-color:transparent;border:none;" maxlength="100" class="form-control" />
-                        </div>
-                   
-                </div>
-                </div>
-                <div class="col-md-12 ftop">
-                    <div class="form-group col-md-4">
-                        <label for="ddlFinYear" class="col-sm-4 control-label">Fin. Year&nbsp;<span class="Mandatory">(*)</span></label>
-                        <div class="col-sm-8">
-                            <select id="ddlFinYear" name="ddlFinYear" tabindex="2" class="form-control"></select>
-                        </div>
+
+                    <label for="txtProductShortDesc" class="col-sm-4 control-label">Product Short Desc</label>
+                    <div class="col-sm-8">
+                        <input id="txtProductShortDesc" name="txtProductShortDesc" type="text" style="background-color:transparent;border:none;" maxlength="100" class="form-control" />
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="ddlcompanybranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
-                        <div class="col-sm-8">
-                            <select id="ddlcompanybranch" name="ddlcompanybranch" tabindex="3" class="form-control"></select>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="txtOpeningQty" class="col-sm-4 control-label">Opening Qty.&nbsp;<span class="Mandatory">(*)</span></label>
-                        <div class="col-sm-8">
-                            <input id="txtOpeningQty" name="txtOpeningQty" type="text" tabindex="4" placeholder="Enter Opening Quantity" maxlength="20" class="form-control  input-number" onkeyup="checkDec(this)" />
-                        </div>
-                    </div>
-                </div>
-               
-            
-                <div class="row col-sm-12 col-lg-12 col-md-12">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6">
-                        <center>
-                            <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="5" onclick="SaveData(1)" type="button" border="0"> 
-                            <input class="btn btn-success" value="Update" style="display:none;" tabindex="5" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0"> 
-                            <a class="btn btn-success" id="btnReset" tabindex="8" href="@Url.Content("~/ProductOpeningStock/AddEditProductOpening")">Reset</a>
-                             @*<input class="btn btn-success" type="button" id="btnReset" tabindex="8" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
-                            @*<input class="btn btn-success" type="button" id="btnList" value="Search Company" />*@
-                            <a class="btn btn-success" id="btnList" tabindex="9" href="@Url.Content("~/ProductOpeningStock/ListProductOpening")">Search Product Opening</a>
-                        </center>
-                    </div>
-                    <div class="col-md-3"></div>
+
                 </div>
             </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="ddlFinYear" class="col-sm-4 control-label">Fin. Year&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlFinYear" name="ddlFinYear" tabindex="2" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="ddlcompanybranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlcompanybranch" name="ddlcompanybranch" tabindex="3" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="ddlLocation" class="col-sm-4 control-label">Location&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <select id="ddlLocation" name="ddlLocation" tabindex="3" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 ftop">
+                <div class="form-group col-md-4">
+                    <label for="txtOpeningQty" class="col-sm-4 control-label">Opening Qty.&nbsp;<span class="Mandatory">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input id="txtOpeningQty" name="txtOpeningQty" type="text" tabindex="4" placeholder="Enter Opening Quantity" maxlength="20" class="form-control  input-number" onkeyup="checkDec(this)" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row col-sm-12 col-lg-12 col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <center>
+                        <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="5" onclick="SaveData(1)" type="button" border="0">
+                        <input class="btn btn-success" value="Update" style="display:none;" tabindex="5" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">
+                        <a class="btn btn-success" id="btnReset" tabindex="8" href="@Url.Content("~/ProductOpeningStock/AddEditProductOpening")">Reset</a>
+                        @*<input class="btn btn-success" type="button" id="btnReset" tabindex="8" onclick="ClearFields()" value="Reset" /> &nbsp;&nbsp;*@
+                        @*<input class="btn btn-success" type="button" id="btnList" value="Search Company" />*@
+                        <a class="btn btn-success" id="btnList" tabindex="9" href="@Url.Content("~/ProductOpeningStock/ListProductOpening")">Search Product Opening</a>
+                    </center>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
         <!-- Modal -->
         <div class="modal fade" id="alertModel" tabindex="6" role="dialog">
             <div class="modal-dialog  modal-sm">

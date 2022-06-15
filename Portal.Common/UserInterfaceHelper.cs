@@ -357,6 +357,8 @@ namespace Portal.Common
         public const int Add_Edit_ServiceInvoice = 12289;
         public const int Add_Edit_CancelServiceInvoice = 12289;
 
+        public const int Product_ImportChessisSerialMapping = 12290;
+
     }
 }
 

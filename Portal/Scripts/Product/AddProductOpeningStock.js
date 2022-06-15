@@ -84,7 +84,7 @@ $(document).ready(function () {
    };
 
     
-
+    
 
 });
 $(".alpha-only").on("input", function () {
@@ -161,6 +161,7 @@ function BindCompanyBranch() {
 
             if (hdnSessionCompanyBranchId.val() != "0" && hdnSessionUserID.val() != "2") {
                 $("#ddlcompanybranch").val(hdnSessionCompanyBranchId.val());
+                BindBranchLocation($("#ddlcompanybranch").val());
                 $("#ddlcompanybranch").attr('disabled', true);
             }
         },
@@ -188,6 +189,7 @@ function GetProductOpeningDetail(openingTrnId) {
             $("#ddlFinYear").val(data.FinYearId);
             $("#ddlcompanybranch").val(data.CompanyBranchId);
             $("#txtOpeningQty").val(data.OpeningQty);
+            $("#ddlLocation").val(data.LocationId);
             
         },
         error: function (Result) {
@@ -233,6 +235,11 @@ function SaveData()
         ddlcompanybranch.focus();
         return false;
     }
+    if ($("#ddlLocation").val() == "" || $("#ddlLocation").val() == "0") {
+        ShowModel("Alert", "Please select Branch Location.")
+        ddlcompanybranch.focus();
+        return false;
+    }
     if (txtOpeningQty.val() == "") {
         ShowModel("Alert", "Please enter Product Opening Qty")
         txtOpeningQty.focus();
@@ -240,7 +247,8 @@ function SaveData()
     }
     var productOpeningViewModel = {
         OpeningTrnId: hdnOpeningTrnd.val(), ProductId: hdnProductId.val(),
-        FinYearId: ddlFinYear.val(),CompanyBranchId:ddlcompanybranch.val(), OpeningQty: txtOpeningQty.val()
+        FinYearId: ddlFinYear.val(), CompanyBranchId: ddlcompanybranch.val(), OpeningQty: txtOpeningQty.val(),
+        LocationId: $("#ddlLocation").val()
     };
     var accessMode = 1;//Add Mode
     if (hdnOpeningTrnd.val() != null && hdnOpeningTrnd.val() != 0) {
@@ -294,4 +302,24 @@ function ClearFields()
     $("#ddlcompanybranch").val("0");
     $("#txtOpeningQty").val("0");
     
+}
+
+function BindBranchLocation( BranchId) {
+    $.ajax({
+        type: "GET",
+        url: "../Fabrication/GetBranchLocationList",
+        data: { companyBranchID: BranchId },
+        dataType: "json",
+        asnc: false,
+        success: function (data) {
+            $("#ddlLocation").append($("<option></option>").val(0).html("-Select Branch Location-"));
+            $.each(data, function (i, item) {
+                $("#ddlLocation").append($("<option></option>").val(item.LocationId).html(item.LocationName));
+            });
+           
+        },
+        error: function (Result) {
+            $("#ddlLocation").append($("<option></option>").val(0).html("-Select Branch Location-"));
+        }
+    });
 }

@@ -71,12 +71,17 @@ namespace Portal.Core
                           
                             foreach (LeadFollowUpViewModel leadFollowUpViewModel in leadFollowUps)
                             {
+                                DateTime ? dtFollowUpReminderDateTime = null;
+                                if (leadFollowUpViewModel.FollowUpReminderDateTime != null)
+                                {
+                                    dtFollowUpReminderDateTime = Convert.ToDateTime(leadFollowUpViewModel.FollowUpReminderDateTime);
+                                }
                                     LeadFollowUp leadFollowUp = new LeadFollowUp {
                                     LeadFollowUpId = leadFollowUpViewModel.LeadFollowUpId,
                                     LeadId = leadId,
                                     FollowUpActivityTypeId = leadFollowUpViewModel.FollowUpActivityTypeId,
                                     FollowUpDueDateTime =Convert.ToDateTime(leadFollowUpViewModel.FollowUpDueDateTime),
-                                    FollowUpReminderDateTime =Convert.ToDateTime( leadFollowUpViewModel.FollowUpReminderDateTime),
+                                    FollowUpReminderDateTime = dtFollowUpReminderDateTime,
                                     FollowUpRemarks=leadFollowUpViewModel.FollowUpRemarks,
                                     Priority =Convert.ToByte(leadFollowUpViewModel.Priority),
                                     LeadStatusId = leadFollowUpViewModel.LeadStatusId,

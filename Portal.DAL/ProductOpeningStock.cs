@@ -24,5 +24,8 @@ namespace Portal.DAL
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public Nullable<int> CompanyId { get; set; }
         public Nullable<int> CompanyBranchId { get; set; }
+        public Nullable<int> LocationId { get; set; }
+    
+        public virtual Location Location { get; set; }
     }
 }

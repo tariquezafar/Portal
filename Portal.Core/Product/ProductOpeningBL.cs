@@ -31,7 +31,8 @@ namespace Portal.Core
                     CompanyBranchId = productOpeningViewModel.CompanyBranchId,
                     OpeningQty =productOpeningViewModel.OpeningQty,
                     CreatedBy = productOpeningViewModel.CreatedBy,
-                    CompanyId= productOpeningViewModel.CompanyId
+                    CompanyId= productOpeningViewModel.CompanyId,
+                    LocationId=productOpeningViewModel.LocationId
                 };
                 responseOut = dbInterface.AddEditProductOpening(productOpening);
             }
@@ -66,7 +67,8 @@ namespace Portal.Core
                             CompanyBranchId = Convert.ToInt16(dr["CompanyBranchId"]),
                             BranchName = Convert.ToString(dr["BranchName"]),
                             FinYearDesc = Convert.ToString(dr["FinYearDesc"]),
-                            OpeningQty = Convert.ToDecimal(dr["OpeningQty"])
+                            OpeningQty = Convert.ToDecimal(dr["OpeningQty"]),
+                           LocationName = Convert.ToString(dr["LocationName"]),
 
                         });
                     }

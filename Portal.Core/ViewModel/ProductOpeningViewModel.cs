@@ -30,6 +30,10 @@ namespace Portal.Core.ViewModel
         public string message { get; set; }
         public string status { get; set; }
 
+        public int LocationId { get; set; }
+
+        public string LocationName { get; set; }
+
     }
     
 }
