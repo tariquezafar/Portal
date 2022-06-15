@@ -251,9 +251,10 @@ function BindCompanyBranchList() {
     });
 }
 /* Job Order */
-function GetReturnProductList(returnProducts) {
+function GetReturnProductList(returnProducts, complaintId) {
     var hdnReturnedID = $("#hdnReturnedID");
-    var requestData = { returnProducts: returnProducts, returnedID: hdnReturnedID.val() };
+    var ddlCompanyBranch = $("#ddlCompanyBranch").val();
+    var requestData = { returnProducts: returnProducts, returnedID: hdnReturnedID.val(), complaintId: complaintId, companyBranch: ddlCompanyBranch };
     $.ajax({
         url: "../Return/GetReturnProductList",
         cache: false,
@@ -1014,6 +1015,17 @@ function OpenWorkOrderSearchPopup() {
 
 }
 
+function OpenWorkOrderComplaintSearchPopup() {
+    debugger
+    if ($("#ddlCompanyBranch").val() == "0" || $("#ddlCompanyBranch").val() == "") {
+        ShowModel("Alert", "Please Select Company Branch");
+        return false;
+    }
+    $("#divComplaintList").html("");
+    $("#SearchComplaintWordOrderModel").modal();
+
+}
+
 function SearchSI() {
     var txtSearchSaleInvoiceNo = $("#txtSearchSaleInvoiceNo");
     var txtSearchInvoicePackingListNo = $("#txtSearchInvoicePackingListNo");
@@ -1036,6 +1048,28 @@ function SearchSI() {
     });
 }
 
+function SearchCI() {
+    var txtSearchComplaintInvoiceNo = $("#txtSearchComplaintInvoiceNo");
+    var txtSearchCustomerMobileNo = $("#txtSearchCustomerMobileNo");
+    var ddlCompanyBranch = $("#ddlCompanyBranch");
+
+    var requestData = { complaintInvoiceNo: txtSearchComplaintInvoiceNo.val().trim(), customerMobileNo: txtSearchCustomerMobileNo.val().trim(), companyBranchId: ddlCompanyBranch.val() };
+    $.ajax({
+        url: "../Return/GetComplaintInvoiceReturnList",
+        data: requestData,
+        dataType: "html",
+        type: "GET",
+        error: function (err) {
+            $("#divComplaintList").html("");
+            $("#divComplaintList").html(err);
+        },
+        success: function (data) {
+            $("#divComplaintList").html("");
+            $("#divComplaintList").html(data);
+        }
+    });
+}
+
 function SelectSI(warrantyID, invoiceId, invoiceNo, invoicePackingListNo ) {
     $("#hdnWarrantyID").val(warrantyID);
     $("#hdnSaleInvoiceID").val(invoiceId);
@@ -1043,4 +1077,11 @@ function SelectSI(warrantyID, invoiceId, invoiceNo, invoicePackingListNo ) {
     $("#txtInvoicePackingListNo").val(invoicePackingListNo);
     $("#SearchWordOrderModel").modal('hide');
     $("#ddlCompanyBranch").attr('disabled', true);
+}
+
+function SelectCI(complaintId) {
+    $("#SearchComplaintWordOrderModel").modal('hide');
+    $("#ddlCompanyBranch").attr('disabled', true);
+    GetReturnProductList(null, complaintId);
+
 }

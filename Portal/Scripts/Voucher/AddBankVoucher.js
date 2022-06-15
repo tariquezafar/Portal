@@ -445,8 +445,8 @@ function SaveDocument() {
 function BindDocumentTypeList() {
     $.ajax({
         type: "GET",
-        url: "../PO/GetDocumentTypeList",
-        data: "{}",
+        url: "../PO/GetModuleDocumentTypeList",
+        data: { employeeDoc: "Accounts" },
         dataType: "json",
         asnc: false,
         success: function (data) {

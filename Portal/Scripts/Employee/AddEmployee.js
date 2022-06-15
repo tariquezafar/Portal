@@ -50,6 +50,7 @@
     BindReportingDepartmentList();
     BindResumeSourceList();
     BindPositionList();
+    BindDocumentTypeList();
 
     $("#ddlCState,#ddlPState").append($("<option></option>").val(0).html("-Select State-"));
     $("#ddlDesignation").append($("<option></option>").val(0).html("-Select Designation-"));
@@ -69,6 +70,7 @@
             $("#btnSave").hide();
             $("#btnUpdate").hide();
             $("#btnReset").hide();
+            $(".editonly").hide();
             $("#chkSamePermanentAddress").attr('disabled', true);
             $("#FileUpload1").attr('disabled', true);
             $("input").attr('readOnly', true);
@@ -135,7 +137,6 @@
       .append("<div><b>" + item.label + " || " + item.EmployeeCode + "</b><br>" + item.MobileNo + "</div>")
       .appendTo(ul);
 };
-
 
 });
 $(".alpha-only").on("input", function () {
@@ -507,6 +508,7 @@ function GetEmployeeDetail(employeeId) {
             var hdnAccessMode = $("#hdnAccessMode");
             if (hdnAccessMode.val() == "3") {
                 $("#btnRemoveImg").hide();
+                $(".editonly").hide();
             }
 
 
@@ -931,12 +933,37 @@ function SaveData() {
         Emp_Status: chkStatus
 
     };
+
+    var employeeDocumentList = [];
+    $('#tblDocumentList tr').each(function (i, row) {
+        var $row = $(row);
+        var EmployeeDocId = $row.find("#hdnSODocId").val();
+        var documentSequenceNo = $row.find("#hdnDocumentSequenceNo").val();
+        var documentTypeId = $row.find("#hdnDocumentTypeId").val();
+        var documentTypeDesc = $row.find("#hdnDocumentTypeDesc").val();
+        var documentName = $row.find("#hdnDocumentName").val();
+        var documentPath = $row.find("#hdnDocumentPath").val();
+
+        if (EmployeeDocId != undefined) {
+            var employeeDocument = {
+                EmployeeDocId: EmployeeDocId,
+                DocumentSequenceNo: documentSequenceNo,
+                DocumentTypeId: documentTypeId,
+                DocumentTypeDesc: documentTypeDesc,
+                DocumentName: documentName,
+                DocumentPath: documentPath
+            };
+            employeeDocumentList.push(employeeDocument);
+        }
+
+    });
+
     var accessMode = 1;//Add Mode
     if (hdnEmployeeID.val() != null && hdnEmployeeID.val() != 0) {
         accessMode = 2;//Edit Mode
     }
 
-    var requestData = { employeeViewModel: employeeViewModel };
+    var requestData = { employeeViewModel: employeeViewModel, employeeDocuments: employeeDocumentList };
     $.ajax({
         url: "../Employee/AddEditEmployee?accessMode=" + accessMode + "",
         cache: false,
@@ -1570,5 +1597,209 @@ function CalculatePercAmt() {
         $("#txtEmployerEPSPerc").val(employerEPSPerc);
 
     }
+}
 
+function ShowHideDocumentPanel(action) {
+    if (action == 1) {
+        $(".documentsection").show();
+    }
+    else {
+        $(".documentsection").hide();
+        $("#ddlDocumentType").val("0");
+        $("#hdnSODocId").val("0");
+        $("#FileUpload2").val("");
+
+        $("#btnAddDocument").show();
+        $("#btnUpdateDocument").hide();
+    }
+}
+
+function SaveDocument() {
+    debugger
+    if ($("#ddlDocumentType").val() == "0") {
+        ShowModel("Alert", "Please Select document type")
+        return false;
+    }
+    if (window.FormData !== undefined) {
+        var uploadfile = document.getElementById('FileUpload2');
+        var fileData = new FormData();
+        if (uploadfile.value != '') {
+            var fileUpload = $("#FileUpload2").get(0);
+            var files = fileUpload.files;
+
+            if (uploadfile.files[0].size > 50000000) {
+                uploadfile.files[0].name.length = 0;
+                ShowModel("Alert", "File is too big")
+                uploadfile.value = "";
+                return "";
+            }
+
+            for (var i = 0; i < files.length; i++) {
+                fileData.append(files[i].name, files[i]);
+            }
+        }
+        else {
+
+            ShowModel("Alert", "Please Select File")
+            return false;
+
+        }
+
+
+    } else {
+
+        ShowModel("Alert", "FormData is not supported.")
+        return "";
+    }
+
+    $.ajax({
+        url: "../Employee/SaveSupportingDocument",
+        type: "POST",
+        asnc: false,
+        contentType: false, // Not to set any content header  
+        processData: false, // Not to process data  
+        data: fileData,
+        error: function () {
+            ShowModel("Alert", "An error occured")
+            return "";
+        },
+        success: function (result) {
+            if (result.status == "SUCCESS") {
+                var newFileName = result.message;
+                debugger
+                var docEntrySequence = 0;
+                var hdnDocumentSequence = $("#hdnDocumentSequence");
+                var ddlDocumentType = $("#ddlDocumentType");
+                var hdnSODocId = $("#hdnSODocId");
+                var FileUpload1 = $("#FileUpload2");
+
+                if (ddlDocumentType.val() == "" || ddlDocumentType.val() == "0") {
+                    ShowModel("Alert", "Please select Document Type")
+                    ddlDocumentType.focus();
+                    return false;
+                }
+
+                if (FileUpload1.val() == undefined || FileUpload1.val() == "") {
+                    ShowModel("Alert", "Please select File To Upload")
+                    return false;
+                }
+                var employeeDocumentList = [];
+                if ((hdnDocumentSequence.val() == "" || hdnDocumentSequence.val() == "0")) {
+                    docEntrySequence = 1;
+                }
+                $('#tblDocumentList tr').each(function (i, row) {
+                    debugger
+                    var $row = $(row);
+                    var documentSequenceNo = $row.find("#hdnDocumentSequenceNo").val();
+                    var hdnSODocId = $row.find("#hdnSODocId").val();
+                    var documentTypeId = $row.find("#hdnDocumentTypeId").val();
+                    var documentTypeDesc = $row.find("#hdnDocumentTypeDesc").val();
+                    var documentName = $row.find("#hdnDocumentName").val();
+                    var documentPath = $row.find("#hdnDocumentPath").val();
+
+                    if (hdnSODocId != undefined) {
+                        if ((hdnDocumentSequence.val() != documentSequenceNo)) {
+
+                            var employeeDocument = {
+                                EmployeeDocId: hdnSODocId,
+                                DocumentSequenceNo: documentSequenceNo,
+                                DocumentTypeId: documentTypeId,
+                                DocumentTypeDesc: documentTypeDesc,
+                                DocumentName: documentName,
+                                DocumentPath: documentPath
+                            };
+                            employeeDocumentList.push(employeeDocument);
+                            docEntrySequence = parseInt(docEntrySequence) + 1;
+                        }
+                        else if (hdnSODocId == EmployeeDocId && hdnDocumentSequence.val() == documentSequenceNo) {
+                            var employeeDocument = {
+                                EmployeeDocId: hdnSODocId,
+                                DocumentSequenceNo: hdnDocumentSequence.val(),
+                                DocumentTypeId: ddlDocumentType.val(),
+                                DocumentTypeDesc: $("#ddlDocumentType option:selected").text(),
+                                DocumentName: newFileName,
+                                DocumentPath: newFileName
+                            };
+                            employeeDocumentList.push(employeeDocument);
+                        }
+                    }
+                });
+                if ((hdnDocumentSequence.val() == "" || hdnDocumentSequence.val() == "0")) {
+                    hdnDocumentSequence.val(docEntrySequence);
+                }
+
+                var employeeDocumentAddEdit = {
+                    EmployeeDocId: hdnSODocId.val(),
+                    DocumentSequenceNo: hdnDocumentSequence.val(),
+                    DocumentTypeId: ddlDocumentType.val(),
+                    DocumentTypeDesc: $("#ddlDocumentType option:selected").text(),
+                    DocumentName: newFileName,
+                    DocumentPath: newFileName
+                };
+                employeeDocumentList.push(employeeDocumentAddEdit);
+                hdnDocumentSequence.val("0");
+
+                GetEmployeeDocumentList(employeeDocumentList);
+
+
+
+            }
+            else {
+                ShowModel("Alert", result.message);
+            }
+        }
+    });
+}
+
+function GetEmployeeDocumentList(employeeDocuments) {
+    debugger
+    var hdnEmployeeID = $("#hdnEmployeeID");
+    var requestData = { employeeDocuments: employeeDocuments, employeeID: hdnEmployeeID.val()};
+    $.ajax({
+        url: "../Employee/GetEmployeeSupportingDocumentList",
+        cache: false,
+        data: JSON.stringify(requestData),
+        dataType: "html",
+        contentType: "application/json; charset=utf-8",
+        type: "POST",
+        error: function (err) {
+            $("#divDocumentList").html("");
+            $("#divDocumentList").html(err);
+        },
+        success: function (data) {
+            debugger
+            $("#divDocumentList").html("");
+            $("#divDocumentList").html(data);
+            ShowHideDocumentPanel(2);
+        }
+    });
+}
+
+function BindDocumentTypeList() {
+    $.ajax({
+        type: "GET",
+        url: "../PO/GetModuleDocumentTypeList",
+        data: { employeeDoc: "HR" },
+        dataType: "json",
+        asnc: false,
+        success: function (data) {
+            $("#ddlDocumentType").append($("<option></option>").val(0).html("-Select Document Type-"));
+            $.each(data, function (i, item) {
+
+                $("#ddlDocumentType").append($("<option></option>").val(item.DocumentTypeId).html(item.DocumentTypeDesc));
+            });
+        },
+        error: function (Result) {
+            $("#ddlDocumentType").append($("<option></option>").val(0).html("-Select Document Type-"));
+        }
+    });
+}
+
+function RemoveDocumentRow(obj) {
+    if (confirm("Do you want to remove selected Document?")) {
+        var row = $(obj).closest("tr");
+        var poDocId = $(row).find("#hdnPODocId").val();
+        ShowModel("Alert", "Document Removed from List.");
+        row.remove();
+    }
 }

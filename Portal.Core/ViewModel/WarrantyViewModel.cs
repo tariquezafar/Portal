@@ -82,4 +82,13 @@ namespace Portal.Core.ViewModel
 
     }
 
+    public class ComplaintViewModel
+    {
+        public long ComplaintId { get; set; }
+        public string ComplaintDate { get; set; }
+        public string CustomerMobile { get; set; }
+        public string EnquiryType { get; set; }
+        public string ComplaintNo { get; set; }
+    }
+
 }

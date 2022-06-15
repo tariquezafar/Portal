@@ -161,5 +161,19 @@ namespace Portal.Core.ViewModel
         public decimal ProfessinalTax { get; set; }
     }
 
+    public class EmployeeSupportingDocumentViewModel
+    {
+        public int DocumentSequenceNo { get; set; }
+        public int EmployeeDocId { get; set; }
+        public int EmployeeId { get; set; }
+        public int DocumentTypeId { get; set; }
+        public string DocumentTypeDesc { get; set; }
+        public string DocumentName { get; set; }
+        public string DocumentPath { get; set; }
+        public string message { get; set; }
+        public string status { get; set; }
+
+    }
+
 
 }

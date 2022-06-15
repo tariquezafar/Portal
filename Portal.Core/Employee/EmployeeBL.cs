@@ -19,7 +19,7 @@ namespace Portal.Core
         {
             dbInterface = new DBInterface();
         }
-        public ResponseOut AddEditEmployee(EmployeeViewModel employeeViewModel)
+        public ResponseOut AddEditEmployee(EmployeeViewModel employeeViewModel, List<EmployeeSupportingDocumentViewModel> employeeDocuments)
         {
             ResponseOut responseOut = new ResponseOut();
             ResponseOut responseOutSL = new ResponseOut();
@@ -116,7 +116,21 @@ namespace Portal.Core
                         ReportingEmployeeId = employeeViewModel.ReportingEmployeeId
                     };
 
-                    responseOut = dbInterface.AddEditEmployee(employee, employeeReportingInfo, employeePayInfo);
+                    List<EmployeeSupportingDocument> employeeDocumentsList = new List<EmployeeSupportingDocument>();
+                    if (employeeDocuments != null && employeeDocuments.Count > 0)
+                    {
+                        foreach (var item in employeeDocuments)
+                        {
+                            employeeDocumentsList.Add(new EmployeeSupportingDocument
+                            {
+                                DocumentTypeId = item.DocumentTypeId,
+                                DocumentName = item.DocumentName,
+                                DocumentPath = item.DocumentPath
+                            });
+                        }
+                    }
+
+                    responseOut = dbInterface.AddEditEmployee(employee, employeeReportingInfo, employeePayInfo, employeeDocumentsList);
 
                     SL sl = new SL
                     {
@@ -638,7 +652,7 @@ namespace Portal.Core
                         ReportingEmployeeId = employeeViewModel.ReportingEmployeeId
                     };
 
-                    responseOut = dbInterface.AddEditEmployee(employee, employeeReportingInfo, employeePayInfo);
+                    responseOut = dbInterface.AddEditEmployee(employee, employeeReportingInfo, employeePayInfo,null);
 
                     SL sl = new SL
                     {
@@ -856,6 +870,37 @@ namespace Portal.Core
                 throw ex;
             }
             return responseOut;
+        }
+
+        public List<EmployeeSupportingDocumentViewModel> GetEmployeeSupportingDocumentList(int employeeId)
+        {
+            List<EmployeeSupportingDocumentViewModel> employeeDocumentsList = new List<EmployeeSupportingDocumentViewModel>();
+            ////SQLDbInterface sqlDbInterface = new SQLDbInterface();
+            try
+            {
+                List<EmployeeSupportingDocument> employeeDocuments = dbInterface.GetEmployeeDocumentTypeList(employeeId);
+                if (employeeDocuments != null && employeeDocuments.Count > 0)
+                {
+                    foreach (var item in employeeDocuments)
+                    {
+                        employeeDocumentsList.Add(new EmployeeSupportingDocumentViewModel
+                        {
+                            EmployeeDocId = item.EmployeeDocId,
+                            EmployeeId = item.EmployeeId ?? 0,
+                            DocumentTypeId = item.DocumentTypeId ?? 0,
+                            DocumentTypeDesc = "HR",
+                            DocumentName = item.DocumentName,
+                            DocumentPath = item.DocumentPath
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return employeeDocumentsList;
         }
 
     }

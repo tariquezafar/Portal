@@ -327,6 +327,21 @@ namespace Portal.Controllers
             return Json(documentList, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult GetModuleDocumentTypeList(string employeeDoc)
+        {
+            DocumentTypeBL docBL = new DocumentTypeBL();
+            List<DocumentTypeViewModel> documentList = new List<DocumentTypeViewModel>();
+            try
+            {
+                documentList = docBL.GetDocumentTypeListModuleType(ContextUser.CompanyId, employeeDoc);
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+            }
+            return Json(documentList, JsonRequestBehavior.AllowGet);
+        }
+
         [HttpGet]
         public JsonResult GetTermTemplateDetailList(int termTemplateId)
         {

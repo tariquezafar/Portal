@@ -694,8 +694,8 @@ function ShowHideDocumentPanel(action) {
 function BindDocumentTypeList() {
     $.ajax({
         type: "GET",
-        url: "../PO/GetDocumentTypeList",
-        data: "{}",
+        url: "../PO/GetModuleDocumentTypeList",
+        data: { employeeDoc: "Sales" },
         dataType: "json",
         asnc: false,
         success: function (data) {
@@ -2509,8 +2509,8 @@ function RemoveProductRow(obj) {
 function BindDocumentTypeList() {
     $.ajax({
         type: "GET",
-        url: "../PO/GetDocumentTypeList",
-        data: "{}",
+        url: "../PO/GetModuleDocumentTypeList",
+        data: { employeeDoc: "Sales" },
         dataType: "json",
         asnc: false,
         success: function (data) {

@@ -41,6 +41,28 @@ namespace Portal.Core
             return documentTypes;
         }
 
+        public List<DocumentTypeViewModel> GetDocumentTypeListModuleType(int companyId, string moduleType)
+        {
+            List<DocumentTypeViewModel> documentTypes = new List<DocumentTypeViewModel>();
+            try
+            {
+                List<DocumentType> documentTypeList = dbInterface.GetDocumentTypeListByModuleType(companyId, moduleType);
+                if (documentTypeList != null && documentTypeList.Count > 0)
+                {
+                    foreach (DocumentType documentType in documentTypeList)
+                    {
+                        documentTypes.Add(new DocumentTypeViewModel { DocumentTypeId = documentType.DocumentTypeId, DocumentTypeDesc = documentType.DocumentTypeDesc });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return documentTypes;
+        }
+
         public ResponseOut AddEditDocumentType(DocumentTypeViewModel documenttypeViewModel)
         {
             ResponseOut responseOut = new ResponseOut();

@@ -48,7 +48,7 @@ namespace Portal.Controllers
         }
         [HttpPost]
         [ValidateRequest(true, UserInterfaceHelper.Add_Edit_Employee, (int)AccessMode.AddAccess, (int)RequestMode.Ajax)]
-        public ActionResult AddEditEmployee(EmployeeViewModel employeeViewModel)
+        public ActionResult AddEditEmployee(EmployeeViewModel employeeViewModel, List<EmployeeSupportingDocumentViewModel> employeeDocuments)
         {
             ResponseOut responseOut = new ResponseOut();
             EmployeeBL employeeBL = new EmployeeBL();
@@ -58,7 +58,7 @@ namespace Portal.Controllers
                 {
                     employeeViewModel.CreatedBy = ContextUser.UserId;
                     employeeViewModel.CompanyId = ContextUser.CompanyId;
-                    responseOut = employeeBL.AddEditEmployee(employeeViewModel);
+                    responseOut = employeeBL.AddEditEmployee(employeeViewModel, employeeDocuments);
                 }
                 else
                 {
@@ -341,7 +341,7 @@ namespace Portal.Controllers
                 {
                     employeeViewModel.CreatedBy = ContextUser.UserId;
                     employeeViewModel.CompanyId = ContextUser.CompanyId;
-                    responseOut = employeeBL.AddEditEmployee(employeeViewModel);
+                    responseOut = employeeBL.AddEditEmployee(employeeViewModel,null);
                 }
                 else
                 {
@@ -373,6 +373,91 @@ namespace Portal.Controllers
                 Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
             }
             return Json(employee, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult SaveSupportingDocument()
+        {
+            ResponseOut responseOut = new ResponseOut();
+            HttpFileCollectionBase files = Request.Files;
+            Random rnd = new Random();
+            try
+            {
+                //  Get all files from Request object  
+                if (files != null && files.Count > 0 && Request.Files[0] != null && Request.Files[0].ContentLength > 0)
+                {
+                    HttpPostedFileBase file = files[0];
+                    string fname;
+                    // Checking for Internet Explorer  
+                    if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
+                    {
+                        string[] testfiles = file.FileName.Split(new char[] { '\\' });
+                        fname = testfiles[testfiles.Length - 1];
+                    }
+                    else
+                    {
+                        fname = file.FileName;
+                    }
+
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        string newFileName = "";
+                        var fileName = Path.GetFileName(file.FileName);
+                        newFileName = Convert.ToString(rnd.Next(10000, 99999)) + "_" + fileName;
+                        var path = Path.Combine(Server.MapPath("~/Images/EmployeeDocument"), newFileName);
+                        file.SaveAs(path);
+                        responseOut.status = ActionStatus.Success;
+                        responseOut.message = newFileName;
+                    }
+                    else
+                    {
+                        responseOut.status = ActionStatus.Fail;
+                        responseOut.message = "";
+                    }
+                }
+                else
+                {
+                    responseOut.status = ActionStatus.Fail;
+                    responseOut.message = "";
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                responseOut.message = "";
+                responseOut.status = ActionStatus.Fail;
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+            }
+            return Json(responseOut, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public PartialViewResult GetEmployeeSupportingDocumentList(List<EmployeeSupportingDocumentViewModel> employeeDocuments, int employeeID)
+        {
+
+            EmployeeBL employeeBL = new EmployeeBL();
+            try
+            {
+                if (employeeDocuments == null)
+                {
+                    employeeDocuments = employeeBL.GetEmployeeSupportingDocumentList(employeeID);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+            }
+            return PartialView(employeeDocuments);
+        }
+
+        public FileResult DocumentDownload(string fileName)
+        {
+            var path = Path.Combine(Server.MapPath("~/Images/EmployeeDocument"), fileName);
+            byte[] fileBytes = System.IO.File.ReadAllBytes(path);
+
+            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
         }
 
         #endregion

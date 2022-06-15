@@ -26826,6 +26826,55 @@ namespace Portal.DAL
 
         }
 
+        public DataTable GetComplaintInvoiceReturnList(string complaintInvoiceNo, string customerMobileNo, int companyBranchId)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    da = new SqlDataAdapter("proc_GetReturnCILists", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@ComplaintInvoiceNo", complaintInvoiceNo);
+                    da.SelectCommand.Parameters.AddWithValue("@CustomerMobileNo", customerMobileNo);
+                    da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return dt;
+
+        }
+
+        public DataTable GetProductDetail(string complaintId, int companyBranch)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    da = new SqlDataAdapter("proc_GetProductCILists", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@ComplaintId", complaintId);
+                    da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranch);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return dt;
+        }
+
+
         public DataTable GetProductAutoCompleteWarrantyList(string searchTerm, long warrantyID, int warrantyStatus)
         {
             DataTable dt = new DataTable();

@@ -218,6 +218,9 @@
     <Compile Include="EmailTemplateType.cs">
       <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeSupportingDocument.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
     <Compile Include="ERPDataSet.Designer.cs">
       <DependentUpon>ERPDataSet.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1048,6 +1051,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <None Include="bin\Release\Portal.DAL.dll.config" />
     <None Include="ERP.edmx.diagram">
       <DependentUpon>ERP.edmx</DependentUpon>
     </None>
@@ -1055,6 +1059,18 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HRMS.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="bin\Debug\Portal.DAL.dll" />
+    <Content Include="bin\Debug\Portal.DAL.pdb" />
+    <Content Include="bin\Release\EntityFramework.dll" />
+    <Content Include="bin\Release\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Release\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\Release\EntityFramework.xml" />
+    <Content Include="bin\Release\Newtonsoft.Json.dll" />
+    <Content Include="bin\Release\Newtonsoft.Json.xml" />
+    <Content Include="bin\Release\Portal.Common.dll" />
+    <Content Include="bin\Release\Portal.Common.pdb" />
+    <Content Include="bin\Release\Portal.DAL.dll" />
+    <Content Include="bin\Release\Portal.DAL.pdb" />
     <Content Include="ERPDataSet.xsc">
       <DependentUpon>ERPDataSet.xsd</DependentUpon>
     </Content>

@@ -240,6 +240,72 @@ namespace Portal.Core
             return jobWorks;
         }
 
+        public List<ComplaintViewModel> GetComplaintInvoiceReturnList(string complaintInvoiceNo, string customerMobileNo, int companyBranchId)
+        {
+            List<ComplaintViewModel> jobWorks = new List<ComplaintViewModel>();
+            SQLDbInterface sqlDbInterface = new SQLDbInterface();
+            try
+            {
+                DataTable dtJobWorks = sqlDbInterface.GetComplaintInvoiceReturnList(complaintInvoiceNo, customerMobileNo, companyBranchId);
+                if (dtJobWorks != null && dtJobWorks.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dtJobWorks.Rows)
+                    {
+                        jobWorks.Add(new ComplaintViewModel
+                        {
+                            ComplaintId = Convert.ToInt32(dr["ComplaintId"]),
+                            CustomerMobile = Convert.ToString(dr["CustomerMobile"]),
+                            ////ReplacedQTY = Convert.ToDecimal(dr["ReplacedQTY"]),
+                            ComplaintDate = Convert.ToString(dr["ComplaintDate"]),
+                            ////ReturnedQty = Convert.ToDecimal(dr["ReturnedQty"]),
+                            EnquiryType = Convert.ToString(dr["EnquiryType"]),
+                            ComplaintNo = Convert.ToString(dr["ComplaintNo"]),
+
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return jobWorks;
+        }
+
+        public List<ReturnedProductDetailViewModel> GetProductDetail(string complaintId, int companyBranch)
+        {
+            List<ReturnedProductDetailViewModel> so = new List<ReturnedProductDetailViewModel>();
+            SQLDbInterface sqlDbInterface = new SQLDbInterface();
+            try
+            {
+                DataTable dtCompanies = sqlDbInterface.GetProductDetail(complaintId, companyBranch);
+                if (dtCompanies != null && dtCompanies.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dtCompanies.Rows)
+                    {
+                        so.Add(new ReturnedProductDetailViewModel
+                        {
+                            ////ComplaintId = Convert.ToInt32(dr["ComplaintId"]),
+                            ProductId = Convert.ToInt32(dr["Productid"]),
+                            ProductName = Convert.ToString(dr["ProductName"]),
+                            ProductCode = Convert.ToString(dr["ProductCode"]),
+                            WarrantyPeriodMonth = Convert.ToInt32(dr["WarrantyInMonth"]),
+                            Quantity = Convert.ToDecimal(dr["Quantity"]),
+                            Remarks = Convert.ToString(dr["Remarks"]),
+                            Status = Convert.ToString(dr["Status"]),
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return so;
+        }
+
 
         public List<WarrantyProductDetailViewModel> GetProductAutoCompleteWarrantyList(string searchTerm, long warrantyID,int warrantyStatus)
         {

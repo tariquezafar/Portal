@@ -232,6 +232,8 @@
         <EntityTypeShape EntityType="ERPModel.ComplaintService" Width="1.5" PointX="20.375" PointY="32.75" />
         <EntityTypeShape EntityType="ERPModel.ComplaintServiceProductDetail" Width="1.5" PointX="13.375" PointY="33.75" />
         <EntityTypeShape EntityType="ERPModel.MRN" Width="1.5" PointX="40.375" PointY="46.75" />
+        <EntityTypeShape EntityType="ERPModel.EmployeeSupportingDocument" Width="1.5" PointX="9.625" PointY="59.25" />
+        <AssociationConnector Association="ERPModel.FK__EmployeeS__Emplo__008BB26A" />
         </Diagram>
       <Diagram DiagramId="c9375e52311f45a98fc7e70a6f59ccca" Name="Diagram2" />
     </edmx:Diagrams>

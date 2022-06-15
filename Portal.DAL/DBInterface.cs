@@ -3607,7 +3607,7 @@ namespace Portal.DAL
         #endregion
 
         #region Employee
-        public ResponseOut AddEditEmployee(Employee employee, EmployeeReportingInfo employeeReportinginfo, EmployeePayInfo employeePayInfo)
+        public ResponseOut AddEditEmployee(Employee employee, EmployeeReportingInfo employeeReportinginfo, EmployeePayInfo employeePayInfo, List<EmployeeSupportingDocument> employeeDocumentsList)
         {
             ResponseOut responseOut = new ResponseOut();
             try
@@ -3648,6 +3648,23 @@ namespace Portal.DAL
                             employeeReportinginfo.EmployeeId = employeeId;
                             entities.EmployeeReportingInfoes.Add(employeeReportinginfo);
                             entities.SaveChanges();
+                        }
+                        if (employeeDocumentsList != null && employeeDocumentsList.Count > 0)
+                        {
+                            foreach (var item in employeeDocumentsList)
+                            {
+                                EmployeeSupportingDocument employeeSupportingDocument = new EmployeeSupportingDocument
+                                {
+                                    EmployeeId = employeeId,
+                                    DocumentTypeId = item.DocumentTypeId,
+                                    DocumentName = item.DocumentName,
+                                    DocumentPath = item.DocumentPath,
+                                };
+                                entities.EmployeeSupportingDocument.Add(employeeSupportingDocument);
+
+                            }
+                            entities.SaveChanges();
+
                         }
 
                         responseOut.message = ActionMessage.EmployeeCreatedSuccess;
@@ -3764,6 +3781,34 @@ namespace Portal.DAL
                                 entities.EmployeeReportingInfoes.Add(employeeReportinginfo);
 
                             }
+                        }
+
+                        if (employeeDocumentsList != null && employeeDocumentsList.Count > 0)
+                        {
+                            var documents = entities.EmployeeSupportingDocument.Where(x => x.EmployeeId == employee.EmployeeId).ToList();
+                            if (documents != null)
+                            {
+                                foreach (var item in documents)
+                                {
+                                    entities.EmployeeSupportingDocument.Remove(item);
+
+                                }
+                                entities.SaveChanges();
+                            }
+                            foreach (var item in employeeDocumentsList)
+                            {
+                                EmployeeSupportingDocument employeeSupportingDocument = new EmployeeSupportingDocument
+                                {
+                                    EmployeeId = employee.EmployeeId,
+                                    DocumentTypeId = item.DocumentTypeId,
+                                    DocumentName = item.DocumentName,
+                                    DocumentPath = item.DocumentPath,
+                                };
+                                entities.EmployeeSupportingDocument.Add(employeeSupportingDocument);
+
+                            }
+                            entities.SaveChanges();
+
                         }
 
 
@@ -6120,6 +6165,60 @@ namespace Portal.DAL
             }
             return termDescList;
         }
+
+        public List<DocumentType> GetDocumentTypeListByModuleType(int companyId, string moduleType)
+        {
+            List<DocumentType> documentList = new List<DocumentType>();
+            try
+            {
+                var documents = entities.DocumentTypes.Where(x => x.Status == true && x.CompanyId == companyId && x.ModuleType == moduleType).Select(s => new
+                {
+                    DocumentTypeId = s.DocumentTypeId,
+                    DocumentTypeDesc = s.DocumentTypeDesc
+                }).ToList();
+                if (documents != null && documents.Count > 0)
+                {
+                    foreach (var item in documents)
+                    {
+                        documentList.Add(new DocumentType { DocumentTypeId = item.DocumentTypeId, DocumentTypeDesc = item.DocumentTypeDesc });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return documentList;
+        }
+
+        public List<EmployeeSupportingDocument> GetEmployeeDocumentTypeList(int employeeId)
+        {
+            List<EmployeeSupportingDocument> documentList = new List<EmployeeSupportingDocument>();
+            try
+            {
+                var documents = entities.EmployeeSupportingDocument.Where(x => x.EmployeeId == employeeId).Select(s => new
+                {
+                    DocumentTypeId = s.DocumentTypeId,
+                    DocumentName = s.DocumentName,
+                    DocumentPath = s.DocumentPath
+                }).ToList();
+                if (documents != null && documents.Count > 0)
+                {
+                    foreach (var item in documents)
+                    {
+                        documentList.Add(new EmployeeSupportingDocument { DocumentTypeId = item.DocumentTypeId, DocumentName = item.DocumentName, DocumentPath = item.DocumentPath });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return documentList;
+        }
+
         #endregion
 
         #region Document Type

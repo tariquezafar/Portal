@@ -977,6 +977,16 @@
           <Property Name="ModifiedDate" Type="date" />
           <Property Name="Status" Type="bit" />
         </EntityType>
+        <EntityType Name="EmployeeSupportingDocument">
+          <Key>
+            <PropertyRef Name="EmployeeDocId" />
+          </Key>
+          <Property Name="EmployeeDocId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" />
+          <Property Name="DocumentTypeId" Type="int" />
+          <Property Name="DocumentName" Type="varchar" MaxLength="100" />
+          <Property Name="DocumentPath" Type="varchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="Fabrication">
           <Key>
             <PropertyRef Name="FabricationId" />
@@ -4713,6 +4723,7 @@
           <EntitySet Name="EmployeePayInfo" EntityType="Self.EmployeePayInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmployeeReportingInfo" EntityType="Self.EmployeeReportingInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmployeeStateMapping" EntityType="Self.EmployeeStateMapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeSupportingDocument" EntityType="Self.EmployeeSupportingDocument" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Fabrication" EntityType="Self.Fabrication" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FabricationBOMDetail" EntityType="Self.FabricationBOMDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FabricationChasisSerialDetail" EntityType="Self.FabricationChasisSerialDetail" Schema="dbo" store:Type="Tables" />
@@ -5221,6 +5232,11 @@
           <EntitySet Name="ComplaintService" EntityType="ERPModel.ComplaintService" />
           <EntitySet Name="ComplaintServiceProductDetail" EntityType="ERPModel.ComplaintServiceProductDetail" />
           <EntitySet Name="MRN" EntityType="ERPModel.MRN" />
+          <EntitySet Name="EmployeeSupportingDocument" EntityType="ERPModel.EmployeeSupportingDocument" />
+          <AssociationSet Name="FK__EmployeeS__Emplo__008BB26A" Association="ERPModel.FK__EmployeeS__Emplo__008BB26A">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="EmployeeSupportingDocument" EntitySet="EmployeeSupportingDocument" />
+          </AssociationSet>
           
         </EntityContainer>
         <EntityType Name="RoleUIActionMapping">
@@ -5539,6 +5555,7 @@
           <Property Name="CompanyBranchId" Type="Int32" />
           <Property Name="ApplicantId" Type="Int64" />
           <Property Name="UANNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EmployeeSupportingDocument" Relationship="ERPModel.FK__EmployeeS__Emplo__008BB26A" FromRole="Employee" ToRole="EmployeeSupportingDocument" />
         </EntityType>
         <EntityType Name="EmployeeFamilyInfo">
           <Key>
@@ -9801,6 +9818,29 @@
           <Property Name="MRNSequence" Type="Int32" />
           <Property Name="LocationID" Type="Int32" />
         </EntityType>
+        <EntityType Name="EmployeeSupportingDocument">
+          <Key>
+            <PropertyRef Name="EmployeeDocId" />
+          </Key>
+          <Property Name="EmployeeDocId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeId" Type="Int32" />
+          <Property Name="DocumentTypeId" Type="Int32" />
+          <Property Name="DocumentName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentPath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employee" Relationship="ERPModel.FK__EmployeeS__Emplo__008BB26A" FromRole="EmployeeSupportingDocument" ToRole="Employee" />
+        </EntityType>
+        <Association Name="FK__EmployeeS__Emplo__008BB26A">
+          <End Type="ERPModel.Employee" Role="Employee" Multiplicity="0..1" />
+          <End Type="ERPModel.EmployeeSupportingDocument" Role="EmployeeSupportingDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="EmployeeSupportingDocument">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         
       </Schema>
     </edmx:ConceptualModels>
@@ -14667,6 +14707,17 @@
                 <ScalarProperty Name="MRNDate" ColumnName="MRNDate" />
                 <ScalarProperty Name="MRNNo" ColumnName="MRNNo" />
                 <ScalarProperty Name="MRNId" ColumnName="MRNId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeSupportingDocument">
+            <EntityTypeMapping TypeName="ERPModel.EmployeeSupportingDocument">
+              <MappingFragment StoreEntitySet="EmployeeSupportingDocument">
+                <ScalarProperty Name="DocumentPath" ColumnName="DocumentPath" />
+                <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+                <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="EmployeeDocId" ColumnName="EmployeeDocId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

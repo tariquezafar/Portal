@@ -89,12 +89,16 @@ namespace Portal.Controllers
         }
 
         [HttpPost]
-        public PartialViewResult GetReturnProductList(List<ReturnedProductDetailViewModel> returnProducts, long returnedID)
+        public PartialViewResult GetReturnProductList(List<ReturnedProductDetailViewModel> returnProducts, long returnedID, string complaintId = null, int companyBranch = 0)
         {            
             ReturnBL returnBL = new ReturnBL();
             try
             {
-                if (returnProducts == null)
+                if(!string.IsNullOrEmpty(complaintId))
+                {
+                    returnProducts = returnBL.GetProductDetail(complaintId, companyBranch);
+                }
+                else if (returnProducts == null)
                 {
                     returnProducts = returnBL.GetReturnProductList(returnedID);
                 }
@@ -155,6 +159,22 @@ namespace Portal.Controllers
                 Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
             }
             return PartialView(warrantyViewModel);
+        }
+
+        [HttpGet]
+        public PartialViewResult GetComplaintInvoiceReturnList(string complaintInvoiceNo = "", string customerMobileNo = "", int companyBranchId = 0)
+        {
+            List<ComplaintViewModel> complaintViewModel = new List<ComplaintViewModel>();
+            ReturnBL returnBL = new ReturnBL();
+            try
+            {
+                complaintViewModel = returnBL.GetComplaintInvoiceReturnList(complaintInvoiceNo, customerMobileNo, companyBranchId);
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+            }
+            return PartialView(complaintViewModel);
         }
 
         [HttpGet]

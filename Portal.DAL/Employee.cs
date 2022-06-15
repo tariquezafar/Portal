@@ -14,6 +14,12 @@ namespace Portal.DAL
     
     public partial class Employee
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Employee()
+        {
+            this.EmployeeSupportingDocument = new HashSet<EmployeeSupportingDocument>();
+        }
+    
         public int EmployeeId { get; set; }
         public string EmployeeCode { get; set; }
         public string FirstName { get; set; }
@@ -66,5 +72,8 @@ namespace Portal.DAL
         public Nullable<int> CompanyBranchId { get; set; }
         public Nullable<long> ApplicantId { get; set; }
         public string UANNo { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EmployeeSupportingDocument> EmployeeSupportingDocument { get; set; }
     }
 }
