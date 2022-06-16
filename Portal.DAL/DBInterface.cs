@@ -2328,7 +2328,7 @@ namespace Portal.DAL
             catch (Exception ex)
             {
                 Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
-                throw ex;
+                throw ;
             }
             return chasisSerialMappings;
         }
