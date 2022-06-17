@@ -151,6 +151,23 @@
             $("select").attr('disabled', true);
             $("#chkStatus").attr('disabled', true);
         }
+        else if (hdnAccessMode.val() == "4") {
+            $("#btnSave").hide();
+            $("#btnUpdate").show();
+            $("#btnReset").hide();
+            $("#FileUpload1").attr('disabled', true);
+            $("input").attr('readOnly', true);
+            $("textarea").attr('readOnly', true);
+            $("#chkStatus").attr('disabled', true);
+            $("#ddlEnquiryType").attr('disabled', true);
+            $("#ddlComplaintMode").attr('disabled', true);
+            $("#ddlCompanyBranch").attr('disabled', true);
+            $("#ddlServiceEngineer").attr('disabled', true);
+            $("#ddlDealer").attr('disabled', true);
+            $("#ddlStatus").find('option:contains("Open")').hide();
+            $("#ddlStatus").find('option:contains("Closed")').hide();
+            $("#ddlStatus").val("0");
+        }
         else {
             $("#btnSave").hide();
             $("#btnUpdate").show();
@@ -562,7 +579,7 @@ function GetComplaintServiceProductList(complaintProduct) {
             $("#divProductList").html("");
             $("#divProductList").html(err);
         },
-        success: function (data) {
+        success: function (data) {debugger
             $("#divProductList").html("");
             $("#divProductList").html(data);
             ShowHideProductPanel(2);
@@ -594,6 +611,7 @@ function ShowModel(headerText, bodyText) {
 }
 
 function SaveData() {
+    debugger
     var hdncomplaintServiceId = $("#hdncomplaintServiceId");
     var txtComplaintNo = $("#txtComplaintNo");
     var txtComplaintDate = $("#txtComplaintDate");
@@ -610,10 +628,17 @@ function SaveData() {
     var ddlServiceEngineer = $("#ddlServiceEngineer");
     var ddlDealer = $("#ddlDealer");
     var txtInvoiceDate = $("#txtInvoiceDate");
+    var ddlStatus = $("#ddlStatus");
 
     if (ddlEnquiryType.val() == "" || ddlEnquiryType.val() == "0") {
         ShowModel("Alert", "Please Select Enquiry Type")
         ddlEnquiryType.focus();
+        return false;
+    }
+
+    if (ddlStatus.val() == "" || ddlStatus.val() == "0") {
+        ShowModel("Alert", "Please Select Complaint Status")
+        ddlStatus.focus();
         return false;
     }
 
@@ -682,7 +707,8 @@ function SaveData() {
         BranchID: ddlCompanyBranch.val(),
         EmployeeID: ddlServiceEngineer.val(),
         DealerID: ddlDealer.val(),
-        InvoiceDate: txtInvoiceDate.val()
+        InvoiceDate: txtInvoiceDate.val(),
+        ComplaintStatus: ddlStatus.val()
     };
 
     var complaintProductList = [];
@@ -710,7 +736,13 @@ function SaveData() {
             };
             complaintProductList.push(complaintProduct);
         }
-    });
+        });
+    debugger
+    var rowCount = $('#tblProductList tr').length;
+    if (rowCount == 1) {
+        alert("Please add at least one product.");
+        return false;
+    }
 
     var requestData = { complaintServiceViewModel: complaintServiceViewModel, complaintProducts: complaintProductList };
     $.ajax({
@@ -763,6 +795,7 @@ function ClearFields() {
     $("#txtInvoiceNo").val("");
     $("#chkStatus").attr("checked", true);
     $("#txtInvoiceDate").val("");
+    $("#ddlStatus").val("0");
     
 }
 
@@ -793,7 +826,8 @@ function BindCompanyBranchList() {
     });
 }
 
-function GetComplaintServiceDetail(ComplaintId) {
+function GetComplaintServiceDetail(ComplaintId) {debugger
+    var hdnAccessMode = $("#hdnAccessMode").val();
     $.ajax({
         type: "GET",
         asnc: false,
@@ -801,6 +835,7 @@ function GetComplaintServiceDetail(ComplaintId) {
         data: { ComplaintId: ComplaintId },
         dataType: "json",
         success: function (data) {
+            debugger
             $("#txtComplaintNo").val(data.ComplaintNo);
             $("#txtComplaintDate").val(data.ComplaintDate);
             $("#txtInvoiceNo").val(data.InvoiceNo);
@@ -816,7 +851,9 @@ function GetComplaintServiceDetail(ComplaintId) {
             $("#ddlDealer").val(data.DealerID);
             $("#chkStatus").val(data.status);
             $("#txtInvoiceDate").val(data.InvoiceDate);
-
+            if (hdnAccessMode != "4") {
+                $("#ddlStatus").val(data.ComplaintStatus);
+            }
             if (data.status == "Final") {
                 $(".editonly").hide();
                 $("#btnReset").hide();

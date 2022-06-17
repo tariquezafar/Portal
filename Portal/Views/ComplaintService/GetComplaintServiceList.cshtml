@@ -38,6 +38,7 @@
                     <th><center>Service Engineer</center></th>
                     <th><center>Dealer</center></th>
                     <th><center>Status</center></th>
+                    <th><center>Complaint Status</center></th>
 
                 </tr>
             </thead>
@@ -46,52 +47,53 @@
                 {
                     if (item.ComplaintService_Status == true)
                     {
-                        <tr class="success">
-                            @*<td class="teal text" style="margin:0px auto;" colspan="2">
-                                    <a style="color:darkblue" title="View" class="fa fa-eye" aria-hidden="true" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=3"></a>
-                                </td>*@
+                <tr class="success">
+                    @*<td class="teal text" style="margin:0px auto;" colspan="2">
+            <a style="color:darkblue" title="View" class="fa fa-eye" aria-hidden="true" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=3"></a>
+        </td>*@
 
-                            <td class="teal text" style="margin:0px auto;">
-                                <a style="color:darkblue" title="View" class="fa fa-eye" aria-hidden="true" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=3"></a>
-                            </td>
-                            <td class="teal text" style="margin:0px auto;">
+                    <td class="teal text" style="margin:0px auto;">
+                        <a style="color:darkblue" title="View" class="fa fa-eye" aria-hidden="true" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=3"></a>
+                    </td>
+                    <td class="teal text" style="margin:0px auto;">
 
-                                <a style="color:darkgreen" title="Edit" class="fa fa-pencil" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=2"></a>
+                        <a style="color:darkgreen" title="Edit" class="fa fa-pencil" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=2"></a>
 
-                            </td>
+                    </td>
 
-                            <td>@item.ComplaintNo</td>
-                            <td>@item.EnquiryType</td>
-                            <td>@item.CompanyBranchName</td>
-                            <td>@item.ComplaintMode</td>
-                            <td>@item.CustomerMobile</td>
-                            <td>@item.CustomerName</td>
-                            <td>@item.EmployeeName</td>
-                            <td>@item.DealerName</td>
-                            <td>@(item.ComplaintService_Status == true ? "Active" : "Inactive")</td>
+                    <td>@item.ComplaintNo</td>
+                    <td>@item.EnquiryType</td>
+                    <td>@item.CompanyBranchName</td>
+                    <td>@item.ComplaintMode</td>
+                    <td>@item.CustomerMobile</td>
+                    <td>@item.CustomerName</td>
+                    <td>@item.EmployeeName</td>
+                    <td>@item.DealerName</td>
+                    <td>@(item.ComplaintService_Status == true ? "Active" : "Inactive")</td>
+                    <td>@item.ComplaintStatus</td>
 
-                        </tr>
+                </tr>
                     }
                     else
                     {
-                        <tr class="danger">
-                            <td class="teal text" style="width:30px; margin:0px auto;">
-                                <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=3"></a>
-                            </td>
-                            <td class="teal text" style="width:30px; margin:0px 2px auto;">
-                                <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=2"></a>
-                            </td>
-                            <td>@item.ComplaintNo</td>
-                            <td>@item.EnquiryType</td>
-                            <td>@item.ComplaintMode</td>
-                            <td>@item.CustomerMobile</td>
-                            <td>@item.CustomerName</td>
-                            <td>@item.EmployeeName</td>
-                            <td>@item.DealerName</td>
-                            <td>@(item.ComplaintService_Status == true ? "Active" : "Inactive")</td>
+            <tr class="danger">
+                <td class="teal text" style="width:30px; margin:0px auto;">
+                    <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=3"></a>
+                </td>
+                <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                    <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=2"></a>
+                </td>
+                <td>@item.ComplaintNo</td>
+                <td>@item.EnquiryType</td>
+                <td>@item.ComplaintMode</td>
+                <td>@item.CustomerMobile</td>
+                <td>@item.CustomerName</td>
+                <td>@item.EmployeeName</td>
+                <td>@item.DealerName</td>
+                <td>@(item.ComplaintService_Status == true ? "Active" : "Inactive")</td>
+                <td>@item.ComplaintStatus</td>
 
-
-                        </tr>
+            </tr>
 
                     }
                 }
@@ -102,18 +104,18 @@
 }
 else
 {
-    <h3 style="color:firebrick;text-align:center">Records not Found!!!</h3>
+    <h3 style = "color:firebrick;text-align:center" > Records not Found!!!</h3 >
 }
 <script>
     $(document).ready(function () {
         $('#tblPurchaseIndentList').paging({
-            limit: 10,
+    limit: 10,
             rowDisplayStyle: 'block',
             activePage: 0,
             rows: []
         });
 
-    });
+});
 </script>
 <style>
     .btn-success a {

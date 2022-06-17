@@ -165,14 +165,31 @@ namespace Portal.Controllers
         }
 
         [HttpGet]
-        public PartialViewResult GetComplaintServiceList(string complaintNo = "", string enquiryType = "", string complaintMode = "", string customerMobile = "", string customerName = "", string approvalStatus="",int companyBranchId=0, int serviceEngineerId = 0, int dealerId = 0)
+        public PartialViewResult GetComplaintServiceList(string complaintNo = "", string enquiryType = "", string complaintMode = "", string customerMobile = "", string customerName = "", string approvalStatus="",int companyBranchId=0, int serviceEngineerId = 0, int dealerId = 0, int complaintStatus = 0)
         {
             List<ComplaintServiceViewModel> complaints = new List<ComplaintServiceViewModel>();
             ComplaintServiceBL complaintServiceBL = new ComplaintServiceBL();
 
             try
             {
-                complaints = complaintServiceBL.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName,approvalStatus, companyBranchId, serviceEngineerId, dealerId);
+                complaints = complaintServiceBL.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName,approvalStatus, companyBranchId, serviceEngineerId, dealerId, complaintStatus);
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+            }
+            return PartialView(complaints);
+        }
+
+        [HttpGet]
+        public PartialViewResult GetAPCSComplaintServiceList(string complaintNo = "", string enquiryType = "", string complaintMode = "", string customerMobile = "", string customerName = "", string approvalStatus = "", int companyBranchId = 0, int serviceEngineerId = 0, int dealerId = 0, int complaintStatus = 1)
+        {
+            List<ComplaintServiceViewModel> complaints = new List<ComplaintServiceViewModel>();
+            ComplaintServiceBL complaintServiceBL = new ComplaintServiceBL();
+
+            try
+            {
+                complaints = complaintServiceBL.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName, approvalStatus, companyBranchId, serviceEngineerId, dealerId, complaintStatus);
             }
             catch (Exception ex)
             {
@@ -238,6 +255,22 @@ namespace Portal.Controllers
                 Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
             }
             return Json(lstSelectListModel, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        [ValidateRequest(true, UserInterfaceHelper.Add_Edit_ComplaintService, (int)AccessMode.ViewAccess, (int)RequestMode.GetPost)]
+        public ActionResult ListAPCS()
+        {
+            try
+            {
+                ViewData["CompanyBranchId"] = Session[SessionKey.CompanyBranchId] != null ? ((UserViewModel)Session[SessionKey.CompanyBranchId]).CompanyBranchId : 0;
+                ViewData["UserId"] = Session[SessionKey.UserId] != null ? ((UserViewModel)Session[SessionKey.UserId]).UserId : 0;
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+            }
+            return View();
         }
 
     }

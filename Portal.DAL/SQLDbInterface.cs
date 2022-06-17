@@ -27760,7 +27760,7 @@ namespace Portal.DAL
                         sqlCommand.Parameters.AddWithValue("@CustomerEmail", complaintService.CustomerEmail);
                         sqlCommand.Parameters.AddWithValue("@DealerID", complaintService.DealerID);
                         sqlCommand.Parameters.AddWithValue("@InvoiceDate", complaintService.InvoiceDate);
-
+                        sqlCommand.Parameters.AddWithValue("@ComplaintStatus", complaintService.ComplaintStatus);
 
                         sqlCommand.Parameters.AddWithValue("@ComplaintServiceProductDetail", dtComplaintServceProduct);
                         sqlCommand.Parameters.Add("@status", SqlDbType.VarChar, 50).Direction = ParameterDirection.Output;
@@ -27834,7 +27834,7 @@ namespace Portal.DAL
 
         }
 
-        public DataTable GetComplaintServiceList(string complaintNo, string enquiryType, string complaintMode, string customerMobile, string customerName, string approvalStatus, int companyBranchId, int serviceEngineerId, int dealerId)
+        public DataTable GetComplaintServiceList(string complaintNo, string enquiryType, string complaintMode, string customerMobile, string customerName, string approvalStatus, int companyBranchId, int serviceEngineerId, int dealerId,int complaintStatus)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -27853,6 +27853,7 @@ namespace Portal.DAL
                     da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
                     da.SelectCommand.Parameters.AddWithValue("@ServiceEngineerId", serviceEngineerId);
                     da.SelectCommand.Parameters.AddWithValue("@DealerId", dealerId);
+                    da.SelectCommand.Parameters.AddWithValue("@ComplaintStatus", complaintStatus);
                     da.Fill(dt);
                 }
             }

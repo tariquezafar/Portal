@@ -15,6 +15,7 @@ namespace Portal.DAL
     public partial class ComplaintService
     {
         public long ComplaintId { get; set; }
+        public Nullable<System.DateTime> ComplaintDate { get; set; }
         public string EnquiryType { get; set; }
         public string ComplaintMode { get; set; }
         public string ComplaintDescription { get; set; }
@@ -32,10 +33,10 @@ namespace Portal.DAL
         public Nullable<int> BranchID { get; set; }
         public string ComplaintNo { get; set; }
         public Nullable<int> ComplaintSequence { get; set; }
-        public Nullable<System.DateTime> ComplaintDate { get; set; }
         public string InvoiceNo { get; set; }
         public Nullable<int> EmployeeID { get; set; }
         public Nullable<int> DealerID { get; set; }
         public Nullable<System.DateTime> InvoiceDate { get; set; }
+        public Nullable<int> ComplaintStatus { get; set; }
     }
 }

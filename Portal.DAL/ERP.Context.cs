@@ -223,8 +223,6 @@ namespace Portal.DAL
         public virtual DbSet<Return> Returns { get; set; }
         public virtual DbSet<ProductInternalStock> ProductInternalStocks { get; set; }
         public virtual DbSet<TargetDetail> TargetDetails { get; set; }
-        public virtual DbSet<ComplaintService> ComplaintServices { get; set; }
-        public virtual DbSet<ComplaintServiceProductDetail> ComplaintServiceProductDetails { get; set; }
         public virtual DbSet<ReturnedProductDetail> ReturnedProductDetails { get; set; }
         public virtual DbSet<TransferClosingBalance> TransferClosingBalances { get; set; }
         public virtual DbSet<GLTransferClosingBalance> GLTransferClosingBalances { get; set; }
@@ -253,6 +251,9 @@ namespace Portal.DAL
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<SaleInvoice> SaleInvoices { get; set; }
         public virtual DbSet<CustomerType> CustomerTypes { get; set; }
+        public virtual DbSet<ComplaintService> ComplaintService { get; set; }
+        public virtual DbSet<ComplaintServiceProductDetail> ComplaintServiceProductDetail { get; set; }
+        public virtual DbSet<MRN> MRN { get; set; }
         public virtual DbSet<EmployeeSupportingDocument> EmployeeSupportingDocument { get; set; }
     
         public virtual ObjectResult<proc_GetRoleWiseChildUI_Result> proc_GetRoleWiseChildUI(Nullable<int> parentUIId, Nullable<int> roleId)

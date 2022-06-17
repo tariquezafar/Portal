@@ -1685,18 +1685,10 @@
     <Content Include="Scripts\WorkOrder\ListWIPReport.js" />
     <Content Include="Scripts\WorkOrder\ListWorkOrder.js" />
     <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="SqlServerTypes\x64\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />
+    <Content Include="SqlServerTypes\x86\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll" />
     <Content Include="Views\GateIn\GetGateInPOList.cshtml" />
     <Content Include="Views\PaintProcess\GetProductSerialProductList.cshtml" />
     <Content Include="Views\PhysicalStock\GetPhysicalStockList.cshtml" />
@@ -4196,6 +4188,8 @@
     <Content Include="Views\ServiceInvoice\PrintSubGroupWiseChassisNoSoldDetails.cshtml" />
     <Content Include="Views\ChasisSerialMapping\ImportChessisSerialMapping.cshtml" />
     <Content Include="Views\Employee\GetEmployeeSupportingDocumentList.cshtml" />
+    <Content Include="Views\ComplaintService\ListAPCS.cshtml" />
+    <Content Include="Views\ComplaintService\GetAPCSComplaintServiceList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\City\ListCity.cshtml" />

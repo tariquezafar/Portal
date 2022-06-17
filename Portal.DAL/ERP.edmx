@@ -463,6 +463,7 @@
           <Property Name="EmployeeID" Type="int" />
           <Property Name="DealerID" Type="int" />
           <Property Name="InvoiceDate" Type="date" />
+          <Property Name="ComplaintStatus" Type="int" />
         </EntityType>
         <EntityType Name="ComplaintServiceProductDetail">
           <Key>
@@ -9748,6 +9749,7 @@
           <Property Name="EmployeeID" Type="Int32" />
           <Property Name="DealerID" Type="Int32" />
           <Property Name="InvoiceDate" Type="DateTime" Precision="0" />
+          <Property Name="ComplaintStatus" Type="Int32" />
         </EntityType>
         <EntityType Name="ComplaintServiceProductDetail">
           <Key>
@@ -14613,6 +14615,7 @@
           <EntitySetMapping Name="ComplaintService">
             <EntityTypeMapping TypeName="ERPModel.ComplaintService">
               <MappingFragment StoreEntitySet="ComplaintService">
+                <ScalarProperty Name="ComplaintStatus" ColumnName="ComplaintStatus" />
                 <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
                 <ScalarProperty Name="DealerID" ColumnName="DealerID" />
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />

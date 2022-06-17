@@ -92,6 +92,47 @@ function SearchComplaintservice() {
         }
     });
 }
+
+function SearchAPCSComplaintservice() {
+    debugger
+    var txtComplaintNo = $("#txtComplaintNo");
+    var ddlComplaintType = $("#ddlComplaintType");
+    var ddlComplaintMode = $("#ddlComplaintMode");
+    var txtCustomerMobile = $("#txtCustomerMobile");
+    var txtCustomerName = $("#txtCustomerName");
+    var txtComplaintSubject = $("#txtComplaintSubject");
+    var ddlStatus = $("#ddlStatus");
+    var ddlCompanyBranch = $("#ddlCompanyBranch");
+    var ddlServiceEngineer = $("#ddlServiceEngineer");
+    var ddlDealer = $("#ddlDealer");
+
+    var requestData = {
+        complaintNo: txtComplaintNo.val().trim(),
+        enquiryType: ddlComplaintType.val(),
+        complaintMode: ddlComplaintMode.val().trim(),
+        customerMobile: txtCustomerMobile.val(),
+        customerName: txtCustomerName.val(),
+        approvalStatus: ddlStatus.val(),
+        companyBranchId: ddlCompanyBranch.val(),
+        serviceEngineerId: ddlServiceEngineer.val(),
+        dealerId: ddlDealer.val()
+    };
+    $.ajax({
+        url: "../ComplaintService/GetAPCSComplaintServiceList",
+        data: requestData,
+        dataType: "html",
+        type: "GET",
+        error: function (err) {
+            $("#divList").html("");
+            $("#divList").html(err);
+        },
+        success: function (data) {
+            $("#divList").html("");
+            $("#divList").html(data);
+        }
+    });
+}
+
 function Export() {
     var divList = $("#divList");
     ExporttoExcel(divList);
