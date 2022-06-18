@@ -37,6 +37,8 @@ namespace Portal.Core.ViewModel
 
         public string DealerName { get; set; }
         public string EmployeeName { get; set; }
+        public int ComplaintStatus { get; set; }
+        public string ComplaintStatusCon { get; set; }
 
     }
 
@@ -61,6 +63,20 @@ namespace Portal.Core.ViewModel
         public int Quantity { get; set; }
 
     }
-  
+
+    public class ComplaintServiceSupportingDocumentViewModel
+    {
+        public int DocumentSequenceNo { get; set; }
+        public int ComplaintDocId { get; set; }
+        public long ComplaintId { get; set; }
+        public int DocumentTypeId { get; set; }
+        public string DocumentTypeDesc { get; set; }
+        public string DocumentName { get; set; }
+        public string DocumentPath { get; set; }
+        public string message { get; set; }
+        public string status { get; set; }
+
+    }
+
 
 }
