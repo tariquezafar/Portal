@@ -1000,10 +1000,38 @@
           <DataField>SaleEmpName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="JobCardNo">
+          <DataField>JobCardNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="JobCardDate">
+          <DataField>JobCardDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ModelName">
+          <DataField>ModelName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EngineNo">
+          <DataField>EngineNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RegNo">
+          <DataField>RegNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="KMSCovered">
+          <DataField>KMSCovered</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TCSValue">
+          <DataField>TCSValue</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>SaleInvoiceDataSet</rd:DataSetName>
-        <rd:SchemaPath>E:\VINOD\HTSNewWorkArea\Portal\Portal\Reports\SaleInvoiceDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\DMS\Portal\Portal\Reports\SaleInvoiceDataSet.xsd</rd:SchemaPath>
         <rd:TableName>proc_GetSaleInvoiceDetail</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -4686,7 +4714,7 @@
             <DataSetName>DataSet1</DataSetName>
             <Top>0.49989in</Top>
             <Height>0.8276in</Height>
-            <Width>8.28866in</Width>
+            <Width>8.28867in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -15500,6 +15528,154 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
+                  <Height>0.17708in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox186">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontSize>7.5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox186</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Style>None</Style>
+                            </BottomBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>5pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox315">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontSize>7.5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox315</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Style>None</Style>
+                            </BottomBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>5pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox316">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>TCS Value</Value>
+                                  <Style>
+                                    <FontSize>7.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox316</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>5pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox317">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!TCSValue.Value</Value>
+                                  <Style>
+                                    <FontSize>7.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox317</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>5pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <rd:Selected>true</rd:Selected>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
                   <Height>0.18in</Height>
                   <TablixCells>
                     <TablixCell>
@@ -15612,7 +15788,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.18in</Height>
+                  <Height>0.15917in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -15737,13 +15913,18 @@
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember />
+                <TablixMember>
+                  <Visibility>
+                    <Hidden>=Fields!TCSValue.Value=0</Hidden>
+                  </Visibility>
+                </TablixMember>
                 <TablixMember />
                 <TablixMember />
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
             <Top>4.18943in</Top>
-            <Height>0.54in</Height>
+            <Height>0.69625in</Height>
             <Width>8.28022in</Width>
             <ZIndex>3</ZIndex>
             <Style>
@@ -16325,7 +16506,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.16081in</Height>
+                  <Height>0.1485in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -16741,7 +16922,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.17086in</Height>
+                  <Height>0.15855in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -17176,7 +17357,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.19057in</Height>
+                  <Height>0.17826in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -17611,7 +17792,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.18936in</Height>
+                  <Height>0.17705in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -18046,7 +18227,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.19057in</Height>
+                  <Height>0.17826in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -18481,7 +18662,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.18936in</Height>
+                  <Height>0.17705in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -18916,7 +19097,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.19057in</Height>
+                  <Height>0.17826in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -19351,7 +19532,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.18936in</Height>
+                  <Height>0.17705in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -19786,7 +19967,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.19057in</Height>
+                  <Height>0.17826in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -20221,7 +20402,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.18936in</Height>
+                  <Height>0.17705in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -20656,7 +20837,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.19057in</Height>
+                  <Height>0.17826in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -21170,9 +21351,9 @@
             </TablixRowHierarchy>
             <KeepTogether>true</KeepTogether>
             <DataSetName>DataSetSaleInvoiceProductSerialList</DataSetName>
-            <Top>4.74082in</Top>
-            <Height>2.04198in</Height>
-            <Width>8.28022in</Width>
+            <Top>4.87624in</Top>
+            <Height>1.90654in</Height>
+            <Width>8.28025in</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
