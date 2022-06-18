@@ -21,7 +21,7 @@ namespace Portal.Core
             dbInterface = new DBInterface();
         }
 
-        public ResponseOut AddEditComplaintService(ComplaintServiceViewModel complaintServiceViewModel, List<ComplaintServiceProductDetailViewModel> complaintProduct)
+        public ResponseOut AddEditComplaintService(ComplaintServiceViewModel complaintServiceViewModel, List<ComplaintServiceProductDetailViewModel> complaintProduct, List<ComplaintServiceSupportingDocumentViewModel> complaintDocuments)
         {
             ResponseOut responseOut = new ResponseOut();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
@@ -44,8 +44,7 @@ namespace Portal.Core
                     EmployeeID = complaintServiceViewModel.EmployeeID,
                     DealerID = complaintServiceViewModel.DealerID,
                     InvoiceDate = string.IsNullOrEmpty(complaintServiceViewModel.InvoiceDate) ? Convert.ToDateTime("01-01-1900") : Convert.ToDateTime(complaintServiceViewModel.InvoiceDate),
-
-
+                    ComplaintStatus = complaintServiceViewModel.ComplaintStatus
                 };
                 List<ComplaintServiceProductDetail> complaintProductList = new List<ComplaintServiceProductDetail>();
                 if (complaintProduct != null && complaintProduct.Count > 0)
@@ -62,7 +61,21 @@ namespace Portal.Core
                         });
                     }
                 }
-                responseOut = sqlDbInterface.AddEditComplaintService(complaintService, complaintProductList);
+
+                List<ComplaintSupportingDocument> complaintDocumentsList = new List<ComplaintSupportingDocument>();
+                if (complaintDocuments != null && complaintDocuments.Count > 0)
+                {
+                    foreach (var item in complaintDocuments)
+                    {
+                        complaintDocumentsList.Add(new ComplaintSupportingDocument
+                        {
+                            DocumentTypeId = item.DocumentTypeId,
+                            DocumentName = item.DocumentName,
+                            DocumentPath = item.DocumentPath
+                        });
+                    }
+                }
+                responseOut = sqlDbInterface.AddEditComplaintService(complaintService, complaintProductList, complaintDocumentsList);
 
             }
             catch (Exception ex)
@@ -105,6 +118,7 @@ namespace Portal.Core
                             EmployeeID = Convert.ToInt32(dr["EmployeeID"]),
                             DealerID = Convert.ToInt32(dr["DealerID"]),
                             InvoiceDate = Convert.ToString(dr["InvoiceDate"]),
+                            ComplaintStatus = Convert.ToInt32(dr["ComplaintStatus"]),
 
                         };
                     }
@@ -153,13 +167,13 @@ namespace Portal.Core
             return complaintProducts;
         }
 
-        public List<ComplaintServiceViewModel> GetComplaintServiceList(string complaintNo, string enquiryType, string complaintMode, string customerMobile, string customerName, string approvalStatus, int companyBranchId, int serviceEngineerId, int dealerId)
+        public List<ComplaintServiceViewModel> GetComplaintServiceList(string complaintNo, string enquiryType, string complaintMode, string customerMobile, string customerName, string approvalStatus, int companyBranchId, int serviceEngineerId, int dealerId, int complaintStatus)
         {
             List<ComplaintServiceViewModel> complaints = new List<ComplaintServiceViewModel>();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
             try
             {
-                DataTable dtComplaints = sqlDbInterface.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName, approvalStatus, companyBranchId, serviceEngineerId, dealerId);
+                DataTable dtComplaints = sqlDbInterface.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName, approvalStatus, companyBranchId, serviceEngineerId, dealerId, complaintStatus);
                 if (dtComplaints != null && dtComplaints.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dtComplaints.Rows)
@@ -176,6 +190,7 @@ namespace Portal.Core
                             CompanyBranchName = Convert.ToString(dr["CompanyBranchName"]),
                             DealerName = Convert.ToString(dr["DealerName"]),
                             EmployeeName = Convert.ToString(dr["EmployeeName"]),
+                            ComplaintStatus = Convert.ToInt32(dr["ComplaintStatus"]),
                         });
                     }
                 }
@@ -186,6 +201,36 @@ namespace Portal.Core
                 throw ex;
             }
             return complaints;
+        }
+
+        public List<ComplaintServiceSupportingDocumentViewModel> GetComplaintSupportingDocumentList(long ComplaintId)
+        {
+            List<ComplaintServiceSupportingDocumentViewModel> employeeDocumentsList = new List<ComplaintServiceSupportingDocumentViewModel>();
+            try
+            {
+                List<ComplaintSupportingDocument> employeeDocuments = dbInterface.GetComplaintDocumentTypeList(ComplaintId);
+                if (employeeDocuments != null && employeeDocuments.Count > 0)
+                {
+                    foreach (var item in employeeDocuments)
+                    {
+                        employeeDocumentsList.Add(new ComplaintServiceSupportingDocumentViewModel
+                        {
+                            ComplaintDocId = item.ComplaintDocId,
+                            ComplaintId = item.ComplaintId ?? 0,
+                            DocumentTypeId = item.DocumentTypeId ?? 0,
+                            DocumentTypeDesc = "Sales",
+                            DocumentName = item.DocumentName,
+                            DocumentPath = item.DocumentPath
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return employeeDocumentsList;
         }
 
         public List<SaleInvoiceProductViewModel> GetComplaintServiceSIProductList(long saleinvoiceId)

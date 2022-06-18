@@ -53,7 +53,7 @@ namespace Portal.Controllers
         }
         [HttpPost]
         [ValidateRequest(true, UserInterfaceHelper.Add_Edit_ComplaintService, (int)AccessMode.AddAccess, (int)RequestMode.Ajax)]
-        public ActionResult AddEditComplaintService(ComplaintServiceViewModel complaintServiceViewModel,List<ComplaintServiceProductDetailViewModel> complaintProducts)
+        public ActionResult AddEditComplaintService(ComplaintServiceViewModel complaintServiceViewModel,List<ComplaintServiceProductDetailViewModel> complaintProducts, List<ComplaintServiceSupportingDocumentViewModel> complaintDocuments)
         {
             ResponseOut responseOut = new ResponseOut();
             ComplaintServiceBL complaintServiceBL = new ComplaintServiceBL();
@@ -62,7 +62,7 @@ namespace Portal.Controllers
                 if (complaintServiceViewModel != null)
                 {
                    
-                    responseOut = complaintServiceBL.AddEditComplaintService(complaintServiceViewModel,complaintProducts);
+                    responseOut = complaintServiceBL.AddEditComplaintService(complaintServiceViewModel,complaintProducts, complaintDocuments);
                 }
                 else
                 {
@@ -213,6 +213,82 @@ namespace Portal.Controllers
             return Json(complaints, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+        public ActionResult SaveSupportingDocument()
+        {
+            ResponseOut responseOut = new ResponseOut();
+            HttpFileCollectionBase files = Request.Files;
+            Random rnd = new Random();
+            try
+            {
+                //  Get all files from Request object  
+                if (files != null && files.Count > 0 && Request.Files[0] != null && Request.Files[0].ContentLength > 0)
+                {
+                    HttpPostedFileBase file = files[0];
+                    string fname;
+                    // Checking for Internet Explorer  
+                    if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
+                    {
+                        string[] testfiles = file.FileName.Split(new char[] { '\\' });
+                        fname = testfiles[testfiles.Length - 1];
+                    }
+                    else
+                    {
+                        fname = file.FileName;
+                    }
+
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        string newFileName = "";
+                        var fileName = Path.GetFileName(file.FileName);
+                        newFileName = Convert.ToString(rnd.Next(10000, 99999)) + "_" + fileName;
+                        var path = Path.Combine(Server.MapPath("~/Images/ComplaintDocument"), newFileName);
+                        file.SaveAs(path);
+                        responseOut.status = ActionStatus.Success;
+                        responseOut.message = newFileName;
+                    }
+                    else
+                    {
+                        responseOut.status = ActionStatus.Fail;
+                        responseOut.message = "";
+                    }
+                }
+                else
+                {
+                    responseOut.status = ActionStatus.Fail;
+                    responseOut.message = "";
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                responseOut.message = "";
+                responseOut.status = ActionStatus.Fail;
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+            }
+            return Json(responseOut, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public PartialViewResult GetComplaintSupportingDocumentList(List<ComplaintServiceSupportingDocumentViewModel> complaintDocuments, long complaintID)
+        {
+
+            ComplaintServiceBL complaintServiceBL = new ComplaintServiceBL();
+            try
+            {
+                if (complaintDocuments == null)
+                {
+                    complaintDocuments = complaintServiceBL.GetComplaintSupportingDocumentList(complaintID);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+            }
+            return PartialView(complaintDocuments);
+        }
 
         [HttpPost]
         public PartialViewResult GetComplaintServiceSIProductList(List<SaleInvoiceProductViewModel> saleinvoiceProducts, long saleinvoiceId)

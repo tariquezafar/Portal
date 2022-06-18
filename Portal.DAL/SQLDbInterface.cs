@@ -27711,7 +27711,7 @@ namespace Portal.DAL
 
 
         #region Complaint Service
-        public ResponseOut AddEditComplaintService(ComplaintService complaintService, List<ComplaintServiceProductDetail> complaintServiceProductList)
+        public ResponseOut AddEditComplaintService(ComplaintService complaintService, List<ComplaintServiceProductDetail> complaintServiceProductList, List<ComplaintSupportingDocument> complaintDocumentsList)
         {
             ResponseOut responseOut = new ResponseOut();
             try
@@ -27740,6 +27740,24 @@ namespace Portal.DAL
                     dtComplaintServceProduct.AcceptChanges();
                 }
 
+                DataTable dtComplaintServiceDocument = new DataTable();
+                dtComplaintServiceDocument.Columns.Add("DocumentTypeId", typeof(Int32));
+                dtComplaintServiceDocument.Columns.Add("DocumentName", typeof(string));
+                dtComplaintServiceDocument.Columns.Add("DocumentPath", typeof(string));
+
+                if (complaintDocumentsList != null && complaintDocumentsList.Count > 0)
+                {
+                    foreach (ComplaintSupportingDocument item in complaintDocumentsList)
+                    {
+                        DataRow dtrow = dtComplaintServiceDocument.NewRow();
+                        dtrow["DocumentTypeId"] = item.DocumentTypeId;
+                        dtrow["DocumentName"] = item.DocumentName;
+                        dtrow["DocumentPath"] = item.DocumentPath;
+                        dtComplaintServiceDocument.Rows.Add(dtrow);
+                    }
+                    dtComplaintServiceDocument.AcceptChanges();
+                }
+
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     using (SqlCommand sqlCommand = new SqlCommand("proc_AddEditComplaintService", con))
@@ -27763,6 +27781,9 @@ namespace Portal.DAL
                         sqlCommand.Parameters.AddWithValue("@ComplaintStatus", complaintService.ComplaintStatus);
 
                         sqlCommand.Parameters.AddWithValue("@ComplaintServiceProductDetail", dtComplaintServceProduct);
+
+                        sqlCommand.Parameters.AddWithValue("@ComplaintSupportingDocument", dtComplaintServiceDocument);
+
                         sqlCommand.Parameters.Add("@status", SqlDbType.VarChar, 50).Direction = ParameterDirection.Output;
                         sqlCommand.Parameters.Add("@message", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                         sqlCommand.Parameters.Add("@RetComplaintId", SqlDbType.BigInt).Direction = ParameterDirection.Output;

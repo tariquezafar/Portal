@@ -1,11 +1,15 @@
 ﻿$(document).ready(function () {
     BindServiceEngineerList();
     BindSDealerList();
+    BindDocumentTypeList();
     $("#txtCustomerName").attr('readOnly', true);
     $("#txtCustomerEmail").attr('readOnly', true);
     $("#txtCustomerAddress").attr('readOnly', true);
     $("#txtInvoiceDate").attr('readOnly', true);
-    
+
+    $("#tabs").tabs({
+        collapsible: true
+    });
     $("#txtCustomerMobile").autocomplete({
         minLength: 0,
         source: function (request, response) {
@@ -155,9 +159,9 @@
             $("#btnSave").hide();
             $("#btnUpdate").show();
             $("#btnReset").hide();
+            $("#divRemarks").show();
             $("#FileUpload1").attr('disabled', true);
             $("input").attr('readOnly', true);
-            $("textarea").attr('readOnly', true);
             $("#chkStatus").attr('disabled', true);
             $("#ddlEnquiryType").attr('disabled', true);
             $("#ddlComplaintMode").attr('disabled', true);
@@ -736,7 +740,32 @@ function SaveData() {
             };
             complaintProductList.push(complaintProduct);
         }
-        });
+    });
+
+    var complaintDocumentList = [];
+    $('#tblDocumentList tr').each(function (i, row) {
+        var $row = $(row);
+        var ComplaintDocId = $row.find("#hdnSODocId").val();
+        var documentSequenceNo = $row.find("#hdnDocumentSequenceNo").val();
+        var documentTypeId = $row.find("#hdnDocumentTypeId").val();
+        var documentTypeDesc = $row.find("#hdnDocumentTypeDesc").val();
+        var documentName = $row.find("#hdnDocumentName").val();
+        var documentPath = $row.find("#hdnDocumentPath").val();
+
+        if (ComplaintDocId != undefined) {
+            var complaintDocument = {
+                ComplaintDocId: ComplaintDocId,
+                DocumentSequenceNo: documentSequenceNo,
+                DocumentTypeId: documentTypeId,
+                DocumentTypeDesc: documentTypeDesc,
+                DocumentName: documentName,
+                DocumentPath: documentPath
+            };
+            complaintDocumentList.push(complaintDocument);
+        }
+
+    });
+
     debugger
     var rowCount = $('#tblProductList tr').length;
     if (rowCount == 1) {
@@ -744,7 +773,7 @@ function SaveData() {
         return false;
     }
 
-    var requestData = { complaintServiceViewModel: complaintServiceViewModel, complaintProducts: complaintProductList };
+    var requestData = { complaintServiceViewModel: complaintServiceViewModel, complaintProducts: complaintProductList, complaintDocuments: complaintDocumentList };
     $.ajax({
         url: "../ComplaintService/AddEditComplaintService?accessMode=" + accessMode + "",
         cache: false,
@@ -881,6 +910,211 @@ function GetComplaintServiceDetail(ComplaintId) {debugger
     });
 }
 
+function ShowHideDocumentPanel(action) {
+    if (action == 1) {
+        $(".documentsection").show();
+    }
+    else {
+        $(".documentsection").hide();
+        $("#ddlDocumentType").val("0");
+        $("#hdnSODocId").val("0");
+        $("#FileUpload2").val("");
+
+        $("#btnAddDocument").show();
+        $("#btnUpdateDocument").hide();
+    }
+}
+
+function BindDocumentTypeList() {
+    $.ajax({
+        type: "GET",
+        url: "../PO/GetModuleDocumentTypeList",
+        data: { employeeDoc: "Sales" },
+        dataType: "json",
+        asnc: false,
+        success: function (data) {
+            $("#ddlDocumentType").append($("<option></option>").val(0).html("-Select Document Type-"));
+            $.each(data, function (i, item) {
+
+                $("#ddlDocumentType").append($("<option></option>").val(item.DocumentTypeId).html(item.DocumentTypeDesc));
+            });
+        },
+        error: function (Result) {
+            $("#ddlDocumentType").append($("<option></option>").val(0).html("-Select Document Type-"));
+        }
+    });
+}
+
+function SaveDocument() {
+    debugger
+    if ($("#ddlDocumentType").val() == "0") {
+        ShowModel("Alert", "Please Select document type")
+        return false;
+    }
+    if (window.FormData !== undefined) {
+        var uploadfile = document.getElementById('FileUpload2');
+        var fileData = new FormData();
+        if (uploadfile.value != '') {
+            var fileUpload = $("#FileUpload2").get(0);
+            var files = fileUpload.files;
+
+            if (uploadfile.files[0].size > 50000000) {
+                uploadfile.files[0].name.length = 0;
+                ShowModel("Alert", "File is too big")
+                uploadfile.value = "";
+                return "";
+            }
+
+            for (var i = 0; i < files.length; i++) {
+                fileData.append(files[i].name, files[i]);
+            }
+        }
+        else {
+
+            ShowModel("Alert", "Please Select File")
+            return false;
+
+        }
+
+
+    } else {
+
+        ShowModel("Alert", "FormData is not supported.")
+        return "";
+    }
+
+    $.ajax({
+        url: "../ComplaintService/SaveSupportingDocument",
+        type: "POST",
+        asnc: false,
+        contentType: false, // Not to set any content header  
+        processData: false, // Not to process data  
+        data: fileData,
+        error: function () {
+            ShowModel("Alert", "An error occured")
+            return "";
+        },
+        success: function (result) {
+            debugger
+            if (result.status == "SUCCESS") {
+                var newFileName = result.message;
+                debugger
+                var docEntrySequence = 0;
+                var hdnDocumentSequence = $("#hdnDocumentSequence");
+                var ddlDocumentType = $("#ddlDocumentType");
+                var hdnSODocId = $("#hdnSODocId");
+                var FileUpload1 = $("#FileUpload2");
+
+                if (ddlDocumentType.val() == "" || ddlDocumentType.val() == "0") {
+                    ShowModel("Alert", "Please select Document Type")
+                    ddlDocumentType.focus();
+                    return false;
+                }
+
+                if (FileUpload1.val() == undefined || FileUpload1.val() == "") {
+                    ShowModel("Alert", "Please select File To Upload")
+                    return false;
+                }
+                var complaintDocumentList = [];
+                if ((hdnDocumentSequence.val() == "" || hdnDocumentSequence.val() == "0")) {
+                    docEntrySequence = 1;
+                }
+                $('#tblDocumentList tr').each(function (i, row) {
+                    debugger
+                    var $row = $(row);
+                    var documentSequenceNo = $row.find("#hdnDocumentSequenceNo").val();
+                    var hdnSODocId = $row.find("#hdnSODocId").val();
+                    var documentTypeId = $row.find("#hdnDocumentTypeId").val();
+                    var documentTypeDesc = $row.find("#hdnDocumentTypeDesc").val();
+                    var documentName = $row.find("#hdnDocumentName").val();
+                    var documentPath = $row.find("#hdnDocumentPath").val();
+
+                    if (hdnSODocId != undefined) {
+                        if ((hdnDocumentSequence.val() != documentSequenceNo)) {
+
+                            var complaintDocument = {
+                                ComplaintDocId: hdnSODocId,
+                                DocumentSequenceNo: documentSequenceNo,
+                                DocumentTypeId: documentTypeId,
+                                DocumentTypeDesc: documentTypeDesc,
+                                DocumentName: documentName,
+                                DocumentPath: documentPath
+                            };
+                            complaintDocumentList.push(complaintDocument);
+                            docEntrySequence = parseInt(docEntrySequence) + 1;
+                        }
+                        else if (hdnSODocId == ComplaintDocId && hdnDocumentSequence.val() == documentSequenceNo) {
+                            var complaintDocument = {
+                                ComplaintDocId: hdnSODocId,
+                                DocumentSequenceNo: hdnDocumentSequence.val(),
+                                DocumentTypeId: ddlDocumentType.val(),
+                                DocumentTypeDesc: $("#ddlDocumentType option:selected").text(),
+                                DocumentName: newFileName,
+                                DocumentPath: newFileName
+                            };
+                            complaintDocumentList.push(complaintDocument);
+                        }
+                    }
+                });
+                if ((hdnDocumentSequence.val() == "" || hdnDocumentSequence.val() == "0")) {
+                    hdnDocumentSequence.val(docEntrySequence);
+                }
+
+                var complaintDocumentAddEdit = {
+                    ComplaintDocId: hdnSODocId.val(),
+                    DocumentSequenceNo: hdnDocumentSequence.val(),
+                    DocumentTypeId: ddlDocumentType.val(),
+                    DocumentTypeDesc: $("#ddlDocumentType option:selected").text(),
+                    DocumentName: newFileName,
+                    DocumentPath: newFileName
+                };
+                complaintDocumentList.push(complaintDocumentAddEdit);
+                hdnDocumentSequence.val("0");
+
+                GetComplaintDocumentList(complaintDocumentList);
+
+
+
+            }
+            else {
+                ShowModel("Alert", result.message);
+            }
+        }
+    });
+}
+
+function GetComplaintDocumentList(complaintDocuments) {
+    debugger
+    var hdnComplaintServiceIdID = $("#hdncomplaintServiceId");
+    var requestData = { complaintDocuments: complaintDocuments, complaintID: hdnComplaintServiceIdID.val() };
+    $.ajax({
+        url: "../ComplaintService/GetComplaintSupportingDocumentList",
+        cache: false,
+        data: JSON.stringify(requestData),
+        dataType: "html",
+        contentType: "application/json; charset=utf-8",
+        type: "POST",
+        error: function (err) {
+            $("#divDocumentList").html("");
+            $("#divDocumentList").html(err);
+        },
+        success: function (data) {
+            debugger
+            $("#divDocumentList").html("");
+            $("#divDocumentList").html(data);
+            ShowHideDocumentPanel(2);
+        }
+    });
+}
+
+function RemoveDocumentRow(obj) {
+    if (confirm("Do you want to remove selected Document?")) {
+        var row = $(obj).closest("tr");
+        var poDocId = $(row).find("#hdnPODocId").val();
+        ShowModel("Alert", "Document Removed from List.");
+        row.remove();
+    }
+}
 
 function ExecuteSave() {
 

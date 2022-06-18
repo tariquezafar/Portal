@@ -1376,7 +1376,6 @@ function ConfirmRemoveImage() {
     }
 }
 
-
 function RemoveImage() {  
             var hdnEmployeeID = $("#hdnEmployeeID");
             var requestData = { employeeId: hdnEmployeeID.val() };
@@ -1406,10 +1405,7 @@ function RemoveImage() {
 }
 
 function CalculatePerc() {
-
     var basicSalary = $("#txtBasicPay").val();
-   
-
     var txtHRAPerc = $("#txtHRAPerc").val();
     var txtSpecialAllowPerc = $("#txtSpecialAllowPerc").val();
     var txtLTAPerc = $("#txtLTAPerc").val();
@@ -1418,11 +1414,7 @@ function CalculatePerc() {
     var txtEmployeeESIPerc = $("#txtEmployeeESIPerc").val();
     var txtEmployerPFPerc = $("#txtEmployerPFPerc").val();
     var txtEmployerESIPerc = $("#txtEmployerESIPerc").val();
-
     var txtEmployerEPSPerc = $("#txtEmployerEPSPerc").val();
-
-
-   
 
     var hraAmt = 0;
     var specialAllowAmt = 0;
@@ -1436,16 +1428,12 @@ function CalculatePerc() {
 
     var employerEPSAmt = 0;
 
-  
-
     if (parseFloat(txtHRAPerc) > 0)
     {
         hraAmt = ((parseFloat(basicSalary) * parseFloat(txtHRAPerc)) / 100).toFixed(2);
         $("#txtHRA").val(hraAmt);
         CalculateSalary();
     }
-
-   
 
     if (parseFloat(txtSpecialAllowPerc) > 0) {
         specialAllowAmt = ((parseFloat(basicSalary) * parseFloat(txtSpecialAllowPerc)) / 100).toFixed(2);
@@ -1489,8 +1477,6 @@ function CalculatePerc() {
         CalculateSalary();
     }
 
-   
-
     if (parseFloat(txtEmployerESIPerc) > 0) {
         employerESIAmt = ((parseFloat(basicSalary) * parseFloat(txtEmployerESIPerc)) / 100).toFixed(2);
         $("#txtEmployerESI").val(employerESIAmt);
@@ -1498,24 +1484,15 @@ function CalculatePerc() {
         CalculateSalary();
     }
 
-      if (parseFloat(txtEmployerEPSPerc) > 0) {
+    if (parseFloat(txtEmployerEPSPerc) > 0) {
            employerEPSAmt = ((parseFloat(basicSalary) * parseFloat(txtEmployerEPSPerc)) / 100).toFixed(2);
            $("#txtEmployerEPS").val(employerEPSAmt);
           CalculateSalary();
-        }
-
-  
-   
+    }   
 }
 
-
 function CalculatePercAmt() {
-
     var basicSalary = $("#txtBasicPay").val();
-  
-
-  
-
     var txtHRA = $("#txtHRA").val();
     var txtSpecialAllow = $("#txtSpecialAllow").val();
     var txtLTA = $("#txtLTA").val();
@@ -1524,7 +1501,6 @@ function CalculatePercAmt() {
     var txtEmployeeESI = $("#txtEmployeeESI").val();
     var txtEmployerESI = $("#txtEmployerESI").val();
     var txtEmployerPF = $("#txtEmployerPF").val();
-
     var txtEmployerEPS = $("#txtEmployerEPS").val();
 
     var hraPerc = 0;
@@ -1537,12 +1513,7 @@ function CalculatePercAmt() {
     var employerESIPerc = 0;
 
     var employerEPSPerc = 0;
-
-
-   
-
-   
-     if (parseFloat(txtHRA) > 0) {
+    if (parseFloat(txtHRA) > 0) {
         hraPerc = ((100 * parseFloat(txtHRA)) / parseFloat(basicSalary)).toFixed(2);
         $("#txtHRAPerc").val(hraPerc);
 
@@ -1555,7 +1526,7 @@ function CalculatePercAmt() {
     }
 
 
-   if (parseFloat(txtLTA) > 0) {
+    if (parseFloat(txtLTA) > 0) {
         ltaPerc = ((100 * parseFloat(txtLTA)) / parseFloat(basicSalary)).toFixed(2);
         $("#txtLTAPerc").val(ltaPerc);
 
@@ -1580,7 +1551,8 @@ function CalculatePercAmt() {
         $("#txtEmployeeESIPFPerc").val(employeeESIPerc);
 
     }
-   if (parseFloat(txtEmployerPF) > 0) {
+
+    if (parseFloat(txtEmployerPF) > 0) {
         employerPFPerc = ((100 * parseFloat(txtEmployerPF)) / parseFloat(basicSalary)).toFixed(2);
         $("#txtEmployerPFPerc").val(employerPFPerc);
 
@@ -1592,7 +1564,7 @@ function CalculatePercAmt() {
 
     }
 
-     if (parseFloat(txtEmployerEPS) > 0) {
+    if (parseFloat(txtEmployerEPS) > 0) {
         employerEPSPerc = ((100 * parseFloat(txtEmployerEPS)) / parseFloat(basicSalary)).toFixed(2);
         $("#txtEmployerEPSPerc").val(employerEPSPerc);
 

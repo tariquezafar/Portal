@@ -473,7 +473,17 @@
           <Property Name="ComplaintId" Type="bigint" Nullable="false" />
           <Property Name="ProductId" Type="bigint" />
           <Property Name="Remarks" Type="varchar" MaxLength="500" />
-          <Property Name="Quantity" Type="int" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="ComplaintSupportingDocument">
+          <Key>
+            <PropertyRef Name="ComplaintDocId" />
+          </Key>
+          <Property Name="ComplaintDocId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ComplaintId" Type="bigint" />
+          <Property Name="DocumentTypeId" Type="int" />
+          <Property Name="DocumentName" Type="varchar" MaxLength="100" />
+          <Property Name="DocumentPath" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="CostCenter">
           <Key>
@@ -4625,15 +4635,27 @@
           <Property Name="ProductSerialRemarks" Type="varchar" MaxLength="1000" />
           <Property Name="ProductSerialSequence" Type="int" />
         </EntityType>
-        <Association Name="FK_ProductOpeningStock_LocationId">
-          <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
-          <End Role="ProductOpeningStock" Type="Self.ProductOpeningStock" Multiplicity="*" />
+        <Association Name="FK__Complaint__Compl__49FA978F">
+          <End Role="ComplaintService" Type="Self.ComplaintService" Multiplicity="0..1" />
+          <End Role="ComplaintSupportingDocument" Type="Self.ComplaintSupportingDocument" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Location">
-              <PropertyRef Name="LocationId" />
+            <Principal Role="ComplaintService">
+              <PropertyRef Name="ComplaintId" />
             </Principal>
-            <Dependent Role="ProductOpeningStock">
-              <PropertyRef Name="LocationId" />
+            <Dependent Role="ComplaintSupportingDocument">
+              <PropertyRef Name="ComplaintId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmployeeS__Emplo__008BB26A">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="EmployeeSupportingDocument" Type="Self.EmployeeSupportingDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="EmployeeSupportingDocument">
+              <PropertyRef Name="EmployeeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4698,6 +4720,7 @@
           <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ComplaintService" EntityType="Self.ComplaintService" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ComplaintServiceProductDetail" EntityType="Self.ComplaintServiceProductDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ComplaintSupportingDocument" EntityType="Self.ComplaintSupportingDocument" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CostCenter" EntityType="Self.CostCenter" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
@@ -4899,9 +4922,13 @@
           <EntitySet Name="WorkOrderBOMDetail" EntityType="Self.WorkOrderBOMDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WorkOrderProductDetail" EntityType="Self.WorkOrderProductDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WorkOrderProductSerialDetail" EntityType="Self.WorkOrderProductSerialDetail" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_ProductOpeningStock_LocationId" Association="Self.FK_ProductOpeningStock_LocationId">
-            <End Role="Location" EntitySet="Location" />
-            <End Role="ProductOpeningStock" EntitySet="ProductOpeningStock" />
+          <AssociationSet Name="FK__Complaint__Compl__49FA978F" Association="Self.FK__Complaint__Compl__49FA978F">
+            <End Role="ComplaintService" EntitySet="ComplaintService" />
+            <End Role="ComplaintSupportingDocument" EntitySet="ComplaintSupportingDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmployeeS__Emplo__008BB26A" Association="Self.FK__EmployeeS__Emplo__008BB26A">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="EmployeeSupportingDocument" EntitySet="EmployeeSupportingDocument" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -5237,6 +5264,11 @@
           <AssociationSet Name="FK__EmployeeS__Emplo__008BB26A" Association="ERPModel.FK__EmployeeS__Emplo__008BB26A">
             <End Role="Employee" EntitySet="Employees" />
             <End Role="EmployeeSupportingDocument" EntitySet="EmployeeSupportingDocument" />
+          </AssociationSet>
+          <EntitySet Name="ComplaintSupportingDocument" EntityType="ERPModel.ComplaintSupportingDocument" />
+          <AssociationSet Name="FK__Complaint__Compl__49FA978F" Association="ERPModel.FK__Complaint__Compl__49FA978F">
+            <End Role="ComplaintService" EntitySet="ComplaintService" />
+            <End Role="ComplaintSupportingDocument" EntitySet="ComplaintSupportingDocument" />
           </AssociationSet>
           
         </EntityContainer>
@@ -9750,6 +9782,7 @@
           <Property Name="DealerID" Type="Int32" />
           <Property Name="InvoiceDate" Type="DateTime" Precision="0" />
           <Property Name="ComplaintStatus" Type="Int32" />
+          <NavigationProperty Name="ComplaintSupportingDocument" Relationship="ERPModel.FK__Complaint__Compl__49FA978F" FromRole="ComplaintService" ToRole="ComplaintSupportingDocument" />
         </EntityType>
         <EntityType Name="ComplaintServiceProductDetail">
           <Key>
@@ -9840,6 +9873,29 @@
             </Principal>
             <Dependent Role="EmployeeSupportingDocument">
               <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ComplaintSupportingDocument">
+          <Key>
+            <PropertyRef Name="ComplaintDocId" />
+          </Key>
+          <Property Name="ComplaintDocId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ComplaintId" Type="Int64" />
+          <Property Name="DocumentTypeId" Type="Int32" />
+          <Property Name="DocumentName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentPath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ComplaintService" Relationship="ERPModel.FK__Complaint__Compl__49FA978F" FromRole="ComplaintSupportingDocument" ToRole="ComplaintService" />
+        </EntityType>
+        <Association Name="FK__Complaint__Compl__49FA978F">
+          <End Type="ERPModel.ComplaintService" Role="ComplaintService" Multiplicity="0..1" />
+          <End Type="ERPModel.ComplaintSupportingDocument" Role="ComplaintSupportingDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ComplaintService">
+              <PropertyRef Name="ComplaintId" />
+            </Principal>
+            <Dependent Role="ComplaintSupportingDocument">
+              <PropertyRef Name="ComplaintId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -14721,6 +14777,17 @@
                 <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
                 <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
                 <ScalarProperty Name="EmployeeDocId" ColumnName="EmployeeDocId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ComplaintSupportingDocument">
+            <EntityTypeMapping TypeName="ERPModel.ComplaintSupportingDocument">
+              <MappingFragment StoreEntitySet="ComplaintSupportingDocument">
+                <ScalarProperty Name="DocumentPath" ColumnName="DocumentPath" />
+                <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+                <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+                <ScalarProperty Name="ComplaintId" ColumnName="ComplaintId" />
+                <ScalarProperty Name="ComplaintDocId" ColumnName="ComplaintDocId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

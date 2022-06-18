@@ -6219,6 +6219,33 @@ namespace Portal.DAL
             return documentList;
         }
 
+        public List<ComplaintSupportingDocument> GetComplaintDocumentTypeList(long complaintId)
+        {
+            List<ComplaintSupportingDocument> documentList = new List<ComplaintSupportingDocument>();
+            try
+            {
+                var documents = entities.ComplaintSupportingDocument.Where(x => x.ComplaintId == complaintId).Select(s => new
+                {
+                    DocumentTypeId = s.DocumentTypeId,
+                    DocumentName = s.DocumentName,
+                    DocumentPath = s.DocumentPath
+                }).ToList();
+                if (documents != null && documents.Count > 0)
+                {
+                    foreach (var item in documents)
+                    {
+                        documentList.Add(new ComplaintSupportingDocument { DocumentTypeId = item.DocumentTypeId, DocumentName = item.DocumentName, DocumentPath = item.DocumentPath });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return documentList;
+        }
+
         #endregion
 
         #region Document Type

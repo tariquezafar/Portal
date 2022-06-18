@@ -14,6 +14,12 @@ namespace Portal.DAL
     
     public partial class ComplaintService
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ComplaintService()
+        {
+            this.ComplaintSupportingDocument = new HashSet<ComplaintSupportingDocument>();
+        }
+    
         public long ComplaintId { get; set; }
         public Nullable<System.DateTime> ComplaintDate { get; set; }
         public string EnquiryType { get; set; }
@@ -38,5 +44,8 @@ namespace Portal.DAL
         public Nullable<int> DealerID { get; set; }
         public Nullable<System.DateTime> InvoiceDate { get; set; }
         public Nullable<int> ComplaintStatus { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ComplaintSupportingDocument> ComplaintSupportingDocument { get; set; }
     }
 }

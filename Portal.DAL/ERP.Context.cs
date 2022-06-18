@@ -255,6 +255,7 @@ namespace Portal.DAL
         public virtual DbSet<ComplaintServiceProductDetail> ComplaintServiceProductDetail { get; set; }
         public virtual DbSet<MRN> MRN { get; set; }
         public virtual DbSet<EmployeeSupportingDocument> EmployeeSupportingDocument { get; set; }
+        public virtual DbSet<ComplaintSupportingDocument> ComplaintSupportingDocument { get; set; }
     
         public virtual ObjectResult<proc_GetRoleWiseChildUI_Result> proc_GetRoleWiseChildUI(Nullable<int> parentUIId, Nullable<int> roleId)
         {

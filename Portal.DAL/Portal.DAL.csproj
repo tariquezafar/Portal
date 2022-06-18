@@ -173,6 +173,9 @@
     <Compile Include="ComplaintServiceProductDetail.cs">
       <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
+    <Compile Include="ComplaintSupportingDocument.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
     <Compile Include="CostCenter.cs">
       <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
