@@ -16,14 +16,14 @@ namespace Portal.DAL
     {
         public long OpeningTrnId { get; set; }
         public Nullable<int> FinYearId { get; set; }
+        public Nullable<int> CompanyId { get; set; }
+        public Nullable<int> CompanyBranchId { get; set; }
         public Nullable<long> ProductId { get; set; }
         public Nullable<decimal> OpeningQty { get; set; }
         public Nullable<int> CreatedBy { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<int> ModifiedBy { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
-        public Nullable<int> CompanyId { get; set; }
-        public Nullable<int> CompanyBranchId { get; set; }
         public Nullable<int> LocationId { get; set; }
     
         public virtual Location Location { get; set; }

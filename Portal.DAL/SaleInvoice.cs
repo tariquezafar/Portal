@@ -127,5 +127,6 @@ namespace Portal.DAL
         public string EwayBillNo { get; set; }
         public Nullable<long> SaleEmpId { get; set; }
         public string SaleInvoiceType { get; set; }
+        public Nullable<decimal> TCSValue { get; set; }
     }
 }

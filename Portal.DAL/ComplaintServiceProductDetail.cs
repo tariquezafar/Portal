@@ -18,6 +18,6 @@ namespace Portal.DAL
         public long ComplaintId { get; set; }
         public Nullable<long> ProductId { get; set; }
         public string Remarks { get; set; }
-        public Nullable<decimal> Quantity { get; set; }
+        public Nullable<int> Quantity { get; set; }
     }
 }

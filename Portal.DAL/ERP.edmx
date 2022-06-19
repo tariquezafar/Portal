@@ -473,7 +473,7 @@
           <Property Name="ComplaintId" Type="bigint" Nullable="false" />
           <Property Name="ProductId" Type="bigint" />
           <Property Name="Remarks" Type="varchar" MaxLength="500" />
-          <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Quantity" Type="int" />
         </EntityType>
         <EntityType Name="ComplaintSupportingDocument">
           <Key>
@@ -4659,6 +4659,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ProductOpeningStock_LocationId">
+          <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+          <End Role="ProductOpeningStock" Type="Self.ProductOpeningStock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="LocationId" />
+            </Principal>
+            <Dependent Role="ProductOpeningStock">
+              <PropertyRef Name="LocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="proc_AddEditPackingMaterialBOM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="PMBId" Type="bigint" Mode="In" />
           <Parameter Name="PMBDate" Type="date" Mode="In" />
@@ -4930,6 +4942,10 @@
             <End Role="Employee" EntitySet="Employee" />
             <End Role="EmployeeSupportingDocument" EntitySet="EmployeeSupportingDocument" />
           </AssociationSet>
+          <AssociationSet Name="FK_ProductOpeningStock_LocationId" Association="Self.FK_ProductOpeningStock_LocationId">
+            <End Role="Location" EntitySet="Location" />
+            <End Role="ProductOpeningStock" EntitySet="ProductOpeningStock" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -5031,7 +5047,6 @@
           <EntitySet Name="ProductSubGroups" EntityType="ERPModel.ProductSubGroup" />
           <EntitySet Name="ProductTypes" EntityType="ERPModel.ProductType" />
           <EntitySet Name="UOMs" EntityType="ERPModel.UOM" />
-          <EntitySet Name="ProductOpeningStocks" EntityType="ERPModel.ProductOpeningStock" />
           <EntitySet Name="ProductBOMs" EntityType="ERPModel.ProductBOM" />
           <EntitySet Name="PaymentModes" EntityType="ERPModel.PaymentMode" />
           <FunctionImport Name="proc_CopyAssemblyBOM">
@@ -5251,12 +5266,7 @@
           <EntitySet Name="JobCardProductDetails" EntityType="ERPModel.JobCardProductDetail" />
           <EntitySet Name="HSNCodes" EntityType="ERPModel.HSNCode" />
           <EntitySet Name="Products" EntityType="ERPModel.Product" />
-          <EntitySet Name="SaleInvoices" EntityType="ERPModel.SaleInvoice" />
           <EntitySet Name="CustomerTypes" EntityType="ERPModel.CustomerType" />
-          <AssociationSet Name="FK_ProductOpeningStock_LocationId" Association="ERPModel.FK_ProductOpeningStock_LocationId">
-            <End Role="Location" EntitySet="Locations" />
-            <End Role="ProductOpeningStock" EntitySet="ProductOpeningStocks" />
-          </AssociationSet>
           <EntitySet Name="ComplaintService" EntityType="ERPModel.ComplaintService" />
           <EntitySet Name="ComplaintServiceProductDetail" EntityType="ERPModel.ComplaintServiceProductDetail" />
           <EntitySet Name="MRN" EntityType="ERPModel.MRN" />
@@ -5269,6 +5279,12 @@
           <AssociationSet Name="FK__Complaint__Compl__49FA978F" Association="ERPModel.FK__Complaint__Compl__49FA978F">
             <End Role="ComplaintService" EntitySet="ComplaintService" />
             <End Role="ComplaintSupportingDocument" EntitySet="ComplaintSupportingDocument" />
+          </AssociationSet>
+          <EntitySet Name="ProductOpeningStock" EntityType="ERPModel.ProductOpeningStock" />
+          <EntitySet Name="SaleInvoice" EntityType="ERPModel.SaleInvoice" />
+          <AssociationSet Name="FK_ProductOpeningStock_LocationId" Association="ERPModel.FK_ProductOpeningStock_LocationId">
+            <End Role="Location" EntitySet="Locations" />
+            <End Role="ProductOpeningStock" EntitySet="ProductOpeningStock" />
           </AssociationSet>
           
         </EntityContainer>
@@ -5451,23 +5467,6 @@
           <Property Name="UOMName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="UOMDesc" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="Status" Type="Boolean" />
-        </EntityType>
-        <EntityType Name="ProductOpeningStock">
-          <Key>
-            <PropertyRef Name="OpeningTrnId" />
-          </Key>
-          <Property Name="OpeningTrnId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FinYearId" Type="Int32" />
-          <Property Name="ProductId" Type="Int64" />
-          <Property Name="OpeningQty" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="CreatedBy" Type="Int32" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
-          <Property Name="ModifiedBy" Type="Int32" />
-          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
-          <Property Name="CompanyId" Type="Int32" />
-          <Property Name="CompanyBranchId" Type="Int32" />
-          <Property Name="LocationId" Type="Int32" />
-          <NavigationProperty Name="Location" Relationship="ERPModel.FK_ProductOpeningStock_LocationId" FromRole="ProductOpeningStock" ToRole="Location" />
         </EntityType>
         <EntityType Name="ProductBOM">
           <Key>
@@ -7573,7 +7572,7 @@
           <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
           <Property Name="Status" Type="Boolean" />
           <NavigationProperty Name="ProductOpeningStock" Relationship="ERPModel.FK_ProductOpeningStock_LocationId" FromRole="Location" ToRole="ProductOpeningStock" />
-        </EntityType>
+          </EntityType>
         <EntityType Name="StockIssueNote">
           <Key>
             <PropertyRef Name="SINId" />
@@ -9613,125 +9612,6 @@
           <Property Name="CompanyBranchId" Type="Int64" />
           <Property Name="IsOnline" Type="Boolean" />
         </EntityType>
-        <EntityType Name="SaleInvoice">
-          <Key>
-            <PropertyRef Name="InvoiceId" />
-          </Key>
-          <Property Name="InvoiceId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="InvoiceDate" Type="DateTime" Precision="0" />
-          <Property Name="InvoiceType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="SOId" Type="Int64" />
-          <Property Name="SONo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CompanyBranchId" Type="Int32" />
-          <Property Name="CurrencyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CustomerId" Type="Int32" />
-          <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="ContactPerson" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="BillingAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="StateId" Type="Int32" />
-          <Property Name="CountryId" Type="Int32" />
-          <Property Name="PinCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="CSTNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TINNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="PANNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="GSTNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ExciseNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="MobileNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ContactNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ConsigneeId" Type="Int32" />
-          <Property Name="ConsigneeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="ShippingContactPerson" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="ShippingBillingAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="ShippingCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ShippingStateId" Type="Int32" />
-          <Property Name="ShippingCountryId" Type="Int32" />
-          <Property Name="ShippingPinCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ShippingTINNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ShippingEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="ShippingMobileNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ShippingContactNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ShippingFax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="RefDate" Type="DateTime" Precision="0" />
-          <Property Name="BasicValue" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="TotalValue" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="RoundOfValue" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="GrossValue" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="FreightValue" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="LoadingValue" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="PayToBookId" Type="Int32" />
-          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="FinYearId" Type="Int32" />
-          <Property Name="CompanyId" Type="Int32" />
-          <Property Name="CreatedBy" Type="Int32" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
-          <Property Name="ModifiedBy" Type="Int32" />
-          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
-          <Property Name="InvoiceRevisedStatus" Type="Boolean" />
-          <Property Name="InvoiceStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ApprovalStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ApprovedBy" Type="Int32" />
-          <Property Name="ApprovedDate" Type="DateTime" Precision="0" />
-          <Property Name="RejectionStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="RejectedBy" Type="Int32" />
-          <Property Name="RejectedDate" Type="DateTime" Precision="0" />
-          <Property Name="RejectedReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="CancelStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="CancelBy" Type="Int32" />
-          <Property Name="CancelDate" Type="DateTime" Precision="0" />
-          <Property Name="CancelReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="InvoiceSequence" Type="Int32" />
-          <Property Name="ReverseChargeApplicable" Type="Boolean" />
-          <Property Name="ReverseChargeAmount" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="InsuranceValue" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="FreightCGST_Amt" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="FreightSGST_Amt" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="FreightIGST_Amt" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="LoadingCGST_Amt" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="LoadingSGST_Amt" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="LoadingIGST_Amt" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="InsuranceCGST_Amt" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="InsuranceSGST_Amt" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="InsuranceIGST_Amt" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="FreightCGST_Perc" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="FreightSGST_Perc" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="FreightIGST_Perc" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="LoadingCGST_Perc" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="LoadingSGST_Perc" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="LoadingIGST_Perc" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="InsuranceCGST_Perc" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="InsuranceSGST_Perc" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="InsuranceIGST_Perc" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="InvoicePackingListId" Type="Int64" />
-          <Property Name="InvoicePackingListNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="AgainstPackingList" Type="Boolean" />
-          <Property Name="SaleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TransportName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="VehicleNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="BiltyNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="BiltyDate" Type="DateTime" Precision="0" />
-          <Property Name="AdharcardNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Pancard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IdtypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IdtypeValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="RtoRegsValue" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="RtoRegsCGST_Amt" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="RtoRegsSGST_Amt" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="RtoRegsIGST_Amt" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="RtoRegsCGST_Perc" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="RtoRegsSGST_Perc" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="RtoRegsIGST_Perc" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="VehicleInsuranceValue" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="HypothecationBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="EwayBillNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="SaleEmpId" Type="Int64" />
-          <Property Name="SaleInvoiceType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TCSValue" Type="Decimal" Precision="18" Scale="2" />
-        </EntityType>
         <EntityType Name="CustomerType">
           <Key>
             <PropertyRef Name="CustomerTypeId" />
@@ -9742,18 +9622,6 @@
           <Property Name="CompanyBranchId" Type="Int32" />
           <Property Name="CustomerTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
-        <Association Name="FK_ProductOpeningStock_LocationId">
-          <End Type="ERPModel.Location" Role="Location" Multiplicity="0..1" />
-          <End Type="ERPModel.ProductOpeningStock" Role="ProductOpeningStock" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Location">
-              <PropertyRef Name="LocationId" />
-            </Principal>
-            <Dependent Role="ProductOpeningStock">
-              <PropertyRef Name="LocationId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="ComplaintService">
           <Key>
             <PropertyRef Name="ComplaintId" />
@@ -9896,6 +9764,154 @@
             </Principal>
             <Dependent Role="ComplaintSupportingDocument">
               <PropertyRef Name="ComplaintId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ProductOpeningStock">
+          <Key>
+            <PropertyRef Name="OpeningTrnId" />
+          </Key>
+          <Property Name="OpeningTrnId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FinYearId" Type="Int32" />
+          <Property Name="CompanyId" Type="Int32" />
+          <Property Name="CompanyBranchId" Type="Int32" />
+          <Property Name="ProductId" Type="Int64" />
+          <Property Name="OpeningQty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+          <Property Name="LocationId" Type="Int32" />
+          <NavigationProperty Name="Location" Relationship="ERPModel.FK_ProductOpeningStock_LocationId" FromRole="ProductOpeningStock" ToRole="Location" />
+        </EntityType>
+        <EntityType Name="SaleInvoice">
+          <Key>
+            <PropertyRef Name="InvoiceId" />
+          </Key>
+          <Property Name="InvoiceId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceDate" Type="DateTime" Precision="0" />
+          <Property Name="InvoiceType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SOId" Type="Int64" />
+          <Property Name="SONo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyBranchId" Type="Int32" />
+          <Property Name="CurrencyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ContactPerson" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BillingAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StateId" Type="Int32" />
+          <Property Name="CountryId" Type="Int32" />
+          <Property Name="PinCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CSTNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TINNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PANNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GSTNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ExciseNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ConsigneeId" Type="Int32" />
+          <Property Name="ConsigneeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingContactPerson" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingBillingAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingStateId" Type="Int32" />
+          <Property Name="ShippingCountryId" Type="Int32" />
+          <Property Name="ShippingPinCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingTINNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingMobileNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingContactNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingFax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RefDate" Type="DateTime" Precision="0" />
+          <Property Name="BasicValue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalValue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RoundOfValue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="GrossValue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FreightValue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LoadingValue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PayToBookId" Type="Int32" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FinYearId" Type="Int32" />
+          <Property Name="CompanyId" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+          <Property Name="InvoiceRevisedStatus" Type="Boolean" />
+          <Property Name="InvoiceStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovalStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovedBy" Type="Int32" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="0" />
+          <Property Name="RejectionStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RejectedBy" Type="Int32" />
+          <Property Name="RejectedDate" Type="DateTime" Precision="0" />
+          <Property Name="RejectedReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="CancelStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CancelBy" Type="Int32" />
+          <Property Name="CancelDate" Type="DateTime" Precision="0" />
+          <Property Name="CancelReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceSequence" Type="Int32" />
+          <Property Name="ReverseChargeApplicable" Type="Boolean" />
+          <Property Name="ReverseChargeAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="InsuranceValue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FreightCGST_Amt" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FreightSGST_Amt" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FreightIGST_Amt" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LoadingCGST_Amt" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LoadingSGST_Amt" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LoadingIGST_Amt" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="InsuranceCGST_Amt" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="InsuranceSGST_Amt" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="InsuranceIGST_Amt" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FreightCGST_Perc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FreightSGST_Perc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FreightIGST_Perc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LoadingCGST_Perc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LoadingSGST_Perc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LoadingIGST_Perc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="InsuranceCGST_Perc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="InsuranceSGST_Perc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="InsuranceIGST_Perc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="InvoicePackingListId" Type="Int64" />
+          <Property Name="InvoicePackingListNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AgainstPackingList" Type="Boolean" />
+          <Property Name="SaleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TransportName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BiltyNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BiltyDate" Type="DateTime" Precision="0" />
+          <Property Name="AdharcardNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Pancard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdtypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdtypeValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RtoRegsValue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RtoRegsCGST_Amt" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RtoRegsSGST_Amt" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RtoRegsIGST_Amt" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RtoRegsCGST_Perc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RtoRegsSGST_Perc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RtoRegsIGST_Perc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VehicleInsuranceValue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="HypothecationBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EwayBillNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SaleEmpId" Type="Int64" />
+          <Property Name="SaleInvoiceType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TCSValue" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <Association Name="FK_ProductOpeningStock_LocationId">
+          <End Type="ERPModel.Location" Role="Location" Multiplicity="0..1" />
+          <End Type="ERPModel.ProductOpeningStock" Role="ProductOpeningStock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="LocationId" />
+            </Principal>
+            <Dependent Role="ProductOpeningStock">
+              <PropertyRef Name="LocationId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -10173,23 +10189,6 @@
                 <ScalarProperty Name="UOMDesc" ColumnName="UOMDesc" />
                 <ScalarProperty Name="UOMName" ColumnName="UOMName" />
                 <ScalarProperty Name="UOMId" ColumnName="UOMId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ProductOpeningStocks">
-            <EntityTypeMapping TypeName="ERPModel.ProductOpeningStock">
-              <MappingFragment StoreEntitySet="ProductOpeningStock">
-                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
-                <ScalarProperty Name="CompanyBranchId" ColumnName="CompanyBranchId" />
-                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="OpeningQty" ColumnName="OpeningQty" />
-                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-                <ScalarProperty Name="FinYearId" ColumnName="FinYearId" />
-                <ScalarProperty Name="OpeningTrnId" ColumnName="OpeningTrnId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -14537,126 +14536,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SaleInvoices">
-            <EntityTypeMapping TypeName="ERPModel.SaleInvoice">
-              <MappingFragment StoreEntitySet="SaleInvoice">
-                <ScalarProperty Name="TCSValue" ColumnName="TCSValue" />
-                <ScalarProperty Name="SaleInvoiceType" ColumnName="SaleInvoiceType" />
-                <ScalarProperty Name="SaleEmpId" ColumnName="SaleEmpId" />
-                <ScalarProperty Name="EwayBillNo" ColumnName="EwayBillNo" />
-                <ScalarProperty Name="HypothecationBy" ColumnName="HypothecationBy" />
-                <ScalarProperty Name="VehicleInsuranceValue" ColumnName="VehicleInsuranceValue" />
-                <ScalarProperty Name="RtoRegsIGST_Perc" ColumnName="RtoRegsIGST_Perc" />
-                <ScalarProperty Name="RtoRegsSGST_Perc" ColumnName="RtoRegsSGST_Perc" />
-                <ScalarProperty Name="RtoRegsCGST_Perc" ColumnName="RtoRegsCGST_Perc" />
-                <ScalarProperty Name="RtoRegsIGST_Amt" ColumnName="RtoRegsIGST_Amt" />
-                <ScalarProperty Name="RtoRegsSGST_Amt" ColumnName="RtoRegsSGST_Amt" />
-                <ScalarProperty Name="RtoRegsCGST_Amt" ColumnName="RtoRegsCGST_Amt" />
-                <ScalarProperty Name="RtoRegsValue" ColumnName="RtoRegsValue" />
-                <ScalarProperty Name="IdtypeValue" ColumnName="IdtypeValue" />
-                <ScalarProperty Name="IdtypeName" ColumnName="IdtypeName" />
-                <ScalarProperty Name="Pancard" ColumnName="Pancard" />
-                <ScalarProperty Name="AdharcardNo" ColumnName="AdharcardNo" />
-                <ScalarProperty Name="BiltyDate" ColumnName="BiltyDate" />
-                <ScalarProperty Name="BiltyNo" ColumnName="BiltyNo" />
-                <ScalarProperty Name="VehicleNo" ColumnName="VehicleNo" />
-                <ScalarProperty Name="TransportName" ColumnName="TransportName" />
-                <ScalarProperty Name="SaleType" ColumnName="SaleType" />
-                <ScalarProperty Name="AgainstPackingList" ColumnName="AgainstPackingList" />
-                <ScalarProperty Name="InvoicePackingListNo" ColumnName="InvoicePackingListNo" />
-                <ScalarProperty Name="InvoicePackingListId" ColumnName="InvoicePackingListId" />
-                <ScalarProperty Name="InsuranceIGST_Perc" ColumnName="InsuranceIGST_Perc" />
-                <ScalarProperty Name="InsuranceSGST_Perc" ColumnName="InsuranceSGST_Perc" />
-                <ScalarProperty Name="InsuranceCGST_Perc" ColumnName="InsuranceCGST_Perc" />
-                <ScalarProperty Name="LoadingIGST_Perc" ColumnName="LoadingIGST_Perc" />
-                <ScalarProperty Name="LoadingSGST_Perc" ColumnName="LoadingSGST_Perc" />
-                <ScalarProperty Name="LoadingCGST_Perc" ColumnName="LoadingCGST_Perc" />
-                <ScalarProperty Name="FreightIGST_Perc" ColumnName="FreightIGST_Perc" />
-                <ScalarProperty Name="FreightSGST_Perc" ColumnName="FreightSGST_Perc" />
-                <ScalarProperty Name="FreightCGST_Perc" ColumnName="FreightCGST_Perc" />
-                <ScalarProperty Name="InsuranceIGST_Amt" ColumnName="InsuranceIGST_Amt" />
-                <ScalarProperty Name="InsuranceSGST_Amt" ColumnName="InsuranceSGST_Amt" />
-                <ScalarProperty Name="InsuranceCGST_Amt" ColumnName="InsuranceCGST_Amt" />
-                <ScalarProperty Name="LoadingIGST_Amt" ColumnName="LoadingIGST_Amt" />
-                <ScalarProperty Name="LoadingSGST_Amt" ColumnName="LoadingSGST_Amt" />
-                <ScalarProperty Name="LoadingCGST_Amt" ColumnName="LoadingCGST_Amt" />
-                <ScalarProperty Name="FreightIGST_Amt" ColumnName="FreightIGST_Amt" />
-                <ScalarProperty Name="FreightSGST_Amt" ColumnName="FreightSGST_Amt" />
-                <ScalarProperty Name="FreightCGST_Amt" ColumnName="FreightCGST_Amt" />
-                <ScalarProperty Name="InsuranceValue" ColumnName="InsuranceValue" />
-                <ScalarProperty Name="ReverseChargeAmount" ColumnName="ReverseChargeAmount" />
-                <ScalarProperty Name="ReverseChargeApplicable" ColumnName="ReverseChargeApplicable" />
-                <ScalarProperty Name="InvoiceSequence" ColumnName="InvoiceSequence" />
-                <ScalarProperty Name="CancelReason" ColumnName="CancelReason" />
-                <ScalarProperty Name="CancelDate" ColumnName="CancelDate" />
-                <ScalarProperty Name="CancelBy" ColumnName="CancelBy" />
-                <ScalarProperty Name="CancelStatus" ColumnName="CancelStatus" />
-                <ScalarProperty Name="RejectedReason" ColumnName="RejectedReason" />
-                <ScalarProperty Name="RejectedDate" ColumnName="RejectedDate" />
-                <ScalarProperty Name="RejectedBy" ColumnName="RejectedBy" />
-                <ScalarProperty Name="RejectionStatus" ColumnName="RejectionStatus" />
-                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
-                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
-                <ScalarProperty Name="ApprovalStatus" ColumnName="ApprovalStatus" />
-                <ScalarProperty Name="InvoiceStatus" ColumnName="InvoiceStatus" />
-                <ScalarProperty Name="InvoiceRevisedStatus" ColumnName="InvoiceRevisedStatus" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
-                <ScalarProperty Name="FinYearId" ColumnName="FinYearId" />
-                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
-                <ScalarProperty Name="PayToBookId" ColumnName="PayToBookId" />
-                <ScalarProperty Name="LoadingValue" ColumnName="LoadingValue" />
-                <ScalarProperty Name="FreightValue" ColumnName="FreightValue" />
-                <ScalarProperty Name="GrossValue" ColumnName="GrossValue" />
-                <ScalarProperty Name="RoundOfValue" ColumnName="RoundOfValue" />
-                <ScalarProperty Name="TotalValue" ColumnName="TotalValue" />
-                <ScalarProperty Name="BasicValue" ColumnName="BasicValue" />
-                <ScalarProperty Name="RefDate" ColumnName="RefDate" />
-                <ScalarProperty Name="RefNo" ColumnName="RefNo" />
-                <ScalarProperty Name="ShippingFax" ColumnName="ShippingFax" />
-                <ScalarProperty Name="ShippingContactNo" ColumnName="ShippingContactNo" />
-                <ScalarProperty Name="ShippingMobileNo" ColumnName="ShippingMobileNo" />
-                <ScalarProperty Name="ShippingEmail" ColumnName="ShippingEmail" />
-                <ScalarProperty Name="ShippingTINNo" ColumnName="ShippingTINNo" />
-                <ScalarProperty Name="ShippingPinCode" ColumnName="ShippingPinCode" />
-                <ScalarProperty Name="ShippingCountryId" ColumnName="ShippingCountryId" />
-                <ScalarProperty Name="ShippingStateId" ColumnName="ShippingStateId" />
-                <ScalarProperty Name="ShippingCity" ColumnName="ShippingCity" />
-                <ScalarProperty Name="ShippingBillingAddress" ColumnName="ShippingBillingAddress" />
-                <ScalarProperty Name="ShippingContactPerson" ColumnName="ShippingContactPerson" />
-                <ScalarProperty Name="ConsigneeName" ColumnName="ConsigneeName" />
-                <ScalarProperty Name="ConsigneeId" ColumnName="ConsigneeId" />
-                <ScalarProperty Name="Fax" ColumnName="Fax" />
-                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
-                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="ExciseNo" ColumnName="ExciseNo" />
-                <ScalarProperty Name="GSTNo" ColumnName="GSTNo" />
-                <ScalarProperty Name="PANNo" ColumnName="PANNo" />
-                <ScalarProperty Name="TINNo" ColumnName="TINNo" />
-                <ScalarProperty Name="CSTNo" ColumnName="CSTNo" />
-                <ScalarProperty Name="PinCode" ColumnName="PinCode" />
-                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
-                <ScalarProperty Name="StateId" ColumnName="StateId" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="BillingAddress" ColumnName="BillingAddress" />
-                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
-                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
-                <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
-                <ScalarProperty Name="CompanyBranchId" ColumnName="CompanyBranchId" />
-                <ScalarProperty Name="SONo" ColumnName="SONo" />
-                <ScalarProperty Name="SOId" ColumnName="SOId" />
-                <ScalarProperty Name="InvoiceType" ColumnName="InvoiceType" />
-                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
-                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
-                <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="CustomerTypes">
             <EntityTypeMapping TypeName="ERPModel.CustomerType">
               <MappingFragment StoreEntitySet="CustomerType">
@@ -14788,6 +14667,143 @@
                 <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
                 <ScalarProperty Name="ComplaintId" ColumnName="ComplaintId" />
                 <ScalarProperty Name="ComplaintDocId" ColumnName="ComplaintDocId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductOpeningStock">
+            <EntityTypeMapping TypeName="ERPModel.ProductOpeningStock">
+              <MappingFragment StoreEntitySet="ProductOpeningStock">
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="OpeningQty" ColumnName="OpeningQty" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="CompanyBranchId" ColumnName="CompanyBranchId" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="FinYearId" ColumnName="FinYearId" />
+                <ScalarProperty Name="OpeningTrnId" ColumnName="OpeningTrnId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleInvoice">
+            <EntityTypeMapping TypeName="ERPModel.SaleInvoice">
+              <MappingFragment StoreEntitySet="SaleInvoice">
+                <ScalarProperty Name="TCSValue" ColumnName="TCSValue" />
+                <ScalarProperty Name="SaleInvoiceType" ColumnName="SaleInvoiceType" />
+                <ScalarProperty Name="SaleEmpId" ColumnName="SaleEmpId" />
+                <ScalarProperty Name="EwayBillNo" ColumnName="EwayBillNo" />
+                <ScalarProperty Name="HypothecationBy" ColumnName="HypothecationBy" />
+                <ScalarProperty Name="VehicleInsuranceValue" ColumnName="VehicleInsuranceValue" />
+                <ScalarProperty Name="RtoRegsIGST_Perc" ColumnName="RtoRegsIGST_Perc" />
+                <ScalarProperty Name="RtoRegsSGST_Perc" ColumnName="RtoRegsSGST_Perc" />
+                <ScalarProperty Name="RtoRegsCGST_Perc" ColumnName="RtoRegsCGST_Perc" />
+                <ScalarProperty Name="RtoRegsIGST_Amt" ColumnName="RtoRegsIGST_Amt" />
+                <ScalarProperty Name="RtoRegsSGST_Amt" ColumnName="RtoRegsSGST_Amt" />
+                <ScalarProperty Name="RtoRegsCGST_Amt" ColumnName="RtoRegsCGST_Amt" />
+                <ScalarProperty Name="RtoRegsValue" ColumnName="RtoRegsValue" />
+                <ScalarProperty Name="IdtypeValue" ColumnName="IdtypeValue" />
+                <ScalarProperty Name="IdtypeName" ColumnName="IdtypeName" />
+                <ScalarProperty Name="Pancard" ColumnName="Pancard" />
+                <ScalarProperty Name="AdharcardNo" ColumnName="AdharcardNo" />
+                <ScalarProperty Name="BiltyDate" ColumnName="BiltyDate" />
+                <ScalarProperty Name="BiltyNo" ColumnName="BiltyNo" />
+                <ScalarProperty Name="VehicleNo" ColumnName="VehicleNo" />
+                <ScalarProperty Name="TransportName" ColumnName="TransportName" />
+                <ScalarProperty Name="SaleType" ColumnName="SaleType" />
+                <ScalarProperty Name="AgainstPackingList" ColumnName="AgainstPackingList" />
+                <ScalarProperty Name="InvoicePackingListNo" ColumnName="InvoicePackingListNo" />
+                <ScalarProperty Name="InvoicePackingListId" ColumnName="InvoicePackingListId" />
+                <ScalarProperty Name="InsuranceIGST_Perc" ColumnName="InsuranceIGST_Perc" />
+                <ScalarProperty Name="InsuranceSGST_Perc" ColumnName="InsuranceSGST_Perc" />
+                <ScalarProperty Name="InsuranceCGST_Perc" ColumnName="InsuranceCGST_Perc" />
+                <ScalarProperty Name="LoadingIGST_Perc" ColumnName="LoadingIGST_Perc" />
+                <ScalarProperty Name="LoadingSGST_Perc" ColumnName="LoadingSGST_Perc" />
+                <ScalarProperty Name="LoadingCGST_Perc" ColumnName="LoadingCGST_Perc" />
+                <ScalarProperty Name="FreightIGST_Perc" ColumnName="FreightIGST_Perc" />
+                <ScalarProperty Name="FreightSGST_Perc" ColumnName="FreightSGST_Perc" />
+                <ScalarProperty Name="FreightCGST_Perc" ColumnName="FreightCGST_Perc" />
+                <ScalarProperty Name="InsuranceIGST_Amt" ColumnName="InsuranceIGST_Amt" />
+                <ScalarProperty Name="InsuranceSGST_Amt" ColumnName="InsuranceSGST_Amt" />
+                <ScalarProperty Name="InsuranceCGST_Amt" ColumnName="InsuranceCGST_Amt" />
+                <ScalarProperty Name="LoadingIGST_Amt" ColumnName="LoadingIGST_Amt" />
+                <ScalarProperty Name="LoadingSGST_Amt" ColumnName="LoadingSGST_Amt" />
+                <ScalarProperty Name="LoadingCGST_Amt" ColumnName="LoadingCGST_Amt" />
+                <ScalarProperty Name="FreightIGST_Amt" ColumnName="FreightIGST_Amt" />
+                <ScalarProperty Name="FreightSGST_Amt" ColumnName="FreightSGST_Amt" />
+                <ScalarProperty Name="FreightCGST_Amt" ColumnName="FreightCGST_Amt" />
+                <ScalarProperty Name="InsuranceValue" ColumnName="InsuranceValue" />
+                <ScalarProperty Name="ReverseChargeAmount" ColumnName="ReverseChargeAmount" />
+                <ScalarProperty Name="ReverseChargeApplicable" ColumnName="ReverseChargeApplicable" />
+                <ScalarProperty Name="InvoiceSequence" ColumnName="InvoiceSequence" />
+                <ScalarProperty Name="CancelReason" ColumnName="CancelReason" />
+                <ScalarProperty Name="CancelDate" ColumnName="CancelDate" />
+                <ScalarProperty Name="CancelBy" ColumnName="CancelBy" />
+                <ScalarProperty Name="CancelStatus" ColumnName="CancelStatus" />
+                <ScalarProperty Name="RejectedReason" ColumnName="RejectedReason" />
+                <ScalarProperty Name="RejectedDate" ColumnName="RejectedDate" />
+                <ScalarProperty Name="RejectedBy" ColumnName="RejectedBy" />
+                <ScalarProperty Name="RejectionStatus" ColumnName="RejectionStatus" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="ApprovalStatus" ColumnName="ApprovalStatus" />
+                <ScalarProperty Name="InvoiceStatus" ColumnName="InvoiceStatus" />
+                <ScalarProperty Name="InvoiceRevisedStatus" ColumnName="InvoiceRevisedStatus" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="FinYearId" ColumnName="FinYearId" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="PayToBookId" ColumnName="PayToBookId" />
+                <ScalarProperty Name="LoadingValue" ColumnName="LoadingValue" />
+                <ScalarProperty Name="FreightValue" ColumnName="FreightValue" />
+                <ScalarProperty Name="GrossValue" ColumnName="GrossValue" />
+                <ScalarProperty Name="RoundOfValue" ColumnName="RoundOfValue" />
+                <ScalarProperty Name="TotalValue" ColumnName="TotalValue" />
+                <ScalarProperty Name="BasicValue" ColumnName="BasicValue" />
+                <ScalarProperty Name="RefDate" ColumnName="RefDate" />
+                <ScalarProperty Name="RefNo" ColumnName="RefNo" />
+                <ScalarProperty Name="ShippingFax" ColumnName="ShippingFax" />
+                <ScalarProperty Name="ShippingContactNo" ColumnName="ShippingContactNo" />
+                <ScalarProperty Name="ShippingMobileNo" ColumnName="ShippingMobileNo" />
+                <ScalarProperty Name="ShippingEmail" ColumnName="ShippingEmail" />
+                <ScalarProperty Name="ShippingTINNo" ColumnName="ShippingTINNo" />
+                <ScalarProperty Name="ShippingPinCode" ColumnName="ShippingPinCode" />
+                <ScalarProperty Name="ShippingCountryId" ColumnName="ShippingCountryId" />
+                <ScalarProperty Name="ShippingStateId" ColumnName="ShippingStateId" />
+                <ScalarProperty Name="ShippingCity" ColumnName="ShippingCity" />
+                <ScalarProperty Name="ShippingBillingAddress" ColumnName="ShippingBillingAddress" />
+                <ScalarProperty Name="ShippingContactPerson" ColumnName="ShippingContactPerson" />
+                <ScalarProperty Name="ConsigneeName" ColumnName="ConsigneeName" />
+                <ScalarProperty Name="ConsigneeId" ColumnName="ConsigneeId" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ExciseNo" ColumnName="ExciseNo" />
+                <ScalarProperty Name="GSTNo" ColumnName="GSTNo" />
+                <ScalarProperty Name="PANNo" ColumnName="PANNo" />
+                <ScalarProperty Name="TINNo" ColumnName="TINNo" />
+                <ScalarProperty Name="CSTNo" ColumnName="CSTNo" />
+                <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="BillingAddress" ColumnName="BillingAddress" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+                <ScalarProperty Name="CompanyBranchId" ColumnName="CompanyBranchId" />
+                <ScalarProperty Name="SONo" ColumnName="SONo" />
+                <ScalarProperty Name="SOId" ColumnName="SOId" />
+                <ScalarProperty Name="InvoiceType" ColumnName="InvoiceType" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

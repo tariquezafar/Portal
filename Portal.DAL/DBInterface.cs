@@ -2615,7 +2615,7 @@ namespace Portal.DAL
             ResponseOut responseOut = new ResponseOut();
             try
             {
-                if (entities.ProductOpeningStocks.Any(x => x.ProductId == productOpeningStock.ProductId && x.CompanyId == productOpeningStock.CompanyId && x.CompanyBranchId == productOpeningStock.CompanyBranchId && x.FinYearId == productOpeningStock.FinYearId && x.OpeningTrnId != productOpeningStock.OpeningTrnId))
+                if (entities.ProductOpeningStock.Any(x => x.ProductId == productOpeningStock.ProductId && x.CompanyId == productOpeningStock.CompanyId && x.CompanyBranchId == productOpeningStock.CompanyBranchId && x.FinYearId == productOpeningStock.FinYearId && x.OpeningTrnId != productOpeningStock.OpeningTrnId))
                 {
                     responseOut.status = ActionStatus.Fail;
                     responseOut.message = ActionMessage.DuplicateProductOpening;
@@ -2626,7 +2626,7 @@ namespace Portal.DAL
                     if (productOpeningStock.OpeningTrnId == 0)
                     {
                         productOpeningStock.CreatedDate = DateTime.Now;
-                        entities.ProductOpeningStocks.Add(productOpeningStock);
+                        entities.ProductOpeningStock.Add(productOpeningStock);
                         responseOut.message = ActionMessage.ProductOpeningCreatedSuccess;
                     }
                     else
@@ -2634,7 +2634,7 @@ namespace Portal.DAL
                         productOpeningStock.ModifiedBy = productOpeningStock.CreatedBy;
                         productOpeningStock.ModifiedDate = DateTime.Now;
 
-                        entities.ProductOpeningStocks.Where(a => a.OpeningTrnId == productOpeningStock.OpeningTrnId).ToList().ForEach(a =>
+                        entities.ProductOpeningStock.Where(a => a.OpeningTrnId == productOpeningStock.OpeningTrnId).ToList().ForEach(a =>
                         {
                             a.ProductId = productOpeningStock.ProductId;
                             a.FinYearId = productOpeningStock.FinYearId;
@@ -7273,7 +7273,7 @@ namespace Portal.DAL
             try
             {
 
-                entities.SaleInvoices.Where(a => a.InvoiceId == saleinvoice.InvoiceId).ToList().ForEach(a =>
+                entities.SaleInvoice.Where(a => a.InvoiceId == saleinvoice.InvoiceId).ToList().ForEach(a =>
                 {
                     a.ApprovalStatus = saleinvoice.ApprovalStatus;
                     a.CancelStatus = saleinvoice.CancelStatus;

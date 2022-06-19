@@ -45,7 +45,6 @@ namespace Portal.DAL
         public virtual DbSet<ProductSubGroup> ProductSubGroups { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
         public virtual DbSet<UOM> UOMs { get; set; }
-        public virtual DbSet<ProductOpeningStock> ProductOpeningStocks { get; set; }
         public virtual DbSet<ProductBOM> ProductBOMs { get; set; }
         public virtual DbSet<PaymentMode> PaymentModes { get; set; }
         public virtual DbSet<City> Cities { get; set; }
@@ -103,7 +102,6 @@ namespace Portal.DAL
         public virtual DbSet<ChallanTaxDetail> ChallanTaxDetails { get; set; }
         public virtual DbSet<ChallanTermsDetail> ChallanTermsDetails { get; set; }
         public virtual DbSet<DeliveryChallan> DeliveryChallans { get; set; }
-        public virtual DbSet<MRN> MRNs { get; set; }
         public virtual DbSet<MRNProductDetail> MRNProductDetails { get; set; }
         public virtual DbSet<ChallanProductDetail> ChallanProductDetails { get; set; }
         public virtual DbSet<ProductTrnStock> ProductTrnStocks { get; set; }
@@ -249,13 +247,14 @@ namespace Portal.DAL
         public virtual DbSet<JobCardProductDetail> JobCardProductDetails { get; set; }
         public virtual DbSet<HSNCode> HSNCodes { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<SaleInvoice> SaleInvoices { get; set; }
         public virtual DbSet<CustomerType> CustomerTypes { get; set; }
         public virtual DbSet<ComplaintService> ComplaintService { get; set; }
         public virtual DbSet<ComplaintServiceProductDetail> ComplaintServiceProductDetail { get; set; }
         public virtual DbSet<MRN> MRN { get; set; }
         public virtual DbSet<EmployeeSupportingDocument> EmployeeSupportingDocument { get; set; }
         public virtual DbSet<ComplaintSupportingDocument> ComplaintSupportingDocument { get; set; }
+        public virtual DbSet<ProductOpeningStock> ProductOpeningStock { get; set; }
+        public virtual DbSet<SaleInvoice> SaleInvoice { get; set; }
     
         public virtual ObjectResult<proc_GetRoleWiseChildUI_Result> proc_GetRoleWiseChildUI(Nullable<int> parentUIId, Nullable<int> roleId)
         {

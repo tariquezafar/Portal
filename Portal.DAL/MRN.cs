@@ -21,8 +21,14 @@ namespace Portal.DAL
         public Nullable<System.DateTime> GRDate { get; set; }
         public Nullable<long> InvoiceId { get; set; }
         public string InvoiceNo { get; set; }
+        public Nullable<long> POId { get; set; }
+        public string PONo { get; set; }
+        public Nullable<long> QualityCheckId { get; set; }
+        public string QualityCheckNo { get; set; }
+        public Nullable<System.DateTime> QualityCheckDate { get; set; }
         public Nullable<int> VendorId { get; set; }
         public string VendorName { get; set; }
+        public Nullable<int> CompanyBranchId { get; set; }
         public string ContactPerson { get; set; }
         public string ShippingContactPerson { get; set; }
         public string ShippingBillingAddress { get; set; }
@@ -53,20 +59,14 @@ namespace Portal.DAL
         public string ApprovalStatus { get; set; }
         public Nullable<int> ApprovedBy { get; set; }
         public Nullable<System.DateTime> ApprovedDate { get; set; }
+        public Nullable<int> CancelBy { get; set; }
+        public Nullable<System.DateTime> CancelDate { get; set; }
+        public string CancelReason { get; set; }
         public string RejectionStatus { get; set; }
         public Nullable<int> RejectedBy { get; set; }
         public Nullable<System.DateTime> RejectedDate { get; set; }
         public string RejectedReason { get; set; }
         public Nullable<int> MRNSequence { get; set; }
-        public Nullable<int> CompanyBranchId { get; set; }
-        public Nullable<long> POId { get; set; }
-        public string PONo { get; set; }
-        public Nullable<int> CancelBy { get; set; }
-        public Nullable<System.DateTime> CancelDate { get; set; }
-        public string CancelReason { get; set; }
-        public Nullable<long> QualityCheckId { get; set; }
-        public string QualityCheckNo { get; set; }
-        public Nullable<System.DateTime> QualityCheckDate { get; set; }
         public Nullable<int> LocationID { get; set; }
     }
 }
