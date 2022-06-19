@@ -57,6 +57,10 @@
                     {
                         item.ComplaintStatusCon = "Closed";
                     }
+                    else if (item.ComplaintStatus == 4)
+                    {
+                        item.ComplaintStatusCon = "DisApproved";
+                    }
                     if (item.ComplaintService_Status == true)
                     {
                         <tr class="success">
