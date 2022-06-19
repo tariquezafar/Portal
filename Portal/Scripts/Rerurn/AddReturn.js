@@ -25,6 +25,7 @@
     $("#txtWarrantyPeriodMonth").attr('readOnly', true);
     $("#txtWarrantyStartDate").attr('readOnly', true);
     $("#txtWarrantyEndDate").attr('readOnly', true);
+    $("#txtComplaintInvoiceNo").attr('readOnly', true);
 
     
     $("#txtProductName").autocomplete({
@@ -735,11 +736,11 @@ function SaveData() {
         return false;
     }
    
-    if (txtSaleInvoiceNo.val() == "" || txtSaleInvoiceNo.val() == 0) {
-        ShowModel("Alert", "Please select Sale Invoice No")
-        txtSaleInvoiceNo.focus();
-        return false;
-    }
+    ////if (txtSaleInvoiceNo.val() == "" || txtSaleInvoiceNo.val() == 0) {
+    ////    ShowModel("Alert", "Please select Sale Invoice No")
+    ////    txtSaleInvoiceNo.focus();
+    ////    return false;
+    ////}
     if (ddlCompanyBranch.val() == "" || ddlCompanyBranch.val() == 0) {
         ShowModel("Alert", "Please select Company Branch")
         ddlCompanyBranch.focus();
