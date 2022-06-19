@@ -106,7 +106,6 @@ else
 <script>
 
     $(document).ready(function () {
-        debugger;
         $('body').on('change', '.AddAccess', function () {
             $('#tblRoleList tr:not(:has(th))').each(function (i, row) {
                 var $row = $(row);
@@ -145,7 +144,6 @@ else
         });
 
         $('body').on('change', '.EditAccess', function () {
-            debugger;
             $('#tblRoleList tr:not(:has(th))').each(function (i, row) {
                 var $row = $(row);
                 var checkAddValue = $(row).find(".AddAccess").is(":checked");
@@ -176,7 +174,6 @@ else
 
        
         $('#tblRoleList tr:not(:has(th))').each(function (i, row) {
-            debugger;
                 var $row = $(row);
                 var InterfaceName = $(row).find("#tdInterfaceName");
                 var chkReviseAccess = $(row).find("#chkReviseAccess");

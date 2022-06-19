@@ -9,8 +9,6 @@
 
 
 function enableAutoComplete($element) {
-   // alert("Om Namah Shivay");
-        debugger;
         $element.autocomplete({
             minLength: 0,
             source: function (request, response) {

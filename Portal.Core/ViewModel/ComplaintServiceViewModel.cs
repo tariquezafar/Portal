@@ -38,6 +38,7 @@ namespace Portal.Core.ViewModel
         public string DealerName { get; set; }
         public string EmployeeName { get; set; }
         public int ComplaintStatus { get; set; }
+        public string Remarks { get; set; }
         public string ComplaintStatusCon { get; set; }
 
     }

@@ -4,7 +4,6 @@
     var hdnAccessMode = $("#hdnAccessMode");
     var hdnDocumentTypeId = $("#hdnDocumentTypeId");
     if (hdnDocumentTypeId.val() != "" && hdnDocumentTypeId.val() != "0" && hdnAccessMode.val() != "" && hdnAccessMode.val() != "0") {
-        debugger;
         GetDocumentTypeDetail(hdnDocumentTypeId.val());
         if (hdnAccessMode.val() == "3") {
             $("#btnSave").hide();
@@ -74,7 +73,6 @@ $(".alpha-numeric-only").on("input", function () {
 
 
 function GetDocumentTypeDetail(documenttypeId) {
-    debugger;
     $.ajax({
         type: "GET",
         asnc: false,
@@ -82,7 +80,6 @@ function GetDocumentTypeDetail(documenttypeId) {
         data: { documenttypeId: documenttypeId },
         dataType: "json",
         success: function (data) {
-            debugger;
             $("#txtDocumentTypeDesc").val(data.DocumentTypeDesc);
             $("#ddlCompanyBranch").val(data.CompanyBranchId);
             $("#ddlModuleType").val(data.ModuleType);
@@ -100,7 +97,6 @@ function GetDocumentTypeDetail(documenttypeId) {
 }
 
 function SaveData() {
-    debugger;
     var txtDocumentTypeDesc = $("#txtDocumentTypeDesc");
     var hdnDocumentTypeId = $("#hdnDocumentTypeId");
     var ddlCompanyBranch = $("#ddlCompanyBranch");

@@ -220,7 +220,6 @@ function GenerateReportParameters() {
 }
 
 function calc_total() {
-    debugger;
     var sum = 0;
     $(".GrossAmt").each(function () {
         sum += parseFloat($(this).text());

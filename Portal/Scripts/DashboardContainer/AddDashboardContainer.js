@@ -4,7 +4,6 @@
     var hdnDashBoardContainerID = $("#hdnDashBoardContainerID");
     if (hdnDashBoardContainerID.val() != "" && hdnDashBoardContainerID.val() != "0" && hdnAccessMode.val() != "" && hdnAccessMode.val() != "0") {
        
-        debugger
         Getdashboardcontainerdetail(hdnDashBoardContainerID.val());
 
         if (hdnAccessMode.val() == "3") {
@@ -77,8 +76,6 @@ function ValidEmailCheck(emailAddress) {
   
 
 function Getdashboardcontainerdetail(hdnDashBoardContainerID) {
-
-    debugger
     $.ajax({
         type: "GET",
         asnc: false,
@@ -133,9 +130,6 @@ function checkDec(el) {
 }
 
 function SaveData() {
-
-    debugger
-
     var txtDashBoardContainerName = $("#txtDashBoardContainerName");
     var txtDashBoardContainerDisplayName = $("#txtDashBoardContainerDisplayName");
     var txtContainerNo = $("#txtContainerNo");

@@ -20,8 +20,7 @@
     $("#txtMRNProductCode").attr('readOnly', true);
     $("#txtProductHSNCode").attr('readOnly', true);
     $("#txtMRNProductHSNCode").attr('readOnly', true);
-
-
+    $("#txtDispatchDate").attr('disabled', true);
     $("#txtQuantity").attr('readOnly', true);
     $("#txtWarrantyPeriodMonth").attr('readOnly', true);
     $("#txtWarrantyStartDate").attr('readOnly', true);
@@ -1016,7 +1015,6 @@ function OpenWorkOrderSearchPopup() {
 }
 
 function OpenWorkOrderComplaintSearchPopup() {
-    debugger
     if ($("#ddlCompanyBranch").val() == "0" || $("#ddlCompanyBranch").val() == "") {
         ShowModel("Alert", "Please Select Company Branch");
         return false;
@@ -1079,8 +1077,10 @@ function SelectSI(warrantyID, invoiceId, invoiceNo, invoicePackingListNo ) {
     $("#ddlCompanyBranch").attr('disabled', true);
 }
 
-function SelectCI(complaintId) {
+function SelectCI(complaintId,complaintNo,complaintDate) {
     $("#SearchComplaintWordOrderModel").modal('hide');
+    $("#txtComplaintInvoiceNo").val(complaintNo);
+    $("#txtDispatchDate").val(complaintDate);
     $("#ddlCompanyBranch").attr('disabled', true);
     GetReturnProductList(null, complaintId);
 

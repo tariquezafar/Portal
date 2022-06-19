@@ -44,7 +44,8 @@ namespace Portal.Core
                     EmployeeID = complaintServiceViewModel.EmployeeID,
                     DealerID = complaintServiceViewModel.DealerID,
                     InvoiceDate = string.IsNullOrEmpty(complaintServiceViewModel.InvoiceDate) ? Convert.ToDateTime("01-01-1900") : Convert.ToDateTime(complaintServiceViewModel.InvoiceDate),
-                    ComplaintStatus = complaintServiceViewModel.ComplaintStatus
+                    ComplaintStatus = complaintServiceViewModel.ComplaintStatus,
+                    Remarks = complaintServiceViewModel.Remarks
                 };
                 List<ComplaintServiceProductDetail> complaintProductList = new List<ComplaintServiceProductDetail>();
                 if (complaintProduct != null && complaintProduct.Count > 0)

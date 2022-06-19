@@ -92,7 +92,6 @@ function GetFollowUpActivityTypeDetail(followUpActivityTypeId) {
 }
 
 function SaveData() {
-    debugger;
     var txtFollowUpActivityTypeName = $("#txtFollowUpActivityTypeName");
     var hdnFollowUpActivityTypeId = $("#hdnFollowUpActivityTypeId");
     var chkStatus = $("#chkStatus").is(':checked') ? true : false;

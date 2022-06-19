@@ -25,7 +25,7 @@
                     <th align="center">Select</th>
                     <th><center>Complaint No.</center></th>
                     <th>Enquiry Type</th>
-                    <th><center>Dispatch Date</center></th>
+                    <th><center>Complaint Date</center></th>
                 </tr>
             </thead>
             <tbody>
@@ -34,7 +34,7 @@
                 <tr class="success">
 
                     <td style="width:30px; margin:0px 2px auto;">
-                        <a class="fa fa-pencil-square-o erp-btn" href="#" onclick="SelectCI('@item.ComplaintId')"></a>
+                        <a class="fa fa-pencil-square-o erp-btn" href="#" onclick="SelectCI('@item.ComplaintId', '@item.ComplaintNo', '@item.ComplaintDate')"></a>
                     </td>
                     <td>@item.ComplaintNo</td>
                     <td>@item.EnquiryType</td>

@@ -6,7 +6,10 @@
 <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
 
 <style>
-    .Mandatory {
+    .form-horizontal .form-group {
+        margin-left:-1px !important;
+    }
+        .Mandatory {
         color: red;
         font-weight: bold;
     }
@@ -145,8 +148,17 @@
                                 <input id="hdnWarrantyID" type="hidden" value="0" />
 
                             </div>
-                            <a class="fa fa-search col-sm-1 editonly" onclick="OpenWorkOrderComplaintSearchPopup()" id="btnComplaintSearchWorkOrder" tabindex="5" style="padding-top:5px; position:absolute; float:left !important" href="#"></a>
+                            <a class="fa fa-search col-sm-1 editonly" onclick="OpenWorkOrderComplaintSearchPopup()" id="btnComplaintSearchWorkOrder" tabindex="5" style="padding-top: 5px; position: absolute;margin-left:-22px;" href="#"></a>
                         </div>
+
+                        <div class="form-group col-md-4">
+
+                            <label for="txtDispatchDate" class="col-sm-4 control-label">Dispatch Date</label>
+                            <div class="col-sm-8 disabled">
+                                <input class="form-control" id="txtDispatchDate" name="txtDispatchDate" tabindex="3"   type="text" maxlength="50" />
+                            </div>
+                        </div>
+                    </div>
 
 
                         <div class="col-md-12" id="divCreated" style="display:none;">

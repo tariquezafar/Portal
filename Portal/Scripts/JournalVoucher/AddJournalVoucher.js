@@ -863,7 +863,6 @@ function AddVoucherEntry(action) {
                 voucherEntrySequence = parseInt(voucherEntrySequence) + 1;
             }
             else if (hdnVoucherDetailId.val() == voucherDetailId && hdnSequenceNo.val() == sequenceNo) {
-                debugger;
                 var voucherEntry = {
                     VoucherDetailId: hdnVoucherDetailId.val(),
                     SequenceNo: hdnSequenceNo.val(),

@@ -583,7 +583,7 @@ function GetComplaintServiceProductList(complaintProduct) {
             $("#divProductList").html("");
             $("#divProductList").html(err);
         },
-        success: function (data) {debugger
+        success: function (data) {
             $("#divProductList").html("");
             $("#divProductList").html(data);
             ShowHideProductPanel(2);
@@ -615,7 +615,6 @@ function ShowModel(headerText, bodyText) {
 }
 
 function SaveData() {
-    debugger
     var hdncomplaintServiceId = $("#hdncomplaintServiceId");
     var txtComplaintNo = $("#txtComplaintNo");
     var txtComplaintDate = $("#txtComplaintDate");
@@ -633,6 +632,8 @@ function SaveData() {
     var ddlDealer = $("#ddlDealer");
     var txtInvoiceDate = $("#txtInvoiceDate");
     var ddlStatus = $("#ddlStatus");
+    var hdnAccessMode = $("#hdnAccessMode");
+    var txtRemarks = $("#txtRemarks");
 
     if (ddlEnquiryType.val() == "" || ddlEnquiryType.val() == "0") {
         ShowModel("Alert", "Please Select Enquiry Type")
@@ -644,6 +645,13 @@ function SaveData() {
         ShowModel("Alert", "Please Select Complaint Status")
         ddlStatus.focus();
         return false;
+    }
+    if (hdnAccessMode.val() == "4") {
+        if (txtRemarks.val().trim() == "") {
+            ShowModel("Alert", "Please enter Remarks")
+            txtRemarks.focus();
+            return false;
+        }
     }
 
     if (ddlComplaintMode.val() == "" || ddlComplaintMode.val() == "0") {
@@ -712,7 +720,8 @@ function SaveData() {
         EmployeeID: ddlServiceEngineer.val(),
         DealerID: ddlDealer.val(),
         InvoiceDate: txtInvoiceDate.val(),
-        ComplaintStatus: ddlStatus.val()
+        ComplaintStatus: ddlStatus.val(),
+        Remarks: txtRemarks.val()
     };
 
     var complaintProductList = [];
@@ -766,7 +775,6 @@ function SaveData() {
 
     });
 
-    debugger
     var rowCount = $('#tblProductList tr').length;
     if (rowCount == 1) {
         alert("Please add at least one product.");
@@ -855,7 +863,7 @@ function BindCompanyBranchList() {
     });
 }
 
-function GetComplaintServiceDetail(ComplaintId) {debugger
+function GetComplaintServiceDetail(ComplaintId) {
     var hdnAccessMode = $("#hdnAccessMode").val();
     $.ajax({
         type: "GET",
@@ -864,7 +872,6 @@ function GetComplaintServiceDetail(ComplaintId) {debugger
         data: { ComplaintId: ComplaintId },
         dataType: "json",
         success: function (data) {
-            debugger
             $("#txtComplaintNo").val(data.ComplaintNo);
             $("#txtComplaintDate").val(data.ComplaintDate);
             $("#txtInvoiceNo").val(data.InvoiceNo);
@@ -946,7 +953,6 @@ function BindDocumentTypeList() {
 }
 
 function SaveDocument() {
-    debugger
     if ($("#ddlDocumentType").val() == "0") {
         ShowModel("Alert", "Please Select document type")
         return false;
@@ -995,10 +1001,8 @@ function SaveDocument() {
             return "";
         },
         success: function (result) {
-            debugger
             if (result.status == "SUCCESS") {
                 var newFileName = result.message;
-                debugger
                 var docEntrySequence = 0;
                 var hdnDocumentSequence = $("#hdnDocumentSequence");
                 var ddlDocumentType = $("#ddlDocumentType");
@@ -1020,7 +1024,6 @@ function SaveDocument() {
                     docEntrySequence = 1;
                 }
                 $('#tblDocumentList tr').each(function (i, row) {
-                    debugger
                     var $row = $(row);
                     var documentSequenceNo = $row.find("#hdnDocumentSequenceNo").val();
                     var hdnSODocId = $row.find("#hdnSODocId").val();
@@ -1084,7 +1087,6 @@ function SaveDocument() {
 }
 
 function GetComplaintDocumentList(complaintDocuments) {
-    debugger
     var hdnComplaintServiceIdID = $("#hdncomplaintServiceId");
     var requestData = { complaintDocuments: complaintDocuments, complaintID: hdnComplaintServiceIdID.val() };
     $.ajax({
@@ -1099,7 +1101,6 @@ function GetComplaintDocumentList(complaintDocuments) {
             $("#divDocumentList").html(err);
         },
         success: function (data) {
-            debugger
             $("#divDocumentList").html("");
             $("#divDocumentList").html(data);
             ShowHideDocumentPanel(2);

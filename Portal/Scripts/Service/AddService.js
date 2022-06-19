@@ -1,5 +1,4 @@
 ﻿$(document).ready(function () {
-    debugger;
     BindProductTypeList();
 
     $("#txtServiceNo").attr('readOnly', true);
@@ -132,7 +131,6 @@ $(".alpha-numeric-only").on("input", function () {
 
 
 function GetServicesDetail(serviceId) {
-    debugger;
     $.ajax({
         type: "GET",
         asnc: false,

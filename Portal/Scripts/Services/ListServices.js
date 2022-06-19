@@ -33,7 +33,6 @@ function ClearFields() {
 }
 
 function SearchServices() {
-    debugger;
     var txtServicesName = $("#txtServicesName");
     var ddlStatus = $("#ddlStatus");
     var requestData = {

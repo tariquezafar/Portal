@@ -8,7 +8,6 @@
     var hdnDashBoardContainerID = $("#hdnDashBoardItemMappingID");
     if (hdnDashBoardContainerID.val() != "" && hdnDashBoardContainerID.val() != "0" && hdnAccessMode.val() != "" && hdnAccessMode.val() != "0") {
        
-        debugger
         Getdashboardcontainerdetail(hdnDashBoardContainerID.val());
 
         if (hdnAccessMode.val() == "3") {
@@ -81,8 +80,6 @@ function ValidEmailCheck(emailAddress) {
   
 
 function DisplayDashboardContainerDetail() {
-   
-    debugger
     //hari 2018 new
     var ddlDashboardContainer = $("#ddlDashboardContainer").val();
     
@@ -130,9 +127,6 @@ function checkDec(el) {
 }
 
 function SaveData() {
-
-    debugger
-
     var ddlModule = $("#ddlModule");
     var ddlDashboardContainer = $("#ddlDashboardContainer");
     var ddlRole = $("#ddlRole");
@@ -257,7 +251,6 @@ function ClearFields() {
     }
 //Add Company Branch In User InterFAce So Binding Process By Dheeraj
 function BindCompanyBranchList() {
-    debugger
     $("#ddlCompanyBranch").val(0);
     $("#ddlCompanyBranch").html("");
 
@@ -290,7 +283,6 @@ function BindCompanyBranchList() {
 
 //
 function BindDashboardContainerList() {
-    debugger
 
     $("#ddlDashboardContainer").val(0);
     $("#ddlDashboardContainer").html("");
@@ -325,9 +317,7 @@ function BindDashboardContainerList() {
 
 
 function GetDashboardItemMappingDetail() {
-    debugger
-       
-
+    
     var moduleName = $("#ddlModule").val();
     var ddlDashboardContainer = $("#ddlDashboardContainer").val();    
     var ddlCompanyBranch = $("#ddlCompanyBranch").val();

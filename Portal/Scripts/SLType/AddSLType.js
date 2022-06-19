@@ -1,5 +1,4 @@
 ﻿$(document).ready(function () {
-    debugger;
     var hdnAccessMode = $("#hdnAccessMode");
     var hdnSLTypeId = $("#hdnSLTypeId");
     if (hdnSLTypeId.val() != "" && hdnSLTypeId.val() != "0" && hdnAccessMode.val() != "" && hdnAccessMode.val() != "0") {
@@ -71,7 +70,6 @@ $(".alpha-numeric-only").on("input", function () {
 
 
 function GetSLTypeDetail(sLTypeId) {
-    debugger;
     $.ajax({
         type: "GET",
         asnc: false,
@@ -94,7 +92,6 @@ function GetSLTypeDetail(sLTypeId) {
 }
 
 function SaveData() {
-    debugger;
     var txtSLTypeName = $("#txtSLTypeName");
     var hdnSLTypeId = $("#hdnSLTypeId");
     var chkStatus = $("#chkStatus").is(':checked') ? true : false;

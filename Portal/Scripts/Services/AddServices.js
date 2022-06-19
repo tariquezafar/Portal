@@ -1,5 +1,4 @@
 ﻿$(document).ready(function () {
-    debugger;
     var hdnAccessMode = $("#hdnAccessMode");
     var hdnServicesId = $("#hdnServicesId");
     if (hdnServicesId.val() != "" && hdnServicesId.val() != "0" && hdnAccessMode.val() != "" && hdnAccessMode.val() != "0") {
@@ -71,7 +70,6 @@ $(".alpha-numeric-only").on("input", function () {
 
 
 function GetServicesDetail(servicesId) {
-    debugger;
     $.ajax({
         type: "GET",
         asnc: false,
@@ -94,7 +92,6 @@ function GetServicesDetail(servicesId) {
 }
 
 function SaveData() {
-    debugger;
     var txtServicesName = $("#txtServicesName");
     var hdnServicesId = $("#hdnServicesId");
     var chkStatus = $("#chkStatus").is(':checked') ? true : false;

@@ -1587,7 +1587,6 @@ function ShowHideDocumentPanel(action) {
 }
 
 function SaveDocument() {
-    debugger
     if ($("#ddlDocumentType").val() == "0") {
         ShowModel("Alert", "Please Select document type")
         return false;
@@ -1638,7 +1637,6 @@ function SaveDocument() {
         success: function (result) {
             if (result.status == "SUCCESS") {
                 var newFileName = result.message;
-                debugger
                 var docEntrySequence = 0;
                 var hdnDocumentSequence = $("#hdnDocumentSequence");
                 var ddlDocumentType = $("#ddlDocumentType");
@@ -1660,7 +1658,6 @@ function SaveDocument() {
                     docEntrySequence = 1;
                 }
                 $('#tblDocumentList tr').each(function (i, row) {
-                    debugger
                     var $row = $(row);
                     var documentSequenceNo = $row.find("#hdnDocumentSequenceNo").val();
                     var hdnSODocId = $row.find("#hdnSODocId").val();
@@ -1724,7 +1721,6 @@ function SaveDocument() {
 }
 
 function GetEmployeeDocumentList(employeeDocuments) {
-    debugger
     var hdnEmployeeID = $("#hdnEmployeeID");
     var requestData = { employeeDocuments: employeeDocuments, employeeID: hdnEmployeeID.val()};
     $.ajax({
@@ -1739,7 +1735,6 @@ function GetEmployeeDocumentList(employeeDocuments) {
             $("#divDocumentList").html(err);
         },
         success: function (data) {
-            debugger
             $("#divDocumentList").html("");
             $("#divDocumentList").html(data);
             ShowHideDocumentPanel(2);

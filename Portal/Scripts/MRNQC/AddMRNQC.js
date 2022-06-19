@@ -60,7 +60,6 @@
             return false;
         },
         select: function (event, ui) {
-            debugger;
             $("#txtVendorName").val(ui.item.label);
             $("#hdnVendorId").val(ui.item.value);
             $("#txtVendorCode").val(ui.item.code);

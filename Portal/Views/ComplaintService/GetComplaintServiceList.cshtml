@@ -45,6 +45,18 @@
             <tbody>
                 @foreach (var item in Model)
                 {
+                    if(item.ComplaintStatus == 1)
+                    {
+                        item.ComplaintStatusCon = "Open";
+                    }
+                    else if(item.ComplaintStatus == 2)
+                    {
+                        item.ComplaintStatusCon = "Approved";
+                    }
+                    else if (item.ComplaintStatus == 3)
+                    {
+                        item.ComplaintStatusCon = "Closed";
+                    }
                     if (item.ComplaintService_Status == true)
                     {
                 <tr class="success">
@@ -70,7 +82,7 @@
                     <td>@item.EmployeeName</td>
                     <td>@item.DealerName</td>
                     <td>@(item.ComplaintService_Status == true ? "Active" : "Inactive")</td>
-                    <td>@item.ComplaintStatus</td>
+                    <td>@item.ComplaintStatusCon</td>
 
                 </tr>
                     }
@@ -91,7 +103,7 @@
                 <td>@item.EmployeeName</td>
                 <td>@item.DealerName</td>
                 <td>@(item.ComplaintService_Status == true ? "Active" : "Inactive")</td>
-                <td>@item.ComplaintStatus</td>
+                <td>@item.ComplaintStatusCon</td>
 
             </tr>
 

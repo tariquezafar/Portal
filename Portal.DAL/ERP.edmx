@@ -464,6 +464,7 @@
           <Property Name="DealerID" Type="int" />
           <Property Name="InvoiceDate" Type="date" />
           <Property Name="ComplaintStatus" Type="int" />
+          <Property Name="Remarks" Type="varchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="ComplaintServiceProductDetail">
           <Key>
@@ -9651,6 +9652,7 @@
           <Property Name="InvoiceDate" Type="DateTime" Precision="0" />
           <Property Name="ComplaintStatus" Type="Int32" />
           <NavigationProperty Name="ComplaintSupportingDocument" Relationship="ERPModel.FK__Complaint__Compl__49FA978F" FromRole="ComplaintService" ToRole="ComplaintSupportingDocument" />
+          <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ComplaintServiceProductDetail">
           <Key>
@@ -14550,6 +14552,7 @@
           <EntitySetMapping Name="ComplaintService">
             <EntityTypeMapping TypeName="ERPModel.ComplaintService">
               <MappingFragment StoreEntitySet="ComplaintService">
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
                 <ScalarProperty Name="ComplaintStatus" ColumnName="ComplaintStatus" />
                 <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
                 <ScalarProperty Name="DealerID" ColumnName="DealerID" />

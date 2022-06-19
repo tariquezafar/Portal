@@ -41,8 +41,6 @@ function ClearFields() {
  
  
 function SearchDashboardContainer() {
-
-    debugger
     var txtDashBoardContainerName = $("#txtDashBoardContainerName");
     var txtDashBoardContainerDisplayName = $("#txtDashBoardContainerDisplayName");
     var txtContainerNo = $("#txtContainerNo");

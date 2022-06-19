@@ -27779,6 +27779,7 @@ namespace Portal.DAL
                         sqlCommand.Parameters.AddWithValue("@DealerID", complaintService.DealerID);
                         sqlCommand.Parameters.AddWithValue("@InvoiceDate", complaintService.InvoiceDate);
                         sqlCommand.Parameters.AddWithValue("@ComplaintStatus", complaintService.ComplaintStatus);
+                        sqlCommand.Parameters.AddWithValue("@Remarks", complaintService.Remarks);
 
                         sqlCommand.Parameters.AddWithValue("@ComplaintServiceProductDetail", dtComplaintServceProduct);
 

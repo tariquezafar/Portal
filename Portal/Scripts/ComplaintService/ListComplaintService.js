@@ -94,7 +94,6 @@ function SearchComplaintservice() {
 }
 
 function SearchAPCSComplaintservice() {
-    debugger
     var txtComplaintNo = $("#txtComplaintNo");
     var ddlComplaintType = $("#ddlComplaintType");
     var ddlComplaintMode = $("#ddlComplaintMode");

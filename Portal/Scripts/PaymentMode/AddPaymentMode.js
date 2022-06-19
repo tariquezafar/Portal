@@ -1,5 +1,4 @@
 ﻿$(document).ready(function () {
-    debugger;
     var hdnAccessMode = $("#hdnAccessMode"); 
     var hdnPaymentModeId = $("#hdnPaymentModeId");
     if (hdnPaymentModeId.val() != "" && hdnPaymentModeId.val() != "0" && hdnAccessMode.val() != "" && hdnAccessMode.val() != "0") {
@@ -71,7 +70,6 @@ $(".alpha-numeric-only").on("input", function () {
 
 
 function GetPaymentModeDetail(paymentModeId) {
-    debugger;
     $.ajax({
         type: "GET",
         asnc: false,
@@ -94,7 +92,6 @@ function GetPaymentModeDetail(paymentModeId) {
 }
 
 function SaveData() {
-    debugger;
     var txtPaymentModeName = $("#txtPaymentModeName");
     var hdnPaymentModeId = $("#hdnPaymentModeId");
     var chkStatus = $("#chkStatus").is(':checked') ? true : false;
