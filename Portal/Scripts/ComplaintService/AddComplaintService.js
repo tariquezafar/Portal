@@ -185,6 +185,8 @@
     }
     var complaintProductList = [];
     GetComplaintServiceProductList(complaintProductList);
+    var complaintDocuments = [];
+    GetComplaintDocumentList(complaintDocuments);
 
 
 

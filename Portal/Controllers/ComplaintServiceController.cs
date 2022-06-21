@@ -213,6 +213,14 @@ namespace Portal.Controllers
             return Json(complaints, JsonRequestBehavior.AllowGet);
         }
 
+        public FileResult DocumentDownload(string fileName)
+        {
+            var path = Path.Combine(Server.MapPath("~/Images/ComplaintDocument"), fileName);
+            byte[] fileBytes = System.IO.File.ReadAllBytes(path);
+
+            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+        }
+
         [HttpPost]
         public ActionResult SaveSupportingDocument()
         {
