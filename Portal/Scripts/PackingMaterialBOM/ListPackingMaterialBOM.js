@@ -16,8 +16,8 @@ $(document).ready(function () {
     });
     BindCompanyBranchList();
 
-    $("#txtFromDate").val("01-Jan-2018");
-    $("#txtToDate").val("31-Dec-2019");
+    //$("#txtFromDate").val("01-Jan-2018");
+    //$("#txtToDate").val("31-Dec-2019");
    
 });
 

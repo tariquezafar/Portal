@@ -173,7 +173,7 @@
        .appendTo(ul);
  };
 
-    $("#txtSearchFromDate,#txtSearchToDate").datepicker({
+    $("#txtSearchFromDate,#txtSearchToDate,#txtSupplierInvoiceDate").datepicker({
         changeMonth: true,
         changeYear: true,
         dateFormat: 'dd-M-yy',
