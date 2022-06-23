@@ -740,7 +740,7 @@ namespace Portal.DAL
             var users = (from u in entities.Users
                          join cu in entities.Customers on u.FK_CustomerId equals cu.CustomerId
                          join cut in entities.CustomerTypes on cu.CustomerTypeId equals cut.CustomerTypeId
-                         where (u.UserId == userid)
+                         where (u.UserId == userid && cut.CustomerTypeDesc.ToLower() == "dealer")
                          select new 
                          {
                             UserId = u.UserId,
