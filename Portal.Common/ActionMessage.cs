@@ -374,7 +374,7 @@ namespace Portal.Common
         #region Customer
         public const String CustomerCreatedSuccess = "Customer Created Successfully";
         public const String CustomerUpdatedSuccess = "Customer Updated Successfully";
-        public const String DuplicateCustomerCode = "Mobile No. already exist";
+        public const String DuplicateCustomerCode = "Customer Code already exist";
         public const String DuplicateCustomerDetail = "Customer with Same Name, Mobile Number and Type already exist";
         public const String CustomerBranchRemovedSuccess = "Customer Branch removed";
         public const String CustomerProductRemovedSuccess = "Customer Product removed";

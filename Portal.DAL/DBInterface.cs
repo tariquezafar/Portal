@@ -4902,7 +4902,8 @@ namespace Portal.DAL
                                    CustomerId = cust.CustomerId,
                                    CustomerName = cust.CustomerName,
                                    CustomerCode = cust.CustomerCode,
-                                   PrimaryAddress = cust.PrimaryAddress
+                                   PrimaryAddress = cust.PrimaryAddress,
+                                   MobileNo = cust.MobileNo
                                }).ToList();
 
                 if (customers != null && customers.Count > 0)
@@ -4915,7 +4916,8 @@ namespace Portal.DAL
                             CustomerId = item.CustomerId,
                             CustomerName = item.CustomerName,
                             CustomerCode = item.CustomerCode,
-                            PrimaryAddress = item.PrimaryAddress
+                            PrimaryAddress = item.PrimaryAddress,
+                            MobileNo=item.MobileNo
                         });
 
                     }

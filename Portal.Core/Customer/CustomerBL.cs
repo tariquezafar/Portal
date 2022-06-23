@@ -896,7 +896,7 @@ namespace Portal.Core
                 {
                     Customer customer = new Customer
                     {
-                        CustomerCode = customerViewModel.CustomerCode,
+                        CustomerCode = string.IsNullOrEmpty( customerViewModel.CustomerCode) ?GenerateCustomerCode(customerViewModel.StateId,customerViewModel.StateCode,customerViewModel.CustomerTypeId,customerViewModel.CustomerTypeCode): customerViewModel.CustomerCode,
                         CustomerName = customerViewModel.CustomerName,
                         ContactPersonName = customerViewModel.ContactPersonName,
                         MobileNo = customerViewModel.MobileNo,
@@ -961,7 +961,7 @@ namespace Portal.Core
                 {
                     foreach (Customer customer in customerList)
                     {
-                        customers.Add(new CustomerViewModel { CustomerId = customer.CustomerId, CustomerName = customer.CustomerName, CustomerCode = customer.CustomerCode, PrimaryAddress = customer.PrimaryAddress });
+                        customers.Add(new CustomerViewModel { CustomerId = customer.CustomerId, CustomerName = customer.CustomerName, CustomerCode = customer.CustomerCode, PrimaryAddress = customer.PrimaryAddress ,MobileNo=customer.MobileNo});
                     }
                 }
             }
