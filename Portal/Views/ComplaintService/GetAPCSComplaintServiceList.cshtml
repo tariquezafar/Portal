@@ -28,7 +28,7 @@
         <table class="table table-bordered table-hover" id="tblPurchaseIndentList">
             <thead>
                 <tr>
-                    <th colspan="2"><center>Action</center></th>
+                    <th><center>Action</center></th>
                     <th><center>Complaint No.</center></th>
                     <th><center>Enquiry Type</center></th>
                     <th><center>Company Branch</center></th>
@@ -55,10 +55,6 @@
                     }
                     else if (item.ComplaintStatus == 3)
                     {
-                        item.ComplaintStatusCon = "Closed";
-                    }
-                    else if (item.ComplaintStatus == 4)
-                    {
                         item.ComplaintStatusCon = "DisApproved";
                     }
                     if (item.ComplaintService_Status == true)
@@ -68,14 +64,14 @@
                                     <a style="color:darkblue" title="View" class="fa fa-eye" aria-hidden="true" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=3"></a>
                                 </td>*@
 
-                            <td class="teal text" style="margin:0px auto;">
+                            <td>
                                 <a style="color:darkblue" title="View" class="fa fa-eye" aria-hidden="true" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=4"></a>
                             </td>
-                            <td class="teal text" style="margin:0px auto;">
+                            @*<td class="teal text" style="margin:0px auto;">
 
                                 <a style="color:darkgreen" title="Edit" class="fa fa-pencil" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=2"></a>
 
-                            </td>
+                            </td>*@
 
                             <td>@item.ComplaintNo</td>
                             <td>@item.EnquiryType</td>
@@ -96,9 +92,9 @@
                             <td class="teal text" style="width:30px; margin:0px auto;">
                                 <a style="color:darkblue;text-decoration:none" title="View" class="fa fa-eye" aria-hidden="true" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=3"></a>
                             </td>
-                            <td class="teal text" style="width:30px; margin:0px 2px auto;">
+                            @*<td class="teal text" style="width:30px; margin:0px 2px auto;">
                                 <a style="color:darkgreen;text-decoration:none" title="Edit" class="fa fa-pencil" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=2"></a>
-                            </td>
+                            </td>*@
                             <td>@item.ComplaintNo</td>
                             <td>@item.EnquiryType</td>
                             <td>@item.ComplaintMode</td>

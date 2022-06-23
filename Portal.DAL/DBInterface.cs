@@ -733,6 +733,29 @@ namespace Portal.DAL
             }
             return userList;
         }
+        
+        public User GetDetails(int userid) 
+        {
+            User userdata = new User();
+            var users = (from u in entities.Users
+                         join cu in entities.Customers on u.FK_CustomerId equals cu.CustomerId
+                         join cut in entities.CustomerTypes on cu.CustomerTypeId equals cut.CustomerTypeId
+                         where (u.UserId == userid)
+                         select new 
+                         {
+                            UserId = u.UserId,
+                            UserName = u.UserName
+                         }).ToList();
+            if (users != null )
+            {
+                foreach (var item in users)
+                {
+                    userdata.UserId = item.UserId;
+                    userdata.UserName = item.UserName;
+                }
+            }
+            return userdata;
+    }
         public ResponseOut RemoveImageUser(long userId)
         {
             ResponseOut responseOut = new ResponseOut();

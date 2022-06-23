@@ -78,8 +78,10 @@
                             <label for="txtComplaintNo" class="col-sm-4 control-label">Complaint No.</label>
                             <div class="col-sm-8">
                                 <input class="form-control" id="txtComplaintNo" name="txtComplaintNo" tabindex="1" placeholder="Auto Generated Complaint No." type="text" maxlength="100" readonly="readonly" />
+                                @if (Convert.ToInt32(ViewData["accessMode"]) == 1 || Convert.ToInt32(ViewData["accessMode"]) == 2)
+                                {
                                 <a style="display:none;color:#fff;" class="btn btn-success" tabindex="4" id="btnAddNew" href="@Url.Content("~/ComplaintService/AddEditComplaintService?accessMode=1")">New</a>
-
+                                }
                                 <input id="hdncomplaintServiceId" type="hidden" value="@ViewData["complaintServiceId"]" />
                                 <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
                                 <input id="hdnRoleId" type="hidden" value="@ViewData["RoleId"]" />
@@ -188,20 +190,38 @@
                     </div>
 
                     <div class="col-md-12">
-
-                        <div class="form-group col-md-4">
-                            <label for="ddlServiceEngineer" class="col-sm-4 control-label">Service Engineer&nbsp;<span class="Mandatory">(*)</span> </label>
-                            <div class="col-sm-8">
-                                <select id="ddlServiceEngineer" name="ddlServiceEngineer" tabindex="14" class="form-control"></select>
+                        @if (Convert.ToInt32(ViewData["userId"]) != 0)
+                        {
+                            <div class="form-group col-md-4">
+                                <label for="ddlServiceEngineer" class="col-sm-4 control-label">Service Engineer&nbsp;<span class="Mandatory">(*)</span> </label>
+                                <div class="col-sm-8">
+                                    <select id="ddlServiceEngineer" name="ddlServiceEngineer" tabindex="14" class="form-control" disabled></select>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group col-md-4">
-                            <label for="ddlDealer" class="col-sm-4 control-label">Dealer&nbsp;<span class="Mandatory">(*)</span> </label>
-                            <div class="col-sm-8">
-                                <select id="ddlDealer" name="ddlDealer" tabindex="4" class="form-control"></select>
+                            <div class="form-group col-md-4">
+                                <label for="ddlDealer" class="col-sm-4 control-label">Dealer&nbsp;<span class="Mandatory">(*)</span> </label>
+                                <div class="col-sm-8">
+                                    <select id="ddlDealer" name="ddlDealer" tabindex="4" value="@ViewData["username"]" class="form-control" disabled></select>
+                                </div>
                             </div>
-                        </div>
+                        }
+                        else
+                        {
+                            <div class="form-group col-md-4">
+                                <label for="ddlServiceEngineer" class="col-sm-4 control-label">Service Engineer&nbsp;<span class="Mandatory">(*)</span> </label>
+                                <div class="col-sm-8">
+                                    <select id="ddlServiceEngineer" name="ddlServiceEngineer" tabindex="14" class="form-control"></select>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="ddlDealer" class="col-sm-4 control-label">Dealer&nbsp;<span class="Mandatory">(*)</span> </label>
+                                <div class="col-sm-8">
+                                    <select id="ddlDealer" name="ddlDealer" tabindex="4" class="form-control"></select>
+                                </div>
+                            </div>
+                        }
 
                         <div class="form-group col-md-4">
                             <label for="chkStatus" class="col-sm-4 control-label">Active Status</label>
@@ -217,14 +237,37 @@
                         <div class="form-group col-md-4">
                             <label for="ddlStatus" class="col-sm-4 control-label">Complaint Status&nbsp;<span class="Mandatory">(*)</span></label>
                             <div class="col-sm-8">
+                                @if (Convert.ToInt32(ViewData["userId"]) != 0)
+                                {
+                                    <select id="ddlStatus" name="ddlStatus" tabindex="3" class="form-control" disabled>
+                                        <option selected="selected" value="0">Select Complaint Status</option>
+                                        @if (Convert.ToInt32(ViewData["accessMode"]) == 1 || Convert.ToInt32(ViewData["accessMode"]) == 2 || Convert.ToInt32(ViewData["accessMode"]) == 3)
+                                        {
+                                            <option value="1">Open</option>
+                                        }
+                                        @if (Convert.ToInt32(ViewData["accessMode"]) == 4)
+                                        {
+                                            <option value="2">Approved</option>
+                                            <option value="3">DisApproved</option>
+                                        }
+                                    </select>
+                                }
+                                else
+                                {
+                                    <select id="ddlStatus" name="ddlStatus" tabindex="3" class="form-control">
+                                        <option selected="selected" value="0">Select Complaint Status</option>
+                                        @if (Convert.ToInt32(ViewData["accessMode"]) == 1 || Convert.ToInt32(ViewData["accessMode"]) == 2 || Convert.ToInt32(ViewData["accessMode"]) == 3)
+                                        {
+                                            <option value="1">Open</option>
+                                        }
+                                        @if (Convert.ToInt32(ViewData["accessMode"]) == 4)
+                                        {
+                                            <option value="2">Approved</option>
+                                            <option value="3">DisApproved</option>
+                                        }
+                                    </select>
 
-                                <select id="ddlStatus" name="ddlStatus" tabindex="3" class="form-control">
-                                    <option selected="selected" value="0">Select Complaint Status</option>
-                                    <option value="1">Open</option>
-                                    <option value="2">Approved</option>
-                                    <option value="3">Closed</option>
-                                    <option value="4">DisApproved</option>
-                                </select>
+                                }
                             </div>
                         </div>
                         <div id="divRemarks" class="form-group col-md-4" style="display:none">

@@ -32,6 +32,14 @@ namespace Portal.Controllers
                 ViewData["currentDate"] = DateTime.Now.ToString("dd-MMM-yyyy");
                 ViewData["CompanyBranchId"] = Session[SessionKey.CompanyBranchId] != null ? ((UserViewModel)Session[SessionKey.CompanyBranchId]).CompanyBranchId : 0;
                 ViewData["UserId"] = Session[SessionKey.UserId] != null ? ((UserViewModel)Session[SessionKey.UserId]).UserId : 0;
+                int userid = Session[SessionKey.UserId] != null ? ((UserViewModel)Session[SessionKey.UserId]).UserId : 0;
+                UserBL userBL = new UserBL();
+                UserViewModel user = userBL.GetDetails(userid);
+                if(user != null)
+                {
+                    ViewData["userId"] = user.UserId;
+                    ViewData["username"] = user.UserName;
+                }
                 ViewData["RoleId"] = ContextUser.RoleId;
                 if (complaintServiceId != 0)
                 {

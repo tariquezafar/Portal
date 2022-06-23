@@ -226,7 +226,16 @@ namespace Portal.Core
             }
             return IsAdmin;
         }
-        public List<UserViewModel> GetUserList(string userName = "", int companyId = 0, int roleId = 0, string fullName = "", string phoneNo = "", string email = "", int userRole = 0,int companyBranchId=0)
+
+        public UserViewModel GetDetails(int userId)
+        {
+            UserViewModel usermodel = new UserViewModel();
+            User user = dbInterface.GetDetails(userId);
+            usermodel.UserId = user.UserId;
+            usermodel.UserName = user.UserName;
+            return usermodel;
+        }
+            public List<UserViewModel> GetUserList(string userName = "", int companyId = 0, int roleId = 0, string fullName = "", string phoneNo = "", string email = "", int userRole = 0,int companyBranchId=0)
         {
             List<UserViewModel> users = new List<UserViewModel>();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
