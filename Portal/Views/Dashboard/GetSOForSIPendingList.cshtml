@@ -1,0 +1,42 @@
+﻿    @model List<Portal.Core.ViewModel.SOViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table int-product" id="tblSINPendingCountList" style="margin-top:10px;">
+            <thead style="border-top-left-radius:15px;">
+                <tr style="border:none;">
+                    <th style="background:#4f75c6; color:#fff;" colspan="8">SO Pending For Sale Invoice</th>
+                </tr>
+                <tr style="background:#D0DDEC; border:1px solid #ccc;">
+                    <th style="text-align:center">SO No.</th>
+                    <th style="text-align:center">SO Date</th>                   
+                    <th style="text-align:center">User Name</th>                    
+                </tr>
+
+            </thead>
+            <tbody style="border:1px solid #ccc;">
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                       
+                        <td align="center">@item.SONo </td>                       
+                       
+                        <td align="center">@item.SODate</td>
+                        <td align="center">@item.CreatedByUserName</td>
+
+                    </tr>
+                }
+                <tr>
+                    <td colspan="8" align="center" style="background:#bfdfff;">
+                        <a href="@Url.Content("~/SaleInvoice/AddEditSaleInvoice?pendingStatus=Pending")"  target="_blank">View All Pending SO</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+}
+else
+{
+    <h3 style="color:firebrick;text-align:center">Pending SO Not Found !!!</h3>
+}

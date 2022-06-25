@@ -105,13 +105,13 @@ namespace Portal.Controllers
             return View();
         }
         [HttpGet]
-        public PartialViewResult GetPIList(string piNo = "", string vendorName = "", string refNo = "", string fromDate = "", string toDate = "",string approvalStatus="", string displayType="", string vendorCode = "",string purchaseType= "",string CreatedByUserName="",string poNo="",string companyBranch="")
+        public PartialViewResult GetPIList(string piNo = "", string vendorName = "", string refNo = "", string fromDate = "", string toDate = "",string approvalStatus="", string displayType="", string vendorCode = "",string purchaseType= "",string CreatedByUserName="",string poNo="",string companyBranch="", string MRNNo = "")
         {
             List<PurchaseInvoiceViewModel> pis = new List<PurchaseInvoiceViewModel>();
             PurchaseInvoiceBL piBL = new PurchaseInvoiceBL();
             try
             {
-                pis = piBL.GetPIList(piNo, vendorName, refNo, fromDate, toDate, ContextUser.CompanyId, approvalStatus, displayType, vendorCode, purchaseType, CreatedByUserName, poNo, companyBranch);
+                pis = piBL.GetPIList(piNo, vendorName, refNo, fromDate, toDate, ContextUser.CompanyId, approvalStatus, displayType, vendorCode, purchaseType, CreatedByUserName, poNo, companyBranch, MRNNo);
             }
             catch (Exception ex)
             {

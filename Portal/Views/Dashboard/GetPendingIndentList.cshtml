@@ -5,7 +5,7 @@
         <table class="table int-product" id="tblSINPendingCountList" style="margin-top:10px;">
             <thead style="border-top-left-radius:15px;">
                 <tr style="border:none;">
-                    <th style="background:#4f75c6; color:#fff;" colspan="8">Pending For PO</th>
+                    <th style="background:#4f75c6; color:#fff;" colspan="8">Indent Pending For PO</th>
                 </tr>
                 <tr style="background:#D0DDEC; border:1px solid #ccc;">
                     <th style="text-align:center">Indent No.</th>
@@ -28,7 +28,8 @@
                 }
                 <tr>
                     <td colspan="8" align="center" style="background:#bfdfff;">
-                        <a href="@Url.Content("~/PO/AddEditPO?accessMode=1")"  target="_blank">View All Pending Indent</a>
+                        <a href="@Url.Content("~/PurchaseIndent/ListPurchaseIndent?pendingStatus=Pending")"  target="_blank">View All Pending Indent</a>
+                        
                     </td>
                 </tr>
             </tbody>
@@ -38,7 +39,7 @@
 }
 else
 {
-    <h3 style="color:firebrick;text-align:center">Pending PO Not Found !!!</h3>
+    <h3 style="color:firebrick;text-align:center">Indents Not Found !!!</h3>
 }
 @*<script>
         $(document).ready(function () {

@@ -5149,7 +5149,7 @@ namespace Portal.DAL
             return dt;
 
         }
-        public DataTable GetPIList(string invoiceNo, string vendorName, string refNo, string fromDate, string toDate, int companyId, string approvalStatus = "", string displayType = "", string vendorCode = "", string purchaseType = "", string CreatedByUserName = "", string poNo = "", string companyBranch = "")
+        public DataTable GetPIList(string invoiceNo, string vendorName, string refNo, string fromDate, string toDate, int companyId, string approvalStatus = "", string displayType = "", string vendorCode = "", string purchaseType = "", string CreatedByUserName = "", string poNo = "", string companyBranch = "", string MRNNo="")
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -5173,6 +5173,7 @@ namespace Portal.DAL
                     da.SelectCommand.Parameters.AddWithValue("@CreatedBy", CreatedByUserName);
                     da.SelectCommand.Parameters.AddWithValue("@poNo", poNo);
                     da.SelectCommand.Parameters.AddWithValue("@companyBranch", companyBranch);
+                    da.SelectCommand.Parameters.AddWithValue("@MRNNo", MRNNo);
                     da.Fill(dt);
                 }
             }

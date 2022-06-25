@@ -2,126 +2,21 @@
     $("#tabs").tabs({
         collapsible: true
     });
+   
 
-   
-   
-    GetContainer9List();
-    GetContainer10List();
-    GetContainer11List();
     var hdnCurrentFinyearId = $("#hdnCurrentFinyearId");
     BindFinYearList(hdnCurrentFinyearId.val());
     $("#ddlFinYear").val(hdnCurrentFinyearId);
-    BindCompanyBranchListForComman();
-    
-
-   // GetSOCountList();
+    SearchTodayNewCustomer();
+    GetSOForSIPendingList();
+    GetQautationCountList();
+    GetSOCountList();
     GetSICountList();
     GetSISumByUserId();
-    GetQautationCountList();
-    //SearchTodayNewCustomer();
-
-   // CommanMethod();
-
- 
-    
    
 });
 
-//Start
-
-function GetContainer9List()
-{
-   var requestData = { };
-    $.ajax({
-        url: "../Dashboard/GetContainer9List",
-        data: requestData,
-        dataType: "html",
-        type: "POST",
-        asnc: false,
-        error: function (err) {
-            $("#divContainer9").html("");
-            $("#divContainer9").html(err);
-
-        },
-        success: function (data) {
-            $("#divContainer9").html("");
-            $("#divContainer9").html(data);
-        }
-    });
-}
-
-function GetContainer10List() {
-    var requestData = {};
-    $.ajax({
-        url: "../Dashboard/GetContainer10List",
-        data: requestData,
-        dataType: "html",
-        type: "POST",
-        asnc: false,
-        error: function (err) {
-            $("#divContainer10").html("");
-            $("#divContainer10").html(err);
-
-        },
-        success: function (data) {
-            $("#divContainer10").html("");
-            $("#divContainer10").html(data);
-        }
-    });
-}
-
-function GetContainer11List() {
-    var requestData = {};
-    $.ajax({
-        url: "../Dashboard/GetContainer11List",
-        data: requestData,
-        dataType: "html",
-        type: "POST",
-        asnc: false,
-        error: function (err) {
-            $("#divContainer11").html("");
-            $("#divContainer11").html(err);
-
-        },
-        success: function (data) {
-            $("#divContainer11").html("");
-            $("#divContainer11").html(data);
-        }
-    });
-}
-
-function BindCompanyBranchListForComman() {
-    $("#ddlCompanyBranchForComman").val(0);
-    $("#ddlCompanyBranchForComman").html("");
-    $.ajax({
-        type: "GET",
-        url: "../DeliveryChallan/GetCompanyBranchList",
-        data: {},
-        dataType: "json",
-        asnc: false,
-        success: function (data) {
-            $("#ddlCompanyBranchForComman").append($("<option></option>").val(0).html("-Select Company Branch-"));
-            $.each(data, function (i, item) {
-                $("#ddlCompanyBranchForComman").append($("<option></option>").val(item.CompanyBranchId).html(item.BranchName));
-            });
-            var hdnSessionCompanyBranchId = $("#hdnSessionCompanyBranchId");
-            var hdnSessionUserID = $("#hdnSessionUserID");
-
-            if (hdnSessionCompanyBranchId.val() != "0" && hdnSessionUserID.val() != "2") {
-                $("#ddlCompanyBranchForComman").val(hdnSessionCompanyBranchId.val());
-                $("#ddlCompanyBranchForComman").attr('disabled', true);
-                $(":input#ddlCompanyBranchForComman").trigger('change');
-            }
-           // $(":input#ddlCompanyBranchForComman").trigger('change');
-        },
-        error: function (Result) {
-            $("#ddlCompanyBranchForComman").append($("<option></option>").val(0).html("-Select Company Branch-"));
-        }
-    });
-}
-
 function BindFinYearList(selectedFinYear) {
-    
     $.ajax({
         type: "GET",
         url: "../Product/GetFinYearList",
@@ -143,7 +38,6 @@ function BindFinYearList(selectedFinYear) {
 function SetFinancialYearSession()
 {
     var finYearId = $("#ddlFinYear option:selected").val();
-  
     var data = { finYearId: finYearId };
     $.ajax({
         type: "POST",
@@ -173,7 +67,7 @@ function GetQautationCountList() {
         asnc: false,
         error: function (err) {
             $("#DivQuatationCount").html("");
-           $("#DivQuatationCount").html(err);
+            $("#DivQuatationCount").html(err);
 
         },
         success: function (data) {
@@ -204,14 +98,7 @@ function GetQautationCountList() {
 
 function GetSOCountList() {
 
-    var ddlCompanyBranchForComman = $("#ddlCompanyBranchForComman");
-    var combraid = 0;
-    if (ddlCompanyBranchForComman.val()!= null)
-    {
-        combraid = ddlCompanyBranchForComman.val();
-    }
-
-    var requestData = { userId: 0, selfOrTeam: "SELF", companyBranchId: combraid };
+    var requestData = { userId: 0, selfOrTeam: "SELF" };
     $.ajax({
         url: "../Dashboard/GetSOCountList",
         data: requestData,
@@ -261,11 +148,11 @@ function GetSISumByUserId() {
         asnc: false,
         error: function (err) {
             $("#lblSiSumAmount").html("");
-            $("#lblSiSumAmount").html(err);
+            //$("#lblSiSumAmount").html(err);
 
         },
         success: function (data) {
-             $("#lblSiSumAmount").html("");
+            // $("#lblSiSumAmount").html("");
             $("#lblSiSumAmount").html(data.SITotalAmountSum);
 
 
@@ -275,13 +162,8 @@ function GetSISumByUserId() {
 
 
 function GetSICountList() {
-    var ddlCompanyBranchForComman = $("#ddlCompanyBranchForComman");
-    var combraid = 0;
-    if (ddlCompanyBranchForComman.val() != null) {
-        combraid = ddlCompanyBranchForComman.val();
-    }
 
-    var requestData = { userId: 0, selfOrTeam: "SELF", companyBranchId: combraid };
+    var requestData = { userId: 0, selfOrTeam: "SELF" };
     $.ajax({
         url: "../Dashboard/GetSICountList",
         data: requestData,
@@ -348,169 +230,29 @@ function SearchTodayNewCustomer() {
     });
 }
 
-function CommanMethod() {
-    GetSaleCountList();
-    GetSaleDashboardQutationCount();
-    GetSaleDashboardSOCount();
-    GetSaleDashboardCount();
-    GetSalePendingPaymentCount();
-    GetSalePendingTargetCountDashboard();
-}
 
-function GetSaleCountList() {
-    var companyBranchId = $("#ddlCompanyBranchForComman").val();
-    var requestData = { companyBranchId: companyBranchId };
+function GetSOForSIPendingList() {
+
+    var requestData = {};
     $.ajax({
-        url: "../Dashboard/GetSaleDashboardSaleCount",
+        url: "../Dashboard/GetSOForSIPendingList",
         data: requestData,
-        dataType: "json",
+        dataType: "html",
         type: "POST",
         asnc: false,
         error: function (err) {
-            $("#todaySaleCount").text("0");
-            $("#todaysaleamount").text("0.00");
-            $("#mtdsalecount").text("0");
-            $("#mtdsaleamount").text("0.00");
-            $("#ytdsalecount").text("0");
-            $("#ytdsaleamount").text("0.00");
+            $("#DivSOPending").html("");
+            $("#DivSOPending").html(err);
+
         },
         success: function (data) {
-            $("#todaySaleCount").text(data.TodaySaleCount);
-            $("#todaysaleamount").text(data.TodaySaleAmount);
-            $("#mtdsalecount").text(data.MTDSaleCount);
-            $("#mtdsaleamount").text(data.MTASaleAmount);
-            $("#ytdsalecount").text(data.YTDSaleCount);
-            $("#ytdsaleamount").text(data.YTDSaleAmount);
+            $("#DivSOPending").html("");
+            $("#DivSOPending").html(data);
+
         }
     });
 }
 
-
-function GetSaleDashboardQutationCount() {
-    var companyBranchId = $("#ddlCompanyBranchForComman").val();
-    var requestData = { companyBranchId: companyBranchId };
-    $.ajax({
-        url: "../Dashboard/GetSaleDashboardQutationCount",
-        data: requestData,
-        dataType: "json",
-        type: "POST",
-        asnc: false,
-        error: function (err) {
-            $("#todayQuotationCount").text("0");
-            $("#todayQuotationamount").text("0.00");
-            $("#mtdQuotationCount").text("0");
-            $("#mtdQuotationamount").text("0.00");
-            $("#ytdQuotationCount").text("0");
-            $("#ytdQuotationamount").text("0.00");
-        },
-        success: function (data) {
-            $("#todayQuotationCount").text(data.TodaySaleQutationCount);
-            $("#todayQuotationamount").text(data.TodaySaleQutationAmount);
-            $("#mtdQuotationCount").text(data.MTDSaleQutationCount);
-            $("#mtdQuotationamount").text(data.MTASaleQutationAmount);
-            $("#ytdQuotationCount").text(data.YTDSaleQutationCount);
-            $("#ytdQuotationamount").text(data.YTDSaleQutationAmount);
-        }
-    });
-}
-
-
-function GetSaleDashboardSOCount() {
-    var companyBranchId = $("#ddlCompanyBranchForComman").val();
-    var requestData = { companyBranchId: companyBranchId };
-    $.ajax({
-        url: "../Dashboard/GetSaleDashboardSOCount",
-        data: requestData,
-        dataType: "json",
-        type: "POST",
-        asnc: false,
-        error: function (err) {
-            $("#todaySOCount").text("0");
-            $("#todaySOAmount").text("0.00");
-            $("#mTDSOCount").text("0");
-            $("#mTDSOAmount").text("0.00");
-            $("#yTDSOCount").text("0");
-            $("#yTDSOCount").text("0.00");
-        },
-        success: function (data) {
-            $("#todaySOCount").text(data.TodaySaleOrderCount);
-            $("#todaySOAmount").text(data.TodaySaleOrderAmount);
-            $("#mTDSOCount").text(data.MTDSaleOrderCount);
-            $("#mTDSOAmount").text(data.MTDSaleOrderAmount);
-            $("#yTDSOCount").text(data.YTDSaleOrderCount);
-            $("#yTDSOAmount").text(data.YTDSaleOrderAmount);
-        }
-    });
-}
-
-
-function GetSaleDashboardCount() {
-    var companyBranchId = $("#ddlCompanyBranchForComman").val();
-    var requestData = { companyBranchId: companyBranchId };
-    $.ajax({
-        url: "../Dashboard/GetSaleDashboardCount",
-        data: requestData,
-        dataType: "json",
-        type: "POST",
-        asnc: false,
-        error: function (err) {
-            $("#todaySOCount").text("0");
-            $("#todaySOAmount").text("0.00");
-            $("#mTDSOCount").text("0");
-            $("#mTDSOAmount").text("0.00");
-            $("#yTDSOCount").text("0");
-            $("#yTDSOCount").text("0.00");
-        },
-        success: function (data) {
-            $("#totalInvoicePackingCount").text(data.TotalInvoicePackingCount);
-            $("#totalSaleReturn").text(data.TotalSaleReturn);
-            $("#totalSaleTarget").text(data.TotalSaleTarget);
-            $("#todaysaleamt").text(data.TotalSaleAmount);
-           
-        }
-    });
-}
    
 
-function GetSalePendingPaymentCount() {
-    var companyBranchId = $("#ddlCompanyBranchForComman").val();
-    var requestData = { companyBranchId: companyBranchId };
-    $.ajax({
-        url: "../Dashboard/GetSalePendingPaymentCount",
-        data: requestData,
-        dataType: "json",
-        type: "POST",
-        asnc: false,
-        error: function (err) {
-            $("#pendingInvoiceCount").text("0");
-            $("#salePendingInvoiceAmount").text("0.00");
-           
-        },
-        success: function (data) {
-            $("#pendingInvoiceCount").text(data.salePendingInvoiceCount);
-            $("#salePendingInvoiceAmount").text(data.salePendingInvoiceAmount);
-        }
-    });
-}
 
-
-function GetSalePendingTargetCountDashboard() {
-    var companyBranchId = $("#ddlCompanyBranchForComman").val();
-    var requestData = { companyBranchId: companyBranchId };
-    $.ajax({
-        url: "../Dashboard/GetSalePendingTargetCountDashboard",
-        data: requestData,
-        dataType: "json",
-        type: "POST",
-        asnc: false,
-        error: function (err) {
-            $("#targetAmount").text("0.00");
-            $("#totalInvoiceAmount").text("0.00");
-
-        },
-        success: function (data) {
-            $("#targetAmount").text(data.TargetAmount);
-            $("#totalInvoiceAmount").text(data.TotalInvoiceAmount);
-        }
-    });
-}

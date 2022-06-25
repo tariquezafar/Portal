@@ -5,7 +5,7 @@
         <table class="table int-product" id="tblSINPendingCountList" style="margin-top:10px;">
             <thead style="border-top-left-radius:15px;">
                 <tr style="border:none;">
-                    <th style="background:#4f75c6; color:#fff;" colspan="8">Sale Order List For Work Order</th>
+                    <th style="background:#4f75c6; color:#fff;" colspan="8">Pending Sale Order For Work Order</th>
                 </tr>
                 <tr style="background:#D0DDEC; border:1px solid #ccc;">
                     <th style="text-align:center">SO No</th>
@@ -34,7 +34,7 @@
                 }
                 <tr>
                     <td colspan="8" align="center" style="background:#bfdfff;">
-                        <a href="@Url.Content("~/WorkOrder/AddEditWorkOrder")"  target="_blank">View All Pending Sale Order</a>
+                        <a href="@Url.Content("~/SO/ListSO?pendingStatus=Pending")"  target="_blank">View All Pending Sale Order</a>
                     </td>
                 </tr>
             </tbody>

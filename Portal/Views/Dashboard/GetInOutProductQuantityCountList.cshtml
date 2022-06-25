@@ -2,12 +2,12 @@
 @if (Model != null && Model.Count > 0)
 {
     <div class="int-dash">
-        <table class="table table-striped" id="tblReorderProductCountList" style="margin-top:10px;">
+        <table class="table" id="tblReorderProductCountList" style="margin-top:10px;">
             <thead style="border-top-left-radius:15px;">
                 <tr style="border:none;">
                     <th style="background:#68ae00; color:#fff;" colspan="8">Stock Summary as on @DateTime.Now.ToString("dd-MMM-yyyy")</th> 
                 </tr>
-                <tr style="border:1px solid #ccc;">
+                <tr style="background:#D0DDEC; border:1px solid #ccc;" >
                     <th style="text-align:center">Product</th>
                     <th style="text-align:center">Code</th>
                     <th style="text-align:center">Opening Qty</th> 
@@ -22,7 +22,7 @@
             <tbody style="border:1px solid #ccc;">
                 @foreach (var item in Model)
                 {
-                <tr>
+                <tr class="success">
                     <td>@item.ProductName</td>
                     <td>@item.ProductCode</td>
                     <td>@item.OpeningQty</td>
@@ -45,7 +45,7 @@
 }
 else
 {
-    <h3 style="text-align:center">Stock Summary Not Found !!!</h3>
+    <h3 style="color:firebrick;text-align:center">Stock Summary Not Found !!!</h3>
 }
 @*<script>
     $(document).ready(function () {

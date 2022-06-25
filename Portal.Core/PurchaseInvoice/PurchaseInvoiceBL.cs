@@ -391,13 +391,13 @@ namespace Portal.Core
             return responseOut;
         }
 
-        public List<PurchaseInvoiceViewModel> GetPIList(string piNo, string vendorName, string refNo, string fromDate, string toDate, int companyId, string approvalStatus="", string displayType="",string vendorCode="",string purchaseType= "",string CreatedByUserName="",string poNo="",string companyBranch="")
+        public List<PurchaseInvoiceViewModel> GetPIList(string piNo, string vendorName, string refNo, string fromDate, string toDate, int companyId, string approvalStatus="", string displayType="",string vendorCode="",string purchaseType= "",string CreatedByUserName="",string poNo="",string companyBranch="", string MRNNo="")
         {
             List<PurchaseInvoiceViewModel> pos = new List<PurchaseInvoiceViewModel>();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
             try
             {
-                DataTable dtPIs = sqlDbInterface.GetPIList(piNo, vendorName, refNo, fromDate, toDate, companyId, approvalStatus, displayType, vendorCode, purchaseType, CreatedByUserName, poNo, companyBranch);
+                DataTable dtPIs = sqlDbInterface.GetPIList(piNo, vendorName, refNo, fromDate, toDate, companyId, approvalStatus, displayType, vendorCode, purchaseType, CreatedByUserName, poNo, companyBranch, MRNNo);
                 if (dtPIs != null && dtPIs.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dtPIs.Rows)
@@ -424,6 +424,9 @@ namespace Portal.Core
                             ModifiedByUserName = Convert.ToString(dr["ModifiedByName"]),
                             ModifiedDate = Convert.ToString(dr["ModifiedDate"]),
                             companyBranch= Convert.ToString(dr["BranchName"]),
+                            MRNNO = Convert.ToString(dr["MRNNO"]),
+                            MRNDate= Convert.ToString(dr["MRNDate"]),
+                            MRNId = Convert.ToInt32(dr["MRNId"]),
                         });
                     }
                 }

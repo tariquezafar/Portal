@@ -114,7 +114,13 @@ namespace Portal.Core.ViewModel
         public string companyBranch { get; set; }
         public string ProductName { get; set; }
         public decimal Price { get; set; }
-        
+
+        public string MRNNO { get; set; }
+
+        public string MRNDate { get; set; }
+
+        public long MRNId { get; set; }
+
 
     }
     public class PurchaseInvoiceProductDetailViewModel

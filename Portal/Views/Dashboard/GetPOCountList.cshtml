@@ -1,22 +1,22 @@
-﻿ @model List<Portal.Core.ViewModel.POCountViewModel>
+﻿@model List<Portal.Core.ViewModel.POCountViewModel>
 @if (Model != null && Model.Count > 0)
 {
     <div style="padding:10px;">
-        <table class="table" id="tblBookBalanceList" style="margin-top:10px;background-color:#d95043!important;color:#fff!important;">
+        <table class="table" id="tblBookBalanceList" style="margin-top:10px;">
             <thead style="border-top-left-radius:15px;">
-                <tr style="border:none; background-color:transparent;" >
-                    <td  style="color:#fff;width:100%;" colspan="3">PO Transaction Summary</td>
+                <tr style="border:none;">
+                    <th  style="background:#FC8213; color:#fff;width:100%;" colspan="3">PO Transaction Summary</th>
                     @*<th style="border:none;"></th>*@
                 </tr>
-                <tr style="border:1px solid #ccc; background-color:transparent;">
-                    <td style="color:#fff!important;">Particulars</td>
-                    <td style="color:#fff!important;">PO Created</td>
+                <tr style="background:#D0DDEC; border:1px solid #ccc;">
+                    <th>Particulars</th>
+                    <th>PO Created</th>
                 </tr>
             </thead>
             <tbody style="border:1px solid #ccc;">
                 @foreach (var item in Model)
                 {
-                <tr style="border:none; background-color:transparent;">
+                <tr class="success">
                     <td>@item.POCount_Head</td>
                     <td>@item.POTotalCount</td>
                 </tr>
@@ -28,10 +28,10 @@
 }
 else
 {
-    <h4 style="color:firebrick;text-align:center">PO Count not updated</h4>
+    <h3 style="color:firebrick;text-align:center">PO Count not updated</h3>
 }
  <script>
-     var barPOChartData =
+     var barChartData =
          {
              labels: [@Html.Raw(ViewBag.POList)],
              datasets: [{

@@ -5,26 +5,26 @@
         <table class="table" id="tblBookBalanceList" style="margin-top:10px;">
             <thead style="border-top-left-radius:15px;">
                 <tr style="border:none;">
-                    <td  style="background:#357ebd; color:#fff;width:100%;" colspan="3">Pending PO</td>                
+                    <th  style="background:#FC8213; color:#fff;width:100%;" colspan="3">PO Pending For MRN</th>                
                 </tr>
-                <tr style="background:#357ebd; border:1px solid #ccc;">
-                    <td style="text-align:center;color:#fff;">PO No.</td>
-                    <td style="text-align:center;color:#fff;">Status</td>
+                <tr style="background:#D0DDEC; border:1px solid #ccc;">
+                    <th style="text-align:center;">PO No.</th>
+                    <th style="text-align:center;">Status</th>
                 </tr>
             </thead>
             <tbody style="border:1px solid #ccc;">
                 @foreach (var item in Model)
                 {
-                <tr style="background:#357ebd;color:#fff;">
+                <tr class="success">
                     <td>@item.PONO
                     <input type="hidden" id="hdnPOId"name="hdnPOId" value="@item.POID" /></td>
                     <td>@item.Status</td>
                 </tr>
                 }
                 <tr>
-                   @* <td colspan="2" align="center" style="background:#FC8213;">
-        <a href="@Url.Content("~/PO/ListPO")" style="color:#fff;"> View All PO </a>
-    </td>*@
+                    <td colspan="2" align="center">
+                        <a href="@Url.Content("~/PO/ListPO?pendingStatus=Pending")"> View All Pending MRN </a>
+                    </td>
                 </tr>
             </tbody>           
         </table>
@@ -33,6 +33,6 @@
 }
 else
 {
-    <h3 style="color:firebrick;text-align:center">No PO For Pending !!!</h3>
+    <h3 style="color:firebrick;text-align:center">No  Pending Of MRN !!!</h3>
 }
   

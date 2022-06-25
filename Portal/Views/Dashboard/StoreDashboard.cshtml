@@ -2,339 +2,135 @@
     ViewBag.Title = "Production Dashboard";
     Layout = "~/Views/Shared/_StoreLayout.cshtml";
 }
-
 <style>
-    h3{
-        font-size:17px !important;
+    .crm-box {
+        width: 31%;
+    }
+
+    .crm-box-1 {
+        margin-left: 0px;
+        width: 32%;
+    }
+
+    @@media(max-width:767px) {
+
+        .crm-box {
+            width: 100% !important;
+        }
+
+        .crm-box-1 {
+            width: 100% !important;
+        }
     }
 </style>
 <link href="~/Content/jquery-ui.css" rel="stylesheet" />
-
 <div id="wrapper">
     <div id="page-content-wrapper" style="padding-top:5px !important;">
         <div class="page-content">
             <div class="container-fluid">
+
+                
+
                 <div class="row top-head">
                     <div class="col-md-3">
                     </div>
-                    <div class="col-md-12">
-                        <div class="col-md-5" style="margin-top: 5px;margin-bottom:5px">
-                            <b><label for="ddlFinYear" class="col-sm-4" style="margin-top: 5px;color:#fff">Financial Year</label></b>
-                            <div class="col-sm-8">
-                                <select id="ddlFinYear" name="ddlFinYear" onchange="SetFinancialYearSession()" tabindex="1" class="form-control"></select>
-                                <input type="hidden" id="hdnCurrentFinyearId" value="@ViewData["currentFinyearId"]" />
-                            </div>
+                    <div class="col-md-6" style="margin-top: 5px;margin-bottom:5px">
+                        <b><label for="ddlFinYear" class="col-sm-4" style="margin-top: 5px;color:#fff">Financial </label></b>
+                        <div class="col-sm-8">
+                            <select id="ddlFinYear" name="ddlFinYear" onchange="SetFinancialYearSession()" tabindex="1" class="form-control"></select>
+                            <input type="hidden" id="hdnCurrentFinyearId" value="@ViewData["currentFinyearId"]" />
+
                         </div>
-                        <div class="col-md-5" style="margin-top: 5px;margin-bottom:5px">
-                            <b><label for="ddlCompanyBranchForComman" class="col-sm-4" style="margin-top: 5px;color:#fff">Company Branch</label></b>
-                            <div class="col-sm-8">
-                                <select id="ddlCompanyBranchForComman" name="ddlCompanyBranchForComman" onchange="CommanMethod();" tabindex="9" class="form-control"></select>
-                                <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
-                                <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
-                            </div>
-                        </div>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7" id="DivPendingSOCount">
+
+                    </div>
+                    <div class="col-md-5" id="DivProductionReport">
+
                     </div>
 
                 </div>
+                <div class="row">
+                    <div class="col-md-7" id="DivPendingWOCount">
 
+                    </div>
+                    <div class="col-md-5" id="Div">
 
-                <div class="container-fluid-md">
-                    <div class="row ftop">
-                        <div class="col-sm-6 col-lg-3">
-                            <div class="panel panel-metric panel-metric-sm">
-                                <div class="panel-body panel-body-primary">
-                                    <div class="metric-content metric-icon">
-                                        <div class="value" id="total_no_of_Work_Order_Pending_ForSo" style="font-size:22px;">
-                                            @*@ViewData["total_no_of_Work_Order_Pending_ForSo"]*@
-                                            @ViewData["Box1ItemValue"]
-                                        </div>
-                                        <div class="icon">
-                                            <i class="fa fa-trophy"></i>
-                                        </div>
-                                        <header>
-                                            <a href="@Url.Content("~/SO/ListSO?listStatus=true")" target="_blank" style="color:white;text-decoration:none;">
-                                                <h5 class="thin" style="font-weight:600;">
-                                                   @ViewData["Box1ItemKey"]
-                                                @*Total No. Of SO Pending for WO*@</h5>
-                                            </a>
-                                            
-                                        </header>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-3">
-                            <div class="panel panel-metric panel-metric-sm">
-                                <div class="panel-body panel-body-success">
-                                    <div class="metric-content metric-icon">
-                                        <div class="value" id="total_no_of_Work_Order_Pending" style="font-size:22px;">
-                                           @*@ViewData["total_no_of_Work_Order_Pending"]*@
-                                            @ViewData["Box2ItemValue"]
-                                            
-                                        </div>
-                                        <div class="icon">
-                                            <i class="fa fa-users"></i>
-                                        </div>
-                                        <header>
-                                            
-                                            <a href="@Url.Content("~/WorkOrder/ListWorkOrder?pendingStatus=Pending")" target="_blank" style="color:white;text-decoration:none;">
-                                                <h3 class="thin" style="font-weight:500;">@ViewData["Box2ItemKey"]</h3>
-                                                </a>
-                                        </header>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-3">
-                            <div class="panel panel-metric panel-metric-sm">
-                                <div class="panel-body panel-body-success">
-                                    <div class="metric-content metric-icon">
-                                        <div class="value" id="total_no_of_Work_Order_Pending" style="font-size:22px;">
-                                            @*@ViewData["total_no_of_Work_Order_Pending"]*@
-                                            @ViewData["Box3ItemValue"]
-
-                                        </div>
-                                        <div class="icon">
-                                            <i class="fa fa-bar-chart"></i>
-                                        </div>
-                                        <header>
-
-                                            <a href="#" target="_blank" style="color:white;text-decoration:none;">
-                                                <h3 class="thin" style="font-weight:500;">@ViewData["Box3ItemKey"]</h3>
-                                            </a>
-                                        </header>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-3">
-                            <div class="panel panel-metric panel-metric-sm">
-                                <div class="panel-body panel-body-success">
-                                    <div class="metric-content metric-icon">
-                                        <div class="value" id="total_no_of_Work_Order_Pending" style="font-size:22px;">
-                                            @*@ViewData["total_no_of_Work_Order_Pending"]*@
-                                            @ViewData["Box4ItemValue"]
-
-                                        </div>
-                                        <div class="icon">
-                                            <i class="fa fa-line-chart"></i>
-                                        </div>
-                                        <header>
-
-                                            <a href="#" target="_blank" style="color:white;text-decoration:none;">
-                                                <h3 class="thin" style="font-weight:500;">@ViewData["Box4ItemKey"]</h3>
-                                            </a>
-                                        </header>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-7">
-                            <div class="panel" style="overflow: hidden">
-                                <div class="row no-margin" data-sync-height>
+                </div>
+                <div class="row" style="display:none;">
 
-                                    <div class="col-sm-5 col-md-5 no-padding" style="background-color: #357ebd !important;">
-                                        <div id="divContainer5" class="panel-body bg-gray-dark" style="height: inherit;background-color: #357ebd !important;">
-                                            @*<h4 class="thin text-white no-margin-top" style="font-weight:500;">Production</h4>
-                                            <table class="table table-condensed text-light">
-                                                <tr style="background-color: #357ebd !important;">
-                                                    <td>
-                                                        <a href="javascript:;" class="text-light" style="font-size:13px;text-align: left;">Total no of So received from sale Dpt.</a>
-                                                    </td>
-                                                    <td>
-                                                        <span style="color:white;font-size:13px;" id="total_no_of_so_rec_sdept">@ViewData["total_no_of_so_rec_sdept"]</span>
-                                                    </td>
-                                                </tr>
-                                                <tr style="background-color: #357ebd !important;">
-                                                    <td>
-                                                        <a href="javascript:;" class="text-light" style="font-size:13px;">Total no of work order generate against so</a>
-                                                    </td>
-                                                    <td>
-                                                        <span style="color:white;font-size:11px;" id="total_no_of_work_order_gen_so">@ViewData["total_no_of_work_order_gen_so"] </span>
-                                                    </td>
-                                                </tr>
-                                                <tr style="background-color: #357ebd !important;">
-                                                    <td>
-                                                        <a href="javascript:;" class="text-light" style="font-size:13px;text-align: left;">Total no of work Order generate without so</a>
-                                                    </td>
-                                                    <td>
-                                                        <span style="color:white;font-size:11px;" id="total_no_of_work_order_gen_with_so">
-                                                            @ViewData["total_no_of_work_order_gen_with_so"]
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                                <tr style="background-color: #357ebd !important;">
-                                                    <td>
-                                                        <a href="javascript:;" class="text-light" style="font-size:13px;text-align: left;">No. of incomplete vehicle on line.</a>
-                                                    </td>
-                                                    <td>
-                                                        <span style="color:white;font-size:13px;" id="total_no_of_incom_vej_online">@ViewData["total_no_of_incom_vej_online"] </span>
-                                                    </td>
-                                                </tr>
-                                            </table>*@
-                                        </div>
+                    <div class="market-updates" style="clear:both;margin-top: 10px;">
+
+                        <a href="#" target="_blank">
+                            <div class="col-md-4 col-xs-12 col-sm-4 col-lg-4 market-update-gd crm-box-1">
+                                <div class="market-update-block clr-block-2">
+                                    <div class="col-md-8 col-sm-8 col-xs-12 col-lg-8 market-update-left">
+                                        <p style="font-size:14px;"><b>Today New Product</b></p>
+                                        <H4>&nbsp;</H4>
+
+
+                                        <h3>@ViewData["todayProductCount"]</h3>
                                     </div>
-                                    <div class="col-sm-1 col-md-1 no-padding">
+                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4 market-update-right">
+                                        <i class="fa fa-plus-circle" style="font-size: 73px;color: #fff;"> </i>
                                     </div>
-                                    <div class="col-sm-5 col-md-5 no-padding" style="background-color: #d95043 !important;">
-                                        <div id="divContainer6" class="panel-body bg-gray-dark" style="min-height: 158px;background-color: #d95043 !important;">
-                                            @*<h4 class="thin text-white no-margin-top">Work Order</h4>
-                                            <table class="table table-condensed text-light">
-                                              
-                                                <tr style="background-color: #d95043 !important;">
-                                                    <td>
-                                                        <a href="javascript:;" class="text-light" style="font-size:13px;text-align: left;">Total No of vehicle in finished goods.</a>
-                                                    </td>
-                                                    <td>
-                                                        <span style="color:white;font-size:13px;" id="total_no_of_veh_in_fin_good">  @ViewData["total_no_of_veh_in_fin_good"] </span>
-</td>
-                                                </tr>
-                                                <tr style="background-color: #d95043 !important;">
-                                                    <td>
-                                                        <a href="javascript:;" class="text-light" style="font-size:13px;text-align: left;">Total Sale Order For Work Order Count</a>
-                                                    </td>
-                                                    <td>
-                                                        <span style="color:white;font-size:13px;">&nbsp; @ViewData["total_so_for_wo"] </span>
-                                                    </td>
-                                                </tr>
-                                                <tr style="background-color: #d95043 !important;">
-                                                    <td>
-                                                        <a href="javascript:;" class="text-light" style="font-size:13px;text-align: left;">Total Sale Order For Work Order Amt</a>
-                                                    </td>
-                                                    <td>
-                                                        <span class="fa fa-inr" style="color:white;font-size:13px;">&nbsp; @ViewData["total_so_for_wo_Amount"] </span>
-                                                    </td>
-                                                </tr>
-                                                <tr style="background-color: #d95043 !important;">
-                                                    <td>
-                                                        <a href="javascript:;" class="text-light" style="font-size:13px;text-align: left;">Total Work Order Pending</a>
-                                                    </td>
-                                                    <td>
-                                                        <span style="color:white;font-size:13px;">&nbsp; @ViewData["total_wo_pending"] </span>
-                                                    </td>
-                                                </tr>
-
-
-
-
-                                            </table>*@
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-1 col-md-1 no-padding">
-                                    </div>
-
-                             
+                                    <div class="clearfix"> </div>
                                 </div>
                             </div>
-                            <div class="panel">
-                                <div class="panel-body panel-body-success padding-sm-vertical">
-                                    <div id="sales-orders" class="morris-hover-dark" style="height: 254px;text-align:center;">
-                                        <span style="color:white;font-size:20px;font-weight:600;">Production Plan</span>   
+                        </a>
+                        <a href="@Url.Content("~/Product/ListProduct")" target="_blank">
+                            <div class="col-md-4 col-sm-4 col-xs-12 col-lg-4 market-update-gd crm-box-1">
+                                <div class="market-update-block clr-block-2" style="background-color:#4f75c6">
+                                    <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8 market-update-left">
+                                        <p style="font-size:14px;"><b>Total Product</b></p>
+                                        <H4>&nbsp;</H4>
+                                        <h3>@ViewData["totalProductCount"]</h3>
                                     </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4 market-update-right">
+                                        <i class="fa fa-file-text-o"> </i>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="col-md-4 col-sm-4 col-xs-12 col-lg-4 climate-grids crm-box-1" style="background:#fff; padding-right: 0;">
+                            <div class="climate-grid3">
+                                <div class="popular-brand" style="margin-top:18px;">
+                                    <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 popular-bran-left">
+                                        <h4><i aria-hidden="true"></i><a href="@Url.Content("~/Product/AddEditProduct")" target="_blank">Add New Product</a></h4>
+                                        <h4><i aria-hidden="true"></i><a href="@Url.Content("~/ProductOpeningStock/AddEditProductOpening")" target="_blank">Add Product Opening</a></h4>
+                                        <h4><i aria-hidden="true"></i><a href="@Url.Content("~/Product/ListProduct" )" target="_blank">Product List</a></h4>
 
-                                 </div>
-                               
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 popular-bran-right" style="margin-top:-19px; background-color:#4a9a79; min-height: 132px;">
+                                        <h3 style="margin-top:-33px; background-color:#4a9a79; margin-right: -2px;"><i class="fa fa-link" aria-hidden="true" style="color: white;font-size: 38px; margin-top: 16px;"></i></h3>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                </div>
+
                             </div>
                         </div>
-                        <div class="col-md-5">
-                            <div class="panel panel-metric panel-metric-sm">
-                                <div class="panel-body panel-body-warning">
-                                    <div class="metric-content metric-icon" style="background-color:#1C2541;">
-                                        <div class="value">
-                                            <span style="color:white;font-weight:bold;font-size:20px">@ViewData["Box7ItemValue"]</span>
-                                            
-                                        </div>
-                                        <div class="icon">
-                                        
-                                            <i class="fa fa-bar-chart"></i>
-                                        
-                                        </div>
-                                        <div id="metric-sales" class="chart"></div>
-                                        <header>
-                                            
-                                            <a href="@Url.Content("~/FinishedGoodProcess/ListFinishedGoodProcess?listStatus=true")" target="_blank" style="color:white;text-decoration:none;">
-                                                <h3 class="thin" style="font-weight:600;">@ViewData["Box7ItemKey"]</h3>
-                                                </a>
-                                        </header>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-metric panel-metric-sm">
-                                <div class="panel-body panel-body-info">
-                                    <div class="metric-content metric-icon">
-                                        <div class="value">
-                                            <span style="color:white;font-weight:bold;font-size:20px">@ViewData["Box8ItemValue"]</span>
-                                        </div>
-                                        <div class="icon">
-                                            <i class="fa fa-bar-chart"></i>
-                                        </div>
-
-                                        <div id="metric-orders" class="chart"></div>
-                                        <header>
-                                            
-                                            <a href="#" target="_blank" style="color:white;text-decoration:none;">
-                                                <h3 class="thin" style="font-weight:600;">@ViewData["Box8ItemKey"]</h3>
-                                            </a>
-                                            
-                                        </header>
-                                    </div>
-                                </div>
-                            </div>
 
 
-
-                            <div class="panel" style="overflow: hidden;">
-                                <div class="panel-body">
-                                    <h4 class="thin no-margin-top" style="color:#0094ff!important;"><strong>Quick Links</strong></h4>
-                                    <table class="table" >
-                                        <tbody>
-                                            <tr style="background-color:#0094ff!important;">
-                                                <td align="center"><a href="@Url.Content("~/ChasisSerialMapping/AddEditChasisSerialMapping?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:14px;">Chasis Serial Mapping</a></td>
-                                                <td align="center"><a href="@Url.Content("~/PackingMaterialBOM/AddEditPackingMaterialBOM?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:14px;">Packing Material BOM</a></td>
-                                                <td align="center"><a href="@Url.Content("~/ProductBOM/AddEditProductBOM?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:14px;">Product BOM</a></td>
-                                            </tr>
-
-                                            <tr style="background-color:#0094ff!important;">
-                                                <td align="center"><a href="@Url.Content("~/ChasisModel/AddEditChasisModel?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:14px;">Chasis Model</a></td>
-                                                <td align="center"><a href="@Url.Content("~/WorkOrder/AddEditWorkOrder?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:14px;">Work Order</a></td>
-                                                <td align="center"><a href="@Url.Content("~/Fabrication/AddEditFabrication?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:14px;">Fabrication</a></td>
-                                            </tr>
-                                            
-                                            <tr style="background-color:#0094ff!important;">
-                                                <td align="center"><a href="@Url.Content("~/PaintProcess/AddEditPaintProcess?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:14px;">Paint Process</a></td>
-                                                <td align="center"><a href="@Url.Content("~/AssemblingProcess/AddEditAssemblingProcess?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:14px;">Assembling</a></td>
-                                                <td align="center"><a href="@Url.Content("~/FinishedGoodProcess/AddEditFinishedGoodProcess?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:14px;">Finished Good</a></td>
-                                            </tr>
-
-
-                                            <tr style="background-color:#0094ff!important;">
-                                                <td align="center"><a href="@Url.Content("~/ChasisSerialPlan/AddEditChasisSerialPlan?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:14px;">Chasis Serial Plan</a></td>
-                                                <td align="center"><a href="@Url.Content("~/PrintChasis/AddEditPrintChasis?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:14px;">Print Chasis</a></td>
-                                                <td align="center"><a href="@Url.Content("~/CarryForwardChasis/AddEditCarryForwardChasis?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:14px;">Carry Forward Chasis</a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div id="server-load" class="chart"></div>
-                            </div>
-                        </div>
                     </div>
                     
+                   
                 </div>
+                
 
-
-                <!--end body content -->
             </div>
         </div>
+        <!--end body content -->
     </div>
 </div>
 
-
-
-<script src="~/Scripts/Chart.bundle.min.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>
 <script src="~/Scripts/Dashboard/StoreDashboard.js"></script>
 

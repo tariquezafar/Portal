@@ -28,7 +28,7 @@
                 }
                 <tr>
                     <td colspan="8" align="center" style="background:#bfdfff;">
-                        <a href="@Url.Content("~/SIN/AddEditSIN")"  target="_blank">View All Pending Store Requisition</a>
+                        <a href="@Url.Content("~/StoreRequisition/ListStoreRequisition?pendingStatus=Pending")"  target="_blank">View All Pending Store Requisition</a>
                     </td>
                 </tr>
             </tbody>
@@ -40,14 +40,3 @@ else
 {
     <h3 style="color:firebrick;text-align:center">Pending Store Requisition Not Found !!!</h3>
 }
-@*<script>
-        $(document).ready(function () {
-            $('#tblSINPendingCountList').paging({SIN/AddEditSIN
-                limit:5,
-                rowDisplayStyle: 'block',
-                activePage: 0,
-                rows: []
-            });
-
-        });
-    </script>*@

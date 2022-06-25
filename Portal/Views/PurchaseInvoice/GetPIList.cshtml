@@ -38,81 +38,87 @@
     <div style="overflow-x:scroll; padding:10px;">
         <table class="table table-bordered table-hover" id="tblPIList">
             <thead>
-                <tr  aling="center"  style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                <tr aling="center" style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
                     <th rowspan="2" style="color:white; text-align:center;">Action</th>
-                    <th  style="color:white; text-align:center;">PI No.</th>
-                    <th  style="color:white; text-align:center;">PI Date</th>
+                    <th style="color:white; text-align:center;">PI No.</th>
+                    <th style="color:white; text-align:center;">PI Date</th>
                     <th style="color:white; text-align:center;">PO No.</th>
-                    <th  style="color:white; text-align:center;">Vendor Name</th>
-                    <th  style="color:white; text-align:center;">City</th>
-                    <th  style="color:white; text-align:center;">State</th>
-                    <th  style="color:white; text-align:center;">Ref. No.</th>
-                    <th  style="color:white; text-align:center;">Ref. Date</th>
-                    <th  style="color:white; text-align:center;">Gross Amt</th>
-                    <th  style="color:white; text-align:center;">Net Amt</th>
+                    <th style="color:white; text-align:center;">MRN No</th>
+                    <th style="color:white; text-align:center;">MRN Date</th>
+                    <th style="color:white; text-align:center;">Vendor Name</th>
+                    <th style="color:white; text-align:center;">City</th>
+                    <th style="color:white; text-align:center;">State</th>
+                    <th style="color:white; text-align:center;">Ref. No.</th>
+                    <th style="color:white; text-align:center;">Ref. Date</th>
+                    <th style="color:white; text-align:center;">Gross Amt</th>
+                    <th style="color:white; text-align:center;">Net Amt</th>
                     <th style="color:white; text-align:center;">Purchase Type</th>
-                    <th  style="color:white; text-align:center;">PI Status</th>
-                    <th  style="color:white; text-align:center;">Created By</th>
-                    <th  style="color:white; text-align:center;">Created Date</th>
+                    <th style="color:white; text-align:center;">PI Status</th>
+                    <th style="color:white; text-align:center;">Created By</th>
+                    <th style="color:white; text-align:center;">Created Date</th>
                     <th style="color:white; text-align:center;">Modified By</th>
-                    <th  style="color:white; text-align:center;">Modified Date</th>
+                    <th style="color:white; text-align:center;">Modified Date</th>
                     <th style="color:white; text-align:center;">Company Branch</th>
-                    
+
+
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr class="success">
-                        <td class="teal text" style="margin:0px auto;">
-                            <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/PurchaseInvoice/AddEditPI?invoiceId=@item.InvoiceId&AccessMode=3"></a>
-                            @if (item.ApprovalStatus.ToUpper() == "DRAFT")
-                            {
-                                <a style="color:darkgreen" class="fa fa-pencil" href="~/PurchaseInvoice/AddEditPI?invoiceId=@item.InvoiceId&AccessMode=2"></a>
-                              
-
-                            }
-                            @if (item.ApprovalStatus.ToUpper() == "FINAL")
-                            {
-                                <a style="color:red" title="Cancel" class="fa fa-times" aria-hidden="true" href="~/PurchaseInvoice/CancelPI?invoiceId=@item.InvoiceId&AccessMode=4"></a>
-                            }
-                        </td>
-                        <td>@item.InvoiceNo</td>
-                        <td>@item.InvoiceDate</td>
-                        <td>@item.PONo</td>
-                        <td>@item.VendorName</td>
-                        <td>@item.City</td>
-                        <td>@item.StateName</td>
-                        <td>@item.RefNo</td>
-                        <td>@item.RefDate</td>
-                        <td>@item.BasicValue</td>
-                        <td>@item.TotalValue</td> 
-                        <td>@item.PurchaseType</td> 
+                <tr class="success">
+                    <td class="teal text" style="margin:0px auto;">
+                        <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/PurchaseInvoice/AddEditPI?invoiceId=@item.InvoiceId&AccessMode=3"></a>
                         @if (item.ApprovalStatus.ToUpper() == "DRAFT")
                         {
-                        <td style="background-color:aquamarine">@item.ApprovalStatus</td>
-                        }
-                        else if (item.ApprovalStatus.ToUpper() == "CANCELLED")
-                        {
-                            <td style="background-color:red;color:white;">
-                                @item.ApprovalStatus
-                            </td>
-                        }
-                        else
-                        {
-                        <td style="background-color:green;color:white;">@item.ApprovalStatus</td> 
-                        }
-                        <td>@item.CreatedByUserName</td>
-                        <td>@item.CreatedDate</td>
-                        <td>@item.ModifiedByUserName</td>
-                        <td>@item.ModifiedDate</td>
-                        <td>@item.companyBranch</td>
-                        
-                        @*<td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
-                      
-                        </td>*@
+                            <a style="color:darkgreen" class="fa fa-pencil" href="~/PurchaseInvoice/AddEditPI?invoiceId=@item.InvoiceId&AccessMode=2"></a>
 
-                    </tr>
+
+                        }
+                        @if (item.ApprovalStatus.ToUpper() == "FINAL")
+                        {
+                            <a style="color:red" title="Cancel" class="fa fa-times" aria-hidden="true" href="~/PurchaseInvoice/CancelPI?invoiceId=@item.InvoiceId&AccessMode=4"></a>
+                        }
+                    </td>
+                    <td>@item.InvoiceNo</td>
+                    <td>@item.InvoiceDate</td>
+                    <td>@item.PONo</td>
+                    <td><a href="@("../MRNQC/AddEditMRNQC?mrnId="+item.MRNId+"&AccessMode=3")" target="_blank" style="cursor:pointer;">@item.MRNNO</a> </td>
+                    <td>@item.MRNDate</td>
+                    <td>@item.VendorName</td>
+                    <td>@item.City</td>
+                    <td>@item.StateName</td>
+                    <td>@item.RefNo</td>
+                    <td>@item.RefDate</td>
+                    <td>@item.BasicValue</td>
+                    <td>@item.TotalValue</td>
+                    <td>@item.PurchaseType</td>
+                    @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                    {
+                        <td style="background-color:aquamarine">@item.ApprovalStatus</td>
+                    }
+                    else if (item.ApprovalStatus.ToUpper() == "CANCELLED")
+                    {
+                        <td style="background-color:red;color:white;">
+                            @item.ApprovalStatus
+                        </td>
+                    }
+                    else
+                    {
+                        <td style="background-color:green;color:white;">@item.ApprovalStatus</td>
+
+                    }
+                    <td>@item.CreatedByUserName</td>
+                    <td>@item.CreatedDate</td>
+                    <td>@item.ModifiedByUserName</td>
+                    <td>@item.ModifiedDate</td>
+                    <td>@item.companyBranch</td>
+
+                    @*<td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
+
+        </td>*@
+
+                </tr>
                 }
               
             </tbody>

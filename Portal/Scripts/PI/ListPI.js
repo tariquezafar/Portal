@@ -97,11 +97,13 @@ function SearchPI() {
     var txtSearchCreatedBy = $("#txtSearchCreatedBy");
     var txtSearchPONO = $("#txtSearchPONO");
     var ddlCompanyBranch = $("#ddlCompanyBranch");
+    var MRNNO = $("#txtSearchMRNNo");
     var requestData = {
         piNo: txtPINo.val().trim(), vendorName: txtVendorName.val().trim(),
         refNo: txtRefNo.val().trim(), fromDate: txtFromDate.val(), toDate: txtToDate.val(),
         approvalStatus: ddlApprovalStatus.val(), purchaseType: ddlPurchaseType.val(),
-        CreatedByUserName: txtSearchCreatedBy.val(), poNo: txtSearchPONO.val(),companyBranch: ddlCompanyBranch.val()
+        CreatedByUserName: txtSearchCreatedBy.val(), poNo: txtSearchPONO.val(), companyBranch: ddlCompanyBranch.val(),
+        MRNNo: MRNNO.val()
     };
     $.ajax({
         url: "../PurchaseInvoice/GetPIList",

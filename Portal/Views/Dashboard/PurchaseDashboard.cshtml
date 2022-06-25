@@ -2,6 +2,27 @@
     ViewBag.Title = "Purchase Dashboard";
     Layout = "~/Views/Shared/_PurchaseLayout.cshtml";
 }
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+    .crm-box {
+    width: 32%;
+}
+
+    .crm-box-1 {
+    margin-left: 0px;
+    width: 32%;
+}
+    @@media(max-width:767px){
+
+        .crm-box {
+    width: 100%!important
+}
+        .crm-box-1 {
+    
+    width: 100%!important
+}
+    }
+</style>
 <link href="~/Content/jquery-ui.css" rel="stylesheet" />
 <div id="wrapper">
     <div id="page-content-wrapper" style="padding-top:5px !important;">
@@ -10,336 +31,142 @@
                 <div class="row top-head">
                     <div class="col-md-3">
                     </div>
-                    <div class="col-md-12">
-                        <div class="col-md-5" style="margin-top: 5px;margin-bottom:5px">
-                            <b><label for="ddlFinYear" class="col-sm-4" style="margin-top: 5px;color:#fff">Financial Year</label></b>
-                            <div class="col-sm-8">
-                                <select id="ddlFinYear" name="ddlFinYear" onchange="SetFinancialYearSession()" tabindex="1" class="form-control"></select>
-                                <input type="hidden" id="hdnCurrentFinyearId" value="@ViewData["currentFinyearId"]" />
-                            </div>
-                        </div>
-                        <div class="col-md-5" style="margin-top: 5px;margin-bottom:5px">
-                            <b><label for="ddlCompanyBranchForComman" class="col-sm-4" style="margin-top: 5px;color:#fff">Company Branch</label></b>
-                            <div class="col-sm-8">
-                                <select id="ddlCompanyBranchForComman" name="ddlCompanyBranchForComman" onchange="CommanMethod();" tabindex="9" class="form-control"></select>
-                                <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
-                                <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
-                            </div>
+                    <div class="col-md-6" style="margin-top: 5px;margin-bottom:5px">
+                        <b><label for="ddlFinYear" class="col-sm-4" style="margin-top: 5px;color:#fff">Financial Year</label></b>
+                        <div class="col-sm-8">
+                            <select id="ddlFinYear" name="ddlFinYear" onchange="SetFinancialYearSession()" tabindex="1" class="form-control"></select>
+                            <input type="hidden" id="hdnCurrentFinyearId" value="@ViewData["currentFinyearId"]" />
                         </div>
                     </div>
-
-                </div>
-
-
-                <div class="container-fluid-md">
-                    <div class="row ftop">
-                        <div class="col-sm-6 col-lg-3">
-                            <div class="panel panel-metric panel-metric-sm">
-                                <div class="panel-body panel-body-primary">
-                                    <div class="metric-content metric-icon">
-                                        <div class="value">
-                                            @*<label id="lblTodayPOSum" style="color: white;"></label>*@
-                                            @ViewData["Box1ItemValue"]
-                                        </div>
-                                        <div class="icon">
-                                            <i class="fa fa-plus-circle"></i>
-                                        </div>
-                                        <header>
-                                            <a href="@Url.Content("~/PO/ListPO?listStatus=true")" target="_blank" style="color:white;text-decoration:none;">
-                                                <h4 class="thin">@ViewData["Box1ItemKey"]</h4>
+                    <div class="col-md-3" ng-app="purchase">
+                        <div ng-controller="purchaseController">
+                            @if (Session["IsAdmin"].ToString() == "True")
+                            {
+                                <li class="hidden-xs">
+                                    <form class="navbar-form" ng-init="MdPendingPoCount()">
+                                        <div style="margin-top:15px;color:blue;font-size:17px;">
+                                            <a id="poApproval" href="/PO/ListApprovedPO" target="_blank">
+                                                <span class="badge badge-danger pull-right" id="spanApproval">
+                                                    {{TotalCount}}
+                                                    <i class="material-icons">notifications_none</i>
+                                                </span>
                                             </a>
-                                        </header>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-3">
-                            <div class="panel panel-metric panel-metric-sm">
-                                <div class="panel-body panel-body-success">
-                                    <div class="metric-content metric-icon">
-                                        <div class="value">
-                                            @ViewData["Box2ItemValue"]
-                                            @*<label id="lblTodayPISum" style="color: white;"></label>*@
-                                        </div>
-                                        <div class="icon">
-                                            <i class="fa fa-thumbs-o-up"></i>
-                                        </div>
-                                        <header>
-                                            <a href="@Url.Content("~/PurchaseInvoice/ListPI?listStatus=true")" target="_blank" style="color:white;text-decoration:none;">
-                                                <h4 class="thin">@ViewData["Box2ItemKey"]</h4>
-                                            </a>
-
-                                        </header>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-3">
-                            <div class="panel panel-metric panel-metric-sm">
-                                <div class="panel-body panel-body-inverse">
-                                    <div class="metric-content metric-icon">
-                                        <div class="value">
-                                            @*<label id="lblTodayPOCountApproval" style="color:white;"></label>*@
-                                            @ViewData["Box3ItemValue"]
-                                        </div>
-                                        <div class="icon">
-                                            <i class="fa fa-chain-broken"></i>
-                                        </div>
-                                        <header>
-                                            <a href="@Url.Content("~/PO/ListApprovedPO?listStatus=true")" target="_blank" style="color:white;text-decoration:none;">
-                                                <h4 class="thin">@ViewData["Box3ItemKey"]</h4>
-                                            </a>
-
-                                        </header>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-3">
-                            <div class="panel panel-metric panel-metric-sm">
-                                <div class="panel-body panel-body-danger">
-                                    <div class="metric-content metric-icon">
-                                        <div class="value">
-                                            &nbsp;
-                                            @*<label id="lblTodayPurchaseQuotation" style="color:white;"></label>*@
-                                            @ViewData["Box4ItemValue"]
-                                        </div>
-                                        <div class="icon">
-                                            <i class="fa fa-tags"></i>
-                                        </div>
-                                        <header>
-                                            <h4 class="thin">
-                                                <a href="@Url.Content("~/PurchaseQuotation/ListPurchaseQuotation?listStatus=true")" target="_blank" style="color:white;text-decoration:none;">
-                                                    @ViewData["Box4ItemKey"]
-                                                </a>
-                                            </h4>
-                                        </header>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-7">
-                            <div class="panel" style="overflow: hidden; background:transparent;">
-                                @*<div class="col-sm-4 col-md-4 no-padding" id="DivPOCount">
-
-            </div>*@
-                                <div class="col-sm-4 col-md-4 no-padding" style="padding: 19px! important; padding-right: 0px! important; padding-left: 14px! important;">
-                                    <div id="divContainer5" class="panel-body bg-gray-dark" style="height: inherit; background:#d95043!important;">
-                                        @*<h4 class="thin text-white no-margin-top"><strong> PO Transaction Summary</strong></h4>
-                    <table class="table table-condensed text-light">
-                        <tr style="background:#d95043!important;">
-                            <td>
-                                <a href="javascript:;" class="text-light" style="font-size:11px;">Today Count</a>
-                            </td>
-                            <td>
-                                <span id="todaystnCount">
-                                    0
-                                </span>
-                            </td>
-                        </tr>
-
-                        <tr style="background:#d95043!important;">
-                            <td>
-                                <a href="javascript:;" class="text-light" style="font-size:11px;">MTD Count</a>
-                            </td>
-                            <td>
-                                <span id="mtdstnCount">
-                                    0
-                                </span>
-                            </td>
-                        </tr>
-
-                        <tr style="background:#d95043!important;">
-                            <td>
-                                <a href="javascript:;" class="text-light" style="font-size:11px;">YTD Count</a>
-                            </td>
-                            <td>
-                                <span id="ytdstnCount">
-                                    0
-                                </span>
-                            </td>
-                        </tr>
-                    </table>*@
-                                    </div>
-                                </div>
-
-
-                                <div class="col-sm-4 col-md-4 no-padding" style="padding: 19px! important; padding-right: 0px! important; padding-left: 14px! important;">
-                                    <div id="divContainer6" class="panel-body bg-gray-dark" id="divContainer6" style="height: inherit;">
-                                        @*<h4 class="thin text-white no-margin-top"><strong>PI Transaction Summary</strong> </h4>
-                    <table class="table table-condensed text-light">
-                        <tr style="background-color: #29353f !important;">
-                            <td>
-                                <a href="javascript:;" class="text-light" style="font-size:11px;">Today Count</a>
-                            </td>
-                            <td>
-                                <span id="todaystnCount">
-                                 0
-                                </span>
-                            </td>
-                        </tr>
-
-                        <tr style="background-color: #29353f !important;">
-                            <td>
-                                <a href="javascript:;" class="text-light" style="font-size:11px;">MTD STN</a>
-                            </td>
-                            <td>
-                                <span id="mtdstnCount">
-                                  0
-                                </span>
-                            </td>
-                        </tr>
-
-                        <tr style="background-color: #29353f !important;">
-                            <td>
-                                <a href="javascript:;" class="text-light" style="font-size:11px;">YTD STN</a>
-                            </td>
-                            <td>
-                                <span id="ytdstnCount">
-                                   0
-                                </span>
-                            </td>
-                        </tr>
-                    </table>*@
-                                    </div>
-                                </div>
-
-
-                                <div class="col-sm-4 col-md-4 no-padding" style="padding: 19px! important; padding-right: 0px! important; padding-left: 14px! important;">
-                                    <div id="divContainer7" class="panel-body bg-gray-dark" style="height: inherit; background:#357ebd!important;">
-                                        @*<h4 class="thin text-white no-margin-top"><strong> PI Transaction Summary</strong> </h4>
-                    <table class="table table-condensed text-light">
-                        <tr style="background:#357ebd!important;">
-                            <td>
-                                <a href="javascript:;" class="text-light" style="font-size:11px;">Today Count</a>
-                            </td>
-                            <td>
-                                <span id="todaystnCount">
-                                    0
-                                </span>
-                            </td>
-                        </tr>
-
-                        <tr style="background:#357ebd!important;">
-                            <td>
-                                <a href="javascript:;" class="text-light" style="font-size:11px;">MTD STN</a>
-                            </td>
-                            <td>
-                                <span id="mtdstnCount">
-                                    0
-                                </span>
-                            </td>
-                        </tr>
-
-                        <tr style="background:#357ebd!important;">
-                            <td>
-                                <a href="javascript:;" class="text-light" style="font-size:11px;">YTD STN</a>
-                            </td>
-                            <td>
-                                <span id="ytdstnCount">
-                                    0
-                                </span>
-                            </td>
-                        </tr>
-                    </table>*@
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-md-4 no-padding" id="DivPIICount">
-
-                            </div>
-                            <div class="col-sm-4 col-md-4 no-padding" id="DivPOCount">
-                                </div>
-                                @*<div class="col-sm-4 col-md-4 no-padding" id="DivPIICount">
-
-            </div>
-
-            <div class="col-sm-4 col-md-4 no-padding" id="DivPOPending">
-
-            </div>*@
-                            </div>
-                            <div class="panel col-md-5" style="overflow: hidden; padding:14px; padding-top:8px; padding-bottom:11px; background:transparent;">
-                                <div class="row no-margin" data-sync-height>
-                                    <div class="panel panel-metric panel-metric-sm" style="background:transparent;">
-                                        <div class="panel-body">
-                                            <h3 class="thin no-margin-top" style="color:#0094ff; display:none;"><strong>Quick Links</strong></h3>
-                                            <table class="table">
-                                                <tbody>
-                                                    <tr style="background-color:#0094ff!important;">
-                                                        <td align="center"><a href="@Url.Content("~/PO/AddEditPO?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New PO</a></td>
-                                                        <td align="center"><a href="@Url.Content("~/PurchaseInvoice/AddEditPI?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New PI</a></td>
-                                                        <td align="center"><a href="@Url.Content("~/Vendor/AddEditVendor?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Vendor</a></td>
-                                                    </tr>
-                                                    <tr style="background-color:#0094ff!important;">
-                                                        <td align="center"><a href="@Url.Content("~/PurchaseIndent/AddEditPurchaseIndent?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Pur. Indent</a></td>
-                                                        <td align="center"><a href="@Url.Content("~/PurchaseReturn/AddEditPurchaseReturn?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Pur. Return </a></td>
-                                                        <td align="center"><a href="@Url.Content("~/PurchaseQuotation/AddEditPurchaseQuotation?accessMode=1")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New Pur. Quotation</a></td>
-                                                    </tr>
-                                                    <tr style="background-color:#0094ff!important;">
-                                                        <td align="center"><a href="@Url.Content("~/PurchaseInvoiceImport/AddEditPurchaseInvoiceImport")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New PI Import</a></td>
-                                                        <td align="center"><a href="@Url.Content("~/PurchaseIndent/ListApprovedPurchaseIndent")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">Approved Pur. Indent</a></td>
-                                                        <td align="center"><a href="@Url.Content("~/PORegister/ListPORegister")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">PO Register</a></td>
-
-                                                    </tr>
-                                                    <tr style="background-color:#0094ff!important;">
-                                                        <td align="center"><a href="@Url.Content("~/PurchaseInvoiceImport/AddEditPurchaseInvoiceImport")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">New PI Import</a></td>
-                                                        <td align="center"><a href="@Url.Content("~/PurchaseIndent/ListApprovedPurchaseIndent")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">Approved Pur. Indent</a></td>
-                                                        <td align="center"><a href="@Url.Content("~/PORegister/ListPORegister")" target="_blank" style="text-decoration:none;color:#fff;font-size:15px;">PO Register</a></td>
-
-                                                    </tr>
-                                                </tbody>
-                                            </table>
                                         </div>
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                   
-                    <div class="col-md-5">
-                        &nbsp;
-                    </div>
-                </div>
-                    <div class="row">
-                        <div id="tabs">
-                            <ul>
-                                <li><a href="#tabs-1">Graphical Representation</a></li>
-                                @*<li><a href="#tabs-2">Purchase Summary</a></li>*@
-                            </ul>
-                            <div id="tabs-1">
-                                <div class="row">
-                                    <div class="col-md-4" style="padding:10px" id="divPOCountChart">
-                                        <canvas id="barcanvasPO" height="200" width="200"></canvas>
-                                    </div>
-                                    <div class="col-md-4" style="padding:10px" id="divPIICountChart">
-                                        <canvas id="barcanvasPII" height="200" width="200"></canvas>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div id="tabs-2">
-                                &nbsp;
-                            </div>
+                                    </form>
+                                </li>
+                            }
                         </div>
                     </div>
                 </div>
-            </div>
 
-            
+                <div class="market-updates" style="clear:both;margin-top: 10px;margin-left: 12px;">
+                    <a href="@Url.Content("~/PO/ListPO")">
+                        <div class="col-md-3 col-sm-3 col-xs-12 col-lg-3 market-update-gd crm-box">
+                            <div class="market-update-block clr-block-2">
+                                <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8 market-update-left">
+                                    <h4>New Purchase order</h4>
+                                    <p>Today Purchase order value</p>
+                                    <h3><i style="font-size: 30px;color: aliceblue;" class="fa fa-inr">&nbsp;</i><label id="lblTodayPOSum" style="color: white;"></label> </h3>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4 market-update-right">
 
-        </div>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="@Url.Content("~/PurchaseInvoice/ListPI")">
+                        <div class="col-md-3 market-update-gd crm-box-1">
+                            <div class="market-update-block clr-block-3">
+                                <div class="col-md-8 market-update-left">
+                                    <h4>New Purchase Invoice</h4>
+                                    <p>Today Purchase Invoice value</p>
+                                    <h3><i style="font-size: 30px;color: aliceblue;" class="fa fa-inr">&nbsp;</i><label id="lblTodayPISum" style="color: white;"></label></h3>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4 market-update-right">
 
-                <!--end body content -->
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12 col-lg-3 climate-grids crm-box" style="background:#fff;padding-right: 0; margin-left:10px;">
+                        <div class="climate-grid3">
+                            <div class="popular-brand" style="margin-top:18px;">
+                                <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 popular-bran-left">
+                                    <h4><i aria-hidden="true"></i><a href="@Url.Content("~/PO/AddEditPO")" ) target="_blank">Add New PO</a></h4>
+                                    <h4><i aria-hidden="true"></i><a href="@Url.Content("~/PurchaseInvoice/AddEditPI")" )target="_blank">Add New PI</a></h4>
+                                    <h4><i aria-hidden="true"></i><a href="@Url.Content("~/Vendor/AddEditVendor")" )target="_blank">Add New Vendor</a></h4>
+
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 popular-bran-right" style="margin-top: -19px; min-height: 132px;">
+                                    <h3 style="margin-top: -17px;"><i class="fa fa-link" aria-hidden="true" style="color: white;font-size: 38px; margin-top: 16px;"></i></h3>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="clearfix"> </div>
+
+                </div>
+
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#tabs-1">Purchase Summary</a></li>
+                        <li><a href="#tabs-2">Graphical Representation</a></li>
+                    </ul>
+                    <div id="tabs-1">
+                        <div class="row">
+                            <div class="col-md-4" id="DivPOCount">
+
+                            </div>
+
+
+                            <div class="col-md-4" id="DivPIICount">
+
+                            </div>
+                            <div class="col-md-4" id="DivPOPending">
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4" id="DivIndentCount">
+
+                            </div>
+
+
+                            <div class="col-md-4" id="DivPIIC">
+
+                            </div>
+                            <div class="col-md-4" id="DivPO">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tabs-2">
+                        <div class="row">
+                            <div class="col-md-4" style="padding:10px" id="divPOCountChart">
+                                <canvas id="barcanvasPO" height="200" width="200"></canvas>
+                            </div>
+                            <div class="col-md-4" style="padding:10px" id="divPIICountChart">
+                                <canvas id="barcanvasPII" height="200" width="200"></canvas>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-
-
-<script src="~/Scripts/jquery-ui.js"></script>
+        <!--end body content -->
+    </div>
+</div>
 <script src="~/Scripts/Chart.bundle.min.js"></script>
 <!--Angular Script File-->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
