@@ -3646,7 +3646,7 @@ namespace Portal.DAL
                     responseOut.message = ActionMessage.DuplicateEmployeeDetail;
                 }
 
-                else if (entities.Employees.Any(x => x.UANNo == employee.UANNo && x.EmployeeId != employee.EmployeeId))
+                else if (entities.Employees.Any(x => x.UANNo == employee.UANNo && x.UANNo != null && x.EmployeeId != employee.EmployeeId))
                 {
                     responseOut.status = ActionStatus.Fail;
                     responseOut.message = ActionMessage.DuplicateUANNoDetail;
