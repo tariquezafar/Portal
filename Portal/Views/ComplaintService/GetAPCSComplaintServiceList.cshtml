@@ -57,6 +57,10 @@
                     {
                         item.ComplaintStatusCon = "DisApproved";
                     }
+                    else if (item.ComplaintStatus == 4)
+                    {
+                        item.ComplaintStatusCon = "Acknowledge";
+                    }
                     if (item.ComplaintService_Status == true)
                     {
                         <tr class="success">
@@ -65,7 +69,7 @@
                                 </td>*@
 
                             <td>
-                                <a style="color:darkblue" title="View" class="fa fa-eye" aria-hidden="true" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=4"></a>
+                                <a style="color:darkblue" title="View" class="fa fa-pencil" aria-hidden="true" href="~/ComplaintService/AddEditComplaintService?complaintServiceId=@item.ComplaintId&AccessMode=4"></a>
                             </td>
                             @*<td class="teal text" style="margin:0px auto;">
 

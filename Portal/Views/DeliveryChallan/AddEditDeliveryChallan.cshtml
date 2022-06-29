@@ -91,7 +91,7 @@
                         <div class="form-group col-md-4">
                             <label for="txtChallanNo" class="col-sm-4 control-label">Challan No.</label>
                             <div class="col-sm-8">
-                                <input class="form-control" id="txtChallanNo" name="txtChallanNo" tabindex="1"  placeholder="Auto Generated Challan No." type="text" maxlength="100" />
+                                <input class="form-control" id="txtChallanNo" name="txtChallanNo" tabindex="1" placeholder="Auto Generated Challan No." type="text" maxlength="100" />
                                 <a style="display:none;" class="btn btn-success" id="btnAddNew" tabindex="2" href="@Url.Content("~/DeliveryChallan/AddEditDeliveryChallan?accessMode=1")">New</a>
                                 <a style="display:none;color:#fff;" class="btn btn-success" id="btnEmail" tabindex="3" onclick="SendMail()">Email</a>
                                 <a style="display:none;" class="btn btn-success" target="_blank" tabindex="4" href="@Url.Action("Report",new {challanId=ViewData["challanId"], reportType="PDF" })" id="btnPrint">Print</a>
@@ -99,7 +99,7 @@
                                 <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
                                 <input id="hdnRoleId" type="hidden" value="@ViewData["RoleId"]" />
                                 <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
-                                <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" /> 
+                                <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
                             </div>
                         </div>
                         <div class="form-group col-md-4">
@@ -129,22 +129,24 @@
 
 
                         <div class="form-group col-md-4">
-                            <label for="txtInvoiceNo" class="col-sm-4 control-label">Invoice No&nbsp;<span class="Mandatory">(*)</span></label>
+                            <label for="txtInvoiceNo" class="col-sm-4 control-label">Invoice No</label>
                             <div class="col-sm-8">
                                 <input class="form-control" id="txtInvoiceNo" name="txtInvoiceNo" tabindex="6" placeholder="Invoice No" type="text" maxlength="100" />
                                 <input id="hdnInvoiceId" type="hidden" value="0" />
                             </div>
-                              <a class="fa fa-search col-sm-1" tabindex="7" onclick="OpenInvoiceSearchPopup()" id="btnSearchInvoice" style="padding-top:5px; float: right !important; z-index:500;margin-right: -21px; margin-top: -29px;" href="#"></a>
+                            <a class="fa fa-search col-sm-1" tabindex="7" onclick="OpenInvoiceSearchPopup()" id="btnSearchInvoice" style="padding-top:5px; float: right !important; z-index:500;margin-right: -21px; margin-top: -29px;" href="#"></a>
                         </div>
-                     
+
                         <div class="form-group col-md-4">
-                            <label for="txtCustomerCode" class="col-sm-4 control-label">Party Code</label>
-                            <div class="col-sm-8 ">
-                                <input class="form-control" id="txtCustomerCode" name="txtCustomerCode" tabindex="17" placeholder="Party Code" type="text" maxlength="50" />
+                            <label for="txtDispatchNo" class="col-sm-4 control-label">Dispatch No</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtDispatchNo" name="txtDispatchNo" tabindex="6" placeholder="Dispatch No" type="text" maxlength="100" />
+                                <input id="hdnDispatchId" type="hidden" value="0" />
                             </div>
+                            <a class="fa fa-search col-sm-1" tabindex="7" onclick="OpenDispatchSearchPopup()" id="btnSearchInvoice" style="padding-top:5px; float: right !important; z-index:500;margin-right: -21px; margin-top: -29px;" href="#"></a>
                         </div>
-                      
-                        
+
+
                     </div>
                     <div class="col-md-12">
                         <div class="form-group col-md-4">
@@ -167,7 +169,7 @@
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="col-md-12">
                         <div class="form-group col-md-4">
                             <label for="txtSAddress" class="col-sm-4 control-label">Shipping Address&nbsp;<span class="Mandatory">(*)</span></label>
@@ -193,7 +195,7 @@
                         </div>
 
                     </div>
-                
+
                     <div class="col-md-12">
                         <div class="form-group col-md-4">
                             <label for="ddlSCountry" class="col-sm-4 control-label">Country&nbsp;<span class="Mandatory">(*)</span></label>
@@ -235,7 +237,7 @@
                             </div>
                         </div>
                     </div>
-                 
+
 
                     <div class="col-md-12">
                         <div class="form-group col-md-4">
@@ -271,6 +273,14 @@
                                 <input class="form-control numeric-only input-number " id="txtNoOfPackets" name="txtNoOfPackets" tabindex="35" placeholder="Enter No of Packets" type="text" maxlength="50" />
                             </div>
                         </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="txtCustomerCode" class="col-sm-4 control-label">Party Code</label>
+                            <div class="col-sm-8 ">
+                                <input class="form-control" id="txtCustomerCode" name="txtCustomerCode" tabindex="17" placeholder="Party Code" type="text" maxlength="50" />
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="col-md-12" id="divCreated" style="display:none;">
@@ -370,7 +380,7 @@
                                 <input class="form-control" id="txtUOMName" name="txtUOMName" tabindex="48" placeholder="Unit" type="text" maxlength="50" />
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-12 productsection" style="display:none;">
                         <div class="form-group col-md-4">
@@ -398,7 +408,7 @@
                         <div class="form-group col-md-4">
                             <label for="txtProductTaxName" class="col-sm-4 control-label">Tax</label>
                             <div class="col-sm-8">
-                                <input class="form-control" id="txtProductTaxName" name="txtProductTaxName" tabindex="52"  placeholder="Enter Tax Name" type="text" maxlength="100" />
+                                <input class="form-control" id="txtProductTaxName" name="txtProductTaxName" tabindex="52" placeholder="Enter Tax Name" type="text" maxlength="100" />
                                 <input id="hdnProductTaxId" type="hidden" value="0" />
                                 <input id="hdnProductTaxPerc" type="hidden" value="0" />
                             </div>
@@ -406,11 +416,11 @@
                         <div class="form-group col-md-4">
                             <label for="txtProductTaxAmount" class="col-sm-4 control-label">Tax Amount</label>
                             <div class="col-sm-8">
-                                <input id="txtProductTaxAmount" name="txtProductTaxAmount" type="text"  maxlength="12" tabindex="53" class="form-control input-number right-text" />
+                                <input id="txtProductTaxAmount" name="txtProductTaxAmount" type="text" maxlength="12" tabindex="53" class="form-control input-number right-text" />
                             </div>
                         </div>
                         <div class="form-group col-md-4">
-                            
+
                         </div>
                     </div>
 
@@ -479,9 +489,9 @@
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
                             <center>
-                                <input class="btn btn-success" value="Add Product" alt="Add Product" id="btnAddProduct" tabindex="62" onclick="AddProduct(1)" type="button" border="0"> 
-                                <input class="btn btn-success" value="Update Product" style="display:none;" tabindex="62" alt="Update Product" id="btnUpdateProduct" onclick="AddProduct(2)" type="button" border="0"> 
-                                <input class="btn btn-success" type="button" id="btnCancelProduct" tabindex="63" onclick="ShowHideProductPanel(2)" value="Cancel" />  
+                                <input class="btn btn-success" value="Add Product" alt="Add Product" id="btnAddProduct" tabindex="62" onclick="AddProduct(1)" type="button" border="0">
+                                <input class="btn btn-success" value="Update Product" style="display:none;" tabindex="62" alt="Update Product" id="btnUpdateProduct" onclick="AddProduct(2)" type="button" border="0">
+                                <input class="btn btn-success" type="button" id="btnCancelProduct" tabindex="63" onclick="ShowHideProductPanel(2)" value="Cancel" />
                             </center>
                         </div>
                         <div class="col-md-3"></div>
@@ -548,7 +558,7 @@
                             <center>
                                 <input class="btn btn-success" value="Add Tax" alt="Add Tax" id="btnAddTax" tabindex="69" onclick="AddTax(1)" type="button" border="0">
                                 <input class="btn btn-success" value="Update Tax" style="display:none;" tabindex="69" alt="Update Tax" id="btnUpdateTax" onclick="AddTax(2)" type="button" border="0">
-                                <input class="btn btn-success" type="button" id="btnCancelTax" tabindex="70" onclick="ShowHideTaxPanel(2)" value="Cancel" /> 
+                                <input class="btn btn-success" type="button" id="btnCancelTax" tabindex="70" onclick="ShowHideTaxPanel(2)" value="Cancel" />
                             </center>
                         </div>
                         <div class="col-md-3"></div>
@@ -694,7 +704,7 @@
                             </div>
                         </div>
                     </div>
-               
+
                     <div class="col-md-12  ftop">
                         <div class="form-group col-md-4">
                             <label for="ddlTermTemplate" class="col-sm-4 control-label">Terms Template</label>
@@ -743,12 +753,12 @@
 
                 </div>
                 <div id="tabs-2">
-                   
+
                 </div>
 
                 <div id="tabs-3">
                     <div class="col-md-12  ftop">
-                        <div class="form-group col-md-4"> 
+                        <div class="form-group col-md-4">
                         </div>
                         <div class="form-group col-md-4" style="background-color:yellow">
                             <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Document(s) Detail</b></label></h4>
@@ -780,7 +790,7 @@
                             <center>
                                 <input class="btn btn-success" value="Add Document" alt="Add Document" id="btnAddDocument" tabindex="4" onclick="SaveDocument()" type="button" border="0">
                                 <input class="btn btn-success" value="Update Document" style="display:none;" tabindex="4" alt="Update Document" id="btnUpdateDocument" onclick="SaveDocument()" type="button" border="0">
-                                <input class="btn btn-success" type="button" id="btnCancelDocument" tabindex="5" onclick="ShowHideDocumentPanel(2)" value="Cancel" /> 
+                                <input class="btn btn-success" type="button" id="btnCancelDocument" tabindex="5" onclick="ShowHideDocumentPanel(2)" value="Cancel" />
                             </center>
                         </div>
                         <div class="col-md-3"></div>
@@ -799,7 +809,7 @@
                     <div class="col-sm-6">
                         <select id="ddlApprovalStatus" name="ddlApprovalStatus" tabindex="94" class="form-control">
                             <option selected="selected" value="Draft">Draft</option>
-                            <option value="Final">Final</option> 
+                            <option value="Final">Final</option>
                         </select>
 
                     </div>
@@ -808,7 +818,7 @@
                     <center>
                         <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="95" onclick="ExecuteSave(1)" type="button" border="0">
                         <input class="btn btn-success" value="Update" style="display:none;" tabindex="95" alt="Update" id="btnUpdate" onclick="ExecuteSave(2)" type="button" border="0">
-                        <input class="btn btn-success" type="button" id="btnReset" tabindex="98" onclick="Reset()" value="Reset" /> 
+                        <input class="btn btn-success" type="button" id="btnReset" tabindex="98" onclick="Reset()" value="Reset" />
                         <a class="btn btn-success" id="btnList" tabindex="99" href="@Url.Content("~/DeliveryChallan/ListChallan")">Search Delivery Challan</a>
                     </center>
                 </div>
@@ -917,6 +927,72 @@
 
             </div>
         </div>
+
+        <div class="modal fade" id="SearchDispatchModel" role="dialog">
+            <div class="modal-dialog  modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Search Dispatch</h4>
+                    </div>
+                    <div class="">
+                        <div class="col-md-12 ftop">
+                            <div class="form-group col-md-6">
+                                <label for="txtSearchDispatchNo" class="col-sm-4 control-label">Dispatch No.</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtSearchDispatchNo" name="txtSearchDispatchNo" tabindex="8" placeholder="Search with Dispatch No." type="text" maxlength="50" />
+                                </div>
+                            </div>
+                            <div class="form-group  col-md-6">
+                                <label for="txtSearchCustomerName" class="col-sm-4 control-label">Customer Name</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="txtSearchCustomerName" name="txtSearchCustomerName" tabindex="9" placeholder="Search with Customer Name" type="text" maxlength="100" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12">
+                            <div class="form-group col-md-6">
+                                <label for="txtSearchDispatchFromDate" class="col-sm-4 control-label">Dispatch From Date</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtSearchDispatchFromDate" name="txtSearchDispatchFromDate" tabindex="12" value="@ViewData["fromDate"]" type="text" maxlength="50" />
+                                    <input id="hdnDispatchFromDate" name="hdnDispatchFromDate" value="@ViewData["fromDate"]" type="hidden" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="txtSearchDispatchToDate" class="col-sm-4 control-label">Dispatch To Date</label>
+                                <div class="col-sm-8 ">
+                                    <input class="form-control" id="txtSearchDispatchToDate" name="txtSearchDispatchToDate" tabindex="13" value="@ViewData["toDate"]" type="text" maxlength="50" />
+                                    <input id="hdnDispatchToDate" name="hdnDispatchToDate" value="@ViewData["toDate"]" type="hidden" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row col-sm-12 col-lg-12 col-md-12">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <center>
+                                    <input class="btn btn-success" value="Search" alt="Search" id="btnSearch" tabindex="14" onclick="SearchDispatch()" type="button" border="0">
+                                </center>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="row col-sm-6 col-lg-12 col-md-12">
+                            <div id="divDispatchList">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" tabindex="15" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </form>
 </section>
 

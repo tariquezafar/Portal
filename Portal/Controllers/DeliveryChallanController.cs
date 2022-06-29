@@ -284,6 +284,22 @@ namespace Portal.Controllers
             return PartialView(invoices);
         }
 
+        [HttpGet]
+        public PartialViewResult GetSaleDispatchList(string saledispatchNo = "", string customerName = "", string fromDate = "", string toDate = "",int companyBranchId = 0)
+        {
+            List<SaleDispatchViewModel> invoices = new List<SaleDispatchViewModel>();
+            SaleInvoiceBL saleinvoiceBL = new SaleInvoiceBL();
+            try
+            {
+                invoices = saleinvoiceBL.GetSaleDispatchList(saledispatchNo, customerName,fromDate, toDate, companyBranchId, Convert.ToInt32(Session[SessionKey.CustomerId]));
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+            }
+            return PartialView(invoices);
+        }
+
 
         [HttpGet]
         public JsonResult GetCustomerBranchList(int customerId)

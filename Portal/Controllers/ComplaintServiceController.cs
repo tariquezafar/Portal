@@ -190,7 +190,7 @@ namespace Portal.Controllers
         }
 
         [HttpGet]
-        public PartialViewResult GetAPCSComplaintServiceList(string complaintNo = "", string enquiryType = "", string complaintMode = "", string customerMobile = "", string customerName = "", string approvalStatus = "", int companyBranchId = 0, int serviceEngineerId = 0, int dealerId = 0, int complaintStatus = 1)
+        public PartialViewResult GetAPCSComplaintServiceList(string complaintNo = "", string enquiryType = "", string complaintMode = "", string customerMobile = "", string customerName = "", string approvalStatus = "", int companyBranchId = 0, int serviceEngineerId = 0, int dealerId = 0, int complaintStatus = 4)
         {
             List<ComplaintServiceViewModel> complaints = new List<ComplaintServiceViewModel>();
             ComplaintServiceBL complaintServiceBL = new ComplaintServiceBL();

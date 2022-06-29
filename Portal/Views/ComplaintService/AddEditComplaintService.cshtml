@@ -239,33 +239,41 @@
                             <div class="col-sm-8">
                                 @if (Convert.ToInt32(ViewData["userId"]) != 0)
                                 {
-                                    <select id="ddlStatus" name="ddlStatus" tabindex="3" class="form-control" disabled>
-                                        <option selected="selected" value="0">Select Complaint Status</option>
-                                        @if (Convert.ToInt32(ViewData["accessMode"]) == 1 || Convert.ToInt32(ViewData["accessMode"]) == 2 || Convert.ToInt32(ViewData["accessMode"]) == 3)
-                                        {
-                                            <option value="1">Open</option>
-                                        }
-                                        @if (Convert.ToInt32(ViewData["accessMode"]) == 4)
-                                        {
-                                            <option value="2">Approved</option>
-                                            <option value="3">DisApproved</option>
-                                        }
+                                <select id="ddlStatus" name="ddlStatus" tabindex="3" class="form-control" disabled>
+                                    <option selected="selected" value="0">Select Complaint Status</option>
+                                    @if (Convert.ToInt32(ViewData["accessMode"]) == 1 || Convert.ToInt32(ViewData["accessMode"]) == 2 || Convert.ToInt32(ViewData["accessMode"]) == 3)
+                                    {
+                                        <option value="1">Open</option>
+                                    }
+                                    @if (Convert.ToInt32(ViewData["accessMode"]) == 4)
+                                    {
+                                        <option value="2">Approved</option>
+                                        <option value="3">DisApproved</option>
+                                    }
+                                    @if (Convert.ToInt32(ViewData["userId"]) != 0)
+                                    {
+                                        <option value="4">Acknowledge</option>
+                                    }
                                     </select>
                                 }
                                 else
                                 {
-                                    <select id="ddlStatus" name="ddlStatus" tabindex="3" class="form-control">
-                                        <option selected="selected" value="0">Select Complaint Status</option>
-                                        @if (Convert.ToInt32(ViewData["accessMode"]) == 1 || Convert.ToInt32(ViewData["accessMode"]) == 2 || Convert.ToInt32(ViewData["accessMode"]) == 3)
-                                        {
-                                            <option value="1">Open</option>
-                                        }
-                                        @if (Convert.ToInt32(ViewData["accessMode"]) == 4)
-                                        {
-                                            <option value="2">Approved</option>
-                                            <option value="3">DisApproved</option>
-                                        }
-                                    </select>
+                            <select id="ddlStatus" name="ddlStatus" tabindex="3" class="form-control">
+                                <option selected="selected" value="0">Select Complaint Status</option>
+                                @if (Convert.ToInt32(ViewData["accessMode"]) == 1 || Convert.ToInt32(ViewData["accessMode"]) == 2 || Convert.ToInt32(ViewData["accessMode"]) == 3)
+                                {
+                                    <option value="1">Open</option>
+                                }
+                                @if (Convert.ToInt32(ViewData["accessMode"]) == 4)
+                                {
+                                    <option value="2">Approved</option>
+                                    <option value="3">DisApproved</option>
+                                }
+                                @if (Convert.ToInt32(ViewData["userId"]) != 0)
+                                {
+                                    <option value="4">Acknowledge</option>
+                                }
+                                </select>
 
                                 }
                             </div>

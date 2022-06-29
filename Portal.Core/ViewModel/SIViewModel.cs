@@ -159,6 +159,159 @@ namespace Portal.Core.ViewModel
 
         public string SaleInvoiceType { get; set; }
     }
+
+    public class SaleDispatchViewModel
+    {
+
+        public string ChallanNo { get; set; }
+        public long DispatchId { get; set; }
+        public string DispatchNo { get; set; }
+        public string DispatchDate { get; set; }
+        public int CompanyBranchId { get; set; }
+        public string CompanyBranchName { get; set; }
+        public string CurrencyCode { get; set; }
+        public int SOId { get; set; }
+        public string SONo { get; set; }
+        public string SODate { get; set; }
+        public int CustomerId { get; set; }
+        public string CustomerCode { get; set; }
+
+        public string SaleType { get; set; }
+        public string CustomerName { get; set; }
+        public string ContactPerson { get; set; }
+        public string BillingAddress { get; set; }
+        public string City { get; set; }
+        public int StateId { get; set; }
+        public string StateName { get; set; }
+        public int CountryId { get; set; }
+        public string CountryName { get; set; }
+        public string PinCode { get; set; }
+        public string CSTNo { get; set; }
+        public string TINNo { get; set; }
+        public string PANNo { get; set; }
+        public string GSTNo { get; set; }
+        public string ExciseNo { get; set; }
+        public string Email { get; set; }
+        public string MobileNo { get; set; }
+        public string ContactNo { get; set; }
+        public string Fax { get; set; }
+
+        public string ShippingContactPerson { get; set; }
+        public string ShippingBillingAddress { get; set; }
+        public string ShippingCity { get; set; }
+        public int ShippingStateId { get; set; }
+        public string ShippingStateName { get; set; }
+        public int ShippingCountryId { get; set; }
+        public string ShippingCountryName { get; set; }
+        public string ShippingPinCode { get; set; }
+        public string ShippingTINNo { get; set; }
+        public string ShippingEmail { get; set; }
+        public string ShippingMobileNo { get; set; }
+        public string ShippingContactNo { get; set; }
+        public string ShippingFax { get; set; }
+
+        public string RefNo { get; set; }
+        public string RefDate { get; set; }
+        public decimal BasicValue { get; set; }
+        public decimal BasicAmt { get; set; }
+        public decimal LoadingValue { get; set; }
+        public decimal FreightValue { get; set; }
+        public decimal CGST_Amount { get; set; }
+        public decimal SGST_Amount { get; set; }
+        public decimal IGST_Amount { get; set; }
+        public decimal TotalValue { get; set; }
+        public int PayToBookId { get; set; }
+        public string PayToBookName { get; set; }
+        public string PayToBookBranch { get; set; }
+
+        public string Remarks { get; set; }
+        public int FinYearId { get; set; }
+        public int CompanyId { get; set; }
+        public int CreatedBy { get; set; }
+
+
+
+
+        public string CreatedByUserName { get; set; }
+        public string CreatedDate { get; set; }
+        public int Modifiedby { get; set; }
+        public string ModifiedByUserName { get; set; }
+        public string ModifiedDate { get; set; }
+        public bool InvoiceRevisedStatus { get; set; }
+        public bool InvoiceStatus { get; set; }
+        public string ApprovalStatus { get; set; }
+        public int ApprovedBy { get; set; }
+        public string ApprovedByUserName { get; set; }
+        public string ApprovedDate { get; set; }
+        public string RejectionStatus { get; set; }
+        public int RejectedBy { get; set; }
+        public string RejectedByUserName { get; set; }
+        public string RejectedDate { get; set; }
+        public string RejectedReason { get; set; }
+        public string CancelStatus { get; set; }
+        public int CancelBy { get; set; }
+        public string CancelByUserName { get; set; }
+        public string CancelDate { get; set; }
+        public string CancelReason { get; set; }
+        public string message { get; set; }
+        public string status { get; set; }
+        public int ConsigneeId { get; set; }
+        public string ConsigneeCode { get; set; }
+        public string ConsigneeName { get; set; }
+        public bool ReverseChargeApplicable { get; set; }
+        public decimal ReverseChargeAmount { get; set; }
+        public decimal InsuranceValue { get; set; }
+        public decimal FreightCGST_Amt { get; set; }
+        public decimal FreightSGST_Amt { get; set; }
+        public decimal FreightIGST_Amt { get; set; }
+        public decimal LoadingCGST_Amt { get; set; }
+        public decimal LoadingSGST_Amt { get; set; }
+        public decimal LoadingIGST_Amt { get; set; }
+        public decimal InsuranceCGST_Amt { get; set; }
+        public decimal InsuranceSGST_Amt { get; set; }
+        public decimal InsuranceIGST_Amt { get; set; }
+        public decimal FreightCGST_Perc { get; set; }
+        public decimal FreightSGST_Perc { get; set; }
+        public decimal FreightIGST_Perc { get; set; }
+        public decimal LoadingCGST_Perc { get; set; }
+        public decimal LoadingSGST_Perc { get; set; }
+        public decimal LoadingIGST_Perc { get; set; }
+        public decimal InsuranceCGST_Perc { get; set; }
+        public decimal InsuranceSGST_Perc { get; set; }
+        public decimal InsuranceIGST_Perc { get; set; }
+        public decimal TotalQuantity { get; set; }
+        public decimal RoundOfValue { get; set; }
+        public decimal GrossValue { get; set; }
+        public decimal Price { get; set; }
+        public string ProductName { get; set; }
+
+        public string TransportName { get; set; }
+        public string VehicleNo { get; set; }
+        public string BiltyNo { get; set; }
+        public string BiltyDate { get; set; }
+
+        public string AdharcardNo { get; set; }
+        public string Pancard { get; set; }
+        public string IdtypeName { get; set; }
+        public string IdtypeValue { get; set; }
+        public string BranchType { get; set; }
+
+        public decimal RtoRegsValue { get; set; }
+        public decimal RtoRegsCGST_Amt { get; set; }
+        public decimal RtoRegsSGST_Amt { get; set; }
+        public decimal RtoRegsIGST_Amt { get; set; }
+        public decimal RtoRegsCGST_Perc { get; set; }
+        public decimal RtoRegsSGST_Perc { get; set; }
+        public decimal RtoRegsIGST_Perc { get; set; }
+        public decimal VehicleInsuranceValue { get; set; }
+
+        public string HypothecationBy { get; set; }
+        public string EwayBillNo { get; set; }
+        public int SaleEmpId { get; set; }
+        public string SaleEmployeeName { get; set; }
+
+        public string SaleInvoiceType { get; set; }
+    }
     public class SaleInvoiceProductViewModel
     {
         public long InvoiceProductDetailId { get; set; }

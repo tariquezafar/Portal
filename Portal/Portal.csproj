@@ -4192,6 +4192,7 @@
     <Content Include="Views\ComplaintService\GetAPCSComplaintServiceList.cshtml" />
     <Content Include="Views\ComplaintService\GetComplaintSupportingDocumentList.cshtml" />
     <Content Include="Views\Return\GetComplaintInvoiceReturnList.cshtml" />
+    <Content Include="Views\DeliveryChallan\GetSaleDispatchList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\City\ListCity.cshtml" />

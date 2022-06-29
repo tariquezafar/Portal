@@ -5,9 +5,12 @@
     $("#txtChallanNo").attr('readOnly', true);
     $("#txtChallanDate").attr('readOnly', true);
     $("#txtInvoiceNo").attr('readOnly', true);
+    $("#txtDispatchNo").attr('readOnly', true);
     $("#txtInvoiceDate").attr('readOnly', true);
     $("#txtSearchFromDate").attr('readOnly', true);
     $("#txtSearchToDate").attr('readOnly', true);
+    $("#txtSearchDispatchFromDate").attr('readOnly', true);
+    $("#txtSearchDispatchToDate").attr('readOnly', true);
     $("#txtDispatchRefDate").attr('readOnly', true);
     $("#txtLRDate").attr('readOnly', true);
 
@@ -329,7 +332,7 @@
 
         }
     });
-    $("#txtSearchFromDate,#txtSearchToDate").datepicker({
+    $("#txtSearchFromDate,#txtSearchToDate,#txtSearchDispatchFromDate,#txtSearchDispatchToDate").datepicker({
         changeMonth: true,
         changeYear: true,
         dateFormat: 'dd-M-yy',
@@ -2489,6 +2492,7 @@ function ClearFields() {
     $("#txtConsigneeName").val("");
     $("#txtConsigneeCode").val("");
     $("#txtInvoiceNo").val("");
+    $("#txtDispatchNo").val("");
     $("#txtInvoiceDate").val("");
     $("#txtInvoiceId").val("0"); 
     $("#ddlSCustomerBranch").val("0");
@@ -2659,6 +2663,17 @@ function OpenInvoiceSearchPopup() {
     $("#SearchInvoiceModel").modal();
 
 }
+
+function OpenDispatchSearchPopup() {
+    if ($("#ddlCompanyBranch").val() == "0" || $("#ddlCompanyBranch").val() == "") {
+        ShowModel("Alert", "Please Select Company Branch");
+        return false;
+    }
+    $("#divDispatchList").html("");
+    $("#SearchDispatchModel").modal();
+
+}
+
 function validateStateSelection(action) {
     var hdnCustomerStateId = $("#ddlSState");
     var hdnBillingStateId = $("#hdnBillingStateId");
@@ -2698,6 +2713,31 @@ function SearchInvoice() {
         }
     });
 }
+
+function SearchDispatch() {
+    var txtDispatchNo = $("#txtSearchDispatchNo");
+    var txtCustomerName = $("#txtSearchCustomerName");
+    var txtDispatchFromDate = $("#txtSearchDispatchFromDate");
+    var txtDispatchToDate = $("#txtSearchDispatchToDate");
+    var ddlCompanyBranch = $("#ddlCompanyBranch");
+
+    var requestData = { saledispatchNo: txtDispatchNo.val().trim(), customerName: txtCustomerName.val().trim(), fromDate: txtDispatchFromDate.val(), toDate: txtDispatchToDate.val(),companyBranchId: ddlCompanyBranch.val() };
+    $.ajax({
+        url: "../DeliveryChallan/GetSaleDispatchList",
+        data: requestData,
+        dataType: "html",
+        type: "GET",
+        error: function (err) {
+            $("#divDispatchList").html("");
+            $("#divDispatchList").html(err);
+        },
+        success: function (data) {
+            $("#divDispatchList").html("");
+            $("#divDispatchList").html(data);
+        }
+    });
+}
+
 function SelectInvoice(invoiceId, saleinvoiceNo, invoiceDate, customerId, customerCode, customerName, consigneeId, consigneeCode, consigneeName) {
     $("#txtInvoiceNo").val(saleinvoiceNo);
     $("#hdnInvoiceId").val(invoiceId);
@@ -2726,6 +2766,36 @@ function SelectInvoice(invoiceId, saleinvoiceNo, invoiceDate, customerId, custom
     $("#txtCustomerName").attr('disabled', true);
     $("#txtConsigneeName").attr('disabled', true);
     $("#SearchInvoiceModel").modal('hide');
+}
+
+function SelectDispatch(dispatchId, dispatchNo, dispatchDate, customerId, customerCode, customerName) {
+    $("#txtDispatchNo").val(dispatchNo);
+    $("#hdnDispatchId").val(dispatchId);
+    ////$("#txtInvoiceDate").val(invoiceDate);
+    $("#hdnCustomerId").val(customerId);
+    $("#txtCustomerCode").val(customerCode);
+    $("#txtCustomerName").val(customerName);
+    ////$("#hdnConsigneeId").val(consigneeId);
+    ////$("#txtConsigneeCode").val(consigneeCode);
+    ////$("#txtConsigneeName").val(consigneeName);
+
+
+    $("#ddlCompanyBranch").attr('disabled', true);
+    $("#txtLoadingValue").attr('disabled', true);
+    $("#txtFreightValue").attr('disabled', true);
+    $("#txtInsuranceValue").attr('disabled', true);
+
+    ////GetConsigneeDetail(consigneeId);
+    ////GetSaleInvoiceDetail(invoiceId);
+    ////var saleinvoiceProducts = [];
+    ////GetSaleInvoiceProductList(saleinvoiceProducts, invoiceId);
+    ////var saleinvoiceTaxes = [];
+    ////GetSaleInvoiceTaxList(saleinvoiceTaxes, invoiceId);
+    ////var saleinvoiceTerms = [];
+    ////GetSaleInvoiceTermList(saleinvoiceTerms, invoiceId);
+    $("#txtCustomerName").attr('disabled', true);
+    $("#txtConsigneeName").attr('disabled', true);
+    $("#SearchDispatchModel").modal('hide');
 }
  
 function GetSaleInvoiceProductList(saleinvoiceProducts, invoiceId) {
