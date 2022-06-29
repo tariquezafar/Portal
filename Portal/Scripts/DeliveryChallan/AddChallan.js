@@ -2768,9 +2768,10 @@ function SelectInvoice(invoiceId, saleinvoiceNo, invoiceDate, customerId, custom
     $("#SearchInvoiceModel").modal('hide');
 }
 
-function SelectDispatch(dispatchId, dispatchNo, dispatchDate, customerId, customerCode, customerName) {
+function SelectDispatch(dispatchId, dispatchNo, dispatchDate, customerId, customerCode, customerName,city) {
     $("#txtDispatchNo").val(dispatchNo);
-    $("#hdnDispatchId").val(dispatchId);
+    $("#hdnDispatchId").val(dispatchId); 
+    $("#txtSCity").val(city);
     ////$("#txtInvoiceDate").val(invoiceDate);
     $("#hdnCustomerId").val(customerId);
     $("#txtCustomerCode").val(customerCode);
