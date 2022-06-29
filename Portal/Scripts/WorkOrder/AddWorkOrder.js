@@ -425,6 +425,7 @@ function GetWorkOrderDetail(workOrderId) {
         data: { workOrderId: workOrderId },
         dataType: "json",
         success: function (data) {
+
             $("#txtWorkOrderNo").val(data.WorkOrderNo);
             $("#txtWorkOrderDate").val(data.WorkOrderDate);
             $("#txtTargetFromDate").val(data.TargetFromDate);
@@ -456,6 +457,8 @@ function GetWorkOrderDetail(workOrderId) {
             }
             $("#txtRemarks1").val(data.Remarks1);
             $("#txtRemarks2").val(data.Remarks2);
+            $("#hdnLocationId").val(data.LocationId);
+            BindBranchLocation();
             $("#btnAddNew").show();
             $("#btnPrint").show();
 
@@ -484,15 +487,21 @@ function SaveData() {
     var txtRemarks2 = $("#txtRemarks2");
     var hdnSOId = $("#hdnSOId");
     var txtSONo = $("#txtSONo");
+   ;
     
     if (ddlCompanyBranch.val() == "" || ddlCompanyBranch.val() == 0) {
-        ShowModel("Alert", "Please select  Location")
+        ShowModel("Alert", "Please select  Branch")
         return false;
     }
 
-   
+    
     if (Date.parse(txtTargetFromDate.val()) > Date.parse(txtTargetToDate.val())) {
         ShowModel("Alert", "Target To Date cannot be lesser than the Target From Date.")
+        return false;
+    }
+
+    if ($("#ddlLocation").val() == "" || $("#ddlLocation").val() == 0) {
+        ShowModel("Alert", "Please select Branch Location")
         return false;
     }
 
@@ -508,6 +517,7 @@ function SaveData() {
         Remarks2: txtRemarks2.val(),
         SOId: hdnSOId.val(),
         SONo: txtSONo.val().trim(),
+        LocationId: $("#ddlLocation").val()
     };
 
     var workOrderProductList = [];
@@ -808,6 +818,39 @@ function GetSOProductList(soProducts) {
             $("#divProductList").html(data);
         }
     });
+}
+
+function BindBranchLocation() {
+
+    if ($("#ddlCompanyBranch").val() != "0" && $("#ddlCompanyBranch").val() != "") {
+        BranchId = $("#ddlCompanyBranch").val();
+        $.ajax({
+            type: "GET",
+            url: "../Fabrication/GetBranchLocationList",
+            data: { companyBranchID: BranchId },
+            dataType: "json",
+            asnc: false,
+            success: function (data) {
+                $("#ddlLocation").append($("<option></option>").val(0).html("-Select Branch Location-"));
+                $.each(data, function (i, item) {
+                    $("#ddlLocation").append($("<option></option>").val(item.LocationId).html(item.LocationName));
+                });
+
+                if ($("#hdnLocationId").val() != "0") {
+                    $("#ddlLocation").val($("#hdnLocationId").val());
+                }
+
+            },
+            error: function (Result) {
+                $("#ddlLocation").append($("<option></option>").val(0).html("-Select Branch Location-"));
+            }
+        });
+    }
+    else {
+        $("#ddlLocation").html('');
+        $("#ddlLocation").append($("<option></option>").val(0).html("-Select Branch Location-"));
+    }
+
 }
 
 //////********END CODE********///////

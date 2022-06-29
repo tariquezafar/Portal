@@ -37,7 +37,8 @@ namespace Portal.Core
                     CreatedBy = workOrderViewModel.CreatedBy,
                     SOId = workOrderViewModel.SOId,
                     SONo = workOrderViewModel.SONo,
-                    WorkOrderStatus = workOrderViewModel.WorkOrderStatus
+                    WorkOrderStatus = workOrderViewModel.WorkOrderStatus,
+                    LocationId=workOrderViewModel.LocationId,
                 };
                 List<WorkOrderProductDetail> workOrderProductList = new List<WorkOrderProductDetail>();
                 if(workOrderProducts != null && workOrderProducts.Count>0)
@@ -137,7 +138,8 @@ namespace Portal.Core
                             CreatedByUserName = Convert.ToString(dr["CreatedByName"]),
                             CreatedDate = Convert.ToString(dr["CreatedDate"]),
                             ModifiedByUserName = Convert.ToString(dr["ModifiedByName"]),
-                            ModifiedDate = Convert.ToString(dr["ModifiedDate"])
+                            ModifiedDate = Convert.ToString(dr["ModifiedDate"]),
+                            LocationId=Convert.ToInt32(dr["LocationId"])
                         };
                     }
                 }

@@ -19206,6 +19206,7 @@ namespace Portal.DAL
                         sqlCommand.Parameters.AddWithValue("@SOId", workOrder.SOId);
                         sqlCommand.Parameters.AddWithValue("@SONo", workOrder.SONo);
                         sqlCommand.Parameters.AddWithValue("@WorkOrderStatus", workOrder.WorkOrderStatus);
+                        sqlCommand.Parameters.AddWithValue("@LocationId", workOrder.LocationId);
                         sqlCommand.Parameters.AddWithValue("@WorkOrderProductDetail", dtWorkOrderProduct);
 
                         sqlCommand.Parameters.Add("@status", SqlDbType.VarChar, 50).Direction = ParameterDirection.Output;

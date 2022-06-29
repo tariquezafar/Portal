@@ -189,7 +189,8 @@ function GetProductOpeningDetail(openingTrnId) {
             $("#ddlFinYear").val(data.FinYearId);
             $("#ddlcompanybranch").val(data.CompanyBranchId);
             $("#txtOpeningQty").val(data.OpeningQty);
-            $("#ddlLocation").val(data.LocationId);
+            $("#hdnLocationId").val(data.LocationId);
+            BindBranchLocation();
             
         },
         error: function (Result) {
@@ -319,6 +320,9 @@ function BindBranchLocation() {
                 $.each(data, function (i, item) {
                     $("#ddlLocation").append($("<option></option>").val(item.LocationId).html(item.LocationName));
                 });
+                if ($("#hdnLocationId").val() != "0") {
+                    $("#ddlLocation").val($("#hdnLocationId").val());
+                }
 
             },
             error: function (Result) {

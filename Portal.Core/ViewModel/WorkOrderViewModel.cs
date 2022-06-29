@@ -49,6 +49,8 @@ namespace Portal.Core.ViewModel
         public decimal WOQTY { get; set; }
         public decimal FinishedGoodQTY { get; set; }
 
+        public int LocationId { get; set; }
+
     }
     public class WorkOrderProductViewModel
     {
