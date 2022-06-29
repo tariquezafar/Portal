@@ -66,10 +66,6 @@ namespace Portal.Controllers
                 {
                     returnViewModel.CreatedBy = ContextUser.UserId;
                     returnViewModel.CompanyId = ContextUser.CompanyId;
-                    if(string.IsNullOrEmpty(returnViewModel.InvoiceNo))
-                    {
-                        returnViewModel.InvoiceNo = "0";
-                    }
                     returnViewModel.FinYearId = Session[SessionKey.CurrentFinYear] != null ? ((FinYearViewModel)Session[SessionKey.CurrentFinYear]).FinYearId : DateTime.Now.Year;
                     responseOut = returnBL.AddEditReturn(returnViewModel, returnedProducts);
 
