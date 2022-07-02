@@ -64,7 +64,8 @@ namespace Portal.Core
                             SGST_Amount = Convert.ToDecimal(dr["SGST_Amount"]),
                             IGST_Perc = Convert.ToDecimal(dr["IGST_Perc"]),
                             IGST_Amount = Convert.ToDecimal(dr["IGST_Amount"]),
-                            HSN_Code = Convert.ToString(dr["HSN_Code"])
+                            HSN_Code = Convert.ToString(dr["HSN_Code"]),
+                            ExpectedDeliveryDate = Convert.ToString(dr["ExpectedDeliveryDate"])
                         });
                     }
                 }
@@ -314,7 +315,8 @@ namespace Portal.Core
                             SGST_Amount = item.SGST_Amount,
                             IGST_Perc = item.IGST_Perc,
                             IGST_Amount = item.IGST_Amount,
-                            HSN_Code = item.HSN_Code
+                            HSN_Code = item.HSN_Code,
+                            ExpectedDeliveryDate = Convert.ToDateTime(item.ExpectedDeliveryDate)
 
                         });
                     }

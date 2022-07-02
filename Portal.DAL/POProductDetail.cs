@@ -49,5 +49,6 @@ namespace Portal.DAL
         public Nullable<decimal> GateInQty { get; set; }
         public Nullable<decimal> PIQTY { get; set; }
         public Nullable<int> CompanyBranchId { get; set; }
+        public Nullable<System.DateTime> ExpectedDeliveryDate { get; set; }
     }
 }

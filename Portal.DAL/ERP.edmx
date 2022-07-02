@@ -2150,6 +2150,7 @@
           <Property Name="GateInQty" Type="decimal" Precision="18" Scale="2" />
           <Property Name="PIQTY" Type="decimal" Precision="18" Scale="2" />
           <Property Name="CompanyBranchId" Type="int" />
+          <Property Name="ExpectedDeliveryDate" Type="date" />
         </EntityType>
         <EntityType Name="POSettings">
           <Key>
@@ -6163,6 +6164,7 @@
           <Property Name="GateInQty" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="PIQTY" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="CompanyBranchId" Type="Int32" />
+          <Property Name="ExpectedDeliveryDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="POSetting">
           <Key>
@@ -10882,6 +10884,7 @@
           <EntitySetMapping Name="POProductDetails">
             <EntityTypeMapping TypeName="ERPModel.POProductDetail">
               <MappingFragment StoreEntitySet="POProductDetail">
+                <ScalarProperty Name="ExpectedDeliveryDate" ColumnName="ExpectedDeliveryDate" />
                 <ScalarProperty Name="CompanyBranchId" ColumnName="CompanyBranchId" />
                 <ScalarProperty Name="PIQTY" ColumnName="PIQTY" />
                 <ScalarProperty Name="GateInQty" ColumnName="GateInQty" />

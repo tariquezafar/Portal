@@ -4139,6 +4139,7 @@ namespace Portal.DAL
                 dtPOProduct.Columns.Add("IGST_Amount", typeof(decimal));
                 dtPOProduct.Columns.Add("HSN_Code", typeof(string));
                 dtPOProduct.Columns.Add("TotalPrice", typeof(decimal));
+                dtPOProduct.Columns.Add("ExpectedDeliveryDate", typeof(DateTime));
 
                 if (poProductList != null && poProductList.Count > 0)
                 {
@@ -4175,6 +4176,7 @@ namespace Portal.DAL
                         dtrow["IGST_Amount"] = item.IGST_Amount;
                         dtrow["HSN_Code"] = item.HSN_Code;
                         dtrow["TotalPrice"] = item.TotalPrice;
+                        dtrow["ExpectedDeliveryDate"] = item.ExpectedDeliveryDate;
 
                         dtPOProduct.Rows.Add(dtrow);
                     }

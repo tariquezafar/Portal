@@ -483,6 +483,17 @@
           
         }
     });
+
+    $("#txtExpDeliveryDate").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'dd-M-yy',
+        yearRange: '-10:+100',
+        minDate: 0,
+        onSelect: function (selected) {
+
+        }
+    });
     $("#txtQuotationDate").datepicker({
         changeMonth: true,
         changeYear: true,
@@ -905,6 +916,7 @@ function AddProduct(action) {
     var hdnProductTaxId = $("#hdnProductTaxId");
     var hdnProductTaxPerc = $("#hdnProductTaxPerc");
     var txtProductTaxAmount = $("#txtProductTaxAmount");
+    var txtExpDeliveryDate = $("#txtExpDeliveryDate");
 
     var txtProductSurchargeAmount_1 = $("#txtProductSurchargeAmount_1");
     var txtProductSurchargeAmount_2 = $("#txtProductSurchargeAmount_2");
@@ -950,6 +962,11 @@ function AddProduct(action) {
         txtQuantity.focus();
         return false;
     }
+    if (txtExpDeliveryDate.val().trim() == "") {
+        ShowModel("Alert", "Please Enter Expected Delivery Date")
+        txtExpDeliveryDate.focus();
+        return false;
+    }
     if (action == 1 && (hdnSequenceNo.val() == "" || hdnSequenceNo.val() == "0")) {
         productEntrySequence = 1;
     }
@@ -973,6 +990,7 @@ function AddProduct(action) {
         var productTaxAmount = $row.find("#hdnProductTaxAmount").val();
         var productTaxName = $row.find("#hdnProductTaxName").val();
         var totalPrice = $row.find("#hdnTotalPrice").val();
+        var expDeliveryDate = $row.find("#hdnExpDeliveryDate").val();
 
         var productSurchargeName_1 = $row.find("#hdnProductSurchargeName_1").val();
         var productSurchargePercentage_1 = $row.find("#hdnProductSurchargePercentage_1").val();
@@ -1037,7 +1055,8 @@ function AddProduct(action) {
                             SGST_Amount: sGSTPercAmount,
                             IGST_Perc: iGSTPerc,
                             IGST_Amount: iGSTPercAmount,
-                            HSN_Code: hsn_Code
+                            HSN_Code: hsn_Code,
+                            ExpectedDeliveryDate: expDeliveryDate
                         };
                     }
                     else {
@@ -1077,7 +1096,8 @@ function AddProduct(action) {
                     SGST_Amount: sGSTPercAmount,
                     IGST_Perc: iGSTPerc,
                     IGST_Amount: iGSTPercAmount,
-                    HSN_Code: hsn_Code
+                    HSN_Code: hsn_Code,
+                    ExpectedDeliveryDate: expDeliveryDate
                 };
                 poProductList.push(poProduct);
                 productEntrySequence = parseInt(productEntrySequence) + 1;
@@ -1117,7 +1137,8 @@ function AddProduct(action) {
                     SGST_Amount: txtSGSTPercAmount.val(),
                     IGST_Perc: txtIGSTPerc.val(),
                     IGST_Amount: txtIGSTPercAmount.val(),
-                    HSN_Code: txtHSN_Code.val()
+                    HSN_Code: txtHSN_Code.val(),
+                    ExpectedDeliveryDate: txtExpDeliveryDate.val()
                 };
                 poProductList.push(poProduct);
                 hdnSequenceNo.val("0");
@@ -1146,6 +1167,7 @@ function AddProduct(action) {
             TaxPercentage: hdnProductTaxPerc.val().trim(),
             TaxAmount: txtProductTaxAmount.val().trim(),
             TotalPrice: txtTotalPrice.val().trim(),
+            ExpectedDeliveryDate: txtExpDeliveryDate.val().trim(),
 
             SurchargeName_1: hdnProductSurchargeName_1.val(),
             SurchargePercentage_1: hdnProductSurchargePercentage_1.val(),
@@ -1192,6 +1214,7 @@ function EditProductRow(obj) {
     var productTaxAmount = $(row).find("#hdnProductTaxAmount").val();
     var productTaxName = $(row).find("#hdnProductTaxName").val();
     var totalPrice = $(row).find("#hdnTotalPrice").val();
+    var expDeliveryDate = $row.find("#hdnExpDeliveryDate").val();
 
     var productSurchargeName_1 = $(row).find("#hdnProductSurchargeName_1").val();
     var productSurchargePercentage_1 = $(row).find("#hdnProductSurchargePercentage_1").val();
@@ -1227,7 +1250,9 @@ function EditProductRow(obj) {
     $("#hdnProductTaxId").val(productTaxId);
     $("#hdnProductTaxPerc").val(productTaxPerc);
     $("#txtProductTaxAmount").val(productTaxAmount);
-    $("#txtTotalPrice").val(totalPrice);
+    $("#txtTotalPrice").val(totalPrice); 
+    $("#txtExpDeliveryDate").val(expDeliveryDate);
+
 
     $("#hdnProductSurchargeName_1").val(productSurchargeName_1);
     $("#hdnProductSurchargePercentage_1").val(productSurchargePercentage_1);
@@ -2280,6 +2305,7 @@ function SaveData() {
         var productTaxAmount = $row.find("#hdnProductTaxAmount").val();
         var productTaxName = $row.find("#hdnProductTaxName").val();
         var totalPrice = $row.find("#hdnTotalPrice").val();
+        var expDeliveryDate = $row.find("#hdnExpDeliveryDate").val();
 
         var productSurchargeName_1 = $row.find("#hdnProductSurchargeName_1").val();
         var productSurchargePercentage_1 = $row.find("#hdnProductSurchargePercentage_1").val();
@@ -2335,7 +2361,8 @@ function SaveData() {
                 SGST_Amount: sGSTPercAmount,
                 IGST_Perc: iGSTPerc,
                 IGST_Amount: iGSTPercAmount,
-                HSN_Code: hsn_Code
+                HSN_Code: hsn_Code,
+                ExpectedDeliveryDate: expDeliveryDate
             };
             poProductList.push(poProduct);
         }
@@ -2598,7 +2625,7 @@ function ShowHideProductPanel(action) {
         $("#txtSGSTPercAmount").val("");
         $("#txtIGSTPerc").val("");
         $("#txtIGSTPercAmount").val("");
-
+        $("#txtExpDeliveryDate").val("");
 
         $("#txtDiscountPerc").val("");
         $("#txtDiscountAmount").val("");
