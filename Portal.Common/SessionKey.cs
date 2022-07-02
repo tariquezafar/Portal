@@ -25,6 +25,7 @@ namespace Portal.Common
         public const String CompanyBranchList = "CompanyBranchList";
         public const String CompanyBranchName = "CompanyBranchName";
         public const String CustomerId = "CustomerId";
+        public const String RoleId = "RoleId";
     }
     public class CookieKey
     {
