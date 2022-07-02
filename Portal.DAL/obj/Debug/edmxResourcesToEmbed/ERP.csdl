@@ -1209,6 +1209,7 @@
     <Property Name="GateInQty" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="PIQTY" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="CompanyBranchId" Type="Int32" />
+    <Property Name="ExpectedDeliveryDate" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="POSetting">
     <Key>
