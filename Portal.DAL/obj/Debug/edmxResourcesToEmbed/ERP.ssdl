@@ -2117,6 +2117,7 @@
     <Property Name="GateInQty" Type="decimal" Precision="18" Scale="2" />
     <Property Name="PIQTY" Type="decimal" Precision="18" Scale="2" />
     <Property Name="CompanyBranchId" Type="int" />
+    <Property Name="ExpectedDeliveryDate" Type="date" />
   </EntityType>
   <EntityType Name="POSettings">
     <Key>

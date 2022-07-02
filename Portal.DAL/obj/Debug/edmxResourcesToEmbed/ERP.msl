@@ -974,6 +974,7 @@
     <EntitySetMapping Name="POProductDetails">
       <EntityTypeMapping TypeName="ERPModel.POProductDetail">
         <MappingFragment StoreEntitySet="POProductDetail">
+          <ScalarProperty Name="ExpectedDeliveryDate" ColumnName="ExpectedDeliveryDate" />
           <ScalarProperty Name="CompanyBranchId" ColumnName="CompanyBranchId" />
           <ScalarProperty Name="PIQTY" ColumnName="PIQTY" />
           <ScalarProperty Name="GateInQty" ColumnName="GateInQty" />
