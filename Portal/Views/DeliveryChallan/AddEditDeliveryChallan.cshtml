@@ -138,13 +138,13 @@
                         </div>
 
                         <div class="form-group col-md-4">
-                            <label for="txtDispatchNo" class="col-sm-4 control-label">Dispatch No</label>
-                            <div class="col-sm-8">
-                                <input class="form-control" id="txtDispatchNo" name="txtDispatchNo" tabindex="6" placeholder="Dispatch No" type="text" maxlength="100" />
-                                <input id="hdnDispatchId" type="hidden" value="0" />
+                            <label for="txtCustomerCode" class="col-sm-4 control-label">Party Code</label>
+                            <div class="col-sm-8 ">
+                                <input class="form-control" id="txtCustomerCode" name="txtCustomerCode" tabindex="17" placeholder="Party Code" type="text" maxlength="50" />
                             </div>
-                            <a class="fa fa-search col-sm-1" tabindex="7" onclick="OpenDispatchSearchPopup()" id="btnSearchInvoice" style="padding-top:5px; float: right !important; z-index:500;margin-right: -21px; margin-top: -29px;" href="#"></a>
                         </div>
+
+
 
 
                     </div>
@@ -274,12 +274,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group col-md-4">
-                            <label for="txtCustomerCode" class="col-sm-4 control-label">Party Code</label>
-                            <div class="col-sm-8 ">
-                                <input class="form-control" id="txtCustomerCode" name="txtCustomerCode" tabindex="17" placeholder="Party Code" type="text" maxlength="50" />
-                            </div>
-                        </div>
+                        
 
                     </div>
 
@@ -928,70 +923,6 @@
             </div>
         </div>
 
-        <div class="modal fade" id="SearchDispatchModel" role="dialog">
-            <div class="modal-dialog  modal-lg">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Search Dispatch</h4>
-                    </div>
-                    <div class="">
-                        <div class="col-md-12 ftop">
-                            <div class="form-group col-md-6">
-                                <label for="txtSearchDispatchNo" class="col-sm-4 control-label">Dispatch No.</label>
-                                <div class="col-sm-8 ">
-                                    <input class="form-control" id="txtSearchDispatchNo" name="txtSearchDispatchNo" tabindex="8" placeholder="Search with Dispatch No." type="text" maxlength="50" />
-                                </div>
-                            </div>
-                            <div class="form-group  col-md-6">
-                                <label for="txtSearchCustomerName" class="col-sm-4 control-label">Customer Name</label>
-                                <div class="col-sm-8">
-                                    <input class="form-control" id="txtSearchCustomerName" name="txtSearchCustomerName" tabindex="9" placeholder="Search with Customer Name" type="text" maxlength="100" />
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-12">
-                            <div class="form-group col-md-6">
-                                <label for="txtSearchDispatchFromDate" class="col-sm-4 control-label">Dispatch From Date</label>
-                                <div class="col-sm-8 ">
-                                    <input class="form-control" id="txtSearchDispatchFromDate" name="txtSearchDispatchFromDate" tabindex="12" value="@ViewData["fromDate"]" type="text" maxlength="50" />
-                                    <input id="hdnDispatchFromDate" name="hdnDispatchFromDate" value="@ViewData["fromDate"]" type="hidden" />
-                                </div>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="txtSearchDispatchToDate" class="col-sm-4 control-label">Dispatch To Date</label>
-                                <div class="col-sm-8 ">
-                                    <input class="form-control" id="txtSearchDispatchToDate" name="txtSearchDispatchToDate" tabindex="13" value="@ViewData["toDate"]" type="text" maxlength="50" />
-                                    <input id="hdnDispatchToDate" name="hdnDispatchToDate" value="@ViewData["toDate"]" type="hidden" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row col-sm-12 col-lg-12 col-md-12">
-                            <div class="col-md-3"></div>
-                            <div class="col-md-6">
-                                <center>
-                                    <input class="btn btn-success" value="Search" alt="Search" id="btnSearch" tabindex="14" onclick="SearchDispatch()" type="button" border="0">
-                                </center>
-                            </div>
-                            <div class="col-md-3"></div>
-                        </div>
-                        <div class="row col-sm-6 col-lg-12 col-md-12">
-                            <div id="divDispatchList">
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" tabindex="15" class="btn btn-primary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
 
     </form>
 </section>

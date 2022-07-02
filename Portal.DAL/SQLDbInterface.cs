@@ -6520,35 +6520,6 @@ namespace Portal.DAL
 
         }
 
-        public DataTable GetSaleDispatchList(string saledispatchNo, string customerName, DateTime fromDate, DateTime toDate,int companyBranchId = 0, int CustomerId = 0)
-        {
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter();
-            try
-            {
-                using (SqlConnection con = new SqlConnection(connectionString))
-                {
-                    da = new SqlDataAdapter("proc_GetDispatchs", con);
-                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    da.SelectCommand.Parameters.AddWithValue("@DispatchNo", saledispatchNo);
-                    da.SelectCommand.Parameters.AddWithValue("@CustomerName", customerName);
-                    da.SelectCommand.Parameters.AddWithValue("@FromDate", fromDate);
-                    da.SelectCommand.Parameters.AddWithValue("@ToDate", toDate);
-                    da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
-                    da.SelectCommand.Parameters.AddWithValue("@CustomerId", CustomerId);
-                    da.Fill(dt);
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
-                throw ex;
-            }
-            return dt;
-
-        }
-
-
         public DataTable GetJVSaleInvoiceList(string invoiceNo, string refNo, DateTime fromDate, DateTime toDate, int companyId, string invoiceType = "", string displayType = "", string approvalStatus = "")
         {
             DataTable dt = new DataTable();

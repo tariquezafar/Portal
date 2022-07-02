@@ -346,53 +346,6 @@ namespace Portal.Core
             return saleinvoices;
         }
 
-        public List<SaleDispatchViewModel> GetSaleDispatchList(string saledispatchNo, string customerName,string fromDate, string toDate,int companyBranchId = 0, int CustomerId = 0)
-        {
-            List<SaleDispatchViewModel> saleinvoices = new List<SaleDispatchViewModel>();
-            SQLDbInterface sqlDbInterface = new SQLDbInterface();
-            try
-            {
-                DataTable dtSaleInvoices = sqlDbInterface.GetSaleDispatchList(saledispatchNo, customerName,Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), companyBranchId, CustomerId);
-                if (dtSaleInvoices != null && dtSaleInvoices.Rows.Count > 0)
-                {
-                    foreach (DataRow dr in dtSaleInvoices.Rows)
-                    {
-                        saleinvoices.Add(new SaleDispatchViewModel
-                        {
-                            DispatchId = Convert.ToInt32(dr["DispatchPlanID"]),
-                            DispatchNo = Convert.ToString(dr["DispatchPlanNo"]),
-                            DispatchDate = Convert.ToString(dr["DispatchPlanDate"]),
-                            CustomerId = Convert.ToInt32(dr["CustomerId"]),
-                            CustomerCode = Convert.ToString(dr["CustomerCode"]),
-                            CustomerName = Convert.ToString(dr["CustomerName"]),
-                            CompanyBranchName = Convert.ToString(dr["CompanyBranchName"]),
-                            City = Convert.ToString(dr["City"]),
-                            StateName = Convert.ToString(dr["StateName"]),
-                            ////SaleType = Convert.ToString(dr["SaleType"]),
-                            ////RefNo = Convert.ToString(dr["RefNo"]),
-                            ////RefDate = Convert.ToString(dr["RefDate"]),
-                            ////BasicValue = Convert.ToDecimal(dr["BasicValue"]),
-                            ////BasicAmt = Convert.ToDecimal(dr["BasicAmt"]),
-                            ////TotalValue = Convert.ToDecimal(dr["TotalValue"]),
-                            ////GrossValue = Convert.ToDecimal(dr["GrossValue"]),
-                            ////RoundOfValue = Convert.ToDecimal(dr["RoundOfValue"]),
-                            ////ApprovalStatus = Convert.ToString(dr["ApprovalStatus"]),
-                            ////CreatedByUserName = Convert.ToString(dr["CreatedByName"]),
-                            CreatedDate = Convert.ToString(dr["CreatedDate"]),
-                            ////ModifiedByUserName = Convert.ToString(dr["ModifiedByName"]),
-                            ModifiedDate = Convert.ToString(dr["ModifiedDate"])
-                        });
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
-                throw ex;
-            }
-            return saleinvoices;
-        }
-
         public List<SaleInvoiceProductSerialDetailViewModel> GetSaleInvoiceProductSerialDetailList(int invoiceId=0)
         {
             List<SaleInvoiceProductSerialDetailViewModel> saleInvoiceProductSerialDetailList = new List<SaleInvoiceProductSerialDetailViewModel>();
