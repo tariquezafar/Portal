@@ -250,7 +250,7 @@
                                         <option value="2">Approved</option>
                                         <option value="3">DisApproved</option>
                                     }
-                                    @if (Convert.ToInt32(ViewData["userId"]) != 0)
+                                    @if (Convert.ToInt32(ViewData["RoleId"]) == 104)
                                     {
                                         <option value="4">Acknowledge</option>
                                     }
@@ -269,7 +269,7 @@
                                     <option value="2">Approved</option>
                                     <option value="3">DisApproved</option>
                                 }
-                                @if (Convert.ToInt32(ViewData["userId"]) != 0)
+                                @if (Convert.ToInt32(ViewData["RoleId"]) == 104)
                                 {
                                     <option value="4">Acknowledge</option>
                                 }

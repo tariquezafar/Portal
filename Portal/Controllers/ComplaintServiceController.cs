@@ -31,7 +31,7 @@ namespace Portal.Controllers
                 ViewData["toDate"] = finYear.EndDate;
                 ViewData["currentDate"] = DateTime.Now.ToString("dd-MMM-yyyy");
                 ViewData["CompanyBranchId"] = Session[SessionKey.CompanyBranchId] != null ? ((UserViewModel)Session[SessionKey.CompanyBranchId]).CompanyBranchId : 0;
-                ViewData["UserId"] = Session[SessionKey.UserId] != null ? ((UserViewModel)Session[SessionKey.UserId]).UserId : 0;
+                ViewData["RoleId"] = Session[SessionKey.RoleId] != null ? ((UserViewModel)Session[SessionKey.RoleId]).RoleId : 0;
                 int userid = Session[SessionKey.UserId] != null ? ((UserViewModel)Session[SessionKey.UserId]).UserId : 0;
                 UserBL userBL = new UserBL();
                 UserViewModel user = userBL.GetDetails(userid);
@@ -177,9 +177,13 @@ namespace Portal.Controllers
         {
             List<ComplaintServiceViewModel> complaints = new List<ComplaintServiceViewModel>();
             ComplaintServiceBL complaintServiceBL = new ComplaintServiceBL();
-
+            int roleId = Session[SessionKey.RoleId] != null ? ((UserViewModel)Session[SessionKey.RoleId]).RoleId : 0;
             try
             {
+                if(roleId == 104)
+                {
+                    complaintStatus = 1;
+                }
                 complaints = complaintServiceBL.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName,approvalStatus, companyBranchId, serviceEngineerId, dealerId, complaintStatus);
             }
             catch (Exception ex)

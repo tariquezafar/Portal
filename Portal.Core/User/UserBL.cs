@@ -157,6 +157,7 @@ namespace Portal.Core
                         session.SetInSession(SessionKey.EmployeeFullName, employeeViewModel.FirstName+" "+employeeViewModel.LastName);
                         session.SetInSession(SessionKey.CompanyBranchId, userViewModel);
                         session.SetInSession(SessionKey.UserId, userViewModel);
+                        session.SetInSession(SessionKey.RoleId, userViewModel);
                     session.SetInSession(SessionKey.CustomerId, userViewModel.FK_CustomerId);
 
                         session.SetInSession(SessionKey.CompanyBranchName, dbInterface.GetCompanyBranchName(userViewModel.CompanyBranchId));

@@ -755,7 +755,7 @@ namespace Portal.DAL
                 }
             }
             return userdata;
-    }
+        }
         public ResponseOut RemoveImageUser(long userId)
         {
             ResponseOut responseOut = new ResponseOut();
