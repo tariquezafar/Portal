@@ -206,6 +206,8 @@
     <Compile Include="Controllers\DashBoardContainerController.cs" />
     <Compile Include="Controllers\DashboardInterfaceController.cs" />
     <Compile Include="Controllers\DashboardItemMappingController.cs" />
+    <Compile Include="Controllers\DispatchController.cs" />
+    <Compile Include="Controllers\DispatchPlanController.cs" />
     <Compile Include="Controllers\JobCardController.cs" />
     <Compile Include="Controllers\HSNController.cs" />
     <Compile Include="Controllers\MaterialRejectNoteController.cs" />
@@ -1159,6 +1161,10 @@
     <Content Include="Scripts\DashboardItemMapping\AddDashboardItemMapping.js" />
     <Content Include="Scripts\DashboardItemMapping\ListDashboardItemMapping.js" />
     <Content Include="Scripts\Dashboard\HRDashboard.js" />
+    <Content Include="Scripts\DispatchPlan\AddDispatchPlan.js" />
+    <Content Include="Scripts\DispatchPlan\ListDispatchPlan.js" />
+    <Content Include="Scripts\Dispatch\AddDispatch.js" />
+    <Content Include="Scripts\Dispatch\ListDispatch.js" />
     <Content Include="Scripts\Fabrication\CancelFabrication.js" />
     <Content Include="Scripts\GL\ListGLMappingOpening.js" />
     <Content Include="Scripts\GL\GLMappingOpening.js" />
@@ -1685,8 +1691,6 @@
     <Content Include="Scripts\WorkOrder\ListWIPReport.js" />
     <Content Include="Scripts\WorkOrder\ListWorkOrder.js" />
     <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll" />
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />
     <Content Include="SqlServerTypes\x86\msvcr120.dll" />
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll" />
     <Content Include="Views\GateIn\GetGateInPOList.cshtml" />
@@ -1734,6 +1738,7 @@
     <Folder Include="Images\STNDocument\" />
     <Folder Include="Images\STRDocument\" />
     <Folder Include="Images\VoucherDocument\" />
+    <Folder Include="SqlServerTypes\x64\" />
     <Folder Include="VahaanLogFiles1\" />
   </ItemGroup>
   <ItemGroup>
@@ -4192,6 +4197,22 @@
     <Content Include="Views\ComplaintService\GetAPCSComplaintServiceList.cshtml" />
     <Content Include="Views\ComplaintService\GetComplaintSupportingDocumentList.cshtml" />
     <Content Include="Views\Return\GetComplaintInvoiceReturnList.cshtml" />
+    <Content Include="Views\DispatchPlan\AddEditDispatchPlan.cshtml" />
+    <Content Include="Views\DispatchPlan\GetApproveDispatchPlanList.cshtml" />
+    <Content Include="Views\DispatchPlan\GetCustomerSOList.cshtml" />
+    <Content Include="Views\DispatchPlan\GetCustomerSOProductList.cshtml" />
+    <Content Include="Views\DispatchPlan\GetDispatchPlanList.cshtml" />
+    <Content Include="Views\DispatchPlan\ListApproveDP.cshtml" />
+    <Content Include="Views\DispatchPlan\ListDispatchPlan.cshtml" />
+    <Content Include="Views\Dispatch\AddEditDispatch.cshtml" />
+    <Content Include="Views\Dispatch\GetApproveDispatchList.cshtml" />
+    <Content Include="Views\Dispatch\GetCustomerSOList.cshtml" />
+    <Content Include="Views\Dispatch\GetCustomerSOProductList.cshtml" />
+    <Content Include="Views\Dispatch\GetDispatchList.cshtml" />
+    <Content Include="Views\Dispatch\GetDispatchPlanList.cshtml" />
+    <Content Include="Views\Dispatch\GetDispatchProductList.cshtml" />
+    <Content Include="Views\Dispatch\ListApproveDP.cshtml" />
+    <Content Include="Views\Dispatch\ListDispatch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\City\ListCity.cshtml" />

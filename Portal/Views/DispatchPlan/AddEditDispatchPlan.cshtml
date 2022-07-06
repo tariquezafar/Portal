@@ -1,0 +1,289 @@
+﻿@{ ViewBag.Title = "AddEditComplaintService";
+    Layout = "~/Views/Shared/_SaleLayout.cshtml"; }
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<style>
+    .Mandatory {
+        color: red;
+        font-weight: bold;
+    }
+
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+
+    legend {
+        display: block;
+        width: 40%;
+        padding: 0;
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 0px solid #e5e5e5;
+    }
+    /*** custom checkboxes ***/
+
+   
+</style>
+<div class="row top-head">
+    <div class="col-md-12"><p><b><a style="color:#fff;" href="~/Dashboard/AdminDashboard">Admin</a> >> Add/Edit Dispatch Plan </b></p></div>
+</div>
+<section>
+    <form action="#" id="frmAddEditDispatchPlan" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+        <div class="row inner">
+            <div class="message">
+
+            </div>
+           
+            <div>
+
+                <div class="col-md-12 ftop">
+                    <div class="form-group col-md-4">
+                        <label for="txtComplaintNo" class="col-sm-4 control-label">Dispatch Plan No.</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtDispatchPlanNo" name="txtDispatchPlanNo" tabindex="1" placeholder="Auto Generated Dispatch Plan No." type="text" maxlength="100" readonly="readonly" />
+                            @if (Convert.ToInt32(ViewData["accessMode"]) == 1 || Convert.ToInt32(ViewData["accessMode"]) == 2 || Convert.ToInt32(ViewData["accessMode"]) == 3)
+                            {
+                                <a style="display:none;color:#fff;" class="btn btn-success" tabindex="4" id="btnAddNew" href="@Url.Content("~/DispatchPlan/AddEditDispatchPlan?accessMode=1")">New</a>
+                            }
+                            <input id="hdnDispatchPlanID" type="hidden" value="@ViewData["dispatchPlanID"]" />
+                            <input id="hdnAccessMode" type="hidden" value="@ViewData["accessMode"]" />
+                            <input id="hdnRoleId" type="hidden" value="@ViewData["RoleId"]" />
+
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="txtDispatchPlanDate" class="col-sm-4 control-label">Dispatch Plan Date</label>
+                        <div class="col-sm-8 ">
+                            <input class="form-control" id="txtDispatchPlanDate" name="txtDispatchPlanDate" tabindex="2" placeholder="Enter Dispatch Plan Date" value="@ViewData["currentDate"]" type="text" maxlength="50" />
+                            <input id="hdnCurrentDate" name="hdnCurrentDate" value="@ViewData["currentDate"]" type="hidden" />
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+
+                        <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <select id="ddlCompanyBranch" name="ddlCompanyBranch" tabindex="13" class="form-control"></select>
+                            <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
+                            <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-12">
+
+                    <div class="form-group col-md-4">
+                        <label for="txtCustomerName" class="col-sm-4 control-label">Customer Name&nbsp;<span class="Mandatory">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="txtCustomerName" name="txtCustomerName" tabindex="4" placeholder="Enter Customer Name" type="text" maxlength="10" />
+                            <input id="hdnCustomerId" type="hidden" value="@ViewData["customerId"]" />
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="txtQuotationNo" class="col-sm-4 control-label">Add SO</label>
+                        <div class="col-sm-8">
+                            <a class="fa fa-search col-sm-1 editonly" onclick="OpenSOPopup()" id="btnSearchSO" tabindex="4" style="color: #337ab7;margin-top :5px!important" href="#"></a>
+                        </div>
+                            
+
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="ddlApprovalStatus" class="col-sm-4 control-label">Status</label>
+                            <div class="col-sm-8">
+                                <select id="ddlApprovalStatus" name="ddlApprovalStatus" tabindex="80" class="form-control">
+                                    <option value="0">Select Status</option>
+                                    @if (Convert.ToInt32(ViewData["accessMode"]) != 4)
+                                    {
+                                        <option selected="selected" value="Draft">Draft</option>
+                                        <option value="Final">Final</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="Approve">Approve</option>
+                                    }
+
+                                </select>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+                <div class="col-md-12" id="divAddProduct">
+                    <div class="form-group col-md-4">
+
+                    </div>
+                    <div class="form-group col-md-4" style="background-color:yellow">
+                        <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Product Detail</b></label></h4>
+                    </div>
+                    
+
+                </div>
+             
+                <div class="col-sm-12 col-lg-12 col-md-12">
+                    <div id="divProductList">
+
+                    </div>
+                </div>
+            </div>
+               
+                
+                <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <center>
+                            <input class="btn btn-success" value="Approved" alt="Approved" id="btnApprove" tabindex="31" onclick="SaveData(2)" type="button" border="0">
+                            <input class="btn btn-success" value="Save" alt="Save" id="btnSave" tabindex="31" onclick="SaveData(1)" type="button" border="0">
+                            <input class="btn btn-success" value="Update" style="display:none;" tabindex="31" alt="Update" id="btnUpdate" onclick="SaveData(2)" type="button" border="0">
+                            <a class="btn btn-success" id="btnReset" tabindex="34" href="@Url.Content("~/DispatchPlan/AddEditDispatchPlan")">Reset</a>
+
+                            <a class="btn btn-success" id="btnList" tabindex="35" href="@Url.Content("~/DispatchPlan/ListDispatchPlan")">Search Dispatch Plan</a>
+
+                        </center>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+
+
+            </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="alertModel" tabindex="32" role="dialog">
+                    <div class="modal-dialog  modal-sm">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" tabindex="33" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title" id="modelHeader"></h4>
+                            </div>
+                            <div class="modal-body">
+                                <p id="modelText"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary  btn-block" tabindex="33" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal fade" id="SOModel" role="dialog">
+                    <div class="modal-dialog  modal-lg">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Search SO</h4>
+                            </div>
+                            <div class="">
+                                <div class="col-md-12 ftop">
+                                    <div class="form-group col-md-6">
+                                        <label for="txtSearchSONo" class="col-sm-4 control-label">Invoice No.</label>
+                                        <div class="col-sm-8 ">
+                                            <input class="form-control" id="txtSearchSONo" name="txtSearchSONo" tabindex="13" placeholder="Search with SO No." type="text" maxlength="50" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group  col-md-6">
+                                        <label for="txtSearchQuotationNo" class="col-sm-4 control-label">Customer Name</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" id="txtSearchQuotationNo" name="txtSearchQuotationNo" tabindex="14" placeholder="Search with Quotation No." type="text" maxlength="100" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-6">
+                                        <label for="txtSearchFromDate" class="col-sm-4 control-label">SO From Date</label>
+                                        <div class="col-sm-8 ">
+                                            <input class="form-control" id="txtSearchFromDate" name="txtSearchFromDate" tabindex="17" value="@ViewData["fromDate"]" type="text" maxlength="50" />
+                                            <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["fromDate"]" type="hidden" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="txtSearchToDate" class="col-sm-4 control-label">To Date</label>
+                                        <div class="col-sm-8 ">
+                                            <input class="form-control" id="txtSearchToDate" name="txtSearchToDate" tabindex="18" value="@ViewData["toDate"]" type="text" maxlength="50" />
+                                            <input id="hdnFromDate" name="hdnFromDate" value="@ViewData["toDate"]" type="hidden" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row col-sm-12 col-lg-12 col-md-12">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-6">
+                                        <center>
+                                            <input class="btn btn-success" value="Search" alt="Search" tabindex="19" id="btnSearch" onclick="SearchSO()" type="button" border="0">
+                                        </center>
+                                    </div>
+                                    <div class="col-md-3"></div>
+                                </div>
+                                <div class="row col-sm-6 col-lg-12 col-md-12">
+                                    <div id="divSOList">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row col-sm-12 col-lg-12 col-md-12">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6">
+                                    <center>
+                                        <input class="btn btn-success" value="Add" alt="Search" tabindex="19" id="btnAddSOProduct" onclick="SelectSO()" type="button" border="0">
+                                    </center>
+                                </div>
+                                <div class="col-md-3"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" tabindex="20" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Master Pop Up For Customer-->
+                <div class="modal fade Book" id="AddNewCustomer" role="dialog">
+
+                    <div class="modal-dialog  modal-lg">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Add New Customer</h4>
+                            </div>
+                            <div class="">
+
+                                @{Html.RenderPartial("_CustomerPartial");}
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+</form>
+</section>
+<script src="~/Scripts/lightbox.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/paging.js"></script>
+<script src="~/Scripts/DispatchPlan/AddDispatchPlan.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/notify.min.js"></script>

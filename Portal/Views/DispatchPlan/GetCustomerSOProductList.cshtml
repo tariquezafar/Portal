@@ -1,0 +1,75 @@
+﻿@model List<Portal.Core.ViewModel.SOProductViewModel>
+@if (Model != null && Model.Count > 0)
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table table-bordered table-hover" id="tblProductList">
+            <thead>
+                <tr>
+                    <th style="text-align:center;">Customer Name</th>
+                    <th style="text-align:center;">City</th>
+                    <th style="text-align:center;">SO No.</th>
+                    <th style="text-align:center;">Product Name</th>
+                    <th style="text-align:center;">Product Code</th>
+                    <th style="text-align:center;">Quantity</th>
+                    <th style="text-align:center;">Priority</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr class="success">
+                    <td>
+                        @item.CustomerName
+
+                    </td>
+                    <td>
+                        @item.City
+                    </td>
+                    <td>
+                        @item.SONo
+                        <input type="hidden" id="hdnCustomerName" value="@item.CustomerName" />
+                        <input type="hidden" id="hdnCity" value="@item.City" />
+                        <input type="hidden" id="hdnSOId" value="@item.SOId" />
+                        <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                        <input type="hidden" id="hdnProductName" value="@item.ProductName" />
+                        <input type="hidden" id="hdnProductCode" value="@item.ProductCode" />
+                        <input type="hidden" id="hdnQuantity" value="@item.Quantity" />
+                    </td>
+                    <td>
+                        @item.ProductName
+
+                    </td>
+                    <td>
+                        @item.ProductCode
+
+                    </td>
+                    <td>
+                        @item.Quantity
+
+                    </td>
+                    <td>
+                        <input type="text" class="Priority" value="@item.Priority" />
+                    </td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblProductList">
+            <thead>
+                <tr>
+                    <th style="text-align:center;">SO No.</th>
+                    <th style="text-align:center;">Product Name</th>
+                    <th style="text-align:center;">Product Code</th>
+                    <th style="text-align:center;">Quantity</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
