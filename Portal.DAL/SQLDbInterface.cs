@@ -4023,7 +4023,8 @@ namespace Portal.DAL
 
         }
 
-        public DataTable GetQuotationList(string quotationNo, string customerName, string refNo, DateTime fromDate, DateTime toDate, int companyId, string displayType = "", string approvalStatus = "", int companyBranchId = 0, int CustomerId =0,int LocationId=0)
+
+        public DataTable GetQuotationList(string quotationNo, string customerName, string refNo, DateTime fromDate, DateTime toDate, int companyId, string displayType = "", string approvalStatus = "", int companyBranchId = 0, int CustomerId =0, int LocationId= 0)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -5848,7 +5849,7 @@ namespace Portal.DAL
 
         }
 
-        public DataTable GetSOList(string soNo, string customerName, string refNo, DateTime fromDate, DateTime toDate, int companyId, string approvalStatus = "", string displayType = "", string CreatedByUserName = "", int companyBranchId = 0, string dashboardList = "", int CustomerId = 0, int LocationId = 0)
+        public DataTable GetSOList(string soNo, string customerName, string refNo, DateTime fromDate, DateTime toDate, int companyId, string approvalStatus = "", string displayType = "", string CreatedByUserName = "", int companyBranchId = 0, string dashboardList = "",int CustomerId=0, int LocationId = 0)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -6488,7 +6489,7 @@ namespace Portal.DAL
 
         }
 
-        public DataTable GetSaleInvoiceList(string invoiceNo, string customerName, string refNo, DateTime fromDate, DateTime toDate, int companyId, string invoiceType = "", string displayType = "", string approvalStatus = "", string customerCode = "", int companyBranchId = 0, string saleType = "", string CreatedByUserName = "", int CustomerId = 0, string SaleInvoiceType = "", int LocationId = 0)
+        public DataTable GetSaleInvoiceList(string invoiceNo, string customerName, string refNo, DateTime fromDate, DateTime toDate, int companyId, string invoiceType = "", string displayType = "", string approvalStatus = "", string customerCode = "", int companyBranchId = 0, string saleType = "", string CreatedByUserName = "",int CustomerId=0,string SaleInvoiceType="", int LocationId = 0)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -30450,6 +30451,414 @@ namespace Portal.DAL
                     da = new SqlDataAdapter("proc_GetHSNDetail", con);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand.Parameters.AddWithValue("@HSNID", hSNID);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return dt;
+
+        }
+        #endregion
+
+        #region Dispatch Plan
+
+        public ResponseOut AddEditDispatchPlan(DispatchPlan dispatchPlan, List<DispatchPlanProductDetail> dispatchPlanProductDetails)
+        {
+            ResponseOut responseOut = new ResponseOut();
+            try
+            {
+                DataTable dtDispatchPlanProduct = new DataTable();
+                dtDispatchPlanProduct.Columns.Add("SOId", typeof(int));
+                dtDispatchPlanProduct.Columns.Add("ProductId", typeof(Int64));
+                dtDispatchPlanProduct.Columns.Add("Quantity", typeof(decimal));
+                dtDispatchPlanProduct.Columns.Add("Priority", typeof(decimal));
+
+
+                if (dispatchPlanProductDetails != null && dispatchPlanProductDetails.Count > 0)
+                {
+                    foreach (DispatchPlanProductDetail item in dispatchPlanProductDetails)
+                    {
+                        DataRow dtrow = dtDispatchPlanProduct.NewRow();
+                        dtrow["SOId"] = item.SOId;
+                        dtrow["ProductId"] = item.ProductId;
+                        dtrow["Quantity"] = item.Quantity;
+                        dtrow["Priority"] = item.Priority;
+                        dtDispatchPlanProduct.Rows.Add(dtrow);
+                    }
+                    dtDispatchPlanProduct.AcceptChanges();
+                }
+
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand sqlCommand = new SqlCommand("proc_AddEditDispatchPlan", con))
+                    {
+                        sqlCommand.CommandType = CommandType.StoredProcedure;
+                        sqlCommand.Parameters.AddWithValue("@DispatchPlanID", dispatchPlan.DispatchPlanID);
+                        sqlCommand.Parameters.AddWithValue("@DispatchPlanDate", dispatchPlan.DispatchPlanDate);
+                        sqlCommand.Parameters.AddWithValue("@CustomerID", dispatchPlan.CustomerID);
+                        sqlCommand.Parameters.AddWithValue("@CompanyBranchID", dispatchPlan.CompanyBranchID);
+                        sqlCommand.Parameters.AddWithValue("@UserID", dispatchPlan.CreatedBy);
+                        sqlCommand.Parameters.AddWithValue("@StatusID", 1);
+                        sqlCommand.Parameters.AddWithValue("@ApprovalStatus", dispatchPlan.ApprovalStatus);
+                        sqlCommand.Parameters.AddWithValue("@DispatchPlanProductDetail", dtDispatchPlanProduct);
+                        sqlCommand.Parameters.Add("@Status", SqlDbType.VarChar, 50).Direction = ParameterDirection.Output;
+                        sqlCommand.Parameters.Add("@Message", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                        sqlCommand.Parameters.Add("@RetDispatchPlanId", SqlDbType.BigInt).Direction = ParameterDirection.Output;
+                        con.Open();
+                        sqlCommand.ExecuteNonQuery();
+
+                        if (sqlCommand.Parameters["@Status"].Value != null)
+                        {
+                            responseOut.status = Convert.ToString(sqlCommand.Parameters["@Status"].Value);
+                        }
+
+                        if (responseOut.status != ActionStatus.Success)
+                        {
+                            if (sqlCommand.Parameters["@Message"].Value != null)
+                            {
+                                responseOut.message = Convert.ToString(sqlCommand.Parameters["@Message"].Value);
+                            }
+
+                        }
+                        else
+                        {
+                            if (dispatchPlan.DispatchPlanID == 0)
+                            {
+                                responseOut.message = ActionMessage.DispatchPlanCreatedSuccess;
+                            }
+                            else
+                            {
+                                responseOut.message = ActionMessage.DispatchPlanUpdatedSuccess;
+                            }
+                            if (sqlCommand.Parameters["@RetDispatchPlanId"].Value != null)
+                            {
+                                responseOut.trnId = Convert.ToInt64(sqlCommand.Parameters["@RetDispatchPlanId"].Value);
+                            }
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return responseOut;
+
+        }
+
+        public DataTable GetSOList(int customerID, string sONO, string QuotationNo, DateTime fromDate, DateTime toDate, int companyBranchId)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    da = new SqlDataAdapter("proc_GetSOList", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@CustomerID", customerID);
+                    da.SelectCommand.Parameters.AddWithValue("@SONO", sONO);
+                    da.SelectCommand.Parameters.AddWithValue("@QuotationNo", QuotationNo);
+                    da.SelectCommand.Parameters.AddWithValue("@FromDate", fromDate);
+                    da.SelectCommand.Parameters.AddWithValue("@ToDate", toDate);
+                    da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return dt;
+
+        }
+
+        public DataTable GetCustomerSOProductList(string sOIds, bool isDispatchPlan)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    da = new SqlDataAdapter("proc_GetCustomerSOProductList", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@SOIds", sOIds);
+                    da.SelectCommand.Parameters.AddWithValue("@IsDispatchPlan", isDispatchPlan);
+
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return dt;
+
+        }
+
+        public DataTable GetDispatchPlanDetail(int dispatchPlanID)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    da = new SqlDataAdapter("proc_GetDispatchPlanDetail", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@DispatchPlanID", dispatchPlanID);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return dt;
+        }
+
+        public DataTable GetDispatchPlanList(string dispatchPlanNo, string customerName, int companyBranchId, DateTime fromDate, DateTime toDate, string approvalStatus)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    da = new SqlDataAdapter("proc_GetDispatchPlan", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@DispatchPlanNo", dispatchPlanNo);
+                    da.SelectCommand.Parameters.AddWithValue("@CustomerName", customerName);
+                    da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
+                    da.SelectCommand.Parameters.AddWithValue("@FromDate", fromDate);
+                    da.SelectCommand.Parameters.AddWithValue("@ToDate", toDate);
+                    da.SelectCommand.Parameters.AddWithValue("@ApprovalStatus", approvalStatus);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return dt;
+
+        }
+        public DataTable GetApproveDispatchPlanList(string dispatchPlanNo, string customerName, int companyBranchId, DateTime fromDate, DateTime toDate, string approvalStatus)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    da = new SqlDataAdapter("proc_GetApprovDispatchPlanList", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@DispatchPlanNo", dispatchPlanNo);
+                    da.SelectCommand.Parameters.AddWithValue("@CustomerName", customerName);
+                    da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
+                    da.SelectCommand.Parameters.AddWithValue("@FromDate", fromDate);
+                    da.SelectCommand.Parameters.AddWithValue("@ToDate", toDate);
+                    da.SelectCommand.Parameters.AddWithValue("@ApprovalStatus", approvalStatus);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return dt;
+
+        }
+        #endregion
+
+        #region Dispatch Plan
+
+        public ResponseOut AddEditDispatch(Dispatch dispatch, List<DispatchProductDetail> dispatchProductDetails)
+        {
+            ResponseOut responseOut = new ResponseOut();
+            try
+            {
+                DataTable dtDispatchProduct = new DataTable();
+                dtDispatchProduct.Columns.Add("SOId", typeof(int));
+                dtDispatchProduct.Columns.Add("ProductId", typeof(Int64));
+                dtDispatchProduct.Columns.Add("Quantity", typeof(decimal));
+                dtDispatchProduct.Columns.Add("Priority", typeof(decimal));
+
+
+                if (dispatchProductDetails != null && dispatchProductDetails.Count > 0)
+                {
+                    foreach (DispatchProductDetail item in dispatchProductDetails)
+                    {
+                        DataRow dtrow = dtDispatchProduct.NewRow();
+                        dtrow["SOId"] = item.SOId;
+                        dtrow["ProductId"] = item.ProductId;
+                        dtrow["Quantity"] = item.Quantity;
+                        dtrow["Priority"] = item.Priority;
+                        dtDispatchProduct.Rows.Add(dtrow);
+                    }
+                    dtDispatchProduct.AcceptChanges();
+                }
+
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand sqlCommand = new SqlCommand("proc_AddEditDispatch", con))
+                    {
+                        sqlCommand.CommandType = CommandType.StoredProcedure;
+                        sqlCommand.Parameters.AddWithValue("@DispatchID", dispatch.DispatchID);
+                        sqlCommand.Parameters.AddWithValue("@DispatchDate", dispatch.DispatchDate);
+                        sqlCommand.Parameters.AddWithValue("@DispatchPlanID", dispatch.DispatchPlanID);
+                        sqlCommand.Parameters.AddWithValue("@CompanyBranchID", dispatch.CompanyBranchID);
+                        sqlCommand.Parameters.AddWithValue("@UserID", dispatch.CreatedBy);
+                        sqlCommand.Parameters.AddWithValue("@ApprovalStatus", dispatch.ApprovalStatus);
+                        sqlCommand.Parameters.AddWithValue("@DispatchProductDetail", dtDispatchProduct);
+                        sqlCommand.Parameters.Add("@Status", SqlDbType.VarChar, 50).Direction = ParameterDirection.Output;
+                        sqlCommand.Parameters.Add("@Message", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                        sqlCommand.Parameters.Add("@RetDispatchId", SqlDbType.BigInt).Direction = ParameterDirection.Output;
+                        con.Open();
+                        sqlCommand.ExecuteNonQuery();
+
+                        if (sqlCommand.Parameters["@Status"].Value != null)
+                        {
+                            responseOut.status = Convert.ToString(sqlCommand.Parameters["@Status"].Value);
+                        }
+
+                        if (responseOut.status != ActionStatus.Success)
+                        {
+                            if (sqlCommand.Parameters["@Message"].Value != null)
+                            {
+                                responseOut.message = Convert.ToString(sqlCommand.Parameters["@Message"].Value);
+                            }
+
+                        }
+                        else
+                        {
+                            if (dispatch.DispatchID == 0)
+                            {
+                                responseOut.message = ActionMessage.DispatchCreatedSuccess;
+                            }
+                            else
+                            {
+                                responseOut.message = ActionMessage.DispatchUpdatedSuccess;
+                            }
+                            if (sqlCommand.Parameters["@RetDispatchId"].Value != null)
+                            {
+                                responseOut.trnId = Convert.ToInt64(sqlCommand.Parameters["@RetDispatchId"].Value);
+                            }
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return responseOut;
+
+        }
+
+        public DataTable GetDispatchProductList(int dispatchID)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    da = new SqlDataAdapter("proc_GetDispatchProductList", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@DispatchID", dispatchID);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return dt;
+
+        }
+
+        public DataTable GetDispatchDetail(int dispatchID)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    da = new SqlDataAdapter("proc_GetDispatchDetail", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@DispatchID", dispatchID);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return dt;
+        }
+
+        public DataTable GetDispatchList(string dispatchNo, string dispatchPlanNo, int companyBranchId, DateTime fromDate, DateTime toDate, string approvalStatus)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    da = new SqlDataAdapter("proc_GetDispatchList", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@DispatchNo", dispatchNo);
+                    da.SelectCommand.Parameters.AddWithValue("@DispatchPlanNo", dispatchPlanNo);
+                    da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
+                    da.SelectCommand.Parameters.AddWithValue("@FromDate", fromDate);
+                    da.SelectCommand.Parameters.AddWithValue("@ToDate", toDate);
+                    da.SelectCommand.Parameters.AddWithValue("@ApprovalStatus", approvalStatus);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return dt;
+
+        }
+
+        public DataTable GetDispatchPlanListForDispatch(string dispatchPlanNo, string customerName, int companyBranchId, DateTime fromDate, DateTime toDate, string approvalStatus)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    da = new SqlDataAdapter("proc_GetDispatchPlanForDispatch", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@DispatchPlanNo", dispatchPlanNo);
+                    da.SelectCommand.Parameters.AddWithValue("@CustomerName", customerName);
+                    da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
+                    da.SelectCommand.Parameters.AddWithValue("@FromDate", fromDate);
+                    da.SelectCommand.Parameters.AddWithValue("@ToDate", toDate);
+                    da.SelectCommand.Parameters.AddWithValue("@ApprovalStatus", approvalStatus);
                     da.Fill(dt);
                 }
             }

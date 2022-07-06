@@ -255,6 +255,10 @@ namespace Portal.DAL
         public virtual DbSet<ComplaintSupportingDocument> ComplaintSupportingDocument { get; set; }
         public virtual DbSet<ProductOpeningStock> ProductOpeningStock { get; set; }
         public virtual DbSet<SaleInvoice> SaleInvoice { get; set; }
+        public virtual DbSet<Dispatch> Dispatch { get; set; }
+        public virtual DbSet<DispatchPlan> DispatchPlan { get; set; }
+        public virtual DbSet<DispatchPlanProductDetail> DispatchPlanProductDetail { get; set; }
+        public virtual DbSet<DispatchProductDetail> DispatchProductDetail { get; set; }
     
         public virtual ObjectResult<proc_GetRoleWiseChildUI_Result> proc_GetRoleWiseChildUI(Nullable<int> parentUIId, Nullable<int> roleId)
         {

@@ -832,6 +832,61 @@
           <Property Name="Status" Type="bit" />
           <Property Name="SequenceNo" Type="int" />
         </EntityType>
+        <EntityType Name="Dispatch">
+          <Key>
+            <PropertyRef Name="DispatchID" />
+          </Key>
+          <Property Name="DispatchID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DispatchNo" Type="varchar" MaxLength="50" />
+          <Property Name="DispatchDate" Type="date" />
+          <Property Name="DispatchPlanID" Type="int" Nullable="false" />
+          <Property Name="CompanyBranchID" Type="int" />
+          <Property Name="DispatchSequence" Type="int" />
+          <Property Name="ApprovalStatus" Type="varchar" MaxLength="20" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="DispatchPlan">
+          <Key>
+            <PropertyRef Name="DispatchPlanID" />
+          </Key>
+          <Property Name="DispatchPlanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DispatchPlanNo" Type="varchar" MaxLength="50" />
+          <Property Name="DispatchPlanDate" Type="date" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="CompanyBranchID" Type="int" />
+          <Property Name="DispatchSequence" Type="int" />
+          <Property Name="StatusID" Type="int" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="date" />
+          <Property Name="ApprovalStatus" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="DispatchPlanProductDetail">
+          <Key>
+            <PropertyRef Name="DPProductDetailID" />
+          </Key>
+          <Property Name="DPProductDetailID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DispatchPlanID" Type="int" />
+          <Property Name="SOId" Type="int" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Priority" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="DispatchProductDetail">
+          <Key>
+            <PropertyRef Name="DispatchDetailID" />
+          </Key>
+          <Property Name="DispatchDetailID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DispatchID" Type="int" />
+          <Property Name="SOId" Type="int" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Priority" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
         <EntityType Name="DocumentType">
           <Key>
             <PropertyRef Name="DocumentTypeId" />
@@ -3115,6 +3170,7 @@
           <Property Name="RtoRegsSGST_Perc" Type="decimal" Precision="18" Scale="2" />
           <Property Name="RtoRegsIGST_Perc" Type="decimal" Precision="18" Scale="2" />
           <Property Name="VehicleInsuranceValue" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="LocationId" Type="int" />
         </EntityType>
         <EntityType Name="QuotationProductDetail">
           <Key>
@@ -3384,6 +3440,7 @@
           <Property Name="SaleEmpId" Type="bigint" />
           <Property Name="SaleInvoiceType" Type="varchar" MaxLength="50" />
           <Property Name="TCSValue" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="LocationId" Type="int" />
         </EntityType>
         <EntityType Name="SaleInvoiceProductDetail">
           <Key>
@@ -3817,6 +3874,7 @@
           <Property Name="RtoRegsIGST_Perc" Type="decimal" Precision="18" Scale="2" />
           <Property Name="VehicleInsuranceValue" Type="decimal" Precision="18" Scale="2" />
           <Property Name="HypothecationBy" Type="varchar" MaxLength="50" />
+          <Property Name="LocationId" Type="int" />
         </EntityType>
         <EntityType Name="SOProductDetail">
           <Key>
@@ -4597,6 +4655,7 @@
           <Property Name="ModifiedDate" Type="date" />
           <Property Name="WorkOrderStatus" Type="varchar" MaxLength="50" />
           <Property Name="WorkOrderSequence" Type="int" />
+          <Property Name="LocationId" Type="int" />
         </EntityType>
         <EntityType Name="WorkOrderBOMDetail">
           <Key>
@@ -4637,7 +4696,7 @@
           <Property Name="ProductSerialRemarks" Type="varchar" MaxLength="1000" />
           <Property Name="ProductSerialSequence" Type="int" />
         </EntityType>
-        <Association Name="FK__Complaint__Compl__49FA978F">
+        <Association Name="FK__Complaint__Compl__70204077">
           <End Role="ComplaintService" Type="Self.ComplaintService" Multiplicity="0..1" />
           <End Role="ComplaintSupportingDocument" Type="Self.ComplaintSupportingDocument" Multiplicity="*" />
           <ReferentialConstraint>
@@ -4649,7 +4708,55 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__EmployeeS__Emplo__008BB26A">
+        <Association Name="FK__Dispatch__Dispat__1DE70B27">
+          <End Role="DispatchPlan" Type="Self.DispatchPlan" Multiplicity="1" />
+          <End Role="Dispatch" Type="Self.Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DispatchPlan">
+              <PropertyRef Name="DispatchPlanID" />
+            </Principal>
+            <Dependent Role="Dispatch">
+              <PropertyRef Name="DispatchPlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DispatchP__Custo__1EDB2F60">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="DispatchPlan" Type="Self.DispatchPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="DispatchPlan">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DispatchP__Dispa__1FCF5399">
+          <End Role="DispatchPlan" Type="Self.DispatchPlan" Multiplicity="0..1" />
+          <End Role="DispatchPlanProductDetail" Type="Self.DispatchPlanProductDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DispatchPlan">
+              <PropertyRef Name="DispatchPlanID" />
+            </Principal>
+            <Dependent Role="DispatchPlanProductDetail">
+              <PropertyRef Name="DispatchPlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DispatchP__Dispa__20C377D2">
+          <End Role="Dispatch" Type="Self.Dispatch" Multiplicity="0..1" />
+          <End Role="DispatchProductDetail" Type="Self.DispatchProductDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dispatch">
+              <PropertyRef Name="DispatchID" />
+            </Principal>
+            <Dependent Role="DispatchProductDetail">
+              <PropertyRef Name="DispatchID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmployeeS__Emplo__77C1623F">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="EmployeeSupportingDocument" Type="Self.EmployeeSupportingDocument" Multiplicity="*" />
           <ReferentialConstraint>
@@ -4753,6 +4860,10 @@
           <EntitySet Name="DeliveryChallanSupportingDocument" EntityType="Self.DeliveryChallanSupportingDocument" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Designation" EntityType="Self.Designation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dispatch" EntityType="Self.Dispatch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DispatchPlan" EntityType="Self.DispatchPlan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DispatchPlanProductDetail" EntityType="Self.DispatchPlanProductDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DispatchProductDetail" EntityType="Self.DispatchProductDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DocumentType" EntityType="Self.DocumentType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmailTemplate" EntityType="Self.EmailTemplate" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmailTemplateType" EntityType="Self.EmailTemplateType" Schema="dbo" store:Type="Tables" />
@@ -4936,11 +5047,27 @@
           <EntitySet Name="WorkOrderBOMDetail" EntityType="Self.WorkOrderBOMDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WorkOrderProductDetail" EntityType="Self.WorkOrderProductDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WorkOrderProductSerialDetail" EntityType="Self.WorkOrderProductSerialDetail" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Complaint__Compl__49FA978F" Association="Self.FK__Complaint__Compl__49FA978F">
+          <AssociationSet Name="FK__Complaint__Compl__70204077" Association="Self.FK__Complaint__Compl__70204077">
             <End Role="ComplaintService" EntitySet="ComplaintService" />
             <End Role="ComplaintSupportingDocument" EntitySet="ComplaintSupportingDocument" />
           </AssociationSet>
-          <AssociationSet Name="FK__EmployeeS__Emplo__008BB26A" Association="Self.FK__EmployeeS__Emplo__008BB26A">
+          <AssociationSet Name="FK__Dispatch__Dispat__1DE70B27" Association="Self.FK__Dispatch__Dispat__1DE70B27">
+            <End Role="DispatchPlan" EntitySet="DispatchPlan" />
+            <End Role="Dispatch" EntitySet="Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DispatchP__Custo__1EDB2F60" Association="Self.FK__DispatchP__Custo__1EDB2F60">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="DispatchPlan" EntitySet="DispatchPlan" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DispatchP__Dispa__1FCF5399" Association="Self.FK__DispatchP__Dispa__1FCF5399">
+            <End Role="DispatchPlan" EntitySet="DispatchPlan" />
+            <End Role="DispatchPlanProductDetail" EntitySet="DispatchPlanProductDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DispatchP__Dispa__20C377D2" Association="Self.FK__DispatchP__Dispa__20C377D2">
+            <End Role="Dispatch" EntitySet="Dispatch" />
+            <End Role="DispatchProductDetail" EntitySet="DispatchProductDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmployeeS__Emplo__77C1623F" Association="Self.FK__EmployeeS__Emplo__77C1623F">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="EmployeeSupportingDocument" EntitySet="EmployeeSupportingDocument" />
           </AssociationSet>
@@ -5287,6 +5414,26 @@
           <AssociationSet Name="FK_ProductOpeningStock_LocationId" Association="ERPModel.FK_ProductOpeningStock_LocationId">
             <End Role="Location" EntitySet="Locations" />
             <End Role="ProductOpeningStock" EntitySet="ProductOpeningStock" />
+          </AssociationSet>
+          <EntitySet Name="Dispatch" EntityType="ERPModel.Dispatch" />
+          <EntitySet Name="DispatchPlan" EntityType="ERPModel.DispatchPlan" />
+          <EntitySet Name="DispatchPlanProductDetail" EntityType="ERPModel.DispatchPlanProductDetail" />
+          <EntitySet Name="DispatchProductDetail" EntityType="ERPModel.DispatchProductDetail" />
+          <AssociationSet Name="FK__DispatchP__Custo__1EDB2F60" Association="ERPModel.FK__DispatchP__Custo__1EDB2F60">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="DispatchPlan" EntitySet="DispatchPlan" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Dispatch__Dispat__1DE70B27" Association="ERPModel.FK__Dispatch__Dispat__1DE70B27">
+            <End Role="DispatchPlan" EntitySet="DispatchPlan" />
+            <End Role="Dispatch" EntitySet="Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DispatchP__Dispa__20C377D2" Association="ERPModel.FK__DispatchP__Dispa__20C377D2">
+            <End Role="Dispatch" EntitySet="Dispatch" />
+            <End Role="DispatchProductDetail" EntitySet="DispatchProductDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DispatchP__Dispa__1FCF5399" Association="ERPModel.FK__DispatchP__Dispa__1FCF5399">
+            <End Role="DispatchPlan" EntitySet="DispatchPlan" />
+            <End Role="DispatchPlanProductDetail" EntitySet="DispatchPlanProductDetail" />
           </AssociationSet>
           
         </EntityContainer>
@@ -5823,6 +5970,7 @@
           <Property Name="UINNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CompanyBranchId" Type="Int64" />
           <Property Name="SaleEmpId" Type="Int64" />
+          <NavigationProperty Name="DispatchPlan" Relationship="ERPModel.FK__DispatchP__Custo__1EDB2F60" FromRole="Customer" ToRole="DispatchPlan" />
         </EntityType>
         <EntityType Name="CustomerBranch">
           <Key>
@@ -6011,6 +6159,7 @@
           <Property Name="RtoRegsSGST_Perc" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="RtoRegsIGST_Perc" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="VehicleInsuranceValue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LocationId" Type="Int32" />
         </EntityType>
         <EntityType Name="QuotationProductDetail">
           <Key>
@@ -6650,6 +6799,7 @@
           <Property Name="RtoRegsIGST_Perc" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="VehicleInsuranceValue" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="HypothecationBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LocationId" Type="Int32" />
         </EntityType>
         <EntityType Name="SOProductDetail">
           <Key>
@@ -8082,6 +8232,7 @@
           <Property Name="CancelBy" Type="Int32" />
           <Property Name="CancelDate" Type="DateTime" Precision="0" />
           <Property Name="CancelReason" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="LocationId" Type="Int32" />
         </EntityType>
         <EntityType Name="WorkOrderProductDetail">
           <Key>
@@ -9906,6 +10057,7 @@
           <Property Name="SaleEmpId" Type="Int64" />
           <Property Name="SaleInvoiceType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="TCSValue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LocationId" Type="Int32" />
         </EntityType>
         <Association Name="FK_ProductOpeningStock_LocationId">
           <End Type="ERPModel.Location" Role="Location" Multiplicity="0..1" />
@@ -9916,6 +10068,116 @@
             </Principal>
             <Dependent Role="ProductOpeningStock">
               <PropertyRef Name="LocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Dispatch">
+          <Key>
+            <PropertyRef Name="DispatchID" />
+          </Key>
+          <Property Name="DispatchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DispatchNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DispatchDate" Type="DateTime" Precision="0" />
+          <Property Name="DispatchPlanID" Type="Int32" Nullable="false" />
+          <Property Name="CompanyBranchID" Type="Int32" />
+          <Property Name="DispatchSequence" Type="Int32" />
+          <Property Name="ApprovalStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="DispatchPlan" Relationship="ERPModel.FK__Dispatch__Dispat__1DE70B27" FromRole="Dispatch" ToRole="DispatchPlan" />
+          <NavigationProperty Name="DispatchProductDetail" Relationship="ERPModel.FK__DispatchP__Dispa__20C377D2" FromRole="Dispatch" ToRole="DispatchProductDetail" />
+        </EntityType>
+        <EntityType Name="DispatchPlan">
+          <Key>
+            <PropertyRef Name="DispatchPlanID" />
+          </Key>
+          <Property Name="DispatchPlanID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DispatchPlanNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DispatchPlanDate" Type="DateTime" Precision="0" />
+          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="CompanyBranchID" Type="Int32" />
+          <Property Name="DispatchSequence" Type="Int32" />
+          <Property Name="StatusID" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+          <Property Name="ApprovalStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customer" Relationship="ERPModel.FK__DispatchP__Custo__1EDB2F60" FromRole="DispatchPlan" ToRole="Customer" />
+          <NavigationProperty Name="Dispatch" Relationship="ERPModel.FK__Dispatch__Dispat__1DE70B27" FromRole="DispatchPlan" ToRole="Dispatch" />
+          <NavigationProperty Name="DispatchPlanProductDetail" Relationship="ERPModel.FK__DispatchP__Dispa__1FCF5399" FromRole="DispatchPlan" ToRole="DispatchPlanProductDetail" />
+        </EntityType>
+        <EntityType Name="DispatchPlanProductDetail">
+          <Key>
+            <PropertyRef Name="DPProductDetailID" />
+          </Key>
+          <Property Name="DPProductDetailID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DispatchPlanID" Type="Int32" />
+          <Property Name="SOId" Type="Int32" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Priority" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="DispatchPlan" Relationship="ERPModel.FK__DispatchP__Dispa__1FCF5399" FromRole="DispatchPlanProductDetail" ToRole="DispatchPlan" />
+        </EntityType>
+        <EntityType Name="DispatchProductDetail">
+          <Key>
+            <PropertyRef Name="DispatchDetailID" />
+          </Key>
+          <Property Name="DispatchDetailID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DispatchID" Type="Int32" />
+          <Property Name="SOId" Type="Int32" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Priority" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Dispatch" Relationship="ERPModel.FK__DispatchP__Dispa__20C377D2" FromRole="DispatchProductDetail" ToRole="Dispatch" />
+        </EntityType>
+        <Association Name="FK__DispatchP__Custo__1EDB2F60">
+          <End Type="ERPModel.Customer" Role="Customer" Multiplicity="0..1" />
+          <End Type="ERPModel.DispatchPlan" Role="DispatchPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="DispatchPlan">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Dispatch__Dispat__1DE70B27">
+          <End Type="ERPModel.DispatchPlan" Role="DispatchPlan" Multiplicity="1" />
+          <End Type="ERPModel.Dispatch" Role="Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DispatchPlan">
+              <PropertyRef Name="DispatchPlanID" />
+            </Principal>
+            <Dependent Role="Dispatch">
+              <PropertyRef Name="DispatchPlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DispatchP__Dispa__20C377D2">
+          <End Type="ERPModel.Dispatch" Role="Dispatch" Multiplicity="0..1" />
+          <End Type="ERPModel.DispatchProductDetail" Role="DispatchProductDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dispatch">
+              <PropertyRef Name="DispatchID" />
+            </Principal>
+            <Dependent Role="DispatchProductDetail">
+              <PropertyRef Name="DispatchID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DispatchP__Dispa__1FCF5399">
+          <End Type="ERPModel.DispatchPlan" Role="DispatchPlan" Multiplicity="0..1" />
+          <End Type="ERPModel.DispatchPlanProductDetail" Role="DispatchPlanProductDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DispatchPlan">
+              <PropertyRef Name="DispatchPlanID" />
+            </Principal>
+            <Dependent Role="DispatchPlanProductDetail">
+              <PropertyRef Name="DispatchPlanID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -10688,6 +10950,7 @@
           <EntitySetMapping Name="Quotations">
             <EntityTypeMapping TypeName="ERPModel.Quotation">
               <MappingFragment StoreEntitySet="Quotation">
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
                 <ScalarProperty Name="VehicleInsuranceValue" ColumnName="VehicleInsuranceValue" />
                 <ScalarProperty Name="RtoRegsIGST_Perc" ColumnName="RtoRegsIGST_Perc" />
                 <ScalarProperty Name="RtoRegsSGST_Perc" ColumnName="RtoRegsSGST_Perc" />
@@ -11319,6 +11582,7 @@
           <EntitySetMapping Name="SOes">
             <EntityTypeMapping TypeName="ERPModel.SO">
               <MappingFragment StoreEntitySet="SO">
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
                 <ScalarProperty Name="HypothecationBy" ColumnName="HypothecationBy" />
                 <ScalarProperty Name="VehicleInsuranceValue" ColumnName="VehicleInsuranceValue" />
                 <ScalarProperty Name="RtoRegsIGST_Perc" ColumnName="RtoRegsIGST_Perc" />
@@ -12898,6 +13162,7 @@
           <EntitySetMapping Name="WorkOrders">
             <EntityTypeMapping TypeName="ERPModel.WorkOrder">
               <MappingFragment StoreEntitySet="WorkOrder">
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
                 <ScalarProperty Name="CancelReason" ColumnName="CancelReason" />
                 <ScalarProperty Name="CancelDate" ColumnName="CancelDate" />
                 <ScalarProperty Name="CancelBy" ColumnName="CancelBy" />
@@ -14696,6 +14961,7 @@
           <EntitySetMapping Name="SaleInvoice">
             <EntityTypeMapping TypeName="ERPModel.SaleInvoice">
               <MappingFragment StoreEntitySet="SaleInvoice">
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
                 <ScalarProperty Name="TCSValue" ColumnName="TCSValue" />
                 <ScalarProperty Name="SaleInvoiceType" ColumnName="SaleInvoiceType" />
                 <ScalarProperty Name="SaleEmpId" ColumnName="SaleEmpId" />
@@ -14810,6 +15076,65 @@
                 <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
                 <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
                 <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dispatch">
+            <EntityTypeMapping TypeName="ERPModel.Dispatch">
+              <MappingFragment StoreEntitySet="Dispatch">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ApprovalStatus" ColumnName="ApprovalStatus" />
+                <ScalarProperty Name="DispatchSequence" ColumnName="DispatchSequence" />
+                <ScalarProperty Name="CompanyBranchID" ColumnName="CompanyBranchID" />
+                <ScalarProperty Name="DispatchPlanID" ColumnName="DispatchPlanID" />
+                <ScalarProperty Name="DispatchDate" ColumnName="DispatchDate" />
+                <ScalarProperty Name="DispatchNo" ColumnName="DispatchNo" />
+                <ScalarProperty Name="DispatchID" ColumnName="DispatchID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DispatchPlan">
+            <EntityTypeMapping TypeName="ERPModel.DispatchPlan">
+              <MappingFragment StoreEntitySet="DispatchPlan">
+                <ScalarProperty Name="ApprovalStatus" ColumnName="ApprovalStatus" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="DispatchSequence" ColumnName="DispatchSequence" />
+                <ScalarProperty Name="CompanyBranchID" ColumnName="CompanyBranchID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="DispatchPlanDate" ColumnName="DispatchPlanDate" />
+                <ScalarProperty Name="DispatchPlanNo" ColumnName="DispatchPlanNo" />
+                <ScalarProperty Name="DispatchPlanID" ColumnName="DispatchPlanID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DispatchPlanProductDetail">
+            <EntityTypeMapping TypeName="ERPModel.DispatchPlanProductDetail">
+              <MappingFragment StoreEntitySet="DispatchPlanProductDetail">
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="SOId" ColumnName="SOId" />
+                <ScalarProperty Name="DispatchPlanID" ColumnName="DispatchPlanID" />
+                <ScalarProperty Name="DPProductDetailID" ColumnName="DPProductDetailID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DispatchProductDetail">
+            <EntityTypeMapping TypeName="ERPModel.DispatchProductDetail">
+              <MappingFragment StoreEntitySet="DispatchProductDetail">
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="SOId" ColumnName="SOId" />
+                <ScalarProperty Name="DispatchID" ColumnName="DispatchID" />
+                <ScalarProperty Name="DispatchDetailID" ColumnName="DispatchDetailID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

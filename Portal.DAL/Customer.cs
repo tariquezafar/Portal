@@ -14,6 +14,12 @@ namespace Portal.DAL
     
     public partial class Customer
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Customer()
+        {
+            this.DispatchPlan = new HashSet<DispatchPlan>();
+        }
+    
         public int CustomerId { get; set; }
         public string CustomerCode { get; set; }
         public string CustomerName { get; set; }
@@ -51,5 +57,8 @@ namespace Portal.DAL
         public string UINNo { get; set; }
         public Nullable<long> CompanyBranchId { get; set; }
         public Nullable<long> SaleEmpId { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DispatchPlan> DispatchPlan { get; set; }
     }
 }

@@ -98,6 +98,8 @@
     <Compile Include="DashBoardContainer\DashBoardContainerBL.cs" />
     <Compile Include="DashboardInterface\DashboardInterfaceBL.cs" />
     <Compile Include="DashboardItemMapping\DashboardItemMappingBL.cs" />
+    <Compile Include="DispatchPlan\DispatchPlanBL.cs" />
+    <Compile Include="Dispatch\DispatchBL.cs" />
     <Compile Include="HRDashboard\HRDashboardBL.cs" />
     <Compile Include="HSN\HSNBL.cs" />
     <Compile Include="MaterialRejectNote\MaterialRejectNoteBL.cs" />
@@ -214,6 +216,8 @@
     <Compile Include="ViewModel\DashboardContainerViewModel.cs" />
     <Compile Include="ViewModel\DashboardInterfaceViewModel.cs" />
     <Compile Include="ViewModel\DashboardItemMappingViewModel.cs" />
+    <Compile Include="ViewModel\DispatchPlanViewModel.cs" />
+    <Compile Include="ViewModel\DispatchViewModel.cs" />
     <Compile Include="ViewModel\HSNViewModel.cs" />
     <Compile Include="ViewModel\MaterialRejectNoteViewModel.cs" />
     <Compile Include="ViewModel\PurchaseInvoiceImportViewModel.cs" />

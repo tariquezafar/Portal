@@ -10054,6 +10054,29 @@ namespace Portal.DAL
         }
         #endregion
 
+        /// <summary>
+        /// This method is used to get customer list with sale order.
+        /// Author by : Dheeraj Kumar on 26 Jun 2022
+        /// </summary>
+        /// <param name="searchTerm">Filtered Text.</param>
+        /// <param name="companyId">Company ID as parameters.</param>
+        /// <returns>
+        /// This method is return list of Customer.
+        /// </returns>
+        public List<SelectListModel> GetCustomerAutoCompletewithSaleOrderList(string searchTerm, int companyId)
+        {
+            List<SelectListModel> selectListModels = (from c in entities.Customers
+                                                      join so in entities.SOes on c.CustomerId equals so.CustomerId
+                                                      where ((c.CustomerName.ToLower().Contains(searchTerm.ToLower()))
+                                                      && c.CompanyId == companyId && c.Status == true)
+                                                      select new SelectListModel
+                                                      {
+                                                          ValueInt = c.CustomerId,
+                                                          Text = c.CustomerName
+                                                      }).Distinct().ToList();
+
+            return selectListModels;
+        }
     }
 
 

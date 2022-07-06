@@ -9,6 +9,8 @@ using Portal.Common;
 using System.Reflection;
 using System.Data;
 using System.Transactions;
+using Portal.Common.ViewModel;
+
 namespace Portal.Core
 {
     public class CustomerBL
@@ -1143,6 +1145,22 @@ namespace Portal.Core
                 throw ex;
             }
             return objCustomers;
+        }
+
+        public List<SelectListModel> GetCustomerAutoCompletewithSaleOrderList(string searchTerm, int companyId)
+        {
+            List<SelectListModel> lstSelectListModel = new List<SelectListModel>();
+            try
+            {
+                lstSelectListModel = dbInterface.GetCustomerAutoCompletewithSaleOrderList(searchTerm, companyId);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return lstSelectListModel;
         }
     }
 }

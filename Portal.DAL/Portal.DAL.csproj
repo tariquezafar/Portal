@@ -215,6 +215,18 @@
     <Compile Include="DashboardItemMapping.cs">
       <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dispatch.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchPlan.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchPlanProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchProductDetail.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
     <Compile Include="EmailTemplate.cs">
       <DependentUpon>ERP.tt</DependentUpon>
     </Compile>

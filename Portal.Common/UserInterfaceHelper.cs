@@ -359,6 +359,10 @@ namespace Portal.Common
 
         public const int Product_ImportChessisSerialMapping = 12290;
 
+        public const int Add_Edit_DispatchPlan = 12292;
+
+        public const int Add_Edit_Dispatch = 12294;
+
     }
 }
 

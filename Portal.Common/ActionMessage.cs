@@ -1134,7 +1134,17 @@ namespace Portal.Common
         public const String HSNCreatedSuccess = "HSN Created Successfully.";
         public const String HSNUpdatedSuccess = "HSN Updated Successfully.";
         public const String HSNDublicate = "HSN Code already Added.";
-       
+
+        #endregion
+
+        #region Complaint Service
+        public const String DispatchPlanCreatedSuccess = "Dispatch Plan Created Successfully";
+        public const String DispatchPlanUpdatedSuccess = "Dispatch Plan Updated Successfully";
+        #endregion
+
+        #region Dispatch
+        public const String DispatchCreatedSuccess = "Dispatch Created Successfully";
+        public const String DispatchUpdatedSuccess = "Dispatch Updated Successfully";
         #endregion
     }
 }

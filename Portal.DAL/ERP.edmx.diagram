@@ -236,6 +236,14 @@
         <EntityTypeShape EntityType="ERPModel.ProductOpeningStock" Width="1.5" PointX="37" PointY="50.75" />
         <EntityTypeShape EntityType="ERPModel.SaleInvoice" Width="1.5" PointX="0.75" PointY="50.75" />
         <AssociationConnector Association="ERPModel.FK_ProductOpeningStock_LocationId" />
+        <EntityTypeShape EntityType="ERPModel.Dispatch" Width="1.5" PointX="7.875" PointY="65.75" />
+        <EntityTypeShape EntityType="ERPModel.DispatchPlan" Width="1.5" PointX="5.625" PointY="64" />
+        <EntityTypeShape EntityType="ERPModel.DispatchPlanProductDetail" Width="1.5" PointX="7.875" PointY="62.625" />
+        <EntityTypeShape EntityType="ERPModel.DispatchProductDetail" Width="1.5" PointX="10.125" PointY="66.25" />
+        <AssociationConnector Association="ERPModel.FK__DispatchP__Custo__1EDB2F60" />
+        <AssociationConnector Association="ERPModel.FK__Dispatch__Dispat__1DE70B27" />
+        <AssociationConnector Association="ERPModel.FK__DispatchP__Dispa__20C377D2" />
+        <AssociationConnector Association="ERPModel.FK__DispatchP__Dispa__1FCF5399" />
         </Diagram>
       <Diagram DiagramId="c9375e52311f45a98fc7e70a6f59ccca" Name="Diagram2" />
     </edmx:Diagrams>

@@ -197,7 +197,14 @@ namespace Portal.Core.ViewModel
 
         public string IsThirdPartyProduct { get; set; }
 
-        
+        public string CustomerName { get; set; }
+        public string City { get; set; }
+
+        public decimal Priority { get; set; }
+
+        public string SONo { get; set; }
+
+
     }
     public class SOTaxViewModel
     {
@@ -246,5 +253,13 @@ namespace Portal.Core.ViewModel
         public string message { get; set; }
         public string status { get; set; }
 
+    }
+
+    public class CustomerSOViewModel
+    {
+        public int SOId { get; set; }
+        public string SONo { get; set; }
+        public string SODate { get; set; }
+        public string QuotationNo { get; set; }
     }
 }
