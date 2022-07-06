@@ -114,5 +114,6 @@ namespace Portal.DAL
         public Nullable<decimal> RtoRegsIGST_Perc { get; set; }
         public Nullable<decimal> VehicleInsuranceValue { get; set; }
         public string HypothecationBy { get; set; }
+        public Nullable<int> LocationId { get; set; }
     }
 }

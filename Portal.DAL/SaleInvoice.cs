@@ -128,5 +128,6 @@ namespace Portal.DAL
         public Nullable<long> SaleEmpId { get; set; }
         public string SaleInvoiceType { get; set; }
         public Nullable<decimal> TCSValue { get; set; }
+        public Nullable<int> LocationId { get; set; }
     }
 }

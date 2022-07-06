@@ -163,10 +163,8 @@ namespace Portal.Core.ViewModel
         public decimal IGST_Perc { get; set; }
         public decimal IGST_Amount { get; set; }
         public string HSN_Code { get; set; }
+
         public string ExpectedDeliveryDate { get; set; }
-
-
-       
 
     }
     public class POTaxViewModel

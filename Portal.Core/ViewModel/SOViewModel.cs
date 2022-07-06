@@ -146,7 +146,8 @@ namespace Portal.Core.ViewModel
 
         public string HypothecationBy { get; set; }
 
-
+        public int LocationId { get; set; }
+        public string LocationName { get; set; }
 
 
 

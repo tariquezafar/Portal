@@ -113,13 +113,13 @@ namespace Portal.Controllers
 
 
         [HttpGet]
-        public PartialViewResult GetSOList(string soNo = "", string customerName = "", string refNo = "", string fromDate = "", string toDate = "",string approvalStatus="",string CreatedByUserName="",int companyBranchId=0, string dashboardList = "")
+        public PartialViewResult GetSOList(string soNo = "", string customerName = "", string refNo = "", string fromDate = "", string toDate = "",string approvalStatus="",string CreatedByUserName="",int companyBranchId=0, string dashboardList = "", int LocationId=0)
         {
             List<SOViewModel> sos = new List<SOViewModel>();
             SOBL soBL = new SOBL();
             try
             {
-                sos = soBL.GetSOList(soNo, customerName, refNo, fromDate, toDate, ContextUser.CompanyId, approvalStatus,"",CreatedByUserName,companyBranchId, dashboardList, Convert.ToInt32(Session[SessionKey.CustomerId]));
+                sos = soBL.GetSOList(soNo, customerName, refNo, fromDate, toDate, ContextUser.CompanyId, approvalStatus,"",CreatedByUserName,companyBranchId, dashboardList, Convert.ToInt32(Session[SessionKey.CustomerId]),LocationId);
             }
             catch (Exception ex)
             {

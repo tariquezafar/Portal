@@ -128,7 +128,9 @@ namespace Portal.Core.ViewModel
         public string BranchType { get; set; }
 
       
+        public int LocationId { get; set; }
 
+        public string LocationName { get; set; }
 
 
 

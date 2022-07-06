@@ -1951,7 +1951,7 @@ function GetSODetail(soId) {
             $("#txtQuotationDate").val(data.QuotationDate);
        
             $("#ddlCompanyBranch").val(data.CompanyBranchId);
-            
+            $("#hdnLocationId").val(data.LocationId);
             $("#ddlCurrency").val(data.CurrencyCode);
             $("#txtCustomerName").val(data.CustomerName);
             $("#txtConsigneeName").val(data.ConsigneeName);
@@ -2099,7 +2099,7 @@ function GetSODetail(soId) {
                 $("#txtModifiedDate").val(data.ModifiedDate);
             }
 
-
+            BindBranchLocation();
             $("#btnAddNew").show();
             $("#btnPrint").show();
             $("#btnEmail").show();
@@ -2263,6 +2263,12 @@ function SaveData() {
     if (ddlCompanyBranch.val() == "" || ddlCompanyBranch.val() == "0") {
         ShowModel("Alert", "Please select Billing Location")
         ddlCompanyBranch.focus();
+        return false;
+    }
+
+    if ($("#ddlLocation").val() == "" || $("#ddlLocation").val() == "0") {
+        ShowModel("Alert", "Please select Branch Location")
+        $("#ddlLocation").focus();
         return false;
     }
     
@@ -2519,8 +2525,8 @@ function SaveData() {
         IdtypeValue: IDTypeValue1,
         Pancard: Pancard1,
         AdharcardNo:AdharcardNo1,
-        HypothecationBy:HypothecationBy1
-       
+        HypothecationBy:HypothecationBy1,
+       LocationId: $("#ddlLocation").val()
 
 
 
@@ -2970,7 +2976,7 @@ function SearchQuotation() {
         }
     });
 }
-function SelectQuotation(quotationId, quotationNo, quotationDate, customerId, customerCode, customerName, companyBranchId) {
+function SelectQuotation(quotationId, quotationNo, quotationDate, customerId, customerCode, customerName, companyBranchId,LocationId) {
 
 
     var quotationTerms = [];
@@ -2991,6 +2997,8 @@ function SelectQuotation(quotationId, quotationNo, quotationDate, customerId, cu
     GetQuotationDetail(quotationId);
     GetQuotationTermList(quotationTerms,quotationId);
     $("#ddlCompanyBranch").val(companyBranchId);
+    $("#ddlLocation").val(LocationId);
+    $("#ddlLocation").attr('disabled', true);
   
     
     $("#ddlCompanyBranch").attr('disabled', true);
@@ -4445,5 +4453,37 @@ function CheckMasterPermission(RoleId, InterfaceId, ModalId) {
             ShowModel('Alert', 'Problem in Request');
         }
     });
+
+}
+
+function BindBranchLocation() {
+
+    if ($("#ddlCompanyBranch").val() != "0" && $("#ddlCompanyBranch").val() != "") {
+        BranchId = $("#ddlCompanyBranch").val();
+        $.ajax({
+            type: "GET",
+            url: "../Fabrication/GetBranchLocationList",
+            data: { companyBranchID: BranchId },
+            dataType: "json",
+            asnc: false,
+            success: function (data) {
+                $("#ddlLocation").append($("<option></option>").val(0).html("-Select Branch Location-"));
+                $.each(data, function (i, item) {
+                    $("#ddlLocation").append($("<option></option>").val(item.LocationId).html(item.LocationName));
+                });
+                if ($("#hdnLocationId").val() != "0") {
+                    $("#ddlLocation").val($("#hdnLocationId").val());
+                }
+
+            },
+            error: function (Result) {
+                $("#ddlLocation").append($("<option></option>").val(0).html("-Select Branch Location-"));
+            }
+        });
+    }
+    else {
+        $("#ddlLocation").html('');
+        $("#ddlLocation").append($("<option></option>").val(0).html("-Select Branch Location-"));
+    }
 
 }

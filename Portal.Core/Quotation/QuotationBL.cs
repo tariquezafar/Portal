@@ -88,8 +88,8 @@ namespace Portal.Core
                     CreatedBy = quotationViewModel.CreatedBy,
                     ApprovalStatus= quotationViewModel.ApprovalStatus,
                     ReverseChargeApplicable = quotationViewModel.ReverseChargeApplicable,
-                    ReverseChargeAmount = quotationViewModel.ReverseChargeAmount
-
+                    ReverseChargeAmount = quotationViewModel.ReverseChargeAmount,
+                    LocationId=quotationViewModel.LocationId
 
                 };
                 List<QuotationProductDetail> quotationProductList = new List<QuotationProductDetail>();
@@ -238,13 +238,13 @@ namespace Portal.Core
             return responseOut;
         }
 
-        public List<QuotationViewModel> GetQuotationList(string quotationNo, string customerName, string refNo, string fromDate, string toDate, int companyId, string displayType = "",string approvalStatus="", int companyBranchId = 0,int CustomerId=0)
+        public List<QuotationViewModel> GetQuotationList(string quotationNo, string customerName, string refNo, string fromDate, string toDate, int companyId, string displayType = "",string approvalStatus="", int companyBranchId = 0,int CustomerId=0, int LocationId=0)
         {
             List<QuotationViewModel> quotations = new List<QuotationViewModel>();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
             try
             {
-                DataTable dtQuotations = sqlDbInterface.GetQuotationList(quotationNo, customerName, refNo, Convert.ToDateTime(fromDate),Convert.ToDateTime(toDate),companyId, displayType, approvalStatus, companyBranchId,CustomerId);
+                DataTable dtQuotations = sqlDbInterface.GetQuotationList(quotationNo, customerName, refNo, Convert.ToDateTime(fromDate),Convert.ToDateTime(toDate),companyId, displayType, approvalStatus, companyBranchId,CustomerId,LocationId);
                 if (dtQuotations != null && dtQuotations.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dtQuotations.Rows)
@@ -270,8 +270,9 @@ namespace Portal.Core
                             ModifiedByUserName = Convert.ToString(dr["ModifiedByName"]),
                             ModifiedDate = Convert.ToString(dr["ModifiedDate"]),
                             CompanyBranchId=Convert.ToInt32(dr["CompanyBranchId"]),
-                            CompanyBranchName= Convert.ToString(dr["CompanyBranchName"])
-                           
+                            CompanyBranchName= Convert.ToString(dr["CompanyBranchName"]),
+                           LocationName=Convert.ToString(dr["LocationName"]),
+                           LocationId=Convert.ToInt32(dr["LocationId"])
 
                         });
                     }
@@ -300,8 +301,8 @@ namespace Portal.Core
                             QuotationId = Convert.ToInt32(dr["QuotationId"]),
                             QuotationNo = Convert.ToString(dr["QuotationNo"]),
                             QuotationDate = Convert.ToString(dr["QuotationDate"]),
-                            CompanyBranchId=Convert.ToInt32(dr["CompanyBranchId"]),
-                            BranchType= Convert.ToString(dr["BranchType"]),
+                            CompanyBranchId = Convert.ToInt32(dr["CompanyBranchId"]),
+                            BranchType = Convert.ToString(dr["BranchType"]),
                             CurrencyCode = Convert.ToString(dr["CurrencyCode"]),
                             CustomerId = Convert.ToInt32(dr["CustomerId"]),
                             CustomerCode = Convert.ToString(dr["CustomerCode"]),
@@ -319,7 +320,7 @@ namespace Portal.Core
                             RefDate = Convert.ToString(dr["RefDate"]),
                             ApprovalStatus = Convert.ToString(dr["ApprovalStatus"]),
                             BasicValue = string.IsNullOrEmpty(dr["BasicValue"].ToString()) ? Convert.ToDecimal("0.0") : Convert.ToDecimal(dr["BasicValue"]),
-                            TotalValue = string.IsNullOrEmpty(dr["TotalValue"].ToString()) ? Convert.ToDecimal("0.0") : Convert.ToDecimal(dr["TotalValue"]),                         
+                            TotalValue = string.IsNullOrEmpty(dr["TotalValue"].ToString()) ? Convert.ToDecimal("0.0") : Convert.ToDecimal(dr["TotalValue"]),
                             FreightValue = Convert.ToDecimal(dr["FreightValue"]),
                             FreightCGST_Perc = Convert.ToDecimal(dr["FreightCGST_Perc"]),
                             FreightCGST_Amt = Convert.ToDecimal(dr["FreightCGST_Amt"]),
@@ -361,7 +362,8 @@ namespace Portal.Core
                             CreatedByUserName = Convert.ToString(dr["CreatedByName"]),
                             CreatedDate = Convert.ToString(dr["CreatedDate"]),
                             ModifiedByUserName = Convert.ToString(dr["ModifiedByName"]),
-                            ModifiedDate = Convert.ToString(dr["ModifiedDate"])
+                            ModifiedDate = Convert.ToString(dr["ModifiedDate"]),
+                            LocationId = Convert.ToInt32(dr["LocationId"])
                            
                         };
                     }

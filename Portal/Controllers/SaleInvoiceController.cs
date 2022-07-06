@@ -114,13 +114,13 @@ namespace Portal.Controllers
         }
 
         [HttpGet]
-        public PartialViewResult GetSaleInvoiceList(string saleinvoiceNo = "", string customerName = "", string refNo = "", string fromDate = "", string toDate = "",string invoiceType="",string approvalStatus="", int companyBranchId=0, string saleType="",string CreatedByUserName= "")
+        public PartialViewResult GetSaleInvoiceList(string saleinvoiceNo = "", string customerName = "", string refNo = "", string fromDate = "", string toDate = "",string invoiceType="",string approvalStatus="", int companyBranchId=0, string saleType="",string CreatedByUserName= "",int LocationId=0)
         {
             List<SaleInvoiceViewModel> saleinvoices = new List<SaleInvoiceViewModel>();
             SaleInvoiceBL saleinvoiceBL = new SaleInvoiceBL();
             try
             {
-                saleinvoices = saleinvoiceBL.GetSaleInvoiceList(saleinvoiceNo, customerName, refNo, fromDate, toDate, ContextUser.CompanyId, invoiceType,"", approvalStatus,"", companyBranchId, saleType, CreatedByUserName, Convert.ToInt32(Session[SessionKey.CustomerId]),"Sale");
+                saleinvoices = saleinvoiceBL.GetSaleInvoiceList(saleinvoiceNo, customerName, refNo, fromDate, toDate, ContextUser.CompanyId, invoiceType,"", approvalStatus,"", companyBranchId, saleType, CreatedByUserName, Convert.ToInt32(Session[SessionKey.CustomerId]),"Sale", LocationId);
             }
             catch (Exception ex)
             {

@@ -121,7 +121,7 @@ namespace Portal.Core
                     EwayBillNo= saleinvoiceViewModel.EwayBillNo,
                     SaleEmpId= saleinvoiceViewModel.SaleEmpId,
                     SaleInvoiceType = saleinvoiceViewModel.SaleInvoiceType,
-
+                    LocationId=saleinvoiceViewModel.LocationId,
 
 
                 };
@@ -294,13 +294,13 @@ namespace Portal.Core
 
             return responseOut;
         }
-        public List<SaleInvoiceViewModel> GetSaleInvoiceList(string saleinvoiceNo, string customerName, string refNo, string fromDate, string toDate, int companyId,string invoiceType="",string displayType="" ,string approvalStatus="",string customerCode="", int companyBranchId = 0,string saleType="",string CreatedByUserName="",int CustomerId=0,string SaleInvoiceType="")
+        public List<SaleInvoiceViewModel> GetSaleInvoiceList(string saleinvoiceNo, string customerName, string refNo, string fromDate, string toDate, int companyId,string invoiceType="",string displayType="" ,string approvalStatus="",string customerCode="", int companyBranchId = 0,string saleType="",string CreatedByUserName="",int CustomerId=0,string SaleInvoiceType="",int LocationId=0)
         {
             List<SaleInvoiceViewModel> saleinvoices = new List<SaleInvoiceViewModel>();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
             try
             {
-                DataTable dtSaleInvoices = sqlDbInterface.GetSaleInvoiceList(saleinvoiceNo, customerName, refNo, Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), companyId,invoiceType,displayType, approvalStatus,customerCode, companyBranchId,saleType, CreatedByUserName,CustomerId, SaleInvoiceType);
+                DataTable dtSaleInvoices = sqlDbInterface.GetSaleInvoiceList(saleinvoiceNo, customerName, refNo, Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), companyId,invoiceType,displayType, approvalStatus,customerCode, companyBranchId,saleType, CreatedByUserName,CustomerId, SaleInvoiceType, LocationId);
                 if (dtSaleInvoices != null && dtSaleInvoices.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dtSaleInvoices.Rows)
@@ -333,7 +333,9 @@ namespace Portal.Core
                             CreatedByUserName = Convert.ToString(dr["CreatedByName"]),
                             CreatedDate = Convert.ToString(dr["CreatedDate"]),
                             ModifiedByUserName = Convert.ToString(dr["ModifiedByName"]),
-                            ModifiedDate = Convert.ToString(dr["ModifiedDate"])
+                            ModifiedDate = Convert.ToString(dr["ModifiedDate"]),
+                            LocationId=Convert.ToInt32(dr["LocationId"]),
+                            LocationName=Convert.ToString(dr["LocationName"])
                         });
                     }
                 }
@@ -581,7 +583,8 @@ namespace Portal.Core
                             RtoRegsIGST_Perc = Convert.ToDecimal(dr["RtoRegsSGST_Perc"]),
                             RtoRegsSGST_Perc = Convert.ToDecimal(dr["RtoRegsIGST_Perc"]),
                             VehicleInsuranceValue = Convert.ToDecimal(dr["VehicleInsuranceValue"]),
-                            BranchType = Convert.ToString(dr["BranchType"])
+                            BranchType = Convert.ToString(dr["BranchType"]),
+                            LocationId=Convert.ToInt32(dr["LocationId"])
                         };
                     }
                 }

@@ -57,7 +57,7 @@ function SearchQuotation() {
     var txtFromDate = $("#txtFromDate");
     var txtToDate = $("#txtToDate");
     var ddlCompanyBranch = $("#ddlCompanyBranch");
-    var requestData = { quotationNo: txtQuotationNo.val().trim(), customerName: txtCustomerName.val().trim(), refNo: txtRefNo.val().trim(), fromDate: txtFromDate.val(), toDate: txtToDate.val(), approvalStatus: ddlApprovalStatus.val(), companyBranchId: ddlCompanyBranch.val() };
+    var requestData = { quotationNo: txtQuotationNo.val().trim(), customerName: txtCustomerName.val().trim(), refNo: txtRefNo.val().trim(), fromDate: txtFromDate.val(), toDate: txtToDate.val(), approvalStatus: ddlApprovalStatus.val(), companyBranchId: ddlCompanyBranch.val(), LocationId: $("#ddlLocation").val() };
     $.ajax({
         url: "../Quotation/GetQuotationList",
         data: requestData,
@@ -103,4 +103,35 @@ function BindCompanyBranchList() {
             $("#ddlCompanyBranch").append($("<option></option>").val(0).html("-Select Company Branch-"));
         }
     });
+}
+function BindBranchLocation() {
+
+    if ($("#ddlCompanyBranch").val() != "0" && $("#ddlCompanyBranch").val() != "") {
+        BranchId = $("#ddlCompanyBranch").val();
+        $.ajax({
+            type: "GET",
+            url: "../Fabrication/GetBranchLocationList",
+            data: { companyBranchID: BranchId },
+            dataType: "json",
+            asnc: false,
+            success: function (data) {
+                $("#ddlLocation").append($("<option></option>").val(0).html("-Select Branch Location-"));
+                $.each(data, function (i, item) {
+                    $("#ddlLocation").append($("<option></option>").val(item.LocationId).html(item.LocationName));
+                });
+                if ($("#hdnLocationId").val() != "0") {
+                    $("#ddlLocation").val($("#hdnLocationId").val());
+                }
+
+            },
+            error: function (Result) {
+                $("#ddlLocation").append($("<option></option>").val(0).html("-Select Branch Location-"));
+            }
+        });
+    }
+    else {
+        $("#ddlLocation").html('');
+        $("#ddlLocation").append($("<option></option>").val(0).html("-Select Branch Location-"));
+    }
+
 }

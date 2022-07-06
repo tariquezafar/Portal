@@ -115,13 +115,13 @@ namespace Portal.Controllers
 
 
         [HttpGet]
-        public PartialViewResult GetQuotationList(string quotationNo = "",string customerName = "", string refNo="", string fromDate="", string toDate="",string displayType="" ,string approvalStatus="", int companyBranchId = 0)
+        public PartialViewResult GetQuotationList(string quotationNo = "",string customerName = "", string refNo="", string fromDate="", string toDate="",string displayType="" ,string approvalStatus="", int companyBranchId = 0,int LocationId=0)
         {
             List<QuotationViewModel> quotations = new List<QuotationViewModel>();
             QuotationBL quotationBL = new QuotationBL();
             try
             {
-                quotations = quotationBL.GetQuotationList(quotationNo, customerName, refNo, fromDate, toDate, ContextUser.CompanyId, displayType, approvalStatus, companyBranchId,Convert.ToInt32(Session[ SessionKey.CustomerId]));
+                quotations = quotationBL.GetQuotationList(quotationNo, customerName, refNo, fromDate, toDate, ContextUser.CompanyId, displayType, approvalStatus, companyBranchId,Convert.ToInt32(Session[ SessionKey.CustomerId]),LocationId);
             }
             catch (Exception ex)
             {

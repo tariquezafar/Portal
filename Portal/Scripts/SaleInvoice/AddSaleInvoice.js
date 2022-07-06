@@ -825,6 +825,8 @@
 
     //$("#txtCustomerName").focus();
 
+          
+
 });
 $(".alpha-only").on("input", function () {
     var regexp = /[^a-zA-Z]/g;
@@ -2681,6 +2683,7 @@ function GetSaleInvoiceDetail(saleinvoiceId) {
             $("#txtSODate").val(data.SODate);
 
             $("#ddlCompanyBranch").val(data.CompanyBranchId);
+            $("#hdnLocationId").val(data.LocationId);
             $("#ddlCurrency").val(data.CurrencyCode);
             $("#ddlInvoiceType").val(data.InvoiceType);
 
@@ -2849,6 +2852,7 @@ function GetSaleInvoiceDetail(saleinvoiceId) {
             $("#btnAddNew").show();
             $("#btnPrint").show();
             $("#btnEmail").show();
+            BindBranchLocation();
         },
         error: function (Result) {
             ShowModel("Alert", "Problem in Request");
@@ -2988,6 +2992,11 @@ function SaveData() {
     }
     if (hdnConsigneeId.val() == "" || hdnConsigneeId.val() == "0") {
         ShowModel("Alert", "Please select Consignee from list")
+        return false;
+    }
+    if ($("#ddlLocation").val() == "" || $("#ddlLocation").val() == "0") {
+        ShowModel("Alert", "Please select Location from list")
+        $("#ddlLocation").focus();
         return false;
     }
 
@@ -3308,7 +3317,8 @@ function SaveData() {
         HypothecationBy: HypothecationBy1,
         EwayBillNo: txtEwayBillNo.val(),
         SaleEmpId: hdnSaleEmployeeId.val(),
-        SaleInvoiceType: "Sale"
+        SaleInvoiceType: "Sale",
+        LocationId: $("#ddlLocation").val()
 
     };
 
@@ -3946,7 +3956,7 @@ function SearchSaleOrder() {
         }
     });
 }
-function SelectSO(soId, soNo, soDate, customerId, customerCode, customerName, customerGSTNo, consigneeId, consigneeName, consigneeCode, consigneeGSTNo, companyBranchId) {
+function SelectSO(soId, soNo, soDate, customerId, customerCode, customerName, customerGSTNo, consigneeId, consigneeName, consigneeCode, consigneeGSTNo, companyBranchId,LocationId) {
     $("#txtSONo").val(soNo);
     $("#hdnSOId").val(soId);
     $("#txtSODate").val(soDate);
@@ -3963,6 +3973,9 @@ function SelectSO(soId, soNo, soDate, customerId, customerCode, customerName, cu
 
     $("#ddlCompanyBranch").val(companyBranchId);
     $("#ddlCompanyBranch").attr('disabled', true);
+
+    $("#ddlLocation").val(LocationId);
+    $("#ddlLocation").attr('disabled', true);
     GetCustomerDetail(customerId);
     $("#txtCustomerName").attr('disabled', true);
     $("#txtConsigneeName").attr('disabled', true);
@@ -5627,4 +5640,36 @@ function GetSaleInvoiceJobCardProductList(saleinvoiceProducts, jobCardID) {
             ShowHideProductPanel(2);
         }
     });
+}
+
+function BindBranchLocation() {
+
+    if ($("#ddlCompanyBranch").val() != "0" && $("#ddlCompanyBranch").val() != "") {
+        BranchId = $("#ddlCompanyBranch").val();
+        $.ajax({
+            type: "GET",
+            url: "../Fabrication/GetBranchLocationList",
+            data: { companyBranchID: BranchId },
+            dataType: "json",
+            asnc: false,
+            success: function (data) {
+                $("#ddlLocation").append($("<option></option>").val(0).html("-Select Branch Location-"));
+                $.each(data, function (i, item) {
+                    $("#ddlLocation").append($("<option></option>").val(item.LocationId).html(item.LocationName));
+                });
+                if ($("#hdnLocationId").val() != "0") {
+                    $("#ddlLocation").val($("#hdnLocationId").val());
+                }
+
+            },
+            error: function (Result) {
+                $("#ddlLocation").append($("<option></option>").val(0).html("-Select Branch Location-"));
+            }
+        });
+    }
+    else {
+        $("#ddlLocation").html('');
+        $("#ddlLocation").append($("<option></option>").val(0).html("-Select Branch Location-"));
+    }
+
 }

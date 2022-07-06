@@ -2577,6 +2577,7 @@ function GetQuotationDetail(quotationId) {
           
          
             $("#ddlCompanyBranch").val(data.CompanyBranchId);
+            $("#hdnLocationId").val(data.LocationId);
             $("#ddlCurrency").val(data.CurrencyCode);
 
             $("#ddlApprovalStatus").val(data.ApprovalStatus);
@@ -2650,6 +2651,7 @@ function GetQuotationDetail(quotationId) {
             $("#btnPrint").show();
             $("#btnEmail").show();
             GetBranchStateId();
+            BindBranchLocation();
 
         },
         error: function (Result) {
@@ -2777,6 +2779,12 @@ function SaveData() {
     if (ddlCompanyBranch.val() == "" || ddlCompanyBranch.val() == "0") {
         ShowModel("Alert", "Please Select Billing Location")
         ddlCompanyBranch.focus();
+        return false;
+    }
+
+    if ($("#ddlLocation").val() == "" || $("#ddlLocation").val() == "0") {
+        ShowModel("Alert", "Please Select Branch Location")
+        $("#ddlLocation").focus();
         return false;
     }
     if (ddlCurrency.val() == "" || ddlCurrency.val() == "0") {
@@ -2956,7 +2964,8 @@ function SaveData() {
         ReverseChargeAmount: txtReverseChargeAmount.val(),
 
         Remarks1: txtRemarks1.val(),
-        Remarks2: txtRemarks2.val()
+        Remarks2: txtRemarks2.val(),
+        LocationId:$("#ddlLocation").val()
     };
 
     var quotationProductList = [];
@@ -3462,4 +3471,38 @@ function BindCompanyBranchTypeListOnChange() {
             $("#ddlBranchType").append($("<option></option>").val(0).html("-Select Branch Type-"));
         }
     });
+}
+
+
+
+function BindBranchLocation() {
+
+    if ($("#ddlCompanyBranch").val() != "0" && $("#ddlCompanyBranch").val() != "") {
+        BranchId = $("#ddlCompanyBranch").val();
+        $.ajax({
+            type: "GET",
+            url: "../Fabrication/GetBranchLocationList",
+            data: { companyBranchID: BranchId },
+            dataType: "json",
+            asnc: false,
+            success: function (data) {
+                $("#ddlLocation").append($("<option></option>").val(0).html("-Select Branch Location-"));
+                $.each(data, function (i, item) {
+                    $("#ddlLocation").append($("<option></option>").val(item.LocationId).html(item.LocationName));
+                });
+                if ($("#hdnLocationId").val() != "0") {
+                    $("#ddlLocation").val($("#hdnLocationId").val());
+                }
+
+            },
+            error: function (Result) {
+                $("#ddlLocation").append($("<option></option>").val(0).html("-Select Branch Location-"));
+            }
+        });
+    }
+    else {
+        $("#ddlLocation").html('');
+        $("#ddlLocation").append($("<option></option>").val(0).html("-Select Branch Location-"));
+    }
+
 }

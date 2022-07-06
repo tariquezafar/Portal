@@ -108,7 +108,8 @@ namespace Portal.Core
                     RtoRegsSGST_Perc = soViewModel.RtoRegsSGST_Perc,
                     RtoRegsIGST_Perc = soViewModel.RtoRegsIGST_Perc,
                     VehicleInsuranceValue = soViewModel.VehicleInsuranceValue,
-                    HypothecationBy=soViewModel.HypothecationBy
+                    HypothecationBy=soViewModel.HypothecationBy,
+                    LocationId=soViewModel.LocationId
 
                 };
                 List<SOProductDetail> soProductList = new List<SOProductDetail>();
@@ -256,13 +257,13 @@ namespace Portal.Core
             return responseOut;
         }
 
-        public List<SOViewModel> GetSOList(string soNo, string customerName, string refNo, string fromDate, string toDate, int companyId, string approvalStatus = "",string displayType="",string CreatedByUserName="", int companyBranchId = 0, string dashboardList = "",int CustomerId=0)
+        public List<SOViewModel> GetSOList(string soNo, string customerName, string refNo, string fromDate, string toDate, int companyId, string approvalStatus = "",string displayType="",string CreatedByUserName="", int companyBranchId = 0, string dashboardList = "",int CustomerId=0,int LocationId=0)
         {
             List<SOViewModel> sos = new List<SOViewModel>();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
             try
             {
-                DataTable dtSOs = sqlDbInterface.GetSOList(soNo, customerName, refNo, Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), companyId, approvalStatus , displayType, CreatedByUserName, companyBranchId, dashboardList, CustomerId);
+                DataTable dtSOs = sqlDbInterface.GetSOList(soNo, customerName, refNo, Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), companyId, approvalStatus , displayType, CreatedByUserName, companyBranchId, dashboardList, CustomerId, LocationId);
                 if (dtSOs != null && dtSOs.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dtSOs.Rows)
@@ -298,6 +299,8 @@ namespace Portal.Core
                             CompanyBranchId= Convert.ToInt32(dr["CompanyBranchId"]),
                             CompanyBranchName = Convert.ToString(dr["CompanyBranchName"]),
                             HypothecationBy = Convert.ToString(dr["HypothecationBy"]),
+                            LocationId=Convert.ToInt32(dr["LocationId"]),
+                            LocationName=Convert.ToString(dr["LocationName"])
                         });
                     }
                 }
@@ -428,7 +431,8 @@ namespace Portal.Core
                             RtoRegsIGST_Perc = Convert.ToDecimal(dr["RtoRegsSGST_Perc"]),
                             RtoRegsSGST_Perc = Convert.ToDecimal(dr["RtoRegsIGST_Perc"]),
                             VehicleInsuranceValue = Convert.ToDecimal(dr["VehicleInsuranceValue"]),
-                            BranchType= Convert.ToString(dr["BranchType"])
+                            BranchType= Convert.ToString(dr["BranchType"]),
+                            LocationId=Convert.ToInt32(dr["LocationId"])
 
                         };
                     }
