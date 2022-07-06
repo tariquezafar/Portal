@@ -3904,6 +3904,7 @@ namespace Portal.DAL
                         sqlCommand.Parameters.AddWithValue("@CompanyId", quotation.CompanyId);
                         sqlCommand.Parameters.AddWithValue("@CreatedBy", quotation.CreatedBy);
                         sqlCommand.Parameters.AddWithValue("@ApprovalStatus", quotation.ApprovalStatus);
+                        sqlCommand.Parameters.AddWithValue("@LocationId", quotation.LocationId);
                         sqlCommand.Parameters.AddWithValue("@QuotationProductDetail", dtQuotationProduct);
                         sqlCommand.Parameters.AddWithValue("@QuotationTaxDetail", dtQuotationTax);
                         sqlCommand.Parameters.AddWithValue("@QuotationTermDetail", dtQuotationTerm);
@@ -4022,7 +4023,7 @@ namespace Portal.DAL
 
         }
 
-        public DataTable GetQuotationList(string quotationNo, string customerName, string refNo, DateTime fromDate, DateTime toDate, int companyId, string displayType = "", string approvalStatus = "", int companyBranchId = 0, int CustomerId =0)
+        public DataTable GetQuotationList(string quotationNo, string customerName, string refNo, DateTime fromDate, DateTime toDate, int companyId, string displayType = "", string approvalStatus = "", int companyBranchId = 0, int CustomerId =0,int LocationId=0)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -4042,6 +4043,7 @@ namespace Portal.DAL
                     da.SelectCommand.Parameters.AddWithValue("@ApprovalStatus", approvalStatus);
                     da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
                     da.SelectCommand.Parameters.AddWithValue("@CustomerId", CustomerId);
+                    da.SelectCommand.Parameters.AddWithValue("@LocationId", LocationId);
                     da.Fill(dt);
                 }
             }
@@ -5726,7 +5728,7 @@ namespace Portal.DAL
                         sqlCommand.Parameters.AddWithValue("@RtoRegsSGST_Perc", so.RtoRegsSGST_Perc);
                         sqlCommand.Parameters.AddWithValue("@RtoRegsIGST_Perc", so.RtoRegsIGST_Perc);
                         sqlCommand.Parameters.AddWithValue("@VehicleInsuranceValue", so.VehicleInsuranceValue);
-
+                        sqlCommand.Parameters.AddWithValue("@LocationId", so.LocationId);
 
                         sqlCommand.Parameters.AddWithValue("@SOProductDetail", dtSOProduct);
                         sqlCommand.Parameters.AddWithValue("@SOTaxDetail", dtSOTax);
@@ -5846,7 +5848,7 @@ namespace Portal.DAL
 
         }
 
-        public DataTable GetSOList(string soNo, string customerName, string refNo, DateTime fromDate, DateTime toDate, int companyId, string approvalStatus = "", string displayType = "", string CreatedByUserName = "", int companyBranchId = 0, string dashboardList = "",int CustomerId=0)
+        public DataTable GetSOList(string soNo, string customerName, string refNo, DateTime fromDate, DateTime toDate, int companyId, string approvalStatus = "", string displayType = "", string CreatedByUserName = "", int companyBranchId = 0, string dashboardList = "", int CustomerId = 0, int LocationId = 0)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -5868,6 +5870,7 @@ namespace Portal.DAL
                     da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
                     da.SelectCommand.Parameters.AddWithValue("@DashboardList", dashboardList);
                     da.SelectCommand.Parameters.AddWithValue("@CustomerId", CustomerId);
+                    da.SelectCommand.Parameters.AddWithValue("@LocationId", LocationId);
                     da.Fill(dt);
                 }
             }
@@ -5879,6 +5882,7 @@ namespace Portal.DAL
             return dt;
 
         }
+
         public DataTable GetSODetail(long soId)
         {
             DataTable dt = new DataTable();
@@ -6335,6 +6339,7 @@ namespace Portal.DAL
                         sqlCommand.Parameters.AddWithValue("@HypothecationBy", saleinvoice.HypothecationBy);
                         sqlCommand.Parameters.AddWithValue("@EwayBillNo", saleinvoice.EwayBillNo);
                         sqlCommand.Parameters.AddWithValue("@SaleEmpId", saleinvoice.SaleEmpId);
+                        sqlCommand.Parameters.AddWithValue("@LocationId", saleinvoice.LocationId);
 
                         sqlCommand.Parameters.AddWithValue("@ReverseChargeApplicable", saleinvoice.ReverseChargeApplicable);
                         sqlCommand.Parameters.AddWithValue("@ReverseChargeAmount", saleinvoice.ReverseChargeAmount);
@@ -6483,7 +6488,7 @@ namespace Portal.DAL
 
         }
 
-        public DataTable GetSaleInvoiceList(string invoiceNo, string customerName, string refNo, DateTime fromDate, DateTime toDate, int companyId, string invoiceType = "", string displayType = "", string approvalStatus = "", string customerCode = "", int companyBranchId = 0, string saleType = "", string CreatedByUserName = "",int CustomerId=0,string SaleInvoiceType="")
+        public DataTable GetSaleInvoiceList(string invoiceNo, string customerName, string refNo, DateTime fromDate, DateTime toDate, int companyId, string invoiceType = "", string displayType = "", string approvalStatus = "", string customerCode = "", int companyBranchId = 0, string saleType = "", string CreatedByUserName = "", int CustomerId = 0, string SaleInvoiceType = "", int LocationId = 0)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -6508,6 +6513,7 @@ namespace Portal.DAL
                     da.SelectCommand.Parameters.AddWithValue("@CreatedBy", CreatedByUserName);
                     da.SelectCommand.Parameters.AddWithValue("@CustomerId", CustomerId);
                     da.SelectCommand.Parameters.AddWithValue("@SaleInvoiceType", SaleInvoiceType);
+                    da.SelectCommand.Parameters.AddWithValue("@LocationId", LocationId);
                     da.Fill(dt);
                 }
             }
