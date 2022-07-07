@@ -712,6 +712,9 @@
     <Compile Include="POProductDetail.cs">
       <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
+    <Compile Include="POProductSchedule.cs">
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
     <Compile Include="POSetting.cs">
       <DependentUpon>ERP.tt</DependentUpon>
     </Compile>

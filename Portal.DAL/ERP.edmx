@@ -2207,6 +2207,23 @@
           <Property Name="CompanyBranchId" Type="int" />
           <Property Name="ExpectedDeliveryDate" Type="date" />
         </EntityType>
+        <EntityType Name="POProductSchedule">
+          <Key>
+            <PropertyRef Name="PoProductScheduleId" />
+          </Key>
+          <Property Name="PoProductScheduleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="POId" Type="bigint" />
+          <Property Name="CompanyBranchId" Type="int" />
+          <Property Name="LocationName" Type="varchar" MaxLength="50" />
+          <Property Name="ProductId" Type="bigint" />
+          <Property Name="ProductName" Type="varchar" MaxLength="100" />
+          <Property Name="ProductCode" Type="varchar" MaxLength="50" />
+          <Property Name="UOMName" Type="varchar" MaxLength="50" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DeliveryDate" Type="date" />
+          <Property Name="SchQuantity" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ConDeliveryDate" Type="date" />
+        </EntityType>
         <EntityType Name="POSettings">
           <Key>
             <PropertyRef Name="POSettingId" />
@@ -4936,6 +4953,7 @@
           <EntitySet Name="PISupportingDocument" EntityType="Self.PISupportingDocument" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PO" EntityType="Self.PO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="POProductDetail" EntityType="Self.POProductDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="POProductSchedule" EntityType="Self.POProductSchedule" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="POSettings" EntityType="Self.POSettings" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="POSupportingDocument" EntityType="Self.POSupportingDocument" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="POTaxDetail" EntityType="Self.POTaxDetail" Schema="dbo" store:Type="Tables" />
@@ -5435,6 +5453,7 @@
             <End Role="DispatchPlan" EntitySet="DispatchPlan" />
             <End Role="DispatchPlanProductDetail" EntitySet="DispatchPlanProductDetail" />
           </AssociationSet>
+          <EntitySet Name="POProductSchedule" EntityType="ERPModel.POProductSchedule" />
           
         </EntityContainer>
         <EntityType Name="RoleUIActionMapping">
@@ -10181,6 +10200,23 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="POProductSchedule">
+          <Key>
+            <PropertyRef Name="PoProductScheduleId" />
+          </Key>
+          <Property Name="PoProductScheduleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="POId" Type="Int64" />
+          <Property Name="CompanyBranchId" Type="Int32" />
+          <Property Name="LocationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductId" Type="Int64" />
+          <Property Name="ProductName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UOMName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DeliveryDate" Type="DateTime" Precision="0" />
+          <Property Name="SchQuantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ConDeliveryDate" Type="DateTime" Precision="0" />
+        </EntityType>
         
       </Schema>
     </edmx:ConceptualModels>
@@ -15135,6 +15171,24 @@
                 <ScalarProperty Name="SOId" ColumnName="SOId" />
                 <ScalarProperty Name="DispatchID" ColumnName="DispatchID" />
                 <ScalarProperty Name="DispatchDetailID" ColumnName="DispatchDetailID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="POProductSchedule">
+            <EntityTypeMapping TypeName="ERPModel.POProductSchedule">
+              <MappingFragment StoreEntitySet="POProductSchedule">
+                <ScalarProperty Name="ConDeliveryDate" ColumnName="ConDeliveryDate" />
+                <ScalarProperty Name="SchQuantity" ColumnName="SchQuantity" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UOMName" ColumnName="UOMName" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+                <ScalarProperty Name="CompanyBranchId" ColumnName="CompanyBranchId" />
+                <ScalarProperty Name="POId" ColumnName="POId" />
+                <ScalarProperty Name="PoProductScheduleId" ColumnName="PoProductScheduleId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
