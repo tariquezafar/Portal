@@ -112,7 +112,6 @@
     <form action="#" id="frmAddEditPO" class="form-horizontal as" enctype="multipart/form-data" method="post" accept-charset="utf-8">
         <div class="row inner">
             <div class="message">
-
             </div>
             <div id="tabs">
                 <ul>
@@ -228,8 +227,8 @@
                         <div class="form-group  col-md-4">
                             <label for="txtConsigneeName" class="col-sm-4 control-label">Consignee Name&nbsp;<span class="Mandatory">(*)</span></label>
                             <div class="col-sm-8">
-                                
-                                <input class="form-control" id="txtConsigneeName" name="txtConsigneeName" tabindex="43" placeholder="Enter Consignee Name" type="text" maxlength="100"  readonly="readonly"/>
+
+                                <input class="form-control" id="txtConsigneeName" name="txtConsigneeName" tabindex="43" placeholder="Enter Consignee Name" type="text" maxlength="100" readonly="readonly" />
                                 <input id="hdnConsigneeId" type="hidden" value="0" />
                             </div>
                         </div>
@@ -270,7 +269,7 @@
                         <div class="form-group col-md-4">
                             <label for="txtRemarks1" class="col-sm-4 control-label">PO Type</label>
                             <div class="col-sm-8">
-                                <select id="ddlPOType" name="ddlPOType" tabindex="13" onchange="CurrencyConversionRate();" class="form-control" >
+                                <select id="ddlPOType" name="ddlPOType" tabindex="13" onchange="CurrencyConversionRate();" class="form-control">
                                     <option value="0">-Select PO Type-</option>
                                     <option value="Retail">Retail</option>
                                     <option value="Import">Import</option>
@@ -280,7 +279,7 @@
                         <div class="form-group col-md-4">
                             <label for="txtCurrencyConversionRate" class="col-sm-4 control-label">Currency Conversion Rate (INR)</label>
                             <div class="col-sm-8">
-                                <input class="form-control input-number" id="txtCurrencyConversionRate" name="txtCurrencyConversionRate" tabindex="1" onkeyup="checkDec(this);" placeholder="Currency Conversion Rate" type="text" maxlength="50" >
+                                <input class="form-control input-number" id="txtCurrencyConversionRate" name="txtCurrencyConversionRate" tabindex="1" onkeyup="checkDec(this);" placeholder="Currency Conversion Rate" type="text" maxlength="50">
 
                             </div>
                         </div>
@@ -293,7 +292,7 @@
                     </div>
 
                     <div class="col-md-12">
-                      
+
                         <div class="form-group col-md-4">
                             <label for="txtRemarks2" class="col-sm-4 control-label">Remarks 2</label>
                             <div class="col-sm-8">
@@ -585,7 +584,7 @@
                         <div class="form-group col-md-4">
                             <label for="txtIGSTPercAmount" class="col-sm-4 control-label"></label>
                             <div class="col-sm-8">
-                                <input class="form-control" id="txtIGSTPercAmount" name="txtIGSTPercAmount"  tabindex="91" placeholder="IGST Amount" type="text" maxlength="100" />
+                                <input class="form-control" id="txtIGSTPercAmount" name="txtIGSTPercAmount" tabindex="91" placeholder="IGST Amount" type="text" maxlength="100" />
 
                             </div>
                         </div>
@@ -936,12 +935,7 @@
                 </div>
 
             </div>
-
-
-
-
-
-            <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+        <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
                 <div class="col-md-3">
                     <label for="ddlApprovalStatus" class="col-sm-6 control-label">Save Mode</label>
                     <div class="col-sm-6">
@@ -1197,6 +1191,105 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="POScheduleModel" role="dialog" style="z-index:99999;">
+            <div class="modal-dialog  modal-lg" style="z-index:99999;">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" tabindex="4" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">PO Schedule</h4>
+                    </div>
+
+                    <div class="">
+                        <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                            <div class="form-group col-md-3"></div>
+                            <div class="form-group col-md-3" style="background-color:yellow">
+                                <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Po Schedule Detail</b></label></h4>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <input class="btn btn-success editonly" value="Add New PO Schedule" tabindex="76" alt="Add New PO Schedule" id="btnAddNewTerm" onclick="ShowHidePOSchedulePanel(1)" type="button" border="0">
+                            </div>
+                            <div class="form-group col-md-3"></div>
+                        </div>
+                        <div class="poSchedule" style="display:none;">
+                            <div class="col-md-12 ftop">
+                                <div class="form-group col-md-4">
+                                    <label for="txtProductNameModel" class="col-sm-4 control-label">Product Name</label>
+                                    <div class="col-sm-8 ">
+                                        <input class="form-control" id="txtProductNameModel" name="txtProductNameModel" tabindex="5" type="text" maxlength="50" disabled />
+                                        <input id="hdnProductId" type="hidden" value="0" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="txtProductCodeModel" class="col-sm-4 control-label">Product Code</label>
+                                    <div class="col-sm-8 ">
+                                        <input class="form-control" id="txtProductCodeModel" name="txtProductCodeModel" tabindex="5" type="text" maxlength="50" disabled />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="txtUnit" class="col-sm-4 control-label">Unit</label>
+                                    <div class="col-sm-8 ">
+                                        <input class="form-control" id="txtUnit" name="txtUnit" tabindex="8" type="text" maxlength="50" disabled />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group col-md-4">
+                                    <label for="txtDeliverydatemodel" class="col-sm-4 control-label">Delivery Date</label>
+                                    <div class="col-sm-8 ">
+                                        <input class="form-control" id="txtDeliverydatemodel" name="txtDeliverydatemodel" tabindex="8" type="text" maxlength="50" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="txtSchQty" class="col-sm-4 control-label">Sch Qty</label>
+                                    <div class="col-sm-8 ">
+                                        <input class="form-control" id="txtSchQty" name="txtSchQty" tabindex="8" type="text" maxlength="50" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="txtConDeliveryDate" class="col-sm-4 control-label">Confirmed Delivery Date</label>
+                                    <div class="col-sm-8 ">
+                                        <input class="form-control" id="txtConDeliveryDate" name="txtConDeliveryDate" tabindex="8" type="text" maxlength="50" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-12 col-md-12 poSchedule" style="display:none;">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <center>
+                                    <input class="btn btn-success" value="Add Po Schedule" alt="Add Po Schedule" tabindex="78" id="btnAddPoSchedule" onclick="AddPOSchedule(1)" type="button" border="0">
+                                    <input class="btn btn-success" value="Update Po Schedule" alt="Update Po Schedule" style="display:none;" tabindex="79" id="btnUpdatePoSchedule" onclick="AddPOSchedule(2)" type="button" border="0">
+                                    <input class="btn btn-success" type="button" id="btnCancelPoSchedule" tabindex="79" onclick="ShowHidePOSchedulePanel(2)" value="Cancel" />
+                                </center>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+
+                        <div class="row col-sm-6 col-lg-12 col-md-12">
+                            <div id="divPoScheduleList">
+                            </div>
+                        </div>
+
+                        <div class="row col-sm-12 col-lg-12 col-md-12 ftop">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <center>
+                                    <input class="btn btn-success" value="Save" alt="Save" tabindex="9" id="btnSave" onclick="savePoSchedule()" type="button" border="0">
+                                </center>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" tabindex="10" class="btn btn-primary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
 

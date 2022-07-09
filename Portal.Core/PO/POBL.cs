@@ -77,6 +77,44 @@ namespace Portal.Core
             }
             return quotationProducts;
         }
+
+        public List<POScheduleViewModel> GetPOScheduleList(long poId)
+        {
+            List<POScheduleViewModel> pOSchedule = new List<POScheduleViewModel>();
+            SQLDbInterface sqlDbInterface = new SQLDbInterface();
+            try
+            {
+                DataTable dtPOSchedule = sqlDbInterface.GetPOScheduleList(poId);
+                if (dtPOSchedule != null && dtPOSchedule.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dtPOSchedule.Rows)
+                    {
+                        pOSchedule.Add(new POScheduleViewModel
+                        {
+                            POScheduleId = Convert.ToInt32(dr["PoProductScheduleId"]),
+                            SequenceNo = Convert.ToInt32(dr["SequenceNo"]),
+                            CompanyBranchId = Convert.ToInt32(dr["CompanyBranchId"]),
+                            Location = Convert.ToString(dr["LocationName"]),
+                            ProductId = Convert.ToInt32(dr["ProductId"]),
+                            ProductName = Convert.ToString(dr["ProductName"]),
+                            ProductCode = Convert.ToString(dr["ProductCode"]),
+                            Unit = Convert.ToString(dr["UOMName"]),
+                            OrderQuantity = Convert.ToDecimal(dr["Quantity"]),
+                            DeliveryDate = Convert.ToString(dr["DeliveryDate"]),
+                            SchQuantity = Convert.ToDecimal(dr["SchQuantity"]),
+                            ConDeliveryDate = Convert.ToString(dr["ConDeliveryDate"]),
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return pOSchedule;
+        }
+
         public List<POTaxViewModel> GetPOTaxList(long poId)
         {
             List<POTaxViewModel> poTaxes = new List<POTaxViewModel>();
@@ -202,7 +240,7 @@ namespace Portal.Core
             return poTerms;
         }
 
-        public ResponseOut AddEditPO(POViewModel poViewModel, List<POProductViewModel> poProducts, List<POTaxViewModel> poTaxes, List<POTermViewModel> poTerms, List<POSupportingDocumentViewModel> poDocuments)
+        public ResponseOut AddEditPO(POViewModel poViewModel, List<POProductViewModel> poProducts, List<POTaxViewModel> poTaxes, List<POTermViewModel> poTerms, List<POSupportingDocumentViewModel> poDocuments, List<POScheduleViewModel> poSchedules)
         {
             ResponseOut responseOut = new ResponseOut();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
@@ -322,7 +360,30 @@ namespace Portal.Core
                     }
                 }
 
-                List<POTaxDetail> poTaxList = new List<POTaxDetail>();
+                List<POProductSchedule> poSchedulesList = new List<POProductSchedule>();
+                if (poSchedules != null && poSchedules.Count > 0)
+                {
+                    foreach (POScheduleViewModel item in poSchedules)
+                    {
+                        poSchedulesList.Add(new POProductSchedule
+                        {
+                            PoProductScheduleId = item.POScheduleId,
+                            POId = poViewModel.POId,
+                            ProductId = item.ProductId,
+                            ProductName = item.ProductName,
+                            ProductCode = item.ProductCode,
+                            CompanyBranchId = poViewModel.CompanyBranchId,
+                            LocationName = item.Location,
+                            Quantity = item.OrderQuantity,
+                            UOMName = item.Unit,
+                            SchQuantity = item.SchQuantity,
+                            DeliveryDate = Convert.ToDateTime(item.DeliveryDate),
+                            ConDeliveryDate = Convert.ToDateTime(item.ConDeliveryDate)
+                        });
+                    }
+                }
+
+                List <POTaxDetail> poTaxList = new List<POTaxDetail>();
                 if (poTaxes != null && poTaxes.Count > 0)
                 {
                     foreach (POTaxViewModel item in poTaxes)
@@ -371,7 +432,7 @@ namespace Portal.Core
                     }
                 }
 
-                responseOut = sqlDbInterface.AddEditPO(po, poProductList,poTaxList,poTermList,poDocumentList);
+                responseOut = sqlDbInterface.AddEditPO(po, poProductList,poTaxList,poTermList,poDocumentList, poSchedulesList);
             }
 
             catch (Exception ex)

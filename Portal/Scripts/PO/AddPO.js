@@ -494,6 +494,29 @@
 
         }
     });
+
+    $("#txtDeliverydatemodel").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'dd-M-yy',
+        yearRange: '-10:+100',
+        minDate: 0,
+        onSelect: function (selected) {
+
+        }
+    });
+
+    $("#txtConDeliveryDate").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'dd-M-yy',
+        yearRange: '-10:+100',
+        minDate: 0,
+        onSelect: function (selected) {
+
+        }
+    });
+
     $("#txtQuotationDate").datepicker({
         changeMonth: true,
         changeYear: true,
@@ -557,6 +580,10 @@
 
     var poProducts = [];
     GetPOProductList(poProducts);
+
+    var poSchedules = [];
+    GetPOScheduleList(poSchedules);
+
     var poTaxes = [];
     GetPOTaxList(poTaxes);
     var poTerms = [];
@@ -1214,7 +1241,7 @@ function EditProductRow(obj) {
     var productTaxAmount = $(row).find("#hdnProductTaxAmount").val();
     var productTaxName = $(row).find("#hdnProductTaxName").val();
     var totalPrice = $(row).find("#hdnTotalPrice").val();
-    var expDeliveryDate = $row.find("#hdnExpDeliveryDate").val();
+    var expDeliveryDate = $(row).find("#hdnExpDeliveryDate").val();
 
     var productSurchargeName_1 = $(row).find("#hdnProductSurchargeName_1").val();
     var productSurchargePercentage_1 = $(row).find("#hdnProductSurchargePercentage_1").val();
@@ -2011,6 +2038,208 @@ function GetPODetail(poId) {
     });
 }
 
+function AddPOSchedule(action) {
+    var flag = true;
+    var hdnsequenceNo = $("#hdnSequenceNo");
+    var hdnpoProductDetailId = $("#hdnPOScheduleDetailId").val();
+    var productId = $("#hdnProductId").val();
+    var txtproductName = $("#txtProductNameModel").val();
+    var txtproductCode = $("#txtProductCodeModel").val();
+    var txtuomName = $("#txtUnit").val();
+    var txtdeliverydate = $("#txtDeliverydatemodel").val();
+    var txtSchQty = $("#txtSchQty").val();
+    var txtconDeliveryDate = $("#txtConDeliveryDate").val();
+    var txtquantity = $("#hdnQuantity").val();
+
+
+    if (txtproductName == "") {
+        return false;
+    }
+    if (txtSchQty == "" || txtSchQty == "0" || parseFloat(txtSchQty) <= 0) {
+        return false;
+    }
+    if (txtdeliverydate == "") {
+        return false;
+    }
+    if (txtconDeliveryDate == "") {
+        return false;
+    }
+
+    var poCounter = 0;
+    if (action == 1 && (hdnsequenceNo.val() == "" || hdnsequenceNo.val() == "0")) {
+        poCounter = 1;
+    }
+
+    var poScheduleList = [];
+    
+    $('#tblPoSchedule tr').each(function (i, row) {
+        var $row = $(row);
+        var sequenceNo = $row.find("#hdnSequenceNo").val();
+        var poProductDetailId = $row.find("#hdnPOScheduleDetailId").val();
+        var hdnproductId = $row.find("#hdnProductId").val();
+        var productName = $row.find("#hdntxtProductNameModel").val();
+        var productCode = $row.find("#hdntxtProductCodeModel").val();
+        var unitName = $row.find("#hdntxtUnit").val();
+        var deliverydatemodel = $row.find("#hdntxtDeliverydatemodel").val();
+        var schQty = $row.find("#hdntxtSchQty").val();
+        var conDeliveryDate = $row.find("#hdntxtConDeliveryDate").val();
+        var quantity = $("#hdnQuantity").val();
+
+        if (poProductDetailId != undefined) {
+            if (action == 1 || (hdnsequenceNo.val() != sequenceNo)) {
+                var poSchedule = {
+                    POScheduleId: poProductDetailId,
+                    SequenceNo: sequenceNo,
+                    ProductId: hdnproductId,
+                    ProductName: productName,
+                    ProductCode: productCode,
+                    Unit: unitName,
+                    OrderQuantity: quantity,
+                    DeliveryDate: deliverydatemodel,
+                    SchQuantity: schQty,
+                    ConDeliveryDate: conDeliveryDate
+                };
+                poScheduleList.push(poSchedule);
+                poCounter = parseInt(poCounter) + 1;
+            }
+            else if (hdnpoProductDetailId == poProductDetailId && (hdnsequenceNo.val() == sequenceNo)) {
+                var poSchedule = {
+                    POScheduleId: hdnpoProductDetailId,
+                    SequenceNo: hdnsequenceNo,
+                    ProductId: productId,
+                    ProductName: txtproductName,
+                    ProductCode: txtproductCode,
+                    Unit: txtuomName,
+                    OrderQuantity: txtquantity,
+                    DeliveryDate: txtdeliverydate,
+                    SchQuantity: txtSchQty,
+                    ConDeliveryDate: txtconDeliveryDate
+                };
+                poScheduleList.push(poSchedule);
+                hdnsequenceNo.val("0");
+            }
+        }
+
+    });
+    if (action == 1 && (hdnsequenceNo == "" || hdnsequenceNo == "0")) {
+        hdnsequenceNo.val(poCounter);
+    }
+    if (action == 1) {
+        var poScheduleAddEdit = {
+            POScheduleId: hdnpoProductDetailId,
+            SequenceNo: hdnsequenceNo,
+            ProductId: productId,
+            ProductName: txtproductName,
+            ProductCode: txtproductCode,
+            Unit: txtuomName,
+            OrderQuantity: txtquantity,
+            DeliveryDate: txtdeliverydate,
+            SchQuantity: txtSchQty,
+            ConDeliveryDate: txtconDeliveryDate
+        };
+        poScheduleList.push(poScheduleAddEdit);
+        hdnsequenceNo.val("0");
+    }
+    if (flag) {
+        GetPOScheduleList(poScheduleList);
+    }
+}
+
+function GetPOScheduleList(poSchedules) {
+    var hdnPOId = $("#hdnPOId");
+    var requestData = { poSchedules: poSchedules, poId: hdnPOId.val() };
+    $.ajax({
+        url: "../PO/GetPOScheduleList",
+        cache: false,
+        data: JSON.stringify(requestData),
+        dataType: "html",
+        contentType: "application/json; charset=utf-8",
+        type: "POST",
+        error: function (err) {
+            $("#divPoScheduleList").html("");
+            $("#divPoScheduleList").html(err);
+        },
+        success: function (data) {
+            $("#divPoScheduleList").html("");
+            $("#divPoScheduleList").html(data);
+            ShowHidePOSchedulePanel(2);
+        }
+    });
+}
+
+function POScheduleRow(obj) {
+    $("#POScheduleModel").modal();
+    var row = $(obj).closest("tr");
+    var productId = $(row).find("#hdnProductId").val();
+    var productName = $(row).find("#hdnProductName").val();
+    var productCode = $(row).find("#hdnProductCode").val();
+    var uomName = $(row).find("#hdnUOMName").val();
+    var quantity = $(row).find("#hdnQuantity").val();
+
+    $("#txtProductNameModel").val(productName);
+    $("#hdnProductId").val(productId);
+    $("#txtProductCodeModel").val(productCode);
+    $("#txtUnit").val(uomName);
+    $("#hdnQuantity").val(quantity);
+    ////$("#txtDeliverydatemodel").val('');
+}
+
+function EditPOScheduleRow(obj) {
+    var row = $(obj).closest("tr");
+    var sequenceNo = $(row).find("#hdnSequenceNo").val();
+    var poProductDetailId = $(row).find("#hdnPOScheduleDetailId").val();
+    var productId = $(row).find("#hdnProductId").val();
+    var productName = $(row).find("#hdntxtProductNameModel").val();
+    var productCode = $(row).find("#hdntxtProductCodeModel").val();
+    var uomName = $(row).find("#hdntxtUnit").val();
+    var deliverydate = $(row).find("#hdntxtDeliverydatemodel").val();
+    var schQty = $(row).find("#hdntxtSchQty").val();
+    var condeliverydate = $(row).find("#hdntxtConDeliveryDate").val();
+    var quantity = $(row).find("#hdnQuantity").val();
+
+    $("#hdnSequenceNo").val(sequenceNo);
+    $("#hdnPOScheduleDetailId").val(poProductDetailId);
+    $("#hdnProductIdModel").val(productId);
+    $("#txtProductNameModel").val(productName);
+    $("#txtProductCodeModel").val(productCode);
+    $("#txtUnit").val(uomName);
+    $("#txtDeliverydatemodel").val(deliverydate);
+    $("#txtSchQty").val(schQty);
+    $("#txtConDeliveryDate").val(condeliverydate);
+    $("#hdnQuantity").val(quantity);
+    $(".poSchedule").show();
+    $("#btnAddPoSchedule").hide();
+    $("#btnUpdatePoSchedule").show();
+}
+
+function RemovePOScheduleRow(obj) {
+    if (confirm("Do you want to remove selected PO Schedule?")) {
+        var row = $(obj).closest("tr");
+        ShowModel("Alert", "PO Schedule Removed from List.");
+        row.remove();
+    }
+}
+
+function ShowHidePOSchedulePanel(action) {
+    if (action == 1) {
+        $(".poSchedule").show();
+    }
+    else {
+        $(".poSchedule").hide();
+        $("#btnAddPoSchedule").show();
+        $("#btnUpdatePoSchedule").hide();
+        $("#txtDeliverydatemodel").val("");
+        $("#txtSchQty").val("");
+        $("#txtConDeliveryDate").val("");
+    }
+}
+
+function savePoSchedule() {
+    $("#hdnProductId").val("0");
+    $("#hdnQuantity").val('');
+    $("#POScheduleModel").modal('hide');
+}
+
 
 function SaveData() {
     var txtPONo = $("#txtPONo");
@@ -2137,8 +2366,8 @@ function SaveData() {
         ddlState.focus();
         return false;
     }
-
-    if (txtBasicValue.val() == "" || parseFloat(txtBasicValue.val()) <= 0) {
+    ////if (txtBasicValue.val() == "" || parseFloat(txtBasicValue.val()) <= 0) {
+    if ($('#tblProductList tr').length <= 1) {
         ShowModel("Alert", "Please select at least one Product")
         return false;
     }
@@ -2368,6 +2597,36 @@ function SaveData() {
         }
     });
 
+    var poScheduleList = [];
+    $('#tblPoSchedule tr').each(function (i, row) {
+        var $row = $(row);
+        var sequenceNo = $row.find("#hdnSequenceNo").val();
+        var poProductDetailId = $row.find("#hdnPOScheduleDetailId").val();
+        var hdnproductId = $row.find("#hdnProductId").val();
+        var productName = $row.find("#hdntxtProductNameModel").val();
+        var productCode = $row.find("#hdntxtProductCodeModel").val();
+        var unitName = $row.find("#hdntxtUnit").val();
+        var deliverydatemodel = $row.find("#hdntxtDeliverydatemodel").val();
+        var schQty = $row.find("#hdntxtSchQty").val();
+        var conDeliveryDate = $row.find("#hdntxtConDeliveryDate").val();
+
+        if (hdnproductId != undefined) {
+            var poSchedule = {
+                POScheduleId: poProductDetailId,
+                SequenceNo: sequenceNo,
+                ProductId: hdnproductId,
+                ProductName: productName,
+                ProductCode: productCode,
+                Unit: unitName,
+                OrderQuantity: schQty,
+                DeliveryDate: deliverydatemodel,
+                SchQuantity: schQty,
+                ConDeliveryDate: conDeliveryDate
+            };
+            poScheduleList.push(poSchedule);
+        }
+    });
+
     var poTaxList = [];
     $('#tblTaxList tr').each(function (i, row) {
         var $row = $(row);
@@ -2458,7 +2717,7 @@ function SaveData() {
     if (hdnPOId.val() != null && hdnPOId.val() != 0) {
         accessMode = 2;//Edit Mode
     }
-    var requestData = { poViewModel: poViewModel, poProducts: poProductList, poTaxes: poTaxList, poTerms: poTermList, poDocuments:poDocumentList };
+    var requestData = { poViewModel: poViewModel, poProducts: poProductList, poTaxes: poTaxList, poTerms: poTermList, poDocuments: poDocumentList, poSchedules: poScheduleList };
     $.ajax({
         url: "../PO/AddEditPO?accessMode=" + accessMode + "",
         cache: false,

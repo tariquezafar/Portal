@@ -4103,7 +4103,7 @@ namespace Portal.DAL
         #endregion
 
         #region PO
-        public ResponseOut AddEditPO(PO po, List<POProductDetail> poProductList, List<POTaxDetail> poTaxList, List<POTermsDetail> poTermList, List<POSupportingDocument> poDocumentList)
+        public ResponseOut AddEditPO(PO po, List<POProductDetail> poProductList, List<POTaxDetail> poTaxList, List<POTermsDetail> poTermList, List<POSupportingDocument> poDocumentList,List<POProductSchedule> poSchedules)
         {
             ResponseOut responseOut = new ResponseOut();
             try
@@ -4186,6 +4186,48 @@ namespace Portal.DAL
                     dtPOProduct.AcceptChanges();
 
                 }
+
+                DataTable dtPOSchedule = new DataTable();
+                dtPOSchedule.Columns.Add("PoProductScheduleId", typeof(Int64));
+                dtPOSchedule.Columns.Add("POId", typeof(Int64));
+                dtPOSchedule.Columns.Add("CompanyBranchId", typeof(Int64));
+                dtPOSchedule.Columns.Add("LocationName", typeof(string));
+                dtPOSchedule.Columns.Add("ProductId", typeof(Int64));
+                dtPOSchedule.Columns.Add("ProductName", typeof(string));
+                dtPOSchedule.Columns.Add("ProductCode", typeof(string));
+                dtPOSchedule.Columns.Add("UOMName", typeof(string));
+                dtPOSchedule.Columns.Add("Quantity", typeof(decimal));
+                dtPOSchedule.Columns.Add("DeliveryDate", typeof(DateTime));
+                dtPOSchedule.Columns.Add("SchQuantity", typeof(decimal));
+                dtPOSchedule.Columns.Add("ConDeliveryDate", typeof(DateTime));
+                
+                
+
+                if (poSchedules != null && poSchedules.Count > 0)
+                {
+                    foreach (POProductSchedule item in poSchedules)
+                    {
+                        DataRow dtrow = dtPOSchedule.NewRow();
+                        dtrow["PoProductScheduleId"] = 0;
+                        dtrow["POId"] = 0;
+                        dtrow["CompanyBranchId"] = po.CompanyBranchId;
+                        dtrow["LocationName"] = item.LocationName;
+                        dtrow["ProductId"] = item.ProductId;
+                        dtrow["ProductName"] = item.ProductName;
+                        dtrow["ProductCode"] = item.ProductCode;
+                        dtrow["UOMName"] = item.UOMName;
+                        dtrow["Quantity"] = item.Quantity;
+                        dtrow["DeliveryDate"] = item.DeliveryDate;
+                        dtrow["SchQuantity"] = item.SchQuantity;
+                        dtrow["ConDeliveryDate"] = item.ConDeliveryDate;
+                        
+                        dtPOSchedule.Rows.Add(dtrow);
+                    }
+                    dtPOSchedule.AcceptChanges();
+                }
+
+
+
                 DataTable dtPOTax = new DataTable();
                 dtPOTax.Columns.Add("TaxId", typeof(Int64));
                 dtPOTax.Columns.Add("TaxName", typeof(string));
@@ -4343,6 +4385,7 @@ namespace Portal.DAL
 
 
                         sqlCommand.Parameters.AddWithValue("@POProductDetail", dtPOProduct);
+                        sqlCommand.Parameters.AddWithValue("@POProductSchedule", dtPOSchedule);
                         sqlCommand.Parameters.AddWithValue("@POTaxDetail", dtPOTax);
                         sqlCommand.Parameters.AddWithValue("@POTermDetail", dtPOTerm);
                         sqlCommand.Parameters.AddWithValue("@POSupportingDocument", dtPODocument);
@@ -4399,6 +4442,29 @@ namespace Portal.DAL
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     da = new SqlDataAdapter("proc_GetPOProducts", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@POId", poId);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+                throw ex;
+            }
+            return dt;
+
+        }
+
+        public DataTable GetPOScheduleList(long poId)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    da = new SqlDataAdapter("proc_GetPOSchedules", con);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand.Parameters.AddWithValue("@POId", poId);
                     da.Fill(dt);

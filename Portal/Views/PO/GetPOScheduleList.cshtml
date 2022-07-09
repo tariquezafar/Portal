@@ -1,0 +1,97 @@
+﻿@model List<Portal.Core.ViewModel.POScheduleViewModel>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div style="padding:10px;">
+        <table class="table" id="tblPoSchedule">
+            <thead>
+                <tr aling="center" style="background:rgba(0, 0, 0, 0) linear-gradient(#375CB0, #6e96e2) repeat scroll 0 0;">
+                    <th style="text-align:center">Product Name</th>
+                    <th style="text-align:center">Product Code</th>
+                    <th style="text-align:center">Unit</th>
+                    <th style="text-align:center">Delivery Date</th>
+                    <th style="text-align:center">Sch Quantity</th>
+                    <th style="text-align:center">Confirmed Delivery Date</th>
+                    <th colspan="2" align="center" class="editonly">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="success">
+                        <td width="10%" style="display:none">
+                            <input type="hidden" id="hdnPOScheduleDetailId" value="@item.POScheduleId" />
+                            <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
+                            <input type="hidden" id="hdnQuantity" value="@item.OrderQuantity" />
+                        </td>
+                        <td>
+                            @item.ProductName
+                            <input type="hidden" id="hdnProductId" value="@item.ProductId" />
+                            <input type="hidden" id="hdntxtProductNameModel" value="@item.ProductName" />
+                        </td>
+                        <td>
+                            @item.ProductCode
+                            <input type="hidden" id="hdntxtProductCodeModel" value="@item.ProductCode" />
+                        </td>
+                        <td>
+                            @item.Unit
+                            <input type="hidden" id="hdntxtUnit" value="@item.Unit" />
+
+                        </td>
+                        <td>
+                            @item.DeliveryDate
+                            <input type="hidden" id="hdntxtDeliverydatemodel" value="@item.DeliveryDate" />
+
+                        </td>
+                        <td>
+                            @item.SchQuantity
+                            <input type="hidden" id="hdntxtSchQty" value="@item.SchQuantity" />
+
+                        </td>
+                        <td>
+                            @item.ConDeliveryDate
+                            <input type="hidden" id="hdntxtConDeliveryDate" value="@item.ConDeliveryDate" />
+
+                        </td>
+                        <td class="btn btn-success table_btn editonly " style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-pencil-square-o " onclick="EditPOScheduleRow(this);" href="#"></a>
+                        </td>
+                        <td class="btn btn-success table_btn editonly " style="width:30px; margin:0px 2px auto;">
+                            <a style="color:white" class="fa fa-trash" onclick="RemovePOScheduleRow(this)" href="#"></a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div style="overflow-x:scroll; padding:10px;">
+        <table class="table" id="tblPoSchedule">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Unit</th>
+                    <th>Delivery Date</th>
+                    <th>Sch Quantity</th>
+                    <th>Confirmed Delivery Date</th>
+                    <th colspan="2" align="center" class="editonly">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+
+<script>
+    $(document).ready(function () {
+        var hdnAccessMode = $("#hdnAccessMode");
+        if (hdnAccessMode.val() == "3") {
+            $(".editonly").hide();
+        }
+
+    });
+</script>

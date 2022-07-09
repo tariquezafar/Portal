@@ -167,6 +167,24 @@ namespace Portal.Core.ViewModel
         public string ExpectedDeliveryDate { get; set; }
 
     }
+
+    public class POScheduleViewModel
+    {
+        public int SequenceNo { get; set; }
+        public int POScheduleId { get; set; }
+        public int CompanyBranchId { get; set; }
+        public long POId { get; set; }
+        public long ProductId { get; set; }
+        public string ProductName { get; set; }
+        public string ProductCode { get; set; }
+        public string Unit { get; set; }
+        public decimal OrderQuantity { get; set; }
+        public string DeliveryDate { get; set; }
+        public decimal SchQuantity { get; set; }
+        public string ConDeliveryDate { get; set; }
+        public string Location { get; set; }
+
+    }
     public class POTaxViewModel
     {
         public int TaxSequenceNo { get; set; }

@@ -56,7 +56,7 @@ namespace Portal.Controllers
         }
         [HttpPost]
         [ValidateRequest(true, UserInterfaceHelper.Add_Edit_PO, (int)AccessMode.AddAccess, (int)RequestMode.Ajax)]
-        public ActionResult AddEditPO(POViewModel poViewModel, List<POProductViewModel> poProducts, List<POTaxViewModel> poTaxes, List<POTermViewModel> poTerms, List<POSupportingDocumentViewModel> poDocuments)
+        public ActionResult AddEditPO(POViewModel poViewModel, List<POProductViewModel> poProducts, List<POTaxViewModel> poTaxes, List<POTermViewModel> poTerms, List<POSupportingDocumentViewModel> poDocuments, List<POScheduleViewModel> poSchedules)
         {
             ResponseOut responseOut = new ResponseOut();
             POBL poBL = new POBL();
@@ -67,7 +67,7 @@ namespace Portal.Controllers
                     poViewModel.CreatedBy = ContextUser.UserId;
                     poViewModel.CompanyId = ContextUser.CompanyId;
                     poViewModel.FinYearId = Session[SessionKey.CurrentFinYear] != null ? ((FinYearViewModel)Session[SessionKey.CurrentFinYear]).FinYearId : DateTime.Now.Year;
-                    responseOut = poBL.AddEditPO(poViewModel, poProducts, poTaxes, poTerms,poDocuments);
+                    responseOut = poBL.AddEditPO(poViewModel, poProducts, poTaxes, poTerms,poDocuments, poSchedules);
                 }
                 else
                 {
@@ -203,6 +203,25 @@ namespace Portal.Controllers
                 Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
             }
             return PartialView(poProducts);
+        }
+
+        [HttpPost]
+        public PartialViewResult GetPOScheduleList(List<POScheduleViewModel> poSchedules, long poId)
+        {
+            POBL poBL = new POBL();
+            try
+            {
+                if (poSchedules == null)
+                {
+                    poSchedules = poBL.GetPOScheduleList(poId);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
+            }
+            return PartialView(poSchedules);
         }
 
         [HttpPost]
