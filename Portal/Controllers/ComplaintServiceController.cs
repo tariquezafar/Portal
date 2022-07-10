@@ -178,13 +178,14 @@ namespace Portal.Controllers
             List<ComplaintServiceViewModel> complaints = new List<ComplaintServiceViewModel>();
             ComplaintServiceBL complaintServiceBL = new ComplaintServiceBL();
             int roleId = Session[SessionKey.RoleId] != null ? ((UserViewModel)Session[SessionKey.RoleId]).RoleId : 0;
+            string username = Session[SessionKey.CurrentUser] != null ? ((UserViewModel)Session[SessionKey.CurrentUser]).UserName : string.Empty;
             try
             {
                 if(roleId == 104)
                 {
                     complaintStatus = 1;
                 }
-                complaints = complaintServiceBL.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName,approvalStatus, companyBranchId, serviceEngineerId, dealerId, complaintStatus);
+                complaints = complaintServiceBL.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName,approvalStatus, companyBranchId, serviceEngineerId, dealerId, complaintStatus, username);
             }
             catch (Exception ex)
             {
@@ -201,7 +202,7 @@ namespace Portal.Controllers
 
             try
             {
-                complaints = complaintServiceBL.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName, approvalStatus, companyBranchId, serviceEngineerId, dealerId, complaintStatus);
+                complaints = complaintServiceBL.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName, approvalStatus, companyBranchId, serviceEngineerId, dealerId, complaintStatus,null);
             }
             catch (Exception ex)
             {

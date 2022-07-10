@@ -989,11 +989,6 @@ function AddProduct(action) {
         txtQuantity.focus();
         return false;
     }
-    if (txtExpDeliveryDate.val().trim() == "") {
-        ShowModel("Alert", "Please Enter Expected Delivery Date")
-        txtExpDeliveryDate.focus();
-        return false;
-    }
     if (action == 1 && (hdnSequenceNo.val() == "" || hdnSequenceNo.val() == "0")) {
         productEntrySequence = 1;
     }
@@ -2038,6 +2033,8 @@ function GetPODetail(poId) {
     });
 }
 
+var schQtyCount = 0;
+var productid = 0;
 function AddPOSchedule(action) {
     var flag = true;
     var hdnsequenceNo = $("#hdnSequenceNo");
@@ -2051,6 +2048,7 @@ function AddPOSchedule(action) {
     var txtconDeliveryDate = $("#txtConDeliveryDate").val();
     var txtquantity = $("#hdnQuantity").val();
 
+    
 
     if (txtproductName == "") {
         return false;
@@ -2061,10 +2059,21 @@ function AddPOSchedule(action) {
     if (txtdeliverydate == "") {
         return false;
     }
-    if (txtconDeliveryDate == "") {
+    if (productid == productId) {
+        schQtyCount = parseInt(schQtyCount) + parseInt(txtSchQty);
+    }
+    else {
+        schQtyCount = 0;
+    }
+    productid = productId
+    if (txtquantity < txtSchQty || txtquantity < schQtyCount) {
+        $('#CheckSchQty').show();
         return false;
     }
-
+    else {
+        schQtyCount = parseInt(schQtyCount) + parseInt(txtSchQty);
+        $('#CheckSchQty').hide();
+    }
     var poCounter = 0;
     if (action == 1 && (hdnsequenceNo.val() == "" || hdnsequenceNo.val() == "0")) {
         poCounter = 1;
@@ -2169,6 +2178,7 @@ function GetPOScheduleList(poSchedules) {
 
 function POScheduleRow(obj) {
     $("#POScheduleModel").modal();
+    $(".poSchedule").hide();
     var row = $(obj).closest("tr");
     var productId = $(row).find("#hdnProductId").val();
     var productName = $(row).find("#hdnProductName").val();
@@ -2181,7 +2191,6 @@ function POScheduleRow(obj) {
     $("#txtProductCodeModel").val(productCode);
     $("#txtUnit").val(uomName);
     $("#hdnQuantity").val(quantity);
-    ////$("#txtDeliverydatemodel").val('');
 }
 
 function EditPOScheduleRow(obj) {
@@ -2223,8 +2232,10 @@ function RemovePOScheduleRow(obj) {
 function ShowHidePOSchedulePanel(action) {
     if (action == 1) {
         $(".poSchedule").show();
+        $('#CheckSchQty').hide();
     }
     else {
+        $('#CheckSchQty').hide();
         $(".poSchedule").hide();
         $("#btnAddPoSchedule").show();
         $("#btnUpdatePoSchedule").hide();
