@@ -185,7 +185,7 @@ namespace Portal.Controllers
                 {
                     complaintStatus = 1;
                 }
-                complaints = complaintServiceBL.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName,approvalStatus, companyBranchId, serviceEngineerId, dealerId, complaintStatus, username);
+                complaints = complaintServiceBL.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName,approvalStatus, companyBranchId, serviceEngineerId, dealerId, complaintStatus);
             }
             catch (Exception ex)
             {

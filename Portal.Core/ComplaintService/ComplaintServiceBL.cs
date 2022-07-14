@@ -168,13 +168,13 @@ namespace Portal.Core
             return complaintProducts;
         }
 
-        public List<ComplaintServiceViewModel> GetComplaintServiceList(string complaintNo, string enquiryType, string complaintMode, string customerMobile, string customerName, string approvalStatus, int companyBranchId, int serviceEngineerId, int dealerId, int complaintStatus, string UserName)
+        public List<ComplaintServiceViewModel> GetComplaintServiceList(string complaintNo, string enquiryType, string complaintMode, string customerMobile, string customerName, string approvalStatus, int companyBranchId, int serviceEngineerId, int dealerId, int complaintStatus)
         {
             List<ComplaintServiceViewModel> complaints = new List<ComplaintServiceViewModel>();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
             try
             {
-                DataTable dtComplaints = sqlDbInterface.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName, approvalStatus, companyBranchId, serviceEngineerId, dealerId, complaintStatus, UserName);
+                DataTable dtComplaints = sqlDbInterface.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName, approvalStatus, companyBranchId, serviceEngineerId, dealerId, complaintStatus);
                 if (dtComplaints != null && dtComplaints.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dtComplaints.Rows)
