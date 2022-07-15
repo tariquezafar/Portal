@@ -30,7 +30,7 @@
                 {
                     <tr class="success">
                         <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
-                            <a style="color:white" class="fa fa-pencil-square-o" href="#" onclick="SelectQuotation('@item.QuotationId','@item.QuotationNo','@item.QuotationDate','@item.CustomerId','@item.CustomerCode','@item.CustomerName')"></a>
+                            <a style="color:white" class="fa fa-pencil-square-o" href="#" onclick="SelectQuotation('@item.QuotationId', '@item.QuotationNo', '@item.QuotationDate', '@item.CustomerId', '@item.CustomerCode', '@item.CustomerName', '@item.CompanyBranchId', '@item.LocationId')"></a>
                         </td>
                         <td>@item.QuotationNo
                         <input type="hidden" id="hdnSearchQuotationNo" value="@item.QuotationNo" />

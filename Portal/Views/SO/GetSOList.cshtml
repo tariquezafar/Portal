@@ -24,6 +24,7 @@
                     <th>Customer Name</th>
                     <th>Quotation No.</th>
                     <th>Company Branch</th>
+                    <th>Branch Location</th>
                     <th>Ref. No.</th>
                     <th>Ref. Date</th>
                     <th>Basic Value</th>
@@ -34,64 +35,65 @@
                     <th>Created Date</th>
                     <th>Modified By</th>
                     <th>Modified Date</th>
-                    
+
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr class="success">
-                        <td class="teal text" style="margin:0px auto;" >
-                            <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/SO/AddEditSO?SOId=@item.SOId&AccessMode=3"></a>
-                            @if (item.ApprovalStatus.ToUpper() == "DRAFT")
-                            {
-                                <a style="color:darkgreen" class="fa fa-pencil" href="~/SO/AddEditSO?SOId=@item.SOId&AccessMode=2"></a>
-                            }
-                            @if (item.ApprovalStatus.ToUpper() == "FINAL")
-                            {
-
-                                <a style="color:red" title="Cancel" class="fa fa-times" aria-hidden="true" href="~/SO/CancelSO?soId=@item.SOId&AccessMode=4"></a>
-                            }
-                        </td>
-
-                        <td>@item.SONo</td>
-                        <td>@item.SODate</td>
-                        <td>@item.CustomerName</td>
-                        <td>@item.QuotationNo</td>
-                        <td>@item.CompanyBranchName</td>
-                        <td>@item.RefNo</td>
-                        <td>@item.RefDate</td>
-                        <td>@item.BasicAmt</td>
-                        <td>@item.BasicValue</td>
-                        <td>@item.TotalValue</td>
-                    
-
+                <tr class="success">
+                    <td class="teal text" style="margin:0px auto;">
+                        <a style="color:darkblue" class="fa fa-eye" aria-hidden="true" href="~/SO/AddEditSO?SOId=@item.SOId&AccessMode=3"></a>
                         @if (item.ApprovalStatus.ToUpper() == "DRAFT")
                         {
-                            <td style="background-color: deepskyblue;color: #fff; font-weight: bold;">
-                                @item.ApprovalStatus
-                            </td>
+                            <a style="color:darkgreen" class="fa fa-pencil" href="~/SO/AddEditSO?SOId=@item.SOId&AccessMode=2"></a>
                         }
-                        else if (item.ApprovalStatus.ToUpper() == "CANCELLED")
+                        @if (item.ApprovalStatus.ToUpper() == "FINAL")
                         {
-                            <td style="background-color:red;color:white">
-                                @item.ApprovalStatus
-                            </td>
-                        }
-                        else
-                        {
-                            <td style="background-color: #128646;color: #fff; font-weight: bold;">
-                                @item.ApprovalStatus
-                            </td>
 
+                            <a style="color:red" title="Cancel" class="fa fa-times" aria-hidden="true" href="~/SO/CancelSO?soId=@item.SOId&AccessMode=4"></a>
                         }
-                        <td>@item.CreatedByUserName</td>
-                        <td>@item.CreatedDate</td>
-                        <td>@item.ModifiedByUserName</td>
-                        <td>@item.ModifiedDate</td>
-                        
+                    </td>
 
-                    </tr>
+                    <td>@item.SONo</td>
+                    <td>@item.SODate</td>
+                    <td>@item.CustomerName</td>
+                    <td>@item.QuotationNo</td>
+                    <td>@item.CompanyBranchName</td>
+                    <td>@item.LocationName</td>
+                    <td>@item.RefNo</td>
+                    <td>@item.RefDate</td>
+                    <td>@item.BasicAmt</td>
+                    <td>@item.BasicValue</td>
+                    <td>@item.TotalValue</td>
+
+
+                    @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                    {
+                        <td style="background-color: deepskyblue;color: #fff; font-weight: bold;">
+                            @item.ApprovalStatus
+                        </td>
+                    }
+                    else if (item.ApprovalStatus.ToUpper() == "CANCELLED")
+                    {
+                        <td style="background-color:red;color:white">
+                            @item.ApprovalStatus
+                        </td>
+                    }
+                    else
+                    {
+                        <td style="background-color: #128646;color: #fff; font-weight: bold;">
+                            @item.ApprovalStatus
+                        </td>
+
+                    }
+                    <td>@item.CreatedByUserName</td>
+                    <td>@item.CreatedDate</td>
+                    <td>@item.ModifiedByUserName</td>
+                    <td>@item.ModifiedDate</td>
+
+
+                </tr>
                 }
               
             </tbody>

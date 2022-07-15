@@ -9,6 +9,7 @@
                     <th align="center">Select</th>
                     <th>SO No.</th>
                     <th>SO Date</th>
+                    <th>Location</th>
                     <th>Customer Name</th>
                     <th>City</th>
                     <th>State</th>
@@ -23,7 +24,7 @@
                 {
                     <tr class="success">
                         <td class="btn btn-success table_btn" style="width:30px; margin:0px 2px auto;">
-                            <a style="color:white" class="fa fa-pencil-square-o" href="#" onclick="SelectSO('@item.SOId','@item.SONo','@item.SODate','@item.CustomerId','@item.CustomerCode','@item.CustomerName','@item.CustomerGSTNo','@item.ConsigneeId','@item.ConsigneeName','@item.ConsigneeCode','@item.ConsigneeGSTNo')"></a>
+                            <a style="color:white" class="fa fa-pencil-square-o" href="#" onclick="SelectSO('@item.SOId', '@item.SONo', '@item.SODate', '@item.CustomerId', '@item.CustomerCode', '@item.CustomerName', '@item.CustomerGSTNo', '@item.ConsigneeId', '@item.ConsigneeName', '@item.ConsigneeCode', '@item.ConsigneeGSTNo', '@item.CompanyBranchId', '@item.LocationId')"></a>
                         </td>    
                         <td>@item.SONo
                             <input type="hidden" id="hdnSequenceNo" value="@item.SONo" />
@@ -31,6 +32,7 @@
                         <td>@item.SODate
                             <input type="hidden" id="hdnSearchSODate" value="@item.SODate" />
                         </td>
+                        <td>@item.LocationName</td>
                         <td>@item.CustomerName</td>
                         <td>@item.City</td>
                         <td>@item.StateName</td>

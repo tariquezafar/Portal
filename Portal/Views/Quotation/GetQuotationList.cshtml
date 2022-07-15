@@ -19,6 +19,7 @@ background-color:  #dff0d8 !important;
                     <th><center>Quotation No.</center></th>
                     <th><center>Quotation Date</center></th>
                     <th><center>Company Branch</center></th>
+                    <th><center>Location</center></th>
                     <th><center>Customer Name</center></th>
                     <th><center>City</center></th>
                     <th><center>State</center></th>
@@ -32,57 +33,58 @@ background-color:  #dff0d8 !important;
                     <th><center>Created Date</center></th>
                     <th><center>Modified By</center></th>
                     <th><center>Modified Date</center></th>
-                    
+
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr class="success">
-                        <td class="teal text" style="margin:0px auto;">
-                            <a style="color:darkblue" title="View" class="fa fa-eye" aria-hidden="true" href="~/Quotation/AddEditQuotation?QuotationId=@item.QuotationId&AccessMode=3"></a> 
-                        </td>
-                        <td class="teal text" style="margin:0px auto;"> 
-                            @if (item.QuotationRevisedStatus == false && item.ApprovalStatus.ToUpper() == "DRAFT")
-                            {
-                                <a style="color:darkgreen" title="Edit" class="fa fa-pencil" href="~/Quotation/AddEditQuotation?QuotationId=@item.QuotationId&AccessMode=2"></a>
-                            }
-                            @if (item.QuotationRevisedStatus == false && item.ApprovalStatus.ToUpper() == "FINAL")
-                            {
-                                <a style="color:darkgreen" title="Revise" class="fa fa-repeat" href="~/Quotation/AddRevisedQuotation?QuotationId=@item.QuotationId&AccessMode=5"></a>
-                            }
-                        </td>
-                        <td>@item.QuotationNo</td>
-                        <td>@item.QuotationDate</td>
-                        <td>@item.CompanyBranchName</td>
-                        <td>@item.CustomerName</td>
-                        <td>@item.City</td>
-                        <td>@item.StateName</td>
-                        <td>@item.RefNo</td>
-                        <td>@item.RefDate</td>
-                        <td>@item.BasicValue</td>
-                        <td>@item.TotalValue</td>
-                        <td>@(item.QuotationRevisedStatus == true ? "Revised" : "")</td>
-                        @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                <tr class="success">
+                    <td class="teal text" style="margin:0px auto;">
+                        <a style="color:darkblue" title="View" class="fa fa-eye" aria-hidden="true" href="~/Quotation/AddEditQuotation?QuotationId=@item.QuotationId&AccessMode=3"></a>
+                    </td>
+                    <td class="teal text" style="margin:0px auto;">
+                        @if (item.QuotationRevisedStatus == false && item.ApprovalStatus.ToUpper() == "DRAFT")
                         {
-                            <td style="background-color:aquamarine">
-                                @item.ApprovalStatus
-                            </td>
+                            <a style="color:darkgreen" title="Edit" class="fa fa-pencil" href="~/Quotation/AddEditQuotation?QuotationId=@item.QuotationId&AccessMode=2"></a>
                         }
-                        else
+                        @if (item.QuotationRevisedStatus == false && item.ApprovalStatus.ToUpper() == "FINAL")
                         {
-                            <td style="background-color:green">
-                                @item.ApprovalStatus
-                            </td>
-
+                            <a style="color:darkgreen" title="Revise" class="fa fa-repeat" href="~/Quotation/AddRevisedQuotation?QuotationId=@item.QuotationId&AccessMode=5"></a>
                         }
+                    </td>
+                    <td>@item.QuotationNo</td>
+                    <td>@item.QuotationDate</td>
+                    <td>@item.CompanyBranchName</td>
+                    <td>@item.LocationName</td>
+                    <td>@item.CustomerName</td>
+                    <td>@item.City</td>
+                    <td>@item.StateName</td>
+                    <td>@item.RefNo</td>
+                    <td>@item.RefDate</td>
+                    <td>@item.BasicValue</td>
+                    <td>@item.TotalValue</td>
+                    <td>@(item.QuotationRevisedStatus == true ? "Revised" : "")</td>
+                    @if (item.ApprovalStatus.ToUpper() == "DRAFT")
+                    {
+                        <td style="background-color:aquamarine">
+                            @item.ApprovalStatus
+                        </td>
+                    }
+                    else
+                    {
+                        <td style="background-color:green">
+                            @item.ApprovalStatus
+                        </td>
+
+                    }
 
 
-                        <td>@item.CreatedByUserName</td>
-                        <td>@item.CreatedDate</td>
-                        <td>@item.ModifiedByUserName</td>
-                        <td>@item.ModifiedDate</td>
-                    </tr>
+                    <td>@item.CreatedByUserName</td>
+                    <td>@item.CreatedDate</td>
+                    <td>@item.ModifiedByUserName</td>
+                    <td>@item.ModifiedDate</td>
+                </tr>
                 }
 
             </tbody>

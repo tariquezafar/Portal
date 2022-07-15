@@ -71,12 +71,12 @@
                     @*<li><a href="#tabs-2">Terms & Conditions</a></li>*@
                     <li><a href="#tabs-3">Supporting Document</a></li>
                 </ul>
-                <div id="tabs-1">   
+                <div id="tabs-1">
                     <div class="col-md-12 ftop">
                         <div class="form-group col-md-4">
                             <label for="txtQuotationNo" class="col-sm-4 control-label">Quotation No.</label>
                             <div class="col-sm-8">
-                                <input class="form-control" id="txtQuotationNo" name="txtQuotationNo" tabindex="1"  placeholder="Auto Generated Quotation No." type="text" maxlength="100" />
+                                <input class="form-control" id="txtQuotationNo" name="txtQuotationNo" tabindex="1" placeholder="Auto Generated Quotation No." type="text" maxlength="100" />
                                 <a style="display:none;color:#fff;" class="btn btn-success" id="btnAddNew" tabindex="4" href="@Url.Content("~/Quotation/AddEditQuotation?accessMode=1")">New</a>
                                 <a style="display:none;color:#fff;" class="btn btn-success" id="btnEmail" tabindex="5" onclick="SendMail()">Email</a>
                                 <a style="display:none;color:#fff;" class="btn btn-success" target="_blank" tabindex="6" href="@Url.Action("Report",new {quotationId=ViewData["quotationId"], reportType="PDF" })" id="btnPrint">Print</a>
@@ -97,11 +97,11 @@
                         <div class="form-group col-md-4">
                             <label for="txtCustomerCode" class="col-sm-4 control-label">Party Code</label>
                             <div class="col-sm-8 ">
-                                <input class="form-control" id="txtCustomerCode" name="txtCustomerCode"  tabindex="3" value="@ViewData["customerCode"]" placeholder="Party Code" type="text" maxlength="50" />
+                                <input class="form-control" id="txtCustomerCode" name="txtCustomerCode" tabindex="3" value="@ViewData["customerCode"]" placeholder="Party Code" type="text" maxlength="50" />
                             </div>
                         </div>
 
-                       
+
                     </div>
                     <div class="col-md-12">
                         <div class="form-group col-md-4">
@@ -126,7 +126,7 @@
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="col-md-12">
                         <div class="form-group col-md-4">
                             <label for="ddlCountry" class="col-sm-4 control-label">Country&nbsp;<span class="Mandatory">(*)</span></label>
@@ -138,16 +138,16 @@
                             <label for="ddlState" class="col-sm-4 control-label">State&nbsp;<span class="Mandatory">(*)</span></label>
                             <div class="col-sm-8">
                                 <select id="ddlState" name="ddlState" tabindex="11" class="form-control"></select>
-                                
+
                             </div>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="ddlCompanyBranch" class="col-sm-4 control-label">Company Branch&nbsp;<span class="Mandatory">(*)</span></label>
                             <div class="col-sm-8">
-                                <select id="ddlCompanyBranch" name="ddlCompanyBranch" onchange="GetBranchStateId(); BindCompanyBranchTypeListOnChange();" tabindex="12" class="form-control"></select>
+                                <select id="ddlCompanyBranch" name="ddlCompanyBranch" onchange="GetBranchStateId(); BindCompanyBranchTypeListOnChange(); BindBranchLocation();" tabindex="12" class="form-control"></select>
                                 <input id="hdnBillingStateId" type="hidden" value="0" />
                                 <input id="hdnSessionCompanyBranchId" type="hidden" value="@ViewData["CompanyBranchId"]" />
-                                <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />                              
+                                <input id="hdnSessionUserID" type="hidden" value="@ViewData["UserId"]" />
                             </div>
                         </div>
                     </div>
@@ -194,7 +194,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                         <div class="form-group col-md-4">
+                        <div class="form-group col-md-4">
                             <label for="txtRefDate" class="col-sm-4 control-label">Ref. Date</label>
                             <div class="col-sm-8 ">
                                 <input class="form-control" id="txtRefDate" name="txtRefDate" tabindex="19" placeholder="Enter Reference Date" type="text" maxlength="50" />
@@ -213,6 +213,20 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group col-md-4">
+                            <label for="ddlLocation" class="col-sm-4 control-label">Branch Location&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <input type="hidden" id="hdnLocationId" value="0" />
+                                <select id="ddlLocation" name="ddlLocation" tabindex="3" class="form-control">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                       
+                    </div>
+
                     <div class="col-md-12" id="divCreated" style="display:none;">
                         <div class="form-group col-md-4">
                             <label for="txtCreatedBy" class="col-sm-4 control-label">Created By</label>
@@ -348,7 +362,7 @@
                                 <input id="hdnProductSurchargePercentage_2" type="hidden" value="0" />
                                 <input id="hdnProductSurchargeName_3" type="hidden" value="" />
                                 <input id="hdnProductSurchargePercentage_3" type="hidden" value="0" />
-                                
+
                             </div>
                         </div>
                         <div class="form-group col-md-4">
@@ -362,7 +376,7 @@
                             </div>
                         </div>
                         <div class="form-group col-md-4">
-                          
+
                         </div>
                     </div>
                     <div class="col-sm-12 col-lg-12 col-md-12 productsection" style="display:none;">
@@ -424,14 +438,14 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-sm-12 col-lg-12 col-md-12 productsection" style="display:none;">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
                             <center>
                                 <input class="btn btn-success" value="Add Product" alt="Add Product" id="btnAddProduct" tabindex="43" onclick="AddProduct(1)" type="button" border="0">
                                 <input class="btn btn-success" value="Update Product" style="display:none;" alt="Update Product" tabindex="43" id="btnUpdateProduct" onclick="AddProduct(2)" type="button" border="0">
-                                <input class="btn btn-success" type="button" id="btnCancelProduct" tabindex="44" onclick="ShowHideProductPanel(2)" value="Cancel" /> 
+                                <input class="btn btn-success" type="button" id="btnCancelProduct" tabindex="44" onclick="ShowHideProductPanel(2)" value="Cancel" />
                             </center>
                         </div>
                         <div class="col-md-3"></div>
@@ -508,7 +522,7 @@
                             <center>
                                 <input class="btn btn-success" value="Add Tax" alt="Add Tax" id="btnAddTax" tabindex="50" onclick="AddTax(1)" type="button" border="0">
                                 <input class="btn btn-success" value="Update Tax" style="display:none;" tabindex="50" alt="Update Tax" id="btnUpdateTax" onclick="AddTax(2)" type="button" border="0">
-                                <input class="btn btn-success" type="button" id="btnCancelTax" tabindex="51" onclick="ShowHideTaxPanel(2)" value="Cancel" /> 
+                                <input class="btn btn-success" type="button" id="btnCancelTax" tabindex="51" onclick="ShowHideTaxPanel(2)" value="Cancel" />
                             </center>
                         </div>
                         <div class="col-md-3"></div>
@@ -612,7 +626,7 @@
                                 <input type="hidden" id="hdnInsuranceIGST_Perc" value="0" />
                             </div>
                         </div>
-                    </div>    
+                    </div>
                     <div class="col-md-12 showdata">
                         <div class="form-group col-md-3">
                             <label for="txtRTOReg" class="col-sm-6" style="color:#000;text-align:center;">RTO/Reg. Value</label>
@@ -645,7 +659,7 @@
                                 <input type="hidden" id="hdnRTORegIGST_Perc" value="0" />
                             </div>
                         </div>
-                    </div>       
+                    </div>
                     <div class="col-md-12 showdata">
                         <div class="form-group col-md-3">
                             <label for="txtVehicleInsurance" class="col-sm-6" style="color:#000;text-align:center;">Vehicle Insurance.</label>
@@ -654,82 +668,82 @@
 
                             </div>
                         </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group col-md-3">
-                                <label for="chkReverseChargeApplicable" class="col-sm-4 control-label">Reverse Charge</label>
-                                <div class="col-sm-8">
-                                    <input type="checkbox" id="chkReverseChargeApplicable" onclick="changeReverseChargeStatus(); changeReverseChargeStatus();" name="chkReverseChargeApplicable" />
-                                    <label style="font-size: 24px; " tabindex="64" for="chkReverseChargeApplicable"></label>
-                                </div>
-                            </div>
-                            <div class="form-group col-md-3">
-                                <label for="txtReverseChargeAmount" class="col-sm-4 control-label">Reverse Charge Amt</label>
-                                <div class="col-sm-8">
-                                    <input class="form-control" id="txtReverseChargeAmount" disabled="disabled" name="txtReverseChargeAmount" tabindex="65" placeholder="Enter Reverse Charge Amount" type="text" maxlength="10" />
-                                </div>
-                            </div>
-                            <div class="form-group col-md-3">
-                                <label for="txtRecalculatet" class="col-sm-4 control-label">&nbsp;</label>
-                                <div class="col-sm-8">
-                                    <input class="btn btn-success" value="Recalculate" alt="Recalculate" id="btnReCalculate" tabindex="66" onclick="SetGSTPercentageInProduct();" type="button" border="0">
-                                </div>
-                            </div>
-                            <div class="form-group col-md-3">
-                                <h4><label for="txtTotalValue" class="col-sm-4 " style="color:#000;text-align:center;"><b>Net Amount</b></label></h4>
-                                <div class="col-sm-8" style="float:right !important">
-                                    <input id="txtTotalValue" name="txtTotalValue" type="text" tabindex="68" maxlength="12" class="form-control input-number right-text" />
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-12  ftop">
-                            <div class="form-group col-md-4">
-                                <label for="ddlTermTemplate" class="col-sm-4 control-label">Terms Template</label>
-                                <div class="col-sm-8">
-                                    <select id="ddlTermTemplate" name="ddlTermTemplate" onchange="BindTermsDescription()" tabindex="69" class="form-control"></select>
-                                    <input id="hdnQuotationTermDetailId" type="hidden" value="0" />
-
-                                </div>
-                            </div>
-                            <div class="form-group col-md-4" style="background-color:yellow">
-                                <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Term(s) Detail</b></label></h4>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <input class="btn btn-success" value="Add New Term" tabindex="70" alt="Add New Term" id="btnAddNewTerm" onclick="ShowHideTermPanel(1)" type="button" border="0">
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-3">
+                            <label for="chkReverseChargeApplicable" class="col-sm-4 control-label">Reverse Charge</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" id="chkReverseChargeApplicable" onclick="changeReverseChargeStatus(); changeReverseChargeStatus();" name="chkReverseChargeApplicable" />
+                                <label style="font-size: 24px; " tabindex="64" for="chkReverseChargeApplicable"></label>
                             </div>
                         </div>
-                        <div class="col-md-12 termsection" style="display:none;">
-                            <div class="form-group col-md-6">
-                                <label for="txtTermDesc" class="col-sm-4 control-label">Term Desc&nbsp;<span class="Mandatory">(*)</span></label>
-                                <div class="col-sm-8">
-                                    <textarea class="form-control" id="txtTermDesc" name="txtTermDesc" tabindex="71" rows="4" cols="50" maxlength="500"> </textarea>
-                                    <input id="hdnQuotationTermDetailId" type="hidden" value="0" />
-                                    <input id="hdnTermSequence" type="hidden" value="0" />
-
-                                </div>
+                        <div class="form-group col-md-3">
+                            <label for="txtReverseChargeAmount" class="col-sm-4 control-label">Reverse Charge Amt</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="txtReverseChargeAmount" disabled="disabled" name="txtReverseChargeAmount" tabindex="65" placeholder="Enter Reverse Charge Amount" type="text" maxlength="10" />
                             </div>
                         </div>
-                        <div class="col-sm-12 col-lg-12 col-md-12 termsection" style="display:none;">
-                            <div class="col-md-3"></div>
-                            <div class="col-md-6">
-                                <center>
-                                    <input class="btn btn-success" value="Add Term" alt="Add Term" id="btnAddTerm" tabindex="72" onclick="AddTerm(1)" type="button" border="0">
-                                    <input class="btn btn-success" value="Update Term" style="display:none;" tabindex="72" alt="Update Term" id="btnUpdateTerm" onclick="AddTerm(2)" type="button" border="0">
-                                    <input class="btn btn-success" type="button" id="btnCancelTerm" tabindex="73" onclick="ShowHideTermPanel(2)" value="Cancel" />
-                                </center>
+                        <div class="form-group col-md-3">
+                            <label for="txtRecalculatet" class="col-sm-4 control-label">&nbsp;</label>
+                            <div class="col-sm-8">
+                                <input class="btn btn-success" value="Recalculate" alt="Recalculate" id="btnReCalculate" tabindex="66" onclick="SetGSTPercentageInProduct();" type="button" border="0">
                             </div>
-                            <div class="col-md-3"></div>
                         </div>
-                        <div class="col-sm-12 col-lg-12 col-md-12">
-                            <div id="divTermList">
-
+                        <div class="form-group col-md-3">
+                            <h4><label for="txtTotalValue" class="col-sm-4 " style="color:#000;text-align:center;"><b>Net Amount</b></label></h4>
+                            <div class="col-sm-8" style="float:right !important">
+                                <input id="txtTotalValue" name="txtTotalValue" type="text" tabindex="68" maxlength="12" class="form-control input-number right-text" />
                             </div>
+
                         </div>
 
                     </div>
+
+                    <div class="col-md-12  ftop">
+                        <div class="form-group col-md-4">
+                            <label for="ddlTermTemplate" class="col-sm-4 control-label">Terms Template</label>
+                            <div class="col-sm-8">
+                                <select id="ddlTermTemplate" name="ddlTermTemplate" onchange="BindTermsDescription()" tabindex="69" class="form-control"></select>
+                                <input id="hdnQuotationTermDetailId" type="hidden" value="0" />
+
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4" style="background-color:yellow">
+                            <h4><label class="col-sm-12 " style="color:#000;text-decoration:underline;text-align:center;"><b>Term(s) Detail</b></label></h4>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input class="btn btn-success" value="Add New Term" tabindex="70" alt="Add New Term" id="btnAddNewTerm" onclick="ShowHideTermPanel(1)" type="button" border="0">
+                        </div>
+                    </div>
+                    <div class="col-md-12 termsection" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="txtTermDesc" class="col-sm-4 control-label">Term Desc&nbsp;<span class="Mandatory">(*)</span></label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="txtTermDesc" name="txtTermDesc" tabindex="71" rows="4" cols="50" maxlength="500"> </textarea>
+                                <input id="hdnQuotationTermDetailId" type="hidden" value="0" />
+                                <input id="hdnTermSequence" type="hidden" value="0" />
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12 termsection" style="display:none;">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <center>
+                                <input class="btn btn-success" value="Add Term" alt="Add Term" id="btnAddTerm" tabindex="72" onclick="AddTerm(1)" type="button" border="0">
+                                <input class="btn btn-success" value="Update Term" style="display:none;" tabindex="72" alt="Update Term" id="btnUpdateTerm" onclick="AddTerm(2)" type="button" border="0">
+                                <input class="btn btn-success" type="button" id="btnCancelTerm" tabindex="73" onclick="ShowHideTermPanel(2)" value="Cancel" />
+                            </center>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12">
+                        <div id="divTermList">
+
+                        </div>
+                    </div>
+
+                </div>
                 <div id="tabs-2">
                    
 
