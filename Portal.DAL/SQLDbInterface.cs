@@ -27932,7 +27932,7 @@ namespace Portal.DAL
 
         }
 
-        public DataTable GetComplaintServiceList(string complaintNo, string enquiryType, string complaintMode, string customerMobile, string customerName, string approvalStatus, int companyBranchId, int serviceEngineerId, int dealerId,int complaintStatus,string UserName)
+        public DataTable GetComplaintServiceList(string complaintNo, string enquiryType, string complaintMode, string customerMobile, string customerName, string approvalStatus, int companyBranchId, int serviceEngineerId, int dealerId,int complaintStatus)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -27952,7 +27952,6 @@ namespace Portal.DAL
                     da.SelectCommand.Parameters.AddWithValue("@ServiceEngineerId", serviceEngineerId);
                     da.SelectCommand.Parameters.AddWithValue("@DealerId", dealerId);
                     da.SelectCommand.Parameters.AddWithValue("@ComplaintStatus", complaintStatus);
-                    da.SelectCommand.Parameters.AddWithValue("@UserName", UserName);
                     da.Fill(dt);
                 }
             }
