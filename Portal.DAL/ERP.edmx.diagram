@@ -226,13 +226,11 @@
         <EntityTypeShape EntityType="ERPModel.HSNCode" Width="1.5" PointX="13.375" PointY="49.75" />
         <EntityTypeShape EntityType="ERPModel.Product" Width="1.5" PointX="48.375" PointY="38.75" />
         <EntityTypeShape EntityType="ERPModel.CustomerType" Width="1.5" PointX="14.375" PointY="30.75" />
-        <EntityTypeShape EntityType="ERPModel.ComplaintService" Width="1.5" PointX="20.375" PointY="32.75" />
         <EntityTypeShape EntityType="ERPModel.ComplaintServiceProductDetail" Width="1.5" PointX="13.375" PointY="33.75" />
         <EntityTypeShape EntityType="ERPModel.MRN" Width="1.5" PointX="40.375" PointY="46.75" />
         <EntityTypeShape EntityType="ERPModel.EmployeeSupportingDocument" Width="1.5" PointX="9.625" PointY="59.25" />
         <AssociationConnector Association="ERPModel.FK__EmployeeS__Emplo__008BB26A" />
         <EntityTypeShape EntityType="ERPModel.ComplaintSupportingDocument" Width="1.5" PointX="22.625" PointY="51.625" />
-        <AssociationConnector Association="ERPModel.FK__Complaint__Compl__49FA978F" />
         <EntityTypeShape EntityType="ERPModel.ProductOpeningStock" Width="1.5" PointX="37" PointY="50.75" />
         <EntityTypeShape EntityType="ERPModel.SaleInvoice" Width="1.5" PointX="0.75" PointY="50.75" />
         <AssociationConnector Association="ERPModel.FK_ProductOpeningStock_LocationId" />
@@ -245,6 +243,8 @@
         <AssociationConnector Association="ERPModel.FK__DispatchP__Dispa__20C377D2" />
         <AssociationConnector Association="ERPModel.FK__DispatchP__Dispa__1FCF5399" />
         <EntityTypeShape EntityType="ERPModel.POProductSchedule" Width="1.5" PointX="15.375" PointY="33.75" />
+        <EntityTypeShape EntityType="ERPModel.ComplaintService" Width="1.5" PointX="20.375" PointY="51.75" />
+        <AssociationConnector Association="ERPModel.FK__Complaint__Compl__70204077" />
         </Diagram>
       <Diagram DiagramId="c9375e52311f45a98fc7e70a6f59ccca" Name="Diagram2" />
     </edmx:Diagrams>

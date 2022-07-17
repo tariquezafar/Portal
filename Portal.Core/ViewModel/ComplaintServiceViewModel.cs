@@ -30,11 +30,8 @@ namespace Portal.Core.ViewModel
 
         public string InvoiceDate { get; set; }
         public string InvoiceNo { get; set; }
-        public int? EmployeeID { get; set; }
-
+        public int? UserId { get; set; }
         public int? DealerID { get; set; }
-
-
         public string DealerName { get; set; }
         public string EmployeeName { get; set; }
         public int ComplaintStatus { get; set; }
