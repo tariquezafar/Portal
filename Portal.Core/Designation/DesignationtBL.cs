@@ -211,21 +211,21 @@ namespace Portal.Core
         /// <returns>
         /// This method retruns list of the object.
         /// </returns>
-        public List<EmployeeDesignationModel> GetDesignationByDepartmentID(int departmentID)
+        public List<EmployeeDesignationModel> GetDesignationByDepartmentID(int roleId)
         {
             List<EmployeeDesignationModel> employeeDesignationModel = new List<EmployeeDesignationModel>();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
             try
             {
-                DataTable dtDesignations = sqlDbInterface.GetDesignationByDepartmentID(departmentID);
+                DataTable dtDesignations = sqlDbInterface.GetDesignationByDepartmentID(roleId);
                 if (dtDesignations != null && dtDesignations.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dtDesignations.Rows)
                     {
                         employeeDesignationModel.Add(new EmployeeDesignationModel
                         {
-                            EmployeeId = Convert.ToInt32(dr["EmployeeId"]),
-                            EmployeeName = Convert.ToString(dr["EmployeeName"])
+                            EmployeeId = Convert.ToInt32(dr["UserId"]),
+                            EmployeeName = Convert.ToString(dr["FullName"])
                         });
                     }
                 }
