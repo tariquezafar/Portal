@@ -178,12 +178,13 @@ namespace Portal.Controllers
             List<ComplaintServiceViewModel> complaints = new List<ComplaintServiceViewModel>();
             ComplaintServiceBL complaintServiceBL = new ComplaintServiceBL();
             int roleId = Session[SessionKey.RoleId] != null ? ((UserViewModel)Session[SessionKey.RoleId]).RoleId : 0;
-            string username = Session[SessionKey.CurrentUser] != null ? ((UserViewModel)Session[SessionKey.CurrentUser]).UserName : string.Empty;
+            int userid = Session[SessionKey.UserId] != null ? ((UserViewModel)Session[SessionKey.UserId]).UserId : 0;
             try
             {
                 if(roleId == 104)
                 {
                     complaintStatus = 1;
+                    serviceEngineerId = userid;
                 }
                 complaints = complaintServiceBL.GetComplaintServiceList(complaintNo, enquiryType, complaintMode, customerMobile, customerName,approvalStatus, companyBranchId, serviceEngineerId, dealerId, complaintStatus);
             }

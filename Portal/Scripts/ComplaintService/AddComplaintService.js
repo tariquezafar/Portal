@@ -725,7 +725,7 @@ function SaveData() {
         ComplaintDescription: txtComplaintDescription.val().trim(),
         ComplaintService_Status: Status,
         BranchID: ddlCompanyBranch.val(),
-        EmployeeID: ddlServiceEngineer.val(),
+        UserId: ddlServiceEngineer.val(),
         DealerID: ddlDealer.val(),
         InvoiceDate: txtInvoiceDate.val(),
         ComplaintStatus: ddlStatus.val(),
@@ -891,7 +891,7 @@ function GetComplaintServiceDetail(ComplaintId) {
             $("#txtCustomerAddress").val(data.CustomerAddress);
             $("#txtComplaintDescription").val(data.ComplaintDescription);
             $("#ddlCompanyBranch").val(data.BranchID);
-            $("#ddlServiceEngineer").val(data.EmployeeID);
+            $("#ddlServiceEngineer").val(data.UserId);
             $("#ddlDealer").val(data.DealerID);
             $("#chkStatus").val(data.status);
             $("#txtInvoiceDate").val(data.InvoiceDate);

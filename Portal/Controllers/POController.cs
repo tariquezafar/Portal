@@ -11,6 +11,7 @@ using Microsoft.Reporting.WebForms;
 using System.IO;
 using System.Text;
 using System.Data;
+using ClosedXML.Excel;
 
 namespace Portal.Controllers
 {
@@ -222,6 +223,28 @@ namespace Portal.Controllers
                 Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
             }
             return PartialView(poSchedules);
+        }
+
+        public void POScheduleExport(long poId, string reportType = "PDF")
+        {
+            POBL poBL = new POBL();
+            DataTable dt = poBL.POScheduleExport(poId);
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dt, "POSchedule");
+                ////Response.Clear();
+                ////Response.Buffer = true;
+                ////Response.Charset = "";
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                Response.AddHeader("content-disposition", "attachment;filename=POSchedule.xlsx");
+                using (MemoryStream MyMemoryStream = new MemoryStream())
+                {
+                    wb.SaveAs(MyMemoryStream);
+                    MyMemoryStream.WriteTo(Response.OutputStream);
+                    Response.Flush();
+                    Response.End();
+                }
+            }
         }
 
         [HttpPost]
