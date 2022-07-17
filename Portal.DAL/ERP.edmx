@@ -460,11 +460,11 @@
           <Property Name="ComplaintNo" Type="varchar" MaxLength="50" />
           <Property Name="ComplaintSequence" Type="int" />
           <Property Name="InvoiceNo" Type="varchar" MaxLength="50" />
-          <Property Name="EmployeeID" Type="int" />
           <Property Name="DealerID" Type="int" />
           <Property Name="InvoiceDate" Type="date" />
           <Property Name="ComplaintStatus" Type="int" />
           <Property Name="Remarks" Type="varchar" MaxLength="500" />
+          <Property Name="UserId" Type="int" />
         </EntityType>
         <EntityType Name="ComplaintServiceProductDetail">
           <Key>
@@ -4725,7 +4725,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Dispatch__Dispat__1DE70B27">
+        <Association Name="FK__Dispatch__Dispat__1FCF5399">
           <End Role="DispatchPlan" Type="Self.DispatchPlan" Multiplicity="1" />
           <End Role="Dispatch" Type="Self.Dispatch" Multiplicity="*" />
           <ReferentialConstraint>
@@ -4737,7 +4737,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DispatchP__Custo__1EDB2F60">
+        <Association Name="FK__Dispatch__Dispat__32E2280D">
+          <End Role="DispatchPlan" Type="Self.DispatchPlan" Multiplicity="1" />
+          <End Role="Dispatch" Type="Self.Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DispatchPlan">
+              <PropertyRef Name="DispatchPlanID" />
+            </Principal>
+            <Dependent Role="Dispatch">
+              <PropertyRef Name="DispatchPlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DispatchP__Custo__20C377D2">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
           <End Role="DispatchPlan" Type="Self.DispatchPlan" Multiplicity="*" />
           <ReferentialConstraint>
@@ -4749,7 +4761,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DispatchP__Dispa__1FCF5399">
+        <Association Name="FK__DispatchP__Custo__33D64C46">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="DispatchPlan" Type="Self.DispatchPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="DispatchPlan">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DispatchP__Dispa__21B79C0B">
           <End Role="DispatchPlan" Type="Self.DispatchPlan" Multiplicity="0..1" />
           <End Role="DispatchPlanProductDetail" Type="Self.DispatchPlanProductDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -4761,7 +4785,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DispatchP__Dispa__20C377D2">
+        <Association Name="FK__DispatchP__Dispa__22ABC044">
+          <End Role="Dispatch" Type="Self.Dispatch" Multiplicity="0..1" />
+          <End Role="DispatchProductDetail" Type="Self.DispatchProductDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dispatch">
+              <PropertyRef Name="DispatchID" />
+            </Principal>
+            <Dependent Role="DispatchProductDetail">
+              <PropertyRef Name="DispatchID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DispatchP__Dispa__34CA707F">
+          <End Role="DispatchPlan" Type="Self.DispatchPlan" Multiplicity="0..1" />
+          <End Role="DispatchPlanProductDetail" Type="Self.DispatchPlanProductDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DispatchPlan">
+              <PropertyRef Name="DispatchPlanID" />
+            </Principal>
+            <Dependent Role="DispatchPlanProductDetail">
+              <PropertyRef Name="DispatchPlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DispatchP__Dispa__35BE94B8">
           <End Role="Dispatch" Type="Self.Dispatch" Multiplicity="0..1" />
           <End Role="DispatchProductDetail" Type="Self.DispatchProductDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -5069,19 +5117,35 @@
             <End Role="ComplaintService" EntitySet="ComplaintService" />
             <End Role="ComplaintSupportingDocument" EntitySet="ComplaintSupportingDocument" />
           </AssociationSet>
-          <AssociationSet Name="FK__Dispatch__Dispat__1DE70B27" Association="Self.FK__Dispatch__Dispat__1DE70B27">
+          <AssociationSet Name="FK__Dispatch__Dispat__1FCF5399" Association="Self.FK__Dispatch__Dispat__1FCF5399">
             <End Role="DispatchPlan" EntitySet="DispatchPlan" />
             <End Role="Dispatch" EntitySet="Dispatch" />
           </AssociationSet>
-          <AssociationSet Name="FK__DispatchP__Custo__1EDB2F60" Association="Self.FK__DispatchP__Custo__1EDB2F60">
+          <AssociationSet Name="FK__Dispatch__Dispat__32E2280D" Association="Self.FK__Dispatch__Dispat__32E2280D">
+            <End Role="DispatchPlan" EntitySet="DispatchPlan" />
+            <End Role="Dispatch" EntitySet="Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DispatchP__Custo__20C377D2" Association="Self.FK__DispatchP__Custo__20C377D2">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="DispatchPlan" EntitySet="DispatchPlan" />
           </AssociationSet>
-          <AssociationSet Name="FK__DispatchP__Dispa__1FCF5399" Association="Self.FK__DispatchP__Dispa__1FCF5399">
+          <AssociationSet Name="FK__DispatchP__Custo__33D64C46" Association="Self.FK__DispatchP__Custo__33D64C46">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="DispatchPlan" EntitySet="DispatchPlan" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DispatchP__Dispa__21B79C0B" Association="Self.FK__DispatchP__Dispa__21B79C0B">
             <End Role="DispatchPlan" EntitySet="DispatchPlan" />
             <End Role="DispatchPlanProductDetail" EntitySet="DispatchPlanProductDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK__DispatchP__Dispa__20C377D2" Association="Self.FK__DispatchP__Dispa__20C377D2">
+          <AssociationSet Name="FK__DispatchP__Dispa__22ABC044" Association="Self.FK__DispatchP__Dispa__22ABC044">
+            <End Role="Dispatch" EntitySet="Dispatch" />
+            <End Role="DispatchProductDetail" EntitySet="DispatchProductDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DispatchP__Dispa__34CA707F" Association="Self.FK__DispatchP__Dispa__34CA707F">
+            <End Role="DispatchPlan" EntitySet="DispatchPlan" />
+            <End Role="DispatchPlanProductDetail" EntitySet="DispatchPlanProductDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DispatchP__Dispa__35BE94B8" Association="Self.FK__DispatchP__Dispa__35BE94B8">
             <End Role="Dispatch" EntitySet="Dispatch" />
             <End Role="DispatchProductDetail" EntitySet="DispatchProductDetail" />
           </AssociationSet>
@@ -5414,7 +5478,6 @@
           <EntitySet Name="HSNCodes" EntityType="ERPModel.HSNCode" />
           <EntitySet Name="Products" EntityType="ERPModel.Product" />
           <EntitySet Name="CustomerTypes" EntityType="ERPModel.CustomerType" />
-          <EntitySet Name="ComplaintService" EntityType="ERPModel.ComplaintService" />
           <EntitySet Name="ComplaintServiceProductDetail" EntityType="ERPModel.ComplaintServiceProductDetail" />
           <EntitySet Name="MRN" EntityType="ERPModel.MRN" />
           <EntitySet Name="EmployeeSupportingDocument" EntityType="ERPModel.EmployeeSupportingDocument" />
@@ -5423,10 +5486,6 @@
             <End Role="EmployeeSupportingDocument" EntitySet="EmployeeSupportingDocument" />
           </AssociationSet>
           <EntitySet Name="ComplaintSupportingDocument" EntityType="ERPModel.ComplaintSupportingDocument" />
-          <AssociationSet Name="FK__Complaint__Compl__49FA978F" Association="ERPModel.FK__Complaint__Compl__49FA978F">
-            <End Role="ComplaintService" EntitySet="ComplaintService" />
-            <End Role="ComplaintSupportingDocument" EntitySet="ComplaintSupportingDocument" />
-          </AssociationSet>
           <EntitySet Name="ProductOpeningStock" EntityType="ERPModel.ProductOpeningStock" />
           <EntitySet Name="SaleInvoice" EntityType="ERPModel.SaleInvoice" />
           <AssociationSet Name="FK_ProductOpeningStock_LocationId" Association="ERPModel.FK_ProductOpeningStock_LocationId">
@@ -5454,6 +5513,11 @@
             <End Role="DispatchPlanProductDetail" EntitySet="DispatchPlanProductDetail" />
           </AssociationSet>
           <EntitySet Name="POProductSchedule" EntityType="ERPModel.POProductSchedule" />
+          <EntitySet Name="ComplaintService" EntityType="ERPModel.ComplaintService" />
+          <AssociationSet Name="FK__Complaint__Compl__70204077" Association="ERPModel.FK__Complaint__Compl__70204077">
+            <End Role="ComplaintService" EntitySet="ComplaintService" />
+            <End Role="ComplaintSupportingDocument" EntitySet="ComplaintSupportingDocument" />
+          </AssociationSet>
           
         </EntityContainer>
         <EntityType Name="RoleUIActionMapping">
@@ -9795,37 +9859,6 @@
           <Property Name="CompanyBranchId" Type="Int32" />
           <Property Name="CustomerTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="ComplaintService">
-          <Key>
-            <PropertyRef Name="ComplaintId" />
-          </Key>
-          <Property Name="ComplaintId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ComplaintDate" Type="DateTime" Precision="0" />
-          <Property Name="EnquiryType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ComplaintMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ComplaintDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CustomerMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CustomerEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="CustomerAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="Status" Type="Boolean" />
-          <Property Name="CustomerId" Type="Int32" />
-          <Property Name="Productid" Type="Int64" />
-          <Property Name="CreatedBy" Type="Int32" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
-          <Property Name="ModifiedBy" Type="Int32" />
-          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
-          <Property Name="BranchID" Type="Int32" />
-          <Property Name="ComplaintNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ComplaintSequence" Type="Int32" />
-          <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="EmployeeID" Type="Int32" />
-          <Property Name="DealerID" Type="Int32" />
-          <Property Name="InvoiceDate" Type="DateTime" Precision="0" />
-          <Property Name="ComplaintStatus" Type="Int32" />
-          <NavigationProperty Name="ComplaintSupportingDocument" Relationship="ERPModel.FK__Complaint__Compl__49FA978F" FromRole="ComplaintService" ToRole="ComplaintSupportingDocument" />
-          <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="ComplaintServiceProductDetail">
           <Key>
             <PropertyRef Name="ComplaintProductDetailID" />
@@ -9927,20 +9960,8 @@
           <Property Name="DocumentTypeId" Type="Int32" />
           <Property Name="DocumentName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="DocumentPath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ComplaintService" Relationship="ERPModel.FK__Complaint__Compl__49FA978F" FromRole="ComplaintSupportingDocument" ToRole="ComplaintService" />
+          <NavigationProperty Name="ComplaintService" Relationship="ERPModel.FK__Complaint__Compl__70204077" FromRole="ComplaintSupportingDocument" ToRole="ComplaintService" />
         </EntityType>
-        <Association Name="FK__Complaint__Compl__49FA978F">
-          <End Type="ERPModel.ComplaintService" Role="ComplaintService" Multiplicity="0..1" />
-          <End Type="ERPModel.ComplaintSupportingDocument" Role="ComplaintSupportingDocument" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ComplaintService">
-              <PropertyRef Name="ComplaintId" />
-            </Principal>
-            <Dependent Role="ComplaintSupportingDocument">
-              <PropertyRef Name="ComplaintId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="ProductOpeningStock">
           <Key>
             <PropertyRef Name="OpeningTrnId" />
@@ -10217,6 +10238,49 @@
           <Property Name="SchQuantity" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="ConDeliveryDate" Type="DateTime" Precision="0" />
         </EntityType>
+        <EntityType Name="ComplaintService">
+          <Key>
+            <PropertyRef Name="ComplaintId" />
+          </Key>
+          <Property Name="ComplaintId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ComplaintDate" Type="DateTime" Precision="0" />
+          <Property Name="EnquiryType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ComplaintMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ComplaintDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="Productid" Type="Int64" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+          <Property Name="BranchID" Type="Int32" />
+          <Property Name="ComplaintNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ComplaintSequence" Type="Int32" />
+          <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DealerID" Type="Int32" />
+          <Property Name="InvoiceDate" Type="DateTime" Precision="0" />
+          <Property Name="ComplaintStatus" Type="Int32" />
+          <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="Int32" />
+          <NavigationProperty Name="ComplaintSupportingDocument" Relationship="ERPModel.FK__Complaint__Compl__70204077" FromRole="ComplaintService" ToRole="ComplaintSupportingDocument" />
+        </EntityType>
+        <Association Name="FK__Complaint__Compl__70204077">
+          <End Type="ERPModel.ComplaintService" Role="ComplaintService" Multiplicity="0..1" />
+          <End Type="ERPModel.ComplaintSupportingDocument" Role="ComplaintSupportingDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ComplaintService">
+              <PropertyRef Name="ComplaintId" />
+            </Principal>
+            <Dependent Role="ComplaintSupportingDocument">
+              <PropertyRef Name="ComplaintId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         
       </Schema>
     </edmx:ConceptualModels>
@@ -14853,37 +14917,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ComplaintService">
-            <EntityTypeMapping TypeName="ERPModel.ComplaintService">
-              <MappingFragment StoreEntitySet="ComplaintService">
-                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
-                <ScalarProperty Name="ComplaintStatus" ColumnName="ComplaintStatus" />
-                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
-                <ScalarProperty Name="DealerID" ColumnName="DealerID" />
-                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
-                <ScalarProperty Name="ComplaintSequence" ColumnName="ComplaintSequence" />
-                <ScalarProperty Name="ComplaintNo" ColumnName="ComplaintNo" />
-                <ScalarProperty Name="BranchID" ColumnName="BranchID" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="Productid" ColumnName="Productid" />
-                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
-                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
-                <ScalarProperty Name="CustomerMobile" ColumnName="CustomerMobile" />
-                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-                <ScalarProperty Name="ComplaintDescription" ColumnName="ComplaintDescription" />
-                <ScalarProperty Name="ComplaintMode" ColumnName="ComplaintMode" />
-                <ScalarProperty Name="EnquiryType" ColumnName="EnquiryType" />
-                <ScalarProperty Name="ComplaintDate" ColumnName="ComplaintDate" />
-                <ScalarProperty Name="ComplaintId" ColumnName="ComplaintId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ComplaintServiceProductDetail">
             <EntityTypeMapping TypeName="ERPModel.ComplaintServiceProductDetail">
               <MappingFragment StoreEntitySet="ComplaintServiceProductDetail">
@@ -15189,6 +15222,37 @@
                 <ScalarProperty Name="CompanyBranchId" ColumnName="CompanyBranchId" />
                 <ScalarProperty Name="POId" ColumnName="POId" />
                 <ScalarProperty Name="PoProductScheduleId" ColumnName="PoProductScheduleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ComplaintService">
+            <EntityTypeMapping TypeName="ERPModel.ComplaintService">
+              <MappingFragment StoreEntitySet="ComplaintService">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="ComplaintStatus" ColumnName="ComplaintStatus" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="DealerID" ColumnName="DealerID" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="ComplaintSequence" ColumnName="ComplaintSequence" />
+                <ScalarProperty Name="ComplaintNo" ColumnName="ComplaintNo" />
+                <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Productid" ColumnName="Productid" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+                <ScalarProperty Name="CustomerMobile" ColumnName="CustomerMobile" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="ComplaintDescription" ColumnName="ComplaintDescription" />
+                <ScalarProperty Name="ComplaintMode" ColumnName="ComplaintMode" />
+                <ScalarProperty Name="EnquiryType" ColumnName="EnquiryType" />
+                <ScalarProperty Name="ComplaintDate" ColumnName="ComplaintDate" />
+                <ScalarProperty Name="ComplaintId" ColumnName="ComplaintId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

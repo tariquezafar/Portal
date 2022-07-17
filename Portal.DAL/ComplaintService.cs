@@ -40,11 +40,11 @@ namespace Portal.DAL
         public string ComplaintNo { get; set; }
         public Nullable<int> ComplaintSequence { get; set; }
         public string InvoiceNo { get; set; }
-        public Nullable<int> EmployeeID { get; set; }
         public Nullable<int> DealerID { get; set; }
         public Nullable<System.DateTime> InvoiceDate { get; set; }
         public Nullable<int> ComplaintStatus { get; set; }
         public string Remarks { get; set; }
+        public Nullable<int> UserId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ComplaintSupportingDocument> ComplaintSupportingDocument { get; set; }

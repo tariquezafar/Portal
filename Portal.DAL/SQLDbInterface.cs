@@ -27850,7 +27850,7 @@ namespace Portal.DAL
                         sqlCommand.Parameters.AddWithValue("@CustomerAddress", complaintService.CustomerAddress);
                         sqlCommand.Parameters.AddWithValue("@CompanyBranchId", complaintService.BranchID);
                         sqlCommand.Parameters.AddWithValue("@ActiveStatus", complaintService.Status);
-                        sqlCommand.Parameters.AddWithValue("@EmployeeID", complaintService.EmployeeID);
+                        sqlCommand.Parameters.AddWithValue("@EmployeeID", complaintService.UserId);
                         sqlCommand.Parameters.AddWithValue("@CustomerEmail", complaintService.CustomerEmail);
                         sqlCommand.Parameters.AddWithValue("@DealerID", complaintService.DealerID);
                         sqlCommand.Parameters.AddWithValue("@InvoiceDate", complaintService.InvoiceDate);
