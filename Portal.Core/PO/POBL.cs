@@ -115,22 +115,6 @@ namespace Portal.Core
             return pOSchedule;
         }
 
-        public DataTable POScheduleExport(long poId)
-        {
-            SQLDbInterface sqlDbInterface = new SQLDbInterface();
-            DataTable pOScheduleExport = new DataTable();
-            try
-            {
-                pOScheduleExport = sqlDbInterface.POScheduleExport(poId);
-            }
-            catch (Exception ex)
-            {
-                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
-                throw ex;
-            }
-            return pOScheduleExport;
-        }
-
         public List<POTaxViewModel> GetPOTaxList(long poId)
         {
             List<POTaxViewModel> poTaxes = new List<POTaxViewModel>();

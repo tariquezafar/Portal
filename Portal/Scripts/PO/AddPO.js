@@ -1122,6 +1122,7 @@ function AddProduct(action) {
                     ExpectedDeliveryDate: expDeliveryDate
                 };
                 poProductList.push(poProduct);
+                productEntrySequence = parseInt(productEntrySequence) + 1;
             }
             else if (hdnProductId.val() == productId && hdnSequenceNo.val() == sequenceNo)
             {
@@ -2045,7 +2046,7 @@ function AddPOSchedule(action) {
     var txtdeliverydate = $("#txtDeliverydatemodel").val();
     var txtSchQty = $("#txtSchQty").val();
     var txtconDeliveryDate = $("#txtConDeliveryDate").val();
-    var txtquantity = $("#txtQuantityModel").val();
+    var txtquantity = $("#hdnQuantity").val();
 
     
 
@@ -2065,14 +2066,14 @@ function AddPOSchedule(action) {
         schQtyCount = 0;
     }
     productid = productId
-    ////if (txtquantity < txtSchQty || txtquantity < schQtyCount) {
-    ////    $('#CheckSchQty').show();
-    ////    return false;
-    ////}
-    ////else {
-    ////    schQtyCount = parseInt(schQtyCount) + parseInt(txtSchQty);
-    ////    $('#CheckSchQty').hide();
-    ////}
+    if (txtquantity < txtSchQty || txtquantity < schQtyCount) {
+        $('#CheckSchQty').show();
+        return false;
+    }
+    else {
+        schQtyCount = parseInt(schQtyCount) + parseInt(txtSchQty);
+        $('#CheckSchQty').hide();
+    }
     var poCounter = 0;
     if (action == 1 && (hdnsequenceNo.val() == "" || hdnsequenceNo.val() == "0")) {
         poCounter = 1;
@@ -2091,7 +2092,7 @@ function AddPOSchedule(action) {
         var deliverydatemodel = $row.find("#hdntxtDeliverydatemodel").val();
         var schQty = $row.find("#hdntxtSchQty").val();
         var conDeliveryDate = $row.find("#hdntxtConDeliveryDate").val();
-        var quantity = $("#hdnQuantityModel").val();
+        var quantity = $("#hdnQuantity").val();
 
         if (poProductDetailId != undefined) {
             if (action == 1 || (hdnsequenceNo.val() != sequenceNo)) {
@@ -2189,8 +2190,7 @@ function POScheduleRow(obj) {
     $("#hdnProductId").val(productId);
     $("#txtProductCodeModel").val(productCode);
     $("#txtUnit").val(uomName);
-    $("#txtQuantityModel").val(quantity);
-    GenerateReportParameters()
+    $("#hdnQuantity").val(quantity);
 }
 
 function EditPOScheduleRow(obj) {
@@ -2204,7 +2204,7 @@ function EditPOScheduleRow(obj) {
     var deliverydate = $(row).find("#hdntxtDeliverydatemodel").val();
     var schQty = $(row).find("#hdntxtSchQty").val();
     var condeliverydate = $(row).find("#hdntxtConDeliveryDate").val();
-    var quantity = $(row).find("#hdnQuantityModel").val();
+    var quantity = $(row).find("#hdnQuantity").val();
 
     $("#hdnSequenceNo").val(sequenceNo);
     $("#hdnPOScheduleDetailId").val(poProductDetailId);
@@ -2215,7 +2215,7 @@ function EditPOScheduleRow(obj) {
     $("#txtDeliverydatemodel").val(deliverydate);
     $("#txtSchQty").val(schQty);
     $("#txtConDeliveryDate").val(condeliverydate);
-    $("#txtQuantityModel").val(quantity);
+    $("#hdnQuantity").val(quantity);
     $(".poSchedule").show();
     $("#btnAddPoSchedule").hide();
     $("#btnUpdatePoSchedule").show();
@@ -2224,6 +2224,7 @@ function EditPOScheduleRow(obj) {
 function RemovePOScheduleRow(obj) {
     if (confirm("Do you want to remove selected PO Schedule?")) {
         var row = $(obj).closest("tr");
+        ShowModel("Alert", "PO Schedule Removed from List.");
         row.remove();
     }
 }
@@ -2248,25 +2249,6 @@ function savePoSchedule() {
     $("#hdnProductId").val("0");
     $("#hdnQuantity").val('');
     $("#POScheduleModel").modal('hide');
-}
-
-function ShowHidePrintOption() {
-    var reportOption = $("#ddlPrintOption").val();
-    if (reportOption == "PDF") {
-        $("#btnPdf").show();
-        $("#btnExcel").hide();
-    }
-    else if (reportOption == "Excel") {
-        $("#btnExcel").show();
-        $("#btnPdf").hide();
-    }
-}
-function GenerateReportParameters() {
-    var url = "../PO/POScheduleExport?poId=" + $("#hdnPOId").val() + "&reportType=PDF";
-    $('#btnPdf').attr('href', url);
-    url = "../PO/POScheduleExport?poId=" + $("#hdnPOId").val() + "&reportType=Excel";
-    $('#btnExcel').attr('href', url);
-
 }
 
 
@@ -3160,7 +3142,7 @@ function ReCalculateNetValues() {
         return false;
     }
     else if (hdnBillingStateId.val() == "0") {
-        ////ShowModel("Alert", "Please Select Vendor")
+        ShowModel("Alert", "Please Select Vendor")
         return false;
     }
 

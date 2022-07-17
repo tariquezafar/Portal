@@ -2156,7 +2156,7 @@ namespace Portal.DAL
         /// <returns>
         /// This method retruns list of the object.
         /// </returns>
-        public DataTable GetDesignationByDepartmentID(int roleId)
+        public DataTable GetDesignationByDepartmentID(int departmentID)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -2166,7 +2166,7 @@ namespace Portal.DAL
                 {
                     da = new SqlDataAdapter("usp_GetEmployeeList", con);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    da.SelectCommand.Parameters.AddWithValue("@RoleId", roleId);
+                    da.SelectCommand.Parameters.AddWithValue("@DepartmentId", departmentID);
                     da.Fill(dt);
                 }
             }
@@ -4465,29 +4465,6 @@ namespace Portal.DAL
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     da = new SqlDataAdapter("proc_GetPOSchedules", con);
-                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    da.SelectCommand.Parameters.AddWithValue("@POId", poId);
-                    da.Fill(dt);
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.SaveErrorLog(this.ToString(), MethodBase.GetCurrentMethod().Name, ex);
-                throw ex;
-            }
-            return dt;
-
-        }
-
-        public DataTable POScheduleExport(long poId)
-        {
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter();
-            try
-            {
-                using (SqlConnection con = new SqlConnection(connectionString))
-                {
-                    da = new SqlDataAdapter("proc_ExportPOSchedules", con);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand.Parameters.AddWithValue("@POId", poId);
                     da.Fill(dt);
@@ -27873,7 +27850,7 @@ namespace Portal.DAL
                         sqlCommand.Parameters.AddWithValue("@CustomerAddress", complaintService.CustomerAddress);
                         sqlCommand.Parameters.AddWithValue("@CompanyBranchId", complaintService.BranchID);
                         sqlCommand.Parameters.AddWithValue("@ActiveStatus", complaintService.Status);
-                        sqlCommand.Parameters.AddWithValue("@UserId", complaintService.UserId);
+                        sqlCommand.Parameters.AddWithValue("@EmployeeID", complaintService.EmployeeID);
                         sqlCommand.Parameters.AddWithValue("@CustomerEmail", complaintService.CustomerEmail);
                         sqlCommand.Parameters.AddWithValue("@DealerID", complaintService.DealerID);
                         sqlCommand.Parameters.AddWithValue("@InvoiceDate", complaintService.InvoiceDate);

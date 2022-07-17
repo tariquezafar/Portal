@@ -9,7 +9,6 @@
                     <th style="text-align:center">Product Name</th>
                     <th style="text-align:center">Product Code</th>
                     <th style="text-align:center">Unit</th>
-                    <th style="text-align:center">Order Quantity</th>
                     <th style="text-align:center">Delivery Date</th>
                     <th style="text-align:center">Sch Quantity</th>
                     <th style="text-align:center">Confirmed Delivery Date</th>
@@ -23,7 +22,7 @@
                         <td width="10%" style="display:none">
                             <input type="hidden" id="hdnPOScheduleDetailId" value="@item.POScheduleId" />
                             <input type="hidden" id="hdnSequenceNo" value="@item.SequenceNo" />
-                            
+                            <input type="hidden" id="hdnQuantity" value="@item.OrderQuantity" />
 
                         </td>
                         <td>
@@ -39,10 +38,6 @@
                             @item.Unit
                             <input type="hidden" id="hdntxtUnit" value="@item.Unit" />
 
-                        </td>
-                        <td>
-                            @item.OrderQuantity
-                            <input type="hidden" id="hdnQuantityModel" value="@item.OrderQuantity" />
                         </td>
                         <td>
                             @item.DeliveryDate
@@ -81,7 +76,6 @@ else
                     <th>Product Name</th>
                     <th>Product Code</th>
                     <th>Unit</th>
-                    <th>Order Quantity</th>
                     <th>Delivery Date</th>
                     <th>Sch Quantity</th>
                     <th>Confirmed Delivery Date</th>

@@ -293,7 +293,7 @@ namespace Portal.Controllers
             try
             {
 
-                lstEmployeeDesignations = designationBL.GetDesignationByDepartmentID(104);
+                lstEmployeeDesignations = designationBL.GetDesignationByDepartmentID(3);
             }
             catch (Exception ex)
             {
