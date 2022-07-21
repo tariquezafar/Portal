@@ -76,6 +76,8 @@ namespace Portal.Core
                     Compatibility = productViewModel.Compatibility,
                     CompanyBranchId = productViewModel.CompanyBranchId,
                     ProductSequence = 1,
+                    MRP=productViewModel.MRP
+                   
 
                 };
                 responseOut = dbInterface.AddEditProduct(product);
@@ -278,6 +280,7 @@ namespace Portal.Core
                             LocalName = Convert.ToString(dr["LocalName"]),
                             Compatibility = Convert.ToString(dr["Compatibility"]),
                             CompanyBranchId = Convert.ToInt32(dr["CompanyBranchId"]),
+                            MRP = Convert.ToDecimal(dr["MRP"]),
                         };
                     }
                 }
@@ -312,7 +315,8 @@ namespace Portal.Core
                             IsThirdPartyProduct = Convert.ToBoolean(product.IsThirdPartyProduct),
                             IsWarrantyProduct = Convert.ToBoolean(product.IsWarrantyProduct),
                             WarrantyInMonth =Convert.ToInt32(product.WarrantyInMonth),
-                            SalePrice = Convert.ToInt32(product.SalePrice)
+                            SalePrice = Convert.ToInt32(product.SalePrice),
+                            MRP= Convert.ToDecimal(product.MRP),
                         });
                     }
                 }

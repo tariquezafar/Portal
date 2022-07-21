@@ -91,6 +91,7 @@ namespace Portal.Core.ViewModel
         public string ProductSubGroupCode { get; set; }
 
         public string ManufactureCode { get; set; }
+        public decimal MRP { get; set; }
     }
 
     public class ProductConsumeCountViewModel

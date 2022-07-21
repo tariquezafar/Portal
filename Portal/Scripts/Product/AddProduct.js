@@ -546,6 +546,7 @@ function GetProductDetail(productId) {
             if (hdnAccessMode.val() == "3") {
                 $("#btnRemoveImg").hide(); 
             }
+            $("#txtMRP").val(data.MRP);
             
         },
         error: function (Result) {
@@ -761,9 +762,10 @@ function SaveData() {
         CompanyBranchId: ddlCompanyBranch.val(),
         OnlineProduct: onlineProduct,
         ManufactureCode: $("#hdnManufacturerCode").val(),
+        MRP: $("#txtMRP").val(),
         ProductMainGroupCode: $('#ddlProductMainGroup option:selected').text().substring($('#ddlProductMainGroup option:selected').text().indexOf('(') + 1, $('#ddlProductMainGroup option:selected').text().indexOf(')')),
         ProductSubGroupCode: $('#ddlProductSubGroup option:selected').text().substring($('#ddlProductSubGroup option:selected').text().indexOf('(') + 1, $('#ddlProductSubGroup option:selected').text().indexOf(')')),
-    };
+};
     var accessMode = 1;//Add Mode
     if (hdnProductId.val() != null && hdnProductId.val() != 0) {
         accessMode = 2;//Edit Mode

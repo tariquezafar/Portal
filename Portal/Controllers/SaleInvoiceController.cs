@@ -34,6 +34,7 @@ namespace Portal.Controllers
                 ViewData["RoleId"] = ContextUser.RoleId;
                 ViewData["CompanyBranchId"] = Session[SessionKey.CompanyBranchId] != null ? ((UserViewModel)Session[SessionKey.CompanyBranchId]).CompanyBranchId : 0;
                 ViewData["UserId"] = Session[SessionKey.UserId] != null ? ((UserViewModel)Session[SessionKey.UserId]).UserId : 0;
+                ViewData["CustomerId"]= Session[SessionKey.UserId] != null  && ((UserViewModel)Session[SessionKey.UserId]).FK_CustomerId!=0 ? ((UserViewModel)Session[SessionKey.UserId]).FK_CustomerId : 0;
 
                 if (siId != 0)
                 {
@@ -45,7 +46,7 @@ namespace Portal.Controllers
                 {
                     ViewData["siId"] = 0;
                     ViewData["accessMode"] = 0;
-                    ViewData["customerId"] = customerId;
+                  //  ViewData["customerId"] = customerId;
                     ViewData["customerCode"] = customerCode;
                     ViewData["customerName"] = customerName;
 

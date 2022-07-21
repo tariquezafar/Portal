@@ -35,6 +35,7 @@ namespace Portal.Controllers
                 ViewData["toDate"] = finYear.EndDate;
                 ViewData["currentDate"] = DateTime.Now.ToString("dd-MMM-yyyy");
                 ViewData["RoleId"] = ContextUser.RoleId;
+                ViewData["CustomerId"] = Session[SessionKey.UserId] != null && ((UserViewModel)Session[SessionKey.UserId]).FK_CustomerId != 0 ? ((UserViewModel)Session[SessionKey.UserId]).FK_CustomerId : 0;
                 if (soId != 0)
                 {
                     ViewData["soId"] = soId;
@@ -45,7 +46,7 @@ namespace Portal.Controllers
                 {
                     ViewData["soId"] = 0;
                     ViewData["accessMode"] = 0;
-                    ViewData["customerId"] = customerId;
+                 //   ViewData["customerId"] = customerId;
                     ViewData["customerCode"] = customerCode;
                     ViewData["customerName"] = customerName;
 

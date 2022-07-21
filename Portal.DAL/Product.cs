@@ -68,5 +68,6 @@ namespace Portal.DAL
         public string Compatibility { get; set; }
         public Nullable<long> CompanyBranchId { get; set; }
         public Nullable<bool> IsOnline { get; set; }
+        public Nullable<decimal> MRP { get; set; }
     }
 }
