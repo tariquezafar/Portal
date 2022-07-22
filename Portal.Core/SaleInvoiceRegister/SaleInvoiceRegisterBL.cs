@@ -19,13 +19,13 @@ namespace Portal.Core
             dbInterface = new DBInterface();
         } 
   
-        public List<SaleInvoiceViewModel> GetSaleInvoiceRegisterList(int customerId, int stateId, int shippingstateId, string fromDate, string toDate, int companyId, int createdBy, string sortBy, string sortOrder,int companyBranchId)
+        public List<SaleInvoiceViewModel> GetSaleInvoiceRegisterList(int customerId, int stateId, int shippingstateId, string fromDate, string toDate, int companyId, int createdBy, string sortBy, string sortOrder,int companyBranchId , int DealerId=0)
         {
             List<SaleInvoiceViewModel> saleinvoices = new List<SaleInvoiceViewModel>();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
             try
             {
-                DataTable dtSaleInvoices = sqlDbInterface.GetSaleInvoiceRegisterList(customerId, stateId, shippingstateId, Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), companyId, createdBy, sortBy, sortOrder, companyBranchId);
+                DataTable dtSaleInvoices = sqlDbInterface.GetSaleInvoiceRegisterList(customerId, stateId, shippingstateId, Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), companyId, createdBy, sortBy, sortOrder, companyBranchId,DealerId);
                 if (dtSaleInvoices != null && dtSaleInvoices.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dtSaleInvoices.Rows)
@@ -94,13 +94,13 @@ namespace Portal.Core
             }
             return saleinvoices;
         }
-        public List<SaleSummaryRegisterViewModel> GetSaleSummaryRegister(int customerId, int userId, int stateId, int companyId, DateTime fromDate, DateTime toDate, string InvoiceNo,int companyBranchId)
+        public List<SaleSummaryRegisterViewModel> GetSaleSummaryRegister(int customerId, int userId, int stateId, int companyId, DateTime fromDate, DateTime toDate, string InvoiceNo,int companyBranchId, int DealerId=0)
         {
             List<SaleSummaryRegisterViewModel> saleInvoices = new List<SaleSummaryRegisterViewModel>();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
             try
             {
-                DataTable dtSaleInvoices = sqlDbInterface.GetSaleSummaryRegister(customerId,userId, stateId,companyId,fromDate,toDate,InvoiceNo, companyBranchId);
+                DataTable dtSaleInvoices = sqlDbInterface.GetSaleSummaryRegister(customerId,userId, stateId,companyId,fromDate,toDate,InvoiceNo, companyBranchId, DealerId);
                 if (dtSaleInvoices != null && dtSaleInvoices.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dtSaleInvoices.Rows)

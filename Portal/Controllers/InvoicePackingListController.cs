@@ -111,7 +111,7 @@ namespace Portal.Controllers
             InvoicePackingListBL invoicePackingListBL = new InvoicePackingListBL();
             try
             {
-                invoicePackingLists = invoicePackingListBL.GetInvoicePackingList(invoicePackingListNo, invoiceNo, packingListType, fromDate, toDate, approvalStatus, ContextUser.CompanyId, CreatedByUserName, companyBranchId);
+                invoicePackingLists = invoicePackingListBL.GetInvoicePackingList(invoicePackingListNo, invoiceNo, packingListType, fromDate, toDate, approvalStatus, ContextUser.CompanyId, CreatedByUserName, companyBranchId, Convert.ToInt32(Session[SessionKey.CustomerId]));
             }
             catch (Exception ex)
             {

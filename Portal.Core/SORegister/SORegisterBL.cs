@@ -19,13 +19,13 @@ namespace Portal.Core
             dbInterface = new DBInterface();
         } 
   
-        public List<SOViewModel> GetSORegisterList(int customerId, int stateId, int shippingstateId, string fromDate, string toDate, int createdBy, int companyId, string sortBy, string sortOrder,int companyBranchId)
+        public List<SOViewModel> GetSORegisterList(int customerId, int stateId, int shippingstateId, string fromDate, string toDate, int createdBy, int companyId, string sortBy, string sortOrder,int companyBranchId,int DealerId=0)
         {
             List<SOViewModel> sos = new List<SOViewModel>();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
             try
             {
-                DataTable dtSOs = sqlDbInterface.GetSORegisterList(customerId, stateId, shippingstateId, Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), createdBy, companyId, sortBy, sortOrder, companyBranchId);
+                DataTable dtSOs = sqlDbInterface.GetSORegisterList(customerId, stateId, shippingstateId, Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), createdBy, companyId, sortBy, sortOrder, companyBranchId, DealerId);
                 if (dtSOs != null && dtSOs.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dtSOs.Rows)

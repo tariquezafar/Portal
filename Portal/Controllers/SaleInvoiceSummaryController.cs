@@ -51,7 +51,7 @@ namespace Portal.Controllers
             try
             {
 
-                saleInvoices = saleInvoiceRegisterBL.GetSaleSummaryRegister(customerId,userId, stateId ,ContextUser.CompanyId ,Convert.ToDateTime(fromDate),Convert.ToDateTime(toDate), Invoice, companyBranchId);
+                saleInvoices = saleInvoiceRegisterBL.GetSaleSummaryRegister(customerId,userId, stateId ,ContextUser.CompanyId ,Convert.ToDateTime(fromDate),Convert.ToDateTime(toDate), Invoice, companyBranchId, Convert.ToInt32(Session[SessionKey.CustomerId]));
             }
             catch (Exception ex)
             {
@@ -124,7 +124,7 @@ namespace Portal.Controllers
             try
             {
 
-                saleInvoices = saleInvoiceRegisterBL.GetSaleSummaryRegister(customerId, userId, stateId, ContextUser.CompanyId, Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), Invoice,Convert.ToInt32(companyBranchId));
+                saleInvoices = saleInvoiceRegisterBL.GetSaleSummaryRegister(customerId, userId, stateId, ContextUser.CompanyId, Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), Invoice,Convert.ToInt32(companyBranchId), Convert.ToInt32(Session[SessionKey.CustomerId]));
             }
             catch (Exception ex)
             {

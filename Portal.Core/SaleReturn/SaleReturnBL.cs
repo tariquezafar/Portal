@@ -167,13 +167,13 @@ namespace Portal.Core
             }
             return responseOut;
         }
-        public List<SaleReturnViewModel> GetSaleReturnList(string saleReturnNo, string customerName, string dispatchrefNo, string fromDate, string toDate, string approvalStatus, int companyId, string CreatedByUserName, int companyBranchId)
+        public List<SaleReturnViewModel> GetSaleReturnList(string saleReturnNo, string customerName, string dispatchrefNo, string fromDate, string toDate, string approvalStatus, int companyId, string CreatedByUserName, int companyBranchId,int CustomerId=0)
         {
             List<SaleReturnViewModel> saleReturnViewModel = new List<SaleReturnViewModel>();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
             try
             {
-                DataTable dtDeliveryChallans = sqlDbInterface.GetSaleReturnList(saleReturnNo, customerName, dispatchrefNo, Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), approvalStatus, companyId, CreatedByUserName, companyBranchId);
+                DataTable dtDeliveryChallans = sqlDbInterface.GetSaleReturnList(saleReturnNo, customerName, dispatchrefNo, Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), approvalStatus, companyId, CreatedByUserName, companyBranchId,CustomerId);
                 if (dtDeliveryChallans != null && dtDeliveryChallans.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dtDeliveryChallans.Rows)

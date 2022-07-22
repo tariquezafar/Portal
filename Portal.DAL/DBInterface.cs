@@ -1894,7 +1894,7 @@ namespace Portal.DAL
                             a.VehicleType = product.VehicleType;
                             a.CompanyBranchId = product.CompanyBranchId;
                             a.IsOnline = product.IsOnline;
-
+                            a.MRP = product.MRP;
                         });
                         responseOut.message = ActionMessage.ProductUpdatedSuccess;
                     }
@@ -1960,7 +1960,8 @@ namespace Portal.DAL
 
                                     IsWarrantyProduct = p.IsWarrantyProduct,
                                     WarrantyInMonth = p.WarrantyInMonth,
-                                    SalePrice = p.SalePrice
+                                    SalePrice = p.SalePrice,
+                                    MRP=p.MRP
 
                                 }).ToList();
 
@@ -1983,7 +1984,8 @@ namespace Portal.DAL
                             IsThirdPartyProduct = item.IsThirdPartyProduct,
                             IsWarrantyProduct = item.IsWarrantyProduct,
                             WarrantyInMonth = item.WarrantyInMonth,
-                            SalePrice = item.SalePrice
+                            SalePrice = item.SalePrice,
+                            MRP=item.MRP
                         });
                     }
                 }

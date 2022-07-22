@@ -68,13 +68,13 @@ namespace Portal.Core
             return responseOut;
         }
 
-        public List<InvoicePackingListViewModel> GetInvoicePackingList(string invoicePackingListNo, string invoiceNo, Int32 packingListType, string fromDate, string toDate, string approvalStatus, int companyId,string CreatedByUserName,int companyBranchId)
+        public List<InvoicePackingListViewModel> GetInvoicePackingList(string invoicePackingListNo, string invoiceNo, Int32 packingListType, string fromDate, string toDate, string approvalStatus, int companyId,string CreatedByUserName,int companyBranchId, int CustomerId=0)
         {
             List<InvoicePackingListViewModel> packingLists = new List<InvoicePackingListViewModel>();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
             try
             {
-                DataTable dtPackingLists = sqlDbInterface.GetInvoicePackingLists(invoicePackingListNo, invoiceNo, packingListType, Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), approvalStatus, companyId, CreatedByUserName, companyBranchId);
+                DataTable dtPackingLists = sqlDbInterface.GetInvoicePackingLists(invoicePackingListNo, invoiceNo, packingListType, Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), approvalStatus, companyId, CreatedByUserName, companyBranchId,CustomerId);
                 if (dtPackingLists != null && dtPackingLists.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dtPackingLists.Rows)

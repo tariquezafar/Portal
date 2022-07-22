@@ -49,7 +49,7 @@ namespace Portal.Controllers
             SORegisterBL soregisterBL = new SORegisterBL();
             try
             {
-                sos = soregisterBL.GetSORegisterList(customerId, stateId, shippingstateId, fromDate, toDate, createdBy, ContextUser.CompanyId, sortBy, sortOrder, companyBranchId);
+                sos = soregisterBL.GetSORegisterList(customerId, stateId, shippingstateId, fromDate, toDate, createdBy, ContextUser.CompanyId, sortBy, sortOrder, companyBranchId, Convert.ToInt32(Session[SessionKey.CustomerId]));
             }
             catch (Exception ex)
             {

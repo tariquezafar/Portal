@@ -46,7 +46,7 @@ namespace Portal.Controllers
             List<DeliveryChallanViewModel> deliveryChallanViewModel = new List<DeliveryChallanViewModel>();
             try
             {
-                deliveryChallanViewModel = deliveryChallanRegisterBL.GetDeliveryChallanRegisterList(customerId, stateId, shippingstateId, fromDate, toDate, createdBy, ContextUser.CompanyId, sortBy, sortOrder, companyBranchId);
+                deliveryChallanViewModel = deliveryChallanRegisterBL.GetDeliveryChallanRegisterList(customerId, stateId, shippingstateId, fromDate, toDate, createdBy, ContextUser.CompanyId, sortBy, sortOrder, companyBranchId, Convert.ToInt32(Session[SessionKey.CustomerId]));
             }
             catch (Exception ex)
             {

@@ -18,13 +18,13 @@ namespace Portal.Core
         {
             dbInterface = new DBInterface();
         } 
-        public List<QuotationViewModel> GetQuotationRegisterList(int customerId, int stateId, string fromDate, string toDate, int companyId, int createdBy, string sortBy, string sortOrder, int companyBranchId)
+        public List<QuotationViewModel> GetQuotationRegisterList(int customerId, int stateId, string fromDate, string toDate, int companyId, int createdBy, string sortBy, string sortOrder, int companyBranchId,int DealerId=0)
         {
             List<QuotationViewModel> quotations = new List<QuotationViewModel>();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
             try
             {
-                DataTable dtQuotations = sqlDbInterface.GetQuotationRegisterList(customerId, stateId, Convert.ToDateTime(fromDate),Convert.ToDateTime(toDate), companyId, createdBy, sortBy, sortOrder, companyBranchId);
+                DataTable dtQuotations = sqlDbInterface.GetQuotationRegisterList(customerId, stateId, Convert.ToDateTime(fromDate),Convert.ToDateTime(toDate), companyId, createdBy, sortBy, sortOrder, companyBranchId,DealerId);
                 if (dtQuotations != null && dtQuotations.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dtQuotations.Rows)

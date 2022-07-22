@@ -52,7 +52,7 @@ namespace Portal.Controllers
             try
              {
                 
-                quotations = quotationregisterBL.GetQuotationRegisterList(customerId, stateId, fromDate, toDate, ContextUser.CompanyId, createdBy, sortBy, sortOrder, companyBranchId);
+                quotations = quotationregisterBL.GetQuotationRegisterList(customerId, stateId, fromDate, toDate, ContextUser.CompanyId, createdBy, sortBy, sortOrder, companyBranchId, Convert.ToInt32(Session[SessionKey.CustomerId]));
             }
             catch (Exception ex)
             {

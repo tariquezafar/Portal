@@ -2875,7 +2875,12 @@ function GetProductDetail(productId) {
         data: { productid: productId },
         dataType: "json",
         success: function (data) {
-            $("#txtPrice").val(data.PurchasePrice);
+            if ($("#hdnCustomerId").val() == "0") {
+                $("#txtPrice").val(data.SalePrice);
+            }
+            else {
+                $("#txtPrice").val(data.PurchasePrice);
+            }
             $("#txtQuantity").val("");
             $("#txtUOMName").val(data.PurchaseUOMName);
         },

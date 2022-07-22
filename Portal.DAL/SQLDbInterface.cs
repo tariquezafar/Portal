@@ -7771,7 +7771,7 @@ namespace Portal.DAL
             return dt;
 
         }
-        public DataTable GetChallanList(string challanNo, string customerName, string dispatchrefNo, DateTime fromDate, DateTime toDate, string approvalStatus, int companyId, string invoiceNo, string createdByUserName, int companyBranchId)
+        public DataTable GetChallanList(string challanNo, string customerName, string dispatchrefNo, DateTime fromDate, DateTime toDate, string approvalStatus, int companyId, string invoiceNo, string createdByUserName, int companyBranchId,int CustomerId=0)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -7791,6 +7791,7 @@ namespace Portal.DAL
                     da.SelectCommand.Parameters.AddWithValue("@InvoiceNo", invoiceNo);
                     da.SelectCommand.Parameters.AddWithValue("@CreatedBy", createdByUserName);
                     da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
+                    da.SelectCommand.Parameters.AddWithValue("@CustomerId", CustomerId);
                     da.Fill(dt);
                 }
             }
@@ -8856,7 +8857,7 @@ namespace Portal.DAL
 
 
         #region  Quotation Register
-        public DataTable GetQuotationRegisterList(int customerId, int stateId, DateTime fromDate, DateTime toDate, int companyId, int createdBy, string sortBy, string sortOrder, int companyBranchId)
+        public DataTable GetQuotationRegisterList(int customerId, int stateId, DateTime fromDate, DateTime toDate, int companyId, int createdBy, string sortBy, string sortOrder, int companyBranchId,int DelearId=0)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -8987,7 +8988,7 @@ namespace Portal.DAL
         #endregion
 
         #region  SO Register
-        public DataTable GetSORegisterList(int customerId, int stateId, int shippingstateId, DateTime fromDate, DateTime toDate, int createdBy, int companyId, string sortBy, string sortOrder, int companyBranchId)
+        public DataTable GetSORegisterList(int customerId, int stateId, int shippingstateId, DateTime fromDate, DateTime toDate, int createdBy, int companyId, string sortBy, string sortOrder, int companyBranchId, int DealerId=0)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -9007,6 +9008,7 @@ namespace Portal.DAL
                     da.SelectCommand.Parameters.AddWithValue("@SortBy", sortBy);
                     da.SelectCommand.Parameters.AddWithValue("@SortOrder", sortOrder);
                     da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
+                    da.SelectCommand.Parameters.AddWithValue("@DealerId", DealerId);
                     da.Fill(dt);
                 }
             }
@@ -9055,7 +9057,7 @@ namespace Portal.DAL
 
 
         #region  Sale Invoice Register
-        public DataTable GetSaleInvoiceRegisterList(int customerId, int stateId, int shippingstateId, DateTime fromDate, DateTime toDate, int companyId, int createdBy, string sortBy, string sortOrder, int companyBranchId)
+        public DataTable GetSaleInvoiceRegisterList(int customerId, int stateId, int shippingstateId, DateTime fromDate, DateTime toDate, int companyId, int createdBy, string sortBy, string sortOrder, int companyBranchId, int DealerId=0)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -9075,6 +9077,7 @@ namespace Portal.DAL
                     da.SelectCommand.Parameters.AddWithValue("@SortBy", sortBy);
                     da.SelectCommand.Parameters.AddWithValue("@SortOrder", sortOrder);
                     da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
+                    da.SelectCommand.Parameters.AddWithValue("@DealerId", DealerId);
                     da.Fill(dt);
                 }
             }
@@ -10069,7 +10072,7 @@ namespace Portal.DAL
 
         #region  DeliveryChallanRegister
 
-        public DataTable GetDeliveryChallanRegisterList(int customerId, int stateId, int shippingstateId, DateTime fromDate, DateTime toDate, int createdBy, int companyId, string sortBy, string sortOrder, int companyBranchId)
+        public DataTable GetDeliveryChallanRegisterList(int customerId, int stateId, int shippingstateId, DateTime fromDate, DateTime toDate, int createdBy, int companyId, string sortBy, string sortOrder, int companyBranchId,int DealerId =0)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -10089,6 +10092,7 @@ namespace Portal.DAL
                     da.SelectCommand.Parameters.AddWithValue("@SortBy", sortBy);
                     da.SelectCommand.Parameters.AddWithValue("@SortOrder", sortOrder);
                     da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
+                    da.SelectCommand.Parameters.AddWithValue("@DealerId", DealerId);
                     da.Fill(dt);
                 }
             }
@@ -10407,7 +10411,7 @@ namespace Portal.DAL
         #endregion
 
         #region Sale Summary Register
-        public DataTable GetSaleSummaryRegister(int customerId, int userId, int stateId, int companyId, DateTime fromDate, DateTime toDate, string InvoiceNo, int companyBranchId)
+        public DataTable GetSaleSummaryRegister(int customerId, int userId, int stateId, int companyId, DateTime fromDate, DateTime toDate, string InvoiceNo, int companyBranchId, int DealerId=0)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -10425,6 +10429,7 @@ namespace Portal.DAL
                     da.SelectCommand.Parameters.AddWithValue("@ToDate", toDate);
                     da.SelectCommand.Parameters.AddWithValue("@InvoiceNo", InvoiceNo);
                     da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
+                    da.SelectCommand.Parameters.AddWithValue("@DealerId", DealerId);
 
                     da.Fill(dt);
                 }
@@ -18313,7 +18318,7 @@ namespace Portal.DAL
 
         }
 
-        public DataTable GetSaleReturnList(string saleReturnNo, string customerName, string dispatchrefNo, DateTime fromDate, DateTime toDate, string approvalStatus, int companyId, string CreatedByUserName, int companyBranchId)
+        public DataTable GetSaleReturnList(string saleReturnNo, string customerName, string dispatchrefNo, DateTime fromDate, DateTime toDate, string approvalStatus, int companyId, string CreatedByUserName, int companyBranchId,int CustomerId=0)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -18332,6 +18337,7 @@ namespace Portal.DAL
                     da.SelectCommand.Parameters.AddWithValue("@CompanyId", companyId);
                     da.SelectCommand.Parameters.AddWithValue("@CreatedBy", CreatedByUserName);
                     da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
+                    da.SelectCommand.Parameters.AddWithValue("@CustomerId", CustomerId);
                     da.Fill(dt);
                 }
             }
@@ -22888,7 +22894,7 @@ namespace Portal.DAL
             return responseOut;
 
         }
-        public DataTable GetInvoicePackingLists(string invoicePackingListNo, string invoiceNo, Int32 packingListType, DateTime fromDate, DateTime toDate, string approvalStatus, int companyId, string CreatedByUserName, int companyBranchId)
+        public DataTable GetInvoicePackingLists(string invoicePackingListNo, string invoiceNo, Int32 packingListType, DateTime fromDate, DateTime toDate, string approvalStatus, int companyId, string CreatedByUserName, int companyBranchId,int CustomerId=0)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -22907,6 +22913,7 @@ namespace Portal.DAL
                     da.SelectCommand.Parameters.AddWithValue("@CompanyId", companyId);
                     da.SelectCommand.Parameters.AddWithValue("@CreatedBy", CreatedByUserName);
                     da.SelectCommand.Parameters.AddWithValue("@CompanyBranchId", companyBranchId);
+                    da.SelectCommand.Parameters.AddWithValue ("@CustomerId", CustomerId);
                     da.Fill(dt);
                 }
             }
@@ -27104,7 +27111,7 @@ namespace Portal.DAL
 
         }
 
-        public DataTable GetReturnList(string returnedNo, string invoiceNo, string approvalStatus, int companyBranchId, int companyId, DateTime fromDate, DateTime toDate)
+        public DataTable GetReturnList(string returnedNo, string invoiceNo, string approvalStatus, int companyBranchId, int companyId, DateTime fromDate, DateTime toDate,int CustomerId =0)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -27121,6 +27128,7 @@ namespace Portal.DAL
                     da.SelectCommand.Parameters.AddWithValue("@CompanyId", companyId);
                     da.SelectCommand.Parameters.AddWithValue("@FromDate", fromDate);
                     da.SelectCommand.Parameters.AddWithValue("@ToDate", toDate);
+                    da.SelectCommand.Parameters.AddWithValue("@CustomerId", CustomerId);
                     da.Fill(dt);
                 }
             }

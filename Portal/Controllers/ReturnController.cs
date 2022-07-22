@@ -117,7 +117,7 @@ namespace Portal.Controllers
             ReturnBL returnBL = new ReturnBL();
             try
             {
-                returnViewModel = returnBL.GetReturnList(returnedNo, invoiceNo, approvalStatus, companyBranchId, ContextUser.CompanyId, fromDate, toDate);
+                returnViewModel = returnBL.GetReturnList(returnedNo, invoiceNo, approvalStatus, companyBranchId, ContextUser.CompanyId, fromDate, toDate, Convert.ToInt32(Session[SessionKey.CustomerId]));
             }
             catch (Exception ex)
             {

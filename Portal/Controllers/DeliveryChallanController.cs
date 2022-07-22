@@ -119,7 +119,7 @@ namespace Portal.Controllers
             DeliveryChallanBL deliverychallanBL = new DeliveryChallanBL();
             try
             {
-                deliverychallans = deliverychallanBL.GetChallanList(challanNo,customerName, dispatchrefNo, fromDate, toDate, approvalStatus, ContextUser.CompanyId,invoiceno,createdByUserName, companyBranchId);
+                deliverychallans = deliverychallanBL.GetChallanList(challanNo,customerName, dispatchrefNo, fromDate, toDate, approvalStatus, ContextUser.CompanyId,invoiceno,createdByUserName, companyBranchId, Convert.ToInt32(Session[SessionKey.CustomerId]));
             }
             catch (Exception ex)
             {

@@ -112,7 +112,7 @@ namespace Portal.Controllers
             SaleReturnBL saleReturnBL = new SaleReturnBL();
             try
             {
-                saleReturnViewModel = saleReturnBL.GetSaleReturnList(saleReturnNo, customerName, dispatchrefNo, fromDate, toDate, approvalStatus, ContextUser.CompanyId, CreatedByUserName, companyBranchId);
+                saleReturnViewModel = saleReturnBL.GetSaleReturnList(saleReturnNo, customerName, dispatchrefNo, fromDate, toDate, approvalStatus, ContextUser.CompanyId, CreatedByUserName, companyBranchId, Convert.ToInt32(Session[SessionKey.CustomerId]));
             }
             catch (Exception ex)
             {

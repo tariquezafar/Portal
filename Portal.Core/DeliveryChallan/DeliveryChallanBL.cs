@@ -173,13 +173,13 @@ namespace Portal.Core
             return responseOut;
         }
         
-        public List<DeliveryChallanViewModel> GetChallanList(string deliverychallanNo, string customerName, string dispatchrefNo, string fromDate, string toDate, string approvalStatus, int companyId, string invoiceNo,string createdByUserName,int companyBranchId)
+        public List<DeliveryChallanViewModel> GetChallanList(string deliverychallanNo, string customerName, string dispatchrefNo, string fromDate, string toDate, string approvalStatus, int companyId, string invoiceNo,string createdByUserName,int companyBranchId, int CustomerId=0)
         {
             List<DeliveryChallanViewModel> deliverychallans = new List<DeliveryChallanViewModel>();
             SQLDbInterface sqlDbInterface = new SQLDbInterface();
             try
             {
-                DataTable dtDeliveryChallans = sqlDbInterface.GetChallanList(deliverychallanNo, customerName, dispatchrefNo, Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), approvalStatus, companyId, invoiceNo, createdByUserName, companyBranchId);
+                DataTable dtDeliveryChallans = sqlDbInterface.GetChallanList(deliverychallanNo, customerName, dispatchrefNo, Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), approvalStatus, companyId, invoiceNo, createdByUserName, companyBranchId,CustomerId);
                 if (dtDeliveryChallans != null && dtDeliveryChallans.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dtDeliveryChallans.Rows)

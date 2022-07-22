@@ -52,7 +52,7 @@ namespace Portal.Controllers
             try
             {
 
-                saleinvoices = saleinvoiceregisterBL.GetSaleInvoiceRegisterList(customerId, stateId, shippingstateId, fromDate, toDate, ContextUser.CompanyId, createdBy, sortBy, sortOrder, companyBranchId);
+                saleinvoices = saleinvoiceregisterBL.GetSaleInvoiceRegisterList(customerId, stateId, shippingstateId, fromDate, toDate, ContextUser.CompanyId, createdBy, sortBy, sortOrder, companyBranchId, Convert.ToInt32(Session[SessionKey.CustomerId]));
             }
             catch (Exception ex)
             {
